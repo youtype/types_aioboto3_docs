@@ -203,12 +203,6 @@ async function extractAioBotocoreVersions({ core, context }) {
 
     const force = context.payload.inputs ? context.payload.inputs.force !== 'false' : false
 
-    let buildAll = (context.payload.inputs && context.payload.inputs.build_all !== 'false') ? 'true' : 'false'
-    if (aiobotocoreVersion.endsWith('.0')) {
-        core.info(`Aiobotocore version is not a micro release ${aiobotocoreVersion}, building all packages`)
-        buildAll = 'true'
-    }
-
     const extraFlags = []
 
     const skipPublished = context.payload.inputs ? context.payload.inputs.skip_published !== 'false' : false
@@ -216,9 +210,6 @@ async function extractAioBotocoreVersions({ core, context }) {
 
     core.info(`Extra flags = ${extraFlags}`)
     core.setOutput('extra-flags', extraFlags.join(' '))
-
-    core.info(`Build all packages = ${buildAll}`)
-    core.setOutput('build-all', buildAll)
 
     const versions = await getTypesAioBotocoreVersions(aiobotocoreVersion)
     core.info(`Built versions ${versions}`)
@@ -263,23 +254,6 @@ async function extractAioBoto3Versions({ core, context }) {
     core.setOutput('aioboto3-version', aioboto3Version)
 
     const force = context.payload.inputs ? context.payload.inputs.force !== 'false' : false
-
-    let buildAll = (context.payload.inputs && context.payload.inputs.build_all !== 'false') ? 'true' : 'false'
-    if (aioboto3Version.endsWith('.0')) {
-        core.info(`Aioboto3 version is not a micro release ${aioboto3Version}, building all packages`)
-        buildAll = 'true'
-    }
-
-    const extraFlags = []
-
-    const skipPublished = context.payload.inputs ? context.payload.inputs.skip_published !== 'false' : false
-    if (skipPublished) extraFlags.push('--skip-published')
-
-    core.info(`Extra flags = ${extraFlags}`)
-    core.setOutput('extra-flags', extraFlags.join(' '))
-
-    core.info(`Build all packages = ${buildAll}`)
-    core.setOutput('build-all', buildAll)
 
     const versions = await getTypesAioBoto3Versions(aioboto3Version)
     core.info(`Built versions ${versions}`)
