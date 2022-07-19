@@ -323,6 +323,7 @@ module.exports = {
     getTypesAioBotocoreVersions,
     extractAioBotocoreDownloadLinks,
     extractVersionsFromInput,
+    getAioBoto3Version,
     extractAioBoto3Versions,
     extractAioBoto3DownloadLinks,
 }
