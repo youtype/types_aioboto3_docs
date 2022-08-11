@@ -103,21 +103,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("sso-admin").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_account\_assignment
 
 Assigns access to a principal for a specified Amazon Web Services account using

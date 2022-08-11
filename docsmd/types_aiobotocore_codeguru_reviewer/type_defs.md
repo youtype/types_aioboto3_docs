@@ -114,7 +114,6 @@ def get_value() -> MetricsSummaryTypeDef:
 ```python title="Definition"
 class MetricsSummaryTypeDef(TypedDict):
     MeteredLinesOfCodeCount: NotRequired[int],
-    SuppressedLinesOfCodeCount: NotRequired[int],
     FindingsCount: NotRequired[int],
 ```
 
@@ -132,7 +131,6 @@ def get_value() -> MetricsTypeDef:
 ```python title="Definition"
 class MetricsTypeDef(TypedDict):
     MeteredLinesOfCodeCount: NotRequired[int],
-    SuppressedLinesOfCodeCount: NotRequired[int],
     FindingsCount: NotRequired[int],
 ```
 
@@ -1044,7 +1042,6 @@ class CodeReviewTypeDef(TypedDict):
     AssociationArn: NotRequired[str],
     Metrics: NotRequired[MetricsTypeDef],  # (5)
     AnalysisTypes: NotRequired[List[AnalysisTypeType]],  # (6)
-    ConfigFileState: NotRequired[ConfigFileStateType],  # (7)
 ```
 
 1. See [:material-code-brackets: ProviderTypeType](./literals.md#providertypetype) 
@@ -1053,7 +1050,6 @@ class CodeReviewTypeDef(TypedDict):
 4. See [:material-code-braces: SourceCodeTypeTypeDef](./type_defs.md#sourcecodetypetypedef) 
 5. See [:material-code-braces: MetricsTypeDef](./type_defs.md#metricstypedef) 
 6. See [:material-code-brackets: AnalysisTypeType](./literals.md#analysistypetype) 
-7. See [:material-code-brackets: ConfigFileStateType](./literals.md#configfilestatetype) 
 ## RepositoryAnalysisTypeDef
 
 ```python title="Usage Example"

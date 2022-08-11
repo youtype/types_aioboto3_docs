@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Lambda`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aioboto3-lite[lambda]'
 python -m pip install types-aiobotocore-lambda
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-lambda` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-lambda`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-lambda
-```
-
-It is possible to list all of the versions of `types-aiobotocore-lambda`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-lambda --channel conda-forge
-```
 
 
 ## How to uninstall
@@ -105,7 +76,6 @@ def get_list_aliases_paginator() -> ListAliasesPaginator:
 - [ListCodeSigningConfigsPaginator](./paginators.md#listcodesigningconfigspaginator)
 - [ListEventSourceMappingsPaginator](./paginators.md#listeventsourcemappingspaginator)
 - [ListFunctionEventInvokeConfigsPaginator](./paginators.md#listfunctioneventinvokeconfigspaginator)
-- [ListFunctionUrlConfigsPaginator](./paginators.md#listfunctionurlconfigspaginator)
 - [ListFunctionsPaginator](./paginators.md#listfunctionspaginator)
 - [ListFunctionsByCodeSigningConfigPaginator](./paginators.md#listfunctionsbycodesigningconfigpaginator)
 - [ListLayerVersionsPaginator](./paginators.md#listlayerversionspaginator)
@@ -161,7 +131,6 @@ def get_value() -> ArchitectureType:
 - [FunctionResponseTypeType](./literals.md#functionresponsetypetype)
 - [FunctionUpdatedV2WaiterName](./literals.md#functionupdatedv2waitername)
 - [FunctionUpdatedWaiterName](./literals.md#functionupdatedwaitername)
-- [FunctionUrlAuthTypeType](./literals.md#functionurlauthtypetype)
 - [FunctionVersionType](./literals.md#functionversiontype)
 - [InvocationTypeType](./literals.md#invocationtypetype)
 - [LastUpdateStatusReasonCodeType](./literals.md#lastupdatestatusreasoncodetype)
@@ -170,7 +139,6 @@ def get_value() -> ArchitectureType:
 - [ListCodeSigningConfigsPaginatorName](./literals.md#listcodesigningconfigspaginatorname)
 - [ListEventSourceMappingsPaginatorName](./literals.md#listeventsourcemappingspaginatorname)
 - [ListFunctionEventInvokeConfigsPaginatorName](./literals.md#listfunctioneventinvokeconfigspaginatorname)
-- [ListFunctionUrlConfigsPaginatorName](./literals.md#listfunctionurlconfigspaginatorname)
 - [ListFunctionsByCodeSigningConfigPaginatorName](./literals.md#listfunctionsbycodesigningconfigpaginatorname)
 - [ListFunctionsPaginatorName](./literals.md#listfunctionspaginatorname)
 - [ListLayerVersionsPaginatorName](./literals.md#listlayerversionspaginatorname)
@@ -217,12 +185,10 @@ def get_value() -> AccountLimitTypeDef:
 - [AllowedPublishersTypeDef](./type_defs.md#allowedpublisherstypedef)
 - [CodeSigningPoliciesTypeDef](./type_defs.md#codesigningpoliciestypedef)
 - [ConcurrencyTypeDef](./type_defs.md#concurrencytypedef)
-- [CorsTypeDef](./type_defs.md#corstypedef)
 - [SelfManagedEventSourceTypeDef](./type_defs.md#selfmanagedeventsourcetypedef)
 - [SourceAccessConfigurationTypeDef](./type_defs.md#sourceaccessconfigurationtypedef)
 - [DeadLetterConfigTypeDef](./type_defs.md#deadletterconfigtypedef)
 - [EnvironmentTypeDef](./type_defs.md#environmenttypedef)
-- [EphemeralStorageTypeDef](./type_defs.md#ephemeralstoragetypedef)
 - [FileSystemConfigTypeDef](./type_defs.md#filesystemconfigtypedef)
 - [FunctionCodeTypeDef](./type_defs.md#functioncodetypedef)
 - [ImageConfigTypeDef](./type_defs.md#imageconfigtypedef)
@@ -235,7 +201,6 @@ def get_value() -> AccountLimitTypeDef:
 - [DeleteFunctionConcurrencyRequestRequestTypeDef](./type_defs.md#deletefunctionconcurrencyrequestrequesttypedef)
 - [DeleteFunctionEventInvokeConfigRequestRequestTypeDef](./type_defs.md#deletefunctioneventinvokeconfigrequestrequesttypedef)
 - [DeleteFunctionRequestRequestTypeDef](./type_defs.md#deletefunctionrequestrequesttypedef)
-- [DeleteFunctionUrlConfigRequestRequestTypeDef](./type_defs.md#deletefunctionurlconfigrequestrequesttypedef)
 - [DeleteLayerVersionRequestRequestTypeDef](./type_defs.md#deletelayerversionrequestrequesttypedef)
 - [DeleteProvisionedConcurrencyConfigRequestRequestTypeDef](./type_defs.md#deleteprovisionedconcurrencyconfigrequestrequesttypedef)
 - [OnFailureTypeDef](./type_defs.md#onfailuretypedef)
@@ -255,7 +220,6 @@ def get_value() -> AccountLimitTypeDef:
 - [GetFunctionConfigurationRequestRequestTypeDef](./type_defs.md#getfunctionconfigurationrequestrequesttypedef)
 - [GetFunctionEventInvokeConfigRequestRequestTypeDef](./type_defs.md#getfunctioneventinvokeconfigrequestrequesttypedef)
 - [GetFunctionRequestRequestTypeDef](./type_defs.md#getfunctionrequestrequesttypedef)
-- [GetFunctionUrlConfigRequestRequestTypeDef](./type_defs.md#getfunctionurlconfigrequestrequesttypedef)
 - [GetLayerVersionByArnRequestRequestTypeDef](./type_defs.md#getlayerversionbyarnrequestrequesttypedef)
 - [GetLayerVersionPolicyRequestRequestTypeDef](./type_defs.md#getlayerversionpolicyrequestrequesttypedef)
 - [GetLayerVersionRequestRequestTypeDef](./type_defs.md#getlayerversionrequestrequesttypedef)
@@ -264,7 +228,6 @@ def get_value() -> AccountLimitTypeDef:
 - [GetProvisionedConcurrencyConfigRequestRequestTypeDef](./type_defs.md#getprovisionedconcurrencyconfigrequestrequesttypedef)
 - [ImageConfigErrorTypeDef](./type_defs.md#imageconfigerrortypedef)
 - [InvocationRequestRequestTypeDef](./type_defs.md#invocationrequestrequesttypedef)
-- [InvocationResponseTypeDef](./type_defs.md#invocationresponsetypedef)
 - [InvokeAsyncRequestRequestTypeDef](./type_defs.md#invokeasyncrequestrequesttypedef)
 - [LayerVersionContentInputTypeDef](./type_defs.md#layerversioncontentinputtypedef)
 - [LayerVersionsListItemTypeDef](./type_defs.md#layerversionslistitemtypedef)
@@ -273,7 +236,6 @@ def get_value() -> AccountLimitTypeDef:
 - [ListCodeSigningConfigsRequestRequestTypeDef](./type_defs.md#listcodesigningconfigsrequestrequesttypedef)
 - [ListEventSourceMappingsRequestRequestTypeDef](./type_defs.md#listeventsourcemappingsrequestrequesttypedef)
 - [ListFunctionEventInvokeConfigsRequestRequestTypeDef](./type_defs.md#listfunctioneventinvokeconfigsrequestrequesttypedef)
-- [ListFunctionUrlConfigsRequestRequestTypeDef](./type_defs.md#listfunctionurlconfigsrequestrequesttypedef)
 - [ListFunctionsByCodeSigningConfigRequestRequestTypeDef](./type_defs.md#listfunctionsbycodesigningconfigrequestrequesttypedef)
 - [ListFunctionsRequestRequestTypeDef](./type_defs.md#listfunctionsrequestrequesttypedef)
 - [ListLayerVersionsRequestRequestTypeDef](./type_defs.md#listlayerversionsrequestrequesttypedef)
@@ -301,6 +263,7 @@ def get_value() -> AccountLimitTypeDef:
 - [GetLayerVersionPolicyResponseTypeDef](./type_defs.md#getlayerversionpolicyresponsetypedef)
 - [GetPolicyResponseTypeDef](./type_defs.md#getpolicyresponsetypedef)
 - [GetProvisionedConcurrencyConfigResponseTypeDef](./type_defs.md#getprovisionedconcurrencyconfigresponsetypedef)
+- [InvocationResponseTypeDef](./type_defs.md#invocationresponsetypedef)
 - [InvokeAsyncResponseTypeDef](./type_defs.md#invokeasyncresponsetypedef)
 - [ListFunctionsByCodeSigningConfigResponseTypeDef](./type_defs.md#listfunctionsbycodesigningconfigresponsetypedef)
 - [ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef)
@@ -313,12 +276,6 @@ def get_value() -> AccountLimitTypeDef:
 - [CodeSigningConfigTypeDef](./type_defs.md#codesigningconfigtypedef)
 - [CreateCodeSigningConfigRequestRequestTypeDef](./type_defs.md#createcodesigningconfigrequestrequesttypedef)
 - [UpdateCodeSigningConfigRequestRequestTypeDef](./type_defs.md#updatecodesigningconfigrequestrequesttypedef)
-- [CreateFunctionUrlConfigRequestRequestTypeDef](./type_defs.md#createfunctionurlconfigrequestrequesttypedef)
-- [CreateFunctionUrlConfigResponseTypeDef](./type_defs.md#createfunctionurlconfigresponsetypedef)
-- [FunctionUrlConfigTypeDef](./type_defs.md#functionurlconfigtypedef)
-- [GetFunctionUrlConfigResponseTypeDef](./type_defs.md#getfunctionurlconfigresponsetypedef)
-- [UpdateFunctionUrlConfigRequestRequestTypeDef](./type_defs.md#updatefunctionurlconfigrequestrequesttypedef)
-- [UpdateFunctionUrlConfigResponseTypeDef](./type_defs.md#updatefunctionurlconfigresponsetypedef)
 - [CreateFunctionRequestRequestTypeDef](./type_defs.md#createfunctionrequestrequesttypedef)
 - [UpdateFunctionConfigurationRequestRequestTypeDef](./type_defs.md#updatefunctionconfigurationrequestrequesttypedef)
 - [DestinationConfigTypeDef](./type_defs.md#destinationconfigtypedef)
@@ -339,7 +296,6 @@ def get_value() -> AccountLimitTypeDef:
 - [ListCodeSigningConfigsRequestListCodeSigningConfigsPaginateTypeDef](./type_defs.md#listcodesigningconfigsrequestlistcodesigningconfigspaginatetypedef)
 - [ListEventSourceMappingsRequestListEventSourceMappingsPaginateTypeDef](./type_defs.md#listeventsourcemappingsrequestlisteventsourcemappingspaginatetypedef)
 - [ListFunctionEventInvokeConfigsRequestListFunctionEventInvokeConfigsPaginateTypeDef](./type_defs.md#listfunctioneventinvokeconfigsrequestlistfunctioneventinvokeconfigspaginatetypedef)
-- [ListFunctionUrlConfigsRequestListFunctionUrlConfigsPaginateTypeDef](./type_defs.md#listfunctionurlconfigsrequestlistfunctionurlconfigspaginatetypedef)
 - [ListFunctionsByCodeSigningConfigRequestListFunctionsByCodeSigningConfigPaginateTypeDef](./type_defs.md#listfunctionsbycodesigningconfigrequestlistfunctionsbycodesigningconfigpaginatetypedef)
 - [ListFunctionsRequestListFunctionsPaginateTypeDef](./type_defs.md#listfunctionsrequestlistfunctionspaginatetypedef)
 - [ListLayerVersionsRequestListLayerVersionsPaginateTypeDef](./type_defs.md#listlayerversionsrequestlistlayerversionspaginatetypedef)
@@ -352,7 +308,6 @@ def get_value() -> AccountLimitTypeDef:
 - [GetCodeSigningConfigResponseTypeDef](./type_defs.md#getcodesigningconfigresponsetypedef)
 - [ListCodeSigningConfigsResponseTypeDef](./type_defs.md#listcodesigningconfigsresponsetypedef)
 - [UpdateCodeSigningConfigResponseTypeDef](./type_defs.md#updatecodesigningconfigresponsetypedef)
-- [ListFunctionUrlConfigsResponseTypeDef](./type_defs.md#listfunctionurlconfigsresponsetypedef)
 - [FunctionEventInvokeConfigResponseMetadataTypeDef](./type_defs.md#functioneventinvokeconfigresponsemetadatatypedef)
 - [FunctionEventInvokeConfigTypeDef](./type_defs.md#functioneventinvokeconfigtypedef)
 - [PutFunctionEventInvokeConfigRequestRequestTypeDef](./type_defs.md#putfunctioneventinvokeconfigrequestrequesttypedef)

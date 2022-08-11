@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `MigrationHubRefactorSpaces`.
 
 ### From PyPI with pip
 
@@ -146,7 +141,6 @@ def get_value() -> ApiGatewayProxyConfigTypeDef:
 - [ErrorResponseTypeDef](./type_defs.md#errorresponsetypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [CreateEnvironmentRequestRequestTypeDef](./type_defs.md#createenvironmentrequestrequesttypedef)
-- [DefaultRouteInputTypeDef](./type_defs.md#defaultrouteinputtypedef)
 - [UriPathRouteInputTypeDef](./type_defs.md#uripathrouteinputtypedef)
 - [LambdaEndpointInputTypeDef](./type_defs.md#lambdaendpointinputtypedef)
 - [UrlEndpointInputTypeDef](./type_defs.md#urlendpointinputtypedef)
@@ -175,7 +169,6 @@ def get_value() -> ApiGatewayProxyConfigTypeDef:
 - [UrlEndpointSummaryTypeDef](./type_defs.md#urlendpointsummarytypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
-- [UpdateRouteRequestRequestTypeDef](./type_defs.md#updaterouterequestrequesttypedef)
 - [CreateApplicationRequestRequestTypeDef](./type_defs.md#createapplicationrequestrequesttypedef)
 - [ApplicationSummaryTypeDef](./type_defs.md#applicationsummarytypedef)
 - [EnvironmentSummaryTypeDef](./type_defs.md#environmentsummarytypedef)
@@ -191,7 +184,6 @@ def get_value() -> ApiGatewayProxyConfigTypeDef:
 - [GetResourcePolicyResponseTypeDef](./type_defs.md#getresourcepolicyresponsetypedef)
 - [GetRouteResponseTypeDef](./type_defs.md#getrouteresponsetypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
-- [UpdateRouteResponseTypeDef](./type_defs.md#updaterouteresponsetypedef)
 - [CreateRouteRequestRequestTypeDef](./type_defs.md#createrouterequestrequesttypedef)
 - [CreateRouteResponseTypeDef](./type_defs.md#createrouteresponsetypedef)
 - [CreateServiceRequestRequestTypeDef](./type_defs.md#createservicerequestrequesttypedef)

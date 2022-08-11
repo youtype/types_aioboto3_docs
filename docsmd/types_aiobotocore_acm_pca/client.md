@@ -83,21 +83,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("acm-pca").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_certificate\_authority
 
 Creates a root or subordinate private certificate authority (CA).
@@ -505,7 +490,7 @@ parent.get_policy(**kwargs)
 
 ### import\_certificate\_authority\_certificate
 
-Imports a signed private CA certificate into ACM Private CA.
+Imports a signed private CA certificate into Amazon Web Services Private CA.
 
 Type annotations and code completion for `#!python session.client("acm-pca").import_certificate_authority_certificate` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.import_certificate_authority_certificate)
@@ -739,7 +724,7 @@ parent.restore_certificate_authority(**kwargs)
 
 ### revoke\_certificate
 
-Revokes a certificate that was issued inside ACM Private CA.
+Revokes a certificate that was issued inside Amazon Web Services Private CA.
 
 Type annotations and code completion for `#!python session.client("acm-pca").revoke_certificate` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.revoke_certificate)

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `IoTEventsData`.
 
 ### From PyPI with pip
 
@@ -112,8 +107,6 @@ def get_value() -> AcknowledgeActionConfigurationTypeDef:
 - [AlarmSummaryTypeDef](./type_defs.md#alarmsummarytypedef)
 - [BatchAlarmActionErrorEntryTypeDef](./type_defs.md#batchalarmactionerrorentrytypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
-- [BatchDeleteDetectorErrorEntryTypeDef](./type_defs.md#batchdeletedetectorerrorentrytypedef)
-- [DeleteDetectorRequestTypeDef](./type_defs.md#deletedetectorrequesttypedef)
 - [DisableAlarmActionRequestTypeDef](./type_defs.md#disablealarmactionrequesttypedef)
 - [EnableAlarmActionRequestTypeDef](./type_defs.md#enablealarmactionrequesttypedef)
 - [BatchPutMessageErrorEntryTypeDef](./type_defs.md#batchputmessageerrorentrytypedef)
@@ -143,8 +136,6 @@ def get_value() -> AcknowledgeActionConfigurationTypeDef:
 - [BatchResetAlarmResponseTypeDef](./type_defs.md#batchresetalarmresponsetypedef)
 - [BatchSnoozeAlarmResponseTypeDef](./type_defs.md#batchsnoozealarmresponsetypedef)
 - [ListAlarmsResponseTypeDef](./type_defs.md#listalarmsresponsetypedef)
-- [BatchDeleteDetectorResponseTypeDef](./type_defs.md#batchdeletedetectorresponsetypedef)
-- [BatchDeleteDetectorRequestRequestTypeDef](./type_defs.md#batchdeletedetectorrequestrequesttypedef)
 - [BatchDisableAlarmRequestRequestTypeDef](./type_defs.md#batchdisablealarmrequestrequesttypedef)
 - [BatchEnableAlarmRequestRequestTypeDef](./type_defs.md#batchenablealarmrequestrequesttypedef)
 - [BatchPutMessageResponseTypeDef](./type_defs.md#batchputmessageresponsetypedef)

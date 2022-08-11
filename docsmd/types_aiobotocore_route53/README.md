@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Route53`.
 
 ### From PyPI with pip
 
@@ -71,15 +66,12 @@ Type annotations and code completion for
 from `#!python session.client("route53").get_paginator("...")`.
 
 ```python title="Usage example"
-from types_aiobotocore_route53.paginator import ListCidrBlocksPaginator
+from types_aiobotocore_route53.paginator import ListHealthChecksPaginator
 
-def get_list_cidr_blocks_paginator() -> ListCidrBlocksPaginator:
-    return client.get_paginator("list_cidr_blocks"))
+def get_list_health_checks_paginator() -> ListHealthChecksPaginator:
+    return client.get_paginator("list_health_checks"))
 ```
 
-- [ListCidrBlocksPaginator](./paginators.md#listcidrblockspaginator)
-- [ListCidrCollectionsPaginator](./paginators.md#listcidrcollectionspaginator)
-- [ListCidrLocationsPaginator](./paginators.md#listcidrlocationspaginator)
 - [ListHealthChecksPaginator](./paginators.md#listhealthcheckspaginator)
 - [ListHostedZonesPaginator](./paginators.md#listhostedzonespaginator)
 - [ListQueryLoggingConfigsPaginator](./paginators.md#listqueryloggingconfigspaginator)
@@ -123,16 +115,12 @@ def get_value() -> AccountLimitTypeType:
 - [AccountLimitTypeType](./literals.md#accountlimittypetype)
 - [ChangeActionType](./literals.md#changeactiontype)
 - [ChangeStatusType](./literals.md#changestatustype)
-- [CidrCollectionChangeActionType](./literals.md#cidrcollectionchangeactiontype)
 - [CloudWatchRegionType](./literals.md#cloudwatchregiontype)
 - [ComparisonOperatorType](./literals.md#comparisonoperatortype)
 - [HealthCheckRegionType](./literals.md#healthcheckregiontype)
 - [HealthCheckTypeType](./literals.md#healthchecktypetype)
 - [HostedZoneLimitTypeType](./literals.md#hostedzonelimittypetype)
 - [InsufficientDataHealthStatusType](./literals.md#insufficientdatahealthstatustype)
-- [ListCidrBlocksPaginatorName](./literals.md#listcidrblockspaginatorname)
-- [ListCidrCollectionsPaginatorName](./literals.md#listcidrcollectionspaginatorname)
-- [ListCidrLocationsPaginatorName](./literals.md#listcidrlocationspaginatorname)
 - [ListHealthChecksPaginatorName](./literals.md#listhealthcheckspaginatorname)
 - [ListHostedZonesPaginatorName](./literals.md#listhostedzonespaginatorname)
 - [ListQueryLoggingConfigsPaginatorName](./literals.md#listqueryloggingconfigspaginatorname)
@@ -177,14 +165,8 @@ def get_value() -> AccountLimitTypeDef:
 - [AlarmIdentifierTypeDef](./type_defs.md#alarmidentifiertypedef)
 - [AliasTargetTypeDef](./type_defs.md#aliastargettypedef)
 - [VPCTypeDef](./type_defs.md#vpctypedef)
-- [CidrCollectionChangeTypeDef](./type_defs.md#cidrcollectionchangetypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
-- [CidrBlockSummaryTypeDef](./type_defs.md#cidrblocksummarytypedef)
-- [CidrCollectionTypeDef](./type_defs.md#cidrcollectiontypedef)
-- [CidrRoutingConfigTypeDef](./type_defs.md#cidrroutingconfigtypedef)
 - [DimensionTypeDef](./type_defs.md#dimensiontypedef)
-- [CollectionSummaryTypeDef](./type_defs.md#collectionsummarytypedef)
-- [CreateCidrCollectionRequestRequestTypeDef](./type_defs.md#createcidrcollectionrequestrequesttypedef)
 - [HostedZoneConfigTypeDef](./type_defs.md#hostedzoneconfigtypedef)
 - [DelegationSetTypeDef](./type_defs.md#delegationsettypedef)
 - [CreateKeySigningKeyRequestRequestTypeDef](./type_defs.md#createkeysigningkeyrequestrequesttypedef)
@@ -199,7 +181,6 @@ def get_value() -> AccountLimitTypeDef:
 - [CreateTrafficPolicyVersionRequestRequestTypeDef](./type_defs.md#createtrafficpolicyversionrequestrequesttypedef)
 - [DNSSECStatusTypeDef](./type_defs.md#dnssecstatustypedef)
 - [DeactivateKeySigningKeyRequestRequestTypeDef](./type_defs.md#deactivatekeysigningkeyrequestrequesttypedef)
-- [DeleteCidrCollectionRequestRequestTypeDef](./type_defs.md#deletecidrcollectionrequestrequesttypedef)
 - [DeleteHealthCheckRequestRequestTypeDef](./type_defs.md#deletehealthcheckrequestrequesttypedef)
 - [DeleteHostedZoneRequestRequestTypeDef](./type_defs.md#deletehostedzonerequestrequesttypedef)
 - [DeleteKeySigningKeyRequestRequestTypeDef](./type_defs.md#deletekeysigningkeyrequestrequesttypedef)
@@ -231,12 +212,8 @@ def get_value() -> AccountLimitTypeDef:
 - [StatusReportTypeDef](./type_defs.md#statusreporttypedef)
 - [LinkedServiceTypeDef](./type_defs.md#linkedservicetypedef)
 - [HostedZoneOwnerTypeDef](./type_defs.md#hostedzoneownertypedef)
-- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
-- [ListCidrBlocksRequestRequestTypeDef](./type_defs.md#listcidrblocksrequestrequesttypedef)
-- [ListCidrCollectionsRequestRequestTypeDef](./type_defs.md#listcidrcollectionsrequestrequesttypedef)
-- [ListCidrLocationsRequestRequestTypeDef](./type_defs.md#listcidrlocationsrequestrequesttypedef)
-- [LocationSummaryTypeDef](./type_defs.md#locationsummarytypedef)
 - [ListGeoLocationsRequestRequestTypeDef](./type_defs.md#listgeolocationsrequestrequesttypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListHealthChecksRequestRequestTypeDef](./type_defs.md#listhealthchecksrequestrequesttypedef)
 - [ListHostedZonesByNameRequestRequestTypeDef](./type_defs.md#listhostedzonesbynamerequestrequesttypedef)
 - [ListHostedZonesByVPCRequestRequestTypeDef](./type_defs.md#listhostedzonesbyvpcrequestrequesttypedef)
@@ -260,7 +237,6 @@ def get_value() -> AccountLimitTypeDef:
 - [UpdateTrafficPolicyInstanceRequestRequestTypeDef](./type_defs.md#updatetrafficpolicyinstancerequestrequesttypedef)
 - [ActivateKeySigningKeyResponseTypeDef](./type_defs.md#activatekeysigningkeyresponsetypedef)
 - [AssociateVPCWithHostedZoneResponseTypeDef](./type_defs.md#associatevpcwithhostedzoneresponsetypedef)
-- [ChangeCidrCollectionResponseTypeDef](./type_defs.md#changecidrcollectionresponsetypedef)
 - [ChangeResourceRecordSetsResponseTypeDef](./type_defs.md#changeresourcerecordsetsresponsetypedef)
 - [DeactivateKeySigningKeyResponseTypeDef](./type_defs.md#deactivatekeysigningkeyresponsetypedef)
 - [DeleteHostedZoneResponseTypeDef](./type_defs.md#deletehostedzoneresponsetypedef)
@@ -283,13 +259,9 @@ def get_value() -> AccountLimitTypeDef:
 - [DeleteVPCAssociationAuthorizationRequestRequestTypeDef](./type_defs.md#deletevpcassociationauthorizationrequestrequesttypedef)
 - [DisassociateVPCFromHostedZoneRequestRequestTypeDef](./type_defs.md#disassociatevpcfromhostedzonerequestrequesttypedef)
 - [ListVPCAssociationAuthorizationsResponseTypeDef](./type_defs.md#listvpcassociationauthorizationsresponsetypedef)
-- [ChangeCidrCollectionRequestRequestTypeDef](./type_defs.md#changecidrcollectionrequestrequesttypedef)
 - [ChangeTagsForResourceRequestRequestTypeDef](./type_defs.md#changetagsforresourcerequestrequesttypedef)
 - [ResourceTagSetTypeDef](./type_defs.md#resourcetagsettypedef)
-- [ListCidrBlocksResponseTypeDef](./type_defs.md#listcidrblocksresponsetypedef)
-- [CreateCidrCollectionResponseTypeDef](./type_defs.md#createcidrcollectionresponsetypedef)
 - [CloudWatchAlarmConfigurationTypeDef](./type_defs.md#cloudwatchalarmconfigurationtypedef)
-- [ListCidrCollectionsResponseTypeDef](./type_defs.md#listcidrcollectionsresponsetypedef)
 - [CreateHostedZoneRequestRequestTypeDef](./type_defs.md#createhostedzonerequestrequesttypedef)
 - [CreateReusableDelegationSetResponseTypeDef](./type_defs.md#createreusabledelegationsetresponsetypedef)
 - [GetReusableDelegationSetResponseTypeDef](./type_defs.md#getreusabledelegationsetresponsetypedef)
@@ -318,15 +290,11 @@ def get_value() -> AccountLimitTypeDef:
 - [HealthCheckObservationTypeDef](./type_defs.md#healthcheckobservationtypedef)
 - [HostedZoneTypeDef](./type_defs.md#hostedzonetypedef)
 - [HostedZoneSummaryTypeDef](./type_defs.md#hostedzonesummarytypedef)
-- [ListCidrBlocksRequestListCidrBlocksPaginateTypeDef](./type_defs.md#listcidrblocksrequestlistcidrblockspaginatetypedef)
-- [ListCidrCollectionsRequestListCidrCollectionsPaginateTypeDef](./type_defs.md#listcidrcollectionsrequestlistcidrcollectionspaginatetypedef)
-- [ListCidrLocationsRequestListCidrLocationsPaginateTypeDef](./type_defs.md#listcidrlocationsrequestlistcidrlocationspaginatetypedef)
 - [ListHealthChecksRequestListHealthChecksPaginateTypeDef](./type_defs.md#listhealthchecksrequestlisthealthcheckspaginatetypedef)
 - [ListHostedZonesRequestListHostedZonesPaginateTypeDef](./type_defs.md#listhostedzonesrequestlisthostedzonespaginatetypedef)
 - [ListQueryLoggingConfigsRequestListQueryLoggingConfigsPaginateTypeDef](./type_defs.md#listqueryloggingconfigsrequestlistqueryloggingconfigspaginatetypedef)
 - [ListResourceRecordSetsRequestListResourceRecordSetsPaginateTypeDef](./type_defs.md#listresourcerecordsetsrequestlistresourcerecordsetspaginatetypedef)
 - [ListVPCAssociationAuthorizationsRequestListVPCAssociationAuthorizationsPaginateTypeDef](./type_defs.md#listvpcassociationauthorizationsrequestlistvpcassociationauthorizationspaginatetypedef)
-- [ListCidrLocationsResponseTypeDef](./type_defs.md#listcidrlocationsresponsetypedef)
 - [ListTrafficPoliciesResponseTypeDef](./type_defs.md#listtrafficpoliciesresponsetypedef)
 - [ResourceRecordSetTypeDef](./type_defs.md#resourcerecordsettypedef)
 - [CreateHealthCheckRequestRequestTypeDef](./type_defs.md#createhealthcheckrequestrequesttypedef)

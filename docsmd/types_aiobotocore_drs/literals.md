@@ -203,22 +203,6 @@ EC2InstanceStateType = Literal[
     "TERMINATED",
 ]
 ```
-## ExtensionStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_drs.literals import ExtensionStatusType
-
-def get_value() -> ExtensionStatusType:
-    return "EXTENDED"
-```
-
-```python title="Definition"
-ExtensionStatusType = Literal[
-    "EXTENDED",
-    "EXTENSION_ERROR",
-    "NOT_EXTENDED",
-]
-```
 ## FailbackReplicationErrorType
 
 ```python title="Usage Example"
@@ -274,7 +258,6 @@ InitiatedByType = Literal[
     "FAILBACK",
     "START_DRILL",
     "START_RECOVERY",
-    "TARGET_ACCOUNT",
     "TERMINATE_RECOVERY_INSTANCES",
 ]
 ```
@@ -330,12 +313,11 @@ JobStatusType = Literal[
 from types_aiobotocore_drs.literals import JobTypeType
 
 def get_value() -> JobTypeType:
-    return "CREATE_CONVERTED_SNAPSHOT"
+    return "LAUNCH"
 ```
 
 ```python title="Definition"
 JobTypeType = Literal[
-    "CREATE_CONVERTED_SNAPSHOT",
     "LAUNCH",
     "TERMINATE",
 ]
@@ -403,34 +385,6 @@ LaunchStatusType = Literal[
     "LAUNCHED",
     "PENDING",
     "TERMINATED",
-]
-```
-## ListExtensibleSourceServersPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_drs.literals import ListExtensibleSourceServersPaginatorName
-
-def get_value() -> ListExtensibleSourceServersPaginatorName:
-    return "list_extensible_source_servers"
-```
-
-```python title="Definition"
-ListExtensibleSourceServersPaginatorName = Literal[
-    "list_extensible_source_servers",
-]
-```
-## ListStagingAccountsPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_drs.literals import ListStagingAccountsPaginatorName
-
-def get_value() -> ListStagingAccountsPaginatorName:
-    return "list_staging_accounts"
-```
-
-```python title="Definition"
-ListStagingAccountsPaginatorName = Literal[
-    "list_staging_accounts",
 ]
 ```
 ## PITPolicyRuleUnitsType
@@ -667,7 +621,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -700,7 +653,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -737,7 +689,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -751,7 +702,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -785,7 +735,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -811,7 +760,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -855,7 +803,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -868,13 +815,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -983,8 +928,6 @@ PaginatorName = Literal[
     "describe_recovery_snapshots",
     "describe_replication_configuration_templates",
     "describe_source_servers",
-    "list_extensible_source_servers",
-    "list_staging_accounts",
 ]
 ```
 ## RegionName
@@ -993,31 +936,19 @@ PaginatorName = Literal[
 from types_aiobotocore_drs.literals import RegionName
 
 def get_value() -> RegionName:
-    return "af-south-1"
+    return "ap-northeast-1"
 ```
 
 ```python title="Definition"
 RegionName = Literal[
-    "af-south-1",
-    "ap-east-1",
     "ap-northeast-1",
-    "ap-northeast-2",
-    "ap-northeast-3",
-    "ap-south-1",
     "ap-southeast-1",
     "ap-southeast-2",
-    "ca-central-1",
     "eu-central-1",
-    "eu-north-1",
-    "eu-south-1",
     "eu-west-1",
     "eu-west-2",
-    "eu-west-3",
-    "me-south-1",
-    "sa-east-1",
     "us-east-1",
     "us-east-2",
-    "us-west-1",
     "us-west-2",
 ]
 ```

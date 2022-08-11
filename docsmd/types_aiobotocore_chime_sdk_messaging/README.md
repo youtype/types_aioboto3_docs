@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ChimeSDKMessaging`.
 
 ### From PyPI with pip
 
@@ -92,8 +87,6 @@ def get_value() -> AllowNotificationsType:
 - [FallbackActionType](./literals.md#fallbackactiontype)
 - [InvocationTypeType](./literals.md#invocationtypetype)
 - [PushNotificationTypeType](./literals.md#pushnotificationtypetype)
-- [SearchFieldKeyType](./literals.md#searchfieldkeytype)
-- [SearchFieldOperatorType](./literals.md#searchfieldoperatortype)
 - [SortOrderType](./literals.md#sortordertype)
 - [ChimeSDKMessagingServiceName](./literals.md#chimesdkmessagingservicename)
 - [ServiceName](./literals.md#servicename)
@@ -162,7 +155,6 @@ def get_value() -> AppInstanceUserMembershipSummaryTypeDef:
 - [ListChannelsRequestRequestTypeDef](./type_defs.md#listchannelsrequestrequesttypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [RedactChannelMessageRequestRequestTypeDef](./type_defs.md#redactchannelmessagerequestrequesttypedef)
-- [SearchFieldTypeDef](./type_defs.md#searchfieldtypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [UpdateChannelMessageRequestRequestTypeDef](./type_defs.md#updatechannelmessagerequestrequesttypedef)
 - [UpdateChannelReadMarkerRequestRequestTypeDef](./type_defs.md#updatechannelreadmarkerrequestrequesttypedef)
@@ -190,7 +182,6 @@ def get_value() -> AppInstanceUserMembershipSummaryTypeDef:
 - [ChannelMembershipForAppInstanceUserSummaryTypeDef](./type_defs.md#channelmembershipforappinstanceusersummarytypedef)
 - [ChannelModeratedByAppInstanceUserSummaryTypeDef](./type_defs.md#channelmoderatedbyappinstanceusersummarytypedef)
 - [ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef)
-- [SearchChannelsResponseTypeDef](./type_defs.md#searchchannelsresponsetypedef)
 - [ChannelMembershipPreferencesTypeDef](./type_defs.md#channelmembershippreferencestypedef)
 - [ChannelMessageCallbackTypeDef](./type_defs.md#channelmessagecallbacktypedef)
 - [SendChannelMessageRequestRequestTypeDef](./type_defs.md#sendchannelmessagerequestrequesttypedef)
@@ -204,7 +195,6 @@ def get_value() -> AppInstanceUserMembershipSummaryTypeDef:
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [GetMessagingSessionEndpointResponseTypeDef](./type_defs.md#getmessagingsessionendpointresponsetypedef)
 - [ProcessorConfigurationTypeDef](./type_defs.md#processorconfigurationtypedef)
-- [SearchChannelsRequestRequestTypeDef](./type_defs.md#searchchannelsrequestrequesttypedef)
 - [BatchCreateChannelMembershipResponseTypeDef](./type_defs.md#batchcreatechannelmembershipresponsetypedef)
 - [ListChannelBansResponseTypeDef](./type_defs.md#listchannelbansresponsetypedef)
 - [DescribeChannelBanResponseTypeDef](./type_defs.md#describechannelbanresponsetypedef)

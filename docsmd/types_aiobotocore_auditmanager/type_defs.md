@@ -77,14 +77,13 @@ from types_aiobotocore_auditmanager.type_defs import RoleTypeDef
 def get_value() -> RoleTypeDef:
     return {
         "roleType": ...,
-        "roleArn": ...,
     }
 ```
 
 ```python title="Definition"
 class RoleTypeDef(TypedDict):
-    roleType: RoleTypeType,  # (1)
-    roleArn: str,
+    roleType: NotRequired[RoleTypeType],  # (1)
+    roleArn: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: RoleTypeType](./literals.md#roletypetype) 

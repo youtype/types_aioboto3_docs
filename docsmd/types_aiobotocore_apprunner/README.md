@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `AppRunner`.
 
 ### From PyPI with pip
 
@@ -89,14 +84,12 @@ def get_value() -> AutoScalingConfigurationStatusType:
 - [EgressTypeType](./literals.md#egresstypetype)
 - [HealthCheckProtocolType](./literals.md#healthcheckprotocoltype)
 - [ImageRepositoryTypeType](./literals.md#imagerepositorytypetype)
-- [ObservabilityConfigurationStatusType](./literals.md#observabilityconfigurationstatustype)
 - [OperationStatusType](./literals.md#operationstatustype)
 - [OperationTypeType](./literals.md#operationtypetype)
 - [ProviderTypeType](./literals.md#providertypetype)
 - [RuntimeType](./literals.md#runtimetype)
 - [ServiceStatusType](./literals.md#servicestatustype)
 - [SourceCodeVersionTypeType](./literals.md#sourcecodeversiontypetype)
-- [TracingVendorType](./literals.md#tracingvendortype)
 - [VpcConnectorStatusType](./literals.md#vpcconnectorstatustype)
 - [AppRunnerServiceName](./literals.md#apprunnerservicename)
 - [ServiceName](./literals.md#servicename)
@@ -131,20 +124,16 @@ def get_value() -> AssociateCustomDomainRequestRequestTypeDef:
 - [ConnectionSummaryTypeDef](./type_defs.md#connectionsummarytypedef)
 - [ConnectionTypeDef](./type_defs.md#connectiontypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
-- [TraceConfigurationTypeDef](./type_defs.md#traceconfigurationtypedef)
 - [EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef)
 - [HealthCheckConfigurationTypeDef](./type_defs.md#healthcheckconfigurationtypedef)
 - [InstanceConfigurationTypeDef](./type_defs.md#instanceconfigurationtypedef)
-- [ServiceObservabilityConfigurationTypeDef](./type_defs.md#serviceobservabilityconfigurationtypedef)
 - [VpcConnectorTypeDef](./type_defs.md#vpcconnectortypedef)
 - [DeleteAutoScalingConfigurationRequestRequestTypeDef](./type_defs.md#deleteautoscalingconfigurationrequestrequesttypedef)
 - [DeleteConnectionRequestRequestTypeDef](./type_defs.md#deleteconnectionrequestrequesttypedef)
-- [DeleteObservabilityConfigurationRequestRequestTypeDef](./type_defs.md#deleteobservabilityconfigurationrequestrequesttypedef)
 - [DeleteServiceRequestRequestTypeDef](./type_defs.md#deleteservicerequestrequesttypedef)
 - [DeleteVpcConnectorRequestRequestTypeDef](./type_defs.md#deletevpcconnectorrequestrequesttypedef)
 - [DescribeAutoScalingConfigurationRequestRequestTypeDef](./type_defs.md#describeautoscalingconfigurationrequestrequesttypedef)
 - [DescribeCustomDomainsRequestRequestTypeDef](./type_defs.md#describecustomdomainsrequestrequesttypedef)
-- [DescribeObservabilityConfigurationRequestRequestTypeDef](./type_defs.md#describeobservabilityconfigurationrequestrequesttypedef)
 - [DescribeServiceRequestRequestTypeDef](./type_defs.md#describeservicerequestrequesttypedef)
 - [DescribeVpcConnectorRequestRequestTypeDef](./type_defs.md#describevpcconnectorrequestrequesttypedef)
 - [DisassociateCustomDomainRequestRequestTypeDef](./type_defs.md#disassociatecustomdomainrequestrequesttypedef)
@@ -152,8 +141,6 @@ def get_value() -> AssociateCustomDomainRequestRequestTypeDef:
 - [ImageConfigurationTypeDef](./type_defs.md#imageconfigurationtypedef)
 - [ListAutoScalingConfigurationsRequestRequestTypeDef](./type_defs.md#listautoscalingconfigurationsrequestrequesttypedef)
 - [ListConnectionsRequestRequestTypeDef](./type_defs.md#listconnectionsrequestrequesttypedef)
-- [ListObservabilityConfigurationsRequestRequestTypeDef](./type_defs.md#listobservabilityconfigurationsrequestrequesttypedef)
-- [ObservabilityConfigurationSummaryTypeDef](./type_defs.md#observabilityconfigurationsummarytypedef)
 - [ListOperationsRequestRequestTypeDef](./type_defs.md#listoperationsrequestrequesttypedef)
 - [OperationSummaryTypeDef](./type_defs.md#operationsummarytypedef)
 - [ListServicesRequestRequestTypeDef](./type_defs.md#listservicesrequestrequesttypedef)
@@ -179,24 +166,18 @@ def get_value() -> AssociateCustomDomainRequestRequestTypeDef:
 - [CreateVpcConnectorRequestRequestTypeDef](./type_defs.md#createvpcconnectorrequestrequesttypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
-- [CreateObservabilityConfigurationRequestRequestTypeDef](./type_defs.md#createobservabilityconfigurationrequestrequesttypedef)
-- [ObservabilityConfigurationTypeDef](./type_defs.md#observabilityconfigurationtypedef)
 - [CreateVpcConnectorResponseTypeDef](./type_defs.md#createvpcconnectorresponsetypedef)
 - [DeleteVpcConnectorResponseTypeDef](./type_defs.md#deletevpcconnectorresponsetypedef)
 - [DescribeVpcConnectorResponseTypeDef](./type_defs.md#describevpcconnectorresponsetypedef)
 - [ListVpcConnectorsResponseTypeDef](./type_defs.md#listvpcconnectorsresponsetypedef)
 - [NetworkConfigurationTypeDef](./type_defs.md#networkconfigurationtypedef)
 - [ImageRepositoryTypeDef](./type_defs.md#imagerepositorytypedef)
-- [ListObservabilityConfigurationsResponseTypeDef](./type_defs.md#listobservabilityconfigurationsresponsetypedef)
 - [ListOperationsResponseTypeDef](./type_defs.md#listoperationsresponsetypedef)
 - [ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef)
 - [AssociateCustomDomainResponseTypeDef](./type_defs.md#associatecustomdomainresponsetypedef)
 - [DescribeCustomDomainsResponseTypeDef](./type_defs.md#describecustomdomainsresponsetypedef)
 - [DisassociateCustomDomainResponseTypeDef](./type_defs.md#disassociatecustomdomainresponsetypedef)
 - [CodeRepositoryTypeDef](./type_defs.md#coderepositorytypedef)
-- [CreateObservabilityConfigurationResponseTypeDef](./type_defs.md#createobservabilityconfigurationresponsetypedef)
-- [DeleteObservabilityConfigurationResponseTypeDef](./type_defs.md#deleteobservabilityconfigurationresponsetypedef)
-- [DescribeObservabilityConfigurationResponseTypeDef](./type_defs.md#describeobservabilityconfigurationresponsetypedef)
 - [SourceConfigurationTypeDef](./type_defs.md#sourceconfigurationtypedef)
 - [CreateServiceRequestRequestTypeDef](./type_defs.md#createservicerequestrequesttypedef)
 - [ServiceTypeDef](./type_defs.md#servicetypedef)

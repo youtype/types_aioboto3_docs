@@ -785,7 +785,6 @@ await def wait(
     KeyNames: Sequence[str] = ...,
     KeyPairIds: Sequence[str] = ...,
     DryRun: bool = ...,
-    IncludePublicKey: bool = ...,
     WaiterConfig: WaiterConfigTypeDef = ...,  # (2)
 ) -> None:
     ...
@@ -855,57 +854,6 @@ parent.wait(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeNatGatewaysRequestNatGatewayAvailableWaitTypeDef](./type_defs.md#describenatgatewaysrequestnatgatewayavailablewaittypedef) 
-## NatGatewayDeletedWaiter
-
-Type annotations and code completion for `#!python session.client("ec2").get_waiter("nat_gateway_deleted")`.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Waiter.NatGatewayDeleted)
-
-```python title="Usage example"
-from aioboto3.session import Session
-
-from types_aiobotocore_ec2.waiter import NatGatewayDeletedWaiter
-
-session = get_session()
-async with session.client("ec2") as client:  # (1)
-    waiter: NatGatewayDeletedWaiter = client.get_waiter("nat_gateway_deleted")  # (2)
-    await waiter.wait()
-```
-
-1. client: [EC2Client](./client.md)
-2. waiter: [NatGatewayDeletedWaiter](./waiters.md#natgatewaydeletedwaiter)
-
-
-### wait
-
-Type annotations and code completion for `#!python NatGatewayDeletedWaiter.wait` method.
-
-```python title="Method definition"
-await def wait(
-    self,
-    *,
-    DryRun: bool = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    MaxResults: int = ...,
-    NatGatewayIds: Sequence[str] = ...,
-    NextToken: str = ...,
-    WaiterConfig: WaiterConfigTypeDef = ...,  # (2)
-) -> None:
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeNatGatewaysRequestNatGatewayDeletedWaitTypeDef = {  # (1)
-    "DryRun": ...,
-}
-
-parent.wait(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeNatGatewaysRequestNatGatewayDeletedWaitTypeDef](./type_defs.md#describenatgatewaysrequestnatgatewaydeletedwaittypedef) 
 ## NetworkInterfaceAvailableWaiter
 
 Type annotations and code completion for `#!python session.client("ec2").get_waiter("network_interface_available")`.

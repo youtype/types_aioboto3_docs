@@ -78,10 +78,6 @@ CustomerMasterKeySpecType = Literal[
     "ECC_NIST_P384",
     "ECC_NIST_P521",
     "ECC_SECG_P256K1",
-    "HMAC_224",
-    "HMAC_256",
-    "HMAC_384",
-    "HMAC_512",
     "RSA_2048",
     "RSA_3072",
     "RSA_4096",
@@ -173,14 +169,12 @@ GrantOperationType = Literal[
     "GenerateDataKeyPair",
     "GenerateDataKeyPairWithoutPlaintext",
     "GenerateDataKeyWithoutPlaintext",
-    "GenerateMac",
     "GetPublicKey",
     "ReEncryptFrom",
     "ReEncryptTo",
     "RetireGrant",
     "Sign",
     "Verify",
-    "VerifyMac",
 ]
 ```
 ## KeyManagerTypeType
@@ -213,10 +207,6 @@ KeySpecType = Literal[
     "ECC_NIST_P384",
     "ECC_NIST_P521",
     "ECC_SECG_P256K1",
-    "HMAC_224",
-    "HMAC_256",
-    "HMAC_384",
-    "HMAC_512",
     "RSA_2048",
     "RSA_3072",
     "RSA_4096",
@@ -256,7 +246,6 @@ def get_value() -> KeyUsageTypeType:
 ```python title="Definition"
 KeyUsageTypeType = Literal[
     "ENCRYPT_DECRYPT",
-    "GENERATE_VERIFY_MAC",
     "SIGN_VERIFY",
 ]
 ```
@@ -314,23 +303,6 @@ def get_value() -> ListKeysPaginatorName:
 ```python title="Definition"
 ListKeysPaginatorName = Literal[
     "list_keys",
-]
-```
-## MacAlgorithmSpecType
-
-```python title="Usage Example"
-from types_aiobotocore_kms.literals import MacAlgorithmSpecType
-
-def get_value() -> MacAlgorithmSpecType:
-    return "HMAC_SHA_224"
-```
-
-```python title="Definition"
-MacAlgorithmSpecType = Literal[
-    "HMAC_SHA_224",
-    "HMAC_SHA_256",
-    "HMAC_SHA_384",
-    "HMAC_SHA_512",
 ]
 ```
 ## MessageTypeType
@@ -476,7 +448,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -509,7 +480,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -546,7 +516,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -560,7 +529,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -594,7 +562,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -620,7 +587,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -664,7 +630,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -677,13 +642,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

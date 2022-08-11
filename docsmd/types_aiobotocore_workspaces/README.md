@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `WorkSpaces`.
 
 ### From PyPI with pip
 
@@ -107,7 +102,6 @@ def get_value() -> AccessPropertyValueType:
 - [AccessPropertyValueType](./literals.md#accesspropertyvaluetype)
 - [ApplicationType](./literals.md#applicationtype)
 - [AssociationStatusType](./literals.md#associationstatustype)
-- [ClientDeviceTypeType](./literals.md#clientdevicetypetype)
 - [ComputeType](./literals.md#computetype)
 - [ConnectionAliasStateType](./literals.md#connectionaliasstatetype)
 - [ConnectionStateType](./literals.md#connectionstatetype)
@@ -172,10 +166,7 @@ def get_value() -> AccountModificationTypeDef:
 - [CreateConnectClientAddInRequestRequestTypeDef](./type_defs.md#createconnectclientaddinrequestrequesttypedef)
 - [RootStorageTypeDef](./type_defs.md#rootstoragetypedef)
 - [UserStorageTypeDef](./type_defs.md#userstoragetypedef)
-- [DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef)
-- [DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef)
 - [DefaultWorkspaceCreationPropertiesTypeDef](./type_defs.md#defaultworkspacecreationpropertiestypedef)
-- [DeleteClientBrandingRequestRequestTypeDef](./type_defs.md#deleteclientbrandingrequestrequesttypedef)
 - [DeleteConnectClientAddInRequestRequestTypeDef](./type_defs.md#deleteconnectclientaddinrequestrequesttypedef)
 - [DeleteConnectionAliasRequestRequestTypeDef](./type_defs.md#deleteconnectionaliasrequestrequesttypedef)
 - [DeleteIpGroupRequestRequestTypeDef](./type_defs.md#deleteipgrouprequestrequesttypedef)
@@ -185,8 +176,6 @@ def get_value() -> AccountModificationTypeDef:
 - [DeregisterWorkspaceDirectoryRequestRequestTypeDef](./type_defs.md#deregisterworkspacedirectoryrequestrequesttypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [DescribeAccountModificationsRequestRequestTypeDef](./type_defs.md#describeaccountmodificationsrequestrequesttypedef)
-- [DescribeClientBrandingRequestRequestTypeDef](./type_defs.md#describeclientbrandingrequestrequesttypedef)
-- [IosClientBrandingAttributesTypeDef](./type_defs.md#iosclientbrandingattributestypedef)
 - [DescribeClientPropertiesRequestRequestTypeDef](./type_defs.md#describeclientpropertiesrequestrequesttypedef)
 - [DescribeConnectClientAddInsRequestRequestTypeDef](./type_defs.md#describeconnectclientaddinsrequestrequesttypedef)
 - [DescribeConnectionAliasPermissionsRequestRequestTypeDef](./type_defs.md#describeconnectionaliaspermissionsrequestrequesttypedef)
@@ -206,7 +195,6 @@ def get_value() -> AccountModificationTypeDef:
 - [DisassociateConnectionAliasRequestRequestTypeDef](./type_defs.md#disassociateconnectionaliasrequestrequesttypedef)
 - [DisassociateIpGroupsRequestRequestTypeDef](./type_defs.md#disassociateipgroupsrequestrequesttypedef)
 - [FailedWorkspaceChangeRequestTypeDef](./type_defs.md#failedworkspacechangerequesttypedef)
-- [IosImportClientBrandingAttributesTypeDef](./type_defs.md#iosimportclientbrandingattributestypedef)
 - [ListAvailableManagementCidrRangesRequestRequestTypeDef](./type_defs.md#listavailablemanagementcidrrangesrequestrequesttypedef)
 - [MigrateWorkspaceRequestRequestTypeDef](./type_defs.md#migrateworkspacerequestrequesttypedef)
 - [ModificationStateTypeDef](./type_defs.md#modificationstatetypedef)
@@ -266,8 +254,6 @@ def get_value() -> AccountModificationTypeDef:
 - [DescribeWorkspacesConnectionStatusRequestDescribeWorkspacesConnectionStatusPaginateTypeDef](./type_defs.md#describeworkspacesconnectionstatusrequestdescribeworkspacesconnectionstatuspaginatetypedef)
 - [DescribeWorkspacesRequestDescribeWorkspacesPaginateTypeDef](./type_defs.md#describeworkspacesrequestdescribeworkspacespaginatetypedef)
 - [ListAvailableManagementCidrRangesRequestListAvailableManagementCidrRangesPaginateTypeDef](./type_defs.md#listavailablemanagementcidrrangesrequestlistavailablemanagementcidrrangespaginatetypedef)
-- [DescribeClientBrandingResultTypeDef](./type_defs.md#describeclientbrandingresulttypedef)
-- [ImportClientBrandingResultTypeDef](./type_defs.md#importclientbrandingresulttypedef)
 - [DescribeWorkspaceImagePermissionsResultTypeDef](./type_defs.md#describeworkspaceimagepermissionsresulttypedef)
 - [DescribeWorkspaceSnapshotsResultTypeDef](./type_defs.md#describeworkspacesnapshotsresulttypedef)
 - [DescribeWorkspacesConnectionStatusResultTypeDef](./type_defs.md#describeworkspacesconnectionstatusresulttypedef)
@@ -276,7 +262,6 @@ def get_value() -> AccountModificationTypeDef:
 - [StartWorkspacesResultTypeDef](./type_defs.md#startworkspacesresulttypedef)
 - [StopWorkspacesResultTypeDef](./type_defs.md#stopworkspacesresulttypedef)
 - [TerminateWorkspacesResultTypeDef](./type_defs.md#terminateworkspacesresulttypedef)
-- [ImportClientBrandingRequestRequestTypeDef](./type_defs.md#importclientbrandingrequestrequesttypedef)
 - [ModifySelfservicePermissionsRequestRequestTypeDef](./type_defs.md#modifyselfservicepermissionsrequestrequesttypedef)
 - [ModifyWorkspaceAccessPropertiesRequestRequestTypeDef](./type_defs.md#modifyworkspaceaccesspropertiesrequestrequesttypedef)
 - [WorkspaceDirectoryTypeDef](./type_defs.md#workspacedirectorytypedef)

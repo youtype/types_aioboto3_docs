@@ -126,47 +126,6 @@ class RootCauseTypeDef(TypedDict):
     UsageType: NotRequired[str],
 ```
 
-## CostAllocationTagStatusEntryTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import CostAllocationTagStatusEntryTypeDef
-
-def get_value() -> CostAllocationTagStatusEntryTypeDef:
-    return {
-        "TagKey": ...,
-        "Status": ...,
-    }
-```
-
-```python title="Definition"
-class CostAllocationTagStatusEntryTypeDef(TypedDict):
-    TagKey: str,
-    Status: CostAllocationTagStatusType,  # (1)
-```
-
-1. See [:material-code-brackets: CostAllocationTagStatusType](./literals.md#costallocationtagstatustype) 
-## CostAllocationTagTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import CostAllocationTagTypeDef
-
-def get_value() -> CostAllocationTagTypeDef:
-    return {
-        "TagKey": ...,
-        "Type": ...,
-        "Status": ...,
-    }
-```
-
-```python title="Definition"
-class CostAllocationTagTypeDef(TypedDict):
-    TagKey: str,
-    Type: CostAllocationTagTypeType,  # (1)
-    Status: CostAllocationTagStatusType,  # (2)
-```
-
-1. See [:material-code-brackets: CostAllocationTagTypeType](./literals.md#costallocationtagtypetype) 
-2. See [:material-code-brackets: CostAllocationTagStatusType](./literals.md#costallocationtagstatustype) 
 ## CostCategoryInheritedValueDimensionTypeDef
 
 ```python title="Usage Example"
@@ -312,24 +271,6 @@ class CoverageNormalizedUnitsTypeDef(TypedDict):
     ReservedNormalizedUnits: NotRequired[str],
     TotalRunningNormalizedUnits: NotRequired[str],
     CoverageNormalizedUnitsPercentage: NotRequired[str],
-```
-
-## ResourceTagTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import ResourceTagTypeDef
-
-def get_value() -> ResourceTagTypeDef:
-    return {
-        "Key": ...,
-        "Value": ...,
-    }
-```
-
-```python title="Definition"
-class ResourceTagTypeDef(TypedDict):
-    Key: str,
-    Value: str,
 ```
 
 ## ResponseMetadataTypeDef
@@ -950,28 +891,6 @@ class RedshiftInstanceDetailsTypeDef(TypedDict):
     SizeFlexEligible: NotRequired[bool],
 ```
 
-## ListCostAllocationTagsRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import ListCostAllocationTagsRequestRequestTypeDef
-
-def get_value() -> ListCostAllocationTagsRequestRequestTypeDef:
-    return {
-        "Status": ...,
-    }
-```
-
-```python title="Definition"
-class ListCostAllocationTagsRequestRequestTypeDef(TypedDict):
-    Status: NotRequired[CostAllocationTagStatusType],  # (1)
-    TagKeys: NotRequired[Sequence[str]],
-    Type: NotRequired[CostAllocationTagTypeType],  # (2)
-    NextToken: NotRequired[str],
-    MaxResults: NotRequired[int],
-```
-
-1. See [:material-code-brackets: CostAllocationTagStatusType](./literals.md#costallocationtagstatustype) 
-2. See [:material-code-brackets: CostAllocationTagTypeType](./literals.md#costallocationtagtypetype) 
 ## ListCostCategoryDefinitionsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -988,22 +907,6 @@ class ListCostCategoryDefinitionsRequestRequestTypeDef(TypedDict):
     EffectiveOn: NotRequired[str],
     NextToken: NotRequired[str],
     MaxResults: NotRequired[int],
-```
-
-## ListTagsForResourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import ListTagsForResourceRequestRequestTypeDef
-
-def get_value() -> ListTagsForResourceRequestRequestTypeDef:
-    return {
-        "ResourceArn": ...,
-    }
-```
-
-```python title="Definition"
-class ListTagsForResourceRequestRequestTypeDef(TypedDict):
-    ResourceArn: str,
 ```
 
 ## ProvideAnomalyFeedbackRequestRequestTypeDef
@@ -1177,24 +1080,6 @@ class SavingsPlansUtilizationTypeDef(TypedDict):
     UtilizationPercentage: NotRequired[str],
 ```
 
-## UntagResourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import UntagResourceRequestRequestTypeDef
-
-def get_value() -> UntagResourceRequestRequestTypeDef:
-    return {
-        "ResourceArn": ...,
-        "ResourceTagKeys": ...,
-    }
-```
-
-```python title="Definition"
-class UntagResourceRequestRequestTypeDef(TypedDict):
-    ResourceArn: str,
-    ResourceTagKeys: Sequence[str],
-```
-
 ## UpdateAnomalyMonitorRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1212,24 +1097,23 @@ class UpdateAnomalyMonitorRequestRequestTypeDef(TypedDict):
     MonitorName: NotRequired[str],
 ```
 
-## UpdateCostAllocationTagsStatusErrorTypeDef
+## CreateAnomalyMonitorRequestRequestTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import UpdateCostAllocationTagsStatusErrorTypeDef
+from types_aiobotocore_ce.type_defs import CreateAnomalyMonitorRequestRequestTypeDef
 
-def get_value() -> UpdateCostAllocationTagsStatusErrorTypeDef:
+def get_value() -> CreateAnomalyMonitorRequestRequestTypeDef:
     return {
-        "TagKey": ...,
+        "AnomalyMonitor": ...,
     }
 ```
 
 ```python title="Definition"
-class UpdateCostAllocationTagsStatusErrorTypeDef(TypedDict):
-    TagKey: NotRequired[str],
-    Code: NotRequired[str],
-    Message: NotRequired[str],
+class CreateAnomalyMonitorRequestRequestTypeDef(TypedDict):
+    AnomalyMonitor: AnomalyMonitorTypeDef,  # (1)
 ```
 
+1. See [:material-code-braces: AnomalyMonitorTypeDef](./type_defs.md#anomalymonitortypedef) 
 ## AnomalySubscriptionTypeDef
 
 ```python title="Usage Example"
@@ -1312,23 +1196,6 @@ class AnomalyTypeDef(TypedDict):
 2. See [:material-code-braces: AnomalyScoreTypeDef](./type_defs.md#anomalyscoretypedef) 
 3. See [:material-code-braces: ImpactTypeDef](./type_defs.md#impacttypedef) 
 4. See [:material-code-brackets: AnomalyFeedbackTypeType](./literals.md#anomalyfeedbacktypetype) 
-## UpdateCostAllocationTagsStatusRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import UpdateCostAllocationTagsStatusRequestRequestTypeDef
-
-def get_value() -> UpdateCostAllocationTagsStatusRequestRequestTypeDef:
-    return {
-        "CostAllocationTagsStatus": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateCostAllocationTagsStatusRequestRequestTypeDef(TypedDict):
-    CostAllocationTagsStatus: Sequence[CostAllocationTagStatusEntryTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: CostAllocationTagStatusEntryTypeDef](./type_defs.md#costallocationtagstatusentrytypedef) 
 ## CostCategoryRuleTypeDef
 
 ```python title="Usage Example"
@@ -1491,44 +1358,6 @@ class CoverageTypeDef(TypedDict):
 1. See [:material-code-braces: CoverageHoursTypeDef](./type_defs.md#coveragehourstypedef) 
 2. See [:material-code-braces: CoverageNormalizedUnitsTypeDef](./type_defs.md#coveragenormalizedunitstypedef) 
 3. See [:material-code-braces: CoverageCostTypeDef](./type_defs.md#coveragecosttypedef) 
-## CreateAnomalyMonitorRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import CreateAnomalyMonitorRequestRequestTypeDef
-
-def get_value() -> CreateAnomalyMonitorRequestRequestTypeDef:
-    return {
-        "AnomalyMonitor": ...,
-    }
-```
-
-```python title="Definition"
-class CreateAnomalyMonitorRequestRequestTypeDef(TypedDict):
-    AnomalyMonitor: AnomalyMonitorTypeDef,  # (1)
-    ResourceTags: NotRequired[Sequence[ResourceTagTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: AnomalyMonitorTypeDef](./type_defs.md#anomalymonitortypedef) 
-2. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
-## TagResourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import TagResourceRequestRequestTypeDef
-
-def get_value() -> TagResourceRequestRequestTypeDef:
-    return {
-        "ResourceArn": ...,
-        "ResourceTags": ...,
-    }
-```
-
-```python title="Definition"
-class TagResourceRequestRequestTypeDef(TypedDict):
-    ResourceArn: str,
-    ResourceTags: Sequence[ResourceTagTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
 ## CreateAnomalyMonitorResponseTypeDef
 
 ```python title="Usage Example"
@@ -1683,48 +1512,6 @@ class GetTagsResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListCostAllocationTagsResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import ListCostAllocationTagsResponseTypeDef
-
-def get_value() -> ListCostAllocationTagsResponseTypeDef:
-    return {
-        "CostAllocationTags": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListCostAllocationTagsResponseTypeDef(TypedDict):
-    CostAllocationTags: List[CostAllocationTagTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: CostAllocationTagTypeDef](./type_defs.md#costallocationtagtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListTagsForResourceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import ListTagsForResourceResponseTypeDef
-
-def get_value() -> ListTagsForResourceResponseTypeDef:
-    return {
-        "ResourceTags": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListTagsForResourceResponseTypeDef(TypedDict):
-    ResourceTags: List[ResourceTagTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ProvideAnomalyFeedbackResponseTypeDef
 
 ```python title="Usage Example"
@@ -2407,26 +2194,6 @@ class SavingsPlansUtilizationDetailTypeDef(TypedDict):
 1. See [:material-code-braces: SavingsPlansUtilizationTypeDef](./type_defs.md#savingsplansutilizationtypedef) 
 2. See [:material-code-braces: SavingsPlansSavingsTypeDef](./type_defs.md#savingsplanssavingstypedef) 
 3. See [:material-code-braces: SavingsPlansAmortizedCommitmentTypeDef](./type_defs.md#savingsplansamortizedcommitmenttypedef) 
-## UpdateCostAllocationTagsStatusResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ce.type_defs import UpdateCostAllocationTagsStatusResponseTypeDef
-
-def get_value() -> UpdateCostAllocationTagsStatusResponseTypeDef:
-    return {
-        "Errors": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateCostAllocationTagsStatusResponseTypeDef(TypedDict):
-    Errors: List[UpdateCostAllocationTagsStatusErrorTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: UpdateCostAllocationTagsStatusErrorTypeDef](./type_defs.md#updatecostallocationtagsstatuserrortypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateAnomalySubscriptionRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2441,11 +2208,9 @@ def get_value() -> CreateAnomalySubscriptionRequestRequestTypeDef:
 ```python title="Definition"
 class CreateAnomalySubscriptionRequestRequestTypeDef(TypedDict):
     AnomalySubscription: AnomalySubscriptionTypeDef,  # (1)
-    ResourceTags: NotRequired[Sequence[ResourceTagTypeDef]],  # (2)
 ```
 
 1. See [:material-code-braces: AnomalySubscriptionTypeDef](./type_defs.md#anomalysubscriptiontypedef) 
-2. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
 ## GetAnomalySubscriptionsResponseTypeDef
 
 ```python title="Usage Example"
@@ -2564,13 +2329,11 @@ class CreateCostCategoryDefinitionRequestRequestTypeDef(TypedDict):
     Rules: Sequence[CostCategoryRuleTypeDef],  # (2)
     DefaultValue: NotRequired[str],
     SplitChargeRules: NotRequired[Sequence[CostCategorySplitChargeRuleTypeDef]],  # (3)
-    ResourceTags: NotRequired[Sequence[ResourceTagTypeDef]],  # (4)
 ```
 
 1. See [:material-code-brackets: CostCategoryRuleVersionType](./literals.md#costcategoryruleversiontype) 
 2. See [:material-code-braces: CostCategoryRuleTypeDef](./type_defs.md#costcategoryruletypedef) 
 3. See [:material-code-braces: CostCategorySplitChargeRuleTypeDef](./type_defs.md#costcategorysplitchargeruletypedef) 
-4. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
 ## UpdateCostCategoryDefinitionRequestRequestTypeDef
 
 ```python title="Usage Example"

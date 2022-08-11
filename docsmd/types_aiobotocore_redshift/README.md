@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Redshift`.
 
 ### From PyPI with pip
 
@@ -189,7 +184,6 @@ def get_value() -> ActionTypeType:
 - [DescribeUsageLimitsPaginatorName](./literals.md#describeusagelimitspaginatorname)
 - [GetReservedNodeExchangeConfigurationOptionsPaginatorName](./literals.md#getreservednodeexchangeconfigurationoptionspaginatorname)
 - [GetReservedNodeExchangeOfferingsPaginatorName](./literals.md#getreservednodeexchangeofferingspaginatorname)
-- [LogDestinationTypeType](./literals.md#logdestinationtypetype)
 - [ModeType](./literals.md#modetype)
 - [NodeConfigurationOptionsFilterNameType](./literals.md#nodeconfigurationoptionsfilternametype)
 - [OperatorTypeType](./literals.md#operatortypetype)
@@ -338,7 +332,6 @@ def get_value() -> AcceptReservedNodeExchangeInputMessageRequestTypeDef:
 - [EventInfoMapTypeDef](./type_defs.md#eventinfomaptypedef)
 - [EventTypeDef](./type_defs.md#eventtypedef)
 - [GetClusterCredentialsMessageRequestTypeDef](./type_defs.md#getclustercredentialsmessagerequesttypedef)
-- [GetClusterCredentialsWithIAMMessageRequestTypeDef](./type_defs.md#getclustercredentialswithiammessagerequesttypedef)
 - [GetReservedNodeExchangeConfigurationOptionsInputMessageRequestTypeDef](./type_defs.md#getreservednodeexchangeconfigurationoptionsinputmessagerequesttypedef)
 - [GetReservedNodeExchangeOfferingsInputMessageRequestTypeDef](./type_defs.md#getreservednodeexchangeofferingsinputmessagerequesttypedef)
 - [ModifyAquaInputMessageRequestTypeDef](./type_defs.md#modifyaquainputmessagerequesttypedef)
@@ -378,7 +371,6 @@ def get_value() -> AcceptReservedNodeExchangeInputMessageRequestTypeDef:
 - [SupportedOperationTypeDef](./type_defs.md#supportedoperationtypedef)
 - [UpdatePartnerStatusInputMessageRequestTypeDef](./type_defs.md#updatepartnerstatusinputmessagerequesttypedef)
 - [ClusterCredentialsTypeDef](./type_defs.md#clustercredentialstypedef)
-- [ClusterExtendedCredentialsTypeDef](./type_defs.md#clusterextendedcredentialstypedef)
 - [ClusterParameterGroupNameMessageTypeDef](./type_defs.md#clusterparametergroupnamemessagetypedef)
 - [CreateAuthenticationProfileResultTypeDef](./type_defs.md#createauthenticationprofileresulttypedef)
 - [CustomerStorageMessageTypeDef](./type_defs.md#customerstoragemessagetypedef)

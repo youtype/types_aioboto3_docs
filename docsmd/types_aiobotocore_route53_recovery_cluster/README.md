@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Route53RecoveryCluster`.
 
 ### From PyPI with pip
 
@@ -64,22 +59,6 @@ async with session.client("route53-recovery-cluster") as client:
 ```
 
 
-## Paginators
-
-Type annotations and code completion for
-[paginators](./paginators.md)
-from `#!python session.client("route53-recovery-cluster").get_paginator("...")`.
-
-```python title="Usage example"
-from types_aiobotocore_route53_recovery_cluster.paginator import ListRoutingControlsPaginator
-
-def get_list_routing_controls_paginator() -> ListRoutingControlsPaginator:
-    return client.get_paginator("list_routing_controls"))
-```
-
-- [ListRoutingControlsPaginator](./paginators.md#listroutingcontrolspaginator)
-
-
 
 
 
@@ -91,18 +70,16 @@ def get_list_routing_controls_paginator() -> ListRoutingControlsPaginator:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_route53_recovery_cluster.literals import ListRoutingControlsPaginatorName
+from types_aiobotocore_route53_recovery_cluster.literals import RoutingControlStateType
 
-def get_value() -> ListRoutingControlsPaginatorName:
-    return "list_routing_controls"
+def get_value() -> RoutingControlStateType:
+    return "Off"
 ```
 
-- [ListRoutingControlsPaginatorName](./literals.md#listroutingcontrolspaginatorname)
 - [RoutingControlStateType](./literals.md#routingcontrolstatetype)
 - [Route53RecoveryClusterServiceName](./literals.md#route53recoveryclusterservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
-- [PaginatorName](./literals.md#paginatorname)
 
 
 
@@ -122,13 +99,8 @@ def get_value() -> GetRoutingControlStateRequestRequestTypeDef:
 
 - [GetRoutingControlStateRequestRequestTypeDef](./type_defs.md#getroutingcontrolstaterequestrequesttypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
-- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
-- [ListRoutingControlsRequestRequestTypeDef](./type_defs.md#listroutingcontrolsrequestrequesttypedef)
-- [RoutingControlTypeDef](./type_defs.md#routingcontroltypedef)
 - [UpdateRoutingControlStateEntryTypeDef](./type_defs.md#updateroutingcontrolstateentrytypedef)
 - [UpdateRoutingControlStateRequestRequestTypeDef](./type_defs.md#updateroutingcontrolstaterequestrequesttypedef)
 - [GetRoutingControlStateResponseTypeDef](./type_defs.md#getroutingcontrolstateresponsetypedef)
-- [ListRoutingControlsRequestListRoutingControlsPaginateTypeDef](./type_defs.md#listroutingcontrolsrequestlistroutingcontrolspaginatetypedef)
-- [ListRoutingControlsResponseTypeDef](./type_defs.md#listroutingcontrolsresponsetypedef)
 - [UpdateRoutingControlStatesRequestRequestTypeDef](./type_defs.md#updateroutingcontrolstatesrequestrequesttypedef)
 

@@ -23,46 +23,6 @@ class NotificationPropertyTypeDef(TypedDict):
     NotifyDelayAfter: NotRequired[int],
 ```
 
-## AggregateOperationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import AggregateOperationTypeDef
-
-def get_value() -> AggregateOperationTypeDef:
-    return {
-        "Column": ...,
-        "AggFunc": ...,
-    }
-```
-
-```python title="Definition"
-class AggregateOperationTypeDef(TypedDict):
-    Column: List[str],
-    AggFunc: AggFunctionType,  # (1)
-```
-
-1. See [:material-code-brackets: AggFunctionType](./literals.md#aggfunctiontype) 
-## ApplyMappingTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ApplyMappingTypeDef
-
-def get_value() -> ApplyMappingTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Mapping": ...,
-    }
-```
-
-```python title="Definition"
-class ApplyMappingTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Mapping: List[MappingTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: MappingTypeDef](./type_defs.md#mappingtypedef) 
 ## AuditContextTypeDef
 
 ```python title="Usage Example"
@@ -77,8 +37,6 @@ def get_value() -> AuditContextTypeDef:
 ```python title="Definition"
 class AuditContextTypeDef(TypedDict):
     AdditionalAuditContext: NotRequired[str],
-    RequestedColumns: NotRequired[Sequence[str]],
-    AllColumnsRequested: NotRequired[bool],
 ```
 
 ## PartitionValueListTypeDef
@@ -95,28 +53,6 @@ def get_value() -> PartitionValueListTypeDef:
 ```python title="Definition"
 class PartitionValueListTypeDef(TypedDict):
     Values: Sequence[str],
-```
-
-## BasicCatalogTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import BasicCatalogTargetTypeDef
-
-def get_value() -> BasicCatalogTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class BasicCatalogTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Database: str,
-    Table: str,
 ```
 
 ## ResponseMetadataTypeDef
@@ -250,41 +186,6 @@ def get_value() -> BatchGetCrawlersRequestRequestTypeDef:
 ```python title="Definition"
 class BatchGetCrawlersRequestRequestTypeDef(TypedDict):
     CrawlerNames: Sequence[str],
-```
-
-## BatchGetCustomEntityTypesRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import BatchGetCustomEntityTypesRequestRequestTypeDef
-
-def get_value() -> BatchGetCustomEntityTypesRequestRequestTypeDef:
-    return {
-        "Names": ...,
-    }
-```
-
-```python title="Definition"
-class BatchGetCustomEntityTypesRequestRequestTypeDef(TypedDict):
-    Names: Sequence[str],
-```
-
-## CustomEntityTypeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CustomEntityTypeTypeDef
-
-def get_value() -> CustomEntityTypeTypeDef:
-    return {
-        "Name": ...,
-        "RegexString": ...,
-    }
-```
-
-```python title="Definition"
-class CustomEntityTypeTypeDef(TypedDict):
-    Name: str,
-    RegexString: str,
-    ContextWords: NotRequired[List[str]],
 ```
 
 ## BatchGetDevEndpointsRequestRequestTypeDef
@@ -549,25 +450,6 @@ class CancelMLTaskRunRequestRequestTypeDef(TypedDict):
     TaskRunId: str,
 ```
 
-## CancelStatementRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CancelStatementRequestRequestTypeDef
-
-def get_value() -> CancelStatementRequestRequestTypeDef:
-    return {
-        "SessionId": ...,
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class CancelStatementRequestRequestTypeDef(TypedDict):
-    SessionId: str,
-    Id: int,
-    RequestOrigin: NotRequired[str],
-```
-
 ## CatalogEntryTypeDef
 
 ```python title="Usage Example"
@@ -602,125 +484,6 @@ class CatalogImportStatusTypeDef(TypedDict):
     ImportCompleted: NotRequired[bool],
     ImportTime: NotRequired[datetime],
     ImportedBy: NotRequired[str],
-```
-
-## KafkaStreamingSourceOptionsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import KafkaStreamingSourceOptionsTypeDef
-
-def get_value() -> KafkaStreamingSourceOptionsTypeDef:
-    return {
-        "BootstrapServers": ...,
-    }
-```
-
-```python title="Definition"
-class KafkaStreamingSourceOptionsTypeDef(TypedDict):
-    BootstrapServers: NotRequired[str],
-    SecurityProtocol: NotRequired[str],
-    ConnectionName: NotRequired[str],
-    TopicName: NotRequired[str],
-    Assign: NotRequired[str],
-    SubscribePattern: NotRequired[str],
-    Classification: NotRequired[str],
-    Delimiter: NotRequired[str],
-    StartingOffsets: NotRequired[str],
-    EndingOffsets: NotRequired[str],
-    PollTimeoutMs: NotRequired[int],
-    NumRetries: NotRequired[int],
-    RetryIntervalMs: NotRequired[int],
-    MaxOffsetsPerTrigger: NotRequired[int],
-    MinPartitions: NotRequired[int],
-```
-
-## StreamingDataPreviewOptionsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import StreamingDataPreviewOptionsTypeDef
-
-def get_value() -> StreamingDataPreviewOptionsTypeDef:
-    return {
-        "PollingTime": ...,
-    }
-```
-
-```python title="Definition"
-class StreamingDataPreviewOptionsTypeDef(TypedDict):
-    PollingTime: NotRequired[int],
-    RecordPollingLimit: NotRequired[int],
-```
-
-## KinesisStreamingSourceOptionsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import KinesisStreamingSourceOptionsTypeDef
-
-def get_value() -> KinesisStreamingSourceOptionsTypeDef:
-    return {
-        "EndpointUrl": ...,
-    }
-```
-
-```python title="Definition"
-class KinesisStreamingSourceOptionsTypeDef(TypedDict):
-    EndpointUrl: NotRequired[str],
-    StreamName: NotRequired[str],
-    Classification: NotRequired[str],
-    Delimiter: NotRequired[str],
-    StartingPosition: NotRequired[StartingPositionType],  # (1)
-    MaxFetchTimeInMs: NotRequired[int],
-    MaxFetchRecordsPerShard: NotRequired[int],
-    MaxRecordPerRead: NotRequired[int],
-    AddIdleTimeBetweenReads: NotRequired[bool],
-    IdleTimeBetweenReadsInMs: NotRequired[int],
-    DescribeShardInterval: NotRequired[int],
-    NumRetries: NotRequired[int],
-    RetryIntervalMs: NotRequired[int],
-    MaxRetryIntervalMs: NotRequired[int],
-    AvoidEmptyBatches: NotRequired[bool],
-    StreamArn: NotRequired[str],
-    RoleArn: NotRequired[str],
-    RoleSessionName: NotRequired[str],
-```
-
-1. See [:material-code-brackets: StartingPositionType](./literals.md#startingpositiontype) 
-## CatalogSchemaChangePolicyTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CatalogSchemaChangePolicyTypeDef
-
-def get_value() -> CatalogSchemaChangePolicyTypeDef:
-    return {
-        "EnableUpdateCatalog": ...,
-    }
-```
-
-```python title="Definition"
-class CatalogSchemaChangePolicyTypeDef(TypedDict):
-    EnableUpdateCatalog: NotRequired[bool],
-    UpdateBehavior: NotRequired[UpdateCatalogBehaviorType],  # (1)
-```
-
-1. See [:material-code-brackets: UpdateCatalogBehaviorType](./literals.md#updatecatalogbehaviortype) 
-## CatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CatalogSourceTypeDef
-
-def get_value() -> CatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class CatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
 ```
 
 ## CatalogTargetTypeDef
@@ -872,470 +635,6 @@ class CloudWatchEncryptionTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: CloudWatchEncryptionModeType](./literals.md#cloudwatchencryptionmodetype) 
-## DropDuplicatesTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DropDuplicatesTypeDef
-
-def get_value() -> DropDuplicatesTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-    }
-```
-
-```python title="Definition"
-class DropDuplicatesTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Columns: NotRequired[List[List[str]]],
-```
-
-## DropFieldsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DropFieldsTypeDef
-
-def get_value() -> DropFieldsTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Paths": ...,
-    }
-```
-
-```python title="Definition"
-class DropFieldsTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Paths: List[List[str]],
-```
-
-## DynamoDBCatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DynamoDBCatalogSourceTypeDef
-
-def get_value() -> DynamoDBCatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class DynamoDBCatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-```
-
-## FillMissingValuesTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import FillMissingValuesTypeDef
-
-def get_value() -> FillMissingValuesTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "ImputedPath": ...,
-    }
-```
-
-```python title="Definition"
-class FillMissingValuesTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    ImputedPath: str,
-    FilledPath: NotRequired[str],
-```
-
-## MergeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import MergeTypeDef
-
-def get_value() -> MergeTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Source": ...,
-        "PrimaryKeys": ...,
-    }
-```
-
-```python title="Definition"
-class MergeTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Source: str,
-    PrimaryKeys: List[List[str]],
-```
-
-## MicrosoftSQLServerCatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import MicrosoftSQLServerCatalogSourceTypeDef
-
-def get_value() -> MicrosoftSQLServerCatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class MicrosoftSQLServerCatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-```
-
-## MicrosoftSQLServerCatalogTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import MicrosoftSQLServerCatalogTargetTypeDef
-
-def get_value() -> MicrosoftSQLServerCatalogTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class MicrosoftSQLServerCatalogTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Database: str,
-    Table: str,
-```
-
-## MySQLCatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import MySQLCatalogSourceTypeDef
-
-def get_value() -> MySQLCatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class MySQLCatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-```
-
-## MySQLCatalogTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import MySQLCatalogTargetTypeDef
-
-def get_value() -> MySQLCatalogTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class MySQLCatalogTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Database: str,
-    Table: str,
-```
-
-## OracleSQLCatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import OracleSQLCatalogSourceTypeDef
-
-def get_value() -> OracleSQLCatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class OracleSQLCatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-```
-
-## OracleSQLCatalogTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import OracleSQLCatalogTargetTypeDef
-
-def get_value() -> OracleSQLCatalogTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class OracleSQLCatalogTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Database: str,
-    Table: str,
-```
-
-## PIIDetectionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import PIIDetectionTypeDef
-
-def get_value() -> PIIDetectionTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "PiiType": ...,
-        "EntityTypesToDetect": ...,
-    }
-```
-
-```python title="Definition"
-class PIIDetectionTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    PiiType: PiiTypeType,  # (1)
-    EntityTypesToDetect: List[str],
-    OutputColumnName: NotRequired[str],
-    SampleFraction: NotRequired[float],
-    ThresholdFraction: NotRequired[float],
-    MaskValue: NotRequired[str],
-```
-
-1. See [:material-code-brackets: PiiTypeType](./literals.md#piitypetype) 
-## PostgreSQLCatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import PostgreSQLCatalogSourceTypeDef
-
-def get_value() -> PostgreSQLCatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class PostgreSQLCatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-```
-
-## PostgreSQLCatalogTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import PostgreSQLCatalogTargetTypeDef
-
-def get_value() -> PostgreSQLCatalogTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class PostgreSQLCatalogTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Database: str,
-    Table: str,
-```
-
-## RedshiftSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import RedshiftSourceTypeDef
-
-def get_value() -> RedshiftSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class RedshiftSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-    RedshiftTmpDir: NotRequired[str],
-    TmpDirIAMRole: NotRequired[str],
-```
-
-## RelationalCatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import RelationalCatalogSourceTypeDef
-
-def get_value() -> RelationalCatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class RelationalCatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-```
-
-## RenameFieldTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import RenameFieldTypeDef
-
-def get_value() -> RenameFieldTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "SourcePath": ...,
-        "TargetPath": ...,
-    }
-```
-
-```python title="Definition"
-class RenameFieldTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    SourcePath: List[str],
-    TargetPath: List[str],
-```
-
-## SelectFieldsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SelectFieldsTypeDef
-
-def get_value() -> SelectFieldsTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Paths": ...,
-    }
-```
-
-```python title="Definition"
-class SelectFieldsTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Paths: List[List[str]],
-```
-
-## SelectFromCollectionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SelectFromCollectionTypeDef
-
-def get_value() -> SelectFromCollectionTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Index": ...,
-    }
-```
-
-```python title="Definition"
-class SelectFromCollectionTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Index: int,
-```
-
-## SpigotTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SpigotTypeDef
-
-def get_value() -> SpigotTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Path": ...,
-    }
-```
-
-```python title="Definition"
-class SpigotTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Path: str,
-    Topk: NotRequired[int],
-    Prob: NotRequired[float],
-```
-
-## SplitFieldsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SplitFieldsTypeDef
-
-def get_value() -> SplitFieldsTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Paths": ...,
-    }
-```
-
-```python title="Definition"
-class SplitFieldsTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Paths: List[List[str]],
-```
-
-## UnionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import UnionTypeDef
-
-def get_value() -> UnionTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "UnionType": ...,
-    }
-```
-
-```python title="Definition"
-class UnionTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    UnionType: UnionTypeType,  # (1)
-```
-
-1. See [:material-code-brackets: UnionTypeType](./literals.md#uniontypetype) 
 ## CodeGenEdgeTypeDef
 
 ```python title="Usage Example"
@@ -1624,32 +923,6 @@ class CrawlTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: CrawlStateType](./literals.md#crawlstatetype) 
-## CrawlerHistoryTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CrawlerHistoryTypeDef
-
-def get_value() -> CrawlerHistoryTypeDef:
-    return {
-        "CrawlId": ...,
-    }
-```
-
-```python title="Definition"
-class CrawlerHistoryTypeDef(TypedDict):
-    CrawlId: NotRequired[str],
-    State: NotRequired[CrawlerHistoryStateType],  # (1)
-    StartTime: NotRequired[datetime],
-    EndTime: NotRequired[datetime],
-    Summary: NotRequired[str],
-    ErrorMessage: NotRequired[str],
-    LogGroup: NotRequired[str],
-    LogStream: NotRequired[str],
-    MessagePrefix: NotRequired[str],
-    DPUHour: NotRequired[float],
-```
-
-1. See [:material-code-brackets: CrawlerHistoryStateType](./literals.md#crawlerhistorystatetype) 
 ## CrawlerMetricsTypeDef
 
 ```python title="Usage Example"
@@ -1876,26 +1149,6 @@ class SchemaChangePolicyTypeDef(TypedDict):
 
 1. See [:material-code-brackets: UpdateBehaviorType](./literals.md#updatebehaviortype) 
 2. See [:material-code-brackets: DeleteBehaviorType](./literals.md#deletebehaviortype) 
-## CrawlsFilterTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CrawlsFilterTypeDef
-
-def get_value() -> CrawlsFilterTypeDef:
-    return {
-        "FieldName": ...,
-    }
-```
-
-```python title="Definition"
-class CrawlsFilterTypeDef(TypedDict):
-    FieldName: NotRequired[FieldNameType],  # (1)
-    FilterOperator: NotRequired[FilterOperatorType],  # (2)
-    FieldValue: NotRequired[str],
-```
-
-1. See [:material-code-brackets: FieldNameType](./literals.md#fieldnametype) 
-2. See [:material-code-brackets: FilterOperatorType](./literals.md#filteroperatortype) 
 ## CreateBlueprintRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1995,25 +1248,6 @@ class CreateXMLClassifierRequestTypeDef(TypedDict):
     Classification: str,
     Name: str,
     RowTag: NotRequired[str],
-```
-
-## CreateCustomEntityTypeRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CreateCustomEntityTypeRequestRequestTypeDef
-
-def get_value() -> CreateCustomEntityTypeRequestRequestTypeDef:
-    return {
-        "Name": ...,
-        "RegexString": ...,
-    }
-```
-
-```python title="Definition"
-class CreateCustomEntityTypeRequestRequestTypeDef(TypedDict):
-    Name: str,
-    RegexString: str,
-    ContextWords: NotRequired[Sequence[str]],
 ```
 
 ## CreateDevEndpointRequestRequestTypeDef
@@ -2155,23 +1389,6 @@ class RegistryIdTypeDef(TypedDict):
     RegistryArn: NotRequired[str],
 ```
 
-## SessionCommandTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SessionCommandTypeDef
-
-def get_value() -> SessionCommandTypeDef:
-    return {
-        "Name": ...,
-    }
-```
-
-```python title="Definition"
-class SessionCommandTypeDef(TypedDict):
-    Name: NotRequired[str],
-    PythonVersion: NotRequired[str],
-```
-
 ## EventBatchingConditionTypeDef
 
 ```python title="Usage Example"
@@ -2258,24 +1475,6 @@ def get_value() -> DatabaseIdentifierTypeDef:
 class DatabaseIdentifierTypeDef(TypedDict):
     CatalogId: NotRequired[str],
     DatabaseName: NotRequired[str],
-```
-
-## DatatypeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DatatypeTypeDef
-
-def get_value() -> DatatypeTypeDef:
-    return {
-        "Id": ...,
-        "Label": ...,
-    }
-```
-
-```python title="Definition"
-class DatatypeTypeDef(TypedDict):
-    Id: str,
-    Label: str,
 ```
 
 ## DecimalNumberTypeDef
@@ -2402,22 +1601,6 @@ def get_value() -> DeleteCrawlerRequestRequestTypeDef:
 
 ```python title="Definition"
 class DeleteCrawlerRequestRequestTypeDef(TypedDict):
-    Name: str,
-```
-
-## DeleteCustomEntityTypeRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DeleteCustomEntityTypeRequestRequestTypeDef
-
-def get_value() -> DeleteCustomEntityTypeRequestRequestTypeDef:
-    return {
-        "Name": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteCustomEntityTypeRequestRequestTypeDef(TypedDict):
     Name: str,
 ```
 
@@ -2579,23 +1762,6 @@ class DeleteSecurityConfigurationRequestRequestTypeDef(TypedDict):
     Name: str,
 ```
 
-## DeleteSessionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DeleteSessionRequestRequestTypeDef
-
-def get_value() -> DeleteSessionRequestRequestTypeDef:
-    return {
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteSessionRequestRequestTypeDef(TypedDict):
-    Id: str,
-    RequestOrigin: NotRequired[str],
-```
-
 ## DeleteTableRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2705,44 +1871,6 @@ class DevEndpointCustomLibrariesTypeDef(TypedDict):
     ExtraJarsS3Path: NotRequired[str],
 ```
 
-## DirectSchemaChangePolicyTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DirectSchemaChangePolicyTypeDef
-
-def get_value() -> DirectSchemaChangePolicyTypeDef:
-    return {
-        "EnableUpdateCatalog": ...,
-    }
-```
-
-```python title="Definition"
-class DirectSchemaChangePolicyTypeDef(TypedDict):
-    EnableUpdateCatalog: NotRequired[bool],
-    UpdateBehavior: NotRequired[UpdateCatalogBehaviorType],  # (1)
-    Table: NotRequired[str],
-    Database: NotRequired[str],
-```
-
-1. See [:material-code-brackets: UpdateCatalogBehaviorType](./literals.md#updatecatalogbehaviortype) 
-## NullCheckBoxListTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import NullCheckBoxListTypeDef
-
-def get_value() -> NullCheckBoxListTypeDef:
-    return {
-        "IsEmpty": ...,
-    }
-```
-
-```python title="Definition"
-class NullCheckBoxListTypeDef(TypedDict):
-    IsEmpty: NotRequired[bool],
-    IsNullString: NotRequired[bool],
-    IsNegOne: NotRequired[bool],
-```
-
 ## EdgeTypeDef
 
 ```python title="Usage Example"
@@ -2829,25 +1957,6 @@ class ExportLabelsTaskRunPropertiesTypeDef(TypedDict):
     OutputS3Path: NotRequired[str],
 ```
 
-## FilterValueTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import FilterValueTypeDef
-
-def get_value() -> FilterValueTypeDef:
-    return {
-        "Type": ...,
-        "Value": ...,
-    }
-```
-
-```python title="Definition"
-class FilterValueTypeDef(TypedDict):
-    Type: FilterValueTypeType,  # (1)
-    Value: List[str],
-```
-
-1. See [:material-code-brackets: FilterValueTypeType](./literals.md#filtervaluetypetype) 
 ## FindMatchesParametersTypeDef
 
 ```python title="Usage Example"
@@ -3135,22 +2244,6 @@ def get_value() -> GetCrawlersRequestRequestTypeDef:
 class GetCrawlersRequestRequestTypeDef(TypedDict):
     MaxResults: NotRequired[int],
     NextToken: NotRequired[str],
-```
-
-## GetCustomEntityTypeRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GetCustomEntityTypeRequestRequestTypeDef
-
-def get_value() -> GetCustomEntityTypeRequestRequestTypeDef:
-    return {
-        "Name": ...,
-    }
-```
-
-```python title="Definition"
-class GetCustomEntityTypeRequestRequestTypeDef(TypedDict):
-    Name: str,
 ```
 
 ## GetDataCatalogEncryptionSettingsRequestRequestTypeDef
@@ -3658,42 +2751,6 @@ class GetSecurityConfigurationsRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
 ```
 
-## GetSessionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GetSessionRequestRequestTypeDef
-
-def get_value() -> GetSessionRequestRequestTypeDef:
-    return {
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class GetSessionRequestRequestTypeDef(TypedDict):
-    Id: str,
-    RequestOrigin: NotRequired[str],
-```
-
-## GetStatementRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GetStatementRequestRequestTypeDef
-
-def get_value() -> GetStatementRequestRequestTypeDef:
-    return {
-        "SessionId": ...,
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class GetStatementRequestRequestTypeDef(TypedDict):
-    SessionId: str,
-    Id: int,
-    RequestOrigin: NotRequired[str],
-```
-
 ## GetTableRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3940,40 +2997,6 @@ class GetWorkflowRunsRequestRequestTypeDef(TypedDict):
     MaxResults: NotRequired[int],
 ```
 
-## GlueStudioSchemaColumnTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GlueStudioSchemaColumnTypeDef
-
-def get_value() -> GlueStudioSchemaColumnTypeDef:
-    return {
-        "Name": ...,
-    }
-```
-
-```python title="Definition"
-class GlueStudioSchemaColumnTypeDef(TypedDict):
-    Name: str,
-    Type: NotRequired[str],
-```
-
-## S3SourceAdditionalOptionsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3SourceAdditionalOptionsTypeDef
-
-def get_value() -> S3SourceAdditionalOptionsTypeDef:
-    return {
-        "BoundedSize": ...,
-    }
-```
-
-```python title="Definition"
-class S3SourceAdditionalOptionsTypeDef(TypedDict):
-    BoundedSize: NotRequired[int],
-    BoundedFiles: NotRequired[int],
-```
-
 ## ImportCatalogToGlueRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4007,30 +3030,6 @@ class ImportLabelsTaskRunPropertiesTypeDef(TypedDict):
     Replace: NotRequired[bool],
 ```
 
-## JDBCConnectorOptionsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import JDBCConnectorOptionsTypeDef
-
-def get_value() -> JDBCConnectorOptionsTypeDef:
-    return {
-        "FilterPredicate": ...,
-    }
-```
-
-```python title="Definition"
-class JDBCConnectorOptionsTypeDef(TypedDict):
-    FilterPredicate: NotRequired[str],
-    PartitionColumn: NotRequired[str],
-    LowerBound: NotRequired[int],
-    UpperBound: NotRequired[int],
-    NumPartitions: NotRequired[int],
-    JobBookmarkKeys: NotRequired[List[str]],
-    JobBookmarkKeysSortOrder: NotRequired[str],
-    DataTypeMapping: NotRequired[Dict[JDBCDataTypeType, GlueRecordTypeType]],  # (1)
-```
-
-1. See [:material-code-brackets: JDBCDataTypeType](./literals.md#jdbcdatatypetype) [:material-code-brackets: GlueRecordTypeType](./literals.md#gluerecordtypetype) 
 ## PredecessorTypeDef
 
 ```python title="Usage Example"
@@ -4046,24 +3045,6 @@ def get_value() -> PredecessorTypeDef:
 class PredecessorTypeDef(TypedDict):
     JobName: NotRequired[str],
     RunId: NotRequired[str],
-```
-
-## JoinColumnTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import JoinColumnTypeDef
-
-def get_value() -> JoinColumnTypeDef:
-    return {
-        "From": ...,
-        "Keys": ...,
-    }
-```
-
-```python title="Definition"
-class JoinColumnTypeDef(TypedDict):
-    From: str,
-    Keys: List[List[str]],
 ```
 
 ## KeySchemaElementTypeDef
@@ -4134,23 +3115,6 @@ class ListCrawlersRequestRequestTypeDef(TypedDict):
     MaxResults: NotRequired[int],
     NextToken: NotRequired[str],
     Tags: NotRequired[Mapping[str, str]],
-```
-
-## ListCustomEntityTypesRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ListCustomEntityTypesRequestRequestTypeDef
-
-def get_value() -> ListCustomEntityTypesRequestRequestTypeDef:
-    return {
-        "NextToken": ...,
-    }
-```
-
-```python title="Definition"
-class ListCustomEntityTypesRequestRequestTypeDef(TypedDict):
-    NextToken: NotRequired[str],
-    MaxResults: NotRequired[int],
 ```
 
 ## ListDevEndpointsRequestRequestTypeDef
@@ -4272,43 +3236,6 @@ class SchemaListItemTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: SchemaStatusType](./literals.md#schemastatustype) 
-## ListSessionsRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ListSessionsRequestRequestTypeDef
-
-def get_value() -> ListSessionsRequestRequestTypeDef:
-    return {
-        "NextToken": ...,
-    }
-```
-
-```python title="Definition"
-class ListSessionsRequestRequestTypeDef(TypedDict):
-    NextToken: NotRequired[str],
-    MaxResults: NotRequired[int],
-    Tags: NotRequired[Mapping[str, str]],
-    RequestOrigin: NotRequired[str],
-```
-
-## ListStatementsRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ListStatementsRequestRequestTypeDef
-
-def get_value() -> ListStatementsRequestRequestTypeDef:
-    return {
-        "SessionId": ...,
-    }
-```
-
-```python title="Definition"
-class ListStatementsRequestRequestTypeDef(TypedDict):
-    SessionId: str,
-    RequestOrigin: NotRequired[str],
-    NextToken: NotRequired[str],
-```
-
 ## ListTriggersRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4363,28 +3290,6 @@ class MLUserDataEncryptionTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: MLUserDataEncryptionModeStringType](./literals.md#mluserdataencryptionmodestringtype) 
-## MappingTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import MappingTypeDef
-
-def get_value() -> MappingTypeDef:
-    return {
-        "ToKey": ...,
-    }
-```
-
-```python title="Definition"
-class MappingTypeDef(TypedDict):
-    ToKey: NotRequired[str],
-    FromPath: NotRequired[List[str]],
-    FromType: NotRequired[str],
-    ToType: NotRequired[str],
-    Dropped: NotRequired[bool],
-    Children: NotRequired[List[MappingTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: MappingTypeDef](./type_defs.md#mappingtypedef) 
 ## OtherMetadataValueListItemTypeDef
 
 ```python title="Usage Example"
@@ -4498,24 +3403,6 @@ class PutWorkflowRunPropertiesRequestRequestTypeDef(TypedDict):
     RunProperties: Mapping[str, str],
 ```
 
-## UpsertRedshiftTargetOptionsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import UpsertRedshiftTargetOptionsTypeDef
-
-def get_value() -> UpsertRedshiftTargetOptionsTypeDef:
-    return {
-        "TableLocation": ...,
-    }
-```
-
-```python title="Definition"
-class UpsertRedshiftTargetOptionsTypeDef(TypedDict):
-    TableLocation: NotRequired[str],
-    ConnectionName: NotRequired[str],
-    UpsertKeys: NotRequired[List[str]],
-```
-
 ## ResetJobBookmarkRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4571,44 +3458,6 @@ class ResumeWorkflowRunRequestRequestTypeDef(TypedDict):
     NodeIds: Sequence[str],
 ```
 
-## RunStatementRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import RunStatementRequestRequestTypeDef
-
-def get_value() -> RunStatementRequestRequestTypeDef:
-    return {
-        "SessionId": ...,
-        "Code": ...,
-    }
-```
-
-```python title="Definition"
-class RunStatementRequestRequestTypeDef(TypedDict):
-    SessionId: str,
-    Code: str,
-    RequestOrigin: NotRequired[str],
-```
-
-## S3DirectSourceAdditionalOptionsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3DirectSourceAdditionalOptionsTypeDef
-
-def get_value() -> S3DirectSourceAdditionalOptionsTypeDef:
-    return {
-        "BoundedSize": ...,
-    }
-```
-
-```python title="Definition"
-class S3DirectSourceAdditionalOptionsTypeDef(TypedDict):
-    BoundedSize: NotRequired[int],
-    BoundedFiles: NotRequired[int],
-    EnableSamplePath: NotRequired[bool],
-    SamplePath: NotRequired[str],
-```
-
 ## SortCriterionTypeDef
 
 ```python title="Usage Example"
@@ -4661,24 +3510,6 @@ class SkewedInfoTypeDef(TypedDict):
     SkewedColumnNames: NotRequired[Sequence[str]],
     SkewedColumnValues: NotRequired[Sequence[str]],
     SkewedColumnValueLocationMaps: NotRequired[Mapping[str, str]],
-```
-
-## SqlAliasTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SqlAliasTypeDef
-
-def get_value() -> SqlAliasTypeDef:
-    return {
-        "From": ...,
-        "Alias": ...,
-    }
-```
-
-```python title="Definition"
-class SqlAliasTypeDef(TypedDict):
-    From: str,
-    Alias: str,
 ```
 
 ## StartBlueprintRunRequestRequestTypeDef
@@ -4853,22 +3684,6 @@ class StartingEventBatchConditionTypeDef(TypedDict):
     BatchWindow: NotRequired[int],
 ```
 
-## StatementOutputDataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import StatementOutputDataTypeDef
-
-def get_value() -> StatementOutputDataTypeDef:
-    return {
-        "TextPlain": ...,
-    }
-```
-
-```python title="Definition"
-class StatementOutputDataTypeDef(TypedDict):
-    TextPlain: NotRequired[str],
-```
-
 ## StopCrawlerRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4899,23 +3714,6 @@ def get_value() -> StopCrawlerScheduleRequestRequestTypeDef:
 ```python title="Definition"
 class StopCrawlerScheduleRequestRequestTypeDef(TypedDict):
     CrawlerName: str,
-```
-
-## StopSessionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import StopSessionRequestRequestTypeDef
-
-def get_value() -> StopSessionRequestRequestTypeDef:
-    return {
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class StopSessionRequestRequestTypeDef(TypedDict):
-    Id: str,
-    RequestOrigin: NotRequired[str],
 ```
 
 ## StopTriggerRequestRequestTypeDef
@@ -5208,29 +4006,6 @@ class StartJobRunRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
 2. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
-## AggregateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import AggregateTypeDef
-
-def get_value() -> AggregateTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Groups": ...,
-        "Aggs": ...,
-    }
-```
-
-```python title="Definition"
-class AggregateTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Groups: List[List[str]],
-    Aggs: List[AggregateOperationTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: AggregateOperationTypeDef](./type_defs.md#aggregateoperationtypedef) 
 ## GetUnfilteredPartitionMetadataRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -5405,25 +4180,6 @@ def get_value() -> CreateBlueprintResponseTypeDef:
 
 ```python title="Definition"
 class CreateBlueprintResponseTypeDef(TypedDict):
-    Name: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateCustomEntityTypeResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CreateCustomEntityTypeResponseTypeDef
-
-def get_value() -> CreateCustomEntityTypeResponseTypeDef:
-    return {
-        "Name": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateCustomEntityTypeResponseTypeDef(TypedDict):
     Name: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
@@ -5696,25 +4452,6 @@ class DeleteBlueprintResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DeleteCustomEntityTypeResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DeleteCustomEntityTypeResponseTypeDef
-
-def get_value() -> DeleteCustomEntityTypeResponseTypeDef:
-    return {
-        "Name": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteCustomEntityTypeResponseTypeDef(TypedDict):
-    Name: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DeleteJobResponseTypeDef
 
 ```python title="Usage Example"
@@ -5801,25 +4538,6 @@ class DeleteSchemaResponseTypeDef(TypedDict):
 
 1. See [:material-code-brackets: SchemaStatusType](./literals.md#schemastatustype) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DeleteSessionResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DeleteSessionResponseTypeDef
-
-def get_value() -> DeleteSessionResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteSessionResponseTypeDef(TypedDict):
-    Id: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DeleteTriggerResponseTypeDef
 
 ```python title="Usage Example"
@@ -5854,29 +4572,6 @@ def get_value() -> DeleteWorkflowResponseTypeDef:
 ```python title="Definition"
 class DeleteWorkflowResponseTypeDef(TypedDict):
     Name: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetCustomEntityTypeResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GetCustomEntityTypeResponseTypeDef
-
-def get_value() -> GetCustomEntityTypeResponseTypeDef:
-    return {
-        "Name": ...,
-        "RegexString": ...,
-        "ContextWords": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetCustomEntityTypeResponseTypeDef(TypedDict):
-    Name: str,
-    RegexString: str,
-    ContextWords: List[str],
     ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
@@ -6399,25 +5094,6 @@ class ResumeWorkflowRunResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## RunStatementResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import RunStatementResponseTypeDef
-
-def get_value() -> RunStatementResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class RunStatementResponseTypeDef(TypedDict):
-    Id: int,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## StartBlueprintRunResponseTypeDef
 
 ```python title="Usage Example"
@@ -6566,25 +5242,6 @@ def get_value() -> StartWorkflowRunResponseTypeDef:
 ```python title="Definition"
 class StartWorkflowRunResponseTypeDef(TypedDict):
     RunId: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## StopSessionResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import StopSessionResponseTypeDef
-
-def get_value() -> StopSessionResponseTypeDef:
-    return {
-        "Id": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class StopSessionResponseTypeDef(TypedDict):
-    Id: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
@@ -6860,50 +5517,6 @@ class TableVersionErrorTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ErrorDetailTypeDef](./type_defs.md#errordetailtypedef) 
-## BatchGetCustomEntityTypesResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import BatchGetCustomEntityTypesResponseTypeDef
-
-def get_value() -> BatchGetCustomEntityTypesResponseTypeDef:
-    return {
-        "CustomEntityTypes": ...,
-        "CustomEntityTypesNotFound": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class BatchGetCustomEntityTypesResponseTypeDef(TypedDict):
-    CustomEntityTypes: List[CustomEntityTypeTypeDef],  # (1)
-    CustomEntityTypesNotFound: List[str],
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: CustomEntityTypeTypeDef](./type_defs.md#customentitytypetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListCustomEntityTypesResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ListCustomEntityTypesResponseTypeDef
-
-def get_value() -> ListCustomEntityTypesResponseTypeDef:
-    return {
-        "CustomEntityTypes": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListCustomEntityTypesResponseTypeDef(TypedDict):
-    CustomEntityTypes: List[CustomEntityTypeTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: CustomEntityTypeTypeDef](./type_defs.md#customentitytypetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## BatchGetDevEndpointsResponseTypeDef
 
 ```python title="Usage Example"
@@ -7057,152 +5670,6 @@ class GetCatalogImportStatusResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: CatalogImportStatusTypeDef](./type_defs.md#catalogimportstatustypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CatalogKafkaSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CatalogKafkaSourceTypeDef
-
-def get_value() -> CatalogKafkaSourceTypeDef:
-    return {
-        "Name": ...,
-        "Table": ...,
-        "Database": ...,
-    }
-```
-
-```python title="Definition"
-class CatalogKafkaSourceTypeDef(TypedDict):
-    Name: str,
-    Table: str,
-    Database: str,
-    WindowSize: NotRequired[int],
-    DetectSchema: NotRequired[bool],
-    StreamingOptions: NotRequired[KafkaStreamingSourceOptionsTypeDef],  # (1)
-    DataPreviewOptions: NotRequired[StreamingDataPreviewOptionsTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: KafkaStreamingSourceOptionsTypeDef](./type_defs.md#kafkastreamingsourceoptionstypedef) 
-2. See [:material-code-braces: StreamingDataPreviewOptionsTypeDef](./type_defs.md#streamingdatapreviewoptionstypedef) 
-## DirectKafkaSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DirectKafkaSourceTypeDef
-
-def get_value() -> DirectKafkaSourceTypeDef:
-    return {
-        "Name": ...,
-    }
-```
-
-```python title="Definition"
-class DirectKafkaSourceTypeDef(TypedDict):
-    Name: str,
-    StreamingOptions: NotRequired[KafkaStreamingSourceOptionsTypeDef],  # (1)
-    WindowSize: NotRequired[int],
-    DetectSchema: NotRequired[bool],
-    DataPreviewOptions: NotRequired[StreamingDataPreviewOptionsTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: KafkaStreamingSourceOptionsTypeDef](./type_defs.md#kafkastreamingsourceoptionstypedef) 
-2. See [:material-code-braces: StreamingDataPreviewOptionsTypeDef](./type_defs.md#streamingdatapreviewoptionstypedef) 
-## CatalogKinesisSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CatalogKinesisSourceTypeDef
-
-def get_value() -> CatalogKinesisSourceTypeDef:
-    return {
-        "Name": ...,
-        "Table": ...,
-        "Database": ...,
-    }
-```
-
-```python title="Definition"
-class CatalogKinesisSourceTypeDef(TypedDict):
-    Name: str,
-    Table: str,
-    Database: str,
-    WindowSize: NotRequired[int],
-    DetectSchema: NotRequired[bool],
-    StreamingOptions: NotRequired[KinesisStreamingSourceOptionsTypeDef],  # (1)
-    DataPreviewOptions: NotRequired[StreamingDataPreviewOptionsTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: KinesisStreamingSourceOptionsTypeDef](./type_defs.md#kinesisstreamingsourceoptionstypedef) 
-2. See [:material-code-braces: StreamingDataPreviewOptionsTypeDef](./type_defs.md#streamingdatapreviewoptionstypedef) 
-## DirectKinesisSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DirectKinesisSourceTypeDef
-
-def get_value() -> DirectKinesisSourceTypeDef:
-    return {
-        "Name": ...,
-    }
-```
-
-```python title="Definition"
-class DirectKinesisSourceTypeDef(TypedDict):
-    Name: str,
-    WindowSize: NotRequired[int],
-    DetectSchema: NotRequired[bool],
-    StreamingOptions: NotRequired[KinesisStreamingSourceOptionsTypeDef],  # (1)
-    DataPreviewOptions: NotRequired[StreamingDataPreviewOptionsTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: KinesisStreamingSourceOptionsTypeDef](./type_defs.md#kinesisstreamingsourceoptionstypedef) 
-2. See [:material-code-braces: StreamingDataPreviewOptionsTypeDef](./type_defs.md#streamingdatapreviewoptionstypedef) 
-## GovernedCatalogTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GovernedCatalogTargetTypeDef
-
-def get_value() -> GovernedCatalogTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Table": ...,
-        "Database": ...,
-    }
-```
-
-```python title="Definition"
-class GovernedCatalogTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Table: str,
-    Database: str,
-    PartitionKeys: NotRequired[List[List[str]]],
-    SchemaChangePolicy: NotRequired[CatalogSchemaChangePolicyTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: CatalogSchemaChangePolicyTypeDef](./type_defs.md#catalogschemachangepolicytypedef) 
-## S3CatalogTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3CatalogTargetTypeDef
-
-def get_value() -> S3CatalogTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Table": ...,
-        "Database": ...,
-    }
-```
-
-```python title="Definition"
-class S3CatalogTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Table: str,
-    Database: str,
-    PartitionKeys: NotRequired[List[List[str]]],
-    SchemaChangePolicy: NotRequired[CatalogSchemaChangePolicyTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: CatalogSchemaChangePolicyTypeDef](./type_defs.md#catalogschemachangepolicytypedef) 
 ## ClassifierTypeDef
 
 ```python title="Usage Example"
@@ -7381,28 +5848,6 @@ class CrawlerNodeDetailsTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: CrawlTypeDef](./type_defs.md#crawltypedef) 
-## ListCrawlsResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ListCrawlsResponseTypeDef
-
-def get_value() -> ListCrawlsResponseTypeDef:
-    return {
-        "Crawls": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListCrawlsResponseTypeDef(TypedDict):
-    Crawls: List[CrawlerHistoryTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: CrawlerHistoryTypeDef](./type_defs.md#crawlerhistorytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetCrawlerMetricsResponseTypeDef
 
 ```python title="Usage Example"
@@ -7452,26 +5897,6 @@ class CrawlerTargetsTypeDef(TypedDict):
 4. See [:material-code-braces: DynamoDBTargetTypeDef](./type_defs.md#dynamodbtargettypedef) 
 5. See [:material-code-braces: CatalogTargetTypeDef](./type_defs.md#catalogtargettypedef) 
 6. See [:material-code-braces: DeltaTargetTypeDef](./type_defs.md#deltatargettypedef) 
-## ListCrawlsRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ListCrawlsRequestRequestTypeDef
-
-def get_value() -> ListCrawlsRequestRequestTypeDef:
-    return {
-        "CrawlerName": ...,
-    }
-```
-
-```python title="Definition"
-class ListCrawlsRequestRequestTypeDef(TypedDict):
-    CrawlerName: str,
-    MaxResults: NotRequired[int],
-    Filters: NotRequired[Sequence[CrawlsFilterTypeDef]],  # (1)
-    NextToken: NotRequired[str],
-```
-
-1. See [:material-code-braces: CrawlsFilterTypeDef](./type_defs.md#crawlsfiltertypedef) 
 ## CreateClassifierRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -7495,6 +5920,124 @@ class CreateClassifierRequestRequestTypeDef(TypedDict):
 2. See [:material-code-braces: CreateXMLClassifierRequestTypeDef](./type_defs.md#createxmlclassifierrequesttypedef) 
 3. See [:material-code-braces: CreateJsonClassifierRequestTypeDef](./type_defs.md#createjsonclassifierrequesttypedef) 
 4. See [:material-code-braces: CreateCsvClassifierRequestTypeDef](./type_defs.md#createcsvclassifierrequesttypedef) 
+## CreateJobRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_glue.type_defs import CreateJobRequestRequestTypeDef
+
+def get_value() -> CreateJobRequestRequestTypeDef:
+    return {
+        "Name": ...,
+        "Role": ...,
+        "Command": ...,
+    }
+```
+
+```python title="Definition"
+class CreateJobRequestRequestTypeDef(TypedDict):
+    Name: str,
+    Role: str,
+    Command: JobCommandTypeDef,  # (1)
+    Description: NotRequired[str],
+    LogUri: NotRequired[str],
+    ExecutionProperty: NotRequired[ExecutionPropertyTypeDef],  # (2)
+    DefaultArguments: NotRequired[Mapping[str, str]],
+    NonOverridableArguments: NotRequired[Mapping[str, str]],
+    Connections: NotRequired[ConnectionsListTypeDef],  # (3)
+    MaxRetries: NotRequired[int],
+    AllocatedCapacity: NotRequired[int],
+    Timeout: NotRequired[int],
+    MaxCapacity: NotRequired[float],
+    SecurityConfiguration: NotRequired[str],
+    Tags: NotRequired[Mapping[str, str]],
+    NotificationProperty: NotRequired[NotificationPropertyTypeDef],  # (4)
+    GlueVersion: NotRequired[str],
+    NumberOfWorkers: NotRequired[int],
+    WorkerType: NotRequired[WorkerTypeType],  # (5)
+```
+
+1. See [:material-code-braces: JobCommandTypeDef](./type_defs.md#jobcommandtypedef) 
+2. See [:material-code-braces: ExecutionPropertyTypeDef](./type_defs.md#executionpropertytypedef) 
+3. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
+4. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
+5. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
+## JobTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_glue.type_defs import JobTypeDef
+
+def get_value() -> JobTypeDef:
+    return {
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class JobTypeDef(TypedDict):
+    Name: NotRequired[str],
+    Description: NotRequired[str],
+    LogUri: NotRequired[str],
+    Role: NotRequired[str],
+    CreatedOn: NotRequired[datetime],
+    LastModifiedOn: NotRequired[datetime],
+    ExecutionProperty: NotRequired[ExecutionPropertyTypeDef],  # (1)
+    Command: NotRequired[JobCommandTypeDef],  # (2)
+    DefaultArguments: NotRequired[Dict[str, str]],
+    NonOverridableArguments: NotRequired[Dict[str, str]],
+    Connections: NotRequired[ConnectionsListTypeDef],  # (3)
+    MaxRetries: NotRequired[int],
+    AllocatedCapacity: NotRequired[int],
+    Timeout: NotRequired[int],
+    MaxCapacity: NotRequired[float],
+    WorkerType: NotRequired[WorkerTypeType],  # (4)
+    NumberOfWorkers: NotRequired[int],
+    SecurityConfiguration: NotRequired[str],
+    NotificationProperty: NotRequired[NotificationPropertyTypeDef],  # (5)
+    GlueVersion: NotRequired[str],
+```
+
+1. See [:material-code-braces: ExecutionPropertyTypeDef](./type_defs.md#executionpropertytypedef) 
+2. See [:material-code-braces: JobCommandTypeDef](./type_defs.md#jobcommandtypedef) 
+3. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
+4. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
+5. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
+## JobUpdateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_glue.type_defs import JobUpdateTypeDef
+
+def get_value() -> JobUpdateTypeDef:
+    return {
+        "Description": ...,
+    }
+```
+
+```python title="Definition"
+class JobUpdateTypeDef(TypedDict):
+    Description: NotRequired[str],
+    LogUri: NotRequired[str],
+    Role: NotRequired[str],
+    ExecutionProperty: NotRequired[ExecutionPropertyTypeDef],  # (1)
+    Command: NotRequired[JobCommandTypeDef],  # (2)
+    DefaultArguments: NotRequired[Mapping[str, str]],
+    NonOverridableArguments: NotRequired[Mapping[str, str]],
+    Connections: NotRequired[ConnectionsListTypeDef],  # (3)
+    MaxRetries: NotRequired[int],
+    AllocatedCapacity: NotRequired[int],
+    Timeout: NotRequired[int],
+    MaxCapacity: NotRequired[float],
+    WorkerType: NotRequired[WorkerTypeType],  # (4)
+    NumberOfWorkers: NotRequired[int],
+    SecurityConfiguration: NotRequired[str],
+    NotificationProperty: NotRequired[NotificationPropertyTypeDef],  # (5)
+    GlueVersion: NotRequired[str],
+```
+
+1. See [:material-code-braces: ExecutionPropertyTypeDef](./type_defs.md#executionpropertytypedef) 
+2. See [:material-code-braces: JobCommandTypeDef](./type_defs.md#jobcommandtypedef) 
+3. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
+4. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
+5. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
 ## CreatePartitionIndexRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -7615,72 +6158,6 @@ class UpdateRegistryInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: RegistryIdTypeDef](./type_defs.md#registryidtypedef) 
-## CreateSessionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CreateSessionRequestRequestTypeDef
-
-def get_value() -> CreateSessionRequestRequestTypeDef:
-    return {
-        "Id": ...,
-        "Role": ...,
-        "Command": ...,
-    }
-```
-
-```python title="Definition"
-class CreateSessionRequestRequestTypeDef(TypedDict):
-    Id: str,
-    Role: str,
-    Command: SessionCommandTypeDef,  # (1)
-    Description: NotRequired[str],
-    Timeout: NotRequired[int],
-    IdleTimeout: NotRequired[int],
-    DefaultArguments: NotRequired[Mapping[str, str]],
-    Connections: NotRequired[ConnectionsListTypeDef],  # (2)
-    MaxCapacity: NotRequired[float],
-    NumberOfWorkers: NotRequired[int],
-    WorkerType: NotRequired[WorkerTypeType],  # (3)
-    SecurityConfiguration: NotRequired[str],
-    GlueVersion: NotRequired[str],
-    Tags: NotRequired[Mapping[str, str]],
-    RequestOrigin: NotRequired[str],
-```
-
-1. See [:material-code-braces: SessionCommandTypeDef](./type_defs.md#sessioncommandtypedef) 
-2. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
-3. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
-## SessionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SessionTypeDef
-
-def get_value() -> SessionTypeDef:
-    return {
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class SessionTypeDef(TypedDict):
-    Id: NotRequired[str],
-    CreatedOn: NotRequired[datetime],
-    Status: NotRequired[SessionStatusType],  # (1)
-    ErrorMessage: NotRequired[str],
-    Description: NotRequired[str],
-    Role: NotRequired[str],
-    Command: NotRequired[SessionCommandTypeDef],  # (2)
-    DefaultArguments: NotRequired[Dict[str, str]],
-    Connections: NotRequired[ConnectionsListTypeDef],  # (3)
-    Progress: NotRequired[float],
-    MaxCapacity: NotRequired[float],
-    SecurityConfiguration: NotRequired[str],
-    GlueVersion: NotRequired[str],
-```
-
-1. See [:material-code-brackets: SessionStatusType](./literals.md#sessionstatustype) 
-2. See [:material-code-braces: SessionCommandTypeDef](./type_defs.md#sessioncommandtypedef) 
-3. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
 ## DataCatalogEncryptionSettingsTypeDef
 
 ```python title="Usage Example"
@@ -7719,25 +6196,6 @@ class PrincipalPermissionsTypeDef(TypedDict):
 
 1. See [:material-code-braces: DataLakePrincipalTypeDef](./type_defs.md#datalakeprincipaltypedef) 
 2. See [:material-code-brackets: PermissionType](./literals.md#permissiontype) 
-## NullValueFieldTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import NullValueFieldTypeDef
-
-def get_value() -> NullValueFieldTypeDef:
-    return {
-        "Value": ...,
-        "Datatype": ...,
-    }
-```
-
-```python title="Definition"
-class NullValueFieldTypeDef(TypedDict):
-    Value: str,
-    Datatype: DatatypeTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: DatatypeTypeDef](./type_defs.md#datatypetypedef) 
 ## DecimalColumnStatisticsDataTypeDef
 
 ```python title="Usage Example"
@@ -7913,58 +6371,6 @@ class UpdateDevEndpointRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: DevEndpointCustomLibrariesTypeDef](./type_defs.md#devendpointcustomlibrariestypedef) 
-## S3DirectTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3DirectTargetTypeDef
-
-def get_value() -> S3DirectTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Path": ...,
-        "Format": ...,
-    }
-```
-
-```python title="Definition"
-class S3DirectTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Path: str,
-    Format: TargetFormatType,  # (1)
-    PartitionKeys: NotRequired[List[List[str]]],
-    Compression: NotRequired[str],
-    SchemaChangePolicy: NotRequired[DirectSchemaChangePolicyTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: TargetFormatType](./literals.md#targetformattype) 
-2. See [:material-code-braces: DirectSchemaChangePolicyTypeDef](./type_defs.md#directschemachangepolicytypedef) 
-## S3GlueParquetTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3GlueParquetTargetTypeDef
-
-def get_value() -> S3GlueParquetTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Path": ...,
-    }
-```
-
-```python title="Definition"
-class S3GlueParquetTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Path: str,
-    PartitionKeys: NotRequired[List[List[str]]],
-    Compression: NotRequired[ParquetCompressionTypeType],  # (1)
-    SchemaChangePolicy: NotRequired[DirectSchemaChangePolicyTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: ParquetCompressionTypeType](./literals.md#parquetcompressiontypetype) 
-2. See [:material-code-braces: DirectSchemaChangePolicyTypeDef](./type_defs.md#directschemachangepolicytypedef) 
 ## EncryptionConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -8004,27 +6410,6 @@ class SchemaVersionErrorItemTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ErrorDetailsTypeDef](./type_defs.md#errordetailstypedef) 
-## FilterExpressionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import FilterExpressionTypeDef
-
-def get_value() -> FilterExpressionTypeDef:
-    return {
-        "Operation": ...,
-        "Values": ...,
-    }
-```
-
-```python title="Definition"
-class FilterExpressionTypeDef(TypedDict):
-    Operation: FilterOperationType,  # (1)
-    Values: List[FilterValueTypeDef],  # (2)
-    Negated: NotRequired[bool],
-```
-
-1. See [:material-code-brackets: FilterOperationType](./literals.md#filteroperationtype) 
-2. See [:material-code-braces: FilterValueTypeDef](./type_defs.md#filtervaluetypedef) 
 ## TransformParametersTypeDef
 
 ```python title="Usage Example"
@@ -8684,69 +7069,6 @@ class UpdateSchemaInputRequestTypeDef(TypedDict):
 1. See [:material-code-braces: SchemaIdTypeDef](./type_defs.md#schemaidtypedef) 
 2. See [:material-code-braces: SchemaVersionNumberTypeDef](./type_defs.md#schemaversionnumbertypedef) 
 3. See [:material-code-brackets: CompatibilityType](./literals.md#compatibilitytype) 
-## GlueSchemaTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GlueSchemaTypeDef
-
-def get_value() -> GlueSchemaTypeDef:
-    return {
-        "Columns": ...,
-    }
-```
-
-```python title="Definition"
-class GlueSchemaTypeDef(TypedDict):
-    Columns: NotRequired[List[GlueStudioSchemaColumnTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: GlueStudioSchemaColumnTypeDef](./type_defs.md#gluestudioschemacolumntypedef) 
-## GovernedCatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GovernedCatalogSourceTypeDef
-
-def get_value() -> GovernedCatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class GovernedCatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-    PartitionPredicate: NotRequired[str],
-    AdditionalOptions: NotRequired[S3SourceAdditionalOptionsTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: S3SourceAdditionalOptionsTypeDef](./type_defs.md#s3sourceadditionaloptionstypedef) 
-## S3CatalogSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3CatalogSourceTypeDef
-
-def get_value() -> S3CatalogSourceTypeDef:
-    return {
-        "Name": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class S3CatalogSourceTypeDef(TypedDict):
-    Name: str,
-    Database: str,
-    Table: str,
-    PartitionPredicate: NotRequired[str],
-    AdditionalOptions: NotRequired[S3SourceAdditionalOptionsTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: S3SourceAdditionalOptionsTypeDef](./type_defs.md#s3sourceadditionaloptionstypedef) 
 ## JobRunTypeDef
 
 ```python title="Usage Example"
@@ -8782,37 +7104,12 @@ class JobRunTypeDef(TypedDict):
     LogGroupName: NotRequired[str],
     NotificationProperty: NotRequired[NotificationPropertyTypeDef],  # (4)
     GlueVersion: NotRequired[str],
-    DPUSeconds: NotRequired[float],
 ```
 
 1. See [:material-code-brackets: JobRunStateType](./literals.md#jobrunstatetype) 
 2. See [:material-code-braces: PredecessorTypeDef](./type_defs.md#predecessortypedef) 
 3. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
 4. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
-## JoinTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import JoinTypeDef
-
-def get_value() -> JoinTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "JoinType": ...,
-        "Columns": ...,
-    }
-```
-
-```python title="Definition"
-class JoinTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    JoinType: JoinTypeType,  # (1)
-    Columns: List[JoinColumnTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: JoinTypeType](./literals.md#jointypetype) 
-2. See [:material-code-braces: JoinColumnTypeDef](./type_defs.md#joincolumntypedef) 
 ## TaskRunPropertiesTypeDef
 
 ```python title="Usage Example"
@@ -9009,32 +7306,6 @@ class RemoveSchemaVersionMetadataInputRequestTypeDef(TypedDict):
 1. See [:material-code-braces: MetadataKeyValuePairTypeDef](./type_defs.md#metadatakeyvaluepairtypedef) 
 2. See [:material-code-braces: SchemaIdTypeDef](./type_defs.md#schemaidtypedef) 
 3. See [:material-code-braces: SchemaVersionNumberTypeDef](./type_defs.md#schemaversionnumbertypedef) 
-## RedshiftTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import RedshiftTargetTypeDef
-
-def get_value() -> RedshiftTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Database": ...,
-        "Table": ...,
-    }
-```
-
-```python title="Definition"
-class RedshiftTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Database: str,
-    Table: str,
-    RedshiftTmpDir: NotRequired[str],
-    TmpDirIAMRole: NotRequired[str],
-    UpsertRedshiftOptions: NotRequired[UpsertRedshiftTargetOptionsTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: UpsertRedshiftTargetOptionsTypeDef](./type_defs.md#upsertredshifttargetoptionstypedef) 
 ## UserDefinedFunctionInputTypeDef
 
 ```python title="Usage Example"
@@ -9107,29 +7378,6 @@ class SearchTablesRequestRequestTypeDef(TypedDict):
 1. See [:material-code-braces: PropertyPredicateTypeDef](./type_defs.md#propertypredicatetypedef) 
 2. See [:material-code-braces: SortCriterionTypeDef](./type_defs.md#sortcriteriontypedef) 
 3. See [:material-code-brackets: ResourceShareTypeType](./literals.md#resourcesharetypetype) 
-## StatementOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import StatementOutputTypeDef
-
-def get_value() -> StatementOutputTypeDef:
-    return {
-        "Data": ...,
-    }
-```
-
-```python title="Definition"
-class StatementOutputTypeDef(TypedDict):
-    Data: NotRequired[StatementOutputDataTypeDef],  # (1)
-    ExecutionCount: NotRequired[int],
-    Status: NotRequired[StatementStateType],  # (2)
-    ErrorName: NotRequired[str],
-    ErrorValue: NotRequired[str],
-    Traceback: NotRequired[List[str]],
-```
-
-1. See [:material-code-braces: StatementOutputDataTypeDef](./type_defs.md#statementoutputdatatypedef) 
-2. See [:material-code-brackets: StatementStateType](./literals.md#statementstatetype) 
 ## UpdateClassifierRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -9775,70 +8023,89 @@ class UpdateCrawlerRequestRequestTypeDef(TypedDict):
 3. See [:material-code-braces: RecrawlPolicyTypeDef](./type_defs.md#recrawlpolicytypedef) 
 4. See [:material-code-braces: LineageConfigurationTypeDef](./type_defs.md#lineageconfigurationtypedef) 
 5. See [:material-code-braces: LakeFormationConfigurationTypeDef](./type_defs.md#lakeformationconfigurationtypedef) 
-## CreateSessionResponseTypeDef
+## BatchGetJobsResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CreateSessionResponseTypeDef
+from types_aiobotocore_glue.type_defs import BatchGetJobsResponseTypeDef
 
-def get_value() -> CreateSessionResponseTypeDef:
+def get_value() -> BatchGetJobsResponseTypeDef:
     return {
-        "Session": ...,
+        "Jobs": ...,
+        "JobsNotFound": ...,
         "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class CreateSessionResponseTypeDef(TypedDict):
-    Session: SessionTypeDef,  # (1)
+class BatchGetJobsResponseTypeDef(TypedDict):
+    Jobs: List[JobTypeDef],  # (1)
+    JobsNotFound: List[str],
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: SessionTypeDef](./type_defs.md#sessiontypedef) 
+1. See [:material-code-braces: JobTypeDef](./type_defs.md#jobtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetSessionResponseTypeDef
+## GetJobResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GetSessionResponseTypeDef
+from types_aiobotocore_glue.type_defs import GetJobResponseTypeDef
 
-def get_value() -> GetSessionResponseTypeDef:
+def get_value() -> GetJobResponseTypeDef:
     return {
-        "Session": ...,
+        "Job": ...,
         "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class GetSessionResponseTypeDef(TypedDict):
-    Session: SessionTypeDef,  # (1)
+class GetJobResponseTypeDef(TypedDict):
+    Job: JobTypeDef,  # (1)
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: SessionTypeDef](./type_defs.md#sessiontypedef) 
+1. See [:material-code-braces: JobTypeDef](./type_defs.md#jobtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListSessionsResponseTypeDef
+## GetJobsResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ListSessionsResponseTypeDef
+from types_aiobotocore_glue.type_defs import GetJobsResponseTypeDef
 
-def get_value() -> ListSessionsResponseTypeDef:
+def get_value() -> GetJobsResponseTypeDef:
     return {
-        "Ids": ...,
-        "Sessions": ...,
+        "Jobs": ...,
         "NextToken": ...,
         "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class ListSessionsResponseTypeDef(TypedDict):
-    Ids: List[str],
-    Sessions: List[SessionTypeDef],  # (1)
+class GetJobsResponseTypeDef(TypedDict):
+    Jobs: List[JobTypeDef],  # (1)
     NextToken: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: SessionTypeDef](./type_defs.md#sessiontypedef) 
+1. See [:material-code-braces: JobTypeDef](./type_defs.md#jobtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateJobRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_glue.type_defs import UpdateJobRequestRequestTypeDef
+
+def get_value() -> UpdateJobRequestRequestTypeDef:
+    return {
+        "JobName": ...,
+        "JobUpdate": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateJobRequestRequestTypeDef(TypedDict):
+    JobName: str,
+    JobUpdate: JobUpdateTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: JobUpdateTypeDef](./type_defs.md#jobupdatetypedef) 
 ## GetDataCatalogEncryptionSettingsResponseTypeDef
 
 ```python title="Usage Example"
@@ -9925,28 +8192,6 @@ class DatabaseTypeDef(TypedDict):
 
 1. See [:material-code-braces: PrincipalPermissionsTypeDef](./type_defs.md#principalpermissionstypedef) 
 2. See [:material-code-braces: DatabaseIdentifierTypeDef](./type_defs.md#databaseidentifiertypedef) 
-## DropNullFieldsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import DropNullFieldsTypeDef
-
-def get_value() -> DropNullFieldsTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-    }
-```
-
-```python title="Definition"
-class DropNullFieldsTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    NullCheckBoxList: NotRequired[NullCheckBoxListTypeDef],  # (1)
-    NullTextList: NotRequired[List[NullValueFieldTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: NullCheckBoxListTypeDef](./type_defs.md#nullcheckboxlisttypedef) 
-2. See [:material-code-braces: NullValueFieldTypeDef](./type_defs.md#nullvaluefieldtypedef) 
 ## ColumnStatisticsDataTypeDef
 
 ```python title="Usage Example"
@@ -10070,30 +8315,6 @@ class DeleteSchemaVersionsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: SchemaVersionErrorItemTypeDef](./type_defs.md#schemaversionerroritemtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## FilterTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import FilterTypeDef
-
-def get_value() -> FilterTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "LogicalOperator": ...,
-        "Filters": ...,
-    }
-```
-
-```python title="Definition"
-class FilterTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    LogicalOperator: FilterLogicalOperatorType,  # (1)
-    Filters: List[FilterExpressionTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: FilterLogicalOperatorType](./literals.md#filterlogicaloperatortype) 
-2. See [:material-code-braces: FilterExpressionTypeDef](./type_defs.md#filterexpressiontypedef) 
 ## UpdateMLTransformRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -10165,295 +8386,6 @@ class ListMLTransformsRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-braces: TransformFilterCriteriaTypeDef](./type_defs.md#transformfiltercriteriatypedef) 
 2. See [:material-code-braces: TransformSortCriteriaTypeDef](./type_defs.md#transformsortcriteriatypedef) 
-## AthenaConnectorSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import AthenaConnectorSourceTypeDef
-
-def get_value() -> AthenaConnectorSourceTypeDef:
-    return {
-        "Name": ...,
-        "ConnectionName": ...,
-        "ConnectorName": ...,
-        "ConnectionType": ...,
-        "SchemaName": ...,
-    }
-```
-
-```python title="Definition"
-class AthenaConnectorSourceTypeDef(TypedDict):
-    Name: str,
-    ConnectionName: str,
-    ConnectorName: str,
-    ConnectionType: str,
-    SchemaName: str,
-    ConnectionTable: NotRequired[str],
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## CustomCodeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CustomCodeTypeDef
-
-def get_value() -> CustomCodeTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "Code": ...,
-        "ClassName": ...,
-    }
-```
-
-```python title="Definition"
-class CustomCodeTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    Code: str,
-    ClassName: str,
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## JDBCConnectorSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import JDBCConnectorSourceTypeDef
-
-def get_value() -> JDBCConnectorSourceTypeDef:
-    return {
-        "Name": ...,
-        "ConnectionName": ...,
-        "ConnectorName": ...,
-        "ConnectionType": ...,
-    }
-```
-
-```python title="Definition"
-class JDBCConnectorSourceTypeDef(TypedDict):
-    Name: str,
-    ConnectionName: str,
-    ConnectorName: str,
-    ConnectionType: str,
-    AdditionalOptions: NotRequired[JDBCConnectorOptionsTypeDef],  # (1)
-    ConnectionTable: NotRequired[str],
-    Query: NotRequired[str],
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: JDBCConnectorOptionsTypeDef](./type_defs.md#jdbcconnectoroptionstypedef) 
-2. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## JDBCConnectorTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import JDBCConnectorTargetTypeDef
-
-def get_value() -> JDBCConnectorTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "ConnectionName": ...,
-        "ConnectionTable": ...,
-        "ConnectorName": ...,
-        "ConnectionType": ...,
-    }
-```
-
-```python title="Definition"
-class JDBCConnectorTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    ConnectionName: str,
-    ConnectionTable: str,
-    ConnectorName: str,
-    ConnectionType: str,
-    AdditionalOptions: NotRequired[Dict[str, str]],
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## S3CsvSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3CsvSourceTypeDef
-
-def get_value() -> S3CsvSourceTypeDef:
-    return {
-        "Name": ...,
-        "Paths": ...,
-        "Separator": ...,
-        "QuoteChar": ...,
-    }
-```
-
-```python title="Definition"
-class S3CsvSourceTypeDef(TypedDict):
-    Name: str,
-    Paths: List[str],
-    Separator: SeparatorType,  # (3)
-    QuoteChar: QuoteCharType,  # (4)
-    CompressionType: NotRequired[CompressionTypeType],  # (1)
-    Exclusions: NotRequired[List[str]],
-    GroupSize: NotRequired[str],
-    GroupFiles: NotRequired[str],
-    Recurse: NotRequired[bool],
-    MaxBand: NotRequired[int],
-    MaxFilesInBand: NotRequired[int],
-    AdditionalOptions: NotRequired[S3DirectSourceAdditionalOptionsTypeDef],  # (2)
-    Escaper: NotRequired[str],
-    Multiline: NotRequired[bool],
-    WithHeader: NotRequired[bool],
-    WriteHeader: NotRequired[bool],
-    SkipFirst: NotRequired[bool],
-    OptimizePerformance: NotRequired[bool],
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (5)
-```
-
-1. See [:material-code-brackets: CompressionTypeType](./literals.md#compressiontypetype) 
-2. See [:material-code-braces: S3DirectSourceAdditionalOptionsTypeDef](./type_defs.md#s3directsourceadditionaloptionstypedef) 
-3. See [:material-code-brackets: SeparatorType](./literals.md#separatortype) 
-4. See [:material-code-brackets: QuoteCharType](./literals.md#quotechartype) 
-5. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## S3JsonSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3JsonSourceTypeDef
-
-def get_value() -> S3JsonSourceTypeDef:
-    return {
-        "Name": ...,
-        "Paths": ...,
-    }
-```
-
-```python title="Definition"
-class S3JsonSourceTypeDef(TypedDict):
-    Name: str,
-    Paths: List[str],
-    CompressionType: NotRequired[CompressionTypeType],  # (1)
-    Exclusions: NotRequired[List[str]],
-    GroupSize: NotRequired[str],
-    GroupFiles: NotRequired[str],
-    Recurse: NotRequired[bool],
-    MaxBand: NotRequired[int],
-    MaxFilesInBand: NotRequired[int],
-    AdditionalOptions: NotRequired[S3DirectSourceAdditionalOptionsTypeDef],  # (2)
-    JsonPath: NotRequired[str],
-    Multiline: NotRequired[bool],
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (3)
-```
-
-1. See [:material-code-brackets: CompressionTypeType](./literals.md#compressiontypetype) 
-2. See [:material-code-braces: S3DirectSourceAdditionalOptionsTypeDef](./type_defs.md#s3directsourceadditionaloptionstypedef) 
-3. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## S3ParquetSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import S3ParquetSourceTypeDef
-
-def get_value() -> S3ParquetSourceTypeDef:
-    return {
-        "Name": ...,
-        "Paths": ...,
-    }
-```
-
-```python title="Definition"
-class S3ParquetSourceTypeDef(TypedDict):
-    Name: str,
-    Paths: List[str],
-    CompressionType: NotRequired[ParquetCompressionTypeType],  # (1)
-    Exclusions: NotRequired[List[str]],
-    GroupSize: NotRequired[str],
-    GroupFiles: NotRequired[str],
-    Recurse: NotRequired[bool],
-    MaxBand: NotRequired[int],
-    MaxFilesInBand: NotRequired[int],
-    AdditionalOptions: NotRequired[S3DirectSourceAdditionalOptionsTypeDef],  # (2)
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (3)
-```
-
-1. See [:material-code-brackets: ParquetCompressionTypeType](./literals.md#parquetcompressiontypetype) 
-2. See [:material-code-braces: S3DirectSourceAdditionalOptionsTypeDef](./type_defs.md#s3directsourceadditionaloptionstypedef) 
-3. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## SparkConnectorSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SparkConnectorSourceTypeDef
-
-def get_value() -> SparkConnectorSourceTypeDef:
-    return {
-        "Name": ...,
-        "ConnectionName": ...,
-        "ConnectorName": ...,
-        "ConnectionType": ...,
-    }
-```
-
-```python title="Definition"
-class SparkConnectorSourceTypeDef(TypedDict):
-    Name: str,
-    ConnectionName: str,
-    ConnectorName: str,
-    ConnectionType: str,
-    AdditionalOptions: NotRequired[Dict[str, str]],
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## SparkConnectorTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SparkConnectorTargetTypeDef
-
-def get_value() -> SparkConnectorTargetTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "ConnectionName": ...,
-        "ConnectorName": ...,
-        "ConnectionType": ...,
-    }
-```
-
-```python title="Definition"
-class SparkConnectorTargetTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    ConnectionName: str,
-    ConnectorName: str,
-    ConnectionType: str,
-    AdditionalOptions: NotRequired[Dict[str, str]],
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
-## SparkSQLTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import SparkSQLTypeDef
-
-def get_value() -> SparkSQLTypeDef:
-    return {
-        "Name": ...,
-        "Inputs": ...,
-        "SqlQuery": ...,
-        "SqlAliases": ...,
-    }
-```
-
-```python title="Definition"
-class SparkSQLTypeDef(TypedDict):
-    Name: str,
-    Inputs: List[str],
-    SqlQuery: str,
-    SqlAliases: List[SqlAliasTypeDef],  # (1)
-    OutputSchemas: NotRequired[List[GlueSchemaTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: SqlAliasTypeDef](./type_defs.md#sqlaliastypedef) 
-2. See [:material-code-braces: GlueSchemaTypeDef](./type_defs.md#glueschematypedef) 
 ## GetJobRunResponseTypeDef
 
 ```python title="Usage Example"
@@ -10722,30 +8654,6 @@ class GetUserDefinedFunctionsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: UserDefinedFunctionTypeDef](./type_defs.md#userdefinedfunctiontypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## StatementTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import StatementTypeDef
-
-def get_value() -> StatementTypeDef:
-    return {
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class StatementTypeDef(TypedDict):
-    Id: NotRequired[int],
-    Code: NotRequired[str],
-    State: NotRequired[StatementStateType],  # (1)
-    Output: NotRequired[StatementOutputTypeDef],  # (2)
-    Progress: NotRequired[float],
-    StartedOn: NotRequired[int],
-    CompletedOn: NotRequired[int],
-```
-
-1. See [:material-code-brackets: StatementStateType](./literals.md#statementstatetype) 
-2. See [:material-code-braces: StatementOutputTypeDef](./type_defs.md#statementoutputtypedef) 
 ## GetPartitionIndexesResponseTypeDef
 
 ```python title="Usage Example"
@@ -11070,7 +8978,6 @@ def get_value() -> CreateDatabaseRequestRequestTypeDef:
 class CreateDatabaseRequestRequestTypeDef(TypedDict):
     DatabaseInput: DatabaseInputTypeDef,  # (1)
     CatalogId: NotRequired[str],
-    Tags: NotRequired[Mapping[str, str]],
 ```
 
 1. See [:material-code-braces: DatabaseInputTypeDef](./type_defs.md#databaseinputtypedef) 
@@ -11316,121 +9223,6 @@ class GetSecurityConfigurationsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: SecurityConfigurationTypeDef](./type_defs.md#securityconfigurationtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CodeGenConfigurationNodeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CodeGenConfigurationNodeTypeDef
-
-def get_value() -> CodeGenConfigurationNodeTypeDef:
-    return {
-        "AthenaConnectorSource": ...,
-    }
-```
-
-```python title="Definition"
-class CodeGenConfigurationNodeTypeDef(TypedDict):
-    AthenaConnectorSource: NotRequired[AthenaConnectorSourceTypeDef],  # (1)
-    JDBCConnectorSource: NotRequired[JDBCConnectorSourceTypeDef],  # (2)
-    SparkConnectorSource: NotRequired[SparkConnectorSourceTypeDef],  # (3)
-    CatalogSource: NotRequired[CatalogSourceTypeDef],  # (4)
-    RedshiftSource: NotRequired[RedshiftSourceTypeDef],  # (5)
-    S3CatalogSource: NotRequired[S3CatalogSourceTypeDef],  # (6)
-    S3CsvSource: NotRequired[S3CsvSourceTypeDef],  # (7)
-    S3JsonSource: NotRequired[S3JsonSourceTypeDef],  # (8)
-    S3ParquetSource: NotRequired[S3ParquetSourceTypeDef],  # (9)
-    RelationalCatalogSource: NotRequired[RelationalCatalogSourceTypeDef],  # (10)
-    DynamoDBCatalogSource: NotRequired[DynamoDBCatalogSourceTypeDef],  # (11)
-    JDBCConnectorTarget: NotRequired[JDBCConnectorTargetTypeDef],  # (12)
-    SparkConnectorTarget: NotRequired[SparkConnectorTargetTypeDef],  # (13)
-    CatalogTarget: NotRequired[BasicCatalogTargetTypeDef],  # (14)
-    RedshiftTarget: NotRequired[RedshiftTargetTypeDef],  # (15)
-    S3CatalogTarget: NotRequired[S3CatalogTargetTypeDef],  # (16)
-    S3GlueParquetTarget: NotRequired[S3GlueParquetTargetTypeDef],  # (17)
-    S3DirectTarget: NotRequired[S3DirectTargetTypeDef],  # (18)
-    ApplyMapping: NotRequired[ApplyMappingTypeDef],  # (19)
-    SelectFields: NotRequired[SelectFieldsTypeDef],  # (20)
-    DropFields: NotRequired[DropFieldsTypeDef],  # (21)
-    RenameField: NotRequired[RenameFieldTypeDef],  # (22)
-    Spigot: NotRequired[SpigotTypeDef],  # (23)
-    Join: NotRequired[JoinTypeDef],  # (24)
-    SplitFields: NotRequired[SplitFieldsTypeDef],  # (25)
-    SelectFromCollection: NotRequired[SelectFromCollectionTypeDef],  # (26)
-    FillMissingValues: NotRequired[FillMissingValuesTypeDef],  # (27)
-    Filter: NotRequired[FilterTypeDef],  # (28)
-    CustomCode: NotRequired[CustomCodeTypeDef],  # (29)
-    SparkSQL: NotRequired[SparkSQLTypeDef],  # (30)
-    DirectKinesisSource: NotRequired[DirectKinesisSourceTypeDef],  # (31)
-    DirectKafkaSource: NotRequired[DirectKafkaSourceTypeDef],  # (32)
-    CatalogKinesisSource: NotRequired[CatalogKinesisSourceTypeDef],  # (33)
-    CatalogKafkaSource: NotRequired[CatalogKafkaSourceTypeDef],  # (34)
-    DropNullFields: NotRequired[DropNullFieldsTypeDef],  # (35)
-    Merge: NotRequired[MergeTypeDef],  # (36)
-    Union: NotRequired[UnionTypeDef],  # (37)
-    PIIDetection: NotRequired[PIIDetectionTypeDef],  # (38)
-    Aggregate: NotRequired[AggregateTypeDef],  # (39)
-    DropDuplicates: NotRequired[DropDuplicatesTypeDef],  # (40)
-    GovernedCatalogTarget: NotRequired[GovernedCatalogTargetTypeDef],  # (41)
-    GovernedCatalogSource: NotRequired[GovernedCatalogSourceTypeDef],  # (42)
-    MicrosoftSQLServerCatalogSource: NotRequired[MicrosoftSQLServerCatalogSourceTypeDef],  # (43)
-    MySQLCatalogSource: NotRequired[MySQLCatalogSourceTypeDef],  # (44)
-    OracleSQLCatalogSource: NotRequired[OracleSQLCatalogSourceTypeDef],  # (45)
-    PostgreSQLCatalogSource: NotRequired[PostgreSQLCatalogSourceTypeDef],  # (46)
-    MicrosoftSQLServerCatalogTarget: NotRequired[MicrosoftSQLServerCatalogTargetTypeDef],  # (47)
-    MySQLCatalogTarget: NotRequired[MySQLCatalogTargetTypeDef],  # (48)
-    OracleSQLCatalogTarget: NotRequired[OracleSQLCatalogTargetTypeDef],  # (49)
-    PostgreSQLCatalogTarget: NotRequired[PostgreSQLCatalogTargetTypeDef],  # (50)
-```
-
-1. See [:material-code-braces: AthenaConnectorSourceTypeDef](./type_defs.md#athenaconnectorsourcetypedef) 
-2. See [:material-code-braces: JDBCConnectorSourceTypeDef](./type_defs.md#jdbcconnectorsourcetypedef) 
-3. See [:material-code-braces: SparkConnectorSourceTypeDef](./type_defs.md#sparkconnectorsourcetypedef) 
-4. See [:material-code-braces: CatalogSourceTypeDef](./type_defs.md#catalogsourcetypedef) 
-5. See [:material-code-braces: RedshiftSourceTypeDef](./type_defs.md#redshiftsourcetypedef) 
-6. See [:material-code-braces: S3CatalogSourceTypeDef](./type_defs.md#s3catalogsourcetypedef) 
-7. See [:material-code-braces: S3CsvSourceTypeDef](./type_defs.md#s3csvsourcetypedef) 
-8. See [:material-code-braces: S3JsonSourceTypeDef](./type_defs.md#s3jsonsourcetypedef) 
-9. See [:material-code-braces: S3ParquetSourceTypeDef](./type_defs.md#s3parquetsourcetypedef) 
-10. See [:material-code-braces: RelationalCatalogSourceTypeDef](./type_defs.md#relationalcatalogsourcetypedef) 
-11. See [:material-code-braces: DynamoDBCatalogSourceTypeDef](./type_defs.md#dynamodbcatalogsourcetypedef) 
-12. See [:material-code-braces: JDBCConnectorTargetTypeDef](./type_defs.md#jdbcconnectortargettypedef) 
-13. See [:material-code-braces: SparkConnectorTargetTypeDef](./type_defs.md#sparkconnectortargettypedef) 
-14. See [:material-code-braces: BasicCatalogTargetTypeDef](./type_defs.md#basiccatalogtargettypedef) 
-15. See [:material-code-braces: RedshiftTargetTypeDef](./type_defs.md#redshifttargettypedef) 
-16. See [:material-code-braces: S3CatalogTargetTypeDef](./type_defs.md#s3catalogtargettypedef) 
-17. See [:material-code-braces: S3GlueParquetTargetTypeDef](./type_defs.md#s3glueparquettargettypedef) 
-18. See [:material-code-braces: S3DirectTargetTypeDef](./type_defs.md#s3directtargettypedef) 
-19. See [:material-code-braces: ApplyMappingTypeDef](./type_defs.md#applymappingtypedef) 
-20. See [:material-code-braces: SelectFieldsTypeDef](./type_defs.md#selectfieldstypedef) 
-21. See [:material-code-braces: DropFieldsTypeDef](./type_defs.md#dropfieldstypedef) 
-22. See [:material-code-braces: RenameFieldTypeDef](./type_defs.md#renamefieldtypedef) 
-23. See [:material-code-braces: SpigotTypeDef](./type_defs.md#spigottypedef) 
-24. See [:material-code-braces: JoinTypeDef](./type_defs.md#jointypedef) 
-25. See [:material-code-braces: SplitFieldsTypeDef](./type_defs.md#splitfieldstypedef) 
-26. See [:material-code-braces: SelectFromCollectionTypeDef](./type_defs.md#selectfromcollectiontypedef) 
-27. See [:material-code-braces: FillMissingValuesTypeDef](./type_defs.md#fillmissingvaluestypedef) 
-28. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-29. See [:material-code-braces: CustomCodeTypeDef](./type_defs.md#customcodetypedef) 
-30. See [:material-code-braces: SparkSQLTypeDef](./type_defs.md#sparksqltypedef) 
-31. See [:material-code-braces: DirectKinesisSourceTypeDef](./type_defs.md#directkinesissourcetypedef) 
-32. See [:material-code-braces: DirectKafkaSourceTypeDef](./type_defs.md#directkafkasourcetypedef) 
-33. See [:material-code-braces: CatalogKinesisSourceTypeDef](./type_defs.md#catalogkinesissourcetypedef) 
-34. See [:material-code-braces: CatalogKafkaSourceTypeDef](./type_defs.md#catalogkafkasourcetypedef) 
-35. See [:material-code-braces: DropNullFieldsTypeDef](./type_defs.md#dropnullfieldstypedef) 
-36. See [:material-code-braces: MergeTypeDef](./type_defs.md#mergetypedef) 
-37. See [:material-code-braces: UnionTypeDef](./type_defs.md#uniontypedef) 
-38. See [:material-code-braces: PIIDetectionTypeDef](./type_defs.md#piidetectiontypedef) 
-39. See [:material-code-braces: AggregateTypeDef](./type_defs.md#aggregatetypedef) 
-40. See [:material-code-braces: DropDuplicatesTypeDef](./type_defs.md#dropduplicatestypedef) 
-41. See [:material-code-braces: GovernedCatalogTargetTypeDef](./type_defs.md#governedcatalogtargettypedef) 
-42. See [:material-code-braces: GovernedCatalogSourceTypeDef](./type_defs.md#governedcatalogsourcetypedef) 
-43. See [:material-code-braces: MicrosoftSQLServerCatalogSourceTypeDef](./type_defs.md#microsoftsqlservercatalogsourcetypedef) 
-44. See [:material-code-braces: MySQLCatalogSourceTypeDef](./type_defs.md#mysqlcatalogsourcetypedef) 
-45. See [:material-code-braces: OracleSQLCatalogSourceTypeDef](./type_defs.md#oraclesqlcatalogsourcetypedef) 
-46. See [:material-code-braces: PostgreSQLCatalogSourceTypeDef](./type_defs.md#postgresqlcatalogsourcetypedef) 
-47. See [:material-code-braces: MicrosoftSQLServerCatalogTargetTypeDef](./type_defs.md#microsoftsqlservercatalogtargettypedef) 
-48. See [:material-code-braces: MySQLCatalogTargetTypeDef](./type_defs.md#mysqlcatalogtargettypedef) 
-49. See [:material-code-braces: OracleSQLCatalogTargetTypeDef](./type_defs.md#oraclesqlcatalogtargettypedef) 
-50. See [:material-code-braces: PostgreSQLCatalogTargetTypeDef](./type_defs.md#postgresqlcatalogtargettypedef) 
 ## GetMLTaskRunsResponseTypeDef
 
 ```python title="Usage Example"
@@ -11452,48 +9244,6 @@ class GetMLTaskRunsResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TaskRunTypeDef](./type_defs.md#taskruntypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetStatementResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GetStatementResponseTypeDef
-
-def get_value() -> GetStatementResponseTypeDef:
-    return {
-        "Statement": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetStatementResponseTypeDef(TypedDict):
-    Statement: StatementTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: StatementTypeDef](./type_defs.md#statementtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListStatementsResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import ListStatementsResponseTypeDef
-
-def get_value() -> ListStatementsResponseTypeDef:
-    return {
-        "Statements": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListStatementsResponseTypeDef(TypedDict):
-    Statements: List[StatementTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: StatementTypeDef](./type_defs.md#statementtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## NodeTypeDef
 
@@ -12003,130 +9753,6 @@ class TableVersionTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TableTypeDef](./type_defs.md#tabletypedef) 
-## CreateJobRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import CreateJobRequestRequestTypeDef
-
-def get_value() -> CreateJobRequestRequestTypeDef:
-    return {
-        "Name": ...,
-        "Role": ...,
-        "Command": ...,
-    }
-```
-
-```python title="Definition"
-class CreateJobRequestRequestTypeDef(TypedDict):
-    Name: str,
-    Role: str,
-    Command: JobCommandTypeDef,  # (1)
-    Description: NotRequired[str],
-    LogUri: NotRequired[str],
-    ExecutionProperty: NotRequired[ExecutionPropertyTypeDef],  # (2)
-    DefaultArguments: NotRequired[Mapping[str, str]],
-    NonOverridableArguments: NotRequired[Mapping[str, str]],
-    Connections: NotRequired[ConnectionsListTypeDef],  # (3)
-    MaxRetries: NotRequired[int],
-    AllocatedCapacity: NotRequired[int],
-    Timeout: NotRequired[int],
-    MaxCapacity: NotRequired[float],
-    SecurityConfiguration: NotRequired[str],
-    Tags: NotRequired[Mapping[str, str]],
-    NotificationProperty: NotRequired[NotificationPropertyTypeDef],  # (4)
-    GlueVersion: NotRequired[str],
-    NumberOfWorkers: NotRequired[int],
-    WorkerType: NotRequired[WorkerTypeType],  # (5)
-    CodeGenConfigurationNodes: NotRequired[Mapping[str, CodeGenConfigurationNodeTypeDef]],  # (6)
-```
-
-1. See [:material-code-braces: JobCommandTypeDef](./type_defs.md#jobcommandtypedef) 
-2. See [:material-code-braces: ExecutionPropertyTypeDef](./type_defs.md#executionpropertytypedef) 
-3. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
-4. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
-5. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
-6. See [:material-code-braces: CodeGenConfigurationNodeTypeDef](./type_defs.md#codegenconfigurationnodetypedef) 
-## JobTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import JobTypeDef
-
-def get_value() -> JobTypeDef:
-    return {
-        "Name": ...,
-    }
-```
-
-```python title="Definition"
-class JobTypeDef(TypedDict):
-    Name: NotRequired[str],
-    Description: NotRequired[str],
-    LogUri: NotRequired[str],
-    Role: NotRequired[str],
-    CreatedOn: NotRequired[datetime],
-    LastModifiedOn: NotRequired[datetime],
-    ExecutionProperty: NotRequired[ExecutionPropertyTypeDef],  # (1)
-    Command: NotRequired[JobCommandTypeDef],  # (2)
-    DefaultArguments: NotRequired[Dict[str, str]],
-    NonOverridableArguments: NotRequired[Dict[str, str]],
-    Connections: NotRequired[ConnectionsListTypeDef],  # (3)
-    MaxRetries: NotRequired[int],
-    AllocatedCapacity: NotRequired[int],
-    Timeout: NotRequired[int],
-    MaxCapacity: NotRequired[float],
-    WorkerType: NotRequired[WorkerTypeType],  # (4)
-    NumberOfWorkers: NotRequired[int],
-    SecurityConfiguration: NotRequired[str],
-    NotificationProperty: NotRequired[NotificationPropertyTypeDef],  # (5)
-    GlueVersion: NotRequired[str],
-    CodeGenConfigurationNodes: NotRequired[Dict[str, CodeGenConfigurationNodeTypeDef]],  # (6)
-```
-
-1. See [:material-code-braces: ExecutionPropertyTypeDef](./type_defs.md#executionpropertytypedef) 
-2. See [:material-code-braces: JobCommandTypeDef](./type_defs.md#jobcommandtypedef) 
-3. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
-4. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
-5. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
-6. See [:material-code-braces: CodeGenConfigurationNodeTypeDef](./type_defs.md#codegenconfigurationnodetypedef) 
-## JobUpdateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import JobUpdateTypeDef
-
-def get_value() -> JobUpdateTypeDef:
-    return {
-        "Description": ...,
-    }
-```
-
-```python title="Definition"
-class JobUpdateTypeDef(TypedDict):
-    Description: NotRequired[str],
-    LogUri: NotRequired[str],
-    Role: NotRequired[str],
-    ExecutionProperty: NotRequired[ExecutionPropertyTypeDef],  # (1)
-    Command: NotRequired[JobCommandTypeDef],  # (2)
-    DefaultArguments: NotRequired[Mapping[str, str]],
-    NonOverridableArguments: NotRequired[Mapping[str, str]],
-    Connections: NotRequired[ConnectionsListTypeDef],  # (3)
-    MaxRetries: NotRequired[int],
-    AllocatedCapacity: NotRequired[int],
-    Timeout: NotRequired[int],
-    MaxCapacity: NotRequired[float],
-    WorkerType: NotRequired[WorkerTypeType],  # (4)
-    NumberOfWorkers: NotRequired[int],
-    SecurityConfiguration: NotRequired[str],
-    NotificationProperty: NotRequired[NotificationPropertyTypeDef],  # (5)
-    GlueVersion: NotRequired[str],
-    CodeGenConfigurationNodes: NotRequired[Mapping[str, CodeGenConfigurationNodeTypeDef]],  # (6)
-```
-
-1. See [:material-code-braces: ExecutionPropertyTypeDef](./type_defs.md#executionpropertytypedef) 
-2. See [:material-code-braces: JobCommandTypeDef](./type_defs.md#jobcommandtypedef) 
-3. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
-4. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
-5. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
-6. See [:material-code-braces: CodeGenConfigurationNodeTypeDef](./type_defs.md#codegenconfigurationnodetypedef) 
 ## WorkflowGraphTypeDef
 
 ```python title="Usage Example"
@@ -12272,89 +9898,6 @@ class GetTableVersionsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: TableVersionTypeDef](./type_defs.md#tableversiontypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## BatchGetJobsResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import BatchGetJobsResponseTypeDef
-
-def get_value() -> BatchGetJobsResponseTypeDef:
-    return {
-        "Jobs": ...,
-        "JobsNotFound": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class BatchGetJobsResponseTypeDef(TypedDict):
-    Jobs: List[JobTypeDef],  # (1)
-    JobsNotFound: List[str],
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: JobTypeDef](./type_defs.md#jobtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetJobResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GetJobResponseTypeDef
-
-def get_value() -> GetJobResponseTypeDef:
-    return {
-        "Job": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetJobResponseTypeDef(TypedDict):
-    Job: JobTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: JobTypeDef](./type_defs.md#jobtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetJobsResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import GetJobsResponseTypeDef
-
-def get_value() -> GetJobsResponseTypeDef:
-    return {
-        "Jobs": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetJobsResponseTypeDef(TypedDict):
-    Jobs: List[JobTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: JobTypeDef](./type_defs.md#jobtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## UpdateJobRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_glue.type_defs import UpdateJobRequestRequestTypeDef
-
-def get_value() -> UpdateJobRequestRequestTypeDef:
-    return {
-        "JobName": ...,
-        "JobUpdate": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateJobRequestRequestTypeDef(TypedDict):
-    JobName: str,
-    JobUpdate: JobUpdateTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: JobUpdateTypeDef](./type_defs.md#jobupdatetypedef) 
 ## WorkflowRunTypeDef
 
 ```python title="Usage Example"

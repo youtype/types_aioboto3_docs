@@ -181,21 +181,6 @@ parent.change_message_visibility_batch(**kwargs)
 
 1. See [:material-code-braces: ChangeMessageVisibilityBatchRequestRequestTypeDef](./type_defs.md#changemessagevisibilitybatchrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("sqs").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_queue
 
 Creates a new standard or FIFO queue.
@@ -352,12 +337,12 @@ await def get_queue_attributes(
     self,
     *,
     QueueUrl: str,
-    AttributeNames: Sequence[QueueAttributeNameType] = ...,  # (1)
+    AttributeNames: Sequence[QueueAttributeFilterType] = ...,  # (1)
 ) -> GetQueueAttributesResultTypeDef:  # (2)
     ...
 ```
 
-1. See [:material-code-brackets: QueueAttributeNameType](./literals.md#queueattributenametype) 
+1. See [:material-code-brackets: QueueAttributeFilterType](./literals.md#queueattributefiltertype) 
 2. See [:material-code-braces: GetQueueAttributesResultTypeDef](./type_defs.md#getqueueattributesresulttypedef) 
 
 
@@ -534,7 +519,7 @@ await def receive_message(
     self,
     *,
     QueueUrl: str,
-    AttributeNames: Sequence[QueueAttributeNameType] = ...,  # (1)
+    AttributeNames: Sequence[QueueAttributeFilterType] = ...,  # (1)
     MessageAttributeNames: Sequence[str] = ...,
     MaxNumberOfMessages: int = ...,
     VisibilityTimeout: int = ...,
@@ -544,7 +529,7 @@ await def receive_message(
     ...
 ```
 
-1. See [:material-code-brackets: QueueAttributeNameType](./literals.md#queueattributenametype) 
+1. See [:material-code-brackets: QueueAttributeFilterType](./literals.md#queueattributefiltertype) 
 2. See [:material-code-braces: ReceiveMessageResultTypeDef](./type_defs.md#receivemessageresulttypedef) 
 
 

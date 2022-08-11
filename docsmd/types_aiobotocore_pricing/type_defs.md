@@ -97,7 +97,7 @@ def get_value() -> ServiceTypeDef:
 
 ```python title="Definition"
 class ServiceTypeDef(TypedDict):
-    ServiceCode: str,
+    ServiceCode: NotRequired[str],
     AttributeNames: NotRequired[List[str]],
 ```
 
@@ -263,7 +263,7 @@ def get_value() -> GetProductsRequestGetProductsPaginateTypeDef:
 
 ```python title="Definition"
 class GetProductsRequestGetProductsPaginateTypeDef(TypedDict):
-    ServiceCode: str,
+    ServiceCode: NotRequired[str],
     Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
     FormatVersion: NotRequired[str],
     PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
@@ -284,7 +284,7 @@ def get_value() -> GetProductsRequestRequestTypeDef:
 
 ```python title="Definition"
 class GetProductsRequestRequestTypeDef(TypedDict):
-    ServiceCode: str,
+    ServiceCode: NotRequired[str],
     Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
     FormatVersion: NotRequired[str],
     NextToken: NotRequired[str],

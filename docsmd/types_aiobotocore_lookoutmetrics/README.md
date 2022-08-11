@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `LookoutMetrics`.
 
 ### From PyPI with pip
 
@@ -88,11 +83,9 @@ def get_value() -> AggregationFunctionType:
 - [AnomalyDetectorFailureTypeType](./literals.md#anomalydetectorfailuretypetype)
 - [AnomalyDetectorStatusType](./literals.md#anomalydetectorstatustype)
 - [CSVFileCompressionType](./literals.md#csvfilecompressiontype)
-- [ConfidenceType](./literals.md#confidencetype)
 - [FrequencyType](./literals.md#frequencytype)
 - [JsonFileCompressionType](./literals.md#jsonfilecompressiontype)
 - [RelationshipTypeType](./literals.md#relationshiptypetype)
-- [SnsFormatType](./literals.md#snsformattype)
 - [LookoutMetricsServiceName](./literals.md#lookoutmetricsservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
@@ -118,7 +111,6 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [LambdaConfigurationTypeDef](./type_defs.md#lambdaconfigurationtypedef)
 - [SNSConfigurationTypeDef](./type_defs.md#snsconfigurationtypedef)
 - [ActivateAnomalyDetectorRequestRequestTypeDef](./type_defs.md#activateanomalydetectorrequestrequesttypedef)
-- [DimensionFilterTypeDef](./type_defs.md#dimensionfiltertypedef)
 - [AlertSummaryTypeDef](./type_defs.md#alertsummarytypedef)
 - [AnomalyDetectorConfigSummaryTypeDef](./type_defs.md#anomalydetectorconfigsummarytypedef)
 - [AnomalyDetectorConfigTypeDef](./type_defs.md#anomalydetectorconfigtypedef)
@@ -128,10 +120,8 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [AnomalyGroupTimeSeriesFeedbackTypeDef](./type_defs.md#anomalygrouptimeseriesfeedbacktypedef)
 - [AnomalyGroupTimeSeriesTypeDef](./type_defs.md#anomalygrouptimeseriestypedef)
 - [AppFlowConfigTypeDef](./type_defs.md#appflowconfigtypedef)
-- [BackTestConfigurationTypeDef](./type_defs.md#backtestconfigurationtypedef)
-- [AttributeValueTypeDef](./type_defs.md#attributevaluetypedef)
-- [AutoDetectionS3SourceConfigTypeDef](./type_defs.md#autodetections3sourceconfigtypedef)
 - [BackTestAnomalyDetectorRequestRequestTypeDef](./type_defs.md#backtestanomalydetectorrequestrequesttypedef)
+- [CloudWatchConfigTypeDef](./type_defs.md#cloudwatchconfigtypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [MetricTypeDef](./type_defs.md#metrictypedef)
 - [TimestampColumnTypeDef](./type_defs.md#timestampcolumntypedef)
@@ -162,16 +152,11 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [ActionTypeDef](./type_defs.md#actiontypedef)
-- [AlertFiltersTypeDef](./type_defs.md#alertfilterstypedef)
 - [CreateAnomalyDetectorRequestRequestTypeDef](./type_defs.md#createanomalydetectorrequestrequesttypedef)
 - [UpdateAnomalyDetectorRequestRequestTypeDef](./type_defs.md#updateanomalydetectorrequestrequesttypedef)
 - [AnomalyGroupStatisticsTypeDef](./type_defs.md#anomalygroupstatisticstypedef)
 - [PutFeedbackRequestRequestTypeDef](./type_defs.md#putfeedbackrequestrequesttypedef)
 - [GetFeedbackRequestRequestTypeDef](./type_defs.md#getfeedbackrequestrequesttypedef)
-- [AthenaSourceConfigTypeDef](./type_defs.md#athenasourceconfigtypedef)
-- [CloudWatchConfigTypeDef](./type_defs.md#cloudwatchconfigtypedef)
-- [DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef)
-- [AutoDetectionMetricSourceTypeDef](./type_defs.md#autodetectionmetricsourcetypedef)
 - [CreateAlertResponseTypeDef](./type_defs.md#createalertresponsetypedef)
 - [CreateAnomalyDetectorResponseTypeDef](./type_defs.md#createanomalydetectorresponsetypedef)
 - [CreateMetricSetResponseTypeDef](./type_defs.md#createmetricsetresponsetypedef)
@@ -180,7 +165,6 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [ListAlertsResponseTypeDef](./type_defs.md#listalertsresponsetypedef)
 - [ListAnomalyDetectorsResponseTypeDef](./type_defs.md#listanomalydetectorsresponsetypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
-- [UpdateAlertResponseTypeDef](./type_defs.md#updatealertresponsetypedef)
 - [UpdateAnomalyDetectorResponseTypeDef](./type_defs.md#updateanomalydetectorresponsetypedef)
 - [UpdateMetricSetResponseTypeDef](./type_defs.md#updatemetricsetresponsetypedef)
 - [DescribeAnomalyDetectionExecutionsResponseTypeDef](./type_defs.md#describeanomalydetectionexecutionsresponsetypedef)
@@ -194,27 +178,18 @@ def get_value() -> LambdaConfigurationTypeDef:
 - [RedshiftSourceConfigTypeDef](./type_defs.md#redshiftsourceconfigtypedef)
 - [AlertTypeDef](./type_defs.md#alerttypedef)
 - [CreateAlertRequestRequestTypeDef](./type_defs.md#createalertrequestrequesttypedef)
-- [UpdateAlertRequestRequestTypeDef](./type_defs.md#updatealertrequestrequesttypedef)
 - [ListAnomalyGroupSummariesResponseTypeDef](./type_defs.md#listanomalygroupsummariesresponsetypedef)
-- [DetectedCsvFormatDescriptorTypeDef](./type_defs.md#detectedcsvformatdescriptortypedef)
-- [DetectedJsonFormatDescriptorTypeDef](./type_defs.md#detectedjsonformatdescriptortypedef)
-- [DetectMetricSetConfigRequestRequestTypeDef](./type_defs.md#detectmetricsetconfigrequestrequesttypedef)
 - [ContributionMatrixTypeDef](./type_defs.md#contributionmatrixtypedef)
 - [ListAnomalyGroupTimeSeriesResponseTypeDef](./type_defs.md#listanomalygrouptimeseriesresponsetypedef)
 - [S3SourceConfigTypeDef](./type_defs.md#s3sourceconfigtypedef)
 - [SampleDataS3SourceConfigTypeDef](./type_defs.md#sampledatas3sourceconfigtypedef)
 - [DescribeAlertResponseTypeDef](./type_defs.md#describealertresponsetypedef)
-- [DetectedFileFormatDescriptorTypeDef](./type_defs.md#detectedfileformatdescriptortypedef)
 - [MetricLevelImpactTypeDef](./type_defs.md#metriclevelimpacttypedef)
 - [MetricSourceTypeDef](./type_defs.md#metricsourcetypedef)
 - [GetSampleDataRequestRequestTypeDef](./type_defs.md#getsampledatarequestrequesttypedef)
-- [DetectedS3SourceConfigTypeDef](./type_defs.md#detecteds3sourceconfigtypedef)
 - [AnomalyGroupTypeDef](./type_defs.md#anomalygrouptypedef)
 - [CreateMetricSetRequestRequestTypeDef](./type_defs.md#createmetricsetrequestrequesttypedef)
 - [DescribeMetricSetResponseTypeDef](./type_defs.md#describemetricsetresponsetypedef)
 - [UpdateMetricSetRequestRequestTypeDef](./type_defs.md#updatemetricsetrequestrequesttypedef)
-- [DetectedMetricSourceTypeDef](./type_defs.md#detectedmetricsourcetypedef)
 - [GetAnomalyGroupResponseTypeDef](./type_defs.md#getanomalygroupresponsetypedef)
-- [DetectedMetricSetConfigTypeDef](./type_defs.md#detectedmetricsetconfigtypedef)
-- [DetectMetricSetConfigResponseTypeDef](./type_defs.md#detectmetricsetconfigresponsetypedef)
 

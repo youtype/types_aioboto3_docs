@@ -414,21 +414,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("directconnect").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### confirm\_connection
 
 Confirms the creation of the specified hosted connection on an interconnect.

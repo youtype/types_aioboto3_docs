@@ -152,14 +152,12 @@ class AppSummaryTypeDef(TypedDict):
     appArn: str,
     creationTime: datetime,
     name: str,
-    assessmentSchedule: NotRequired[AppAssessmentScheduleTypeType],  # (1)
-    complianceStatus: NotRequired[AppComplianceStatusTypeType],  # (2)
+    complianceStatus: NotRequired[AppComplianceStatusTypeType],  # (1)
     description: NotRequired[str],
     resiliencyScore: NotRequired[float],
 ```
 
-1. See [:material-code-brackets: AppAssessmentScheduleTypeType](./literals.md#appassessmentscheduletypetype) 
-2. See [:material-code-brackets: AppComplianceStatusTypeType](./literals.md#appcompliancestatustypetype) 
+1. See [:material-code-brackets: AppComplianceStatusTypeType](./literals.md#appcompliancestatustypetype) 
 ## AppTypeDef
 
 ```python title="Usage Example"
@@ -178,20 +176,18 @@ class AppTypeDef(TypedDict):
     appArn: str,
     creationTime: datetime,
     name: str,
-    assessmentSchedule: NotRequired[AppAssessmentScheduleTypeType],  # (1)
-    complianceStatus: NotRequired[AppComplianceStatusTypeType],  # (2)
+    complianceStatus: NotRequired[AppComplianceStatusTypeType],  # (1)
     description: NotRequired[str],
     lastAppComplianceEvaluationTime: NotRequired[datetime],
     lastResiliencyScoreEvaluationTime: NotRequired[datetime],
     policyArn: NotRequired[str],
     resiliencyScore: NotRequired[float],
-    status: NotRequired[AppStatusTypeType],  # (3)
+    status: NotRequired[AppStatusTypeType],  # (2)
     tags: NotRequired[Dict[str, str]],
 ```
 
-1. See [:material-code-brackets: AppAssessmentScheduleTypeType](./literals.md#appassessmentscheduletypetype) 
-2. See [:material-code-brackets: AppComplianceStatusTypeType](./literals.md#appcompliancestatustypetype) 
-3. See [:material-code-brackets: AppStatusTypeType](./literals.md#appstatustypetype) 
+1. See [:material-code-brackets: AppComplianceStatusTypeType](./literals.md#appcompliancestatustypetype) 
+2. See [:material-code-brackets: AppStatusTypeType](./literals.md#appstatustypetype) 
 ## AppVersionSummaryTypeDef
 
 ```python title="Usage Example"
@@ -243,14 +239,12 @@ def get_value() -> CreateAppRequestRequestTypeDef:
 ```python title="Definition"
 class CreateAppRequestRequestTypeDef(TypedDict):
     name: str,
-    assessmentSchedule: NotRequired[AppAssessmentScheduleTypeType],  # (1)
     clientToken: NotRequired[str],
     description: NotRequired[str],
     policyArn: NotRequired[str],
     tags: NotRequired[Mapping[str, str]],
 ```
 
-1. See [:material-code-brackets: AppAssessmentScheduleTypeType](./literals.md#appassessmentscheduletypetype) 
 ## CreateRecommendationTemplateRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -465,20 +459,22 @@ class DescribeResiliencyPolicyRequestRequestTypeDef(TypedDict):
     policyArn: str,
 ```
 
-## TerraformSourceTypeDef
+## ImportResourcesToDraftAppVersionRequestRequestTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_resiliencehub.type_defs import TerraformSourceTypeDef
+from types_aiobotocore_resiliencehub.type_defs import ImportResourcesToDraftAppVersionRequestRequestTypeDef
 
-def get_value() -> TerraformSourceTypeDef:
+def get_value() -> ImportResourcesToDraftAppVersionRequestRequestTypeDef:
     return {
-        "s3StateFileUrl": ...,
+        "appArn": ...,
+        "sourceArns": ...,
     }
 ```
 
 ```python title="Definition"
-class TerraformSourceTypeDef(TypedDict):
-    s3StateFileUrl: str,
+class ImportResourcesToDraftAppVersionRequestRequestTypeDef(TypedDict):
+    appArn: str,
+    sourceArns: Sequence[str],
 ```
 
 ## ListAlarmRecommendationsRequestRequestTypeDef
@@ -786,7 +782,6 @@ class LogicalResourceIdTypeDef(TypedDict):
     identifier: str,
     logicalStackName: NotRequired[str],
     resourceGroupName: NotRequired[str],
-    terraformSourceName: NotRequired[str],
 ```
 
 ## PhysicalResourceIdTypeDef
@@ -879,7 +874,6 @@ class RemoveDraftAppVersionResourceMappingsRequestRequestTypeDef(TypedDict):
     logicalStackNames: NotRequired[Sequence[str]],
     resourceGroupNames: NotRequired[Sequence[str]],
     resourceNames: NotRequired[Sequence[str]],
-    terraformSourceNames: NotRequired[Sequence[str]],
 ```
 
 ## ResolveAppVersionResourcesRequestRequestTypeDef
@@ -898,24 +892,6 @@ def get_value() -> ResolveAppVersionResourcesRequestRequestTypeDef:
 class ResolveAppVersionResourcesRequestRequestTypeDef(TypedDict):
     appArn: str,
     appVersion: str,
-```
-
-## ResourceErrorTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_resiliencehub.type_defs import ResourceErrorTypeDef
-
-def get_value() -> ResourceErrorTypeDef:
-    return {
-        "logicalResourceId": ...,
-    }
-```
-
-```python title="Definition"
-class ResourceErrorTypeDef(TypedDict):
-    logicalResourceId: NotRequired[str],
-    physicalResourceId: NotRequired[str],
-    reason: NotRequired[str],
 ```
 
 ## StartAppAssessmentRequestRequestTypeDef
@@ -990,13 +966,11 @@ def get_value() -> UpdateAppRequestRequestTypeDef:
 ```python title="Definition"
 class UpdateAppRequestRequestTypeDef(TypedDict):
     appArn: str,
-    assessmentSchedule: NotRequired[AppAssessmentScheduleTypeType],  # (1)
     clearResiliencyPolicyArn: NotRequired[bool],
     description: NotRequired[str],
     policyArn: NotRequired[str],
 ```
 
-1. See [:material-code-brackets: AppAssessmentScheduleTypeType](./literals.md#appassessmentscheduletypetype) 
 ## DeleteAppAssessmentResponseTypeDef
 
 ```python title="Usage Example"
@@ -1153,6 +1127,32 @@ class DescribeDraftAppVersionResourcesImportStatusResponseTypeDef(TypedDict):
     errorMessage: str,
     status: ResourceImportStatusTypeType,  # (1)
     statusChangeTime: datetime,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-brackets: ResourceImportStatusTypeType](./literals.md#resourceimportstatustypetype) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ImportResourcesToDraftAppVersionResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_resiliencehub.type_defs import ImportResourcesToDraftAppVersionResponseTypeDef
+
+def get_value() -> ImportResourcesToDraftAppVersionResponseTypeDef:
+    return {
+        "appArn": ...,
+        "appVersion": ...,
+        "sourceArns": ...,
+        "status": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ImportResourcesToDraftAppVersionResponseTypeDef(TypedDict):
+    appArn: str,
+    appVersion: str,
+    sourceArns: List[str],
+    status: ResourceImportStatusTypeType,  # (1)
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
@@ -1336,7 +1336,6 @@ def get_value() -> TestRecommendationTypeDef:
 class TestRecommendationTypeDef(TypedDict):
     referenceId: str,
     appComponentName: NotRequired[str],
-    dependsOnAlarms: NotRequired[List[str]],
     description: NotRequired[str],
     intent: NotRequired[str],
     items: NotRequired[List[RecommendationItemTypeDef]],  # (1)
@@ -1622,54 +1621,6 @@ class UpdateResiliencyPolicyRequestRequestTypeDef(TypedDict):
 1. See [:material-code-brackets: DataLocationConstraintType](./literals.md#datalocationconstrainttype) 
 2. See [:material-code-brackets: DisruptionTypeType](./literals.md#disruptiontypetype) [:material-code-braces: FailurePolicyTypeDef](./type_defs.md#failurepolicytypedef) 
 3. See [:material-code-brackets: ResiliencyPolicyTierType](./literals.md#resiliencypolicytiertype) 
-## ImportResourcesToDraftAppVersionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_resiliencehub.type_defs import ImportResourcesToDraftAppVersionRequestRequestTypeDef
-
-def get_value() -> ImportResourcesToDraftAppVersionRequestRequestTypeDef:
-    return {
-        "appArn": ...,
-    }
-```
-
-```python title="Definition"
-class ImportResourcesToDraftAppVersionRequestRequestTypeDef(TypedDict):
-    appArn: str,
-    sourceArns: NotRequired[Sequence[str]],
-    terraformSources: NotRequired[Sequence[TerraformSourceTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: TerraformSourceTypeDef](./type_defs.md#terraformsourcetypedef) 
-## ImportResourcesToDraftAppVersionResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_resiliencehub.type_defs import ImportResourcesToDraftAppVersionResponseTypeDef
-
-def get_value() -> ImportResourcesToDraftAppVersionResponseTypeDef:
-    return {
-        "appArn": ...,
-        "appVersion": ...,
-        "sourceArns": ...,
-        "status": ...,
-        "terraformSources": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ImportResourcesToDraftAppVersionResponseTypeDef(TypedDict):
-    appArn: str,
-    appVersion: str,
-    sourceArns: List[str],
-    status: ResourceImportStatusTypeType,  # (1)
-    terraformSources: List[TerraformSourceTypeDef],  # (2)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
-```
-
-1. See [:material-code-brackets: ResourceImportStatusTypeType](./literals.md#resourceimportstatustypetype) 
-2. See [:material-code-braces: TerraformSourceTypeDef](./type_defs.md#terraformsourcetypedef) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## PhysicalResourceTypeDef
 
 ```python title="Usage Example"
@@ -1715,7 +1666,6 @@ class ResourceMappingTypeDef(TypedDict):
     logicalStackName: NotRequired[str],
     resourceGroupName: NotRequired[str],
     resourceName: NotRequired[str],
-    terraformSourceName: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: ResourceMappingTypeType](./literals.md#resourcemappingtypetype) 
@@ -1780,24 +1730,6 @@ class RecommendationTemplateTypeDef(TypedDict):
 2. See [:material-code-brackets: RenderRecommendationTypeType](./literals.md#renderrecommendationtypetype) 
 3. See [:material-code-brackets: RecommendationTemplateStatusType](./literals.md#recommendationtemplatestatustype) 
 4. See [:material-code-braces: S3LocationTypeDef](./type_defs.md#s3locationtypedef) 
-## ResourceErrorsDetailsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_resiliencehub.type_defs import ResourceErrorsDetailsTypeDef
-
-def get_value() -> ResourceErrorsDetailsTypeDef:
-    return {
-        "hasMoreErrors": ...,
-    }
-```
-
-```python title="Definition"
-class ResourceErrorsDetailsTypeDef(TypedDict):
-    hasMoreErrors: NotRequired[bool],
-    resourceErrors: NotRequired[List[ResourceErrorTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: ResourceErrorTypeDef](./type_defs.md#resourceerrortypedef) 
 ## ListAlarmRecommendationsResponseTypeDef
 
 ```python title="Usage Example"
@@ -1930,6 +1862,45 @@ class ComponentRecommendationTypeDef(TypedDict):
 
 1. See [:material-code-braces: ConfigRecommendationTypeDef](./type_defs.md#configrecommendationtypedef) 
 2. See [:material-code-brackets: RecommendationComplianceStatusType](./literals.md#recommendationcompliancestatustype) 
+## AppAssessmentTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_resiliencehub.type_defs import AppAssessmentTypeDef
+
+def get_value() -> AppAssessmentTypeDef:
+    return {
+        "assessmentArn": ...,
+        "assessmentStatus": ...,
+        "invoker": ...,
+    }
+```
+
+```python title="Definition"
+class AppAssessmentTypeDef(TypedDict):
+    assessmentArn: str,
+    assessmentStatus: AssessmentStatusType,  # (1)
+    invoker: AssessmentInvokerType,  # (5)
+    appArn: NotRequired[str],
+    appVersion: NotRequired[str],
+    assessmentName: NotRequired[str],
+    compliance: NotRequired[Dict[DisruptionTypeType, DisruptionComplianceTypeDef]],  # (2)
+    complianceStatus: NotRequired[ComplianceStatusType],  # (3)
+    cost: NotRequired[CostTypeDef],  # (4)
+    endTime: NotRequired[datetime],
+    message: NotRequired[str],
+    policy: NotRequired[ResiliencyPolicyTypeDef],  # (6)
+    resiliencyScore: NotRequired[ResiliencyScoreTypeDef],  # (7)
+    startTime: NotRequired[datetime],
+    tags: NotRequired[Dict[str, str]],
+```
+
+1. See [:material-code-brackets: AssessmentStatusType](./literals.md#assessmentstatustype) 
+2. See [:material-code-brackets: DisruptionTypeType](./literals.md#disruptiontypetype) [:material-code-braces: DisruptionComplianceTypeDef](./type_defs.md#disruptioncompliancetypedef) 
+3. See [:material-code-brackets: ComplianceStatusType](./literals.md#compliancestatustype) 
+4. See [:material-code-braces: CostTypeDef](./type_defs.md#costtypedef) 
+5. See [:material-code-brackets: AssessmentInvokerType](./literals.md#assessmentinvokertype) 
+6. See [:material-code-braces: ResiliencyPolicyTypeDef](./type_defs.md#resiliencypolicytypedef) 
+7. See [:material-code-braces: ResiliencyScoreTypeDef](./type_defs.md#resiliencyscoretypedef) 
 ## CreateResiliencyPolicyResponseTypeDef
 
 ```python title="Usage Example"
@@ -2189,47 +2160,6 @@ class ListRecommendationTemplatesResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: RecommendationTemplateTypeDef](./type_defs.md#recommendationtemplatetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## AppAssessmentTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_resiliencehub.type_defs import AppAssessmentTypeDef
-
-def get_value() -> AppAssessmentTypeDef:
-    return {
-        "assessmentArn": ...,
-        "assessmentStatus": ...,
-        "invoker": ...,
-    }
-```
-
-```python title="Definition"
-class AppAssessmentTypeDef(TypedDict):
-    assessmentArn: str,
-    assessmentStatus: AssessmentStatusType,  # (1)
-    invoker: AssessmentInvokerType,  # (5)
-    appArn: NotRequired[str],
-    appVersion: NotRequired[str],
-    assessmentName: NotRequired[str],
-    compliance: NotRequired[Dict[DisruptionTypeType, DisruptionComplianceTypeDef]],  # (2)
-    complianceStatus: NotRequired[ComplianceStatusType],  # (3)
-    cost: NotRequired[CostTypeDef],  # (4)
-    endTime: NotRequired[datetime],
-    message: NotRequired[str],
-    policy: NotRequired[ResiliencyPolicyTypeDef],  # (6)
-    resiliencyScore: NotRequired[ResiliencyScoreTypeDef],  # (7)
-    resourceErrorsDetails: NotRequired[ResourceErrorsDetailsTypeDef],  # (8)
-    startTime: NotRequired[datetime],
-    tags: NotRequired[Dict[str, str]],
-```
-
-1. See [:material-code-brackets: AssessmentStatusType](./literals.md#assessmentstatustype) 
-2. See [:material-code-brackets: DisruptionTypeType](./literals.md#disruptiontypetype) [:material-code-braces: DisruptionComplianceTypeDef](./type_defs.md#disruptioncompliancetypedef) 
-3. See [:material-code-brackets: ComplianceStatusType](./literals.md#compliancestatustype) 
-4. See [:material-code-braces: CostTypeDef](./type_defs.md#costtypedef) 
-5. See [:material-code-brackets: AssessmentInvokerType](./literals.md#assessmentinvokertype) 
-6. See [:material-code-braces: ResiliencyPolicyTypeDef](./type_defs.md#resiliencypolicytypedef) 
-7. See [:material-code-braces: ResiliencyScoreTypeDef](./type_defs.md#resiliencyscoretypedef) 
-8. See [:material-code-braces: ResourceErrorsDetailsTypeDef](./type_defs.md#resourceerrorsdetailstypedef) 
 ## ListAppComponentRecommendationsResponseTypeDef
 
 ```python title="Usage Example"

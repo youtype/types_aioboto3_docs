@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `CodeGuruReviewer`.
 
 ### From PyPI with pip
 
@@ -116,7 +111,6 @@ def get_value() -> AnalysisTypeType:
 
 - [AnalysisTypeType](./literals.md#analysistypetype)
 - [CodeReviewCompletedWaiterName](./literals.md#codereviewcompletedwaitername)
-- [ConfigFileStateType](./literals.md#configfilestatetype)
 - [EncryptionOptionType](./literals.md#encryptionoptiontype)
 - [JobStateType](./literals.md#jobstatetype)
 - [ListRepositoryAssociationsPaginatorName](./literals.md#listrepositoryassociationspaginatorname)

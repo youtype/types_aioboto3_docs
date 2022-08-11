@@ -540,21 +540,6 @@ await def clear_default_authorizer(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("iot").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### confirm\_topic\_rule\_destination
 
 Confirms a topic rule destination.
@@ -4899,48 +4884,6 @@ parent.list_managed_job_templates(**kwargs)
 
 1. See [:material-code-braces: ListManagedJobTemplatesRequestRequestTypeDef](./type_defs.md#listmanagedjobtemplatesrequestrequesttypedef) 
 
-### list\_metric\_values
-
-Lists the values reported for an IoT Device Defender metric (device-side metric,
-cloud-side metric, or custom metric) by the given thing during the specified
-time period.
-
-Type annotations and code completion for `#!python session.client("iot").list_metric_values` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_metric_values)
-
-```python title="Method definition"
-await def list_metric_values(
-    self,
-    *,
-    thingName: str,
-    metricName: str,
-    startTime: Union[datetime, str],
-    endTime: Union[datetime, str],
-    dimensionName: str = ...,
-    dimensionValueOperator: DimensionValueOperatorType = ...,  # (1)
-    maxResults: int = ...,
-    nextToken: str = ...,
-) -> ListMetricValuesResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-brackets: DimensionValueOperatorType](./literals.md#dimensionvalueoperatortype) 
-2. See [:material-code-braces: ListMetricValuesResponseTypeDef](./type_defs.md#listmetricvaluesresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListMetricValuesRequestRequestTypeDef = {  # (1)
-    "thingName": ...,
-    "metricName": ...,
-    "startTime": ...,
-    "endTime": ...,
-}
-
-parent.list_metric_values(**kwargs)
-```
-
-1. See [:material-code-braces: ListMetricValuesRequestRequestTypeDef](./type_defs.md#listmetricvaluesrequestrequesttypedef) 
-
 ### list\_mitigation\_actions
 
 Gets a list of all mitigation actions that match the specified filter criteria.
@@ -5960,7 +5903,7 @@ parent.put_verification_state_on_violation(**kwargs)
 
 ### register\_ca\_certificate
 
-Registers a CA certificate with Amazon Web Services IoT Core.
+Registers a CA certificate with IoT.
 
 Type annotations and code completion for `#!python session.client("iot").register_ca_certificate` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.register_ca_certificate)
@@ -5970,25 +5913,24 @@ await def register_ca_certificate(
     self,
     *,
     caCertificate: str,
-    verificationCertificate: str = ...,
+    verificationCertificate: str,
     setAsActive: bool = ...,
     allowAutoRegistration: bool = ...,
     registrationConfig: RegistrationConfigTypeDef = ...,  # (1)
     tags: Sequence[TagTypeDef] = ...,  # (2)
-    certificateMode: CertificateModeType = ...,  # (3)
-) -> RegisterCACertificateResponseTypeDef:  # (4)
+) -> RegisterCACertificateResponseTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: RegistrationConfigTypeDef](./type_defs.md#registrationconfigtypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-brackets: CertificateModeType](./literals.md#certificatemodetype) 
-4. See [:material-code-braces: RegisterCACertificateResponseTypeDef](./type_defs.md#registercacertificateresponsetypedef) 
+3. See [:material-code-braces: RegisterCACertificateResponseTypeDef](./type_defs.md#registercacertificateresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
 kwargs: RegisterCACertificateRequestRequestTypeDef = {  # (1)
     "caCertificate": ...,
+    "verificationCertificate": ...,
 }
 
 parent.register_ca_certificate(**kwargs)
@@ -5998,9 +5940,7 @@ parent.register_ca_certificate(**kwargs)
 
 ### register\_certificate
 
-Registers a device certificate with IoT in the same [certificate
-mode](https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-
-Type-CertificateDescription-certificateMode)_ as the signing CA.
+Registers a device certificate with IoT.
 
 Type annotations and code completion for `#!python session.client("iot").register_certificate` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.register_certificate)
@@ -7645,7 +7585,6 @@ Type annotations and code completion for `#!python session.client("iot").get_pag
 - `client.get_paginator("list_job_executions_for_thing")` -> [ListJobExecutionsForThingPaginator](./paginators.md#listjobexecutionsforthingpaginator)
 - `client.get_paginator("list_job_templates")` -> [ListJobTemplatesPaginator](./paginators.md#listjobtemplatespaginator)
 - `client.get_paginator("list_jobs")` -> [ListJobsPaginator](./paginators.md#listjobspaginator)
-- `client.get_paginator("list_metric_values")` -> [ListMetricValuesPaginator](./paginators.md#listmetricvaluespaginator)
 - `client.get_paginator("list_mitigation_actions")` -> [ListMitigationActionsPaginator](./paginators.md#listmitigationactionspaginator)
 - `client.get_paginator("list_ota_updates")` -> [ListOTAUpdatesPaginator](./paginators.md#listotaupdatespaginator)
 - `client.get_paginator("list_outgoing_certificates")` -> [ListOutgoingCertificatesPaginator](./paginators.md#listoutgoingcertificatespaginator)

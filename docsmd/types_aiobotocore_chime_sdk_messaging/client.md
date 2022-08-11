@@ -176,21 +176,6 @@ parent.channel_flow_callback(**kwargs)
 
 1. See [:material-code-braces: ChannelFlowCallbackRequestRequestTypeDef](./type_defs.md#channelflowcallbackrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("chime-sdk-messaging").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_channel
 
 Creates a channel to which you can add users and send messages.
@@ -210,9 +195,6 @@ await def create_channel(
     Privacy: ChannelPrivacyType = ...,  # (2)
     Metadata: str = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (3)
-    ChannelId: str = ...,
-    MemberArns: Sequence[str] = ...,
-    ModeratorArns: Sequence[str] = ...,
 ) -> CreateChannelResponseTypeDef:  # (4)
     ...
 ```
@@ -1362,39 +1344,6 @@ parent.redact_channel_message(**kwargs)
 
 1. See [:material-code-braces: RedactChannelMessageRequestRequestTypeDef](./type_defs.md#redactchannelmessagerequestrequesttypedef) 
 
-### search\_channels
-
-Allows an `AppInstanceUser` to search the channels that they belong to.
-
-Type annotations and code completion for `#!python session.client("chime-sdk-messaging").search_channels` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.search_channels)
-
-```python title="Method definition"
-await def search_channels(
-    self,
-    *,
-    Fields: Sequence[SearchFieldTypeDef],  # (1)
-    ChimeBearer: str = ...,
-    MaxResults: int = ...,
-    NextToken: str = ...,
-) -> SearchChannelsResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: SearchFieldTypeDef](./type_defs.md#searchfieldtypedef) 
-2. See [:material-code-braces: SearchChannelsResponseTypeDef](./type_defs.md#searchchannelsresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: SearchChannelsRequestRequestTypeDef = {  # (1)
-    "Fields": ...,
-}
-
-parent.search_channels(**kwargs)
-```
-
-1. See [:material-code-braces: SearchChannelsRequestRequestTypeDef](./type_defs.md#searchchannelsrequestrequesttypedef) 
-
 ### send\_channel\_message
 
 Sends a message to a particular channel that the member is a part of.
@@ -1517,9 +1466,9 @@ await def update_channel(
     self,
     *,
     ChannelArn: str,
+    Name: str,
+    Mode: ChannelModeType,  # (1)
     ChimeBearer: str,
-    Name: str = ...,
-    Mode: ChannelModeType = ...,  # (1)
     Metadata: str = ...,
 ) -> UpdateChannelResponseTypeDef:  # (2)
     ...
@@ -1532,6 +1481,8 @@ await def update_channel(
 ```python title="Usage example with kwargs"
 kwargs: UpdateChannelRequestRequestTypeDef = {  # (1)
     "ChannelArn": ...,
+    "Name": ...,
+    "Mode": ...,
     "ChimeBearer": ...,
 }
 

@@ -114,21 +114,6 @@ parent.cancel_resource_request(**kwargs)
 
 1. See [:material-code-braces: CancelResourceRequestInputRequestTypeDef](./type_defs.md#cancelresourcerequestinputrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("cloudcontrol").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_resource
 
 Creates the specified resource.
@@ -413,14 +398,6 @@ await def __aexit__(
 ```
 
 
-
-
-### get_paginator
-
-Type annotations and code completion for `#!python session.client("cloudcontrol").get_paginator` method with overloads.
-
-- `client.get_paginator("list_resource_requests")` -> [ListResourceRequestsPaginator](./paginators.md#listresourcerequestspaginator)
-- `client.get_paginator("list_resources")` -> [ListResourcesPaginator](./paginators.md#listresourcespaginator)
 
 
 

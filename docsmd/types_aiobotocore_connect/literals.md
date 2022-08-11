@@ -154,28 +154,6 @@ ContactInitiationMethodType = Literal[
     "TRANSFER",
 ]
 ```
-## ContactStateType
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import ContactStateType
-
-def get_value() -> ContactStateType:
-    return "CONNECTED"
-```
-
-```python title="Definition"
-ContactStateType = Literal[
-    "CONNECTED",
-    "CONNECTED_ONHOLD",
-    "CONNECTING",
-    "ENDED",
-    "ERROR",
-    "INCOMING",
-    "MISSED",
-    "PENDING",
-    "REJECTED",
-]
-```
 ## CurrentMetricNameType
 
 ```python title="Usage Example"
@@ -261,21 +239,6 @@ GroupingType = Literal[
     "QUEUE",
 ]
 ```
-## HierarchyGroupMatchTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import HierarchyGroupMatchTypeType
-
-def get_value() -> HierarchyGroupMatchTypeType:
-    return "EXACT"
-```
-
-```python title="Definition"
-HierarchyGroupMatchTypeType = Literal[
-    "EXACT",
-    "WITH_CHILD_GROUPS",
-]
-```
 ## HistoricalMetricNameType
 
 ```python title="Usage Example"
@@ -349,9 +312,7 @@ InstanceAttributeTypeType = Literal[
     "CONTACT_LENS",
     "CONTACTFLOW_LOGS",
     "EARLY_MEDIA",
-    "HIGH_VOLUME_OUTBOUND",
     "INBOUND_CALLS",
-    "MULTI_PARTY_CONFERENCE",
     "OUTBOUND_CALLS",
     "USE_CUSTOM_TTS_VOICES",
 ]
@@ -635,20 +596,6 @@ ListPhoneNumbersPaginatorName = Literal[
     "list_phone_numbers",
 ]
 ```
-## ListPhoneNumbersV2PaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import ListPhoneNumbersV2PaginatorName
-
-def get_value() -> ListPhoneNumbersV2PaginatorName:
-    return "list_phone_numbers_v2"
-```
-
-```python title="Definition"
-ListPhoneNumbersV2PaginatorName = Literal[
-    "list_phone_numbers_v2",
-]
-```
 ## ListPromptsPaginatorName
 
 ```python title="Usage Example"
@@ -773,20 +720,6 @@ def get_value() -> ListSecurityProfilesPaginatorName:
 ```python title="Definition"
 ListSecurityProfilesPaginatorName = Literal[
     "list_security_profiles",
-]
-```
-## ListTaskTemplatesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import ListTaskTemplatesPaginatorName
-
-def get_value() -> ListTaskTemplatesPaginatorName:
-    return "list_task_templates"
-```
-
-```python title="Definition"
-ListTaskTemplatesPaginatorName = Literal[
-    "list_task_templates",
 ]
 ```
 ## ListUseCasesPaginatorName
@@ -1096,22 +1029,6 @@ PhoneNumberTypeType = Literal[
     "TOLL_FREE",
 ]
 ```
-## PhoneNumberWorkflowStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import PhoneNumberWorkflowStatusType
-
-def get_value() -> PhoneNumberWorkflowStatusType:
-    return "CLAIMED"
-```
-
-```python title="Definition"
-PhoneNumberWorkflowStatusType = Literal[
-    "CLAIMED",
-    "FAILED",
-    "IN_PROGRESS",
-]
-```
 ## PhoneTypeType
 
 ```python title="Usage Example"
@@ -1200,39 +1117,7 @@ def get_value() -> ReferenceTypeType:
 ```python title="Definition"
 ReferenceTypeType = Literal[
     "ATTACHMENT",
-    "DATE",
-    "EMAIL",
-    "NUMBER",
-    "STRING",
     "URL",
-]
-```
-## SearchAvailablePhoneNumbersPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import SearchAvailablePhoneNumbersPaginatorName
-
-def get_value() -> SearchAvailablePhoneNumbersPaginatorName:
-    return "search_available_phone_numbers"
-```
-
-```python title="Definition"
-SearchAvailablePhoneNumbersPaginatorName = Literal[
-    "search_available_phone_numbers",
-]
-```
-## SearchUsersPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import SearchUsersPaginatorName
-
-def get_value() -> SearchUsersPaginatorName:
-    return "search_users"
-```
-
-```python title="Definition"
-SearchUsersPaginatorName = Literal[
-    "search_users",
 ]
 ```
 ## SearchVocabulariesPaginatorName
@@ -1295,62 +1180,6 @@ StorageTypeType = Literal[
     "KINESIS_STREAM",
     "KINESIS_VIDEO_STREAM",
     "S3",
-]
-```
-## StringComparisonTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import StringComparisonTypeType
-
-def get_value() -> StringComparisonTypeType:
-    return "CONTAINS"
-```
-
-```python title="Definition"
-StringComparisonTypeType = Literal[
-    "CONTAINS",
-    "EXACT",
-    "STARTS_WITH",
-]
-```
-## TaskTemplateFieldTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import TaskTemplateFieldTypeType
-
-def get_value() -> TaskTemplateFieldTypeType:
-    return "BOOLEAN"
-```
-
-```python title="Definition"
-TaskTemplateFieldTypeType = Literal[
-    "BOOLEAN",
-    "DATE_TIME",
-    "DESCRIPTION",
-    "EMAIL",
-    "NAME",
-    "NUMBER",
-    "QUICK_CONNECT",
-    "SCHEDULED_TIME",
-    "SINGLE_SELECT",
-    "TEXT",
-    "TEXT_AREA",
-    "URL",
-]
-```
-## TaskTemplateStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_connect.literals import TaskTemplateStatusType
-
-def get_value() -> TaskTemplateStatusType:
-    return "ACTIVE"
-```
-
-```python title="Definition"
-TaskTemplateStatusType = Literal[
-    "ACTIVE",
-    "INACTIVE",
 ]
 ```
 ## TrafficTypeType
@@ -1527,7 +1356,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1560,7 +1388,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -1597,7 +1424,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1611,7 +1437,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1645,7 +1470,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1671,7 +1495,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1715,7 +1538,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -1728,13 +1550,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1853,7 +1673,6 @@ PaginatorName = Literal[
     "list_lambda_functions",
     "list_lex_bots",
     "list_phone_numbers",
-    "list_phone_numbers_v2",
     "list_prompts",
     "list_queue_quick_connects",
     "list_queues",
@@ -1863,12 +1682,9 @@ PaginatorName = Literal[
     "list_security_keys",
     "list_security_profile_permissions",
     "list_security_profiles",
-    "list_task_templates",
     "list_use_cases",
     "list_user_hierarchy_groups",
     "list_users",
-    "search_available_phone_numbers",
-    "search_users",
     "search_vocabularies",
 ]
 ```

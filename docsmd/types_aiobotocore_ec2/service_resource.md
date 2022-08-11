@@ -963,8 +963,6 @@ await def create_instances(
     MetadataOptions: InstanceMetadataOptionsRequestTypeDef = ...,  # (19)
     EnclaveOptions: EnclaveOptionsRequestTypeDef = ...,  # (20)
     PrivateDnsNameOptions: PrivateDnsNameOptionsRequestTypeDef = ...,  # (21)
-    MaintenanceOptions: InstanceMaintenanceOptionsRequestTypeDef = ...,  # (22)
-    DisableApiStop: bool = ...,
 ) -> List[Instance]:
     ...
 ```
@@ -990,7 +988,6 @@ await def create_instances(
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
-22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1036,8 +1033,7 @@ parent.create_internet_gateway(**kwargs)
 
 ### EC2ServiceResource.create\_key\_pair method
 
-Creates an ED25519 or 2048-bit RSA key pair with the specified name and in the
-specified PEM or PPK format.
+Creates an ED25519 or 2048-bit RSA key pair with the specified name.
 
 Type annotations and code completion for `#!python session.resource("ec2").create_key_pair` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.ServiceResource.create_key_pair)
@@ -1050,14 +1046,12 @@ await def create_key_pair(
     DryRun: bool = ...,
     KeyType: KeyTypeType = ...,  # (1)
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
-    KeyFormat: KeyFormatType = ...,  # (3)
 ) -> KeyPair:
     ...
 ```
 
 1. See [:material-code-brackets: KeyTypeType](./literals.md#keytypetype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-3. See [:material-code-brackets: KeyFormatType](./literals.md#keyformattype) 
 
 
 ```python title="Usage example with kwargs"
@@ -1166,14 +1160,12 @@ await def create_placement_group(
     Strategy: PlacementStrategyType = ...,  # (1)
     PartitionCount: int = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
-    SpreadLevel: SpreadLevelType = ...,  # (3)
 ) -> PlacementGroup:
     ...
 ```
 
 1. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-3. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
 
 
 ```python title="Usage example with kwargs"
@@ -1575,8 +1567,6 @@ await def register_image(
     SriovNetSupport: str = ...,
     VirtualizationType: str = ...,
     BootMode: BootModeValuesType = ...,  # (3)
-    TpmSupport: TpmSupportValuesType = ...,  # (4)
-    UefiData: str = ...,
 ) -> Image:
     ...
 ```
@@ -1584,7 +1574,6 @@ await def register_image(
 1. See [:material-code-brackets: ArchitectureValuesType](./literals.md#architecturevaluestype) 
 2. See [:material-code-braces: BlockDeviceMappingTypeDef](./type_defs.md#blockdevicemappingtypedef) 
 3. See [:material-code-brackets: BootModeValuesType](./literals.md#bootmodevaluestype) 
-4. See [:material-code-brackets: TpmSupportValuesType](./literals.md#tpmsupportvaluestype) 
 
 
 ```python title="Usage example with kwargs"
@@ -2001,7 +1990,6 @@ async def get_resource() -> Image:
 - `tags`: `List`[[TagTypeDef](./type_defs.md#tagtypedef)]
 - `virtualization_type`: [VirtualizationTypeType](./literals.md#virtualizationtypetype)
 - `boot_mode`: [BootModeValuesType](./literals.md#bootmodevaluestype)
-- `tpm_support`: `Literal['v2.0']` (see [TpmSupportValuesType](./literals.md#tpmsupportvaluestype))
 - `deprecation_time`: `str`
 - `id`: `str`
 
@@ -2310,8 +2298,6 @@ async def get_resource() -> Instance:
 - `usage_operation_update_time`: `datetime`
 - `private_dns_name_options`: [PrivateDnsNameOptionsResponseResponseMetadataTypeDef](./type_defs.md#privatednsnameoptionsresponseresponsemetadatatypedef)
 - `ipv6_address`: `str`
-- `tpm_support`: `str`
-- `maintenance_options`: [InstanceMaintenanceOptionsResponseMetadataTypeDef](./type_defs.md#instancemaintenanceoptionsresponsemetadatatypedef)
 - `id`: `str`
 - `classic_address`: [ClassicAddress](#classicaddress)
 - `image`: [Image](#image)
@@ -2706,7 +2692,6 @@ await def modify_attribute(
     SriovNetSupport: AttributeValueTypeDef = ...,  # (7)
     UserData: BlobAttributeValueTypeDef = ...,  # (12)
     Value: str = ...,
-    DisableApiStop: AttributeBooleanValueTypeDef = ...,  # (1)
 ) -> None:
     ...
 ```
@@ -2723,7 +2708,6 @@ await def modify_attribute(
 10. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 11. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 12. See [:material-code-braces: BlobAttributeValueTypeDef](./type_defs.md#blobattributevaluetypedef) 
-13. See [:material-code-braces: AttributeBooleanValueTypeDef](./type_defs.md#attributebooleanvaluetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3478,8 +3462,6 @@ async def get_resource() -> KeyPairInfo:
 - `key_name`: `str`
 - `key_type`: [KeyTypeType](./literals.md#keytypetype)
 - `tags`: `List`[[TagTypeDef](./type_defs.md#tagtypedef)]
-- `public_key`: `str`
-- `create_time`: `datetime`
 - `name`: `str`
 
 
@@ -4383,7 +4365,6 @@ async def get_resource() -> PlacementGroup:
 - `group_id`: `str`
 - `tags`: `List`[[TagTypeDef](./type_defs.md#tagtypedef)]
 - `group_arn`: `str`
-- `spread_level`: [SpreadLevelType](./literals.md#spreadleveltype)
 - `name`: `str`
 - `instances`: [PlacementGroupInstancesCollection](#placementgroupinstancescollection)
 
@@ -5708,8 +5689,6 @@ await def create_instances(
     MetadataOptions: InstanceMetadataOptionsRequestTypeDef = ...,  # (19)
     EnclaveOptions: EnclaveOptionsRequestTypeDef = ...,  # (20)
     PrivateDnsNameOptions: PrivateDnsNameOptionsRequestTypeDef = ...,  # (21)
-    MaintenanceOptions: InstanceMaintenanceOptionsRequestTypeDef = ...,  # (22)
-    DisableApiStop: bool = ...,
 ) -> List[Instance]:
     ...
 ```
@@ -5735,7 +5714,6 @@ await def create_instances(
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
-22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
 
 
 ```python title="Usage example with kwargs"

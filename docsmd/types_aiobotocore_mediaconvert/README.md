@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `MediaConvert`.
 
 ### From PyPI with pip
 
@@ -125,7 +120,6 @@ def get_value() -> AacAudioDescriptionBroadcasterMixType:
 - [AudioChannelTagType](./literals.md#audiochanneltagtype)
 - [AudioCodecType](./literals.md#audiocodectype)
 - [AudioDefaultSelectionType](./literals.md#audiodefaultselectiontype)
-- [AudioDurationCorrectionType](./literals.md#audiodurationcorrectiontype)
 - [AudioLanguageCodeControlType](./literals.md#audiolanguagecodecontroltype)
 - [AudioNormalizationAlgorithmControlType](./literals.md#audionormalizationalgorithmcontroltype)
 - [AudioNormalizationAlgorithmType](./literals.md#audionormalizationalgorithmtype)
@@ -181,7 +175,6 @@ def get_value() -> AacAudioDescriptionBroadcasterMixType:
 - [CmfcAudioTrackTypeType](./literals.md#cmfcaudiotracktypetype)
 - [CmfcDescriptiveVideoServiceFlagType](./literals.md#cmfcdescriptivevideoserviceflagtype)
 - [CmfcIFrameOnlyManifestType](./literals.md#cmfciframeonlymanifesttype)
-- [CmfcKlvMetadataType](./literals.md#cmfcklvmetadatatype)
 - [CmfcScte35EsamType](./literals.md#cmfcscte35esamtype)
 - [CmfcScte35SourceType](./literals.md#cmfcscte35sourcetype)
 - [CmfcTimedMetadataType](./literals.md#cmfctimedmetadatatype)
@@ -209,7 +202,6 @@ def get_value() -> AacAudioDescriptionBroadcasterMixType:
 - [DescribeEndpointsModeType](./literals.md#describeendpointsmodetype)
 - [DescribeEndpointsPaginatorName](./literals.md#describeendpointspaginatorname)
 - [DolbyVisionLevel6ModeType](./literals.md#dolbyvisionlevel6modetype)
-- [DolbyVisionMappingType](./literals.md#dolbyvisionmappingtype)
 - [DolbyVisionProfileType](./literals.md#dolbyvisionprofiletype)
 - [DropFrameTimecodeType](./literals.md#dropframetimecodetype)
 - [DvbSubSubtitleFallbackFontType](./literals.md#dvbsubsubtitlefallbackfonttype)
@@ -356,7 +348,6 @@ def get_value() -> AacAudioDescriptionBroadcasterMixType:
 - [M2tsEbpPlacementType](./literals.md#m2tsebpplacementtype)
 - [M2tsEsRateInPesType](./literals.md#m2tsesrateinpestype)
 - [M2tsForceTsVideoEbpOrderType](./literals.md#m2tsforcetsvideoebpordertype)
-- [M2tsKlvMetadataType](./literals.md#m2tsklvmetadatatype)
 - [M2tsNielsenId3Type](./literals.md#m2tsnielsenid3type)
 - [M2tsPcrControlType](./literals.md#m2tspcrcontroltype)
 - [M2tsRateModeType](./literals.md#m2tsratemodetype)
@@ -382,7 +373,6 @@ def get_value() -> AacAudioDescriptionBroadcasterMixType:
 - [MpdAccessibilityCaptionHintsType](./literals.md#mpdaccessibilitycaptionhintstype)
 - [MpdAudioDurationType](./literals.md#mpdaudiodurationtype)
 - [MpdCaptionContainerTypeType](./literals.md#mpdcaptioncontainertypetype)
-- [MpdKlvMetadataType](./literals.md#mpdklvmetadatatype)
 - [MpdScte35EsamType](./literals.md#mpdscte35esamtype)
 - [MpdScte35SourceType](./literals.md#mpdscte35sourcetype)
 - [MpdTimedMetadataType](./literals.md#mpdtimedmetadatatype)
@@ -420,7 +410,6 @@ def get_value() -> AacAudioDescriptionBroadcasterMixType:
 - [OrderType](./literals.md#ordertype)
 - [OutputGroupTypeType](./literals.md#outputgrouptypetype)
 - [OutputSdtType](./literals.md#outputsdttype)
-- [PadVideoType](./literals.md#padvideotype)
 - [PresetListByType](./literals.md#presetlistbytype)
 - [PricingPlanType](./literals.md#pricingplantype)
 - [ProresChromaSamplingType](./literals.md#proreschromasamplingtype)
@@ -435,10 +424,8 @@ def get_value() -> AacAudioDescriptionBroadcasterMixType:
 - [QueueListByType](./literals.md#queuelistbytype)
 - [QueueStatusType](./literals.md#queuestatustype)
 - [RenewalTypeType](./literals.md#renewaltypetype)
-- [RequiredFlagType](./literals.md#requiredflagtype)
 - [ReservationPlanStatusType](./literals.md#reservationplanstatustype)
 - [RespondToAfdType](./literals.md#respondtoafdtype)
-- [RuleTypeType](./literals.md#ruletypetype)
 - [S3ObjectCannedAclType](./literals.md#s3objectcannedacltype)
 - [S3ServerSideEncryptionTypeType](./literals.md#s3serversideencryptiontypetype)
 - [SampleRangeConversionType](./literals.md#samplerangeconversiontype)
@@ -523,7 +510,6 @@ def get_value() -> AacSettingsTypeDef:
 - [Ac3SettingsTypeDef](./type_defs.md#ac3settingstypedef)
 - [AccelerationSettingsTypeDef](./type_defs.md#accelerationsettingstypedef)
 - [AiffSettingsTypeDef](./type_defs.md#aiffsettingstypedef)
-- [AllowedRenditionSizeTypeDef](./type_defs.md#allowedrenditionsizetypedef)
 - [AncillarySourceSettingsTypeDef](./type_defs.md#ancillarysourcesettingstypedef)
 - [AssociateCertificateRequestRequestTypeDef](./type_defs.md#associatecertificaterequestrequesttypedef)
 - [AudioChannelTaggingSettingsTypeDef](./type_defs.md#audiochanneltaggingsettingstypedef)
@@ -537,9 +523,7 @@ def get_value() -> AacSettingsTypeDef:
 - [AudioNormalizationSettingsTypeDef](./type_defs.md#audionormalizationsettingstypedef)
 - [AudioSelectorGroupTypeDef](./type_defs.md#audioselectorgrouptypedef)
 - [HlsRenditionGroupSettingsTypeDef](./type_defs.md#hlsrenditiongroupsettingstypedef)
-- [ForceIncludeRenditionSizeTypeDef](./type_defs.md#forceincluderenditionsizetypedef)
-- [MinBottomRenditionSizeTypeDef](./type_defs.md#minbottomrenditionsizetypedef)
-- [MinTopRenditionSizeTypeDef](./type_defs.md#mintoprenditionsizetypedef)
+- [AutomatedAbrSettingsTypeDef](./type_defs.md#automatedabrsettingstypedef)
 - [Av1QvbrSettingsTypeDef](./type_defs.md#av1qvbrsettingstypedef)
 - [AvailBlankingTypeDef](./type_defs.md#availblankingtypedef)
 - [AvcIntraUhdSettingsTypeDef](./type_defs.md#avcintrauhdsettingstypedef)
@@ -610,7 +594,6 @@ def get_value() -> AacSettingsTypeDef:
 - [InputClippingTypeDef](./type_defs.md#inputclippingtypedef)
 - [InputDecryptionSettingsTypeDef](./type_defs.md#inputdecryptionsettingstypedef)
 - [RectangleTypeDef](./type_defs.md#rectangletypedef)
-- [InputVideoGeneratorTypeDef](./type_defs.md#inputvideogeneratortypedef)
 - [JobMessagesTypeDef](./type_defs.md#jobmessagestypedef)
 - [KantarWatermarkSettingsTypeDef](./type_defs.md#kantarwatermarksettingstypedef)
 - [NielsenConfigurationTypeDef](./type_defs.md#nielsenconfigurationtypedef)
@@ -651,7 +634,7 @@ def get_value() -> AacSettingsTypeDef:
 - [XavcHdIntraCbgProfileSettingsTypeDef](./type_defs.md#xavchdintracbgprofilesettingstypedef)
 - [XavcHdProfileSettingsTypeDef](./type_defs.md#xavchdprofilesettingstypedef)
 - [AudioCodecSettingsTypeDef](./type_defs.md#audiocodecsettingstypedef)
-- [AutomatedAbrRuleTypeDef](./type_defs.md#automatedabrruletypedef)
+- [AutomatedEncodingSettingsTypeDef](./type_defs.md#automatedencodingsettingstypedef)
 - [Av1SettingsTypeDef](./type_defs.md#av1settingstypedef)
 - [AvcIntraSettingsTypeDef](./type_defs.md#avcintrasettingstypedef)
 - [CaptionDestinationSettingsTypeDef](./type_defs.md#captiondestinationsettingstypedef)
@@ -691,7 +674,6 @@ def get_value() -> AacSettingsTypeDef:
 - [QueueTypeDef](./type_defs.md#queuetypedef)
 - [S3DestinationSettingsTypeDef](./type_defs.md#s3destinationsettingstypedef)
 - [XavcSettingsTypeDef](./type_defs.md#xavcsettingstypedef)
-- [AutomatedAbrSettingsTypeDef](./type_defs.md#automatedabrsettingstypedef)
 - [CaptionDescriptionPresetTypeDef](./type_defs.md#captiondescriptionpresettypedef)
 - [CaptionDescriptionTypeDef](./type_defs.md#captiondescriptiontypedef)
 - [CaptionSourceSettingsTypeDef](./type_defs.md#captionsourcesettingstypedef)
@@ -705,7 +687,6 @@ def get_value() -> AacSettingsTypeDef:
 - [UpdateQueueResponseTypeDef](./type_defs.md#updatequeueresponsetypedef)
 - [DestinationSettingsTypeDef](./type_defs.md#destinationsettingstypedef)
 - [VideoCodecSettingsTypeDef](./type_defs.md#videocodecsettingstypedef)
-- [AutomatedEncodingSettingsTypeDef](./type_defs.md#automatedencodingsettingstypedef)
 - [CaptionSelectorTypeDef](./type_defs.md#captionselectortypedef)
 - [AudioDescriptionTypeDef](./type_defs.md#audiodescriptiontypedef)
 - [AudioSelectorTypeDef](./type_defs.md#audioselectortypedef)

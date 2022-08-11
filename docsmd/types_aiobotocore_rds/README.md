@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `RDS`.
 
 ### From PyPI with pip
 
@@ -35,30 +30,6 @@ python -m pip install 'types-aioboto3-lite[rds]'
 python -m pip install types-aiobotocore-rds
 ```
 
-
-### From conda-forge
-
-Installing `types-aiobotocore-rds` from the `conda-forge` channel
-can be achieved by adding `conda-forge` to your channels with:
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-```
-
-Once the `conda-forge` channel has been enabled, `types-aiobotocore-rds`
-can be installed with:
-
-```bash
-conda install types-aiobotocore-rds
-```
-
-It is possible to list all of the versions of `types-aiobotocore-rds`
-available on your platform with:
-
-```bash
-conda search types-aiobotocore-rds --channel conda-forge
-```
 
 
 ## How to uninstall
@@ -102,6 +73,7 @@ def get_describe_certificates_paginator() -> DescribeCertificatesPaginator:
 ```
 
 - [DescribeCertificatesPaginator](./paginators.md#describecertificatespaginator)
+- [DescribeCustomAvailabilityZonesPaginator](./paginators.md#describecustomavailabilityzonespaginator)
 - [DescribeDBClusterBacktracksPaginator](./paginators.md#describedbclusterbacktrackspaginator)
 - [DescribeDBClusterEndpointsPaginator](./paginators.md#describedbclusterendpointspaginator)
 - [DescribeDBClusterParameterGroupsPaginator](./paginators.md#describedbclusterparametergroupspaginator)
@@ -127,6 +99,7 @@ def get_describe_certificates_paginator() -> DescribeCertificatesPaginator:
 - [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
 - [DescribeExportTasksPaginator](./paginators.md#describeexporttaskspaginator)
 - [DescribeGlobalClustersPaginator](./paginators.md#describeglobalclusterspaginator)
+- [DescribeInstallationMediaPaginator](./paginators.md#describeinstallationmediapaginator)
 - [DescribeOptionGroupOptionsPaginator](./paginators.md#describeoptiongroupoptionspaginator)
 - [DescribeOptionGroupsPaginator](./paginators.md#describeoptiongroupspaginator)
 - [DescribeOrderableDBInstanceOptionsPaginator](./paginators.md#describeorderabledbinstanceoptionspaginator)
@@ -146,14 +119,12 @@ Type annotations and code completion for
 from `#!python session.client("rds").get_waiter("...")`.
 
 ```python title="Usage example"
-from types_aiobotocore_rds.waiter import DBClusterAvailableWaiter
+from types_aiobotocore_rds.waiter import DBClusterSnapshotAvailableWaiter
 
-def get_db_cluster_available_waiter() -> DBClusterAvailableWaiter:
-    return Session().client("rds").get_waiter("db_cluster_available")
+def get_db_cluster_snapshot_available_waiter() -> DBClusterSnapshotAvailableWaiter:
+    return Session().client("rds").get_waiter("db_cluster_snapshot_available")
 ```
 
-- [DBClusterAvailableWaiter](./waiters.md#dbclusteravailablewaiter)
-- [DBClusterDeletedWaiter](./waiters.md#dbclusterdeletedwaiter)
 - [DBClusterSnapshotAvailableWaiter](./waiters.md#dbclustersnapshotavailablewaiter)
 - [DBClusterSnapshotDeletedWaiter](./waiters.md#dbclustersnapshotdeletedwaiter)
 - [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)
@@ -184,8 +155,6 @@ def get_value() -> ActivityStreamModeType:
 - [AuthSchemeType](./literals.md#authschemetype)
 - [AutomationModeType](./literals.md#automationmodetype)
 - [CustomEngineVersionStatusType](./literals.md#customengineversionstatustype)
-- [DBClusterAvailableWaiterName](./literals.md#dbclusteravailablewaitername)
-- [DBClusterDeletedWaiterName](./literals.md#dbclusterdeletedwaitername)
 - [DBClusterSnapshotAvailableWaiterName](./literals.md#dbclustersnapshotavailablewaitername)
 - [DBClusterSnapshotDeletedWaiterName](./literals.md#dbclustersnapshotdeletedwaitername)
 - [DBInstanceAvailableWaiterName](./literals.md#dbinstanceavailablewaitername)
@@ -197,6 +166,7 @@ def get_value() -> ActivityStreamModeType:
 - [DBSnapshotCompletedWaiterName](./literals.md#dbsnapshotcompletedwaitername)
 - [DBSnapshotDeletedWaiterName](./literals.md#dbsnapshotdeletedwaitername)
 - [DescribeCertificatesPaginatorName](./literals.md#describecertificatespaginatorname)
+- [DescribeCustomAvailabilityZonesPaginatorName](./literals.md#describecustomavailabilityzonespaginatorname)
 - [DescribeDBClusterBacktracksPaginatorName](./literals.md#describedbclusterbacktrackspaginatorname)
 - [DescribeDBClusterEndpointsPaginatorName](./literals.md#describedbclusterendpointspaginatorname)
 - [DescribeDBClusterParameterGroupsPaginatorName](./literals.md#describedbclusterparametergroupspaginatorname)
@@ -222,6 +192,7 @@ def get_value() -> ActivityStreamModeType:
 - [DescribeEventsPaginatorName](./literals.md#describeeventspaginatorname)
 - [DescribeExportTasksPaginatorName](./literals.md#describeexporttaskspaginatorname)
 - [DescribeGlobalClustersPaginatorName](./literals.md#describeglobalclusterspaginatorname)
+- [DescribeInstallationMediaPaginatorName](./literals.md#describeinstallationmediapaginatorname)
 - [DescribeOptionGroupOptionsPaginatorName](./literals.md#describeoptiongroupoptionspaginatorname)
 - [DescribeOptionGroupsPaginatorName](./literals.md#describeoptiongroupspaginatorname)
 - [DescribeOrderableDBInstanceOptionsPaginatorName](./literals.md#describeorderabledbinstanceoptionspaginatorname)
@@ -285,12 +256,13 @@ def get_value() -> AccountQuotaTypeDef:
 - [ConnectionPoolConfigurationTypeDef](./type_defs.md#connectionpoolconfigurationtypedef)
 - [DBClusterParameterGroupTypeDef](./type_defs.md#dbclusterparametergrouptypedef)
 - [DBParameterGroupTypeDef](./type_defs.md#dbparametergrouptypedef)
+- [CreateCustomAvailabilityZoneMessageRequestTypeDef](./type_defs.md#createcustomavailabilityzonemessagerequesttypedef)
 - [ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef)
-- [ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef)
 - [ProcessorFeatureTypeDef](./type_defs.md#processorfeaturetypedef)
 - [DBProxyEndpointTypeDef](./type_defs.md#dbproxyendpointtypedef)
 - [UserAuthConfigTypeDef](./type_defs.md#userauthconfigtypedef)
 - [CreateGlobalClusterMessageRequestTypeDef](./type_defs.md#createglobalclustermessagerequesttypedef)
+- [VpnDetailsTypeDef](./type_defs.md#vpndetailstypedef)
 - [DBClusterBacktrackTypeDef](./type_defs.md#dbclusterbacktracktypedef)
 - [DBClusterEndpointTypeDef](./type_defs.md#dbclusterendpointtypedef)
 - [DBClusterMemberTypeDef](./type_defs.md#dbclustermembertypedef)
@@ -300,7 +272,6 @@ def get_value() -> AccountQuotaTypeDef:
 - [DBClusterSnapshotAttributeTypeDef](./type_defs.md#dbclustersnapshotattributetypedef)
 - [DomainMembershipTypeDef](./type_defs.md#domainmembershiptypedef)
 - [ScalingConfigurationInfoTypeDef](./type_defs.md#scalingconfigurationinfotypedef)
-- [ServerlessV2ScalingConfigurationInfoTypeDef](./type_defs.md#serverlessv2scalingconfigurationinfotypedef)
 - [VpcSecurityGroupMembershipTypeDef](./type_defs.md#vpcsecuritygroupmembershiptypedef)
 - [TimezoneTypeDef](./type_defs.md#timezonetypedef)
 - [UpgradeTargetTypeDef](./type_defs.md#upgradetargettypedef)
@@ -317,6 +288,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [EC2SecurityGroupTypeDef](./type_defs.md#ec2securitygrouptypedef)
 - [IPRangeTypeDef](./type_defs.md#iprangetypedef)
 - [DBSnapshotAttributeTypeDef](./type_defs.md#dbsnapshotattributetypedef)
+- [DeleteCustomAvailabilityZoneMessageRequestTypeDef](./type_defs.md#deletecustomavailabilityzonemessagerequesttypedef)
 - [DeleteCustomDBEngineVersionMessageRequestTypeDef](./type_defs.md#deletecustomdbengineversionmessagerequesttypedef)
 - [DeleteDBClusterEndpointMessageRequestTypeDef](./type_defs.md#deletedbclusterendpointmessagerequesttypedef)
 - [DeleteDBClusterMessageRequestTypeDef](./type_defs.md#deletedbclustermessagerequesttypedef)
@@ -332,6 +304,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [DeleteDBSubnetGroupMessageRequestTypeDef](./type_defs.md#deletedbsubnetgroupmessagerequesttypedef)
 - [DeleteEventSubscriptionMessageRequestTypeDef](./type_defs.md#deleteeventsubscriptionmessagerequesttypedef)
 - [DeleteGlobalClusterMessageRequestTypeDef](./type_defs.md#deleteglobalclustermessagerequesttypedef)
+- [DeleteInstallationMediaMessageRequestTypeDef](./type_defs.md#deleteinstallationmediamessagerequesttypedef)
 - [DeleteOptionGroupMessageRequestTypeDef](./type_defs.md#deleteoptiongroupmessagerequesttypedef)
 - [DeregisterDBProxyTargetsRequestRequestTypeDef](./type_defs.md#deregisterdbproxytargetsrequestrequesttypedef)
 - [FilterTypeDef](./type_defs.md#filtertypedef)
@@ -350,6 +323,8 @@ def get_value() -> AccountQuotaTypeDef:
 - [FailoverGlobalClusterMessageRequestTypeDef](./type_defs.md#failoverglobalclustermessagerequesttypedef)
 - [FailoverStateTypeDef](./type_defs.md#failoverstatetypedef)
 - [GlobalClusterMemberTypeDef](./type_defs.md#globalclustermembertypedef)
+- [ImportInstallationMediaMessageRequestTypeDef](./type_defs.md#importinstallationmediamessagerequesttypedef)
+- [InstallationMediaFailureCauseTypeDef](./type_defs.md#installationmediafailurecausetypedef)
 - [MinimumEngineVersionPerAllowedValueTypeDef](./type_defs.md#minimumengineversionperallowedvaluetypedef)
 - [ModifyCertificatesMessageRequestTypeDef](./type_defs.md#modifycertificatesmessagerequesttypedef)
 - [ModifyCurrentDBClusterCapacityMessageRequestTypeDef](./type_defs.md#modifycurrentdbclustercapacitymessagerequesttypedef)
@@ -425,6 +400,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [CreateOptionGroupMessageRequestTypeDef](./type_defs.md#createoptiongroupmessagerequesttypedef)
 - [DBClusterSnapshotTypeDef](./type_defs.md#dbclustersnapshottypedef)
 - [PurchaseReservedDBInstancesOfferingMessageRequestTypeDef](./type_defs.md#purchasereserveddbinstancesofferingmessagerequesttypedef)
+- [RestoreDBClusterFromS3MessageRequestTypeDef](./type_defs.md#restoredbclusterfroms3messagerequesttypedef)
 - [TagListMessageTypeDef](./type_defs.md#taglistmessagetypedef)
 - [OrderableDBInstanceOptionTypeDef](./type_defs.md#orderabledbinstanceoptiontypedef)
 - [CertificateMessageTypeDef](./type_defs.md#certificatemessagetypedef)
@@ -440,7 +416,6 @@ def get_value() -> AccountQuotaTypeDef:
 - [DBParameterGroupsMessageTypeDef](./type_defs.md#dbparametergroupsmessagetypedef)
 - [CreateDBClusterMessageRequestTypeDef](./type_defs.md#createdbclustermessagerequesttypedef)
 - [ModifyDBClusterMessageRequestTypeDef](./type_defs.md#modifydbclustermessagerequesttypedef)
-- [RestoreDBClusterFromS3MessageRequestTypeDef](./type_defs.md#restoredbclusterfroms3messagerequesttypedef)
 - [RestoreDBClusterFromSnapshotMessageRequestTypeDef](./type_defs.md#restoredbclusterfromsnapshotmessagerequesttypedef)
 - [RestoreDBClusterToPointInTimeMessageRequestTypeDef](./type_defs.md#restoredbclustertopointintimemessagerequesttypedef)
 - [CreateDBInstanceMessageRequestTypeDef](./type_defs.md#createdbinstancemessagerequesttypedef)
@@ -457,6 +432,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [ModifyDBProxyEndpointResponseTypeDef](./type_defs.md#modifydbproxyendpointresponsetypedef)
 - [CreateDBProxyRequestRequestTypeDef](./type_defs.md#createdbproxyrequestrequesttypedef)
 - [ModifyDBProxyRequestRequestTypeDef](./type_defs.md#modifydbproxyrequestrequesttypedef)
+- [CustomAvailabilityZoneTypeDef](./type_defs.md#customavailabilityzonetypedef)
 - [DBClusterBacktrackMessageTypeDef](./type_defs.md#dbclusterbacktrackmessagetypedef)
 - [DBClusterEndpointMessageTypeDef](./type_defs.md#dbclusterendpointmessagetypedef)
 - [DBClusterParameterGroupDetailsTypeDef](./type_defs.md#dbclusterparametergroupdetailstypedef)
@@ -475,6 +451,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [DBSecurityGroupTypeDef](./type_defs.md#dbsecuritygrouptypedef)
 - [DBSnapshotAttributesResultTypeDef](./type_defs.md#dbsnapshotattributesresulttypedef)
 - [DescribeCertificatesMessageRequestTypeDef](./type_defs.md#describecertificatesmessagerequesttypedef)
+- [DescribeCustomAvailabilityZonesMessageRequestTypeDef](./type_defs.md#describecustomavailabilityzonesmessagerequesttypedef)
 - [DescribeDBClusterBacktracksMessageRequestTypeDef](./type_defs.md#describedbclusterbacktracksmessagerequesttypedef)
 - [DescribeDBClusterEndpointsMessageRequestTypeDef](./type_defs.md#describedbclusterendpointsmessagerequesttypedef)
 - [DescribeDBClusterParameterGroupsMessageRequestTypeDef](./type_defs.md#describedbclusterparametergroupsmessagerequesttypedef)
@@ -501,6 +478,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [DescribeEventsMessageRequestTypeDef](./type_defs.md#describeeventsmessagerequesttypedef)
 - [DescribeExportTasksMessageRequestTypeDef](./type_defs.md#describeexporttasksmessagerequesttypedef)
 - [DescribeGlobalClustersMessageRequestTypeDef](./type_defs.md#describeglobalclustersmessagerequesttypedef)
+- [DescribeInstallationMediaMessageRequestTypeDef](./type_defs.md#describeinstallationmediamessagerequesttypedef)
 - [DescribeOptionGroupOptionsMessageRequestTypeDef](./type_defs.md#describeoptiongroupoptionsmessagerequesttypedef)
 - [DescribeOptionGroupsMessageRequestTypeDef](./type_defs.md#describeoptiongroupsmessagerequesttypedef)
 - [DescribeOrderableDBInstanceOptionsMessageRequestTypeDef](./type_defs.md#describeorderabledbinstanceoptionsmessagerequesttypedef)
@@ -510,6 +488,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [DescribeSourceRegionsMessageRequestTypeDef](./type_defs.md#describesourceregionsmessagerequesttypedef)
 - [ListTagsForResourceMessageRequestTypeDef](./type_defs.md#listtagsforresourcemessagerequesttypedef)
 - [DescribeCertificatesMessageDescribeCertificatesPaginateTypeDef](./type_defs.md#describecertificatesmessagedescribecertificatespaginatetypedef)
+- [DescribeCustomAvailabilityZonesMessageDescribeCustomAvailabilityZonesPaginateTypeDef](./type_defs.md#describecustomavailabilityzonesmessagedescribecustomavailabilityzonespaginatetypedef)
 - [DescribeDBClusterBacktracksMessageDescribeDBClusterBacktracksPaginateTypeDef](./type_defs.md#describedbclusterbacktracksmessagedescribedbclusterbacktrackspaginatetypedef)
 - [DescribeDBClusterEndpointsMessageDescribeDBClusterEndpointsPaginateTypeDef](./type_defs.md#describedbclusterendpointsmessagedescribedbclusterendpointspaginatetypedef)
 - [DescribeDBClusterParameterGroupsMessageDescribeDBClusterParameterGroupsPaginateTypeDef](./type_defs.md#describedbclusterparametergroupsmessagedescribedbclusterparametergroupspaginatetypedef)
@@ -535,6 +514,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [DescribeEventsMessageDescribeEventsPaginateTypeDef](./type_defs.md#describeeventsmessagedescribeeventspaginatetypedef)
 - [DescribeExportTasksMessageDescribeExportTasksPaginateTypeDef](./type_defs.md#describeexporttasksmessagedescribeexporttaskspaginatetypedef)
 - [DescribeGlobalClustersMessageDescribeGlobalClustersPaginateTypeDef](./type_defs.md#describeglobalclustersmessagedescribeglobalclusterspaginatetypedef)
+- [DescribeInstallationMediaMessageDescribeInstallationMediaPaginateTypeDef](./type_defs.md#describeinstallationmediamessagedescribeinstallationmediapaginatetypedef)
 - [DescribeOptionGroupOptionsMessageDescribeOptionGroupOptionsPaginateTypeDef](./type_defs.md#describeoptiongroupoptionsmessagedescribeoptiongroupoptionspaginatetypedef)
 - [DescribeOptionGroupsMessageDescribeOptionGroupsPaginateTypeDef](./type_defs.md#describeoptiongroupsmessagedescribeoptiongroupspaginatetypedef)
 - [DescribeOrderableDBInstanceOptionsMessageDescribeOrderableDBInstanceOptionsPaginateTypeDef](./type_defs.md#describeorderabledbinstanceoptionsmessagedescribeorderabledbinstanceoptionspaginatetypedef)
@@ -545,8 +525,6 @@ def get_value() -> AccountQuotaTypeDef:
 - [DownloadDBLogFilePortionMessageDownloadDBLogFilePortionPaginateTypeDef](./type_defs.md#downloaddblogfileportionmessagedownloaddblogfileportionpaginatetypedef)
 - [DescribeDBClusterSnapshotsMessageDBClusterSnapshotAvailableWaitTypeDef](./type_defs.md#describedbclustersnapshotsmessagedbclustersnapshotavailablewaittypedef)
 - [DescribeDBClusterSnapshotsMessageDBClusterSnapshotDeletedWaitTypeDef](./type_defs.md#describedbclustersnapshotsmessagedbclustersnapshotdeletedwaittypedef)
-- [DescribeDBClustersMessageDBClusterAvailableWaitTypeDef](./type_defs.md#describedbclustersmessagedbclusteravailablewaittypedef)
-- [DescribeDBClustersMessageDBClusterDeletedWaitTypeDef](./type_defs.md#describedbclustersmessagedbclusterdeletedwaittypedef)
 - [DescribeDBInstancesMessageDBInstanceAvailableWaitTypeDef](./type_defs.md#describedbinstancesmessagedbinstanceavailablewaittypedef)
 - [DescribeDBInstancesMessageDBInstanceDeletedWaitTypeDef](./type_defs.md#describedbinstancesmessagedbinstancedeletedwaittypedef)
 - [DescribeDBSnapshotsMessageDBSnapshotAvailableWaitTypeDef](./type_defs.md#describedbsnapshotsmessagedbsnapshotavailablewaittypedef)
@@ -557,6 +535,8 @@ def get_value() -> AccountQuotaTypeDef:
 - [EventsMessageTypeDef](./type_defs.md#eventsmessagetypedef)
 - [ExportTasksMessageTypeDef](./type_defs.md#exporttasksmessagetypedef)
 - [GlobalClusterTypeDef](./type_defs.md#globalclustertypedef)
+- [InstallationMediaResponseMetadataTypeDef](./type_defs.md#installationmediaresponsemetadatatypedef)
+- [InstallationMediaTypeDef](./type_defs.md#installationmediatypedef)
 - [OptionGroupOptionSettingTypeDef](./type_defs.md#optiongroupoptionsettingtypedef)
 - [OptionConfigurationTypeDef](./type_defs.md#optionconfigurationtypedef)
 - [OptionTypeDef](./type_defs.md#optiontypedef)
@@ -579,6 +559,9 @@ def get_value() -> AccountQuotaTypeDef:
 - [DBSnapshotMessageTypeDef](./type_defs.md#dbsnapshotmessagetypedef)
 - [DeleteDBSnapshotResultTypeDef](./type_defs.md#deletedbsnapshotresulttypedef)
 - [ModifyDBSnapshotResultTypeDef](./type_defs.md#modifydbsnapshotresulttypedef)
+- [CreateCustomAvailabilityZoneResultTypeDef](./type_defs.md#createcustomavailabilityzoneresulttypedef)
+- [CustomAvailabilityZoneMessageTypeDef](./type_defs.md#customavailabilityzonemessagetypedef)
+- [DeleteCustomAvailabilityZoneResultTypeDef](./type_defs.md#deletecustomavailabilityzoneresulttypedef)
 - [DescribeEngineDefaultClusterParametersResultTypeDef](./type_defs.md#describeenginedefaultclusterparametersresulttypedef)
 - [DescribeEngineDefaultParametersResultTypeDef](./type_defs.md#describeenginedefaultparametersresulttypedef)
 - [DescribeDBClusterSnapshotAttributesResultTypeDef](./type_defs.md#describedbclustersnapshotattributesresulttypedef)
@@ -606,6 +589,7 @@ def get_value() -> AccountQuotaTypeDef:
 - [GlobalClustersMessageTypeDef](./type_defs.md#globalclustersmessagetypedef)
 - [ModifyGlobalClusterResultTypeDef](./type_defs.md#modifyglobalclusterresulttypedef)
 - [RemoveFromGlobalClusterResultTypeDef](./type_defs.md#removefromglobalclusterresulttypedef)
+- [InstallationMediaMessageTypeDef](./type_defs.md#installationmediamessagetypedef)
 - [OptionGroupOptionTypeDef](./type_defs.md#optiongroupoptiontypedef)
 - [ModifyOptionGroupMessageRequestTypeDef](./type_defs.md#modifyoptiongroupmessagerequesttypedef)
 - [OptionGroupTypeDef](./type_defs.md#optiongrouptypedef)

@@ -100,14 +100,6 @@ AppInstanceTypeType = Literal[
     "ml.g4dn.4xlarge",
     "ml.g4dn.8xlarge",
     "ml.g4dn.xlarge",
-    "ml.g5.12xlarge",
-    "ml.g5.16xlarge",
-    "ml.g5.24xlarge",
-    "ml.g5.2xlarge",
-    "ml.g5.48xlarge",
-    "ml.g5.4xlarge",
-    "ml.g5.8xlarge",
-    "ml.g5.xlarge",
     "ml.m5.12xlarge",
     "ml.m5.16xlarge",
     "ml.m5.24xlarge",
@@ -323,21 +315,6 @@ AuthModeType = Literal[
     "SSO",
 ]
 ```
-## AutoMLChannelTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.literals import AutoMLChannelTypeType
-
-def get_value() -> AutoMLChannelTypeType:
-    return "training"
-```
-
-```python title="Definition"
-AutoMLChannelTypeType = Literal[
-    "training",
-    "validation",
-]
-```
 ## AutoMLJobObjectiveTypeType
 
 ```python title="Usage Example"
@@ -417,33 +394,6 @@ AutoMLMetricEnumType = Literal[
     "F1",
     "F1macro",
     "MSE",
-]
-```
-## AutoMLMetricExtendedEnumType
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.literals import AutoMLMetricExtendedEnumType
-
-def get_value() -> AutoMLMetricExtendedEnumType:
-    return "AUC"
-```
-
-```python title="Definition"
-AutoMLMetricExtendedEnumType = Literal[
-    "Accuracy",
-    "AUC",
-    "BalancedAccuracy",
-    "F1",
-    "F1macro",
-    "LogLoss",
-    "MAE",
-    "MSE",
-    "Precision",
-    "PrecisionMacro",
-    "R2",
-    "Recall",
-    "RecallMacro",
-    "RMSE",
 ]
 ```
 ## AutoMLS3DataTypeType
@@ -1467,14 +1417,6 @@ InstanceTypeType = Literal[
     "ml.g4dn.4xlarge",
     "ml.g4dn.8xlarge",
     "ml.g4dn.xlarge",
-    "ml.g5.12xlarge",
-    "ml.g5.16xlarge",
-    "ml.g5.24xlarge",
-    "ml.g5.2xlarge",
-    "ml.g5.48xlarge",
-    "ml.g5.4xlarge",
-    "ml.g5.8xlarge",
-    "ml.g5.xlarge",
     "ml.m4.10xlarge",
     "ml.m4.16xlarge",
     "ml.m4.2xlarge",
@@ -1550,22 +1492,6 @@ LabelingJobStatusType = Literal[
     "InProgress",
     "Stopped",
     "Stopping",
-]
-```
-## LastUpdateStatusValueType
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.literals import LastUpdateStatusValueType
-
-def get_value() -> LastUpdateStatusValueType:
-    return "Failed"
-```
-
-```python title="Definition"
-LastUpdateStatusValueType = Literal[
-    "Failed",
-    "InProgress",
-    "Successful",
 ]
 ```
 ## LineageTypeType
@@ -3487,7 +3413,6 @@ ResourceTypeType = Literal[
     "ExperimentTrial",
     "ExperimentTrialComponent",
     "FeatureGroup",
-    "FeatureMetadata",
     "ModelPackage",
     "ModelPackageGroup",
     "Pipeline",
@@ -4345,24 +4270,6 @@ VariantStatusType = Literal[
     "Updating",
 ]
 ```
-## WorkforceStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.literals import WorkforceStatusType
-
-def get_value() -> WorkforceStatusType:
-    return "Active"
-```
-
-```python title="Definition"
-WorkforceStatusType = Literal[
-    "Active",
-    "Deleting",
-    "Failed",
-    "Initializing",
-    "Updating",
-]
-```
 ## SageMakerServiceName
 
 ```python title="Usage Example"
@@ -4424,7 +4331,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -4457,7 +4363,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -4494,7 +4399,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -4508,7 +4412,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -4542,7 +4445,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -4568,7 +4470,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -4612,7 +4513,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -4625,13 +4525,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

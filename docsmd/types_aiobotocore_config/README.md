@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ConfigService`.
 
 ### From PyPI with pip
 
@@ -169,7 +164,6 @@ def get_value() -> AggregateConformancePackComplianceSummaryGroupKeyType:
 - [MaximumExecutionFrequencyType](./literals.md#maximumexecutionfrequencytype)
 - [MemberAccountRuleStatusType](./literals.md#memberaccountrulestatustype)
 - [MessageTypeType](./literals.md#messagetypetype)
-- [OrganizationConfigRuleTriggerTypeNoSNType](./literals.md#organizationconfigruletriggertypenosntype)
 - [OrganizationConfigRuleTriggerTypeType](./literals.md#organizationconfigruletriggertypetype)
 - [OrganizationResourceDetailedStatusType](./literals.md#organizationresourcedetailedstatustype)
 - [OrganizationResourceStatusType](./literals.md#organizationresourcestatustype)
@@ -235,7 +229,6 @@ def get_value() -> AccountAggregationSourceTypeDef:
 - [ConformancePackEvaluationFiltersTypeDef](./type_defs.md#conformancepackevaluationfilterstypedef)
 - [ConformancePackRuleComplianceTypeDef](./type_defs.md#conformancepackrulecompliancetypedef)
 - [ConformancePackStatusDetailTypeDef](./type_defs.md#conformancepackstatusdetailtypedef)
-- [CustomPolicyDetailsTypeDef](./type_defs.md#custompolicydetailstypedef)
 - [DeleteAggregationAuthorizationRequestRequestTypeDef](./type_defs.md#deleteaggregationauthorizationrequestrequesttypedef)
 - [DeleteConfigRuleRequestRequestTypeDef](./type_defs.md#deleteconfigrulerequestrequesttypedef)
 - [DeleteConfigurationAggregatorRequestRequestTypeDef](./type_defs.md#deleteconfigurationaggregatorrequestrequesttypedef)
@@ -290,14 +283,12 @@ def get_value() -> AccountAggregationSourceTypeDef:
 - [GetComplianceDetailsByResourceRequestRequestTypeDef](./type_defs.md#getcompliancedetailsbyresourcerequestrequesttypedef)
 - [GetComplianceSummaryByResourceTypeRequestRequestTypeDef](./type_defs.md#getcompliancesummarybyresourcetyperequestrequesttypedef)
 - [GetConformancePackComplianceSummaryRequestRequestTypeDef](./type_defs.md#getconformancepackcompliancesummaryrequestrequesttypedef)
-- [GetCustomRulePolicyRequestRequestTypeDef](./type_defs.md#getcustomrulepolicyrequestrequesttypedef)
 - [GetDiscoveredResourceCountsRequestRequestTypeDef](./type_defs.md#getdiscoveredresourcecountsrequestrequesttypedef)
 - [ResourceCountTypeDef](./type_defs.md#resourcecounttypedef)
 - [StatusDetailFiltersTypeDef](./type_defs.md#statusdetailfilterstypedef)
 - [MemberAccountStatusTypeDef](./type_defs.md#memberaccountstatustypedef)
 - [OrganizationResourceDetailedStatusFiltersTypeDef](./type_defs.md#organizationresourcedetailedstatusfilterstypedef)
 - [OrganizationConformancePackDetailedStatusTypeDef](./type_defs.md#organizationconformancepackdetailedstatustypedef)
-- [GetOrganizationCustomRulePolicyRequestRequestTypeDef](./type_defs.md#getorganizationcustomrulepolicyrequestrequesttypedef)
 - [GetResourceConfigHistoryRequestRequestTypeDef](./type_defs.md#getresourceconfighistoryrequestrequesttypedef)
 - [GetStoredQueryRequestRequestTypeDef](./type_defs.md#getstoredqueryrequestrequesttypedef)
 - [StoredQueryTypeDef](./type_defs.md#storedquerytypedef)
@@ -308,10 +299,8 @@ def get_value() -> AccountAggregationSourceTypeDef:
 - [StoredQueryMetadataTypeDef](./type_defs.md#storedquerymetadatatypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
-- [OrganizationCustomPolicyRuleMetadataNoPolicyTypeDef](./type_defs.md#organizationcustompolicyrulemetadatanopolicytypedef)
 - [OrganizationCustomRuleMetadataTypeDef](./type_defs.md#organizationcustomrulemetadatatypedef)
 - [OrganizationManagedRuleMetadataTypeDef](./type_defs.md#organizationmanagedrulemetadatatypedef)
-- [OrganizationCustomPolicyRuleMetadataTypeDef](./type_defs.md#organizationcustompolicyrulemetadatatypedef)
 - [PutResourceConfigRequestRequestTypeDef](./type_defs.md#putresourceconfigrequestrequesttypedef)
 - [PutRetentionConfigurationRequestRequestTypeDef](./type_defs.md#putretentionconfigurationrequestrequesttypedef)
 - [RemediationExecutionStepTypeDef](./type_defs.md#remediationexecutionsteptypedef)
@@ -335,8 +324,6 @@ def get_value() -> AccountAggregationSourceTypeDef:
 - [DescribeAggregationAuthorizationsResponseTypeDef](./type_defs.md#describeaggregationauthorizationsresponsetypedef)
 - [DescribeConfigurationAggregatorSourcesStatusResponseTypeDef](./type_defs.md#describeconfigurationaggregatorsourcesstatusresponsetypedef)
 - [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
-- [GetCustomRulePolicyResponseTypeDef](./type_defs.md#getcustomrulepolicyresponsetypedef)
-- [GetOrganizationCustomRulePolicyResponseTypeDef](./type_defs.md#getorganizationcustomrulepolicyresponsetypedef)
 - [ListAggregateDiscoveredResourcesResponseTypeDef](./type_defs.md#listaggregatediscoveredresourcesresponsetypedef)
 - [PutAggregationAuthorizationResponseTypeDef](./type_defs.md#putaggregationauthorizationresponsetypedef)
 - [PutConformancePackResponseTypeDef](./type_defs.md#putconformancepackresponsetypedef)

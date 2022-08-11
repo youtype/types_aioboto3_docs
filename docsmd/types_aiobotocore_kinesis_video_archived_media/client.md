@@ -73,21 +73,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("kinesis-video-archived-media").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html#KinesisVideoArchivedMedia.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### generate\_presigned\_url
 
 Generate a presigned url given a client, its method, and arguments.
@@ -223,54 +208,6 @@ parent.get_hls_streaming_session_url(**kwargs)
 
 1. See [:material-code-braces: GetHLSStreamingSessionURLInputRequestTypeDef](./type_defs.md#gethlsstreamingsessionurlinputrequesttypedef) 
 
-### get\_images
-
-Retrieves a list of Images corresponding to each timestamp for a given time
-range, sampling interval, and image format configuration.
-
-Type annotations and code completion for `#!python session.client("kinesis-video-archived-media").get_images` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html#KinesisVideoArchivedMedia.Client.get_images)
-
-```python title="Method definition"
-await def get_images(
-    self,
-    *,
-    ImageSelectorType: ImageSelectorTypeType,  # (1)
-    StartTimestamp: Union[datetime, str],
-    EndTimestamp: Union[datetime, str],
-    SamplingInterval: int,
-    Format: FormatType,  # (2)
-    StreamName: str = ...,
-    StreamARN: str = ...,
-    FormatConfig: Mapping[FormatConfigKeyType, str] = ...,  # (3)
-    WidthPixels: int = ...,
-    HeightPixels: int = ...,
-    MaxResults: int = ...,
-    NextToken: str = ...,
-) -> GetImagesOutputTypeDef:  # (4)
-    ...
-```
-
-1. See [:material-code-brackets: ImageSelectorTypeType](./literals.md#imageselectortypetype) 
-2. See [:material-code-brackets: FormatType](./literals.md#formattype) 
-3. See [:material-code-brackets: FormatConfigKeyType](./literals.md#formatconfigkeytype) 
-4. See [:material-code-braces: GetImagesOutputTypeDef](./type_defs.md#getimagesoutputtypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: GetImagesInputRequestTypeDef = {  # (1)
-    "ImageSelectorType": ...,
-    "StartTimestamp": ...,
-    "EndTimestamp": ...,
-    "SamplingInterval": ...,
-    "Format": ...,
-}
-
-parent.get_images(**kwargs)
-```
-
-1. See [:material-code-braces: GetImagesInputRequestTypeDef](./type_defs.md#getimagesinputrequesttypedef) 
-
 ### get\_media\_for\_fragment\_list
 
 Gets media for a list of fragments (specified by fragment number) from the
@@ -377,7 +314,6 @@ await def __aexit__(
 
 Type annotations and code completion for `#!python session.client("kinesis-video-archived-media").get_paginator` method with overloads.
 
-- `client.get_paginator("get_images")` -> [GetImagesPaginator](./paginators.md#getimagespaginator)
 - `client.get_paginator("list_fragments")` -> [ListFragmentsPaginator](./paginators.md#listfragmentspaginator)
 
 

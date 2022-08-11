@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `KinesisVideo`.
 
 ### From PyPI with pip
 
@@ -103,10 +98,6 @@ def get_value() -> APINameType:
 - [ChannelRoleType](./literals.md#channelroletype)
 - [ChannelTypeType](./literals.md#channeltypetype)
 - [ComparisonOperatorType](./literals.md#comparisonoperatortype)
-- [ConfigurationStatusType](./literals.md#configurationstatustype)
-- [FormatConfigKeyType](./literals.md#formatconfigkeytype)
-- [FormatType](./literals.md#formattype)
-- [ImageSelectorTypeType](./literals.md#imageselectortypetype)
 - [ListSignalingChannelsPaginatorName](./literals.md#listsignalingchannelspaginatorname)
 - [ListStreamsPaginatorName](./literals.md#liststreamspaginatorname)
 - [StatusType](./literals.md#statustype)
@@ -140,20 +131,16 @@ def get_value() -> SingleMasterConfigurationTypeDef:
 - [CreateStreamInputRequestTypeDef](./type_defs.md#createstreaminputrequesttypedef)
 - [DeleteSignalingChannelInputRequestTypeDef](./type_defs.md#deletesignalingchannelinputrequesttypedef)
 - [DeleteStreamInputRequestTypeDef](./type_defs.md#deletestreaminputrequesttypedef)
-- [DescribeImageGenerationConfigurationInputRequestTypeDef](./type_defs.md#describeimagegenerationconfigurationinputrequesttypedef)
-- [DescribeNotificationConfigurationInputRequestTypeDef](./type_defs.md#describenotificationconfigurationinputrequesttypedef)
 - [DescribeSignalingChannelInputRequestTypeDef](./type_defs.md#describesignalingchannelinputrequesttypedef)
 - [DescribeStreamInputRequestTypeDef](./type_defs.md#describestreaminputrequesttypedef)
 - [StreamInfoTypeDef](./type_defs.md#streaminfotypedef)
 - [GetDataEndpointInputRequestTypeDef](./type_defs.md#getdataendpointinputrequesttypedef)
 - [SingleMasterChannelEndpointConfigurationTypeDef](./type_defs.md#singlemasterchannelendpointconfigurationtypedef)
 - [ResourceEndpointListItemTypeDef](./type_defs.md#resourceendpointlistitemtypedef)
-- [ImageGenerationDestinationConfigTypeDef](./type_defs.md#imagegenerationdestinationconfigtypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [StreamNameConditionTypeDef](./type_defs.md#streamnameconditiontypedef)
 - [ListTagsForResourceInputRequestTypeDef](./type_defs.md#listtagsforresourceinputrequesttypedef)
 - [ListTagsForStreamInputRequestTypeDef](./type_defs.md#listtagsforstreaminputrequesttypedef)
-- [NotificationDestinationConfigTypeDef](./type_defs.md#notificationdestinationconfigtypedef)
 - [TagStreamInputRequestTypeDef](./type_defs.md#tagstreaminputrequesttypedef)
 - [UntagResourceInputRequestTypeDef](./type_defs.md#untagresourceinputrequesttypedef)
 - [UntagStreamInputRequestTypeDef](./type_defs.md#untagstreaminputrequesttypedef)
@@ -173,15 +160,9 @@ def get_value() -> SingleMasterConfigurationTypeDef:
 - [ListStreamsOutputTypeDef](./type_defs.md#liststreamsoutputtypedef)
 - [GetSignalingChannelEndpointInputRequestTypeDef](./type_defs.md#getsignalingchannelendpointinputrequesttypedef)
 - [GetSignalingChannelEndpointOutputTypeDef](./type_defs.md#getsignalingchannelendpointoutputtypedef)
-- [ImageGenerationConfigurationTypeDef](./type_defs.md#imagegenerationconfigurationtypedef)
 - [ListSignalingChannelsInputListSignalingChannelsPaginateTypeDef](./type_defs.md#listsignalingchannelsinputlistsignalingchannelspaginatetypedef)
 - [ListStreamsInputListStreamsPaginateTypeDef](./type_defs.md#liststreamsinputliststreamspaginatetypedef)
 - [ListStreamsInputRequestTypeDef](./type_defs.md#liststreamsinputrequesttypedef)
-- [NotificationConfigurationTypeDef](./type_defs.md#notificationconfigurationtypedef)
 - [DescribeSignalingChannelOutputTypeDef](./type_defs.md#describesignalingchanneloutputtypedef)
 - [ListSignalingChannelsOutputTypeDef](./type_defs.md#listsignalingchannelsoutputtypedef)
-- [DescribeImageGenerationConfigurationOutputTypeDef](./type_defs.md#describeimagegenerationconfigurationoutputtypedef)
-- [UpdateImageGenerationConfigurationInputRequestTypeDef](./type_defs.md#updateimagegenerationconfigurationinputrequesttypedef)
-- [DescribeNotificationConfigurationOutputTypeDef](./type_defs.md#describenotificationconfigurationoutputtypedef)
-- [UpdateNotificationConfigurationInputRequestTypeDef](./type_defs.md#updatenotificationconfigurationinputrequesttypedef)
 

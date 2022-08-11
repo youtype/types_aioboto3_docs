@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `NetworkFirewall`.
 
 ### From PyPI with pip
 
@@ -102,7 +97,6 @@ def get_value() -> AttachmentStatusType:
 
 - [AttachmentStatusType](./literals.md#attachmentstatustype)
 - [ConfigurationSyncStateType](./literals.md#configurationsyncstatetype)
-- [EncryptionTypeType](./literals.md#encryptiontypetype)
 - [FirewallStatusValueType](./literals.md#firewallstatusvaluetype)
 - [GeneratedRulesTypeType](./literals.md#generatedrulestypetype)
 - [ListFirewallPoliciesPaginatorName](./literals.md#listfirewallpoliciespaginatorname)
@@ -114,7 +108,6 @@ def get_value() -> AttachmentStatusType:
 - [OverrideActionType](./literals.md#overrideactiontype)
 - [PerObjectSyncStatusType](./literals.md#perobjectsyncstatustype)
 - [ResourceManagedStatusType](./literals.md#resourcemanagedstatustype)
-- [ResourceManagedTypeType](./literals.md#resourcemanagedtypetype)
 - [ResourceStatusType](./literals.md#resourcestatustype)
 - [RuleGroupTypeType](./literals.md#rulegrouptypetype)
 - [RuleOrderType](./literals.md#ruleordertype)
@@ -150,9 +143,7 @@ def get_value() -> AddressTypeDef:
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [SubnetMappingTypeDef](./type_defs.md#subnetmappingtypedef)
 - [AttachmentTypeDef](./type_defs.md#attachmenttypedef)
-- [EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
-- [SourceMetadataTypeDef](./type_defs.md#sourcemetadatatypedef)
 - [DeleteFirewallPolicyRequestRequestTypeDef](./type_defs.md#deletefirewallpolicyrequestrequesttypedef)
 - [DeleteFirewallRequestRequestTypeDef](./type_defs.md#deletefirewallrequestrequesttypedef)
 - [DeleteResourcePolicyRequestRequestTypeDef](./type_defs.md#deleteresourcepolicyrequestrequesttypedef)
@@ -201,14 +192,12 @@ def get_value() -> AddressTypeDef:
 - [AssociateSubnetsRequestRequestTypeDef](./type_defs.md#associatesubnetsrequestrequesttypedef)
 - [AssociateSubnetsResponseTypeDef](./type_defs.md#associatesubnetsresponsetypedef)
 - [DisassociateSubnetsResponseTypeDef](./type_defs.md#disassociatesubnetsresponsetypedef)
-- [UpdateFirewallEncryptionConfigurationRequestRequestTypeDef](./type_defs.md#updatefirewallencryptionconfigurationrequestrequesttypedef)
-- [UpdateFirewallEncryptionConfigurationResponseTypeDef](./type_defs.md#updatefirewallencryptionconfigurationresponsetypedef)
 - [CreateFirewallRequestRequestTypeDef](./type_defs.md#createfirewallrequestrequesttypedef)
 - [FirewallPolicyResponseTypeDef](./type_defs.md#firewallpolicyresponsetypedef)
 - [FirewallTypeDef](./type_defs.md#firewalltypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
-- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [RuleGroupResponseTypeDef](./type_defs.md#rulegroupresponsetypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [DescribeRuleGroupMetadataResponseTypeDef](./type_defs.md#describerulegroupmetadataresponsetypedef)
 - [PublishMetricActionTypeDef](./type_defs.md#publishmetricactiontypedef)
 - [ListFirewallsResponseTypeDef](./type_defs.md#listfirewallsresponsetypedef)

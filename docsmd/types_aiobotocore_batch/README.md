@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Batch`.
 
 ### From PyPI with pip
 
@@ -108,7 +103,6 @@ def get_value() -> ArrayJobDependencyType:
 - [CETypeType](./literals.md#cetypetype)
 - [CRAllocationStrategyType](./literals.md#crallocationstrategytype)
 - [CRTypeType](./literals.md#crtypetype)
-- [CRUpdateAllocationStrategyType](./literals.md#crupdateallocationstrategytype)
 - [DescribeComputeEnvironmentsPaginatorName](./literals.md#describecomputeenvironmentspaginatorname)
 - [DescribeJobDefinitionsPaginatorName](./literals.md#describejobdefinitionspaginatorname)
 - [DescribeJobQueuesPaginatorName](./literals.md#describejobqueuespaginatorname)
@@ -152,10 +146,10 @@ def get_value() -> ArrayPropertiesDetailTypeDef:
 - [ArrayPropertiesTypeDef](./type_defs.md#arraypropertiestypedef)
 - [NetworkInterfaceTypeDef](./type_defs.md#networkinterfacetypedef)
 - [CancelJobRequestRequestTypeDef](./type_defs.md#canceljobrequestrequesttypedef)
-- [UpdatePolicyTypeDef](./type_defs.md#updatepolicytypedef)
 - [ComputeEnvironmentOrderTypeDef](./type_defs.md#computeenvironmentordertypedef)
 - [Ec2ConfigurationTypeDef](./type_defs.md#ec2configurationtypedef)
 - [LaunchTemplateSpecificationTypeDef](./type_defs.md#launchtemplatespecificationtypedef)
+- [ComputeResourceUpdateTypeDef](./type_defs.md#computeresourceupdatetypedef)
 - [FargatePlatformConfigurationTypeDef](./type_defs.md#fargateplatformconfigurationtypedef)
 - [KeyValuePairTypeDef](./type_defs.md#keyvaluepairtypedef)
 - [MountPointTypeDef](./type_defs.md#mountpointtypedef)
@@ -197,7 +191,7 @@ def get_value() -> ArrayPropertiesDetailTypeDef:
 - [JobQueueDetailTypeDef](./type_defs.md#jobqueuedetailtypedef)
 - [UpdateJobQueueRequestRequestTypeDef](./type_defs.md#updatejobqueuerequestrequesttypedef)
 - [ComputeResourceTypeDef](./type_defs.md#computeresourcetypedef)
-- [ComputeResourceUpdateTypeDef](./type_defs.md#computeresourceupdatetypedef)
+- [UpdateComputeEnvironmentRequestRequestTypeDef](./type_defs.md#updatecomputeenvironmentrequestrequesttypedef)
 - [ContainerOverridesTypeDef](./type_defs.md#containeroverridestypedef)
 - [LogConfigurationTypeDef](./type_defs.md#logconfigurationtypedef)
 - [CreateComputeEnvironmentResponseTypeDef](./type_defs.md#createcomputeenvironmentresponsetypedef)
@@ -224,7 +218,6 @@ def get_value() -> ArrayPropertiesDetailTypeDef:
 - [DescribeJobQueuesResponseTypeDef](./type_defs.md#describejobqueuesresponsetypedef)
 - [ComputeEnvironmentDetailTypeDef](./type_defs.md#computeenvironmentdetailtypedef)
 - [CreateComputeEnvironmentRequestRequestTypeDef](./type_defs.md#createcomputeenvironmentrequestrequesttypedef)
-- [UpdateComputeEnvironmentRequestRequestTypeDef](./type_defs.md#updatecomputeenvironmentrequestrequesttypedef)
 - [NodePropertyOverrideTypeDef](./type_defs.md#nodepropertyoverridetypedef)
 - [VolumeTypeDef](./type_defs.md#volumetypedef)
 - [CreateSchedulingPolicyRequestRequestTypeDef](./type_defs.md#createschedulingpolicyrequestrequesttypedef)

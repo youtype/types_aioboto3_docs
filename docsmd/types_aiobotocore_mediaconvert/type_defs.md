@@ -105,25 +105,6 @@ class AiffSettingsTypeDef(TypedDict):
     SampleRate: NotRequired[int],
 ```
 
-## AllowedRenditionSizeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconvert.type_defs import AllowedRenditionSizeTypeDef
-
-def get_value() -> AllowedRenditionSizeTypeDef:
-    return {
-        "Height": ...,
-    }
-```
-
-```python title="Definition"
-class AllowedRenditionSizeTypeDef(TypedDict):
-    Height: NotRequired[int],
-    Required: NotRequired[RequiredFlagType],  # (1)
-    Width: NotRequired[int],
-```
-
-1. See [:material-code-brackets: RequiredFlagType](./literals.md#requiredflagtype) 
 ## AncillarySourceSettingsTypeDef
 
 ```python title="Usage Example"
@@ -424,55 +405,22 @@ class HlsRenditionGroupSettingsTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) 
-## ForceIncludeRenditionSizeTypeDef
+## AutomatedAbrSettingsTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_mediaconvert.type_defs import ForceIncludeRenditionSizeTypeDef
+from types_aiobotocore_mediaconvert.type_defs import AutomatedAbrSettingsTypeDef
 
-def get_value() -> ForceIncludeRenditionSizeTypeDef:
+def get_value() -> AutomatedAbrSettingsTypeDef:
     return {
-        "Height": ...,
+        "MaxAbrBitrate": ...,
     }
 ```
 
 ```python title="Definition"
-class ForceIncludeRenditionSizeTypeDef(TypedDict):
-    Height: NotRequired[int],
-    Width: NotRequired[int],
-```
-
-## MinBottomRenditionSizeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconvert.type_defs import MinBottomRenditionSizeTypeDef
-
-def get_value() -> MinBottomRenditionSizeTypeDef:
-    return {
-        "Height": ...,
-    }
-```
-
-```python title="Definition"
-class MinBottomRenditionSizeTypeDef(TypedDict):
-    Height: NotRequired[int],
-    Width: NotRequired[int],
-```
-
-## MinTopRenditionSizeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconvert.type_defs import MinTopRenditionSizeTypeDef
-
-def get_value() -> MinTopRenditionSizeTypeDef:
-    return {
-        "Height": ...,
-    }
-```
-
-```python title="Definition"
-class MinTopRenditionSizeTypeDef(TypedDict):
-    Height: NotRequired[int],
-    Width: NotRequired[int],
+class AutomatedAbrSettingsTypeDef(TypedDict):
+    MaxAbrBitrate: NotRequired[int],
+    MaxRenditions: NotRequired[int],
+    MinAbrBitrate: NotRequired[int],
 ```
 
 ## Av1QvbrSettingsTypeDef
@@ -984,20 +932,18 @@ class CmfcSettingsTypeDef(TypedDict):
     AudioTrackType: NotRequired[CmfcAudioTrackTypeType],  # (2)
     DescriptiveVideoServiceFlag: NotRequired[CmfcDescriptiveVideoServiceFlagType],  # (3)
     IFrameOnlyManifest: NotRequired[CmfcIFrameOnlyManifestType],  # (4)
-    KlvMetadata: NotRequired[CmfcKlvMetadataType],  # (5)
-    Scte35Esam: NotRequired[CmfcScte35EsamType],  # (6)
-    Scte35Source: NotRequired[CmfcScte35SourceType],  # (7)
-    TimedMetadata: NotRequired[CmfcTimedMetadataType],  # (8)
+    Scte35Esam: NotRequired[CmfcScte35EsamType],  # (5)
+    Scte35Source: NotRequired[CmfcScte35SourceType],  # (6)
+    TimedMetadata: NotRequired[CmfcTimedMetadataType],  # (7)
 ```
 
 1. See [:material-code-brackets: CmfcAudioDurationType](./literals.md#cmfcaudiodurationtype) 
 2. See [:material-code-brackets: CmfcAudioTrackTypeType](./literals.md#cmfcaudiotracktypetype) 
 3. See [:material-code-brackets: CmfcDescriptiveVideoServiceFlagType](./literals.md#cmfcdescriptivevideoserviceflagtype) 
 4. See [:material-code-brackets: CmfcIFrameOnlyManifestType](./literals.md#cmfciframeonlymanifesttype) 
-5. See [:material-code-brackets: CmfcKlvMetadataType](./literals.md#cmfcklvmetadatatype) 
-6. See [:material-code-brackets: CmfcScte35EsamType](./literals.md#cmfcscte35esamtype) 
-7. See [:material-code-brackets: CmfcScte35SourceType](./literals.md#cmfcscte35sourcetype) 
-8. See [:material-code-brackets: CmfcTimedMetadataType](./literals.md#cmfctimedmetadatatype) 
+5. See [:material-code-brackets: CmfcScte35EsamType](./literals.md#cmfcscte35esamtype) 
+6. See [:material-code-brackets: CmfcScte35SourceType](./literals.md#cmfcscte35sourcetype) 
+7. See [:material-code-brackets: CmfcTimedMetadataType](./literals.md#cmfctimedmetadatatype) 
 ## Hdr10MetadataTypeDef
 
 ```python title="Usage Example"
@@ -1148,19 +1094,17 @@ class MpdSettingsTypeDef(TypedDict):
     AccessibilityCaptionHints: NotRequired[MpdAccessibilityCaptionHintsType],  # (1)
     AudioDuration: NotRequired[MpdAudioDurationType],  # (2)
     CaptionContainerType: NotRequired[MpdCaptionContainerTypeType],  # (3)
-    KlvMetadata: NotRequired[MpdKlvMetadataType],  # (4)
-    Scte35Esam: NotRequired[MpdScte35EsamType],  # (5)
-    Scte35Source: NotRequired[MpdScte35SourceType],  # (6)
-    TimedMetadata: NotRequired[MpdTimedMetadataType],  # (7)
+    Scte35Esam: NotRequired[MpdScte35EsamType],  # (4)
+    Scte35Source: NotRequired[MpdScte35SourceType],  # (5)
+    TimedMetadata: NotRequired[MpdTimedMetadataType],  # (6)
 ```
 
 1. See [:material-code-brackets: MpdAccessibilityCaptionHintsType](./literals.md#mpdaccessibilitycaptionhintstype) 
 2. See [:material-code-brackets: MpdAudioDurationType](./literals.md#mpdaudiodurationtype) 
 3. See [:material-code-brackets: MpdCaptionContainerTypeType](./literals.md#mpdcaptioncontainertypetype) 
-4. See [:material-code-brackets: MpdKlvMetadataType](./literals.md#mpdklvmetadatatype) 
-5. See [:material-code-brackets: MpdScte35EsamType](./literals.md#mpdscte35esamtype) 
-6. See [:material-code-brackets: MpdScte35SourceType](./literals.md#mpdscte35sourcetype) 
-7. See [:material-code-brackets: MpdTimedMetadataType](./literals.md#mpdtimedmetadatatype) 
+4. See [:material-code-brackets: MpdScte35EsamType](./literals.md#mpdscte35esamtype) 
+5. See [:material-code-brackets: MpdScte35SourceType](./literals.md#mpdscte35sourcetype) 
+6. See [:material-code-brackets: MpdTimedMetadataType](./literals.md#mpdtimedmetadatatype) 
 ## HopDestinationTypeDef
 
 ```python title="Usage Example"
@@ -1882,22 +1826,6 @@ class RectangleTypeDef(TypedDict):
     Width: NotRequired[int],
     X: NotRequired[int],
     Y: NotRequired[int],
-```
-
-## InputVideoGeneratorTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconvert.type_defs import InputVideoGeneratorTypeDef
-
-def get_value() -> InputVideoGeneratorTypeDef:
-    return {
-        "Duration": ...,
-    }
-```
-
-```python title="Definition"
-class InputVideoGeneratorTypeDef(TypedDict):
-    Duration: NotRequired[int],
 ```
 
 ## JobMessagesTypeDef
@@ -2805,31 +2733,23 @@ class AudioCodecSettingsTypeDef(TypedDict):
 9. See [:material-code-braces: OpusSettingsTypeDef](./type_defs.md#opussettingstypedef) 
 10. See [:material-code-braces: VorbisSettingsTypeDef](./type_defs.md#vorbissettingstypedef) 
 11. See [:material-code-braces: WavSettingsTypeDef](./type_defs.md#wavsettingstypedef) 
-## AutomatedAbrRuleTypeDef
+## AutomatedEncodingSettingsTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_mediaconvert.type_defs import AutomatedAbrRuleTypeDef
+from types_aiobotocore_mediaconvert.type_defs import AutomatedEncodingSettingsTypeDef
 
-def get_value() -> AutomatedAbrRuleTypeDef:
+def get_value() -> AutomatedEncodingSettingsTypeDef:
     return {
-        "AllowedRenditions": ...,
+        "AbrSettings": ...,
     }
 ```
 
 ```python title="Definition"
-class AutomatedAbrRuleTypeDef(TypedDict):
-    AllowedRenditions: NotRequired[Sequence[AllowedRenditionSizeTypeDef]],  # (1)
-    ForceIncludeRenditions: NotRequired[Sequence[ForceIncludeRenditionSizeTypeDef]],  # (2)
-    MinBottomRenditionSize: NotRequired[MinBottomRenditionSizeTypeDef],  # (3)
-    MinTopRenditionSize: NotRequired[MinTopRenditionSizeTypeDef],  # (4)
-    Type: NotRequired[RuleTypeType],  # (5)
+class AutomatedEncodingSettingsTypeDef(TypedDict):
+    AbrSettings: NotRequired[AutomatedAbrSettingsTypeDef],  # (1)
 ```
 
-1. See [:material-code-braces: AllowedRenditionSizeTypeDef](./type_defs.md#allowedrenditionsizetypedef) 
-2. See [:material-code-braces: ForceIncludeRenditionSizeTypeDef](./type_defs.md#forceincluderenditionsizetypedef) 
-3. See [:material-code-braces: MinBottomRenditionSizeTypeDef](./type_defs.md#minbottomrenditionsizetypedef) 
-4. See [:material-code-braces: MinTopRenditionSizeTypeDef](./type_defs.md#mintoprenditionsizetypedef) 
-5. See [:material-code-brackets: RuleTypeType](./literals.md#ruletypetype) 
+1. See [:material-code-braces: AutomatedAbrSettingsTypeDef](./type_defs.md#automatedabrsettingstypedef) 
 ## Av1SettingsTypeDef
 
 ```python title="Usage Example"
@@ -3042,11 +2962,10 @@ class VideoSelectorTypeDef(TypedDict):
     ColorSpaceUsage: NotRequired[ColorSpaceUsageType],  # (3)
     EmbeddedTimecodeOverride: NotRequired[EmbeddedTimecodeOverrideType],  # (4)
     Hdr10Metadata: NotRequired[Hdr10MetadataTypeDef],  # (5)
-    PadVideo: NotRequired[PadVideoType],  # (6)
     Pid: NotRequired[int],
     ProgramNumber: NotRequired[int],
-    Rotate: NotRequired[InputRotateType],  # (7)
-    SampleRange: NotRequired[InputSampleRangeType],  # (8)
+    Rotate: NotRequired[InputRotateType],  # (6)
+    SampleRange: NotRequired[InputSampleRangeType],  # (7)
 ```
 
 1. See [:material-code-brackets: AlphaBehaviorType](./literals.md#alphabehaviortype) 
@@ -3054,9 +2973,8 @@ class VideoSelectorTypeDef(TypedDict):
 3. See [:material-code-brackets: ColorSpaceUsageType](./literals.md#colorspaceusagetype) 
 4. See [:material-code-brackets: EmbeddedTimecodeOverrideType](./literals.md#embeddedtimecodeoverridetype) 
 5. See [:material-code-braces: Hdr10MetadataTypeDef](./type_defs.md#hdr10metadatatypedef) 
-6. See [:material-code-brackets: PadVideoType](./literals.md#padvideotype) 
-7. See [:material-code-brackets: InputRotateType](./literals.md#inputrotatetype) 
-8. See [:material-code-brackets: InputSampleRangeType](./literals.md#inputsamplerangetype) 
+6. See [:material-code-brackets: InputRotateType](./literals.md#inputrotatetype) 
+7. See [:material-code-brackets: InputSampleRangeType](./literals.md#inputsamplerangetype) 
 ## CreateQueueRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3309,14 +3227,12 @@ def get_value() -> DolbyVisionTypeDef:
 class DolbyVisionTypeDef(TypedDict):
     L6Metadata: NotRequired[DolbyVisionLevel6MetadataTypeDef],  # (1)
     L6Mode: NotRequired[DolbyVisionLevel6ModeType],  # (2)
-    Mapping: NotRequired[DolbyVisionMappingType],  # (3)
-    Profile: NotRequired[DolbyVisionProfileType],  # (4)
+    Profile: NotRequired[DolbyVisionProfileType],  # (3)
 ```
 
 1. See [:material-code-braces: DolbyVisionLevel6MetadataTypeDef](./type_defs.md#dolbyvisionlevel6metadatatypedef) 
 2. See [:material-code-brackets: DolbyVisionLevel6ModeType](./literals.md#dolbyvisionlevel6modetype) 
-3. See [:material-code-brackets: DolbyVisionMappingType](./literals.md#dolbyvisionmappingtype) 
-4. See [:material-code-brackets: DolbyVisionProfileType](./literals.md#dolbyvisionprofiletype) 
+3. See [:material-code-brackets: DolbyVisionProfileType](./literals.md#dolbyvisionprofiletype) 
 ## EsamSettingsTypeDef
 
 ```python title="Usage Example"
@@ -3656,24 +3572,23 @@ class M2tsSettingsTypeDef(TypedDict):
     EsRateInPes: NotRequired[M2tsEsRateInPesType],  # (10)
     ForceTsVideoEbpOrder: NotRequired[M2tsForceTsVideoEbpOrderType],  # (11)
     FragmentTime: NotRequired[float],
-    KlvMetadata: NotRequired[M2tsKlvMetadataType],  # (12)
     MaxPcrInterval: NotRequired[int],
     MinEbpInterval: NotRequired[int],
-    NielsenId3: NotRequired[M2tsNielsenId3Type],  # (13)
+    NielsenId3: NotRequired[M2tsNielsenId3Type],  # (12)
     NullPacketBitrate: NotRequired[float],
     PatInterval: NotRequired[int],
-    PcrControl: NotRequired[M2tsPcrControlType],  # (14)
+    PcrControl: NotRequired[M2tsPcrControlType],  # (13)
     PcrPid: NotRequired[int],
     PmtInterval: NotRequired[int],
     PmtPid: NotRequired[int],
     PrivateMetadataPid: NotRequired[int],
     ProgramNumber: NotRequired[int],
-    RateMode: NotRequired[M2tsRateModeType],  # (15)
-    Scte35Esam: NotRequired[M2tsScte35EsamTypeDef],  # (16)
+    RateMode: NotRequired[M2tsRateModeType],  # (14)
+    Scte35Esam: NotRequired[M2tsScte35EsamTypeDef],  # (15)
     Scte35Pid: NotRequired[int],
-    Scte35Source: NotRequired[M2tsScte35SourceType],  # (17)
-    SegmentationMarkers: NotRequired[M2tsSegmentationMarkersType],  # (18)
-    SegmentationStyle: NotRequired[M2tsSegmentationStyleType],  # (19)
+    Scte35Source: NotRequired[M2tsScte35SourceType],  # (16)
+    SegmentationMarkers: NotRequired[M2tsSegmentationMarkersType],  # (17)
+    SegmentationStyle: NotRequired[M2tsSegmentationStyleType],  # (18)
     SegmentationTime: NotRequired[float],
     TimedMetadataPid: NotRequired[int],
     TransportStreamId: NotRequired[int],
@@ -3691,14 +3606,13 @@ class M2tsSettingsTypeDef(TypedDict):
 9. See [:material-code-brackets: M2tsEbpPlacementType](./literals.md#m2tsebpplacementtype) 
 10. See [:material-code-brackets: M2tsEsRateInPesType](./literals.md#m2tsesrateinpestype) 
 11. See [:material-code-brackets: M2tsForceTsVideoEbpOrderType](./literals.md#m2tsforcetsvideoebpordertype) 
-12. See [:material-code-brackets: M2tsKlvMetadataType](./literals.md#m2tsklvmetadatatype) 
-13. See [:material-code-brackets: M2tsNielsenId3Type](./literals.md#m2tsnielsenid3type) 
-14. See [:material-code-brackets: M2tsPcrControlType](./literals.md#m2tspcrcontroltype) 
-15. See [:material-code-brackets: M2tsRateModeType](./literals.md#m2tsratemodetype) 
-16. See [:material-code-braces: M2tsScte35EsamTypeDef](./type_defs.md#m2tsscte35esamtypedef) 
-17. See [:material-code-brackets: M2tsScte35SourceType](./literals.md#m2tsscte35sourcetype) 
-18. See [:material-code-brackets: M2tsSegmentationMarkersType](./literals.md#m2tssegmentationmarkerstype) 
-19. See [:material-code-brackets: M2tsSegmentationStyleType](./literals.md#m2tssegmentationstyletype) 
+12. See [:material-code-brackets: M2tsNielsenId3Type](./literals.md#m2tsnielsenid3type) 
+13. See [:material-code-brackets: M2tsPcrControlType](./literals.md#m2tspcrcontroltype) 
+14. See [:material-code-brackets: M2tsRateModeType](./literals.md#m2tsratemodetype) 
+15. See [:material-code-braces: M2tsScte35EsamTypeDef](./type_defs.md#m2tsscte35esamtypedef) 
+16. See [:material-code-brackets: M2tsScte35SourceType](./literals.md#m2tsscte35sourcetype) 
+17. See [:material-code-brackets: M2tsSegmentationMarkersType](./literals.md#m2tssegmentationmarkerstype) 
+18. See [:material-code-brackets: M2tsSegmentationStyleType](./literals.md#m2tssegmentationstyletype) 
 ## MotionImageInserterTypeDef
 
 ```python title="Usage Example"
@@ -3896,26 +3810,6 @@ class XavcSettingsTypeDef(TypedDict):
 11. See [:material-code-braces: Xavc4kProfileSettingsTypeDef](./type_defs.md#xavc4kprofilesettingstypedef) 
 12. See [:material-code-braces: XavcHdIntraCbgProfileSettingsTypeDef](./type_defs.md#xavchdintracbgprofilesettingstypedef) 
 13. See [:material-code-braces: XavcHdProfileSettingsTypeDef](./type_defs.md#xavchdprofilesettingstypedef) 
-## AutomatedAbrSettingsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconvert.type_defs import AutomatedAbrSettingsTypeDef
-
-def get_value() -> AutomatedAbrSettingsTypeDef:
-    return {
-        "MaxAbrBitrate": ...,
-    }
-```
-
-```python title="Definition"
-class AutomatedAbrSettingsTypeDef(TypedDict):
-    MaxAbrBitrate: NotRequired[int],
-    MaxRenditions: NotRequired[int],
-    MinAbrBitrate: NotRequired[int],
-    Rules: NotRequired[Sequence[AutomatedAbrRuleTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: AutomatedAbrRuleTypeDef](./type_defs.md#automatedabrruletypedef) 
 ## CaptionDescriptionPresetTypeDef
 
 ```python title="Usage Example"
@@ -4228,23 +4122,6 @@ class VideoCodecSettingsTypeDef(TypedDict):
 10. See [:material-code-braces: Vp8SettingsTypeDef](./type_defs.md#vp8settingstypedef) 
 11. See [:material-code-braces: Vp9SettingsTypeDef](./type_defs.md#vp9settingstypedef) 
 12. See [:material-code-braces: XavcSettingsTypeDef](./type_defs.md#xavcsettingstypedef) 
-## AutomatedEncodingSettingsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconvert.type_defs import AutomatedEncodingSettingsTypeDef
-
-def get_value() -> AutomatedEncodingSettingsTypeDef:
-    return {
-        "AbrSettings": ...,
-    }
-```
-
-```python title="Definition"
-class AutomatedEncodingSettingsTypeDef(TypedDict):
-    AbrSettings: NotRequired[AutomatedAbrSettingsTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: AutomatedAbrSettingsTypeDef](./type_defs.md#automatedabrsettingstypedef) 
 ## CaptionSelectorTypeDef
 
 ```python title="Usage Example"
@@ -4305,32 +4182,30 @@ from types_aiobotocore_mediaconvert.type_defs import AudioSelectorTypeDef
 
 def get_value() -> AudioSelectorTypeDef:
     return {
-        "AudioDurationCorrection": ...,
+        "CustomLanguageCode": ...,
     }
 ```
 
 ```python title="Definition"
 class AudioSelectorTypeDef(TypedDict):
-    AudioDurationCorrection: NotRequired[AudioDurationCorrectionType],  # (1)
     CustomLanguageCode: NotRequired[str],
-    DefaultSelection: NotRequired[AudioDefaultSelectionType],  # (2)
+    DefaultSelection: NotRequired[AudioDefaultSelectionType],  # (1)
     ExternalAudioFileInput: NotRequired[str],
-    HlsRenditionGroupSettings: NotRequired[HlsRenditionGroupSettingsTypeDef],  # (3)
-    LanguageCode: NotRequired[LanguageCodeType],  # (4)
+    HlsRenditionGroupSettings: NotRequired[HlsRenditionGroupSettingsTypeDef],  # (2)
+    LanguageCode: NotRequired[LanguageCodeType],  # (3)
     Offset: NotRequired[int],
     Pids: NotRequired[Sequence[int]],
     ProgramSelection: NotRequired[int],
-    RemixSettings: NotRequired[RemixSettingsTypeDef],  # (5)
-    SelectorType: NotRequired[AudioSelectorTypeType],  # (6)
+    RemixSettings: NotRequired[RemixSettingsTypeDef],  # (4)
+    SelectorType: NotRequired[AudioSelectorTypeType],  # (5)
     Tracks: NotRequired[Sequence[int]],
 ```
 
-1. See [:material-code-brackets: AudioDurationCorrectionType](./literals.md#audiodurationcorrectiontype) 
-2. See [:material-code-brackets: AudioDefaultSelectionType](./literals.md#audiodefaultselectiontype) 
-3. See [:material-code-braces: HlsRenditionGroupSettingsTypeDef](./type_defs.md#hlsrenditiongroupsettingstypedef) 
-4. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) 
-5. See [:material-code-braces: RemixSettingsTypeDef](./type_defs.md#remixsettingstypedef) 
-6. See [:material-code-brackets: AudioSelectorTypeType](./literals.md#audioselectortypetype) 
+1. See [:material-code-brackets: AudioDefaultSelectionType](./literals.md#audiodefaultselectiontype) 
+2. See [:material-code-braces: HlsRenditionGroupSettingsTypeDef](./type_defs.md#hlsrenditiongroupsettingstypedef) 
+3. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) 
+4. See [:material-code-braces: RemixSettingsTypeDef](./type_defs.md#remixsettingstypedef) 
+5. See [:material-code-brackets: AudioSelectorTypeType](./literals.md#audioselectortypetype) 
 ## CmafGroupSettingsTypeDef
 
 ```python title="Usage Example"
@@ -4669,8 +4544,7 @@ class InputTypeDef(TypedDict):
     SupplementalImps: NotRequired[Sequence[str]],
     TimecodeSource: NotRequired[InputTimecodeSourceType],  # (14)
     TimecodeStart: NotRequired[str],
-    VideoGenerator: NotRequired[InputVideoGeneratorTypeDef],  # (15)
-    VideoSelector: NotRequired[VideoSelectorTypeDef],  # (16)
+    VideoSelector: NotRequired[VideoSelectorTypeDef],  # (15)
 ```
 
 1. See [:material-code-braces: AudioSelectorGroupTypeDef](./type_defs.md#audioselectorgrouptypedef) 
@@ -4687,8 +4561,7 @@ class InputTypeDef(TypedDict):
 12. See [:material-code-braces: RectangleTypeDef](./type_defs.md#rectangletypedef) 
 13. See [:material-code-brackets: InputPsiControlType](./literals.md#inputpsicontroltype) 
 14. See [:material-code-brackets: InputTimecodeSourceType](./literals.md#inputtimecodesourcetype) 
-15. See [:material-code-braces: InputVideoGeneratorTypeDef](./type_defs.md#inputvideogeneratortypedef) 
-16. See [:material-code-braces: VideoSelectorTypeDef](./type_defs.md#videoselectortypedef) 
+15. See [:material-code-braces: VideoSelectorTypeDef](./type_defs.md#videoselectortypedef) 
 ## OutputGroupSettingsTypeDef
 
 ```python title="Usage Example"

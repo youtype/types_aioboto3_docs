@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Macie2`.
 
 ### From PyPI with pip
 
@@ -142,7 +137,6 @@ def get_value() -> AdminStatusType:
 - [MacieStatusType](./literals.md#maciestatustype)
 - [ManagedDataIdentifierSelectorType](./literals.md#manageddataidentifierselectortype)
 - [OrderByType](./literals.md#orderbytype)
-- [OriginTypeType](./literals.md#origintypetype)
 - [RelationshipStatusType](./literals.md#relationshipstatustype)
 - [ScopeFilterKeyType](./literals.md#scopefilterkeytype)
 - [SearchResourcesComparatorType](./literals.md#searchresourcescomparatortype)

@@ -188,21 +188,6 @@ parent.cancel_batch_prediction_job(**kwargs)
 
 1. See [:material-code-braces: CancelBatchPredictionJobRequestRequestTypeDef](./type_defs.md#cancelbatchpredictionjobrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("frauddetector").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_batch\_import\_job
 
 Creates a batch import job.
@@ -485,7 +470,7 @@ parent.create_variable(**kwargs)
 
 ### delete\_batch\_import\_job
 
-Deletes the specified batch import job ID record.
+Deletes data that was batch imported to Amazon Fraud Detector.
 
 Type annotations and code completion for `#!python session.client("frauddetector").delete_batch_import_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_batch_import_job)

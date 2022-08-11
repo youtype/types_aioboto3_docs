@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `FSx`.
 
 ### From PyPI with pip
 
@@ -79,8 +74,6 @@ def get_describe_backups_paginator() -> DescribeBackupsPaginator:
 
 - [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)
 - [DescribeFileSystemsPaginator](./paginators.md#describefilesystemspaginator)
-- [DescribeStorageVirtualMachinesPaginator](./paginators.md#describestoragevirtualmachinespaginator)
-- [DescribeVolumesPaginator](./paginators.md#describevolumespaginator)
 - [ListTagsForResourcePaginator](./paginators.md#listtagsforresourcepaginator)
 
 
@@ -115,8 +108,6 @@ def get_value() -> AdministrativeActionTypeType:
 - [DeleteOpenZFSVolumeOptionType](./literals.md#deleteopenzfsvolumeoptiontype)
 - [DescribeBackupsPaginatorName](./literals.md#describebackupspaginatorname)
 - [DescribeFileSystemsPaginatorName](./literals.md#describefilesystemspaginatorname)
-- [DescribeStorageVirtualMachinesPaginatorName](./literals.md#describestoragevirtualmachinespaginatorname)
-- [DescribeVolumesPaginatorName](./literals.md#describevolumespaginatorname)
 - [DiskIopsConfigurationModeType](./literals.md#diskiopsconfigurationmodetype)
 - [DriveCacheTypeType](./literals.md#drivecachetypetype)
 - [EventTypeType](./literals.md#eventtypetype)
@@ -187,7 +178,6 @@ def get_value() -> ActiveDirectoryBackupAttributesTypeDef:
 - [CancelDataRepositoryTaskRequestRequestTypeDef](./type_defs.md#canceldatarepositorytaskrequestrequesttypedef)
 - [CompletionReportTypeDef](./type_defs.md#completionreporttypedef)
 - [LustreLogCreateConfigurationTypeDef](./type_defs.md#lustrelogcreateconfigurationtypedef)
-- [LustreRootSquashConfigurationTypeDef](./type_defs.md#lustrerootsquashconfigurationtypedef)
 - [DiskIopsConfigurationTypeDef](./type_defs.md#diskiopsconfigurationtypedef)
 - [SelfManagedActiveDirectoryConfigurationTypeDef](./type_defs.md#selfmanagedactivedirectoryconfigurationtypedef)
 - [WindowsAuditLogCreateConfigurationTypeDef](./type_defs.md#windowsauditlogcreateconfigurationtypedef)
@@ -275,9 +265,7 @@ def get_value() -> ActiveDirectoryBackupAttributesTypeDef:
 - [DescribeFileSystemsRequestDescribeFileSystemsPaginateTypeDef](./type_defs.md#describefilesystemsrequestdescribefilesystemspaginatetypedef)
 - [ListTagsForResourceRequestListTagsForResourcePaginateTypeDef](./type_defs.md#listtagsforresourcerequestlisttagsforresourcepaginatetypedef)
 - [DescribeSnapshotsRequestRequestTypeDef](./type_defs.md#describesnapshotsrequestrequesttypedef)
-- [DescribeStorageVirtualMachinesRequestDescribeStorageVirtualMachinesPaginateTypeDef](./type_defs.md#describestoragevirtualmachinesrequestdescribestoragevirtualmachinespaginatetypedef)
 - [DescribeStorageVirtualMachinesRequestRequestTypeDef](./type_defs.md#describestoragevirtualmachinesrequestrequesttypedef)
-- [DescribeVolumesRequestDescribeVolumesPaginateTypeDef](./type_defs.md#describevolumesrequestdescribevolumespaginatetypedef)
 - [DescribeVolumesRequestRequestTypeDef](./type_defs.md#describevolumesrequestrequesttypedef)
 - [FileSystemEndpointsTypeDef](./type_defs.md#filesystemendpointstypedef)
 - [SnapshotTypeDef](./type_defs.md#snapshottypedef)

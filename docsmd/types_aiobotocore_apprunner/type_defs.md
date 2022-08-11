@@ -232,23 +232,6 @@ class TagTypeDef(TypedDict):
     Value: NotRequired[str],
 ```
 
-## TraceConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import TraceConfigurationTypeDef
-
-def get_value() -> TraceConfigurationTypeDef:
-    return {
-        "Vendor": ...,
-    }
-```
-
-```python title="Definition"
-class TraceConfigurationTypeDef(TypedDict):
-    Vendor: TracingVendorType,  # (1)
-```
-
-1. See [:material-code-brackets: TracingVendorType](./literals.md#tracingvendortype) 
 ## EncryptionConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -305,23 +288,6 @@ class InstanceConfigurationTypeDef(TypedDict):
     InstanceRoleArn: NotRequired[str],
 ```
 
-## ServiceObservabilityConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import ServiceObservabilityConfigurationTypeDef
-
-def get_value() -> ServiceObservabilityConfigurationTypeDef:
-    return {
-        "ObservabilityEnabled": ...,
-    }
-```
-
-```python title="Definition"
-class ServiceObservabilityConfigurationTypeDef(TypedDict):
-    ObservabilityEnabled: bool,
-    ObservabilityConfigurationArn: NotRequired[str],
-```
-
 ## VpcConnectorTypeDef
 
 ```python title="Usage Example"
@@ -376,22 +342,6 @@ def get_value() -> DeleteConnectionRequestRequestTypeDef:
 ```python title="Definition"
 class DeleteConnectionRequestRequestTypeDef(TypedDict):
     ConnectionArn: str,
-```
-
-## DeleteObservabilityConfigurationRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import DeleteObservabilityConfigurationRequestRequestTypeDef
-
-def get_value() -> DeleteObservabilityConfigurationRequestRequestTypeDef:
-    return {
-        "ObservabilityConfigurationArn": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteObservabilityConfigurationRequestRequestTypeDef(TypedDict):
-    ObservabilityConfigurationArn: str,
 ```
 
 ## DeleteServiceRequestRequestTypeDef
@@ -458,22 +408,6 @@ class DescribeCustomDomainsRequestRequestTypeDef(TypedDict):
     ServiceArn: str,
     NextToken: NotRequired[str],
     MaxResults: NotRequired[int],
-```
-
-## DescribeObservabilityConfigurationRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import DescribeObservabilityConfigurationRequestRequestTypeDef
-
-def get_value() -> DescribeObservabilityConfigurationRequestRequestTypeDef:
-    return {
-        "ObservabilityConfigurationArn": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeObservabilityConfigurationRequestRequestTypeDef(TypedDict):
-    ObservabilityConfigurationArn: str,
 ```
 
 ## DescribeServiceRequestRequestTypeDef
@@ -597,43 +531,6 @@ class ListConnectionsRequestRequestTypeDef(TypedDict):
     ConnectionName: NotRequired[str],
     MaxResults: NotRequired[int],
     NextToken: NotRequired[str],
-```
-
-## ListObservabilityConfigurationsRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import ListObservabilityConfigurationsRequestRequestTypeDef
-
-def get_value() -> ListObservabilityConfigurationsRequestRequestTypeDef:
-    return {
-        "ObservabilityConfigurationName": ...,
-    }
-```
-
-```python title="Definition"
-class ListObservabilityConfigurationsRequestRequestTypeDef(TypedDict):
-    ObservabilityConfigurationName: NotRequired[str],
-    LatestOnly: NotRequired[bool],
-    MaxResults: NotRequired[int],
-    NextToken: NotRequired[str],
-```
-
-## ObservabilityConfigurationSummaryTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import ObservabilityConfigurationSummaryTypeDef
-
-def get_value() -> ObservabilityConfigurationSummaryTypeDef:
-    return {
-        "ObservabilityConfigurationArn": ...,
-    }
-```
-
-```python title="Definition"
-class ObservabilityConfigurationSummaryTypeDef(TypedDict):
-    ObservabilityConfigurationArn: NotRequired[str],
-    ObservabilityConfigurationName: NotRequired[str],
-    ObservabilityConfigurationRevision: NotRequired[int],
 ```
 
 ## ListOperationsRequestRequestTypeDef
@@ -1124,51 +1021,6 @@ class TagResourceRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateObservabilityConfigurationRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import CreateObservabilityConfigurationRequestRequestTypeDef
-
-def get_value() -> CreateObservabilityConfigurationRequestRequestTypeDef:
-    return {
-        "ObservabilityConfigurationName": ...,
-    }
-```
-
-```python title="Definition"
-class CreateObservabilityConfigurationRequestRequestTypeDef(TypedDict):
-    ObservabilityConfigurationName: str,
-    TraceConfiguration: NotRequired[TraceConfigurationTypeDef],  # (1)
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: TraceConfigurationTypeDef](./type_defs.md#traceconfigurationtypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## ObservabilityConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import ObservabilityConfigurationTypeDef
-
-def get_value() -> ObservabilityConfigurationTypeDef:
-    return {
-        "ObservabilityConfigurationArn": ...,
-    }
-```
-
-```python title="Definition"
-class ObservabilityConfigurationTypeDef(TypedDict):
-    ObservabilityConfigurationArn: NotRequired[str],
-    ObservabilityConfigurationName: NotRequired[str],
-    TraceConfiguration: NotRequired[TraceConfigurationTypeDef],  # (1)
-    ObservabilityConfigurationRevision: NotRequired[int],
-    Latest: NotRequired[bool],
-    Status: NotRequired[ObservabilityConfigurationStatusType],  # (2)
-    CreatedAt: NotRequired[datetime],
-    DeletedAt: NotRequired[datetime],
-```
-
-1. See [:material-code-braces: TraceConfigurationTypeDef](./type_defs.md#traceconfigurationtypedef) 
-2. See [:material-code-brackets: ObservabilityConfigurationStatusType](./literals.md#observabilityconfigurationstatustype) 
 ## CreateVpcConnectorResponseTypeDef
 
 ```python title="Usage Example"
@@ -1289,28 +1141,6 @@ class ImageRepositoryTypeDef(TypedDict):
 
 1. See [:material-code-braces: ImageConfigurationTypeDef](./type_defs.md#imageconfigurationtypedef) 
 2. See [:material-code-brackets: ImageRepositoryTypeType](./literals.md#imagerepositorytypetype) 
-## ListObservabilityConfigurationsResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import ListObservabilityConfigurationsResponseTypeDef
-
-def get_value() -> ListObservabilityConfigurationsResponseTypeDef:
-    return {
-        "ObservabilityConfigurationSummaryList": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListObservabilityConfigurationsResponseTypeDef(TypedDict):
-    ObservabilityConfigurationSummaryList: List[ObservabilityConfigurationSummaryTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ObservabilityConfigurationSummaryTypeDef](./type_defs.md#observabilityconfigurationsummarytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListOperationsResponseTypeDef
 
 ```python title="Usage Example"
@@ -1450,66 +1280,6 @@ class CodeRepositoryTypeDef(TypedDict):
 
 1. See [:material-code-braces: SourceCodeVersionTypeDef](./type_defs.md#sourcecodeversiontypedef) 
 2. See [:material-code-braces: CodeConfigurationTypeDef](./type_defs.md#codeconfigurationtypedef) 
-## CreateObservabilityConfigurationResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import CreateObservabilityConfigurationResponseTypeDef
-
-def get_value() -> CreateObservabilityConfigurationResponseTypeDef:
-    return {
-        "ObservabilityConfiguration": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateObservabilityConfigurationResponseTypeDef(TypedDict):
-    ObservabilityConfiguration: ObservabilityConfigurationTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ObservabilityConfigurationTypeDef](./type_defs.md#observabilityconfigurationtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DeleteObservabilityConfigurationResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import DeleteObservabilityConfigurationResponseTypeDef
-
-def get_value() -> DeleteObservabilityConfigurationResponseTypeDef:
-    return {
-        "ObservabilityConfiguration": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteObservabilityConfigurationResponseTypeDef(TypedDict):
-    ObservabilityConfiguration: ObservabilityConfigurationTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ObservabilityConfigurationTypeDef](./type_defs.md#observabilityconfigurationtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DescribeObservabilityConfigurationResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apprunner.type_defs import DescribeObservabilityConfigurationResponseTypeDef
-
-def get_value() -> DescribeObservabilityConfigurationResponseTypeDef:
-    return {
-        "ObservabilityConfiguration": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeObservabilityConfigurationResponseTypeDef(TypedDict):
-    ObservabilityConfiguration: ObservabilityConfigurationTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ObservabilityConfigurationTypeDef](./type_defs.md#observabilityconfigurationtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## SourceConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -1554,7 +1324,6 @@ class CreateServiceRequestRequestTypeDef(TypedDict):
     HealthCheckConfiguration: NotRequired[HealthCheckConfigurationTypeDef],  # (5)
     AutoScalingConfigurationArn: NotRequired[str],
     NetworkConfiguration: NotRequired[NetworkConfigurationTypeDef],  # (6)
-    ObservabilityConfiguration: NotRequired[ServiceObservabilityConfigurationTypeDef],  # (7)
 ```
 
 1. See [:material-code-braces: SourceConfigurationTypeDef](./type_defs.md#sourceconfigurationtypedef) 
@@ -1563,7 +1332,6 @@ class CreateServiceRequestRequestTypeDef(TypedDict):
 4. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
 5. See [:material-code-braces: HealthCheckConfigurationTypeDef](./type_defs.md#healthcheckconfigurationtypedef) 
 6. See [:material-code-braces: NetworkConfigurationTypeDef](./type_defs.md#networkconfigurationtypedef) 
-7. See [:material-code-braces: ServiceObservabilityConfigurationTypeDef](./type_defs.md#serviceobservabilityconfigurationtypedef) 
 ## ServiceTypeDef
 
 ```python title="Usage Example"
@@ -1601,7 +1369,6 @@ class ServiceTypeDef(TypedDict):
     DeletedAt: NotRequired[datetime],
     EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (4)
     HealthCheckConfiguration: NotRequired[HealthCheckConfigurationTypeDef],  # (5)
-    ObservabilityConfiguration: NotRequired[ServiceObservabilityConfigurationTypeDef],  # (8)
 ```
 
 1. See [:material-code-brackets: ServiceStatusType](./literals.md#servicestatustype) 
@@ -1611,7 +1378,6 @@ class ServiceTypeDef(TypedDict):
 5. See [:material-code-braces: HealthCheckConfigurationTypeDef](./type_defs.md#healthcheckconfigurationtypedef) 
 6. See [:material-code-braces: AutoScalingConfigurationSummaryTypeDef](./type_defs.md#autoscalingconfigurationsummarytypedef) 
 7. See [:material-code-braces: NetworkConfigurationTypeDef](./type_defs.md#networkconfigurationtypedef) 
-8. See [:material-code-braces: ServiceObservabilityConfigurationTypeDef](./type_defs.md#serviceobservabilityconfigurationtypedef) 
 ## UpdateServiceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1631,14 +1397,12 @@ class UpdateServiceRequestRequestTypeDef(TypedDict):
     AutoScalingConfigurationArn: NotRequired[str],
     HealthCheckConfiguration: NotRequired[HealthCheckConfigurationTypeDef],  # (3)
     NetworkConfiguration: NotRequired[NetworkConfigurationTypeDef],  # (4)
-    ObservabilityConfiguration: NotRequired[ServiceObservabilityConfigurationTypeDef],  # (5)
 ```
 
 1. See [:material-code-braces: SourceConfigurationTypeDef](./type_defs.md#sourceconfigurationtypedef) 
 2. See [:material-code-braces: InstanceConfigurationTypeDef](./type_defs.md#instanceconfigurationtypedef) 
 3. See [:material-code-braces: HealthCheckConfigurationTypeDef](./type_defs.md#healthcheckconfigurationtypedef) 
 4. See [:material-code-braces: NetworkConfigurationTypeDef](./type_defs.md#networkconfigurationtypedef) 
-5. See [:material-code-braces: ServiceObservabilityConfigurationTypeDef](./type_defs.md#serviceobservabilityconfigurationtypedef) 
 ## CreateServiceResponseTypeDef
 
 ```python title="Usage Example"

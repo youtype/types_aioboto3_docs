@@ -77,21 +77,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("cloudwatch").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### delete\_alarms
 
 Deletes the specified alarms.
@@ -630,7 +615,8 @@ parent.get_insight_rule_report(**kwargs)
 
 ### get\_metric\_data
 
-You can use the `GetMetricData` API to retrieve CloudWatch metric values.
+You can use the `GetMetricData` API to retrieve as many as 500 different metrics
+in a single request, with a total of as many as 100,800 data points.
 
 Type annotations and code completion for `#!python session.client("cloudwatch").get_metric_data` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.get_metric_data)
@@ -1146,8 +1132,7 @@ await def put_metric_stream(
     IncludeFilters: Sequence[MetricStreamFilterTypeDef] = ...,  # (2)
     ExcludeFilters: Sequence[MetricStreamFilterTypeDef] = ...,  # (2)
     Tags: Sequence[TagTypeDef] = ...,  # (4)
-    StatisticsConfigurations: Sequence[MetricStreamStatisticsConfigurationTypeDef] = ...,  # (5)
-) -> PutMetricStreamOutputTypeDef:  # (6)
+) -> PutMetricStreamOutputTypeDef:  # (5)
     ...
 ```
 
@@ -1155,8 +1140,7 @@ await def put_metric_stream(
 2. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
 3. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
 4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-5. See [:material-code-braces: MetricStreamStatisticsConfigurationTypeDef](./type_defs.md#metricstreamstatisticsconfigurationtypedef) 
-6. See [:material-code-braces: PutMetricStreamOutputTypeDef](./type_defs.md#putmetricstreamoutputtypedef) 
+5. See [:material-code-braces: PutMetricStreamOutputTypeDef](./type_defs.md#putmetricstreamoutputtypedef) 
 
 
 ```python title="Usage example with kwargs"

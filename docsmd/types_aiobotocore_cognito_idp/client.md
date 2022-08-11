@@ -291,7 +291,7 @@ parent.admin_delete_user_attributes(**kwargs)
 ### admin\_disable\_provider\_for\_user
 
 Prevents the user from signing in with the specified external (SAML or social)
-identity provider (IdP).
+identity provider.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").admin_disable_provider_for_user` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_disable_provider_for_user)
@@ -520,8 +520,8 @@ parent.admin_initiate_auth(**kwargs)
 ### admin\_link\_provider\_for\_user
 
 Links an existing user account in a user pool (`DestinationUser` ) to an
-identity from an external IdP (`SourceUser` ) based on a specified attribute
-name and value from the external IdP.
+identity from an external identity provider (`SourceUser` ) based on a specified
+attribute name and value from the external identity provider.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").admin_link_provider_for_user` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_link_provider_for_user)
@@ -966,7 +966,7 @@ parent.admin_update_user_attributes(**kwargs)
 
 ### admin\_user\_global\_sign\_out
 
-Signs out a user from all devices.
+Signs out users from all devices, as an administrator.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").admin_user_global_sign_out` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_user_global_sign_out)
@@ -996,9 +996,7 @@ parent.admin_user_global_sign_out(**kwargs)
 
 ### associate\_software\_token
 
-Begins setup of time-based one-time password multi-factor authentication (TOTP
-MFA) for a user, with a unique private key that Amazon Cognito generates and
-returns in the API response.
+Returns a unique generated shared secret key code for the user account.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").associate_software_token` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.associate_software_token)
@@ -1073,21 +1071,6 @@ parent.change_password(**kwargs)
 ```
 
 1. See [:material-code-braces: ChangePasswordRequestRequestTypeDef](./type_defs.md#changepasswordrequestrequesttypedef) 
-
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("cognito-idp").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
 
 ### confirm\_device
 
@@ -1165,7 +1148,8 @@ parent.confirm_forgot_password(**kwargs)
 
 ### confirm\_sign\_up
 
-Confirms registration of a new user.
+Confirms registration of a user and handles the existing alias from a previous
+user.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").confirm_sign_up` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.confirm_sign_up)
@@ -1238,7 +1222,7 @@ parent.create_group(**kwargs)
 
 ### create\_identity\_provider
 
-Creates an IdP for a user pool.
+Creates an identity provider for a user pool.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").create_identity_provider` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.create_identity_provider)
@@ -1366,17 +1350,16 @@ await def create_user_pool(
     VerificationMessageTemplate: VerificationMessageTemplateTypeTypeDef = ...,  # (6)
     SmsAuthenticationMessage: str = ...,
     MfaConfiguration: UserPoolMfaTypeType = ...,  # (7)
-    UserAttributeUpdateSettings: UserAttributeUpdateSettingsTypeTypeDef = ...,  # (8)
-    DeviceConfiguration: DeviceConfigurationTypeTypeDef = ...,  # (9)
-    EmailConfiguration: EmailConfigurationTypeTypeDef = ...,  # (10)
-    SmsConfiguration: SmsConfigurationTypeTypeDef = ...,  # (11)
+    DeviceConfiguration: DeviceConfigurationTypeTypeDef = ...,  # (8)
+    EmailConfiguration: EmailConfigurationTypeTypeDef = ...,  # (9)
+    SmsConfiguration: SmsConfigurationTypeTypeDef = ...,  # (10)
     UserPoolTags: Mapping[str, str] = ...,
-    AdminCreateUserConfig: AdminCreateUserConfigTypeTypeDef = ...,  # (12)
-    Schema: Sequence[SchemaAttributeTypeTypeDef] = ...,  # (13)
-    UserPoolAddOns: UserPoolAddOnsTypeTypeDef = ...,  # (14)
-    UsernameConfiguration: UsernameConfigurationTypeTypeDef = ...,  # (15)
-    AccountRecoverySetting: AccountRecoverySettingTypeTypeDef = ...,  # (16)
-) -> CreateUserPoolResponseTypeDef:  # (17)
+    AdminCreateUserConfig: AdminCreateUserConfigTypeTypeDef = ...,  # (11)
+    Schema: Sequence[SchemaAttributeTypeTypeDef] = ...,  # (12)
+    UserPoolAddOns: UserPoolAddOnsTypeTypeDef = ...,  # (13)
+    UsernameConfiguration: UsernameConfigurationTypeTypeDef = ...,  # (14)
+    AccountRecoverySetting: AccountRecoverySettingTypeTypeDef = ...,  # (15)
+) -> CreateUserPoolResponseTypeDef:  # (16)
     ...
 ```
 
@@ -1387,16 +1370,15 @@ await def create_user_pool(
 5. See [:material-code-brackets: UsernameAttributeTypeType](./literals.md#usernameattributetypetype) 
 6. See [:material-code-braces: VerificationMessageTemplateTypeTypeDef](./type_defs.md#verificationmessagetemplatetypetypedef) 
 7. See [:material-code-brackets: UserPoolMfaTypeType](./literals.md#userpoolmfatypetype) 
-8. See [:material-code-braces: UserAttributeUpdateSettingsTypeTypeDef](./type_defs.md#userattributeupdatesettingstypetypedef) 
-9. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
-10. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
-11. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
-12. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
-13. See [:material-code-braces: SchemaAttributeTypeTypeDef](./type_defs.md#schemaattributetypetypedef) 
-14. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
-15. See [:material-code-braces: UsernameConfigurationTypeTypeDef](./type_defs.md#usernameconfigurationtypetypedef) 
-16. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
-17. See [:material-code-braces: CreateUserPoolResponseTypeDef](./type_defs.md#createuserpoolresponsetypedef) 
+8. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
+9. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
+10. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
+11. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
+12. See [:material-code-braces: SchemaAttributeTypeTypeDef](./type_defs.md#schemaattributetypetypedef) 
+13. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
+14. See [:material-code-braces: UsernameConfigurationTypeTypeDef](./type_defs.md#usernameconfigurationtypetypedef) 
+15. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
+16. See [:material-code-braces: CreateUserPoolResponseTypeDef](./type_defs.md#createuserpoolresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1440,7 +1422,6 @@ await def create_user_pool_client(
     AnalyticsConfiguration: AnalyticsConfigurationTypeTypeDef = ...,  # (4)
     PreventUserExistenceErrors: PreventUserExistenceErrorTypesType = ...,  # (5)
     EnableTokenRevocation: bool = ...,
-    EnablePropagateAdditionalUserContextData: bool = ...,
 ) -> CreateUserPoolClientResponseTypeDef:  # (6)
     ...
 ```
@@ -1530,7 +1511,7 @@ parent.delete_group(**kwargs)
 
 ### delete\_identity\_provider
 
-Deletes an IdP for a user pool.
+Deletes an identity provider for a user pool.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").delete_identity_provider` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.delete_identity_provider)
@@ -1741,7 +1722,7 @@ parent.delete_user_pool_domain(**kwargs)
 
 ### describe\_identity\_provider
 
-Gets information about a specific IdP.
+Gets information about a specific identity provider.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").describe_identity_provider` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.describe_identity_provider)
@@ -2132,7 +2113,7 @@ parent.get_group(**kwargs)
 
 ### get\_identity\_provider\_by\_identifier
 
-Gets the specified IdP.
+Gets the specified identity provider.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").get_identity_provider_by_identifier` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.get_identity_provider_by_identifier)
@@ -2252,7 +2233,7 @@ parent.get_user(**kwargs)
 
 ### get\_user\_attribute\_verification\_code
 
-Generates a user attribute verification code for the specified attribute name.
+Gets the user attribute verification code for the specified attribute name.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").get_user_attribute_verification_code` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.get_user_attribute_verification_code)
@@ -2341,7 +2322,7 @@ parent.global_sign_out(**kwargs)
 
 ### initiate\_auth
 
-Initiates sign-in for a user in the Amazon Cognito user directory.
+Initiates the authentication flow.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").initiate_auth` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.initiate_auth)
@@ -2379,8 +2360,7 @@ parent.initiate_auth(**kwargs)
 
 ### list\_devices
 
-Lists the sign-in devices that Amazon Cognito has registered to the current
-user.
+Lists the devices.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").list_devices` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_devices)
@@ -2442,7 +2422,7 @@ parent.list_groups(**kwargs)
 
 ### list\_identity\_providers
 
-Lists information about all IdPs for a user pool.
+Lists information about all identity providers for a user pool.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").list_identity_providers` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_identity_providers)
@@ -3238,7 +3218,7 @@ parent.update_group(**kwargs)
 
 ### update\_identity\_provider
 
-Updates IdP information for a user pool.
+Updates identity provider information for a user pool.
 
 Type annotations and code completion for `#!python session.client("cognito-idp").update_identity_provider` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_identity_provider)
@@ -3358,15 +3338,14 @@ await def update_user_pool(
     EmailVerificationSubject: str = ...,
     VerificationMessageTemplate: VerificationMessageTemplateTypeTypeDef = ...,  # (4)
     SmsAuthenticationMessage: str = ...,
-    UserAttributeUpdateSettings: UserAttributeUpdateSettingsTypeTypeDef = ...,  # (5)
-    MfaConfiguration: UserPoolMfaTypeType = ...,  # (6)
-    DeviceConfiguration: DeviceConfigurationTypeTypeDef = ...,  # (7)
-    EmailConfiguration: EmailConfigurationTypeTypeDef = ...,  # (8)
-    SmsConfiguration: SmsConfigurationTypeTypeDef = ...,  # (9)
+    MfaConfiguration: UserPoolMfaTypeType = ...,  # (5)
+    DeviceConfiguration: DeviceConfigurationTypeTypeDef = ...,  # (6)
+    EmailConfiguration: EmailConfigurationTypeTypeDef = ...,  # (7)
+    SmsConfiguration: SmsConfigurationTypeTypeDef = ...,  # (8)
     UserPoolTags: Mapping[str, str] = ...,
-    AdminCreateUserConfig: AdminCreateUserConfigTypeTypeDef = ...,  # (10)
-    UserPoolAddOns: UserPoolAddOnsTypeTypeDef = ...,  # (11)
-    AccountRecoverySetting: AccountRecoverySettingTypeTypeDef = ...,  # (12)
+    AdminCreateUserConfig: AdminCreateUserConfigTypeTypeDef = ...,  # (9)
+    UserPoolAddOns: UserPoolAddOnsTypeTypeDef = ...,  # (10)
+    AccountRecoverySetting: AccountRecoverySettingTypeTypeDef = ...,  # (11)
 ) -> Dict[str, Any]:
     ...
 ```
@@ -3375,14 +3354,13 @@ await def update_user_pool(
 2. See [:material-code-braces: LambdaConfigTypeTypeDef](./type_defs.md#lambdaconfigtypetypedef) 
 3. See [:material-code-brackets: VerifiedAttributeTypeType](./literals.md#verifiedattributetypetype) 
 4. See [:material-code-braces: VerificationMessageTemplateTypeTypeDef](./type_defs.md#verificationmessagetemplatetypetypedef) 
-5. See [:material-code-braces: UserAttributeUpdateSettingsTypeTypeDef](./type_defs.md#userattributeupdatesettingstypetypedef) 
-6. See [:material-code-brackets: UserPoolMfaTypeType](./literals.md#userpoolmfatypetype) 
-7. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
-8. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
-9. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
-10. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
-11. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
-12. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
+5. See [:material-code-brackets: UserPoolMfaTypeType](./literals.md#userpoolmfatypetype) 
+6. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
+7. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
+8. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
+9. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
+10. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
+11. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3426,7 +3404,6 @@ await def update_user_pool_client(
     AnalyticsConfiguration: AnalyticsConfigurationTypeTypeDef = ...,  # (4)
     PreventUserExistenceErrors: PreventUserExistenceErrorTypesType = ...,  # (5)
     EnableTokenRevocation: bool = ...,
-    EnablePropagateAdditionalUserContextData: bool = ...,
 ) -> UpdateUserPoolClientResponseTypeDef:  # (6)
     ...
 ```

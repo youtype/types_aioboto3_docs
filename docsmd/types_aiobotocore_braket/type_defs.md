@@ -133,7 +133,6 @@ def get_value() -> InstanceConfigTypeDef:
 class InstanceConfigTypeDef(TypedDict):
     instanceType: InstanceTypeType,  # (1)
     volumeSizeInGb: int,
-    instanceCount: NotRequired[int],
 ```
 
 1. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 

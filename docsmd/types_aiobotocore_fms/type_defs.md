@@ -60,47 +60,6 @@ class AssociateAdminAccountRequestRequestTypeDef(TypedDict):
     AdminAccount: str,
 ```
 
-## AssociateThirdPartyFirewallRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import AssociateThirdPartyFirewallRequestRequestTypeDef
-
-def get_value() -> AssociateThirdPartyFirewallRequestRequestTypeDef:
-    return {
-        "ThirdPartyFirewall": ...,
-    }
-```
-
-```python title="Definition"
-class AssociateThirdPartyFirewallRequestRequestTypeDef(TypedDict):
-    ThirdPartyFirewall: ThirdPartyFirewallType,  # (1)
-```
-
-1. See [:material-code-brackets: ThirdPartyFirewallType](./literals.md#thirdpartyfirewalltype) 
-## ResponseMetadataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ResponseMetadataTypeDef
-
-def get_value() -> ResponseMetadataTypeDef:
-    return {
-        "RequestId": ...,
-        "HostId": ...,
-        "HTTPStatusCode": ...,
-        "HTTPHeaders": ...,
-        "RetryAttempts": ...,
-    }
-```
-
-```python title="Definition"
-class ResponseMetadataTypeDef(TypedDict):
-    RequestId: str,
-    HostId: str,
-    HTTPStatusCode: int,
-    HTTPHeaders: Dict[str, str],
-    RetryAttempts: int,
-```
-
 ## AwsEc2NetworkInterfaceViolationTypeDef
 
 ```python title="Usage Example"
@@ -204,23 +163,6 @@ class DeleteProtocolsListRequestRequestTypeDef(TypedDict):
     ListId: str,
 ```
 
-## DisassociateThirdPartyFirewallRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import DisassociateThirdPartyFirewallRequestRequestTypeDef
-
-def get_value() -> DisassociateThirdPartyFirewallRequestRequestTypeDef:
-    return {
-        "ThirdPartyFirewall": ...,
-    }
-```
-
-```python title="Definition"
-class DisassociateThirdPartyFirewallRequestRequestTypeDef(TypedDict):
-    ThirdPartyFirewall: ThirdPartyFirewallType,  # (1)
-```
-
-1. See [:material-code-brackets: ThirdPartyFirewallType](./literals.md#thirdpartyfirewalltype) 
 ## DnsDuplicateRuleGroupViolationTypeDef
 
 ```python title="Usage Example"
@@ -274,6 +216,30 @@ class DnsRuleGroupPriorityConflictViolationTypeDef(TypedDict):
     ConflictingPriority: NotRequired[int],
     ConflictingPolicyId: NotRequired[str],
     UnavailablePriorities: NotRequired[List[int]],
+```
+
+## ResponseMetadataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_fms.type_defs import ResponseMetadataTypeDef
+
+def get_value() -> ResponseMetadataTypeDef:
+    return {
+        "RequestId": ...,
+        "HostId": ...,
+        "HTTPStatusCode": ...,
+        "HTTPHeaders": ...,
+        "RetryAttempts": ...,
+    }
+```
+
+```python title="Definition"
+class ResponseMetadataTypeDef(TypedDict):
+    RequestId: str,
+    HostId: str,
+    HTTPStatusCode: int,
+    HTTPHeaders: Dict[str, str],
+    RetryAttempts: int,
 ```
 
 ## EvaluationResultTypeDef
@@ -351,25 +317,6 @@ class FirewallSubnetIsOutOfScopeViolationTypeDef(TypedDict):
     SubnetAvailabilityZone: NotRequired[str],
     SubnetAvailabilityZoneId: NotRequired[str],
     VpcEndpointId: NotRequired[str],
-```
-
-## FirewallSubnetMissingVPCEndpointViolationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import FirewallSubnetMissingVPCEndpointViolationTypeDef
-
-def get_value() -> FirewallSubnetMissingVPCEndpointViolationTypeDef:
-    return {
-        "FirewallSubnetId": ...,
-    }
-```
-
-```python title="Definition"
-class FirewallSubnetMissingVPCEndpointViolationTypeDef(TypedDict):
-    FirewallSubnetId: NotRequired[str],
-    VpcId: NotRequired[str],
-    SubnetAvailabilityZone: NotRequired[str],
-    SubnetAvailabilityZoneId: NotRequired[str],
 ```
 
 ## GetAppsListRequestRequestTypeDef
@@ -484,23 +431,6 @@ class ProtocolsListDataTypeDef(TypedDict):
     PreviousProtocolsList: NotRequired[Dict[str, List[str]]],
 ```
 
-## GetThirdPartyFirewallAssociationStatusRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import GetThirdPartyFirewallAssociationStatusRequestRequestTypeDef
-
-def get_value() -> GetThirdPartyFirewallAssociationStatusRequestRequestTypeDef:
-    return {
-        "ThirdPartyFirewall": ...,
-    }
-```
-
-```python title="Definition"
-class GetThirdPartyFirewallAssociationStatusRequestRequestTypeDef(TypedDict):
-    ThirdPartyFirewall: ThirdPartyFirewallType,  # (1)
-```
-
-1. See [:material-code-brackets: ThirdPartyFirewallType](./literals.md#thirdpartyfirewalltype) 
 ## GetViolationDetailsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -705,43 +635,6 @@ class TagTypeDef(TypedDict):
     Value: str,
 ```
 
-## ListThirdPartyFirewallFirewallPoliciesRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ListThirdPartyFirewallFirewallPoliciesRequestRequestTypeDef
-
-def get_value() -> ListThirdPartyFirewallFirewallPoliciesRequestRequestTypeDef:
-    return {
-        "ThirdPartyFirewall": ...,
-        "MaxResults": ...,
-    }
-```
-
-```python title="Definition"
-class ListThirdPartyFirewallFirewallPoliciesRequestRequestTypeDef(TypedDict):
-    ThirdPartyFirewall: ThirdPartyFirewallType,  # (1)
-    MaxResults: int,
-    NextToken: NotRequired[str],
-```
-
-1. See [:material-code-brackets: ThirdPartyFirewallType](./literals.md#thirdpartyfirewalltype) 
-## ThirdPartyFirewallFirewallPolicyTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ThirdPartyFirewallFirewallPolicyTypeDef
-
-def get_value() -> ThirdPartyFirewallFirewallPolicyTypeDef:
-    return {
-        "FirewallPolicyId": ...,
-    }
-```
-
-```python title="Definition"
-class ThirdPartyFirewallFirewallPolicyTypeDef(TypedDict):
-    FirewallPolicyId: NotRequired[str],
-    FirewallPolicyName: NotRequired[str],
-```
-
 ## RouteTypeDef
 
 ```python title="Usage Example"
@@ -873,23 +766,6 @@ class NetworkFirewallPolicyTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: FirewallDeploymentModelType](./literals.md#firewalldeploymentmodeltype) 
-## ThirdPartyFirewallPolicyTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ThirdPartyFirewallPolicyTypeDef
-
-def get_value() -> ThirdPartyFirewallPolicyTypeDef:
-    return {
-        "FirewallDeploymentModel": ...,
-    }
-```
-
-```python title="Definition"
-class ThirdPartyFirewallPolicyTypeDef(TypedDict):
-    FirewallDeploymentModel: NotRequired[FirewallDeploymentModelType],  # (1)
-```
-
-1. See [:material-code-brackets: FirewallDeploymentModelType](./literals.md#firewalldeploymentmodeltype) 
 ## ResourceTagTypeDef
 
 ```python title="Usage Example"
@@ -923,64 +799,6 @@ def get_value() -> PutNotificationChannelRequestRequestTypeDef:
 class PutNotificationChannelRequestRequestTypeDef(TypedDict):
     SnsTopicArn: str,
     SnsRoleName: str,
-```
-
-## ThirdPartyFirewallMissingExpectedRouteTableViolationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ThirdPartyFirewallMissingExpectedRouteTableViolationTypeDef
-
-def get_value() -> ThirdPartyFirewallMissingExpectedRouteTableViolationTypeDef:
-    return {
-        "ViolationTarget": ...,
-    }
-```
-
-```python title="Definition"
-class ThirdPartyFirewallMissingExpectedRouteTableViolationTypeDef(TypedDict):
-    ViolationTarget: NotRequired[str],
-    VPC: NotRequired[str],
-    AvailabilityZone: NotRequired[str],
-    CurrentRouteTable: NotRequired[str],
-    ExpectedRouteTable: NotRequired[str],
-```
-
-## ThirdPartyFirewallMissingFirewallViolationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ThirdPartyFirewallMissingFirewallViolationTypeDef
-
-def get_value() -> ThirdPartyFirewallMissingFirewallViolationTypeDef:
-    return {
-        "ViolationTarget": ...,
-    }
-```
-
-```python title="Definition"
-class ThirdPartyFirewallMissingFirewallViolationTypeDef(TypedDict):
-    ViolationTarget: NotRequired[str],
-    VPC: NotRequired[str],
-    AvailabilityZone: NotRequired[str],
-    TargetViolationReason: NotRequired[str],
-```
-
-## ThirdPartyFirewallMissingSubnetViolationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ThirdPartyFirewallMissingSubnetViolationTypeDef
-
-def get_value() -> ThirdPartyFirewallMissingSubnetViolationTypeDef:
-    return {
-        "ViolationTarget": ...,
-    }
-```
-
-```python title="Definition"
-class ThirdPartyFirewallMissingSubnetViolationTypeDef(TypedDict):
-    ViolationTarget: NotRequired[str],
-    VPC: NotRequired[str],
-    AvailabilityZone: NotRequired[str],
-    TargetViolationReason: NotRequired[str],
 ```
 
 ## SecurityGroupRuleDescriptionTypeDef
@@ -1218,46 +1036,48 @@ class AppsListDataTypeDef(TypedDict):
 
 1. See [:material-code-braces: AppTypeDef](./type_defs.md#apptypedef) 
 2. See [:material-code-braces: AppTypeDef](./type_defs.md#apptypedef) 
-## AssociateThirdPartyFirewallResponseTypeDef
+## AwsEc2InstanceViolationTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import AssociateThirdPartyFirewallResponseTypeDef
+from types_aiobotocore_fms.type_defs import AwsEc2InstanceViolationTypeDef
 
-def get_value() -> AssociateThirdPartyFirewallResponseTypeDef:
+def get_value() -> AwsEc2InstanceViolationTypeDef:
     return {
-        "ThirdPartyFirewallStatus": ...,
-        "ResponseMetadata": ...,
+        "ViolationTarget": ...,
     }
 ```
 
 ```python title="Definition"
-class AssociateThirdPartyFirewallResponseTypeDef(TypedDict):
-    ThirdPartyFirewallStatus: ThirdPartyFirewallAssociationStatusType,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+class AwsEc2InstanceViolationTypeDef(TypedDict):
+    ViolationTarget: NotRequired[str],
+    AwsEc2NetworkInterfaceViolations: NotRequired[List[AwsEc2NetworkInterfaceViolationTypeDef]],  # (1)
 ```
 
-1. See [:material-code-brackets: ThirdPartyFirewallAssociationStatusType](./literals.md#thirdpartyfirewallassociationstatustype) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DisassociateThirdPartyFirewallResponseTypeDef
+1. See [:material-code-braces: AwsEc2NetworkInterfaceViolationTypeDef](./type_defs.md#awsec2networkinterfaceviolationtypedef) 
+## PolicyComplianceDetailTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import DisassociateThirdPartyFirewallResponseTypeDef
+from types_aiobotocore_fms.type_defs import PolicyComplianceDetailTypeDef
 
-def get_value() -> DisassociateThirdPartyFirewallResponseTypeDef:
+def get_value() -> PolicyComplianceDetailTypeDef:
     return {
-        "ThirdPartyFirewallStatus": ...,
-        "ResponseMetadata": ...,
+        "PolicyOwner": ...,
     }
 ```
 
 ```python title="Definition"
-class DisassociateThirdPartyFirewallResponseTypeDef(TypedDict):
-    ThirdPartyFirewallStatus: ThirdPartyFirewallAssociationStatusType,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+class PolicyComplianceDetailTypeDef(TypedDict):
+    PolicyOwner: NotRequired[str],
+    PolicyId: NotRequired[str],
+    MemberAccount: NotRequired[str],
+    Violators: NotRequired[List[ComplianceViolatorTypeDef]],  # (1)
+    EvaluationLimitExceeded: NotRequired[bool],
+    ExpiredAt: NotRequired[datetime],
+    IssueInfoMap: NotRequired[Dict[DependentServiceNameType, str]],  # (2)
 ```
 
-1. See [:material-code-brackets: ThirdPartyFirewallAssociationStatusType](./literals.md#thirdpartyfirewallassociationstatustype) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+1. See [:material-code-braces: ComplianceViolatorTypeDef](./type_defs.md#complianceviolatortypedef) 
+2. See [:material-code-brackets: DependentServiceNameType](./literals.md#dependentservicenametype) 
 ## EmptyResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -1344,29 +1164,6 @@ class GetProtectionStatusResponseTypeDef(TypedDict):
 
 1. See [:material-code-brackets: SecurityServiceTypeType](./literals.md#securityservicetypetype) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetThirdPartyFirewallAssociationStatusResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import GetThirdPartyFirewallAssociationStatusResponseTypeDef
-
-def get_value() -> GetThirdPartyFirewallAssociationStatusResponseTypeDef:
-    return {
-        "ThirdPartyFirewallStatus": ...,
-        "MarketplaceOnboardingStatus": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetThirdPartyFirewallAssociationStatusResponseTypeDef(TypedDict):
-    ThirdPartyFirewallStatus: ThirdPartyFirewallAssociationStatusType,  # (1)
-    MarketplaceOnboardingStatus: MarketplaceSubscriptionOnboardingStatusType,  # (2)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
-```
-
-1. See [:material-code-brackets: ThirdPartyFirewallAssociationStatusType](./literals.md#thirdpartyfirewallassociationstatustype) 
-2. See [:material-code-brackets: MarketplaceSubscriptionOnboardingStatusType](./literals.md#marketplacesubscriptiononboardingstatustype) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListMemberAccountsResponseTypeDef
 
 ```python title="Usage Example"
@@ -1388,48 +1185,6 @@ class ListMemberAccountsResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## AwsEc2InstanceViolationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import AwsEc2InstanceViolationTypeDef
-
-def get_value() -> AwsEc2InstanceViolationTypeDef:
-    return {
-        "ViolationTarget": ...,
-    }
-```
-
-```python title="Definition"
-class AwsEc2InstanceViolationTypeDef(TypedDict):
-    ViolationTarget: NotRequired[str],
-    AwsEc2NetworkInterfaceViolations: NotRequired[List[AwsEc2NetworkInterfaceViolationTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: AwsEc2NetworkInterfaceViolationTypeDef](./type_defs.md#awsec2networkinterfaceviolationtypedef) 
-## PolicyComplianceDetailTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import PolicyComplianceDetailTypeDef
-
-def get_value() -> PolicyComplianceDetailTypeDef:
-    return {
-        "PolicyOwner": ...,
-    }
-```
-
-```python title="Definition"
-class PolicyComplianceDetailTypeDef(TypedDict):
-    PolicyOwner: NotRequired[str],
-    PolicyId: NotRequired[str],
-    MemberAccount: NotRequired[str],
-    Violators: NotRequired[List[ComplianceViolatorTypeDef]],  # (1)
-    EvaluationLimitExceeded: NotRequired[bool],
-    ExpiredAt: NotRequired[datetime],
-    IssueInfoMap: NotRequired[Dict[DependentServiceNameType, str]],  # (2)
-```
-
-1. See [:material-code-braces: ComplianceViolatorTypeDef](./type_defs.md#complianceviolatortypedef) 
-2. See [:material-code-brackets: DependentServiceNameType](./literals.md#dependentservicenametype) 
 ## PolicyComplianceStatusTypeDef
 
 ```python title="Usage Example"
@@ -1605,25 +1360,6 @@ class ListProtocolsListsRequestListProtocolsListsPaginateTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListThirdPartyFirewallFirewallPoliciesRequestListThirdPartyFirewallFirewallPoliciesPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ListThirdPartyFirewallFirewallPoliciesRequestListThirdPartyFirewallFirewallPoliciesPaginateTypeDef
-
-def get_value() -> ListThirdPartyFirewallFirewallPoliciesRequestListThirdPartyFirewallFirewallPoliciesPaginateTypeDef:
-    return {
-        "ThirdPartyFirewall": ...,
-    }
-```
-
-```python title="Definition"
-class ListThirdPartyFirewallFirewallPoliciesRequestListThirdPartyFirewallFirewallPoliciesPaginateTypeDef(TypedDict):
-    ThirdPartyFirewall: ThirdPartyFirewallType,  # (1)
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: ThirdPartyFirewallType](./literals.md#thirdpartyfirewalltype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListPoliciesResponseTypeDef
 
 ```python title="Usage Example"
@@ -1726,28 +1462,6 @@ class TagResourceRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## ListThirdPartyFirewallFirewallPoliciesResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_fms.type_defs import ListThirdPartyFirewallFirewallPoliciesResponseTypeDef
-
-def get_value() -> ListThirdPartyFirewallFirewallPoliciesResponseTypeDef:
-    return {
-        "ThirdPartyFirewallFirewallPolicies": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListThirdPartyFirewallFirewallPoliciesResponseTypeDef(TypedDict):
-    ThirdPartyFirewallFirewallPolicies: List[ThirdPartyFirewallFirewallPolicyTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ThirdPartyFirewallFirewallPolicyTypeDef](./type_defs.md#thirdpartyfirewallfirewallpolicytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## NetworkFirewallBlackHoleRouteDetectedViolationTypeDef
 
 ```python title="Usage Example"
@@ -1946,11 +1660,9 @@ def get_value() -> PolicyOptionTypeDef:
 ```python title="Definition"
 class PolicyOptionTypeDef(TypedDict):
     NetworkFirewallPolicy: NotRequired[NetworkFirewallPolicyTypeDef],  # (1)
-    ThirdPartyFirewallPolicy: NotRequired[ThirdPartyFirewallPolicyTypeDef],  # (2)
 ```
 
 1. See [:material-code-braces: NetworkFirewallPolicyTypeDef](./type_defs.md#networkfirewallpolicytypedef) 
-2. See [:material-code-braces: ThirdPartyFirewallPolicyTypeDef](./type_defs.md#thirdpartyfirewallpolicytypedef) 
 ## SecurityGroupRemediationActionTypeDef
 
 ```python title="Usage Example"
@@ -2377,10 +2089,6 @@ class ResourceViolationTypeDef(TypedDict):
     PossibleRemediationActions: NotRequired[PossibleRemediationActionsTypeDef],  # (17)
     FirewallSubnetIsOutOfScopeViolation: NotRequired[FirewallSubnetIsOutOfScopeViolationTypeDef],  # (18)
     RouteHasOutOfScopeEndpointViolation: NotRequired[RouteHasOutOfScopeEndpointViolationTypeDef],  # (19)
-    ThirdPartyFirewallMissingFirewallViolation: NotRequired[ThirdPartyFirewallMissingFirewallViolationTypeDef],  # (20)
-    ThirdPartyFirewallMissingSubnetViolation: NotRequired[ThirdPartyFirewallMissingSubnetViolationTypeDef],  # (21)
-    ThirdPartyFirewallMissingExpectedRouteTableViolation: NotRequired[ThirdPartyFirewallMissingExpectedRouteTableViolationTypeDef],  # (22)
-    FirewallSubnetMissingVPCEndpointViolation: NotRequired[FirewallSubnetMissingVPCEndpointViolationTypeDef],  # (23)
 ```
 
 1. See [:material-code-braces: AwsVPCSecurityGroupViolationTypeDef](./type_defs.md#awsvpcsecuritygroupviolationtypedef) 
@@ -2402,10 +2110,6 @@ class ResourceViolationTypeDef(TypedDict):
 17. See [:material-code-braces: PossibleRemediationActionsTypeDef](./type_defs.md#possibleremediationactionstypedef) 
 18. See [:material-code-braces: FirewallSubnetIsOutOfScopeViolationTypeDef](./type_defs.md#firewallsubnetisoutofscopeviolationtypedef) 
 19. See [:material-code-braces: RouteHasOutOfScopeEndpointViolationTypeDef](./type_defs.md#routehasoutofscopeendpointviolationtypedef) 
-20. See [:material-code-braces: ThirdPartyFirewallMissingFirewallViolationTypeDef](./type_defs.md#thirdpartyfirewallmissingfirewallviolationtypedef) 
-21. See [:material-code-braces: ThirdPartyFirewallMissingSubnetViolationTypeDef](./type_defs.md#thirdpartyfirewallmissingsubnetviolationtypedef) 
-22. See [:material-code-braces: ThirdPartyFirewallMissingExpectedRouteTableViolationTypeDef](./type_defs.md#thirdpartyfirewallmissingexpectedroutetableviolationtypedef) 
-23. See [:material-code-braces: FirewallSubnetMissingVPCEndpointViolationTypeDef](./type_defs.md#firewallsubnetmissingvpcendpointviolationtypedef) 
 ## ViolationDetailTypeDef
 
 ```python title="Usage Example"

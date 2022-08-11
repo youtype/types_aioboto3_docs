@@ -473,28 +473,6 @@ class GenerateDataKeyWithoutPlaintextRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: DataKeySpecType](./literals.md#datakeyspectype) 
-## GenerateMacRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kms.type_defs import GenerateMacRequestRequestTypeDef
-
-def get_value() -> GenerateMacRequestRequestTypeDef:
-    return {
-        "Message": ...,
-        "KeyId": ...,
-        "MacAlgorithm": ...,
-    }
-```
-
-```python title="Definition"
-class GenerateMacRequestRequestTypeDef(TypedDict):
-    Message: Union[str, bytes, IO[Any], StreamingBody],
-    KeyId: str,
-    MacAlgorithm: MacAlgorithmSpecType,  # (1)
-    GrantTokens: NotRequired[Sequence[str]],
-```
-
-1. See [:material-code-brackets: MacAlgorithmSpecType](./literals.md#macalgorithmspectype) 
 ## GenerateRandomRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -984,30 +962,6 @@ class UpdatePrimaryRegionRequestRequestTypeDef(TypedDict):
     PrimaryRegion: str,
 ```
 
-## VerifyMacRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kms.type_defs import VerifyMacRequestRequestTypeDef
-
-def get_value() -> VerifyMacRequestRequestTypeDef:
-    return {
-        "Message": ...,
-        "KeyId": ...,
-        "MacAlgorithm": ...,
-        "Mac": ...,
-    }
-```
-
-```python title="Definition"
-class VerifyMacRequestRequestTypeDef(TypedDict):
-    Message: Union[str, bytes, IO[Any], StreamingBody],
-    KeyId: str,
-    MacAlgorithm: MacAlgorithmSpecType,  # (1)
-    Mac: Union[str, bytes, IO[Any], StreamingBody],
-    GrantTokens: NotRequired[Sequence[str]],
-```
-
-1. See [:material-code-brackets: MacAlgorithmSpecType](./literals.md#macalgorithmspectype) 
 ## VerifyRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1256,30 +1210,6 @@ class GenerateDataKeyWithoutPlaintextResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GenerateMacResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kms.type_defs import GenerateMacResponseTypeDef
-
-def get_value() -> GenerateMacResponseTypeDef:
-    return {
-        "Mac": ...,
-        "MacAlgorithm": ...,
-        "KeyId": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GenerateMacResponseTypeDef(TypedDict):
-    Mac: bytes,
-    MacAlgorithm: MacAlgorithmSpecType,  # (1)
-    KeyId: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-brackets: MacAlgorithmSpecType](./literals.md#macalgorithmspectype) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GenerateRandomResponseTypeDef
 
 ```python title="Usage Example"
@@ -1523,30 +1453,6 @@ class SignResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: SigningAlgorithmSpecType](./literals.md#signingalgorithmspectype) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## VerifyMacResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kms.type_defs import VerifyMacResponseTypeDef
-
-def get_value() -> VerifyMacResponseTypeDef:
-    return {
-        "KeyId": ...,
-        "MacValid": ...,
-        "MacAlgorithm": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class VerifyMacResponseTypeDef(TypedDict):
-    KeyId: str,
-    MacValid: bool,
-    MacAlgorithm: MacAlgorithmSpecType,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-brackets: MacAlgorithmSpecType](./literals.md#macalgorithmspectype) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## VerifyResponseTypeDef
 
@@ -1921,7 +1827,6 @@ class KeyMetadataTypeDef(TypedDict):
     MultiRegion: NotRequired[bool],
     MultiRegionConfiguration: NotRequired[MultiRegionConfigurationTypeDef],  # (10)
     PendingDeletionWindowInDays: NotRequired[int],
-    MacAlgorithms: NotRequired[List[MacAlgorithmSpecType]],  # (11)
 ```
 
 1. See [:material-code-brackets: KeyUsageTypeType](./literals.md#keyusagetypetype) 
@@ -1934,7 +1839,6 @@ class KeyMetadataTypeDef(TypedDict):
 8. See [:material-code-brackets: EncryptionAlgorithmSpecType](./literals.md#encryptionalgorithmspectype) 
 9. See [:material-code-brackets: SigningAlgorithmSpecType](./literals.md#signingalgorithmspectype) 
 10. See [:material-code-braces: MultiRegionConfigurationTypeDef](./type_defs.md#multiregionconfigurationtypedef) 
-11. See [:material-code-brackets: MacAlgorithmSpecType](./literals.md#macalgorithmspectype) 
 ## CreateKeyResponseTypeDef
 
 ```python title="Usage Example"

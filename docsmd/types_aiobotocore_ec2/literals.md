@@ -2241,34 +2241,6 @@ DescribeTransitGatewayPeeringAttachmentsPaginatorName = Literal[
     "describe_transit_gateway_peering_attachments",
 ]
 ```
-## DescribeTransitGatewayPolicyTablesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import DescribeTransitGatewayPolicyTablesPaginatorName
-
-def get_value() -> DescribeTransitGatewayPolicyTablesPaginatorName:
-    return "describe_transit_gateway_policy_tables"
-```
-
-```python title="Definition"
-DescribeTransitGatewayPolicyTablesPaginatorName = Literal[
-    "describe_transit_gateway_policy_tables",
-]
-```
-## DescribeTransitGatewayRouteTableAnnouncementsPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import DescribeTransitGatewayRouteTableAnnouncementsPaginatorName
-
-def get_value() -> DescribeTransitGatewayRouteTableAnnouncementsPaginatorName:
-    return "describe_transit_gateway_route_table_announcements"
-```
-
-```python title="Definition"
-DescribeTransitGatewayRouteTableAnnouncementsPaginatorName = Literal[
-    "describe_transit_gateway_route_table_announcements",
-]
-```
 ## DescribeTransitGatewayRouteTablesPaginatorName
 
 ```python title="Usage Example"
@@ -2570,23 +2542,6 @@ DnsNameStateType = Literal[
     "verified",
 ]
 ```
-## DnsRecordIpTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import DnsRecordIpTypeType
-
-def get_value() -> DnsRecordIpTypeType:
-    return "dualstack"
-```
-
-```python title="Definition"
-DnsRecordIpTypeType = Literal[
-    "dualstack",
-    "ipv4",
-    "ipv6",
-    "service-defined",
-]
-```
 ## DnsSupportValueType
 
 ```python title="Usage Example"
@@ -2615,21 +2570,6 @@ def get_value() -> DomainTypeType:
 DomainTypeType = Literal[
     "standard",
     "vpc",
-]
-```
-## DynamicRoutingValueType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import DynamicRoutingValueType
-
-def get_value() -> DynamicRoutingValueType:
-    return "disable"
-```
-
-```python title="Definition"
-DynamicRoutingValueType = Literal[
-    "disable",
-    "enable",
 ]
 ```
 ## EbsEncryptionSupportType
@@ -3338,20 +3278,6 @@ GetTransitGatewayMulticastDomainAssociationsPaginatorName = Literal[
     "get_transit_gateway_multicast_domain_associations",
 ]
 ```
-## GetTransitGatewayPolicyTableAssociationsPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import GetTransitGatewayPolicyTableAssociationsPaginatorName
-
-def get_value() -> GetTransitGatewayPolicyTableAssociationsPaginatorName:
-    return "get_transit_gateway_policy_table_associations"
-```
-
-```python title="Definition"
-GetTransitGatewayPolicyTableAssociationsPaginatorName = Literal[
-    "get_transit_gateway_policy_table_associations",
-]
-```
 ## GetTransitGatewayPrefixListReferencesPaginatorName
 
 ```python title="Usage Example"
@@ -3535,8 +3461,6 @@ ImageAttributeNameType = Literal[
     "productCodes",
     "ramdisk",
     "sriovNetSupport",
-    "tpmSupport",
-    "uefiData",
 ]
 ```
 ## ImageAvailableWaiterName
@@ -3615,7 +3539,6 @@ def get_value() -> InstanceAttributeNameType:
 ```python title="Definition"
 InstanceAttributeNameType = Literal[
     "blockDeviceMapping",
-    "disableApiStop",
     "disableApiTermination",
     "ebsOptimized",
     "enaSupport",
@@ -3630,21 +3553,6 @@ InstanceAttributeNameType = Literal[
     "sourceDestCheck",
     "sriovNetSupport",
     "userData",
-]
-```
-## InstanceAutoRecoveryStateType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import InstanceAutoRecoveryStateType
-
-def get_value() -> InstanceAutoRecoveryStateType:
-    return "default"
-```
-
-```python title="Definition"
-InstanceAutoRecoveryStateType = Literal[
-    "default",
-    "disabled",
 ]
 ```
 ## InstanceEventWindowStateType
@@ -4004,17 +3912,6 @@ InstanceTypeType = Literal[
     "c5n.large",
     "c5n.metal",
     "c5n.xlarge",
-    "c6a.12xlarge",
-    "c6a.16xlarge",
-    "c6a.24xlarge",
-    "c6a.2xlarge",
-    "c6a.32xlarge",
-    "c6a.48xlarge",
-    "c6a.4xlarge",
-    "c6a.8xlarge",
-    "c6a.large",
-    "c6a.metal",
-    "c6a.xlarge",
     "c6g.12xlarge",
     "c6g.16xlarge",
     "c6g.2xlarge",
@@ -4051,14 +3948,6 @@ InstanceTypeType = Literal[
     "c6i.large",
     "c6i.metal",
     "c6i.xlarge",
-    "c7g.12xlarge",
-    "c7g.16xlarge",
-    "c7g.2xlarge",
-    "c7g.4xlarge",
-    "c7g.8xlarge",
-    "c7g.large",
-    "c7g.medium",
-    "c7g.xlarge",
     "cc1.4xlarge",
     "cc2.8xlarge",
     "cg1.4xlarge",
@@ -4139,14 +4028,6 @@ InstanceTypeType = Literal[
     "i3en.large",
     "i3en.metal",
     "i3en.xlarge",
-    "i4i.16xlarge",
-    "i4i.2xlarge",
-    "i4i.32xlarge",
-    "i4i.4xlarge",
-    "i4i.8xlarge",
-    "i4i.large",
-    "i4i.metal",
-    "i4i.xlarge",
     "im4gn.16xlarge",
     "im4gn.2xlarge",
     "im4gn.4xlarge",
@@ -4248,7 +4129,6 @@ InstanceTypeType = Literal[
     "m6a.4xlarge",
     "m6a.8xlarge",
     "m6a.large",
-    "m6a.metal",
     "m6a.xlarge",
     "m6g.12xlarge",
     "m6g.16xlarge",
@@ -4445,18 +4325,6 @@ InstanceTypeType = Literal[
     "x2gd.medium",
     "x2gd.metal",
     "x2gd.xlarge",
-    "x2idn.16xlarge",
-    "x2idn.24xlarge",
-    "x2idn.32xlarge",
-    "x2idn.metal",
-    "x2iedn.16xlarge",
-    "x2iedn.24xlarge",
-    "x2iedn.2xlarge",
-    "x2iedn.32xlarge",
-    "x2iedn.4xlarge",
-    "x2iedn.8xlarge",
-    "x2iedn.metal",
-    "x2iedn.xlarge",
     "x2iezn.12xlarge",
     "x2iezn.2xlarge",
     "x2iezn.4xlarge",
@@ -4514,22 +4382,6 @@ def get_value() -> InternetGatewayExistsWaiterName:
 ```python title="Definition"
 InternetGatewayExistsWaiterName = Literal[
     "internet_gateway_exists",
-]
-```
-## IpAddressTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import IpAddressTypeType
-
-def get_value() -> IpAddressTypeType:
-    return "dualstack"
-```
-
-```python title="Definition"
-IpAddressTypeType = Literal[
-    "dualstack",
-    "ipv4",
-    "ipv6",
 ]
 ```
 ## IpamAddressHistoryResourceTypeType
@@ -4682,12 +4534,9 @@ IpamPoolStateType = Literal[
     "delete-complete",
     "delete-failed",
     "delete-in-progress",
-    "isolate-complete",
-    "isolate-in-progress",
     "modify-complete",
     "modify-failed",
     "modify-in-progress",
-    "restore-in-progress",
 ]
 ```
 ## IpamResourceTypeType
@@ -4725,12 +4574,9 @@ IpamScopeStateType = Literal[
     "delete-complete",
     "delete-failed",
     "delete-in-progress",
-    "isolate-complete",
-    "isolate-in-progress",
     "modify-complete",
     "modify-failed",
     "modify-in-progress",
-    "restore-in-progress",
 ]
 ```
 ## IpamScopeTypeType
@@ -4765,12 +4611,9 @@ IpamStateType = Literal[
     "delete-complete",
     "delete-failed",
     "delete-in-progress",
-    "isolate-complete",
-    "isolate-in-progress",
     "modify-complete",
     "modify-failed",
     "modify-in-progress",
-    "restore-in-progress",
 ]
 ```
 ## Ipv6SupportValueType
@@ -4786,21 +4629,6 @@ def get_value() -> Ipv6SupportValueType:
 Ipv6SupportValueType = Literal[
     "disable",
     "enable",
-]
-```
-## KeyFormatType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import KeyFormatType
-
-def get_value() -> KeyFormatType:
-    return "pem"
-```
-
-```python title="Definition"
-KeyFormatType = Literal[
-    "pem",
-    "ppk",
 ]
 ```
 ## KeyPairExistsWaiterName
@@ -4830,21 +4658,6 @@ def get_value() -> KeyTypeType:
 KeyTypeType = Literal[
     "ed25519",
     "rsa",
-]
-```
-## LaunchTemplateAutoRecoveryStateType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import LaunchTemplateAutoRecoveryStateType
-
-def get_value() -> LaunchTemplateAutoRecoveryStateType:
-    return "default"
-```
-
-```python title="Definition"
-LaunchTemplateAutoRecoveryStateType = Literal[
-    "default",
-    "disabled",
 ]
 ```
 ## LaunchTemplateErrorCodeType
@@ -5201,20 +5014,6 @@ def get_value() -> NatGatewayAvailableWaiterName:
 ```python title="Definition"
 NatGatewayAvailableWaiterName = Literal[
     "nat_gateway_available",
-]
-```
-## NatGatewayDeletedWaiterName
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import NatGatewayDeletedWaiterName
-
-def get_value() -> NatGatewayDeletedWaiterName:
-    return "nat_gateway_deleted"
-```
-
-```python title="Definition"
-NatGatewayDeletedWaiterName = Literal[
-    "nat_gateway_deleted",
 ]
 ```
 ## NatGatewayStateType
@@ -5873,9 +5672,7 @@ ResourceTypeType = Literal[
     "transit-gateway-attachment",
     "transit-gateway-connect-peer",
     "transit-gateway-multicast-domain",
-    "transit-gateway-policy-table",
     "transit-gateway-route-table",
-    "transit-gateway-route-table-announcement",
     "volume",
     "vpc",
     "vpc-endpoint",
@@ -6020,21 +5817,6 @@ def get_value() -> SelfServicePortalType:
 SelfServicePortalType = Literal[
     "disabled",
     "enabled",
-]
-```
-## ServiceConnectivityTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import ServiceConnectivityTypeType
-
-def get_value() -> ServiceConnectivityTypeType:
-    return "ipv4"
-```
-
-```python title="Definition"
-ServiceConnectivityTypeType = Literal[
-    "ipv4",
-    "ipv6",
 ]
 ```
 ## ServiceStateType
@@ -6211,21 +5993,6 @@ def get_value() -> SpotInstanceTypeType:
 SpotInstanceTypeType = Literal[
     "one-time",
     "persistent",
-]
-```
-## SpreadLevelType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import SpreadLevelType
-
-def get_value() -> SpreadLevelType:
-    return "host"
-```
-
-```python title="Definition"
-SpreadLevelType = Literal[
-    "host",
-    "rack",
 ]
 ```
 ## StateType
@@ -6504,20 +6271,6 @@ TieringOperationStatusType = Literal[
     "temporary-restore-in-progress",
 ]
 ```
-## TpmSupportValuesType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import TpmSupportValuesType
-
-def get_value() -> TpmSupportValuesType:
-    return "v2.0"
-```
-
-```python title="Definition"
-TpmSupportValuesType = Literal[
-    "v2.0",
-]
-```
 ## TrafficDirectionType
 
 ```python title="Usage Example"
@@ -6601,12 +6354,11 @@ TrafficMirrorSessionFieldType = Literal[
 from types_aiobotocore_ec2.literals import TrafficMirrorTargetTypeType
 
 def get_value() -> TrafficMirrorTargetTypeType:
-    return "gateway-load-balancer-endpoint"
+    return "network-interface"
 ```
 
 ```python title="Definition"
 TrafficMirrorTargetTypeType = Literal[
-    "gateway-load-balancer-endpoint",
     "network-interface",
     "network-load-balancer",
 ]
@@ -6743,23 +6495,6 @@ TransitGatewayMulticastDomainStateType = Literal[
     "pending",
 ]
 ```
-## TransitGatewayPolicyTableStateType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import TransitGatewayPolicyTableStateType
-
-def get_value() -> TransitGatewayPolicyTableStateType:
-    return "available"
-```
-
-```python title="Definition"
-TransitGatewayPolicyTableStateType = Literal[
-    "available",
-    "deleted",
-    "deleting",
-    "pending",
-]
-```
 ## TransitGatewayPrefixListReferenceStateType
 
 ```python title="Usage Example"
@@ -6809,40 +6544,6 @@ TransitGatewayRouteStateType = Literal[
     "blackhole",
     "deleted",
     "deleting",
-    "pending",
-]
-```
-## TransitGatewayRouteTableAnnouncementDirectionType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import TransitGatewayRouteTableAnnouncementDirectionType
-
-def get_value() -> TransitGatewayRouteTableAnnouncementDirectionType:
-    return "incoming"
-```
-
-```python title="Definition"
-TransitGatewayRouteTableAnnouncementDirectionType = Literal[
-    "incoming",
-    "outgoing",
-]
-```
-## TransitGatewayRouteTableAnnouncementStateType
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.literals import TransitGatewayRouteTableAnnouncementStateType
-
-def get_value() -> TransitGatewayRouteTableAnnouncementStateType:
-    return "available"
-```
-
-```python title="Definition"
-TransitGatewayRouteTableAnnouncementStateType = Literal[
-    "available",
-    "deleted",
-    "deleting",
-    "failed",
-    "failing",
     "pending",
 ]
 ```
@@ -7493,7 +7194,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -7526,7 +7226,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -7563,7 +7262,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -7577,7 +7275,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -7611,7 +7308,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -7637,7 +7333,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -7681,7 +7376,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -7694,13 +7388,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -7887,8 +7579,6 @@ PaginatorName = Literal[
     "describe_transit_gateway_connects",
     "describe_transit_gateway_multicast_domains",
     "describe_transit_gateway_peering_attachments",
-    "describe_transit_gateway_policy_tables",
-    "describe_transit_gateway_route_table_announcements",
     "describe_transit_gateway_route_tables",
     "describe_transit_gateway_vpc_attachments",
     "describe_transit_gateways",
@@ -7917,7 +7607,6 @@ PaginatorName = Literal[
     "get_spot_placement_scores",
     "get_transit_gateway_attachment_propagations",
     "get_transit_gateway_multicast_domain_associations",
-    "get_transit_gateway_policy_table_associations",
     "get_transit_gateway_prefix_list_references",
     "get_transit_gateway_route_table_associations",
     "get_transit_gateway_route_table_propagations",
@@ -7956,7 +7645,6 @@ WaiterName = Literal[
     "internet_gateway_exists",
     "key_pair_exists",
     "nat_gateway_available",
-    "nat_gateway_deleted",
     "network_interface_available",
     "password_data_available",
     "security_group_exists",

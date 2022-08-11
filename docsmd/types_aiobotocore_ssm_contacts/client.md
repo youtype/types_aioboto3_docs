@@ -139,21 +139,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("ssm-contacts").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_contact
 
 Contacts are either the contacts that Incident Manager engages during an
@@ -708,7 +693,7 @@ parent.list_tags_for_resource(**kwargs)
 
 ### put\_contact\_policy
 
-Adds a resource policy to the specified contact or escalation plan.
+Adds a resource to the specified contact or escalation plan.
 
 Type annotations and code completion for `#!python session.client("ssm-contacts").put_contact_policy` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.put_contact_policy)

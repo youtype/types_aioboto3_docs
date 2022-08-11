@@ -104,77 +104,6 @@ class ResponseMetadataTypeDef(TypedDict):
     RetryAttempts: int,
 ```
 
-## PaginatorConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.type_defs import PaginatorConfigTypeDef
-
-def get_value() -> PaginatorConfigTypeDef:
-    return {
-        "MaxItems": ...,
-    }
-```
-
-```python title="Definition"
-class PaginatorConfigTypeDef(TypedDict):
-    MaxItems: NotRequired[int],
-    PageSize: NotRequired[int],
-    StartingToken: NotRequired[str],
-```
-
-## GetImagesInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.type_defs import GetImagesInputRequestTypeDef
-
-def get_value() -> GetImagesInputRequestTypeDef:
-    return {
-        "ImageSelectorType": ...,
-        "StartTimestamp": ...,
-        "EndTimestamp": ...,
-        "SamplingInterval": ...,
-        "Format": ...,
-    }
-```
-
-```python title="Definition"
-class GetImagesInputRequestTypeDef(TypedDict):
-    ImageSelectorType: ImageSelectorTypeType,  # (1)
-    StartTimestamp: Union[datetime, str],
-    EndTimestamp: Union[datetime, str],
-    SamplingInterval: int,
-    Format: FormatType,  # (2)
-    StreamName: NotRequired[str],
-    StreamARN: NotRequired[str],
-    FormatConfig: NotRequired[Mapping[FormatConfigKeyType, str]],  # (3)
-    WidthPixels: NotRequired[int],
-    HeightPixels: NotRequired[int],
-    MaxResults: NotRequired[int],
-    NextToken: NotRequired[str],
-```
-
-1. See [:material-code-brackets: ImageSelectorTypeType](./literals.md#imageselectortypetype) 
-2. See [:material-code-brackets: FormatType](./literals.md#formattype) 
-3. See [:material-code-brackets: FormatConfigKeyType](./literals.md#formatconfigkeytype) 
-## ImageTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.type_defs import ImageTypeDef
-
-def get_value() -> ImageTypeDef:
-    return {
-        "TimeStamp": ...,
-    }
-```
-
-```python title="Definition"
-class ImageTypeDef(TypedDict):
-    TimeStamp: NotRequired[datetime],
-    Error: NotRequired[ImageErrorType],  # (1)
-    ImageContent: NotRequired[str],
-```
-
-1. See [:material-code-brackets: ImageErrorType](./literals.md#imageerrortype) 
 ## GetMediaForFragmentListInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -208,6 +137,24 @@ def get_value() -> HLSTimestampRangeTypeDef:
 class HLSTimestampRangeTypeDef(TypedDict):
     StartTimestamp: NotRequired[Union[datetime, str]],
     EndTimestamp: NotRequired[Union[datetime, str]],
+```
+
+## PaginatorConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesis_video_archived_media.type_defs import PaginatorConfigTypeDef
+
+def get_value() -> PaginatorConfigTypeDef:
+    return {
+        "MaxItems": ...,
+    }
+```
+
+```python title="Definition"
+class PaginatorConfigTypeDef(TypedDict):
+    MaxItems: NotRequired[int],
+    PageSize: NotRequired[int],
+    StartingToken: NotRequired[str],
 ```
 
 ## ClipFragmentSelectorTypeDef
@@ -370,62 +317,6 @@ class ListFragmentsOutputTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: FragmentTypeDef](./type_defs.md#fragmenttypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetImagesInputGetImagesPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.type_defs import GetImagesInputGetImagesPaginateTypeDef
-
-def get_value() -> GetImagesInputGetImagesPaginateTypeDef:
-    return {
-        "ImageSelectorType": ...,
-        "StartTimestamp": ...,
-        "EndTimestamp": ...,
-        "SamplingInterval": ...,
-        "Format": ...,
-    }
-```
-
-```python title="Definition"
-class GetImagesInputGetImagesPaginateTypeDef(TypedDict):
-    ImageSelectorType: ImageSelectorTypeType,  # (1)
-    StartTimestamp: Union[datetime, str],
-    EndTimestamp: Union[datetime, str],
-    SamplingInterval: int,
-    Format: FormatType,  # (2)
-    StreamName: NotRequired[str],
-    StreamARN: NotRequired[str],
-    FormatConfig: NotRequired[Mapping[FormatConfigKeyType, str]],  # (3)
-    WidthPixels: NotRequired[int],
-    HeightPixels: NotRequired[int],
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (4)
-```
-
-1. See [:material-code-brackets: ImageSelectorTypeType](./literals.md#imageselectortypetype) 
-2. See [:material-code-brackets: FormatType](./literals.md#formattype) 
-3. See [:material-code-brackets: FormatConfigKeyType](./literals.md#formatconfigkeytype) 
-4. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## GetImagesOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.type_defs import GetImagesOutputTypeDef
-
-def get_value() -> GetImagesOutputTypeDef:
-    return {
-        "Images": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetImagesOutputTypeDef(TypedDict):
-    Images: List[ImageTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ImageTypeDef](./type_defs.md#imagetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## HLSFragmentSelectorTypeDef
 

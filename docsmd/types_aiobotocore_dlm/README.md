@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `DLM`.
 
 ### From PyPI with pip
 
@@ -94,7 +89,6 @@ def get_value() -> EventSourceValuesType:
 - [DLMServiceName](./literals.md#dlmservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
-- [RegionName](./literals.md#regionname)
 
 
 

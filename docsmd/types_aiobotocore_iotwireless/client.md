@@ -313,21 +313,6 @@ parent.cancel_multicast_group_session(**kwargs)
 
 1. See [:material-code-braces: CancelMulticastGroupSessionRequestRequestTypeDef](./type_defs.md#cancelmulticastgroupsessionrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("iotwireless").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_destination
 
 Creates a new destination that maps a device message to an AWS IoT rule.
@@ -474,43 +459,6 @@ parent.create_multicast_group(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateMulticastGroupRequestRequestTypeDef](./type_defs.md#createmulticastgrouprequestrequesttypedef) 
-
-### create\_network\_analyzer\_configuration
-
-Creates a new network analyzer configuration.
-
-Type annotations and code completion for `#!python session.client("iotwireless").create_network_analyzer_configuration` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_network_analyzer_configuration)
-
-```python title="Method definition"
-await def create_network_analyzer_configuration(
-    self,
-    *,
-    Name: str,
-    TraceContent: TraceContentTypeDef = ...,  # (1)
-    WirelessDevices: Sequence[str] = ...,
-    WirelessGateways: Sequence[str] = ...,
-    Description: str = ...,
-    Tags: Sequence[TagTypeDef] = ...,  # (2)
-    ClientRequestToken: str = ...,
-) -> CreateNetworkAnalyzerConfigurationResponseTypeDef:  # (3)
-    ...
-```
-
-1. See [:material-code-braces: TraceContentTypeDef](./type_defs.md#tracecontenttypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-braces: CreateNetworkAnalyzerConfigurationResponseTypeDef](./type_defs.md#createnetworkanalyzerconfigurationresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: CreateNetworkAnalyzerConfigurationRequestRequestTypeDef = {  # (1)
-    "Name": ...,
-}
-
-parent.create_network_analyzer_configuration(**kwargs)
-```
-
-1. See [:material-code-braces: CreateNetworkAnalyzerConfigurationRequestRequestTypeDef](./type_defs.md#createnetworkanalyzerconfigurationrequestrequesttypedef) 
 
 ### create\_service\_profile
 
@@ -798,37 +746,9 @@ parent.delete_multicast_group(**kwargs)
 
 1. See [:material-code-braces: DeleteMulticastGroupRequestRequestTypeDef](./type_defs.md#deletemulticastgrouprequestrequesttypedef) 
 
-### delete\_network\_analyzer\_configuration
-
-Deletes a network analyzer configuration.
-
-Type annotations and code completion for `#!python session.client("iotwireless").delete_network_analyzer_configuration` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_network_analyzer_configuration)
-
-```python title="Method definition"
-await def delete_network_analyzer_configuration(
-    self,
-    *,
-    ConfigurationName: str,
-) -> Dict[str, Any]:
-    ...
-```
-
-
-
-```python title="Usage example with kwargs"
-kwargs: DeleteNetworkAnalyzerConfigurationRequestRequestTypeDef = {  # (1)
-    "ConfigurationName": ...,
-}
-
-parent.delete_network_analyzer_configuration(**kwargs)
-```
-
-1. See [:material-code-braces: DeleteNetworkAnalyzerConfigurationRequestRequestTypeDef](./type_defs.md#deletenetworkanalyzerconfigurationrequestrequesttypedef) 
-
 ### delete\_queued\_messages
 
-Remove queued messages from the downlink queue.
+The operation to delete queued messages.
 
 Type annotations and code completion for `#!python session.client("iotwireless").delete_queued_messages` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_queued_messages)
@@ -1280,22 +1200,6 @@ parent.get_device_profile(**kwargs)
 
 1. See [:material-code-braces: GetDeviceProfileRequestRequestTypeDef](./type_defs.md#getdeviceprofilerequestrequesttypedef) 
 
-### get\_event\_configuration\_by\_resource\_types
-
-Get the event configuration based on resource types.
-
-Type annotations and code completion for `#!python session.client("iotwireless").get_event_configuration_by_resource_types` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_event_configuration_by_resource_types)
-
-```python title="Method definition"
-await def get_event_configuration_by_resource_types(
-    self,
-) -> GetEventConfigurationByResourceTypesResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: GetEventConfigurationByResourceTypesResponseTypeDef](./type_defs.md#geteventconfigurationbyresourcetypesresponsetypedef) 
-
 ### get\_fuota\_task
 
 Gets information about a FUOTA task.
@@ -1401,7 +1305,7 @@ parent.get_multicast_group_session(**kwargs)
 
 ### get\_network\_analyzer\_configuration
 
-Get network analyzer configuration.
+Get NetworkAnalyzer configuration.
 
 Type annotations and code completion for `#!python session.client("iotwireless").get_network_analyzer_configuration` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_network_analyzer_configuration)
@@ -1459,70 +1363,6 @@ parent.get_partner_account(**kwargs)
 ```
 
 1. See [:material-code-braces: GetPartnerAccountRequestRequestTypeDef](./type_defs.md#getpartneraccountrequestrequesttypedef) 
-
-### get\_position
-
-Get the position information for a given resource.
-
-Type annotations and code completion for `#!python session.client("iotwireless").get_position` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_position)
-
-```python title="Method definition"
-await def get_position(
-    self,
-    *,
-    ResourceIdentifier: str,
-    ResourceType: PositionResourceTypeType,  # (1)
-) -> GetPositionResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-brackets: PositionResourceTypeType](./literals.md#positionresourcetypetype) 
-2. See [:material-code-braces: GetPositionResponseTypeDef](./type_defs.md#getpositionresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: GetPositionRequestRequestTypeDef = {  # (1)
-    "ResourceIdentifier": ...,
-    "ResourceType": ...,
-}
-
-parent.get_position(**kwargs)
-```
-
-1. See [:material-code-braces: GetPositionRequestRequestTypeDef](./type_defs.md#getpositionrequestrequesttypedef) 
-
-### get\_position\_configuration
-
-Get position configuration for a given resource.
-
-Type annotations and code completion for `#!python session.client("iotwireless").get_position_configuration` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_position_configuration)
-
-```python title="Method definition"
-await def get_position_configuration(
-    self,
-    *,
-    ResourceIdentifier: str,
-    ResourceType: PositionResourceTypeType,  # (1)
-) -> GetPositionConfigurationResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-brackets: PositionResourceTypeType](./literals.md#positionresourcetypetype) 
-2. See [:material-code-braces: GetPositionConfigurationResponseTypeDef](./type_defs.md#getpositionconfigurationresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: GetPositionConfigurationRequestRequestTypeDef = {  # (1)
-    "ResourceIdentifier": ...,
-    "ResourceType": ...,
-}
-
-parent.get_position_configuration(**kwargs)
-```
-
-1. See [:material-code-braces: GetPositionConfigurationRequestRequestTypeDef](./type_defs.md#getpositionconfigurationrequestrequesttypedef) 
 
 ### get\_resource\_event\_configuration
 
@@ -1949,38 +1789,6 @@ parent.list_device_profiles(**kwargs)
 
 1. See [:material-code-braces: ListDeviceProfilesRequestRequestTypeDef](./type_defs.md#listdeviceprofilesrequestrequesttypedef) 
 
-### list\_event\_configurations
-
-List event configurations where at least one event topic has been enabled.
-
-Type annotations and code completion for `#!python session.client("iotwireless").list_event_configurations` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_event_configurations)
-
-```python title="Method definition"
-await def list_event_configurations(
-    self,
-    *,
-    ResourceType: EventNotificationResourceTypeType,  # (1)
-    MaxResults: int = ...,
-    NextToken: str = ...,
-) -> ListEventConfigurationsResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-brackets: EventNotificationResourceTypeType](./literals.md#eventnotificationresourcetypetype) 
-2. See [:material-code-braces: ListEventConfigurationsResponseTypeDef](./type_defs.md#listeventconfigurationsresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListEventConfigurationsRequestRequestTypeDef = {  # (1)
-    "ResourceType": ...,
-}
-
-parent.list_event_configurations(**kwargs)
-```
-
-1. See [:material-code-braces: ListEventConfigurationsRequestRequestTypeDef](./type_defs.md#listeventconfigurationsrequestrequesttypedef) 
-
 ### list\_fuota\_tasks
 
 Lists the FUOTA tasks registered to your AWS account.
@@ -2072,36 +1880,6 @@ parent.list_multicast_groups_by_fuota_task(**kwargs)
 
 1. See [:material-code-braces: ListMulticastGroupsByFuotaTaskRequestRequestTypeDef](./type_defs.md#listmulticastgroupsbyfuotataskrequestrequesttypedef) 
 
-### list\_network\_analyzer\_configurations
-
-Lists the network analyzer configurations.
-
-Type annotations and code completion for `#!python session.client("iotwireless").list_network_analyzer_configurations` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_network_analyzer_configurations)
-
-```python title="Method definition"
-await def list_network_analyzer_configurations(
-    self,
-    *,
-    MaxResults: int = ...,
-    NextToken: str = ...,
-) -> ListNetworkAnalyzerConfigurationsResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: ListNetworkAnalyzerConfigurationsResponseTypeDef](./type_defs.md#listnetworkanalyzerconfigurationsresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListNetworkAnalyzerConfigurationsRequestRequestTypeDef = {  # (1)
-    "MaxResults": ...,
-}
-
-parent.list_network_analyzer_configurations(**kwargs)
-```
-
-1. See [:material-code-braces: ListNetworkAnalyzerConfigurationsRequestRequestTypeDef](./type_defs.md#listnetworkanalyzerconfigurationsrequestrequesttypedef) 
-
 ### list\_partner\_accounts
 
 Lists the partner accounts associated with your AWS account.
@@ -2132,41 +1910,9 @@ parent.list_partner_accounts(**kwargs)
 
 1. See [:material-code-braces: ListPartnerAccountsRequestRequestTypeDef](./type_defs.md#listpartneraccountsrequestrequesttypedef) 
 
-### list\_position\_configurations
-
-List position configurations for a given resource, such as positioning solvers.
-
-Type annotations and code completion for `#!python session.client("iotwireless").list_position_configurations` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_position_configurations)
-
-```python title="Method definition"
-await def list_position_configurations(
-    self,
-    *,
-    ResourceType: PositionResourceTypeType = ...,  # (1)
-    MaxResults: int = ...,
-    NextToken: str = ...,
-) -> ListPositionConfigurationsResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-brackets: PositionResourceTypeType](./literals.md#positionresourcetypetype) 
-2. See [:material-code-braces: ListPositionConfigurationsResponseTypeDef](./type_defs.md#listpositionconfigurationsresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListPositionConfigurationsRequestRequestTypeDef = {  # (1)
-    "ResourceType": ...,
-}
-
-parent.list_position_configurations(**kwargs)
-```
-
-1. See [:material-code-braces: ListPositionConfigurationsRequestRequestTypeDef](./type_defs.md#listpositionconfigurationsrequestrequesttypedef) 
-
 ### list\_queued\_messages
 
-List queued messages in the downlink queue.
+The operation to list queued messages.
 
 Type annotations and code completion for `#!python session.client("iotwireless").list_queued_messages` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_queued_messages)
@@ -2354,40 +2100,6 @@ parent.list_wireless_gateways(**kwargs)
 ```
 
 1. See [:material-code-braces: ListWirelessGatewaysRequestRequestTypeDef](./type_defs.md#listwirelessgatewaysrequestrequesttypedef) 
-
-### put\_position\_configuration
-
-Put position configuration for a given resource.
-
-Type annotations and code completion for `#!python session.client("iotwireless").put_position_configuration` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.put_position_configuration)
-
-```python title="Method definition"
-await def put_position_configuration(
-    self,
-    *,
-    ResourceIdentifier: str,
-    ResourceType: PositionResourceTypeType,  # (1)
-    Solvers: PositionSolverConfigurationsTypeDef = ...,  # (2)
-    Destination: str = ...,
-) -> Dict[str, Any]:
-    ...
-```
-
-1. See [:material-code-brackets: PositionResourceTypeType](./literals.md#positionresourcetypetype) 
-2. See [:material-code-braces: PositionSolverConfigurationsTypeDef](./type_defs.md#positionsolverconfigurationstypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: PutPositionConfigurationRequestRequestTypeDef = {  # (1)
-    "ResourceIdentifier": ...,
-    "ResourceType": ...,
-}
-
-parent.put_position_configuration(**kwargs)
-```
-
-1. See [:material-code-braces: PutPositionConfigurationRequestRequestTypeDef](./type_defs.md#putpositionconfigurationrequestrequesttypedef) 
 
 ### put\_resource\_log\_level
 
@@ -2786,41 +2498,6 @@ parent.update_destination(**kwargs)
 
 1. See [:material-code-braces: UpdateDestinationRequestRequestTypeDef](./type_defs.md#updatedestinationrequestrequesttypedef) 
 
-### update\_event\_configuration\_by\_resource\_types
-
-Update the event configuration based on resource types.
-
-Type annotations and code completion for `#!python session.client("iotwireless").update_event_configuration_by_resource_types` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_event_configuration_by_resource_types)
-
-```python title="Method definition"
-await def update_event_configuration_by_resource_types(
-    self,
-    *,
-    DeviceRegistrationState: DeviceRegistrationStateResourceTypeEventConfigurationTypeDef = ...,  # (1)
-    Proximity: ProximityResourceTypeEventConfigurationTypeDef = ...,  # (2)
-    Join: JoinResourceTypeEventConfigurationTypeDef = ...,  # (3)
-    ConnectionStatus: ConnectionStatusResourceTypeEventConfigurationTypeDef = ...,  # (4)
-) -> Dict[str, Any]:
-    ...
-```
-
-1. See [:material-code-braces: DeviceRegistrationStateResourceTypeEventConfigurationTypeDef](./type_defs.md#deviceregistrationstateresourcetypeeventconfigurationtypedef) 
-2. See [:material-code-braces: ProximityResourceTypeEventConfigurationTypeDef](./type_defs.md#proximityresourcetypeeventconfigurationtypedef) 
-3. See [:material-code-braces: JoinResourceTypeEventConfigurationTypeDef](./type_defs.md#joinresourcetypeeventconfigurationtypedef) 
-4. See [:material-code-braces: ConnectionStatusResourceTypeEventConfigurationTypeDef](./type_defs.md#connectionstatusresourcetypeeventconfigurationtypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: UpdateEventConfigurationByResourceTypesRequestRequestTypeDef = {  # (1)
-    "DeviceRegistrationState": ...,
-}
-
-parent.update_event_configuration_by_resource_types(**kwargs)
-```
-
-1. See [:material-code-braces: UpdateEventConfigurationByResourceTypesRequestRequestTypeDef](./type_defs.md#updateeventconfigurationbyresourcetypesrequestrequesttypedef) 
-
 ### update\_fuota\_task
 
 Updates properties of a FUOTA task.
@@ -2922,7 +2599,7 @@ parent.update_multicast_group(**kwargs)
 
 ### update\_network\_analyzer\_configuration
 
-Update network analyzer configuration.
+Update NetworkAnalyzer configuration.
 
 Type annotations and code completion for `#!python session.client("iotwireless").update_network_analyzer_configuration` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_network_analyzer_configuration)
@@ -2937,7 +2614,6 @@ await def update_network_analyzer_configuration(
     WirelessDevicesToRemove: Sequence[str] = ...,
     WirelessGatewaysToAdd: Sequence[str] = ...,
     WirelessGatewaysToRemove: Sequence[str] = ...,
-    Description: str = ...,
 ) -> Dict[str, Any]:
     ...
 ```
@@ -2989,39 +2665,6 @@ parent.update_partner_account(**kwargs)
 
 1. See [:material-code-braces: UpdatePartnerAccountRequestRequestTypeDef](./type_defs.md#updatepartneraccountrequestrequesttypedef) 
 
-### update\_position
-
-Update the position information of a resource.
-
-Type annotations and code completion for `#!python session.client("iotwireless").update_position` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_position)
-
-```python title="Method definition"
-await def update_position(
-    self,
-    *,
-    ResourceIdentifier: str,
-    ResourceType: PositionResourceTypeType,  # (1)
-    Position: Sequence[float],
-) -> Dict[str, Any]:
-    ...
-```
-
-1. See [:material-code-brackets: PositionResourceTypeType](./literals.md#positionresourcetypetype) 
-
-
-```python title="Usage example with kwargs"
-kwargs: UpdatePositionRequestRequestTypeDef = {  # (1)
-    "ResourceIdentifier": ...,
-    "ResourceType": ...,
-    "Position": ...,
-}
-
-parent.update_position(**kwargs)
-```
-
-1. See [:material-code-braces: UpdatePositionRequestRequestTypeDef](./type_defs.md#updatepositionrequestrequesttypedef) 
-
 ### update\_resource\_event\_configuration
 
 Update the event configuration for a particular resource identifier.
@@ -3038,8 +2681,6 @@ await def update_resource_event_configuration(
     PartnerType: EventNotificationPartnerTypeType = ...,  # (2)
     DeviceRegistrationState: DeviceRegistrationStateEventConfigurationTypeDef = ...,  # (3)
     Proximity: ProximityEventConfigurationTypeDef = ...,  # (4)
-    Join: JoinEventConfigurationTypeDef = ...,  # (5)
-    ConnectionStatus: ConnectionStatusEventConfigurationTypeDef = ...,  # (6)
 ) -> Dict[str, Any]:
     ...
 ```
@@ -3048,8 +2689,6 @@ await def update_resource_event_configuration(
 2. See [:material-code-brackets: EventNotificationPartnerTypeType](./literals.md#eventnotificationpartnertypetype) 
 3. See [:material-code-braces: DeviceRegistrationStateEventConfigurationTypeDef](./type_defs.md#deviceregistrationstateeventconfigurationtypedef) 
 4. See [:material-code-braces: ProximityEventConfigurationTypeDef](./type_defs.md#proximityeventconfigurationtypedef) 
-5. See [:material-code-braces: JoinEventConfigurationTypeDef](./type_defs.md#joineventconfigurationtypedef) 
-6. See [:material-code-braces: ConnectionStatusEventConfigurationTypeDef](./type_defs.md#connectionstatuseventconfigurationtypedef) 
 
 
 ```python title="Usage example with kwargs"

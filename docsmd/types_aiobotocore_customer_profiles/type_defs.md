@@ -1699,7 +1699,6 @@ class AutoMergingTypeDef(TypedDict):
     Enabled: bool,
     Consolidation: NotRequired[ConsolidationTypeDef],  # (1)
     ConflictResolution: NotRequired[ConflictResolutionTypeDef],  # (2)
-    MinAllowedConfidenceScoreForMerging: NotRequired[float],
 ```
 
 1. See [:material-code-braces: ConsolidationTypeDef](./type_defs.md#consolidationtypedef) 
@@ -1722,7 +1721,6 @@ class GetAutoMergingPreviewRequestRequestTypeDef(TypedDict):
     DomainName: str,
     Consolidation: ConsolidationTypeDef,  # (1)
     ConflictResolution: ConflictResolutionTypeDef,  # (2)
-    MinAllowedConfidenceScoreForMerging: NotRequired[float],
 ```
 
 1. See [:material-code-braces: ConsolidationTypeDef](./type_defs.md#consolidationtypedef) 

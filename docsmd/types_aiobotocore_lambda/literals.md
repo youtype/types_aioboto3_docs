@@ -151,21 +151,6 @@ FunctionUpdatedWaiterName = Literal[
     "function_updated",
 ]
 ```
-## FunctionUrlAuthTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_lambda.literals import FunctionUrlAuthTypeType
-
-def get_value() -> FunctionUrlAuthTypeType:
-    return "AWS_IAM"
-```
-
-```python title="Definition"
-FunctionUrlAuthTypeType = Literal[
-    "AWS_IAM",
-    "NONE",
-]
-```
 ## FunctionVersionType
 
 ```python title="Usage Example"
@@ -289,20 +274,6 @@ def get_value() -> ListFunctionEventInvokeConfigsPaginatorName:
 ```python title="Definition"
 ListFunctionEventInvokeConfigsPaginatorName = Literal[
     "list_function_event_invoke_configs",
-]
-```
-## ListFunctionUrlConfigsPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_lambda.literals import ListFunctionUrlConfigsPaginatorName
-
-def get_value() -> ListFunctionUrlConfigsPaginatorName:
-    return "list_function_url_configs"
-```
-
-```python title="Definition"
-ListFunctionUrlConfigsPaginatorName = Literal[
-    "list_function_url_configs",
 ]
 ```
 ## ListFunctionsByCodeSigningConfigPaginatorName
@@ -459,7 +430,6 @@ RuntimeType = Literal[
     "nodejs10.x",
     "nodejs12.x",
     "nodejs14.x",
-    "nodejs16.x",
     "nodejs4.3",
     "nodejs4.3-edge",
     "nodejs6.10",
@@ -615,7 +585,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -648,7 +617,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -685,7 +653,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -699,7 +666,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -733,7 +699,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -759,7 +724,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -803,7 +767,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -816,13 +779,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -929,7 +890,6 @@ PaginatorName = Literal[
     "list_code_signing_configs",
     "list_event_source_mappings",
     "list_function_event_invoke_configs",
-    "list_function_url_configs",
     "list_functions",
     "list_functions_by_code_signing_config",
     "list_layer_versions",

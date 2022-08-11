@@ -115,25 +115,9 @@ parent.cancel_ingestion(**kwargs)
 
 1. See [:material-code-braces: CancelIngestionRequestRequestTypeDef](./type_defs.md#cancelingestionrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("quicksight").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_account\_customization
 
-Creates Amazon QuickSight customizations for the current Amazon Web Services
-Region.
+Creates Amazon QuickSight customizations the current Amazon Web Services Region.
 
 Type annotations and code completion for `#!python session.client("quicksight").create_account_customization` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_account_customization)
@@ -165,55 +149,6 @@ parent.create_account_customization(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateAccountCustomizationRequestRequestTypeDef](./type_defs.md#createaccountcustomizationrequestrequesttypedef) 
-
-### create\_account\_subscription
-
-Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
-
-Type annotations and code completion for `#!python session.client("quicksight").create_account_subscription` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_account_subscription)
-
-```python title="Method definition"
-await def create_account_subscription(
-    self,
-    *,
-    Edition: EditionType,  # (1)
-    AuthenticationMethod: AuthenticationMethodOptionType,  # (2)
-    AwsAccountId: str,
-    AccountName: str,
-    NotificationEmail: str,
-    ActiveDirectoryName: str = ...,
-    Realm: str = ...,
-    DirectoryId: str = ...,
-    AdminGroup: Sequence[str] = ...,
-    AuthorGroup: Sequence[str] = ...,
-    ReaderGroup: Sequence[str] = ...,
-    FirstName: str = ...,
-    LastName: str = ...,
-    EmailAddress: str = ...,
-    ContactNumber: str = ...,
-) -> CreateAccountSubscriptionResponseTypeDef:  # (3)
-    ...
-```
-
-1. See [:material-code-brackets: EditionType](./literals.md#editiontype) 
-2. See [:material-code-brackets: AuthenticationMethodOptionType](./literals.md#authenticationmethodoptiontype) 
-3. See [:material-code-braces: CreateAccountSubscriptionResponseTypeDef](./type_defs.md#createaccountsubscriptionresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: CreateAccountSubscriptionRequestRequestTypeDef = {  # (1)
-    "Edition": ...,
-    "AuthenticationMethod": ...,
-    "AwsAccountId": ...,
-    "AccountName": ...,
-    "NotificationEmail": ...,
-}
-
-parent.create_account_subscription(**kwargs)
-```
-
-1. See [:material-code-braces: CreateAccountSubscriptionRequestRequestTypeDef](./type_defs.md#createaccountsubscriptionrequestrequesttypedef) 
 
 ### create\_analysis
 
@@ -1434,36 +1369,6 @@ parent.describe_account_settings(**kwargs)
 
 1. See [:material-code-braces: DescribeAccountSettingsRequestRequestTypeDef](./type_defs.md#describeaccountsettingsrequestrequesttypedef) 
 
-### describe\_account\_subscription
-
-Use the DescribeAccountSubscription operation to receive a description of a
-Amazon QuickSight account's subscription.
-
-Type annotations and code completion for `#!python session.client("quicksight").describe_account_subscription` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_account_subscription)
-
-```python title="Method definition"
-await def describe_account_subscription(
-    self,
-    *,
-    AwsAccountId: str,
-) -> DescribeAccountSubscriptionResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DescribeAccountSubscriptionResponseTypeDef](./type_defs.md#describeaccountsubscriptionresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeAccountSubscriptionRequestRequestTypeDef = {  # (1)
-    "AwsAccountId": ...,
-}
-
-parent.describe_account_subscription(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeAccountSubscriptionRequestRequestTypeDef](./type_defs.md#describeaccountsubscriptionrequestrequesttypedef) 
-
 ### describe\_analysis
 
 Provides a summary of the metadata for an analysis.
@@ -1840,42 +1745,6 @@ parent.describe_group(**kwargs)
 
 1. See [:material-code-braces: DescribeGroupRequestRequestTypeDef](./type_defs.md#describegrouprequestrequesttypedef) 
 
-### describe\_group\_membership
-
-Use the `DescribeGroupMembership` operation to determine if a user is a member
-of the specified group.
-
-Type annotations and code completion for `#!python session.client("quicksight").describe_group_membership` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_group_membership)
-
-```python title="Method definition"
-await def describe_group_membership(
-    self,
-    *,
-    MemberName: str,
-    GroupName: str,
-    AwsAccountId: str,
-    Namespace: str,
-) -> DescribeGroupMembershipResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DescribeGroupMembershipResponseTypeDef](./type_defs.md#describegroupmembershipresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeGroupMembershipRequestRequestTypeDef = {  # (1)
-    "MemberName": ...,
-    "GroupName": ...,
-    "AwsAccountId": ...,
-    "Namespace": ...,
-}
-
-parent.describe_group_membership(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeGroupMembershipRequestRequestTypeDef](./type_defs.md#describegroupmembershiprequestrequesttypedef) 
-
 ### describe\_iam\_policy\_assignment
 
 Describes an existing IAM policy assignment, as specified by the assignment
@@ -2248,7 +2117,6 @@ await def generate_embed_url_for_anonymous_user(
     ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfigurationTypeDef,  # (1)
     SessionLifetimeInMinutes: int = ...,
     SessionTags: Sequence[SessionTagTypeDef] = ...,  # (2)
-    AllowedDomains: Sequence[str] = ...,
 ) -> GenerateEmbedUrlForAnonymousUserResponseTypeDef:  # (3)
     ...
 ```
@@ -2287,7 +2155,6 @@ await def generate_embed_url_for_registered_user(
     UserArn: str,
     ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfigurationTypeDef,  # (1)
     SessionLifetimeInMinutes: int = ...,
-    AllowedDomains: Sequence[str] = ...,
 ) -> GenerateEmbedUrlForRegisteredUserResponseTypeDef:  # (2)
     ...
 ```
@@ -2329,8 +2196,8 @@ await def generate_presigned_url(
 
 ### get\_dashboard\_embed\_url
 
-Generates a temporary session URL and authorization code that you can use to
-embed an Amazon QuickSight read-only dashboard in your website or application.
+Generates a session URL and authorization code that you can use to embed an
+Amazon Amazon QuickSight read-only dashboard in your web server code.
 
 Type annotations and code completion for `#!python session.client("quicksight").get_dashboard_embed_url` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.get_dashboard_embed_url)
@@ -3304,43 +3171,6 @@ parent.search_folders(**kwargs)
 
 1. See [:material-code-braces: SearchFoldersRequestRequestTypeDef](./type_defs.md#searchfoldersrequestrequesttypedef) 
 
-### search\_groups
-
-Use the `SearchGroups` operation to search groups in a specified Amazon
-QuickSight namespace using the supplied filters.
-
-Type annotations and code completion for `#!python session.client("quicksight").search_groups` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.search_groups)
-
-```python title="Method definition"
-await def search_groups(
-    self,
-    *,
-    AwsAccountId: str,
-    Namespace: str,
-    Filters: Sequence[GroupSearchFilterTypeDef],  # (1)
-    NextToken: str = ...,
-    MaxResults: int = ...,
-) -> SearchGroupsResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: GroupSearchFilterTypeDef](./type_defs.md#groupsearchfiltertypedef) 
-2. See [:material-code-braces: SearchGroupsResponseTypeDef](./type_defs.md#searchgroupsresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: SearchGroupsRequestRequestTypeDef = {  # (1)
-    "AwsAccountId": ...,
-    "Namespace": ...,
-    "Filters": ...,
-}
-
-parent.search_groups(**kwargs)
-```
-
-1. See [:material-code-braces: SearchGroupsRequestRequestTypeDef](./type_defs.md#searchgroupsrequestrequesttypedef) 
-
 ### tag\_resource
 
 Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight
@@ -3407,8 +3237,7 @@ parent.untag_resource(**kwargs)
 
 ### update\_account\_customization
 
-Updates Amazon QuickSight customizations for the current Amazon Web Services
-Region.
+Updates Amazon QuickSight customizations the current Amazon Web Services Region.
 
 Type annotations and code completion for `#!python session.client("quicksight").update_account_customization` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_account_customization)
@@ -3993,37 +3822,6 @@ parent.update_ip_restriction(**kwargs)
 ```
 
 1. See [:material-code-braces: UpdateIpRestrictionRequestRequestTypeDef](./type_defs.md#updateiprestrictionrequestrequesttypedef) 
-
-### update\_public\_sharing\_settings
-
-Use the `UpdatePublicSharingSettings` operation to turn on or turn off the
-public sharing settings of an Amazon QuickSight dashboard.
-
-Type annotations and code completion for `#!python session.client("quicksight").update_public_sharing_settings` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_public_sharing_settings)
-
-```python title="Method definition"
-await def update_public_sharing_settings(
-    self,
-    *,
-    AwsAccountId: str,
-    PublicSharingEnabled: bool = ...,
-) -> UpdatePublicSharingSettingsResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: UpdatePublicSharingSettingsResponseTypeDef](./type_defs.md#updatepublicsharingsettingsresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: UpdatePublicSharingSettingsRequestRequestTypeDef = {  # (1)
-    "AwsAccountId": ...,
-}
-
-parent.update_public_sharing_settings(**kwargs)
-```
-
-1. See [:material-code-braces: UpdatePublicSharingSettingsRequestRequestTypeDef](./type_defs.md#updatepublicsharingsettingsrequestrequesttypedef) 
 
 ### update\_template
 

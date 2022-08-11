@@ -102,20 +102,6 @@ FeedbackValueType = Literal[
     "USEFUL",
 ]
 ```
-## GroupingTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_application_insights.literals import GroupingTypeType
-
-def get_value() -> GroupingTypeType:
-    return "ACCOUNT_BASED"
-```
-
-```python title="Definition"
-GroupingTypeType = Literal[
-    "ACCOUNT_BASED",
-]
-```
 ## LogFilterType
 
 ```python title="Usage Example"
@@ -159,7 +145,6 @@ def get_value() -> SeverityLevelType:
 ```python title="Definition"
 SeverityLevelType = Literal[
     "High",
-    "Informative",
     "Low",
     "Medium",
 ]
@@ -273,7 +258,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -306,7 +290,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -343,7 +326,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -357,7 +339,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -391,7 +372,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -417,7 +397,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -461,7 +440,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -474,13 +452,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

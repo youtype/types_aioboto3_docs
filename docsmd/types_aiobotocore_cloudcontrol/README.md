@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `CloudControlApi`.
 
 ### From PyPI with pip
 
@@ -64,23 +59,6 @@ async with session.client("cloudcontrol") as client:
 ```
 
 
-## Paginators
-
-Type annotations and code completion for
-[paginators](./paginators.md)
-from `#!python session.client("cloudcontrol").get_paginator("...")`.
-
-```python title="Usage example"
-from types_aiobotocore_cloudcontrol.paginator import ListResourceRequestsPaginator
-
-def get_list_resource_requests_paginator() -> ListResourceRequestsPaginator:
-    return client.get_paginator("list_resource_requests"))
-```
-
-- [ListResourceRequestsPaginator](./paginators.md#listresourcerequestspaginator)
-- [ListResourcesPaginator](./paginators.md#listresourcespaginator)
-
-
 
 
 ## Waiters
@@ -115,15 +93,12 @@ def get_value() -> HandlerErrorCodeType:
 ```
 
 - [HandlerErrorCodeType](./literals.md#handlererrorcodetype)
-- [ListResourceRequestsPaginatorName](./literals.md#listresourcerequestspaginatorname)
-- [ListResourcesPaginatorName](./literals.md#listresourcespaginatorname)
 - [OperationStatusType](./literals.md#operationstatustype)
 - [OperationType](./literals.md#operationtype)
 - [ResourceRequestSuccessWaiterName](./literals.md#resourcerequestsuccesswaitername)
 - [CloudControlApiServiceName](./literals.md#cloudcontrolapiservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
-- [PaginatorName](./literals.md#paginatorname)
 - [WaiterName](./literals.md#waitername)
 - [RegionName](./literals.md#regionname)
 
@@ -152,7 +127,6 @@ def get_value() -> CancelResourceRequestInputRequestTypeDef:
 - [ResourceDescriptionTypeDef](./type_defs.md#resourcedescriptiontypedef)
 - [GetResourceRequestStatusInputRequestTypeDef](./type_defs.md#getresourcerequeststatusinputrequesttypedef)
 - [WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef)
-- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ResourceRequestStatusFilterTypeDef](./type_defs.md#resourcerequeststatusfiltertypedef)
 - [ListResourcesInputRequestTypeDef](./type_defs.md#listresourcesinputrequesttypedef)
 - [UpdateResourceInputRequestTypeDef](./type_defs.md#updateresourceinputrequesttypedef)
@@ -165,7 +139,5 @@ def get_value() -> CancelResourceRequestInputRequestTypeDef:
 - [GetResourceOutputTypeDef](./type_defs.md#getresourceoutputtypedef)
 - [ListResourcesOutputTypeDef](./type_defs.md#listresourcesoutputtypedef)
 - [GetResourceRequestStatusInputResourceRequestSuccessWaitTypeDef](./type_defs.md#getresourcerequeststatusinputresourcerequestsuccesswaittypedef)
-- [ListResourcesInputListResourcesPaginateTypeDef](./type_defs.md#listresourcesinputlistresourcespaginatetypedef)
-- [ListResourceRequestsInputListResourceRequestsPaginateTypeDef](./type_defs.md#listresourcerequestsinputlistresourcerequestspaginatetypedef)
 - [ListResourceRequestsInputRequestTypeDef](./type_defs.md#listresourcerequestsinputrequesttypedef)
 

@@ -106,21 +106,6 @@ parent.cancel_rotate_secret(**kwargs)
 
 1. See [:material-code-braces: CancelRotateSecretRequestRequestTypeDef](./type_defs.md#cancelrotatesecretrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("secretsmanager").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_secret
 
 Creates a new secret.
@@ -368,7 +353,7 @@ parent.get_secret_value(**kwargs)
 
 ### list\_secret\_version\_ids
 
-Lists the versions of a secret.
+Lists the versions for a secret.
 
 Type annotations and code completion for `#!python session.client("secretsmanager").list_secret_version_ids` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.list_secret_version_ids)

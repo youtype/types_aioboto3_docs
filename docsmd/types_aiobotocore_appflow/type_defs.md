@@ -96,6 +96,26 @@ class AuthParameterTypeDef(TypedDict):
     connectorSuppliedValues: NotRequired[List[str]],
 ```
 
+## OAuth2DefaultsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_appflow.type_defs import OAuth2DefaultsTypeDef
+
+def get_value() -> OAuth2DefaultsTypeDef:
+    return {
+        "oauthScopes": ...,
+    }
+```
+
+```python title="Definition"
+class OAuth2DefaultsTypeDef(TypedDict):
+    oauthScopes: NotRequired[List[str]],
+    tokenUrls: NotRequired[List[str]],
+    authCodeUrls: NotRequired[List[str]],
+    oauth2GrantTypesSupported: NotRequired[List[OAuth2GrantTypeType]],  # (1)
+```
+
+1. See [:material-code-brackets: OAuth2GrantTypeType](./literals.md#oauth2granttypetype) 
 ## BasicAuthCredentialsTypeDef
 
 ```python title="Usage Example"
@@ -843,7 +863,6 @@ def get_value() -> OAuth2PropertiesTypeDef:
 class OAuth2PropertiesTypeDef(TypedDict):
     tokenUrl: str,
     oAuth2GrantType: OAuth2GrantTypeType,  # (1)
-    tokenUrlCustomProperties: NotRequired[Mapping[str, str]],
 ```
 
 1. See [:material-code-brackets: OAuth2GrantTypeType](./literals.md#oauth2granttypetype) 
@@ -1246,29 +1265,6 @@ class MarketoSourcePropertiesTypeDef(TypedDict):
     object: str,
 ```
 
-## OAuth2CustomParameterTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_appflow.type_defs import OAuth2CustomParameterTypeDef
-
-def get_value() -> OAuth2CustomParameterTypeDef:
-    return {
-        "key": ...,
-    }
-```
-
-```python title="Definition"
-class OAuth2CustomParameterTypeDef(TypedDict):
-    key: NotRequired[str],
-    isRequired: NotRequired[bool],
-    label: NotRequired[str],
-    description: NotRequired[str],
-    isSensitiveField: NotRequired[bool],
-    connectorSuppliedValues: NotRequired[List[str]],
-    type: NotRequired[OAuth2CustomPropTypeType],  # (1)
-```
-
-1. See [:material-code-brackets: OAuth2CustomPropTypeType](./literals.md#oauth2customproptypetype) 
 ## OAuthPropertiesTypeDef
 
 ```python title="Usage Example"
@@ -1396,7 +1392,6 @@ class ScheduledTriggerPropertiesTypeDef(TypedDict):
     timezone: NotRequired[str],
     scheduleOffset: NotRequired[int],
     firstExecutionFrom: NotRequired[Union[datetime, str]],
-    flowErrorDeactivationThreshold: NotRequired[int],
 ```
 
 1. See [:material-code-brackets: DataPullModeType](./literals.md#datapullmodetype) 
@@ -2318,28 +2313,6 @@ class FieldTypeDetailsTypeDef(TypedDict):
 1. See [:material-code-brackets: OperatorType](./literals.md#operatortype) 
 2. See [:material-code-braces: RangeTypeDef](./type_defs.md#rangetypedef) 
 3. See [:material-code-braces: RangeTypeDef](./type_defs.md#rangetypedef) 
-## OAuth2DefaultsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_appflow.type_defs import OAuth2DefaultsTypeDef
-
-def get_value() -> OAuth2DefaultsTypeDef:
-    return {
-        "oauthScopes": ...,
-    }
-```
-
-```python title="Definition"
-class OAuth2DefaultsTypeDef(TypedDict):
-    oauthScopes: NotRequired[List[str]],
-    tokenUrls: NotRequired[List[str]],
-    authCodeUrls: NotRequired[List[str]],
-    oauth2GrantTypesSupported: NotRequired[List[OAuth2GrantTypeType]],  # (1)
-    oauth2CustomProperties: NotRequired[List[OAuth2CustomParameterTypeDef]],  # (2)
-```
-
-1. See [:material-code-brackets: OAuth2GrantTypeType](./literals.md#oauth2granttypetype) 
-2. See [:material-code-braces: OAuth2CustomParameterTypeDef](./type_defs.md#oauth2customparametertypedef) 
 ## SAPODataConnectorProfilePropertiesTypeDef
 
 ```python title="Usage Example"
@@ -2382,7 +2355,6 @@ class S3OutputFormatConfigTypeDef(TypedDict):
     fileType: NotRequired[FileTypeType],  # (1)
     prefixConfig: NotRequired[PrefixConfigTypeDef],  # (2)
     aggregationConfig: NotRequired[AggregationConfigTypeDef],  # (3)
-    preserveSourceDataTyping: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: FileTypeType](./literals.md#filetypetype) 
@@ -2468,6 +2440,29 @@ class TriggerPropertiesTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ScheduledTriggerPropertiesTypeDef](./type_defs.md#scheduledtriggerpropertiestypedef) 
+## AuthenticationConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_appflow.type_defs import AuthenticationConfigTypeDef
+
+def get_value() -> AuthenticationConfigTypeDef:
+    return {
+        "isBasicAuthSupported": ...,
+    }
+```
+
+```python title="Definition"
+class AuthenticationConfigTypeDef(TypedDict):
+    isBasicAuthSupported: NotRequired[bool],
+    isApiKeyAuthSupported: NotRequired[bool],
+    isOAuth2Supported: NotRequired[bool],
+    isCustomAuthSupported: NotRequired[bool],
+    oAuth2Defaults: NotRequired[OAuth2DefaultsTypeDef],  # (1)
+    customAuthConfigs: NotRequired[List[CustomAuthConfigTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: OAuth2DefaultsTypeDef](./type_defs.md#oauth2defaultstypedef) 
+2. See [:material-code-braces: CustomAuthConfigTypeDef](./type_defs.md#customauthconfigtypedef) 
 ## CustomConnectorProfileCredentialsTypeDef
 
 ```python title="Usage Example"
@@ -2596,29 +2591,6 @@ class SupportedFieldTypeDetailsTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: FieldTypeDetailsTypeDef](./type_defs.md#fieldtypedetailstypedef) 
-## AuthenticationConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_appflow.type_defs import AuthenticationConfigTypeDef
-
-def get_value() -> AuthenticationConfigTypeDef:
-    return {
-        "isBasicAuthSupported": ...,
-    }
-```
-
-```python title="Definition"
-class AuthenticationConfigTypeDef(TypedDict):
-    isBasicAuthSupported: NotRequired[bool],
-    isApiKeyAuthSupported: NotRequired[bool],
-    isOAuth2Supported: NotRequired[bool],
-    isCustomAuthSupported: NotRequired[bool],
-    oAuth2Defaults: NotRequired[OAuth2DefaultsTypeDef],  # (1)
-    customAuthConfigs: NotRequired[List[CustomAuthConfigTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: OAuth2DefaultsTypeDef](./type_defs.md#oauth2defaultstypedef) 
-2. See [:material-code-braces: CustomAuthConfigTypeDef](./type_defs.md#customauthconfigtypedef) 
 ## ConnectorProfilePropertiesTypeDef
 
 ```python title="Usage Example"
@@ -2770,6 +2742,58 @@ class TriggerConfigTypeDef(TypedDict):
 
 1. See [:material-code-brackets: TriggerTypeType](./literals.md#triggertypetype) 
 2. See [:material-code-braces: TriggerPropertiesTypeDef](./type_defs.md#triggerpropertiestypedef) 
+## ConnectorConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_appflow.type_defs import ConnectorConfigurationTypeDef
+
+def get_value() -> ConnectorConfigurationTypeDef:
+    return {
+        "canUseAsSource": ...,
+    }
+```
+
+```python title="Definition"
+class ConnectorConfigurationTypeDef(TypedDict):
+    canUseAsSource: NotRequired[bool],
+    canUseAsDestination: NotRequired[bool],
+    supportedDestinationConnectors: NotRequired[List[ConnectorTypeType]],  # (1)
+    supportedSchedulingFrequencies: NotRequired[List[ScheduleFrequencyTypeType]],  # (2)
+    isPrivateLinkEnabled: NotRequired[bool],
+    isPrivateLinkEndpointUrlRequired: NotRequired[bool],
+    supportedTriggerTypes: NotRequired[List[TriggerTypeType]],  # (3)
+    connectorMetadata: NotRequired[ConnectorMetadataTypeDef],  # (4)
+    connectorType: NotRequired[ConnectorTypeType],  # (5)
+    connectorLabel: NotRequired[str],
+    connectorDescription: NotRequired[str],
+    connectorOwner: NotRequired[str],
+    connectorName: NotRequired[str],
+    connectorVersion: NotRequired[str],
+    connectorArn: NotRequired[str],
+    connectorModes: NotRequired[List[str]],
+    authenticationConfig: NotRequired[AuthenticationConfigTypeDef],  # (6)
+    connectorRuntimeSettings: NotRequired[List[ConnectorRuntimeSettingTypeDef]],  # (7)
+    supportedApiVersions: NotRequired[List[str]],
+    supportedOperators: NotRequired[List[OperatorsType]],  # (8)
+    supportedWriteOperations: NotRequired[List[WriteOperationTypeType]],  # (9)
+    connectorProvisioningType: NotRequired[ConnectorProvisioningTypeType],  # (10)
+    connectorProvisioningConfig: NotRequired[ConnectorProvisioningConfigTypeDef],  # (11)
+    logoURL: NotRequired[str],
+    registeredAt: NotRequired[datetime],
+    registeredBy: NotRequired[str],
+```
+
+1. See [:material-code-brackets: ConnectorTypeType](./literals.md#connectortypetype) 
+2. See [:material-code-brackets: ScheduleFrequencyTypeType](./literals.md#schedulefrequencytypetype) 
+3. See [:material-code-brackets: TriggerTypeType](./literals.md#triggertypetype) 
+4. See [:material-code-braces: ConnectorMetadataTypeDef](./type_defs.md#connectormetadatatypedef) 
+5. See [:material-code-brackets: ConnectorTypeType](./literals.md#connectortypetype) 
+6. See [:material-code-braces: AuthenticationConfigTypeDef](./type_defs.md#authenticationconfigtypedef) 
+7. See [:material-code-braces: ConnectorRuntimeSettingTypeDef](./type_defs.md#connectorruntimesettingtypedef) 
+8. See [:material-code-brackets: OperatorsType](./literals.md#operatorstype) 
+9. See [:material-code-brackets: WriteOperationTypeType](./literals.md#writeoperationtypetype) 
+10. See [:material-code-brackets: ConnectorProvisioningTypeType](./literals.md#connectorprovisioningtypetype) 
+11. See [:material-code-braces: ConnectorProvisioningConfigTypeDef](./type_defs.md#connectorprovisioningconfigtypedef) 
 ## ConnectorProfileCredentialsTypeDef
 
 ```python title="Usage Example"
@@ -2872,58 +2896,6 @@ class ConnectorEntityFieldTypeDef(TypedDict):
 1. See [:material-code-braces: SupportedFieldTypeDetailsTypeDef](./type_defs.md#supportedfieldtypedetailstypedef) 
 2. See [:material-code-braces: SourceFieldPropertiesTypeDef](./type_defs.md#sourcefieldpropertiestypedef) 
 3. See [:material-code-braces: DestinationFieldPropertiesTypeDef](./type_defs.md#destinationfieldpropertiestypedef) 
-## ConnectorConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_appflow.type_defs import ConnectorConfigurationTypeDef
-
-def get_value() -> ConnectorConfigurationTypeDef:
-    return {
-        "canUseAsSource": ...,
-    }
-```
-
-```python title="Definition"
-class ConnectorConfigurationTypeDef(TypedDict):
-    canUseAsSource: NotRequired[bool],
-    canUseAsDestination: NotRequired[bool],
-    supportedDestinationConnectors: NotRequired[List[ConnectorTypeType]],  # (1)
-    supportedSchedulingFrequencies: NotRequired[List[ScheduleFrequencyTypeType]],  # (2)
-    isPrivateLinkEnabled: NotRequired[bool],
-    isPrivateLinkEndpointUrlRequired: NotRequired[bool],
-    supportedTriggerTypes: NotRequired[List[TriggerTypeType]],  # (3)
-    connectorMetadata: NotRequired[ConnectorMetadataTypeDef],  # (4)
-    connectorType: NotRequired[ConnectorTypeType],  # (5)
-    connectorLabel: NotRequired[str],
-    connectorDescription: NotRequired[str],
-    connectorOwner: NotRequired[str],
-    connectorName: NotRequired[str],
-    connectorVersion: NotRequired[str],
-    connectorArn: NotRequired[str],
-    connectorModes: NotRequired[List[str]],
-    authenticationConfig: NotRequired[AuthenticationConfigTypeDef],  # (6)
-    connectorRuntimeSettings: NotRequired[List[ConnectorRuntimeSettingTypeDef]],  # (7)
-    supportedApiVersions: NotRequired[List[str]],
-    supportedOperators: NotRequired[List[OperatorsType]],  # (8)
-    supportedWriteOperations: NotRequired[List[WriteOperationTypeType]],  # (9)
-    connectorProvisioningType: NotRequired[ConnectorProvisioningTypeType],  # (10)
-    connectorProvisioningConfig: NotRequired[ConnectorProvisioningConfigTypeDef],  # (11)
-    logoURL: NotRequired[str],
-    registeredAt: NotRequired[datetime],
-    registeredBy: NotRequired[str],
-```
-
-1. See [:material-code-brackets: ConnectorTypeType](./literals.md#connectortypetype) 
-2. See [:material-code-brackets: ScheduleFrequencyTypeType](./literals.md#schedulefrequencytypetype) 
-3. See [:material-code-brackets: TriggerTypeType](./literals.md#triggertypetype) 
-4. See [:material-code-braces: ConnectorMetadataTypeDef](./type_defs.md#connectormetadatatypedef) 
-5. See [:material-code-brackets: ConnectorTypeType](./literals.md#connectortypetype) 
-6. See [:material-code-braces: AuthenticationConfigTypeDef](./type_defs.md#authenticationconfigtypedef) 
-7. See [:material-code-braces: ConnectorRuntimeSettingTypeDef](./type_defs.md#connectorruntimesettingtypedef) 
-8. See [:material-code-brackets: OperatorsType](./literals.md#operatorstype) 
-9. See [:material-code-brackets: WriteOperationTypeType](./literals.md#writeoperationtypetype) 
-10. See [:material-code-brackets: ConnectorProvisioningTypeType](./literals.md#connectorprovisioningtypetype) 
-11. See [:material-code-braces: ConnectorProvisioningConfigTypeDef](./type_defs.md#connectorprovisioningconfigtypedef) 
 ## ConnectorProfileTypeDef
 
 ```python title="Usage Example"
@@ -3017,46 +2989,6 @@ class SourceFlowConfigTypeDef(TypedDict):
 1. See [:material-code-brackets: ConnectorTypeType](./literals.md#connectortypetype) 
 2. See [:material-code-braces: SourceConnectorPropertiesTypeDef](./type_defs.md#sourceconnectorpropertiestypedef) 
 3. See [:material-code-braces: IncrementalPullConfigTypeDef](./type_defs.md#incrementalpullconfigtypedef) 
-## ConnectorProfileConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_appflow.type_defs import ConnectorProfileConfigTypeDef
-
-def get_value() -> ConnectorProfileConfigTypeDef:
-    return {
-        "connectorProfileProperties": ...,
-        "connectorProfileCredentials": ...,
-    }
-```
-
-```python title="Definition"
-class ConnectorProfileConfigTypeDef(TypedDict):
-    connectorProfileProperties: ConnectorProfilePropertiesTypeDef,  # (1)
-    connectorProfileCredentials: ConnectorProfileCredentialsTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ConnectorProfilePropertiesTypeDef](./type_defs.md#connectorprofilepropertiestypedef) 
-2. See [:material-code-braces: ConnectorProfileCredentialsTypeDef](./type_defs.md#connectorprofilecredentialstypedef) 
-## DescribeConnectorEntityResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_appflow.type_defs import DescribeConnectorEntityResponseTypeDef
-
-def get_value() -> DescribeConnectorEntityResponseTypeDef:
-    return {
-        "connectorEntityFields": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeConnectorEntityResponseTypeDef(TypedDict):
-    connectorEntityFields: List[ConnectorEntityFieldTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ConnectorEntityFieldTypeDef](./type_defs.md#connectorentityfieldtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeConnectorResponseTypeDef
 
 ```python title="Usage Example"
@@ -3102,6 +3034,46 @@ class DescribeConnectorsResponseTypeDef(TypedDict):
 1. See [:material-code-brackets: ConnectorTypeType](./literals.md#connectortypetype) [:material-code-braces: ConnectorConfigurationTypeDef](./type_defs.md#connectorconfigurationtypedef) 
 2. See [:material-code-braces: ConnectorDetailTypeDef](./type_defs.md#connectordetailtypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ConnectorProfileConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_appflow.type_defs import ConnectorProfileConfigTypeDef
+
+def get_value() -> ConnectorProfileConfigTypeDef:
+    return {
+        "connectorProfileProperties": ...,
+        "connectorProfileCredentials": ...,
+    }
+```
+
+```python title="Definition"
+class ConnectorProfileConfigTypeDef(TypedDict):
+    connectorProfileProperties: ConnectorProfilePropertiesTypeDef,  # (1)
+    connectorProfileCredentials: ConnectorProfileCredentialsTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ConnectorProfilePropertiesTypeDef](./type_defs.md#connectorprofilepropertiestypedef) 
+2. See [:material-code-braces: ConnectorProfileCredentialsTypeDef](./type_defs.md#connectorprofilecredentialstypedef) 
+## DescribeConnectorEntityResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_appflow.type_defs import DescribeConnectorEntityResponseTypeDef
+
+def get_value() -> DescribeConnectorEntityResponseTypeDef:
+    return {
+        "connectorEntityFields": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeConnectorEntityResponseTypeDef(TypedDict):
+    connectorEntityFields: List[ConnectorEntityFieldTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ConnectorEntityFieldTypeDef](./type_defs.md#connectorentityfieldtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeConnectorProfilesResponseTypeDef
 
 ```python title="Usage Example"

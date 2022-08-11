@@ -21,22 +21,6 @@ AdditionalResultAttributeValueTypeType = Literal[
     "TEXT_WITH_HIGHLIGHTS_VALUE",
 ]
 ```
-## AlfrescoEntityType
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.literals import AlfrescoEntityType
-
-def get_value() -> AlfrescoEntityType:
-    return "blog"
-```
-
-```python title="Definition"
-AlfrescoEntityType = Literal[
-    "blog",
-    "documentLibrary",
-    "wiki",
-]
-```
 ## ConditionOperatorType
 
 ```python title="Usage Example"
@@ -226,22 +210,17 @@ DataSourceSyncJobStatusType = Literal[
 from types_aiobotocore_kendra.literals import DataSourceTypeType
 
 def get_value() -> DataSourceTypeType:
-    return "ALFRESCO"
+    return "CONFLUENCE"
 ```
 
 ```python title="Definition"
 DataSourceTypeType = Literal[
-    "ALFRESCO",
-    "BOX",
     "CONFLUENCE",
     "CUSTOM",
     "DATABASE",
     "FSX",
-    "GITHUB",
     "GOOGLEDRIVE",
-    "JIRA",
     "ONEDRIVE",
-    "QUIP",
     "S3",
     "SALESFORCE",
     "SERVICENOW",
@@ -479,22 +458,6 @@ IntervalType = Literal[
     "THIS_WEEK",
     "TWO_MONTHS_AGO",
     "TWO_WEEKS_AGO",
-]
-```
-## IssueSubEntityType
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.literals import IssueSubEntityType
-
-def get_value() -> IssueSubEntityType:
-    return "ATTACHMENTS"
-```
-
-```python title="Definition"
-IssueSubEntityType = Literal[
-    "ATTACHMENTS",
-    "COMMENTS",
-    "WORKLOGS",
 ]
 ```
 ## KeyLocationType
@@ -880,21 +843,6 @@ ThesaurusStatusType = Literal[
     "UPDATING",
 ]
 ```
-## TypeType
-
-```python title="Usage Example"
-from types_aiobotocore_kendra.literals import TypeType
-
-def get_value() -> TypeType:
-    return "ON_PREMISE"
-```
-
-```python title="Definition"
-TypeType = Literal[
-    "ON_PREMISE",
-    "SAAS",
-]
-```
 ## UserContextPolicyType
 
 ```python title="Usage Example"
@@ -1016,7 +964,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1049,7 +996,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -1086,7 +1032,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1100,7 +1045,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1134,7 +1078,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1160,7 +1103,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1204,7 +1146,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -1217,13 +1158,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

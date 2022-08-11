@@ -82,21 +82,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("rekognition").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### compare\_faces
 
 Compares a face in the *source* input image with each of the 100 largest faces
@@ -270,7 +255,7 @@ parent.create_project_version(**kwargs)
 ### create\_stream\_processor
 
 Creates an Amazon Rekognition stream processor that you can use to detect and
-recognize faces or to detect labels in a streaming video.
+recognize faces in a streaming video.
 
 Type annotations and code completion for `#!python session.client("rekognition").create_stream_processor` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.create_stream_processor)
@@ -285,21 +270,14 @@ await def create_stream_processor(
     Settings: StreamProcessorSettingsTypeDef,  # (3)
     RoleArn: str,
     Tags: Mapping[str, str] = ...,
-    NotificationChannel: StreamProcessorNotificationChannelTypeDef = ...,  # (4)
-    KmsKeyId: str = ...,
-    RegionsOfInterest: Sequence[RegionOfInterestTypeDef] = ...,  # (5)
-    DataSharingPreference: StreamProcessorDataSharingPreferenceTypeDef = ...,  # (6)
-) -> CreateStreamProcessorResponseTypeDef:  # (7)
+) -> CreateStreamProcessorResponseTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: StreamProcessorInputTypeDef](./type_defs.md#streamprocessorinputtypedef) 
 2. See [:material-code-braces: StreamProcessorOutputTypeDef](./type_defs.md#streamprocessoroutputtypedef) 
 3. See [:material-code-braces: StreamProcessorSettingsTypeDef](./type_defs.md#streamprocessorsettingstypedef) 
-4. See [:material-code-braces: StreamProcessorNotificationChannelTypeDef](./type_defs.md#streamprocessornotificationchanneltypedef) 
-5. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
-6. See [:material-code-braces: StreamProcessorDataSharingPreferenceTypeDef](./type_defs.md#streamprocessordatasharingpreferencetypedef) 
-7. See [:material-code-braces: CreateStreamProcessorResponseTypeDef](./type_defs.md#createstreamprocessorresponsetypedef) 
+4. See [:material-code-braces: CreateStreamProcessorResponseTypeDef](./type_defs.md#createstreamprocessorresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1805,15 +1783,10 @@ await def start_stream_processor(
     self,
     *,
     Name: str,
-    StartSelector: StreamProcessingStartSelectorTypeDef = ...,  # (1)
-    StopSelector: StreamProcessingStopSelectorTypeDef = ...,  # (2)
-) -> StartStreamProcessorResponseTypeDef:  # (3)
+) -> Dict[str, Any]:
     ...
 ```
 
-1. See [:material-code-braces: StreamProcessingStartSelectorTypeDef](./type_defs.md#streamprocessingstartselectortypedef) 
-2. See [:material-code-braces: StreamProcessingStopSelectorTypeDef](./type_defs.md#streamprocessingstopselectortypedef) 
-3. See [:material-code-braces: StartStreamProcessorResponseTypeDef](./type_defs.md#startstreamprocessorresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2011,42 +1984,6 @@ parent.update_dataset_entries(**kwargs)
 ```
 
 1. See [:material-code-braces: UpdateDatasetEntriesRequestRequestTypeDef](./type_defs.md#updatedatasetentriesrequestrequesttypedef) 
-
-### update\_stream\_processor
-
-Allows you to update a stream processor.
-
-Type annotations and code completion for `#!python session.client("rekognition").update_stream_processor` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.update_stream_processor)
-
-```python title="Method definition"
-await def update_stream_processor(
-    self,
-    *,
-    Name: str,
-    SettingsForUpdate: StreamProcessorSettingsForUpdateTypeDef = ...,  # (1)
-    RegionsOfInterestForUpdate: Sequence[RegionOfInterestTypeDef] = ...,  # (2)
-    DataSharingPreferenceForUpdate: StreamProcessorDataSharingPreferenceTypeDef = ...,  # (3)
-    ParametersToDelete: Sequence[StreamProcessorParameterToDeleteType] = ...,  # (4)
-) -> Dict[str, Any]:
-    ...
-```
-
-1. See [:material-code-braces: StreamProcessorSettingsForUpdateTypeDef](./type_defs.md#streamprocessorsettingsforupdatetypedef) 
-2. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
-3. See [:material-code-braces: StreamProcessorDataSharingPreferenceTypeDef](./type_defs.md#streamprocessordatasharingpreferencetypedef) 
-4. See [:material-code-brackets: StreamProcessorParameterToDeleteType](./literals.md#streamprocessorparametertodeletetype) 
-
-
-```python title="Usage example with kwargs"
-kwargs: UpdateStreamProcessorRequestRequestTypeDef = {  # (1)
-    "Name": ...,
-}
-
-parent.update_stream_processor(**kwargs)
-```
-
-1. See [:material-code-braces: UpdateStreamProcessorRequestRequestTypeDef](./type_defs.md#updatestreamprocessorrequestrequesttypedef) 
 
 ### \_\_aenter\_\_
 

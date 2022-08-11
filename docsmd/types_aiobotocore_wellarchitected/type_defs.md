@@ -7,23 +7,6 @@
     Auto-generated documentation for [WellArchitected](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected)
     type annotations stubs module [types-aiobotocore-wellarchitected](https://pypi.org/project/types-aiobotocore-wellarchitected/).
 
-## ChoiceContentTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_wellarchitected.type_defs import ChoiceContentTypeDef
-
-def get_value() -> ChoiceContentTypeDef:
-    return {
-        "DisplayText": ...,
-    }
-```
-
-```python title="Definition"
-class ChoiceContentTypeDef(TypedDict):
-    DisplayText: NotRequired[str],
-    Url: NotRequired[str],
-```
-
 ## ChoiceAnswerSummaryTypeDef
 
 ```python title="Usage Example"
@@ -81,6 +64,23 @@ def get_value() -> AssociateLensesInputRequestTypeDef:
 class AssociateLensesInputRequestTypeDef(TypedDict):
     WorkloadId: str,
     LensAliases: Sequence[str],
+```
+
+## ChoiceContentTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_wellarchitected.type_defs import ChoiceContentTypeDef
+
+def get_value() -> ChoiceContentTypeDef:
+    return {
+        "DisplayText": ...,
+    }
+```
+
+```python title="Definition"
+class ChoiceContentTypeDef(TypedDict):
+    DisplayText: NotRequired[str],
+    Url: NotRequired[str],
 ```
 
 ## ChoiceImprovementPlanTypeDef
@@ -216,6 +216,7 @@ def get_value() -> CreateWorkloadInputRequestTypeDef:
         "WorkloadName": ...,
         "Description": ...,
         "Environment": ...,
+        "ReviewOwner": ...,
         "Lenses": ...,
         "ClientRequestToken": ...,
     }
@@ -226,6 +227,7 @@ class CreateWorkloadInputRequestTypeDef(TypedDict):
     WorkloadName: str,
     Description: str,
     Environment: WorkloadEnvironmentType,  # (1)
+    ReviewOwner: str,
     Lenses: Sequence[str],
     ClientRequestToken: str,
     AccountIds: NotRequired[Sequence[str]],
@@ -233,7 +235,6 @@ class CreateWorkloadInputRequestTypeDef(TypedDict):
     NonAwsRegions: NotRequired[Sequence[str]],
     PillarPriorities: NotRequired[Sequence[str]],
     ArchitecturalDesign: NotRequired[str],
-    ReviewOwner: NotRequired[str],
     IndustryType: NotRequired[str],
     Industry: NotRequired[str],
     Notes: NotRequired[str],
@@ -435,7 +436,6 @@ class LensTypeDef(TypedDict):
     Description: NotRequired[str],
     Owner: NotRequired[str],
     ShareInvitationId: NotRequired[str],
-    Tags: NotRequired[Dict[str, str]],
 ```
 
 ## GetLensReviewInputRequestTypeDef
@@ -667,7 +667,6 @@ class LensShareSummaryTypeDef(TypedDict):
     ShareId: NotRequired[str],
     SharedWith: NotRequired[str],
     Status: NotRequired[ShareStatusType],  # (1)
-    StatusMessage: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: ShareStatusType](./literals.md#sharestatustype) 
@@ -799,10 +798,8 @@ class ListLensSharesInputRequestTypeDef(TypedDict):
     SharedWithPrefix: NotRequired[str],
     NextToken: NotRequired[str],
     MaxResults: NotRequired[int],
-    Status: NotRequired[ShareStatusType],  # (1)
 ```
 
-1. See [:material-code-brackets: ShareStatusType](./literals.md#sharestatustype) 
 ## ListLensesInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -941,10 +938,8 @@ class ListWorkloadSharesInputRequestTypeDef(TypedDict):
     SharedWithPrefix: NotRequired[str],
     NextToken: NotRequired[str],
     MaxResults: NotRequired[int],
-    Status: NotRequired[ShareStatusType],  # (1)
 ```
 
-1. See [:material-code-brackets: ShareStatusType](./literals.md#sharestatustype) 
 ## WorkloadShareSummaryTypeDef
 
 ```python title="Usage Example"
@@ -962,7 +957,6 @@ class WorkloadShareSummaryTypeDef(TypedDict):
     SharedWith: NotRequired[str],
     PermissionType: NotRequired[PermissionTypeType],  # (1)
     Status: NotRequired[ShareStatusType],  # (2)
-    StatusMessage: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: PermissionTypeType](./literals.md#permissiontypetype) 
@@ -1086,23 +1080,6 @@ class UntagResourceInputRequestTypeDef(TypedDict):
     TagKeys: Sequence[str],
 ```
 
-## UpdateGlobalSettingsInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_wellarchitected.type_defs import UpdateGlobalSettingsInputRequestTypeDef
-
-def get_value() -> UpdateGlobalSettingsInputRequestTypeDef:
-    return {
-        "OrganizationSharingStatus": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateGlobalSettingsInputRequestTypeDef(TypedDict):
-    OrganizationSharingStatus: NotRequired[OrganizationSharingStatusType],  # (1)
-```
-
-1. See [:material-code-brackets: OrganizationSharingStatusType](./literals.md#organizationsharingstatustype) 
 ## UpdateLensReviewInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -1240,24 +1217,27 @@ class UpgradeLensReviewInputRequestTypeDef(TypedDict):
     ClientRequestToken: NotRequired[str],
 ```
 
-## AdditionalResourcesTypeDef
+## ChoiceTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_wellarchitected.type_defs import AdditionalResourcesTypeDef
+from types_aiobotocore_wellarchitected.type_defs import ChoiceTypeDef
 
-def get_value() -> AdditionalResourcesTypeDef:
+def get_value() -> ChoiceTypeDef:
     return {
-        "Type": ...,
+        "ChoiceId": ...,
     }
 ```
 
 ```python title="Definition"
-class AdditionalResourcesTypeDef(TypedDict):
-    Type: NotRequired[AdditionalResourceTypeType],  # (1)
-    Content: NotRequired[List[ChoiceContentTypeDef]],  # (2)
+class ChoiceTypeDef(TypedDict):
+    ChoiceId: NotRequired[str],
+    Title: NotRequired[str],
+    Description: NotRequired[str],
+    HelpfulResource: NotRequired[ChoiceContentTypeDef],  # (1)
+    ImprovementPlan: NotRequired[ChoiceContentTypeDef],  # (1)
 ```
 
-1. See [:material-code-brackets: AdditionalResourceTypeType](./literals.md#additionalresourcetypetype) 
+1. See [:material-code-braces: ChoiceContentTypeDef](./type_defs.md#choicecontenttypedef) 
 2. See [:material-code-braces: ChoiceContentTypeDef](./type_defs.md#choicecontenttypedef) 
 ## ImprovementSummaryTypeDef
 
@@ -1861,30 +1841,67 @@ class UpdateWorkloadShareOutputTypeDef(TypedDict):
 
 1. See [:material-code-braces: WorkloadShareTypeDef](./type_defs.md#workloadsharetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ChoiceTypeDef
+## AnswerSummaryTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_wellarchitected.type_defs import ChoiceTypeDef
+from types_aiobotocore_wellarchitected.type_defs import AnswerSummaryTypeDef
 
-def get_value() -> ChoiceTypeDef:
+def get_value() -> AnswerSummaryTypeDef:
     return {
-        "ChoiceId": ...,
+        "QuestionId": ...,
     }
 ```
 
 ```python title="Definition"
-class ChoiceTypeDef(TypedDict):
-    ChoiceId: NotRequired[str],
-    Title: NotRequired[str],
-    Description: NotRequired[str],
-    HelpfulResource: NotRequired[ChoiceContentTypeDef],  # (1)
-    ImprovementPlan: NotRequired[ChoiceContentTypeDef],  # (1)
-    AdditionalResources: NotRequired[List[AdditionalResourcesTypeDef]],  # (3)
+class AnswerSummaryTypeDef(TypedDict):
+    QuestionId: NotRequired[str],
+    PillarId: NotRequired[str],
+    QuestionTitle: NotRequired[str],
+    Choices: NotRequired[List[ChoiceTypeDef]],  # (1)
+    SelectedChoices: NotRequired[List[str]],
+    ChoiceAnswerSummaries: NotRequired[List[ChoiceAnswerSummaryTypeDef]],  # (2)
+    IsApplicable: NotRequired[bool],
+    Risk: NotRequired[RiskType],  # (3)
+    Reason: NotRequired[AnswerReasonType],  # (4)
 ```
 
-1. See [:material-code-braces: ChoiceContentTypeDef](./type_defs.md#choicecontenttypedef) 
-2. See [:material-code-braces: ChoiceContentTypeDef](./type_defs.md#choicecontenttypedef) 
-3. See [:material-code-braces: AdditionalResourcesTypeDef](./type_defs.md#additionalresourcestypedef) 
+1. See [:material-code-braces: ChoiceTypeDef](./type_defs.md#choicetypedef) 
+2. See [:material-code-braces: ChoiceAnswerSummaryTypeDef](./type_defs.md#choiceanswersummarytypedef) 
+3. See [:material-code-brackets: RiskType](./literals.md#risktype) 
+4. See [:material-code-brackets: AnswerReasonType](./literals.md#answerreasontype) 
+## AnswerTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_wellarchitected.type_defs import AnswerTypeDef
+
+def get_value() -> AnswerTypeDef:
+    return {
+        "QuestionId": ...,
+    }
+```
+
+```python title="Definition"
+class AnswerTypeDef(TypedDict):
+    QuestionId: NotRequired[str],
+    PillarId: NotRequired[str],
+    QuestionTitle: NotRequired[str],
+    QuestionDescription: NotRequired[str],
+    ImprovementPlanUrl: NotRequired[str],
+    HelpfulResourceUrl: NotRequired[str],
+    HelpfulResourceDisplayText: NotRequired[str],
+    Choices: NotRequired[List[ChoiceTypeDef]],  # (1)
+    SelectedChoices: NotRequired[List[str]],
+    ChoiceAnswers: NotRequired[List[ChoiceAnswerTypeDef]],  # (2)
+    IsApplicable: NotRequired[bool],
+    Risk: NotRequired[RiskType],  # (3)
+    Notes: NotRequired[str],
+    Reason: NotRequired[AnswerReasonType],  # (4)
+```
+
+1. See [:material-code-braces: ChoiceTypeDef](./type_defs.md#choicetypedef) 
+2. See [:material-code-braces: ChoiceAnswerTypeDef](./type_defs.md#choiceanswertypedef) 
+3. See [:material-code-brackets: RiskType](./literals.md#risktype) 
+4. See [:material-code-brackets: AnswerReasonType](./literals.md#answerreasontype) 
 ## ListLensReviewImprovementsOutputTypeDef
 
 ```python title="Usage Example"
@@ -2046,97 +2063,6 @@ class VersionDifferencesTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PillarDifferenceTypeDef](./type_defs.md#pillardifferencetypedef) 
-## AnswerSummaryTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_wellarchitected.type_defs import AnswerSummaryTypeDef
-
-def get_value() -> AnswerSummaryTypeDef:
-    return {
-        "QuestionId": ...,
-    }
-```
-
-```python title="Definition"
-class AnswerSummaryTypeDef(TypedDict):
-    QuestionId: NotRequired[str],
-    PillarId: NotRequired[str],
-    QuestionTitle: NotRequired[str],
-    Choices: NotRequired[List[ChoiceTypeDef]],  # (1)
-    SelectedChoices: NotRequired[List[str]],
-    ChoiceAnswerSummaries: NotRequired[List[ChoiceAnswerSummaryTypeDef]],  # (2)
-    IsApplicable: NotRequired[bool],
-    Risk: NotRequired[RiskType],  # (3)
-    Reason: NotRequired[AnswerReasonType],  # (4)
-```
-
-1. See [:material-code-braces: ChoiceTypeDef](./type_defs.md#choicetypedef) 
-2. See [:material-code-braces: ChoiceAnswerSummaryTypeDef](./type_defs.md#choiceanswersummarytypedef) 
-3. See [:material-code-brackets: RiskType](./literals.md#risktype) 
-4. See [:material-code-brackets: AnswerReasonType](./literals.md#answerreasontype) 
-## AnswerTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_wellarchitected.type_defs import AnswerTypeDef
-
-def get_value() -> AnswerTypeDef:
-    return {
-        "QuestionId": ...,
-    }
-```
-
-```python title="Definition"
-class AnswerTypeDef(TypedDict):
-    QuestionId: NotRequired[str],
-    PillarId: NotRequired[str],
-    QuestionTitle: NotRequired[str],
-    QuestionDescription: NotRequired[str],
-    ImprovementPlanUrl: NotRequired[str],
-    HelpfulResourceUrl: NotRequired[str],
-    HelpfulResourceDisplayText: NotRequired[str],
-    Choices: NotRequired[List[ChoiceTypeDef]],  # (1)
-    SelectedChoices: NotRequired[List[str]],
-    ChoiceAnswers: NotRequired[List[ChoiceAnswerTypeDef]],  # (2)
-    IsApplicable: NotRequired[bool],
-    Risk: NotRequired[RiskType],  # (3)
-    Notes: NotRequired[str],
-    Reason: NotRequired[AnswerReasonType],  # (4)
-```
-
-1. See [:material-code-braces: ChoiceTypeDef](./type_defs.md#choicetypedef) 
-2. See [:material-code-braces: ChoiceAnswerTypeDef](./type_defs.md#choiceanswertypedef) 
-3. See [:material-code-brackets: RiskType](./literals.md#risktype) 
-4. See [:material-code-brackets: AnswerReasonType](./literals.md#answerreasontype) 
-## GetLensVersionDifferenceOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_wellarchitected.type_defs import GetLensVersionDifferenceOutputTypeDef
-
-def get_value() -> GetLensVersionDifferenceOutputTypeDef:
-    return {
-        "LensAlias": ...,
-        "LensArn": ...,
-        "BaseLensVersion": ...,
-        "TargetLensVersion": ...,
-        "LatestLensVersion": ...,
-        "VersionDifferences": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetLensVersionDifferenceOutputTypeDef(TypedDict):
-    LensAlias: str,
-    LensArn: str,
-    BaseLensVersion: str,
-    TargetLensVersion: str,
-    LatestLensVersion: str,
-    VersionDifferences: VersionDifferencesTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: VersionDifferencesTypeDef](./type_defs.md#versiondifferencestypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListAnswersOutputTypeDef
 
 ```python title="Usage Example"
@@ -2220,4 +2146,34 @@ class UpdateAnswerOutputTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: AnswerTypeDef](./type_defs.md#answertypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetLensVersionDifferenceOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_wellarchitected.type_defs import GetLensVersionDifferenceOutputTypeDef
+
+def get_value() -> GetLensVersionDifferenceOutputTypeDef:
+    return {
+        "LensAlias": ...,
+        "LensArn": ...,
+        "BaseLensVersion": ...,
+        "TargetLensVersion": ...,
+        "LatestLensVersion": ...,
+        "VersionDifferences": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetLensVersionDifferenceOutputTypeDef(TypedDict):
+    LensAlias: str,
+    LensArn: str,
+    BaseLensVersion: str,
+    TargetLensVersion: str,
+    LatestLensVersion: str,
+    VersionDifferences: VersionDifferencesTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: VersionDifferencesTypeDef](./type_defs.md#versiondifferencestypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 

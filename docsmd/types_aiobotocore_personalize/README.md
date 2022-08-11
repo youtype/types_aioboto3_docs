@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Personalize`.
 
 ### From PyPI with pip
 
@@ -162,11 +157,15 @@ def get_value() -> AlgorithmImageTypeDef:
 - [CampaignSummaryTypeDef](./type_defs.md#campaignsummarytypedef)
 - [CategoricalHyperParameterRangeTypeDef](./type_defs.md#categoricalhyperparameterrangetypedef)
 - [ContinuousHyperParameterRangeTypeDef](./type_defs.md#continuoushyperparameterrangetypedef)
-- [TagTypeDef](./type_defs.md#tagtypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [CreateDatasetGroupRequestRequestTypeDef](./type_defs.md#createdatasetgrouprequestrequesttypedef)
 - [DataSourceTypeDef](./type_defs.md#datasourcetypedef)
+- [CreateDatasetRequestRequestTypeDef](./type_defs.md#createdatasetrequestrequesttypedef)
+- [CreateEventTrackerRequestRequestTypeDef](./type_defs.md#createeventtrackerrequestrequesttypedef)
+- [CreateFilterRequestRequestTypeDef](./type_defs.md#createfilterrequestrequesttypedef)
 - [RecommenderConfigTypeDef](./type_defs.md#recommenderconfigtypedef)
 - [CreateSchemaRequestRequestTypeDef](./type_defs.md#createschemarequestrequesttypedef)
+- [CreateSolutionVersionRequestRequestTypeDef](./type_defs.md#createsolutionversionrequestrequesttypedef)
 - [DatasetExportJobSummaryTypeDef](./type_defs.md#datasetexportjobsummarytypedef)
 - [DatasetGroupSummaryTypeDef](./type_defs.md#datasetgroupsummarytypedef)
 - [DatasetGroupTypeDef](./type_defs.md#datasetgrouptypedef)
@@ -230,27 +229,17 @@ def get_value() -> AlgorithmImageTypeDef:
 - [SolutionVersionSummaryTypeDef](./type_defs.md#solutionversionsummarytypedef)
 - [ListSolutionsRequestRequestTypeDef](./type_defs.md#listsolutionsrequestrequesttypedef)
 - [SolutionSummaryTypeDef](./type_defs.md#solutionsummarytypedef)
-- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [OptimizationObjectiveTypeDef](./type_defs.md#optimizationobjectivetypedef)
 - [TunedHPOParamsTypeDef](./type_defs.md#tunedhpoparamstypedef)
-- [StartRecommenderRequestRequestTypeDef](./type_defs.md#startrecommenderrequestrequesttypedef)
-- [StopRecommenderRequestRequestTypeDef](./type_defs.md#stoprecommenderrequestrequesttypedef)
 - [StopSolutionVersionCreationRequestRequestTypeDef](./type_defs.md#stopsolutionversioncreationrequestrequesttypedef)
-- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [BatchInferenceJobInputTypeDef](./type_defs.md#batchinferencejobinputtypedef)
 - [BatchInferenceJobOutputTypeDef](./type_defs.md#batchinferencejoboutputtypedef)
 - [BatchSegmentJobInputTypeDef](./type_defs.md#batchsegmentjobinputtypedef)
 - [BatchSegmentJobOutputTypeDef](./type_defs.md#batchsegmentjoboutputtypedef)
 - [DatasetExportJobOutputTypeDef](./type_defs.md#datasetexportjoboutputtypedef)
 - [CampaignUpdateSummaryTypeDef](./type_defs.md#campaignupdatesummarytypedef)
-- [UpdateCampaignRequestRequestTypeDef](./type_defs.md#updatecampaignrequestrequesttypedef)
 - [CreateCampaignRequestRequestTypeDef](./type_defs.md#createcampaignrequestrequesttypedef)
-- [CreateDatasetGroupRequestRequestTypeDef](./type_defs.md#createdatasetgrouprequestrequesttypedef)
-- [CreateDatasetRequestRequestTypeDef](./type_defs.md#createdatasetrequestrequesttypedef)
-- [CreateEventTrackerRequestRequestTypeDef](./type_defs.md#createeventtrackerrequestrequesttypedef)
-- [CreateFilterRequestRequestTypeDef](./type_defs.md#createfilterrequestrequesttypedef)
-- [CreateSolutionVersionRequestRequestTypeDef](./type_defs.md#createsolutionversionrequestrequesttypedef)
-- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [UpdateCampaignRequestRequestTypeDef](./type_defs.md#updatecampaignrequestrequesttypedef)
 - [CreateBatchInferenceJobResponseTypeDef](./type_defs.md#createbatchinferencejobresponsetypedef)
 - [CreateBatchSegmentJobResponseTypeDef](./type_defs.md#createbatchsegmentjobresponsetypedef)
 - [CreateCampaignResponseTypeDef](./type_defs.md#createcampaignresponsetypedef)
@@ -269,9 +258,6 @@ def get_value() -> AlgorithmImageTypeDef:
 - [ListBatchInferenceJobsResponseTypeDef](./type_defs.md#listbatchinferencejobsresponsetypedef)
 - [ListBatchSegmentJobsResponseTypeDef](./type_defs.md#listbatchsegmentjobsresponsetypedef)
 - [ListCampaignsResponseTypeDef](./type_defs.md#listcampaignsresponsetypedef)
-- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
-- [StartRecommenderResponseTypeDef](./type_defs.md#startrecommenderresponsetypedef)
-- [StopRecommenderResponseTypeDef](./type_defs.md#stoprecommenderresponsetypedef)
 - [UpdateCampaignResponseTypeDef](./type_defs.md#updatecampaignresponsetypedef)
 - [UpdateRecommenderResponseTypeDef](./type_defs.md#updaterecommenderresponsetypedef)
 - [CreateDatasetImportJobRequestRequestTypeDef](./type_defs.md#createdatasetimportjobrequestrequesttypedef)

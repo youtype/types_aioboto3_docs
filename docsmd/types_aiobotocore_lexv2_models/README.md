@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `LexModelsV2`.
 
 ### From PyPI with pip
 
@@ -146,7 +141,6 @@ def get_value() -> AggregatedUtterancesFilterNameType:
 - [IntentFilterOperatorType](./literals.md#intentfilteroperatortype)
 - [IntentSortAttributeType](./literals.md#intentsortattributetype)
 - [MergeStrategyType](./literals.md#mergestrategytype)
-- [MessageSelectionStrategyType](./literals.md#messageselectionstrategytype)
 - [ObfuscationSettingTypeType](./literals.md#obfuscationsettingtypetype)
 - [SearchOrderType](./literals.md#searchordertype)
 - [SlotConstraintType](./literals.md#slotconstrainttype)

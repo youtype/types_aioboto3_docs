@@ -75,21 +75,6 @@ CharLengthSemanticsType = Literal[
     "default",
 ]
 ```
-## CollectorStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_dms.literals import CollectorStatusType
-
-def get_value() -> CollectorStatusType:
-    return "ACTIVE"
-```
-
-```python title="Definition"
-CollectorStatusType = Literal[
-    "ACTIVE",
-    "UNREGISTERED",
-]
-```
 ## CompressionTypeValueType
 
 ```python title="Usage Example"
@@ -760,22 +745,6 @@ TestConnectionSucceedsWaiterName = Literal[
     "test_connection_succeeds",
 ]
 ```
-## VersionStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_dms.literals import VersionStatusType
-
-def get_value() -> VersionStatusType:
-    return "OUTDATED"
-```
-
-```python title="Definition"
-VersionStatusType = Literal[
-    "OUTDATED",
-    "UNSUPPORTED",
-    "UP_TO_DATE",
-]
-```
 ## DatabaseMigrationServiceServiceName
 
 ```python title="Usage Example"
@@ -837,7 +806,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -870,7 +838,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -907,7 +874,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -921,7 +887,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -955,7 +920,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -981,7 +945,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1025,7 +988,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -1038,13 +1000,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

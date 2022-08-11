@@ -1304,67 +1304,6 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListJobsRequestListJobsPaginateTypeDef](./type_defs.md#listjobsrequestlistjobspaginatetypedef) 
-## ListMetricValuesPaginator
-
-Type annotations and code completion for `#!python session.client("iot").get_paginator("list_metric_values")`.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Paginator.ListMetricValues)
-
-```python title="Usage example"
-from aioboto3.session import Session
-
-from types_aiobotocore_iot.paginator import ListMetricValuesPaginator
-
-session = Session()
-
-session = get_session()
-async with session.client("iot") as client:  # (1)
-    paginator: ListMetricValuesPaginator = client.get_paginator("list_metric_values")  # (2)
-    async for item in paginator.paginate(...):
-        item: ListMetricValuesResponseTypeDef
-        print(item)  # (3)
-```
-
-1. client: [IoTClient](./client.md)
-2. paginator: [ListMetricValuesPaginator](./paginators.md#listmetricvaluespaginator)
-3. item: [:material-code-braces: ListMetricValuesResponseTypeDef](./type_defs.md#listmetricvaluesresponsetypedef) 
-
-
-### paginate
-
-Type annotations and code completion for `#!python ListMetricValuesPaginator.paginate` method.
-
-```python title="Method definition"
-def paginate(
-    self,
-    *,
-    thingName: str,
-    metricName: str,
-    startTime: Union[datetime, str],
-    endTime: Union[datetime, str],
-    dimensionName: str = ...,
-    dimensionValueOperator: DimensionValueOperatorType = ...,  # (1)
-    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
-) -> AsyncIterator[ListMetricValuesResponseTypeDef]:  # (3)
-    ...
-```
-
-1. See [:material-code-brackets: DimensionValueOperatorType](./literals.md#dimensionvalueoperatortype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-3. See [:material-code-braces: ListMetricValuesResponseTypeDef](./type_defs.md#listmetricvaluesresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListMetricValuesRequestListMetricValuesPaginateTypeDef = {  # (1)
-    "thingName": ...,
-    "metricName": ...,
-    "startTime": ...,
-    "endTime": ...,
-}
-
-parent.paginate(**kwargs)
-```
-
-1. See [:material-code-braces: ListMetricValuesRequestListMetricValuesPaginateTypeDef](./type_defs.md#listmetricvaluesrequestlistmetricvaluespaginatetypedef) 
 ## ListMitigationActionsPaginator
 
 Type annotations and code completion for `#!python session.client("iot").get_paginator("list_mitigation_actions")`.

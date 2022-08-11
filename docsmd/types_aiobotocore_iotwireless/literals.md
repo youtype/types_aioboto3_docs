@@ -84,22 +84,6 @@ EventNotificationPartnerTypeType = Literal[
     "Sidewalk",
 ]
 ```
-## EventNotificationResourceTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_iotwireless.literals import EventNotificationResourceTypeType
-
-def get_value() -> EventNotificationResourceTypeType:
-    return "SidewalkAccount"
-```
-
-```python title="Definition"
-EventNotificationResourceTypeType = Literal[
-    "SidewalkAccount",
-    "WirelessDevice",
-    "WirelessGateway",
-]
-```
 ## EventNotificationTopicStatusType
 
 ```python title="Usage Example"
@@ -196,16 +180,12 @@ FuotaTaskStatusType = Literal[
 from types_aiobotocore_iotwireless.literals import IdentifierTypeType
 
 def get_value() -> IdentifierTypeType:
-    return "DevEui"
+    return "PartnerAccountId"
 ```
 
 ```python title="Definition"
 IdentifierTypeType = Literal[
-    "DevEui",
-    "GatewayEui",
     "PartnerAccountId",
-    "WirelessDeviceId",
-    "WirelessGatewayId",
 ]
 ```
 ## LogLevelType
@@ -253,79 +233,6 @@ def get_value() -> PartnerTypeType:
 ```python title="Definition"
 PartnerTypeType = Literal[
     "Sidewalk",
-]
-```
-## PositionConfigurationFecType
-
-```python title="Usage Example"
-from types_aiobotocore_iotwireless.literals import PositionConfigurationFecType
-
-def get_value() -> PositionConfigurationFecType:
-    return "NONE"
-```
-
-```python title="Definition"
-PositionConfigurationFecType = Literal[
-    "NONE",
-    "ROSE",
-]
-```
-## PositionConfigurationStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_iotwireless.literals import PositionConfigurationStatusType
-
-def get_value() -> PositionConfigurationStatusType:
-    return "Disabled"
-```
-
-```python title="Definition"
-PositionConfigurationStatusType = Literal[
-    "Disabled",
-    "Enabled",
-]
-```
-## PositionResourceTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_iotwireless.literals import PositionResourceTypeType
-
-def get_value() -> PositionResourceTypeType:
-    return "WirelessDevice"
-```
-
-```python title="Definition"
-PositionResourceTypeType = Literal[
-    "WirelessDevice",
-    "WirelessGateway",
-]
-```
-## PositionSolverProviderType
-
-```python title="Usage Example"
-from types_aiobotocore_iotwireless.literals import PositionSolverProviderType
-
-def get_value() -> PositionSolverProviderType:
-    return "Semtech"
-```
-
-```python title="Definition"
-PositionSolverProviderType = Literal[
-    "Semtech",
-]
-```
-## PositionSolverTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_iotwireless.literals import PositionSolverTypeType
-
-def get_value() -> PositionSolverTypeType:
-    return "GNSS"
-```
-
-```python title="Definition"
-PositionSolverTypeType = Literal[
-    "GNSS",
 ]
 ```
 ## SigningAlgType
@@ -579,7 +486,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -612,7 +518,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -649,7 +554,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -663,7 +567,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -697,7 +600,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -723,7 +625,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -767,7 +668,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -780,13 +680,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

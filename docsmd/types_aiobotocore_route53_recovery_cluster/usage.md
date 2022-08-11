@@ -35,24 +35,6 @@ type checking and code completion should work out of the box.
 
 
 
-=== "Paginators"
-
-    ```python title="Paginator usage example"
-    from aioboto3.session import Session
-
-
-    session = Session()
-
-    async with session.client("route53-recovery-cluster") as client:  # (1)
-        paginator = client.get_paginator("list_routing_controls")  # (2)
-        async for item in paginator.paginate(...):
-            print(item)  # (3)
-    ```
-
-    1. client: [Route53RecoveryClusterClient](./client.md)
-    2. paginator: [ListRoutingControlsPaginator](./paginators.md#listroutingcontrolspaginator)
-    3. item: [:material-code-braces: ListRoutingControlsResponseTypeDef](./type_defs.md#listroutingcontrolsresponsetypedef) 
-
 
 
 
@@ -89,30 +71,6 @@ However, these type annotations can be helpful in your functions and methods.
     3. result: [:material-code-braces: GetRoutingControlStateResponseTypeDef](./type_defs.md#getroutingcontrolstateresponsetypedef) 
 
 
-
-=== "Paginators"
-
-    ```python title="Paginator usage example"
-    from aioboto3.session import Session
-
-    from types_aiobotocore_route53_recovery_cluster.client import Route53RecoveryClusterClient
-    from types_aiobotocore_route53_recovery_cluster.paginator import ListRoutingControlsPaginator
-    from types_aiobotocore_route53_recovery_cluster.type_defs import ListRoutingControlsResponseTypeDef
-
-
-    session = Session()
-
-    client: Route53RecoveryClusterClient
-    async with session.client("route53-recovery-cluster") as client:  # (1)
-        paginator: ListRoutingControlsPaginator = client.get_paginator("list_routing_controls")  # (2)
-        async for item in paginator.paginate(...):
-            item: ListRoutingControlsResponseTypeDef
-            print(item)  # (3)
-    ```
-
-    1. client: [Route53RecoveryClusterClient](./client.md)
-    2. paginator: [ListRoutingControlsPaginator](./paginators.md#listroutingcontrolspaginator)
-    3. item: [:material-code-braces: ListRoutingControlsResponseTypeDef](./type_defs.md#listroutingcontrolsresponsetypedef) 
 
 
 

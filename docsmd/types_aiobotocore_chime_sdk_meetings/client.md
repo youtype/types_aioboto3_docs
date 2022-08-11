@@ -34,13 +34,10 @@ async with session.client("chime-sdk-meetings") as client:
     except (
             client.BadRequestException,
         client.ClientError,
-        client.ConflictException,
         client.ForbiddenException,
         client.LimitExceededException,
         client.NotFoundException,
-        client.ServiceFailureException,
         client.ServiceUnavailableException,
-        client.ThrottlingException,
         client.UnauthorizedException,
         client.UnprocessableEntityException,
     ) as e:
@@ -90,42 +87,6 @@ parent.batch_create_attendee(**kwargs)
 
 1. See [:material-code-braces: BatchCreateAttendeeRequestRequestTypeDef](./type_defs.md#batchcreateattendeerequestrequesttypedef) 
 
-### batch\_update\_attendee\_capabilities\_except
-
-Updates `AttendeeCapabilities` except the capabilities listed in an
-`ExcludedAttendeeIds` table.
-
-Type annotations and code completion for `#!python session.client("chime-sdk-meetings").batch_update_attendee_capabilities_except` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.batch_update_attendee_capabilities_except)
-
-```python title="Method definition"
-await def batch_update_attendee_capabilities_except(
-    self,
-    *,
-    MeetingId: str,
-    ExcludedAttendeeIds: Sequence[AttendeeIdItemTypeDef],  # (1)
-    Capabilities: AttendeeCapabilitiesTypeDef,  # (2)
-) -> EmptyResponseMetadataTypeDef:  # (3)
-    ...
-```
-
-1. See [:material-code-braces: AttendeeIdItemTypeDef](./type_defs.md#attendeeiditemtypedef) 
-2. See [:material-code-braces: AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef) 
-3. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: BatchUpdateAttendeeCapabilitiesExceptRequestRequestTypeDef = {  # (1)
-    "MeetingId": ...,
-    "ExcludedAttendeeIds": ...,
-    "Capabilities": ...,
-}
-
-parent.batch_update_attendee_capabilities_except(**kwargs)
-```
-
-1. See [:material-code-braces: BatchUpdateAttendeeCapabilitiesExceptRequestRequestTypeDef](./type_defs.md#batchupdateattendeecapabilitiesexceptrequestrequesttypedef) 
-
 ### can\_paginate
 
 Check if an operation can be paginated.
@@ -138,21 +99,6 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
-    ...
-```
-
-
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("chime-sdk-meetings").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
     ...
 ```
 
@@ -170,13 +116,11 @@ await def create_attendee(
     *,
     MeetingId: str,
     ExternalUserId: str,
-    Capabilities: AttendeeCapabilitiesTypeDef = ...,  # (1)
-) -> CreateAttendeeResponseTypeDef:  # (2)
+) -> CreateAttendeeResponseTypeDef:  # (1)
     ...
 ```
 
-1. See [:material-code-braces: AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef) 
-2. See [:material-code-braces: CreateAttendeeResponseTypeDef](./type_defs.md#createattendeeresponsetypedef) 
+1. See [:material-code-braces: CreateAttendeeResponseTypeDef](./type_defs.md#createattendeeresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -208,8 +152,6 @@ await def create_meeting(
     MeetingHostId: str = ...,
     NotificationsConfiguration: NotificationsConfigurationTypeDef = ...,  # (1)
     MeetingFeatures: MeetingFeaturesConfigurationTypeDef = ...,  # (2)
-    PrimaryMeetingId: str = ...,
-    TenantIds: Sequence[str] = ...,
 ) -> CreateMeetingResponseTypeDef:  # (3)
     ...
 ```
@@ -250,8 +192,6 @@ await def create_meeting_with_attendees(
     MeetingHostId: str = ...,
     MeetingFeatures: MeetingFeaturesConfigurationTypeDef = ...,  # (2)
     NotificationsConfiguration: NotificationsConfigurationTypeDef = ...,  # (3)
-    PrimaryMeetingId: str = ...,
-    TenantIds: Sequence[str] = ...,
 ) -> CreateMeetingWithAttendeesResponseTypeDef:  # (4)
     ...
 ```
@@ -507,40 +447,6 @@ parent.stop_meeting_transcription(**kwargs)
 ```
 
 1. See [:material-code-braces: StopMeetingTranscriptionRequestRequestTypeDef](./type_defs.md#stopmeetingtranscriptionrequestrequesttypedef) 
-
-### update\_attendee\_capabilities
-
-The capabilties that you want to update.
-
-Type annotations and code completion for `#!python session.client("chime-sdk-meetings").update_attendee_capabilities` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.update_attendee_capabilities)
-
-```python title="Method definition"
-await def update_attendee_capabilities(
-    self,
-    *,
-    MeetingId: str,
-    AttendeeId: str,
-    Capabilities: AttendeeCapabilitiesTypeDef,  # (1)
-) -> UpdateAttendeeCapabilitiesResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef) 
-2. See [:material-code-braces: UpdateAttendeeCapabilitiesResponseTypeDef](./type_defs.md#updateattendeecapabilitiesresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: UpdateAttendeeCapabilitiesRequestRequestTypeDef = {  # (1)
-    "MeetingId": ...,
-    "AttendeeId": ...,
-    "Capabilities": ...,
-}
-
-parent.update_attendee_capabilities(**kwargs)
-```
-
-1. See [:material-code-braces: UpdateAttendeeCapabilitiesRequestRequestTypeDef](./type_defs.md#updateattendeecapabilitiesrequestrequesttypedef) 
 
 ### \_\_aenter\_\_
 

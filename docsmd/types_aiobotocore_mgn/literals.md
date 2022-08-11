@@ -162,20 +162,6 @@ DescribeJobsPaginatorName = Literal[
     "describe_jobs",
 ]
 ```
-## DescribeLaunchConfigurationTemplatesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_mgn.literals import DescribeLaunchConfigurationTemplatesPaginatorName
-
-def get_value() -> DescribeLaunchConfigurationTemplatesPaginatorName:
-    return "describe_launch_configuration_templates"
-```
-
-```python title="Definition"
-DescribeLaunchConfigurationTemplatesPaginatorName = Literal[
-    "describe_launch_configuration_templates",
-]
-```
 ## DescribeReplicationConfigurationTemplatesPaginatorName
 
 ```python title="Usage Example"
@@ -367,37 +353,6 @@ LifeCycleStateType = Literal[
     "TESTING",
 ]
 ```
-## PostLaunchActionExecutionStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_mgn.literals import PostLaunchActionExecutionStatusType
-
-def get_value() -> PostLaunchActionExecutionStatusType:
-    return "FAILED"
-```
-
-```python title="Definition"
-PostLaunchActionExecutionStatusType = Literal[
-    "FAILED",
-    "IN_PROGRESS",
-    "SUCCESS",
-]
-```
-## PostLaunchActionsDeploymentTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_mgn.literals import PostLaunchActionsDeploymentTypeType
-
-def get_value() -> PostLaunchActionsDeploymentTypeType:
-    return "CUTOVER_ONLY"
-```
-
-```python title="Definition"
-PostLaunchActionsDeploymentTypeType = Literal[
-    "CUTOVER_ONLY",
-    "TEST_AND_CUTOVER",
-]
-```
 ## ReplicationConfigurationDataPlaneRoutingType
 
 ```python title="Usage Example"
@@ -480,35 +435,6 @@ ReplicationTypeType = Literal[
     "SNAPSHOT_SHIPPING",
 ]
 ```
-## SsmDocumentTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_mgn.literals import SsmDocumentTypeType
-
-def get_value() -> SsmDocumentTypeType:
-    return "AUTOMATION"
-```
-
-```python title="Definition"
-SsmDocumentTypeType = Literal[
-    "AUTOMATION",
-    "COMMAND",
-]
-```
-## SsmParameterStoreParameterTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_mgn.literals import SsmParameterStoreParameterTypeType
-
-def get_value() -> SsmParameterStoreParameterTypeType:
-    return "STRING"
-```
-
-```python title="Definition"
-SsmParameterStoreParameterTypeType = Literal[
-    "STRING",
-]
-```
 ## TargetInstanceTypeRightSizingMethodType
 
 ```python title="Usage Example"
@@ -585,7 +511,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -618,7 +543,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -655,7 +579,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -669,7 +592,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -703,7 +625,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -729,7 +650,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -773,7 +693,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -786,13 +705,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -897,7 +814,6 @@ def get_value() -> PaginatorName:
 PaginatorName = Literal[
     "describe_job_log_items",
     "describe_jobs",
-    "describe_launch_configuration_templates",
     "describe_replication_configuration_templates",
     "describe_source_servers",
     "describe_vcenter_clients",

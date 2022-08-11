@@ -101,24 +101,6 @@ class AttachmentTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: AttachmentStatusType](./literals.md#attachmentstatustype) 
-## EncryptionConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_network_firewall.type_defs import EncryptionConfigurationTypeDef
-
-def get_value() -> EncryptionConfigurationTypeDef:
-    return {
-        "Type": ...,
-    }
-```
-
-```python title="Definition"
-class EncryptionConfigurationTypeDef(TypedDict):
-    Type: EncryptionTypeType,  # (1)
-    KeyId: NotRequired[str],
-```
-
-1. See [:material-code-brackets: EncryptionTypeType](./literals.md#encryptiontypetype) 
 ## TagTypeDef
 
 ```python title="Usage Example"
@@ -135,23 +117,6 @@ def get_value() -> TagTypeDef:
 class TagTypeDef(TypedDict):
     Key: str,
     Value: str,
-```
-
-## SourceMetadataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_network_firewall.type_defs import SourceMetadataTypeDef
-
-def get_value() -> SourceMetadataTypeDef:
-    return {
-        "SourceArn": ...,
-    }
-```
-
-```python title="Definition"
-class SourceMetadataTypeDef(TypedDict):
-    SourceArn: NotRequired[str],
-    SourceUpdateToken: NotRequired[str],
 ```
 
 ## DeleteFirewallPolicyRequestRequestTypeDef
@@ -562,13 +527,9 @@ class ListRuleGroupsRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
     MaxResults: NotRequired[int],
     Scope: NotRequired[ResourceManagedStatusType],  # (1)
-    ManagedType: NotRequired[ResourceManagedTypeType],  # (2)
-    Type: NotRequired[RuleGroupTypeType],  # (3)
 ```
 
 1. See [:material-code-brackets: ResourceManagedStatusType](./literals.md#resourcemanagedstatustype) 
-2. See [:material-code-brackets: ResourceManagedTypeType](./literals.md#resourcemanagedtypetype) 
-3. See [:material-code-brackets: RuleGroupTypeType](./literals.md#rulegrouptypetype) 
 ## RuleGroupMetadataTypeDef
 
 ```python title="Usage Example"
@@ -1081,52 +1042,6 @@ class DisassociateSubnetsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: SubnetMappingTypeDef](./type_defs.md#subnetmappingtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## UpdateFirewallEncryptionConfigurationRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_network_firewall.type_defs import UpdateFirewallEncryptionConfigurationRequestRequestTypeDef
-
-def get_value() -> UpdateFirewallEncryptionConfigurationRequestRequestTypeDef:
-    return {
-        "UpdateToken": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateFirewallEncryptionConfigurationRequestRequestTypeDef(TypedDict):
-    UpdateToken: NotRequired[str],
-    FirewallArn: NotRequired[str],
-    FirewallName: NotRequired[str],
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
-## UpdateFirewallEncryptionConfigurationResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_network_firewall.type_defs import UpdateFirewallEncryptionConfigurationResponseTypeDef
-
-def get_value() -> UpdateFirewallEncryptionConfigurationResponseTypeDef:
-    return {
-        "FirewallArn": ...,
-        "FirewallName": ...,
-        "UpdateToken": ...,
-        "EncryptionConfiguration": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateFirewallEncryptionConfigurationResponseTypeDef(TypedDict):
-    FirewallArn: str,
-    FirewallName: str,
-    UpdateToken: str,
-    EncryptionConfiguration: EncryptionConfigurationTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateFirewallRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1152,12 +1067,10 @@ class CreateFirewallRequestRequestTypeDef(TypedDict):
     FirewallPolicyChangeProtection: NotRequired[bool],
     Description: NotRequired[str],
     Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: SubnetMappingTypeDef](./type_defs.md#subnetmappingtypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
 ## FirewallPolicyResponseTypeDef
 
 ```python title="Usage Example"
@@ -1182,13 +1095,10 @@ class FirewallPolicyResponseTypeDef(TypedDict):
     ConsumedStatelessRuleCapacity: NotRequired[int],
     ConsumedStatefulRuleCapacity: NotRequired[int],
     NumberOfAssociations: NotRequired[int],
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (3)
-    LastModifiedTime: NotRequired[datetime],
 ```
 
 1. See [:material-code-brackets: ResourceStatusType](./literals.md#resourcestatustype) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
 ## FirewallTypeDef
 
 ```python title="Usage Example"
@@ -1216,12 +1126,10 @@ class FirewallTypeDef(TypedDict):
     FirewallPolicyChangeProtection: NotRequired[bool],
     Description: NotRequired[str],
     Tags: NotRequired[List[TagTypeDef]],  # (2)
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: SubnetMappingTypeDef](./type_defs.md#subnetmappingtypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
 ## ListTagsForResourceResponseTypeDef
 
 ```python title="Usage Example"
@@ -1244,25 +1152,6 @@ class ListTagsForResourceResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## TagResourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_network_firewall.type_defs import TagResourceRequestRequestTypeDef
-
-def get_value() -> TagResourceRequestRequestTypeDef:
-    return {
-        "ResourceArn": ...,
-        "Tags": ...,
-    }
-```
-
-```python title="Definition"
-class TagResourceRequestRequestTypeDef(TypedDict):
-    ResourceArn: str,
-    Tags: Sequence[TagTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## RuleGroupResponseTypeDef
 
 ```python title="Usage Example"
@@ -1288,17 +1177,30 @@ class RuleGroupResponseTypeDef(TypedDict):
     Tags: NotRequired[List[TagTypeDef]],  # (3)
     ConsumedCapacity: NotRequired[int],
     NumberOfAssociations: NotRequired[int],
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (4)
-    SourceMetadata: NotRequired[SourceMetadataTypeDef],  # (5)
-    SnsTopic: NotRequired[str],
-    LastModifiedTime: NotRequired[datetime],
 ```
 
 1. See [:material-code-brackets: RuleGroupTypeType](./literals.md#rulegrouptypetype) 
 2. See [:material-code-brackets: ResourceStatusType](./literals.md#resourcestatustype) 
 3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-4. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
-5. See [:material-code-braces: SourceMetadataTypeDef](./type_defs.md#sourcemetadatatypedef) 
+## TagResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_network_firewall.type_defs import TagResourceRequestRequestTypeDef
+
+def get_value() -> TagResourceRequestRequestTypeDef:
+    return {
+        "ResourceArn": ...,
+        "Tags": ...,
+    }
+```
+
+```python title="Definition"
+class TagResourceRequestRequestTypeDef(TypedDict):
+    ResourceArn: str,
+    Tags: Sequence[TagTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## DescribeRuleGroupMetadataResponseTypeDef
 
 ```python title="Usage Example"
@@ -1312,7 +1214,6 @@ def get_value() -> DescribeRuleGroupMetadataResponseTypeDef:
         "Type": ...,
         "Capacity": ...,
         "StatefulRuleOptions": ...,
-        "LastModifiedTime": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -1325,7 +1226,6 @@ class DescribeRuleGroupMetadataResponseTypeDef(TypedDict):
     Type: RuleGroupTypeType,  # (1)
     Capacity: int,
     StatefulRuleOptions: StatefulRuleOptionsTypeDef,  # (2)
-    LastModifiedTime: datetime,
     ResponseMetadata: ResponseMetadataTypeDef,  # (3)
 ```
 
@@ -1442,15 +1342,11 @@ def get_value() -> ListRuleGroupsRequestListRuleGroupsPaginateTypeDef:
 ```python title="Definition"
 class ListRuleGroupsRequestListRuleGroupsPaginateTypeDef(TypedDict):
     Scope: NotRequired[ResourceManagedStatusType],  # (1)
-    ManagedType: NotRequired[ResourceManagedTypeType],  # (2)
-    Type: NotRequired[RuleGroupTypeType],  # (3)
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (4)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
 ```
 
 1. See [:material-code-brackets: ResourceManagedStatusType](./literals.md#resourcemanagedstatustype) 
-2. See [:material-code-brackets: ResourceManagedTypeType](./literals.md#resourcemanagedtypetype) 
-3. See [:material-code-brackets: RuleGroupTypeType](./literals.md#rulegrouptypetype) 
-4. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListTagsForResourceRequestListTagsForResourcePaginateTypeDef
 
 ```python title="Usage Example"
@@ -2039,12 +1935,10 @@ class CreateFirewallPolicyRequestRequestTypeDef(TypedDict):
     Description: NotRequired[str],
     Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
     DryRun: NotRequired[bool],
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: FirewallPolicyTypeDef](./type_defs.md#firewallpolicytypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
 ## DescribeFirewallPolicyResponseTypeDef
 
 ```python title="Usage Example"
@@ -2090,11 +1984,9 @@ class UpdateFirewallPolicyRequestRequestTypeDef(TypedDict):
     FirewallPolicyName: NotRequired[str],
     Description: NotRequired[str],
     DryRun: NotRequired[bool],
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (2)
 ```
 
 1. See [:material-code-braces: FirewallPolicyTypeDef](./type_defs.md#firewallpolicytypedef) 
-2. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
 ## RulesSourceTypeDef
 
 ```python title="Usage Example"
@@ -2161,15 +2053,11 @@ class CreateRuleGroupRequestRequestTypeDef(TypedDict):
     Description: NotRequired[str],
     Tags: NotRequired[Sequence[TagTypeDef]],  # (3)
     DryRun: NotRequired[bool],
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (4)
-    SourceMetadata: NotRequired[SourceMetadataTypeDef],  # (5)
 ```
 
 1. See [:material-code-brackets: RuleGroupTypeType](./literals.md#rulegrouptypetype) 
 2. See [:material-code-braces: RuleGroupTypeDef](./type_defs.md#rulegrouptypedef) 
 3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-4. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
-5. See [:material-code-braces: SourceMetadataTypeDef](./type_defs.md#sourcemetadatatypedef) 
 ## DescribeRuleGroupResponseTypeDef
 
 ```python title="Usage Example"
@@ -2216,11 +2104,7 @@ class UpdateRuleGroupRequestRequestTypeDef(TypedDict):
     Type: NotRequired[RuleGroupTypeType],  # (2)
     Description: NotRequired[str],
     DryRun: NotRequired[bool],
-    EncryptionConfiguration: NotRequired[EncryptionConfigurationTypeDef],  # (3)
-    SourceMetadata: NotRequired[SourceMetadataTypeDef],  # (4)
 ```
 
 1. See [:material-code-braces: RuleGroupTypeDef](./type_defs.md#rulegrouptypedef) 
 2. See [:material-code-brackets: RuleGroupTypeType](./literals.md#rulegrouptypetype) 
-3. See [:material-code-braces: EncryptionConfigurationTypeDef](./type_defs.md#encryptionconfigurationtypedef) 
-4. See [:material-code-braces: SourceMetadataTypeDef](./type_defs.md#sourcemetadatatypedef) 

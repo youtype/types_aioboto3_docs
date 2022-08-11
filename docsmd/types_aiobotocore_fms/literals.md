@@ -85,7 +85,6 @@ def get_value() -> FirewallDeploymentModelType:
 ```python title="Definition"
 FirewallDeploymentModelType = Literal[
     "CENTRALIZED",
-    "DISTRIBUTED",
 ]
 ```
 ## ListAppsListsPaginatorName
@@ -158,36 +157,6 @@ ListProtocolsListsPaginatorName = Literal[
     "list_protocols_lists",
 ]
 ```
-## ListThirdPartyFirewallFirewallPoliciesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_fms.literals import ListThirdPartyFirewallFirewallPoliciesPaginatorName
-
-def get_value() -> ListThirdPartyFirewallFirewallPoliciesPaginatorName:
-    return "list_third_party_firewall_firewall_policies"
-```
-
-```python title="Definition"
-ListThirdPartyFirewallFirewallPoliciesPaginatorName = Literal[
-    "list_third_party_firewall_firewall_policies",
-]
-```
-## MarketplaceSubscriptionOnboardingStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_fms.literals import MarketplaceSubscriptionOnboardingStatusType
-
-def get_value() -> MarketplaceSubscriptionOnboardingStatusType:
-    return "COMPLETE"
-```
-
-```python title="Definition"
-MarketplaceSubscriptionOnboardingStatusType = Literal[
-    "COMPLETE",
-    "NO_SUBSCRIPTION",
-    "NOT_COMPLETE",
-]
-```
 ## PolicyComplianceStatusTypeType
 
 ```python title="Usage Example"
@@ -235,7 +204,6 @@ SecurityServiceTypeType = Literal[
     "SECURITY_GROUPS_CONTENT_AUDIT",
     "SECURITY_GROUPS_USAGE_AUDIT",
     "SHIELD_ADVANCED",
-    "THIRD_PARTY_FIREWALL",
     "WAF",
     "WAFV2",
 ]
@@ -263,38 +231,6 @@ TargetTypeType = Literal[
     "VPC_PEERING_CONNECTION",
 ]
 ```
-## ThirdPartyFirewallAssociationStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_fms.literals import ThirdPartyFirewallAssociationStatusType
-
-def get_value() -> ThirdPartyFirewallAssociationStatusType:
-    return "NOT_EXIST"
-```
-
-```python title="Definition"
-ThirdPartyFirewallAssociationStatusType = Literal[
-    "NOT_EXIST",
-    "OFFBOARD_COMPLETE",
-    "OFFBOARDING",
-    "ONBOARD_COMPLETE",
-    "ONBOARDING",
-]
-```
-## ThirdPartyFirewallType
-
-```python title="Usage Example"
-from types_aiobotocore_fms.literals import ThirdPartyFirewallType
-
-def get_value() -> ThirdPartyFirewallType:
-    return "PALO_ALTO_NETWORKS_CLOUD_NGFW"
-```
-
-```python title="Definition"
-ThirdPartyFirewallType = Literal[
-    "PALO_ALTO_NETWORKS_CLOUD_NGFW",
-]
-```
 ## ViolationReasonType
 
 ```python title="Usage Example"
@@ -310,7 +246,6 @@ ViolationReasonType = Literal[
     "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET",
     "FIREWALL_SUBNET_IS_OUT_OF_SCOPE",
     "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE",
-    "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT",
     "FMS_CREATED_SECURITY_GROUP_EDITED",
     "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE",
     "INTERNET_TRAFFIC_NOT_INSPECTED",
@@ -397,7 +332,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -430,7 +364,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -467,7 +400,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -481,7 +413,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -515,7 +446,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -541,7 +471,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -585,7 +514,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -598,13 +526,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -712,7 +638,6 @@ PaginatorName = Literal[
     "list_member_accounts",
     "list_policies",
     "list_protocols_lists",
-    "list_third_party_firewall_firewall_policies",
 ]
 ```
 ## RegionName

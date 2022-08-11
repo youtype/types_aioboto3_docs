@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Organizations`.
 
 ### From PyPI with pip
 
@@ -171,7 +166,6 @@ def get_value() -> AcceptHandshakeRequestRequestTypeDef:
 - [AttachPolicyRequestRequestTypeDef](./type_defs.md#attachpolicyrequestrequesttypedef)
 - [CancelHandshakeRequestRequestTypeDef](./type_defs.md#cancelhandshakerequestrequesttypedef)
 - [ChildTypeDef](./type_defs.md#childtypedef)
-- [CloseAccountRequestRequestTypeDef](./type_defs.md#closeaccountrequestrequesttypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
 - [CreateAccountStatusTypeDef](./type_defs.md#createaccountstatustypedef)
 - [CreateOrganizationRequestRequestTypeDef](./type_defs.md#createorganizationrequestrequesttypedef)

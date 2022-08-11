@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `KMS`.
 
 ### From PyPI with pip
 
@@ -117,7 +112,6 @@ def get_value() -> AlgorithmSpecType:
 - [ListGrantsPaginatorName](./literals.md#listgrantspaginatorname)
 - [ListKeyPoliciesPaginatorName](./literals.md#listkeypoliciespaginatorname)
 - [ListKeysPaginatorName](./literals.md#listkeyspaginatorname)
-- [MacAlgorithmSpecType](./literals.md#macalgorithmspectype)
 - [MessageTypeType](./literals.md#messagetypetype)
 - [MultiRegionKeyTypeType](./literals.md#multiregionkeytypetype)
 - [OriginTypeType](./literals.md#origintypetype)
@@ -170,7 +164,6 @@ def get_value() -> AliasListEntryTypeDef:
 - [GenerateDataKeyPairWithoutPlaintextRequestRequestTypeDef](./type_defs.md#generatedatakeypairwithoutplaintextrequestrequesttypedef)
 - [GenerateDataKeyRequestRequestTypeDef](./type_defs.md#generatedatakeyrequestrequesttypedef)
 - [GenerateDataKeyWithoutPlaintextRequestRequestTypeDef](./type_defs.md#generatedatakeywithoutplaintextrequestrequesttypedef)
-- [GenerateMacRequestRequestTypeDef](./type_defs.md#generatemacrequestrequesttypedef)
 - [GenerateRandomRequestRequestTypeDef](./type_defs.md#generaterandomrequestrequesttypedef)
 - [GetKeyPolicyRequestRequestTypeDef](./type_defs.md#getkeypolicyrequestrequesttypedef)
 - [GetKeyRotationStatusRequestRequestTypeDef](./type_defs.md#getkeyrotationstatusrequestrequesttypedef)
@@ -197,7 +190,6 @@ def get_value() -> AliasListEntryTypeDef:
 - [UpdateCustomKeyStoreRequestRequestTypeDef](./type_defs.md#updatecustomkeystorerequestrequesttypedef)
 - [UpdateKeyDescriptionRequestRequestTypeDef](./type_defs.md#updatekeydescriptionrequestrequesttypedef)
 - [UpdatePrimaryRegionRequestRequestTypeDef](./type_defs.md#updateprimaryregionrequestrequesttypedef)
-- [VerifyMacRequestRequestTypeDef](./type_defs.md#verifymacrequestrequesttypedef)
 - [VerifyRequestRequestTypeDef](./type_defs.md#verifyrequestrequesttypedef)
 - [CancelKeyDeletionResponseTypeDef](./type_defs.md#cancelkeydeletionresponsetypedef)
 - [CreateCustomKeyStoreResponseTypeDef](./type_defs.md#createcustomkeystoreresponsetypedef)
@@ -209,7 +201,6 @@ def get_value() -> AliasListEntryTypeDef:
 - [GenerateDataKeyPairWithoutPlaintextResponseTypeDef](./type_defs.md#generatedatakeypairwithoutplaintextresponsetypedef)
 - [GenerateDataKeyResponseTypeDef](./type_defs.md#generatedatakeyresponsetypedef)
 - [GenerateDataKeyWithoutPlaintextResponseTypeDef](./type_defs.md#generatedatakeywithoutplaintextresponsetypedef)
-- [GenerateMacResponseTypeDef](./type_defs.md#generatemacresponsetypedef)
 - [GenerateRandomResponseTypeDef](./type_defs.md#generaterandomresponsetypedef)
 - [GetKeyPolicyResponseTypeDef](./type_defs.md#getkeypolicyresponsetypedef)
 - [GetKeyRotationStatusResponseTypeDef](./type_defs.md#getkeyrotationstatusresponsetypedef)
@@ -220,7 +211,6 @@ def get_value() -> AliasListEntryTypeDef:
 - [ReEncryptResponseTypeDef](./type_defs.md#reencryptresponsetypedef)
 - [ScheduleKeyDeletionResponseTypeDef](./type_defs.md#schedulekeydeletionresponsetypedef)
 - [SignResponseTypeDef](./type_defs.md#signresponsetypedef)
-- [VerifyMacResponseTypeDef](./type_defs.md#verifymacresponsetypedef)
 - [VerifyResponseTypeDef](./type_defs.md#verifyresponsetypedef)
 - [CreateGrantRequestRequestTypeDef](./type_defs.md#creategrantrequestrequesttypedef)
 - [GrantListEntryTypeDef](./type_defs.md#grantlistentrytypedef)

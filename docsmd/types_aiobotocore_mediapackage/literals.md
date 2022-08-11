@@ -213,12 +213,11 @@ PresetSpeke20VideoType = Literal[
 from types_aiobotocore_mediapackage.literals import ProfileType
 
 def get_value() -> ProfileType:
-    return "DVB_DASH_2014"
+    return "HBBTV_1_5"
 ```
 
 ```python title="Definition"
 ProfileType = Literal[
-    "DVB_DASH_2014",
     "HBBTV_1_5",
     "HYBRIDCAST",
     "NONE",
@@ -285,7 +284,6 @@ def get_value() -> UtcTimingType:
 UtcTimingType = Literal[
     "HTTP-HEAD",
     "HTTP-ISO",
-    "HTTP-XSDATE",
     "NONE",
 ]
 ```
@@ -350,7 +348,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -383,7 +380,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -420,7 +416,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -434,7 +429,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -468,7 +462,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -494,7 +487,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -538,7 +530,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -551,13 +542,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

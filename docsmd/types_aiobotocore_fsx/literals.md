@@ -238,34 +238,6 @@ DescribeFileSystemsPaginatorName = Literal[
     "describe_file_systems",
 ]
 ```
-## DescribeStorageVirtualMachinesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_fsx.literals import DescribeStorageVirtualMachinesPaginatorName
-
-def get_value() -> DescribeStorageVirtualMachinesPaginatorName:
-    return "describe_storage_virtual_machines"
-```
-
-```python title="Definition"
-DescribeStorageVirtualMachinesPaginatorName = Literal[
-    "describe_storage_virtual_machines",
-]
-```
-## DescribeVolumesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_fsx.literals import DescribeVolumesPaginatorName
-
-def get_value() -> DescribeVolumesPaginatorName:
-    return "describe_volumes"
-```
-
-```python title="Definition"
-DescribeVolumesPaginatorName = Literal[
-    "describe_volumes",
-]
-```
 ## DiskIopsConfigurationModeType
 
 ```python title="Usage Example"
@@ -328,7 +300,6 @@ FileSystemLifecycleType = Literal[
     "DELETING",
     "FAILED",
     "MISCONFIGURED",
-    "MISCONFIGURED_UNAVAILABLE",
     "UPDATING",
 ]
 ```
@@ -458,7 +429,6 @@ def get_value() -> OntapDeploymentTypeType:
 ```python title="Definition"
 OntapDeploymentTypeType = Literal[
     "MULTI_AZ_1",
-    "SINGLE_AZ_1",
 ]
 ```
 ## OntapVolumeTypeType
@@ -903,7 +873,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -936,7 +905,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -973,7 +941,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -987,7 +954,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1021,7 +987,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1047,7 +1012,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1091,7 +1055,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -1104,13 +1067,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1215,8 +1176,6 @@ def get_value() -> PaginatorName:
 PaginatorName = Literal[
     "describe_backups",
     "describe_file_systems",
-    "describe_storage_virtual_machines",
-    "describe_volumes",
     "list_tags_for_resource",
 ]
 ```

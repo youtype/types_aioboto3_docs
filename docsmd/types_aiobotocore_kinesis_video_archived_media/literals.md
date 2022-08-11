@@ -98,35 +98,6 @@ DASHPlaybackModeType = Literal[
     "ON_DEMAND",
 ]
 ```
-## FormatConfigKeyType
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.literals import FormatConfigKeyType
-
-def get_value() -> FormatConfigKeyType:
-    return "JPEGQuality"
-```
-
-```python title="Definition"
-FormatConfigKeyType = Literal[
-    "JPEGQuality",
-]
-```
-## FormatType
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.literals import FormatType
-
-def get_value() -> FormatType:
-    return "JPEG"
-```
-
-```python title="Definition"
-FormatType = Literal[
-    "JPEG",
-    "PNG",
-]
-```
 ## FragmentSelectorTypeType
 
 ```python title="Usage Example"
@@ -140,20 +111,6 @@ def get_value() -> FragmentSelectorTypeType:
 FragmentSelectorTypeType = Literal[
     "PRODUCER_TIMESTAMP",
     "SERVER_TIMESTAMP",
-]
-```
-## GetImagesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.literals import GetImagesPaginatorName
-
-def get_value() -> GetImagesPaginatorName:
-    return "get_images"
-```
-
-```python title="Definition"
-GetImagesPaginatorName = Literal[
-    "get_images",
 ]
 ```
 ## HLSDiscontinuityModeType
@@ -216,36 +173,6 @@ HLSPlaybackModeType = Literal[
     "LIVE",
     "LIVE_REPLAY",
     "ON_DEMAND",
-]
-```
-## ImageErrorType
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.literals import ImageErrorType
-
-def get_value() -> ImageErrorType:
-    return "MEDIA_ERROR"
-```
-
-```python title="Definition"
-ImageErrorType = Literal[
-    "MEDIA_ERROR",
-    "NO_MEDIA",
-]
-```
-## ImageSelectorTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_kinesis_video_archived_media.literals import ImageSelectorTypeType
-
-def get_value() -> ImageSelectorTypeType:
-    return "PRODUCER_TIMESTAMP"
-```
-
-```python title="Definition"
-ImageSelectorTypeType = Literal[
-    "PRODUCER_TIMESTAMP",
-    "SERVER_TIMESTAMP",
 ]
 ```
 ## ListFragmentsPaginatorName
@@ -323,7 +250,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -356,7 +282,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -393,7 +318,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -407,7 +331,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -441,7 +364,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -467,7 +389,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -511,7 +432,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -524,13 +444,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -628,12 +546,11 @@ ResourceServiceName = Literal[
 from types_aiobotocore_kinesis_video_archived_media.literals import PaginatorName
 
 def get_value() -> PaginatorName:
-    return "get_images"
+    return "list_fragments"
 ```
 
 ```python title="Definition"
 PaginatorName = Literal[
-    "get_images",
     "list_fragments",
 ]
 ```
@@ -643,12 +560,11 @@ PaginatorName = Literal[
 from types_aiobotocore_kinesis_video_archived_media.literals import RegionName
 
 def get_value() -> RegionName:
-    return "af-south-1"
+    return "ap-east-1"
 ```
 
 ```python title="Definition"
 RegionName = Literal[
-    "af-south-1",
     "ap-east-1",
     "ap-northeast-1",
     "ap-northeast-2",

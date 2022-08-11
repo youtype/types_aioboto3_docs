@@ -44,14 +44,14 @@ type checking and code completion should work out of the box.
     session = Session()
 
     async with session.client("kinesis-video-archived-media") as client:  # (1)
-        paginator = client.get_paginator("get_images")  # (2)
+        paginator = client.get_paginator("list_fragments")  # (2)
         async for item in paginator.paginate(...):
             print(item)  # (3)
     ```
 
     1. client: [KinesisVideoArchivedMediaClient](./client.md)
-    2. paginator: [GetImagesPaginator](./paginators.md#getimagespaginator)
-    3. item: [:material-code-braces: GetImagesOutputTypeDef](./type_defs.md#getimagesoutputtypedef) 
+    2. paginator: [ListFragmentsPaginator](./paginators.md#listfragmentspaginator)
+    3. item: [:material-code-braces: ListFragmentsOutputTypeDef](./type_defs.md#listfragmentsoutputtypedef) 
 
 
 
@@ -96,23 +96,23 @@ However, these type annotations can be helpful in your functions and methods.
     from aioboto3.session import Session
 
     from types_aiobotocore_kinesis_video_archived_media.client import KinesisVideoArchivedMediaClient
-    from types_aiobotocore_kinesis_video_archived_media.paginator import GetImagesPaginator
-    from types_aiobotocore_kinesis_video_archived_media.type_defs import GetImagesOutputTypeDef
+    from types_aiobotocore_kinesis_video_archived_media.paginator import ListFragmentsPaginator
+    from types_aiobotocore_kinesis_video_archived_media.type_defs import ListFragmentsOutputTypeDef
 
 
     session = Session()
 
     client: KinesisVideoArchivedMediaClient
     async with session.client("kinesis-video-archived-media") as client:  # (1)
-        paginator: GetImagesPaginator = client.get_paginator("get_images")  # (2)
+        paginator: ListFragmentsPaginator = client.get_paginator("list_fragments")  # (2)
         async for item in paginator.paginate(...):
-            item: GetImagesOutputTypeDef
+            item: ListFragmentsOutputTypeDef
             print(item)  # (3)
     ```
 
     1. client: [KinesisVideoArchivedMediaClient](./client.md)
-    2. paginator: [GetImagesPaginator](./paginators.md#getimagespaginator)
-    3. item: [:material-code-braces: GetImagesOutputTypeDef](./type_defs.md#getimagesoutputtypedef) 
+    2. paginator: [ListFragmentsPaginator](./paginators.md#listfragmentspaginator)
+    3. item: [:material-code-braces: ListFragmentsOutputTypeDef](./type_defs.md#listfragmentsoutputtypedef) 
 
 
 

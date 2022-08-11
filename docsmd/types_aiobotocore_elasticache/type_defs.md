@@ -3748,7 +3748,6 @@ class CreateCacheClusterMessageRequestTypeDef(TypedDict):
     PreferredOutpostArn: NotRequired[str],
     PreferredOutpostArns: NotRequired[Sequence[str]],
     LogDeliveryConfigurations: NotRequired[Sequence[LogDeliveryConfigurationRequestTypeDef]],  # (4)
-    TransitEncryptionEnabled: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: AZModeType](./literals.md#azmodetype) 

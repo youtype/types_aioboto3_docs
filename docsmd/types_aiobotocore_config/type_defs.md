@@ -341,9 +341,6 @@ class ConfigRuleEvaluationStatusTypeDef(TypedDict):
     LastErrorCode: NotRequired[str],
     LastErrorMessage: NotRequired[str],
     FirstEvaluationStarted: NotRequired[bool],
-    LastDebugLogDeliveryStatus: NotRequired[str],
-    LastDebugLogDeliveryStatusReason: NotRequired[str],
-    LastDebugLogDeliveryTime: NotRequired[datetime],
 ```
 
 ## ScopeTypeDef
@@ -606,25 +603,6 @@ class ConformancePackStatusDetailTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ConformancePackStateType](./literals.md#conformancepackstatetype) 
-## CustomPolicyDetailsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import CustomPolicyDetailsTypeDef
-
-def get_value() -> CustomPolicyDetailsTypeDef:
-    return {
-        "PolicyRuntime": ...,
-        "PolicyText": ...,
-    }
-```
-
-```python title="Definition"
-class CustomPolicyDetailsTypeDef(TypedDict):
-    PolicyRuntime: str,
-    PolicyText: str,
-    EnableDebugLogDelivery: NotRequired[bool],
-```
-
 ## DeleteAggregationAuthorizationRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1597,22 +1575,6 @@ class GetConformancePackComplianceSummaryRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
 ```
 
-## GetCustomRulePolicyRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import GetCustomRulePolicyRequestRequestTypeDef
-
-def get_value() -> GetCustomRulePolicyRequestRequestTypeDef:
-    return {
-        "ConfigRuleName": ...,
-    }
-```
-
-```python title="Definition"
-class GetCustomRulePolicyRequestRequestTypeDef(TypedDict):
-    ConfigRuleName: NotRequired[str],
-```
-
 ## GetDiscoveredResourceCountsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1733,22 +1695,6 @@ class OrganizationConformancePackDetailedStatusTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: OrganizationResourceDetailedStatusType](./literals.md#organizationresourcedetailedstatustype) 
-## GetOrganizationCustomRulePolicyRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import GetOrganizationCustomRulePolicyRequestRequestTypeDef
-
-def get_value() -> GetOrganizationCustomRulePolicyRequestRequestTypeDef:
-    return {
-        "OrganizationConfigRuleName": ...,
-    }
-```
-
-```python title="Definition"
-class GetOrganizationCustomRulePolicyRequestRequestTypeDef(TypedDict):
-    OrganizationConfigRuleName: str,
-```
-
 ## GetResourceConfigHistoryRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1944,33 +1890,6 @@ class TagTypeDef(TypedDict):
     Value: NotRequired[str],
 ```
 
-## OrganizationCustomPolicyRuleMetadataNoPolicyTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import OrganizationCustomPolicyRuleMetadataNoPolicyTypeDef
-
-def get_value() -> OrganizationCustomPolicyRuleMetadataNoPolicyTypeDef:
-    return {
-        "Description": ...,
-    }
-```
-
-```python title="Definition"
-class OrganizationCustomPolicyRuleMetadataNoPolicyTypeDef(TypedDict):
-    Description: NotRequired[str],
-    OrganizationConfigRuleTriggerTypes: NotRequired[List[OrganizationConfigRuleTriggerTypeNoSNType]],  # (1)
-    InputParameters: NotRequired[str],
-    MaximumExecutionFrequency: NotRequired[MaximumExecutionFrequencyType],  # (2)
-    ResourceTypesScope: NotRequired[List[str]],
-    ResourceIdScope: NotRequired[str],
-    TagKeyScope: NotRequired[str],
-    TagValueScope: NotRequired[str],
-    PolicyRuntime: NotRequired[str],
-    DebugLogDeliveryAccounts: NotRequired[List[str]],
-```
-
-1. See [:material-code-brackets: OrganizationConfigRuleTriggerTypeNoSNType](./literals.md#organizationconfigruletriggertypenosntype) 
-2. See [:material-code-brackets: MaximumExecutionFrequencyType](./literals.md#maximumexecutionfrequencytype) 
 ## OrganizationCustomRuleMetadataTypeDef
 
 ```python title="Usage Example"
@@ -2022,35 +1941,6 @@ class OrganizationManagedRuleMetadataTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: MaximumExecutionFrequencyType](./literals.md#maximumexecutionfrequencytype) 
-## OrganizationCustomPolicyRuleMetadataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import OrganizationCustomPolicyRuleMetadataTypeDef
-
-def get_value() -> OrganizationCustomPolicyRuleMetadataTypeDef:
-    return {
-        "PolicyRuntime": ...,
-        "PolicyText": ...,
-    }
-```
-
-```python title="Definition"
-class OrganizationCustomPolicyRuleMetadataTypeDef(TypedDict):
-    PolicyRuntime: str,
-    PolicyText: str,
-    Description: NotRequired[str],
-    OrganizationConfigRuleTriggerTypes: NotRequired[Sequence[OrganizationConfigRuleTriggerTypeNoSNType]],  # (1)
-    InputParameters: NotRequired[str],
-    MaximumExecutionFrequency: NotRequired[MaximumExecutionFrequencyType],  # (2)
-    ResourceTypesScope: NotRequired[Sequence[str]],
-    ResourceIdScope: NotRequired[str],
-    TagKeyScope: NotRequired[str],
-    TagValueScope: NotRequired[str],
-    DebugLogDeliveryAccounts: NotRequired[Sequence[str]],
-```
-
-1. See [:material-code-brackets: OrganizationConfigRuleTriggerTypeNoSNType](./literals.md#organizationconfigruletriggertypenosntype) 
-2. See [:material-code-brackets: MaximumExecutionFrequencyType](./literals.md#maximumexecutionfrequencytype) 
 ## PutResourceConfigRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2488,44 +2378,6 @@ def get_value() -> EmptyResponseMetadataTypeDef:
 
 ```python title="Definition"
 class EmptyResponseMetadataTypeDef(TypedDict):
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetCustomRulePolicyResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import GetCustomRulePolicyResponseTypeDef
-
-def get_value() -> GetCustomRulePolicyResponseTypeDef:
-    return {
-        "PolicyText": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetCustomRulePolicyResponseTypeDef(TypedDict):
-    PolicyText: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetOrganizationCustomRulePolicyResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_config.type_defs import GetOrganizationCustomRulePolicyResponseTypeDef
-
-def get_value() -> GetOrganizationCustomRulePolicyResponseTypeDef:
-    return {
-        "PolicyText": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetOrganizationCustomRulePolicyResponseTypeDef(TypedDict):
-    PolicyText: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
@@ -4488,12 +4340,10 @@ class OrganizationConfigRuleTypeDef(TypedDict):
     OrganizationCustomRuleMetadata: NotRequired[OrganizationCustomRuleMetadataTypeDef],  # (2)
     ExcludedAccounts: NotRequired[List[str]],
     LastUpdateTime: NotRequired[datetime],
-    OrganizationCustomPolicyRuleMetadata: NotRequired[OrganizationCustomPolicyRuleMetadataNoPolicyTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: OrganizationManagedRuleMetadataTypeDef](./type_defs.md#organizationmanagedrulemetadatatypedef) 
 2. See [:material-code-braces: OrganizationCustomRuleMetadataTypeDef](./type_defs.md#organizationcustomrulemetadatatypedef) 
-3. See [:material-code-braces: OrganizationCustomPolicyRuleMetadataNoPolicyTypeDef](./type_defs.md#organizationcustompolicyrulemetadatanopolicytypedef) 
 ## PutOrganizationConfigRuleRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4511,12 +4361,10 @@ class PutOrganizationConfigRuleRequestRequestTypeDef(TypedDict):
     OrganizationManagedRuleMetadata: NotRequired[OrganizationManagedRuleMetadataTypeDef],  # (1)
     OrganizationCustomRuleMetadata: NotRequired[OrganizationCustomRuleMetadataTypeDef],  # (2)
     ExcludedAccounts: NotRequired[Sequence[str]],
-    OrganizationCustomPolicyRuleMetadata: NotRequired[OrganizationCustomPolicyRuleMetadataTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: OrganizationManagedRuleMetadataTypeDef](./type_defs.md#organizationmanagedrulemetadatatypedef) 
 2. See [:material-code-braces: OrganizationCustomRuleMetadataTypeDef](./type_defs.md#organizationcustomrulemetadatatypedef) 
-3. See [:material-code-braces: OrganizationCustomPolicyRuleMetadataTypeDef](./type_defs.md#organizationcustompolicyrulemetadatatypedef) 
 ## RemediationExecutionStatusTypeDef
 
 ```python title="Usage Example"
@@ -4567,20 +4415,19 @@ from types_aiobotocore_config.type_defs import SourceTypeDef
 def get_value() -> SourceTypeDef:
     return {
         "Owner": ...,
+        "SourceIdentifier": ...,
     }
 ```
 
 ```python title="Definition"
 class SourceTypeDef(TypedDict):
     Owner: OwnerType,  # (1)
-    SourceIdentifier: NotRequired[str],
+    SourceIdentifier: str,
     SourceDetails: NotRequired[List[SourceDetailTypeDef]],  # (2)
-    CustomPolicyDetails: NotRequired[CustomPolicyDetailsTypeDef],  # (3)
 ```
 
 1. See [:material-code-brackets: OwnerType](./literals.md#ownertype) 
 2. See [:material-code-braces: SourceDetailTypeDef](./type_defs.md#sourcedetailtypedef) 
-3. See [:material-code-braces: CustomPolicyDetailsTypeDef](./type_defs.md#custompolicydetailstypedef) 
 ## DescribeAggregateComplianceByConformancePacksResponseTypeDef
 
 ```python title="Usage Example"

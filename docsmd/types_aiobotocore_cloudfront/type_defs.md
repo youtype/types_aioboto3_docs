@@ -1893,23 +1893,6 @@ class ResponseHeadersPolicyAccessControlExposeHeadersTypeDef(TypedDict):
     Items: NotRequired[Sequence[str]],
 ```
 
-## ResponseHeadersPolicyServerTimingHeadersConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_cloudfront.type_defs import ResponseHeadersPolicyServerTimingHeadersConfigTypeDef
-
-def get_value() -> ResponseHeadersPolicyServerTimingHeadersConfigTypeDef:
-    return {
-        "Enabled": ...,
-    }
-```
-
-```python title="Definition"
-class ResponseHeadersPolicyServerTimingHeadersConfigTypeDef(TypedDict):
-    Enabled: bool,
-    SamplingRate: NotRequired[float],
-```
-
 ## ResponseHeadersPolicyContentSecurityPolicyTypeDef
 
 ```python title="Usage Example"
@@ -4250,13 +4233,11 @@ class ResponseHeadersPolicyConfigTypeDef(TypedDict):
     CorsConfig: NotRequired[ResponseHeadersPolicyCorsConfigTypeDef],  # (1)
     SecurityHeadersConfig: NotRequired[ResponseHeadersPolicySecurityHeadersConfigTypeDef],  # (2)
     CustomHeadersConfig: NotRequired[ResponseHeadersPolicyCustomHeadersConfigTypeDef],  # (3)
-    ServerTimingHeadersConfig: NotRequired[ResponseHeadersPolicyServerTimingHeadersConfigTypeDef],  # (4)
 ```
 
 1. See [:material-code-braces: ResponseHeadersPolicyCorsConfigTypeDef](./type_defs.md#responseheaderspolicycorsconfigtypedef) 
 2. See [:material-code-braces: ResponseHeadersPolicySecurityHeadersConfigTypeDef](./type_defs.md#responseheaderspolicysecurityheadersconfigtypedef) 
 3. See [:material-code-braces: ResponseHeadersPolicyCustomHeadersConfigTypeDef](./type_defs.md#responseheaderspolicycustomheadersconfigtypedef) 
-4. See [:material-code-braces: ResponseHeadersPolicyServerTimingHeadersConfigTypeDef](./type_defs.md#responseheaderspolicyservertimingheadersconfigtypedef) 
 ## StreamingDistributionListTypeDef
 
 ```python title="Usage Example"

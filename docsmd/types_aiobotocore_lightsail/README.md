@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Lightsail`.
 
 ### From PyPI with pip
 
@@ -118,11 +113,9 @@ def get_value() -> AccessDirectionType:
 
 - [AccessDirectionType](./literals.md#accessdirectiontype)
 - [AccessTypeType](./literals.md#accesstypetype)
-- [AccountLevelBpaSyncStatusType](./literals.md#accountlevelbpasyncstatustype)
 - [AddOnTypeType](./literals.md#addontypetype)
 - [AlarmStateType](./literals.md#alarmstatetype)
 - [AutoSnapshotStatusType](./literals.md#autosnapshotstatustype)
-- [BPAStatusMessageType](./literals.md#bpastatusmessagetype)
 - [BehaviorEnumType](./literals.md#behaviorenumtype)
 - [BlueprintTypeType](./literals.md#blueprinttypetype)
 - [BucketMetricNameType](./literals.md#bucketmetricnametype)
@@ -224,7 +217,6 @@ def get_value() -> AccessKeyLastUsedTypeDef:
 
 - [AccessKeyLastUsedTypeDef](./type_defs.md#accesskeylastusedtypedef)
 - [AccessRulesTypeDef](./type_defs.md#accessrulestypedef)
-- [AccountLevelBpaSyncTypeDef](./type_defs.md#accountlevelbpasynctypedef)
 - [AutoSnapshotAddOnRequestTypeDef](./type_defs.md#autosnapshotaddonrequesttypedef)
 - [AddOnTypeDef](./type_defs.md#addontypedef)
 - [MonitoredResourceInfoTypeDef](./type_defs.md#monitoredresourceinfotypedef)
@@ -255,8 +247,6 @@ def get_value() -> AccessKeyLastUsedTypeDef:
 - [DestinationInfoTypeDef](./type_defs.md#destinationinfotypedef)
 - [ContainerImageTypeDef](./type_defs.md#containerimagetypedef)
 - [ContainerTypeDef](./type_defs.md#containertypedef)
-- [ContainerServiceECRImagePullerRoleRequestTypeDef](./type_defs.md#containerserviceecrimagepullerrolerequesttypedef)
-- [ContainerServiceECRImagePullerRoleTypeDef](./type_defs.md#containerserviceecrimagepullerroletypedef)
 - [ContainerServiceHealthCheckConfigTypeDef](./type_defs.md#containerservicehealthcheckconfigtypedef)
 - [ContainerServiceLogEventTypeDef](./type_defs.md#containerservicelogeventtypedef)
 - [ContainerServicePowerTypeDef](./type_defs.md#containerservicepowertypedef)
@@ -343,8 +333,6 @@ def get_value() -> AccessKeyLastUsedTypeDef:
 - [GetLoadBalancerMetricDataRequestRequestTypeDef](./type_defs.md#getloadbalancermetricdatarequestrequesttypedef)
 - [GetLoadBalancerRequestRequestTypeDef](./type_defs.md#getloadbalancerrequestrequesttypedef)
 - [GetLoadBalancerTlsCertificatesRequestRequestTypeDef](./type_defs.md#getloadbalancertlscertificatesrequestrequesttypedef)
-- [GetLoadBalancerTlsPoliciesRequestRequestTypeDef](./type_defs.md#getloadbalancertlspoliciesrequestrequesttypedef)
-- [LoadBalancerTlsPolicyTypeDef](./type_defs.md#loadbalancertlspolicytypedef)
 - [GetLoadBalancersRequestRequestTypeDef](./type_defs.md#getloadbalancersrequestrequesttypedef)
 - [GetOperationRequestRequestTypeDef](./type_defs.md#getoperationrequestrequesttypedef)
 - [GetOperationsForResourceRequestRequestTypeDef](./type_defs.md#getoperationsforresourcerequestrequesttypedef)
@@ -399,6 +387,7 @@ def get_value() -> AccessKeyLastUsedTypeDef:
 - [TestAlarmRequestRequestTypeDef](./type_defs.md#testalarmrequestrequesttypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [UpdateBucketBundleRequestRequestTypeDef](./type_defs.md#updatebucketbundlerequestrequesttypedef)
+- [UpdateContainerServiceRequestRequestTypeDef](./type_defs.md#updatecontainerservicerequestrequesttypedef)
 - [UpdateDistributionBundleRequestRequestTypeDef](./type_defs.md#updatedistributionbundlerequestrequesttypedef)
 - [UpdateLoadBalancerAttributeRequestRequestTypeDef](./type_defs.md#updateloadbalancerattributerequestrequesttypedef)
 - [UpdateRelationalDatabaseRequestRequestTypeDef](./type_defs.md#updaterelationaldatabaserequestrequesttypedef)
@@ -445,8 +434,6 @@ def get_value() -> AccessKeyLastUsedTypeDef:
 - [CloudFormationStackRecordTypeDef](./type_defs.md#cloudformationstackrecordtypedef)
 - [GetContainerImagesResultTypeDef](./type_defs.md#getcontainerimagesresulttypedef)
 - [RegisterContainerImageResultTypeDef](./type_defs.md#registercontainerimageresulttypedef)
-- [PrivateRegistryAccessRequestTypeDef](./type_defs.md#privateregistryaccessrequesttypedef)
-- [PrivateRegistryAccessTypeDef](./type_defs.md#privateregistryaccesstypedef)
 - [ContainerServiceEndpointTypeDef](./type_defs.md#containerserviceendpointtypedef)
 - [EndpointRequestTypeDef](./type_defs.md#endpointrequesttypedef)
 - [GetContainerLogResultTypeDef](./type_defs.md#getcontainerlogresulttypedef)
@@ -488,7 +475,6 @@ def get_value() -> AccessKeyLastUsedTypeDef:
 - [GetRelationalDatabaseMetricDataResultTypeDef](./type_defs.md#getrelationaldatabasemetricdataresulttypedef)
 - [GetInstancePortStatesResultTypeDef](./type_defs.md#getinstanceportstatesresulttypedef)
 - [GetInstanceStateResultTypeDef](./type_defs.md#getinstancestateresulttypedef)
-- [GetLoadBalancerTlsPoliciesResultTypeDef](./type_defs.md#getloadbalancertlspoliciesresulttypedef)
 - [GetRelationalDatabaseBlueprintsResultTypeDef](./type_defs.md#getrelationaldatabaseblueprintsresulttypedef)
 - [GetRelationalDatabaseBundlesResultTypeDef](./type_defs.md#getrelationaldatabasebundlesresulttypedef)
 - [GetRelationalDatabaseEventsResultTypeDef](./type_defs.md#getrelationaldatabaseeventsresulttypedef)
@@ -610,7 +596,6 @@ def get_value() -> AccessKeyLastUsedTypeDef:
 - [LightsailDistributionTypeDef](./type_defs.md#lightsaildistributiontypedef)
 - [UpdateDistributionRequestRequestTypeDef](./type_defs.md#updatedistributionrequestrequesttypedef)
 - [GetCloudFormationStackRecordsResultTypeDef](./type_defs.md#getcloudformationstackrecordsresulttypedef)
-- [UpdateContainerServiceRequestRequestTypeDef](./type_defs.md#updatecontainerservicerequestrequesttypedef)
 - [ContainerServiceDeploymentTypeDef](./type_defs.md#containerservicedeploymenttypedef)
 - [ContainerServiceDeploymentRequestTypeDef](./type_defs.md#containerservicedeploymentrequesttypedef)
 - [CreateContainerServiceDeploymentRequestRequestTypeDef](./type_defs.md#createcontainerservicedeploymentrequestrequesttypedef)

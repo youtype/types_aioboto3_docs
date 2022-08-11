@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `IoT`.
 
 ### From PyPI with pip
 
@@ -101,7 +96,6 @@ def get_get_behavior_model_training_summaries_paginator() -> GetBehaviorModelTra
 - [ListJobExecutionsForThingPaginator](./paginators.md#listjobexecutionsforthingpaginator)
 - [ListJobTemplatesPaginator](./paginators.md#listjobtemplatespaginator)
 - [ListJobsPaginator](./paginators.md#listjobspaginator)
-- [ListMetricValuesPaginator](./paginators.md#listmetricvaluespaginator)
 - [ListMitigationActionsPaginator](./paginators.md#listmitigationactionspaginator)
 - [ListOTAUpdatesPaginator](./paginators.md#listotaupdatespaginator)
 - [ListOutgoingCertificatesPaginator](./paginators.md#listoutgoingcertificatespaginator)
@@ -219,7 +213,6 @@ def get_value() -> AbortActionType:
 - [ListJobExecutionsForThingPaginatorName](./literals.md#listjobexecutionsforthingpaginatorname)
 - [ListJobTemplatesPaginatorName](./literals.md#listjobtemplatespaginatorname)
 - [ListJobsPaginatorName](./literals.md#listjobspaginatorname)
-- [ListMetricValuesPaginatorName](./literals.md#listmetricvaluespaginatorname)
 - [ListMitigationActionsPaginatorName](./literals.md#listmitigationactionspaginatorname)
 - [ListOTAUpdatesPaginatorName](./literals.md#listotaupdatespaginatorname)
 - [ListOutgoingCertificatesPaginatorName](./literals.md#listoutgoingcertificatespaginatorname)
@@ -519,7 +512,6 @@ def get_value() -> AbortCriteriaTypeDef:
 - [ListJobsRequestRequestTypeDef](./type_defs.md#listjobsrequestrequesttypedef)
 - [ListManagedJobTemplatesRequestRequestTypeDef](./type_defs.md#listmanagedjobtemplatesrequestrequesttypedef)
 - [ManagedJobTemplateSummaryTypeDef](./type_defs.md#managedjobtemplatesummarytypedef)
-- [ListMetricValuesRequestRequestTypeDef](./type_defs.md#listmetricvaluesrequestrequesttypedef)
 - [ListMitigationActionsRequestRequestTypeDef](./type_defs.md#listmitigationactionsrequestrequesttypedef)
 - [MitigationActionIdentifierTypeDef](./type_defs.md#mitigationactionidentifiertypedef)
 - [ListOTAUpdatesRequestRequestTypeDef](./type_defs.md#listotaupdatesrequestrequesttypedef)
@@ -606,7 +598,6 @@ def get_value() -> AbortCriteriaTypeDef:
 - [UpdateTopicRuleDestinationRequestRequestTypeDef](./type_defs.md#updatetopicruledestinationrequestrequesttypedef)
 - [ValidationErrorTypeDef](./type_defs.md#validationerrortypedef)
 - [AbortConfigTypeDef](./type_defs.md#abortconfigtypedef)
-- [MetricDatumTypeDef](./type_defs.md#metricdatumtypedef)
 - [UpdateFleetMetricRequestRequestTypeDef](./type_defs.md#updatefleetmetricrequestrequesttypedef)
 - [AllowedTypeDef](./type_defs.md#allowedtypedef)
 - [ExplicitDenyTypeDef](./type_defs.md#explicitdenytypedef)
@@ -781,7 +772,6 @@ def get_value() -> AbortCriteriaTypeDef:
 - [ListJobExecutionsForThingRequestListJobExecutionsForThingPaginateTypeDef](./type_defs.md#listjobexecutionsforthingrequestlistjobexecutionsforthingpaginatetypedef)
 - [ListJobTemplatesRequestListJobTemplatesPaginateTypeDef](./type_defs.md#listjobtemplatesrequestlistjobtemplatespaginatetypedef)
 - [ListJobsRequestListJobsPaginateTypeDef](./type_defs.md#listjobsrequestlistjobspaginatetypedef)
-- [ListMetricValuesRequestListMetricValuesPaginateTypeDef](./type_defs.md#listmetricvaluesrequestlistmetricvaluespaginatetypedef)
 - [ListMitigationActionsRequestListMitigationActionsPaginateTypeDef](./type_defs.md#listmitigationactionsrequestlistmitigationactionspaginatetypedef)
 - [ListOTAUpdatesRequestListOTAUpdatesPaginateTypeDef](./type_defs.md#listotaupdatesrequestlistotaupdatespaginatetypedef)
 - [ListOutgoingCertificatesRequestListOutgoingCertificatesPaginateTypeDef](./type_defs.md#listoutgoingcertificatesrequestlistoutgoingcertificatespaginatetypedef)
@@ -851,7 +841,6 @@ def get_value() -> AbortCriteriaTypeDef:
 - [TopicRuleDestinationSummaryTypeDef](./type_defs.md#topicruledestinationsummarytypedef)
 - [TopicRuleDestinationTypeDef](./type_defs.md#topicruledestinationtypedef)
 - [ValidateSecurityProfileBehaviorsResponseTypeDef](./type_defs.md#validatesecurityprofilebehaviorsresponsetypedef)
-- [ListMetricValuesResponseTypeDef](./type_defs.md#listmetricvaluesresponsetypedef)
 - [DeniedTypeDef](./type_defs.md#deniedtypedef)
 - [PutAssetPropertyValueEntryTypeDef](./type_defs.md#putassetpropertyvalueentrytypedef)
 - [CreateDynamicThingGroupRequestRequestTypeDef](./type_defs.md#createdynamicthinggrouprequestrequesttypedef)

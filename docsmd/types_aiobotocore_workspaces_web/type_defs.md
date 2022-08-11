@@ -613,9 +613,7 @@ class UserSettingsTypeDef(TypedDict):
     userSettingsArn: str,
     associatedPortalArns: NotRequired[List[str]],
     copyAllowed: NotRequired[EnabledTypeType],  # (1)
-    disconnectTimeoutInMinutes: NotRequired[int],
     downloadAllowed: NotRequired[EnabledTypeType],  # (1)
-    idleDisconnectTimeoutInMinutes: NotRequired[int],
     pasteAllowed: NotRequired[EnabledTypeType],  # (1)
     printAllowed: NotRequired[EnabledTypeType],  # (1)
     uploadAllowed: NotRequired[EnabledTypeType],  # (1)
@@ -858,9 +856,7 @@ def get_value() -> UserSettingsSummaryTypeDef:
 ```python title="Definition"
 class UserSettingsSummaryTypeDef(TypedDict):
     copyAllowed: NotRequired[EnabledTypeType],  # (1)
-    disconnectTimeoutInMinutes: NotRequired[int],
     downloadAllowed: NotRequired[EnabledTypeType],  # (1)
-    idleDisconnectTimeoutInMinutes: NotRequired[int],
     pasteAllowed: NotRequired[EnabledTypeType],  # (1)
     printAllowed: NotRequired[EnabledTypeType],  # (1)
     uploadAllowed: NotRequired[EnabledTypeType],  # (1)
@@ -1001,9 +997,7 @@ class UpdateUserSettingsRequestRequestTypeDef(TypedDict):
     userSettingsArn: str,
     clientToken: NotRequired[str],
     copyAllowed: NotRequired[EnabledTypeType],  # (1)
-    disconnectTimeoutInMinutes: NotRequired[int],
     downloadAllowed: NotRequired[EnabledTypeType],  # (1)
-    idleDisconnectTimeoutInMinutes: NotRequired[int],
     pasteAllowed: NotRequired[EnabledTypeType],  # (1)
     printAllowed: NotRequired[EnabledTypeType],  # (1)
     uploadAllowed: NotRequired[EnabledTypeType],  # (1)
@@ -1469,8 +1463,6 @@ class CreateUserSettingsRequestRequestTypeDef(TypedDict):
     printAllowed: EnabledTypeType,  # (1)
     uploadAllowed: EnabledTypeType,  # (1)
     clientToken: NotRequired[str],
-    disconnectTimeoutInMinutes: NotRequired[int],
-    idleDisconnectTimeoutInMinutes: NotRequired[int],
     tags: NotRequired[Sequence[TagTypeDef]],  # (6)
 ```
 

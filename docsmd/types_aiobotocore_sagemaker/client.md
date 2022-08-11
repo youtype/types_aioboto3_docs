@@ -87,7 +87,7 @@ parent.add_association(**kwargs)
 
 ### add\_tags
 
-Adds or overwrites one or more tags for the specified SageMaker resource.
+Adds or overwrites one or more tags for the specified Amazon SageMaker resource.
 
 Type annotations and code completion for `#!python session.client("sagemaker").add_tags` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.add_tags)
@@ -195,21 +195,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("sagemaker").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_action
 
 Creates an *action*.
@@ -254,8 +239,8 @@ parent.create_action(**kwargs)
 
 ### create\_algorithm
 
-Create a machine learning algorithm that you can use in SageMaker and list in
-the Amazon Web Services Marketplace.
+Create a machine learning algorithm that you can use in Amazon SageMaker and
+list in the Amazon Web Services Marketplace.
 
 Type annotations and code completion for `#!python session.client("sagemaker").create_algorithm` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_algorithm)
@@ -406,7 +391,7 @@ parent.create_artifact(**kwargs)
 
 ### create\_auto\_ml\_job
 
-.
+Creates an Autopilot job.
 
 Type annotations and code completion for `#!python session.client("sagemaker").create_auto_ml_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_auto_ml_job)
@@ -454,7 +439,7 @@ parent.create_auto_ml_job(**kwargs)
 
 ### create\_code\_repository
 
-Creates a Git repository as a resource in your SageMaker account.
+Creates a Git repository as a resource in your Amazon SageMaker account.
 
 Type annotations and code completion for `#!python session.client("sagemaker").create_code_repository` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_code_repository)
@@ -1101,18 +1086,16 @@ await def create_inference_recommendations_job(
     InputConfig: RecommendationJobInputConfigTypeDef,  # (2)
     JobDescription: str = ...,
     StoppingConditions: RecommendationJobStoppingConditionsTypeDef = ...,  # (3)
-    OutputConfig: RecommendationJobOutputConfigTypeDef = ...,  # (4)
-    Tags: Sequence[TagTypeDef] = ...,  # (5)
-) -> CreateInferenceRecommendationsJobResponseTypeDef:  # (6)
+    Tags: Sequence[TagTypeDef] = ...,  # (4)
+) -> CreateInferenceRecommendationsJobResponseTypeDef:  # (5)
     ...
 ```
 
 1. See [:material-code-brackets: RecommendationJobTypeType](./literals.md#recommendationjobtypetype) 
 2. See [:material-code-braces: RecommendationJobInputConfigTypeDef](./type_defs.md#recommendationjobinputconfigtypedef) 
 3. See [:material-code-braces: RecommendationJobStoppingConditionsTypeDef](./type_defs.md#recommendationjobstoppingconditionstypedef) 
-4. See [:material-code-braces: RecommendationJobOutputConfigTypeDef](./type_defs.md#recommendationjoboutputconfigtypedef) 
-5. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-6. See [:material-code-braces: CreateInferenceRecommendationsJobResponseTypeDef](./type_defs.md#createinferencerecommendationsjobresponsetypedef) 
+4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+5. See [:material-code-braces: CreateInferenceRecommendationsJobResponseTypeDef](./type_defs.md#createinferencerecommendationsjobresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1179,7 +1162,7 @@ parent.create_labeling_job(**kwargs)
 
 ### create\_model
 
-Creates a model in SageMaker.
+Creates a model in Amazon SageMaker.
 
 Type annotations and code completion for `#!python session.client("sagemaker").create_model` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_model)
@@ -1323,9 +1306,9 @@ parent.create_model_explainability_job_definition(**kwargs)
 
 ### create\_model\_package
 
-Creates a model package that you can use to create SageMaker models or list on
-Amazon Web Services Marketplace, or a versioned model that is part of a model
-group.
+Creates a model package that you can use to create Amazon SageMaker models or
+list on Amazon Web Services Marketplace, or a versioned model that is part of a
+model group.
 
 Type annotations and code completion for `#!python session.client("sagemaker").create_model_package` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_model_package)
@@ -1498,7 +1481,7 @@ parent.create_monitoring_schedule(**kwargs)
 
 ### create\_notebook\_instance
 
-Creates an SageMaker notebook instance.
+Creates an Amazon SageMaker notebook instance.
 
 Type annotations and code completion for `#!python session.client("sagemaker").create_notebook_instance` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_notebook_instance)
@@ -1522,8 +1505,7 @@ await def create_notebook_instance(
     AdditionalCodeRepositories: Sequence[str] = ...,
     RootAccess: RootAccessType = ...,  # (5)
     PlatformIdentifier: str = ...,
-    InstanceMetadataServiceConfiguration: InstanceMetadataServiceConfigurationTypeDef = ...,  # (6)
-) -> CreateNotebookInstanceOutputTypeDef:  # (7)
+) -> CreateNotebookInstanceOutputTypeDef:  # (6)
     ...
 ```
 
@@ -1532,8 +1514,7 @@ await def create_notebook_instance(
 3. See [:material-code-brackets: DirectInternetAccessType](./literals.md#directinternetaccesstype) 
 4. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
 5. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
-6. See [:material-code-braces: InstanceMetadataServiceConfigurationTypeDef](./type_defs.md#instancemetadataserviceconfigurationtypedef) 
-7. See [:material-code-braces: CreateNotebookInstanceOutputTypeDef](./type_defs.md#createnotebookinstanceoutputtypedef) 
+6. See [:material-code-braces: CreateNotebookInstanceOutputTypeDef](./type_defs.md#createnotebookinstanceoutputtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2066,8 +2047,7 @@ await def create_workforce(
     OidcConfig: OidcConfigTypeDef = ...,  # (2)
     SourceIpConfig: SourceIpConfigTypeDef = ...,  # (3)
     Tags: Sequence[TagTypeDef] = ...,  # (4)
-    WorkforceVpcConfig: WorkforceVpcConfigRequestTypeDef = ...,  # (5)
-) -> CreateWorkforceResponseTypeDef:  # (6)
+) -> CreateWorkforceResponseTypeDef:  # (5)
     ...
 ```
 
@@ -2075,8 +2055,7 @@ await def create_workforce(
 2. See [:material-code-braces: OidcConfigTypeDef](./type_defs.md#oidcconfigtypedef) 
 3. See [:material-code-braces: SourceIpConfigTypeDef](./type_defs.md#sourceipconfigtypedef) 
 4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-5. See [:material-code-braces: WorkforceVpcConfigRequestTypeDef](./type_defs.md#workforcevpcconfigrequesttypedef) 
-6. See [:material-code-braces: CreateWorkforceResponseTypeDef](./type_defs.md#createworkforceresponsetypedef) 
+5. See [:material-code-braces: CreateWorkforceResponseTypeDef](./type_defs.md#createworkforceresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2925,7 +2904,7 @@ parent.delete_monitoring_schedule(**kwargs)
 
 ### delete\_notebook\_instance
 
-Deletes an SageMaker notebook instance.
+Deletes an Amazon SageMaker notebook instance.
 
 Type annotations and code completion for `#!python session.client("sagemaker").delete_notebook_instance` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_notebook_instance)
@@ -3072,7 +3051,7 @@ parent.delete_studio_lifecycle_config(**kwargs)
 
 ### delete\_tags
 
-Deletes the specified tags from an SageMaker resource.
+Deletes the specified tags from an Amazon SageMaker resource.
 
 Type annotations and code completion for `#!python session.client("sagemaker").delete_tags` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_tags)
@@ -3431,7 +3410,7 @@ parent.describe_artifact(**kwargs)
 
 ### describe\_auto\_ml\_job
 
-.
+Returns information about an Amazon SageMaker AutoML job.
 
 Type annotations and code completion for `#!python session.client("sagemaker").describe_auto_ml_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_auto_ml_job)
@@ -3809,37 +3788,6 @@ parent.describe_feature_group(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeFeatureGroupRequestRequestTypeDef](./type_defs.md#describefeaturegrouprequestrequesttypedef) 
-
-### describe\_feature\_metadata
-
-Shows the metadata for a feature within a feature group.
-
-Type annotations and code completion for `#!python session.client("sagemaker").describe_feature_metadata` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_feature_metadata)
-
-```python title="Method definition"
-await def describe_feature_metadata(
-    self,
-    *,
-    FeatureGroupName: str,
-    FeatureName: str,
-) -> DescribeFeatureMetadataResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DescribeFeatureMetadataResponseTypeDef](./type_defs.md#describefeaturemetadataresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeFeatureMetadataRequestRequestTypeDef = {  # (1)
-    "FeatureGroupName": ...,
-    "FeatureName": ...,
-}
-
-parent.describe_feature_metadata(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeFeatureMetadataRequestRequestTypeDef](./type_defs.md#describefeaturemetadatarequestrequesttypedef) 
 
 ### describe\_flow\_definition
 
@@ -5236,7 +5184,7 @@ parent.list_auto_ml_jobs(**kwargs)
 
 ### list\_candidates\_for\_auto\_ml\_job
 
-.
+List the candidates created for the job.
 
 Type annotations and code completion for `#!python session.client("sagemaker").list_candidates_for_auto_ml_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_candidates_for_auto_ml_job)
@@ -6468,8 +6416,8 @@ parent.list_notebook_instance_lifecycle_configs(**kwargs)
 
 ### list\_notebook\_instances
 
-Returns a list of the SageMaker notebook instances in the requester's account in
-an Amazon Web Services Region.
+Returns a list of the Amazon SageMaker notebook instances in the requester's
+account in an Amazon Web Services Region.
 
 Type annotations and code completion for `#!python session.client("sagemaker").list_notebook_instances` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_notebook_instances)
@@ -6802,7 +6750,7 @@ parent.list_subscribed_workteams(**kwargs)
 
 ### list\_tags
 
-Returns the tags for the specified SageMaker resource.
+Returns the tags for the specified Amazon SageMaker resource.
 
 Type annotations and code completion for `#!python session.client("sagemaker").list_tags` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_tags)
@@ -8218,72 +8166,6 @@ parent.update_experiment(**kwargs)
 
 1. See [:material-code-braces: UpdateExperimentRequestRequestTypeDef](./type_defs.md#updateexperimentrequestrequesttypedef) 
 
-### update\_feature\_group
-
-Updates the feature group.
-
-Type annotations and code completion for `#!python session.client("sagemaker").update_feature_group` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_feature_group)
-
-```python title="Method definition"
-await def update_feature_group(
-    self,
-    *,
-    FeatureGroupName: str,
-    FeatureAdditions: Sequence[FeatureDefinitionTypeDef] = ...,  # (1)
-) -> UpdateFeatureGroupResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FeatureDefinitionTypeDef](./type_defs.md#featuredefinitiontypedef) 
-2. See [:material-code-braces: UpdateFeatureGroupResponseTypeDef](./type_defs.md#updatefeaturegroupresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: UpdateFeatureGroupRequestRequestTypeDef = {  # (1)
-    "FeatureGroupName": ...,
-}
-
-parent.update_feature_group(**kwargs)
-```
-
-1. See [:material-code-braces: UpdateFeatureGroupRequestRequestTypeDef](./type_defs.md#updatefeaturegrouprequestrequesttypedef) 
-
-### update\_feature\_metadata
-
-Updates the description and parameters of the feature group.
-
-Type annotations and code completion for `#!python session.client("sagemaker").update_feature_metadata` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_feature_metadata)
-
-```python title="Method definition"
-await def update_feature_metadata(
-    self,
-    *,
-    FeatureGroupName: str,
-    FeatureName: str,
-    Description: str = ...,
-    ParameterAdditions: Sequence[FeatureParameterTypeDef] = ...,  # (1)
-    ParameterRemovals: Sequence[str] = ...,
-) -> EmptyResponseMetadataTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FeatureParameterTypeDef](./type_defs.md#featureparametertypedef) 
-2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: UpdateFeatureMetadataRequestRequestTypeDef = {  # (1)
-    "FeatureGroupName": ...,
-    "FeatureName": ...,
-}
-
-parent.update_feature_metadata(**kwargs)
-```
-
-1. See [:material-code-braces: UpdateFeatureMetadataRequestRequestTypeDef](./type_defs.md#updatefeaturemetadatarequestrequesttypedef) 
-
 ### update\_image
 
 Updates the properties of a SageMaker image.
@@ -8409,7 +8291,6 @@ await def update_notebook_instance(
     DisassociateDefaultCodeRepository: bool = ...,
     DisassociateAdditionalCodeRepositories: bool = ...,
     RootAccess: RootAccessType = ...,  # (3)
-    InstanceMetadataServiceConfiguration: InstanceMetadataServiceConfigurationTypeDef = ...,  # (4)
 ) -> Dict[str, Any]:
     ...
 ```
@@ -8417,7 +8298,6 @@ await def update_notebook_instance(
 1. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
 2. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
 3. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
-4. See [:material-code-braces: InstanceMetadataServiceConfigurationTypeDef](./type_defs.md#instancemetadataserviceconfigurationtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -8721,15 +8601,13 @@ await def update_workforce(
     WorkforceName: str,
     SourceIpConfig: SourceIpConfigTypeDef = ...,  # (1)
     OidcConfig: OidcConfigTypeDef = ...,  # (2)
-    WorkforceVpcConfig: WorkforceVpcConfigRequestTypeDef = ...,  # (3)
-) -> UpdateWorkforceResponseTypeDef:  # (4)
+) -> UpdateWorkforceResponseTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: SourceIpConfigTypeDef](./type_defs.md#sourceipconfigtypedef) 
 2. See [:material-code-braces: OidcConfigTypeDef](./type_defs.md#oidcconfigtypedef) 
-3. See [:material-code-braces: WorkforceVpcConfigRequestTypeDef](./type_defs.md#workforcevpcconfigrequesttypedef) 
-4. See [:material-code-braces: UpdateWorkforceResponseTypeDef](./type_defs.md#updateworkforceresponsetypedef) 
+3. See [:material-code-braces: UpdateWorkforceResponseTypeDef](./type_defs.md#updateworkforceresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ConnectWisdomService`.
 
 ### From PyPI with pip
 
@@ -116,9 +111,6 @@ def get_value() -> AssistantStatusType:
 - [ListContentsPaginatorName](./literals.md#listcontentspaginatorname)
 - [ListKnowledgeBasesPaginatorName](./literals.md#listknowledgebasespaginatorname)
 - [QueryAssistantPaginatorName](./literals.md#queryassistantpaginatorname)
-- [RecommendationSourceTypeType](./literals.md#recommendationsourcetypetype)
-- [RecommendationTriggerTypeType](./literals.md#recommendationtriggertypetype)
-- [RecommendationTypeType](./literals.md#recommendationtypetype)
 - [RelevanceLevelType](./literals.md#relevanceleveltype)
 - [SearchContentPaginatorName](./literals.md#searchcontentpaginatorname)
 - [SearchSessionsPaginatorName](./literals.md#searchsessionspaginatorname)
@@ -179,7 +171,6 @@ def get_value() -> AppIntegrationsConfigurationTypeDef:
 - [NotifyRecommendationsReceivedErrorTypeDef](./type_defs.md#notifyrecommendationsreceivederrortypedef)
 - [NotifyRecommendationsReceivedRequestRequestTypeDef](./type_defs.md#notifyrecommendationsreceivedrequestrequesttypedef)
 - [QueryAssistantRequestRequestTypeDef](./type_defs.md#queryassistantrequestrequesttypedef)
-- [QueryRecommendationTriggerDataTypeDef](./type_defs.md#queryrecommendationtriggerdatatypedef)
 - [RemoveKnowledgeBaseTemplateUriRequestRequestTypeDef](./type_defs.md#removeknowledgebasetemplateurirequestrequesttypedef)
 - [SessionSummaryTypeDef](./type_defs.md#sessionsummarytypedef)
 - [StartContentUploadRequestRequestTypeDef](./type_defs.md#startcontentuploadrequestrequesttypedef)
@@ -211,7 +202,6 @@ def get_value() -> AppIntegrationsConfigurationTypeDef:
 - [ListKnowledgeBasesRequestListKnowledgeBasesPaginateTypeDef](./type_defs.md#listknowledgebasesrequestlistknowledgebasespaginatetypedef)
 - [QueryAssistantRequestQueryAssistantPaginateTypeDef](./type_defs.md#queryassistantrequestqueryassistantpaginatetypedef)
 - [NotifyRecommendationsReceivedResponseTypeDef](./type_defs.md#notifyrecommendationsreceivedresponsetypedef)
-- [RecommendationTriggerDataTypeDef](./type_defs.md#recommendationtriggerdatatypedef)
 - [SearchSessionsResponseTypeDef](./type_defs.md#searchsessionsresponsetypedef)
 - [CreateKnowledgeBaseRequestRequestTypeDef](./type_defs.md#createknowledgebaserequestrequesttypedef)
 - [KnowledgeBaseDataTypeDef](./type_defs.md#knowledgebasedatatypedef)
@@ -226,7 +216,6 @@ def get_value() -> AppIntegrationsConfigurationTypeDef:
 - [SearchContentRequestSearchContentPaginateTypeDef](./type_defs.md#searchcontentrequestsearchcontentpaginatetypedef)
 - [SearchSessionsRequestRequestTypeDef](./type_defs.md#searchsessionsrequestrequesttypedef)
 - [SearchSessionsRequestSearchSessionsPaginateTypeDef](./type_defs.md#searchsessionsrequestsearchsessionspaginatetypedef)
-- [RecommendationTriggerTypeDef](./type_defs.md#recommendationtriggertypedef)
 - [CreateKnowledgeBaseResponseTypeDef](./type_defs.md#createknowledgebaseresponsetypedef)
 - [GetKnowledgeBaseResponseTypeDef](./type_defs.md#getknowledgebaseresponsetypedef)
 - [UpdateKnowledgeBaseTemplateUriResponseTypeDef](./type_defs.md#updateknowledgebasetemplateuriresponsetypedef)

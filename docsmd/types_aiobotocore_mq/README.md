@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `MQ`.
 
 ### From PyPI with pip
 
@@ -120,15 +115,14 @@ def get_value() -> AuthenticationStrategyType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_mq.type_defs import ActionRequiredTypeDef
+from types_aiobotocore_mq.type_defs import AvailabilityZoneTypeDef
 
-def get_value() -> ActionRequiredTypeDef:
+def get_value() -> AvailabilityZoneTypeDef:
     return {
-        "ActionRequiredCode": ...,
+        "Name": ...,
     }
 ```
 
-- [ActionRequiredTypeDef](./type_defs.md#actionrequiredtypedef)
 - [AvailabilityZoneTypeDef](./type_defs.md#availabilityzonetypedef)
 - [EngineVersionTypeDef](./type_defs.md#engineversiontypedef)
 - [BrokerInstanceTypeDef](./type_defs.md#brokerinstancetypedef)

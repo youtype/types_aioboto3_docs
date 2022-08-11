@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Backup`.
 
 ### From PyPI with pip
 
@@ -64,32 +59,6 @@ async with session.client("backup") as client:
 ```
 
 
-## Paginators
-
-Type annotations and code completion for
-[paginators](./paginators.md)
-from `#!python session.client("backup").get_paginator("...")`.
-
-```python title="Usage example"
-from types_aiobotocore_backup.paginator import ListBackupJobsPaginator
-
-def get_list_backup_jobs_paginator() -> ListBackupJobsPaginator:
-    return client.get_paginator("list_backup_jobs"))
-```
-
-- [ListBackupJobsPaginator](./paginators.md#listbackupjobspaginator)
-- [ListBackupPlanTemplatesPaginator](./paginators.md#listbackupplantemplatespaginator)
-- [ListBackupPlanVersionsPaginator](./paginators.md#listbackupplanversionspaginator)
-- [ListBackupPlansPaginator](./paginators.md#listbackupplanspaginator)
-- [ListBackupSelectionsPaginator](./paginators.md#listbackupselectionspaginator)
-- [ListBackupVaultsPaginator](./paginators.md#listbackupvaultspaginator)
-- [ListCopyJobsPaginator](./paginators.md#listcopyjobspaginator)
-- [ListProtectedResourcesPaginator](./paginators.md#listprotectedresourcespaginator)
-- [ListRecoveryPointsByBackupVaultPaginator](./paginators.md#listrecoverypointsbybackupvaultpaginator)
-- [ListRecoveryPointsByResourcePaginator](./paginators.md#listrecoverypointsbyresourcepaginator)
-- [ListRestoreJobsPaginator](./paginators.md#listrestorejobspaginator)
-
-
 
 
 
@@ -111,24 +80,12 @@ def get_value() -> BackupJobStateType:
 - [BackupVaultEventType](./literals.md#backupvaulteventtype)
 - [ConditionTypeType](./literals.md#conditiontypetype)
 - [CopyJobStateType](./literals.md#copyjobstatetype)
-- [ListBackupJobsPaginatorName](./literals.md#listbackupjobspaginatorname)
-- [ListBackupPlanTemplatesPaginatorName](./literals.md#listbackupplantemplatespaginatorname)
-- [ListBackupPlanVersionsPaginatorName](./literals.md#listbackupplanversionspaginatorname)
-- [ListBackupPlansPaginatorName](./literals.md#listbackupplanspaginatorname)
-- [ListBackupSelectionsPaginatorName](./literals.md#listbackupselectionspaginatorname)
-- [ListBackupVaultsPaginatorName](./literals.md#listbackupvaultspaginatorname)
-- [ListCopyJobsPaginatorName](./literals.md#listcopyjobspaginatorname)
-- [ListProtectedResourcesPaginatorName](./literals.md#listprotectedresourcespaginatorname)
-- [ListRecoveryPointsByBackupVaultPaginatorName](./literals.md#listrecoverypointsbybackupvaultpaginatorname)
-- [ListRecoveryPointsByResourcePaginatorName](./literals.md#listrecoverypointsbyresourcepaginatorname)
-- [ListRestoreJobsPaginatorName](./literals.md#listrestorejobspaginatorname)
 - [RecoveryPointStatusType](./literals.md#recoverypointstatustype)
 - [RestoreJobStatusType](./literals.md#restorejobstatustype)
 - [StorageClassType](./literals.md#storageclasstype)
 - [BackupServiceName](./literals.md#backupservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
-- [PaginatorName](./literals.md#paginatorname)
 - [RegionName](./literals.md#regionname)
 
 
@@ -190,7 +147,6 @@ def get_value() -> AdvancedBackupSettingTypeDef:
 - [GetBackupVaultAccessPolicyInputRequestTypeDef](./type_defs.md#getbackupvaultaccesspolicyinputrequesttypedef)
 - [GetBackupVaultNotificationsInputRequestTypeDef](./type_defs.md#getbackupvaultnotificationsinputrequesttypedef)
 - [GetRecoveryPointRestoreMetadataInputRequestTypeDef](./type_defs.md#getrecoverypointrestoremetadatainputrequesttypedef)
-- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListBackupJobsInputRequestTypeDef](./type_defs.md#listbackupjobsinputrequesttypedef)
 - [ListBackupPlanTemplatesInputRequestTypeDef](./type_defs.md#listbackupplantemplatesinputrequesttypedef)
 - [ListBackupPlanVersionsInputRequestTypeDef](./type_defs.md#listbackupplanversionsinputrequesttypedef)
@@ -265,17 +221,6 @@ def get_value() -> AdvancedBackupSettingTypeDef:
 - [ReportPlanTypeDef](./type_defs.md#reportplantypedef)
 - [UpdateReportPlanInputRequestTypeDef](./type_defs.md#updatereportplaninputrequesttypedef)
 - [ListFrameworksOutputTypeDef](./type_defs.md#listframeworksoutputtypedef)
-- [ListBackupJobsInputListBackupJobsPaginateTypeDef](./type_defs.md#listbackupjobsinputlistbackupjobspaginatetypedef)
-- [ListBackupPlanTemplatesInputListBackupPlanTemplatesPaginateTypeDef](./type_defs.md#listbackupplantemplatesinputlistbackupplantemplatespaginatetypedef)
-- [ListBackupPlanVersionsInputListBackupPlanVersionsPaginateTypeDef](./type_defs.md#listbackupplanversionsinputlistbackupplanversionspaginatetypedef)
-- [ListBackupPlansInputListBackupPlansPaginateTypeDef](./type_defs.md#listbackupplansinputlistbackupplanspaginatetypedef)
-- [ListBackupSelectionsInputListBackupSelectionsPaginateTypeDef](./type_defs.md#listbackupselectionsinputlistbackupselectionspaginatetypedef)
-- [ListBackupVaultsInputListBackupVaultsPaginateTypeDef](./type_defs.md#listbackupvaultsinputlistbackupvaultspaginatetypedef)
-- [ListCopyJobsInputListCopyJobsPaginateTypeDef](./type_defs.md#listcopyjobsinputlistcopyjobspaginatetypedef)
-- [ListProtectedResourcesInputListProtectedResourcesPaginateTypeDef](./type_defs.md#listprotectedresourcesinputlistprotectedresourcespaginatetypedef)
-- [ListRecoveryPointsByBackupVaultInputListRecoveryPointsByBackupVaultPaginateTypeDef](./type_defs.md#listrecoverypointsbybackupvaultinputlistrecoverypointsbybackupvaultpaginatetypedef)
-- [ListRecoveryPointsByResourceInputListRecoveryPointsByResourcePaginateTypeDef](./type_defs.md#listrecoverypointsbyresourceinputlistrecoverypointsbyresourcepaginatetypedef)
-- [ListRestoreJobsInputListRestoreJobsPaginateTypeDef](./type_defs.md#listrestorejobsinputlistrestorejobspaginatetypedef)
 - [ListProtectedResourcesOutputTypeDef](./type_defs.md#listprotectedresourcesoutputtypedef)
 - [ListRecoveryPointsByResourceOutputTypeDef](./type_defs.md#listrecoverypointsbyresourceoutputtypedef)
 - [ListRestoreJobsOutputTypeDef](./type_defs.md#listrestorejobsoutputtypedef)

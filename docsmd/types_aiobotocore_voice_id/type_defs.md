@@ -256,31 +256,11 @@ class SpeakerTypeDef(TypedDict):
     CustomerSpeakerId: NotRequired[str],
     DomainId: NotRequired[str],
     GeneratedSpeakerId: NotRequired[str],
-    LastAccessedAt: NotRequired[datetime],
     Status: NotRequired[SpeakerStatusType],  # (1)
     UpdatedAt: NotRequired[datetime],
 ```
 
 1. See [:material-code-brackets: SpeakerStatusType](./literals.md#speakerstatustype) 
-## ServerSideEncryptionUpdateDetailsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_voice_id.type_defs import ServerSideEncryptionUpdateDetailsTypeDef
-
-def get_value() -> ServerSideEncryptionUpdateDetailsTypeDef:
-    return {
-        "Message": ...,
-    }
-```
-
-```python title="Definition"
-class ServerSideEncryptionUpdateDetailsTypeDef(TypedDict):
-    Message: NotRequired[str],
-    OldKmsKeyId: NotRequired[str],
-    UpdateStatus: NotRequired[ServerSideEncryptionUpdateStatusType],  # (1)
-```
-
-1. See [:material-code-brackets: ServerSideEncryptionUpdateStatusType](./literals.md#serversideencryptionupdatestatustype) 
 ## EnrollmentJobFraudDetectionConfigTypeDef
 
 ```python title="Usage Example"
@@ -434,24 +414,6 @@ class RegistrationConfigTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: DuplicateRegistrationActionType](./literals.md#duplicateregistrationactiontype) 
-## PaginatorConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_voice_id.type_defs import PaginatorConfigTypeDef
-
-def get_value() -> PaginatorConfigTypeDef:
-    return {
-        "MaxItems": ...,
-    }
-```
-
-```python title="Definition"
-class PaginatorConfigTypeDef(TypedDict):
-    MaxItems: NotRequired[int],
-    PageSize: NotRequired[int],
-    StartingToken: NotRequired[str],
-```
-
 ## ListDomainsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -544,7 +506,6 @@ class SpeakerSummaryTypeDef(TypedDict):
     CustomerSpeakerId: NotRequired[str],
     DomainId: NotRequired[str],
     GeneratedSpeakerId: NotRequired[str],
-    LastAccessedAt: NotRequired[datetime],
     Status: NotRequired[SpeakerStatusType],  # (1)
     UpdatedAt: NotRequired[datetime],
 ```
@@ -627,6 +588,56 @@ class AuthenticationResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: AuthenticationConfigurationTypeDef](./type_defs.md#authenticationconfigurationtypedef) 
 2. See [:material-code-brackets: AuthenticationDecisionType](./literals.md#authenticationdecisiontype) 
+## DomainSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_voice_id.type_defs import DomainSummaryTypeDef
+
+def get_value() -> DomainSummaryTypeDef:
+    return {
+        "Arn": ...,
+    }
+```
+
+```python title="Definition"
+class DomainSummaryTypeDef(TypedDict):
+    Arn: NotRequired[str],
+    CreatedAt: NotRequired[datetime],
+    Description: NotRequired[str],
+    DomainId: NotRequired[str],
+    DomainStatus: NotRequired[DomainStatusType],  # (1)
+    Name: NotRequired[str],
+    ServerSideEncryptionConfiguration: NotRequired[ServerSideEncryptionConfigurationTypeDef],  # (2)
+    UpdatedAt: NotRequired[datetime],
+```
+
+1. See [:material-code-brackets: DomainStatusType](./literals.md#domainstatustype) 
+2. See [:material-code-braces: ServerSideEncryptionConfigurationTypeDef](./type_defs.md#serversideencryptionconfigurationtypedef) 
+## DomainTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_voice_id.type_defs import DomainTypeDef
+
+def get_value() -> DomainTypeDef:
+    return {
+        "Arn": ...,
+    }
+```
+
+```python title="Definition"
+class DomainTypeDef(TypedDict):
+    Arn: NotRequired[str],
+    CreatedAt: NotRequired[datetime],
+    Description: NotRequired[str],
+    DomainId: NotRequired[str],
+    DomainStatus: NotRequired[DomainStatusType],  # (1)
+    Name: NotRequired[str],
+    ServerSideEncryptionConfiguration: NotRequired[ServerSideEncryptionConfigurationTypeDef],  # (2)
+    UpdatedAt: NotRequired[datetime],
+```
+
+1. See [:material-code-brackets: DomainStatusType](./literals.md#domainstatustype) 
+2. See [:material-code-braces: ServerSideEncryptionConfigurationTypeDef](./type_defs.md#serversideencryptionconfigurationtypedef) 
 ## UpdateDomainRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -788,60 +799,6 @@ class OptOutSpeakerResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: SpeakerTypeDef](./type_defs.md#speakertypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DomainSummaryTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_voice_id.type_defs import DomainSummaryTypeDef
-
-def get_value() -> DomainSummaryTypeDef:
-    return {
-        "Arn": ...,
-    }
-```
-
-```python title="Definition"
-class DomainSummaryTypeDef(TypedDict):
-    Arn: NotRequired[str],
-    CreatedAt: NotRequired[datetime],
-    Description: NotRequired[str],
-    DomainId: NotRequired[str],
-    DomainStatus: NotRequired[DomainStatusType],  # (1)
-    Name: NotRequired[str],
-    ServerSideEncryptionConfiguration: NotRequired[ServerSideEncryptionConfigurationTypeDef],  # (2)
-    ServerSideEncryptionUpdateDetails: NotRequired[ServerSideEncryptionUpdateDetailsTypeDef],  # (3)
-    UpdatedAt: NotRequired[datetime],
-```
-
-1. See [:material-code-brackets: DomainStatusType](./literals.md#domainstatustype) 
-2. See [:material-code-braces: ServerSideEncryptionConfigurationTypeDef](./type_defs.md#serversideencryptionconfigurationtypedef) 
-3. See [:material-code-braces: ServerSideEncryptionUpdateDetailsTypeDef](./type_defs.md#serversideencryptionupdatedetailstypedef) 
-## DomainTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_voice_id.type_defs import DomainTypeDef
-
-def get_value() -> DomainTypeDef:
-    return {
-        "Arn": ...,
-    }
-```
-
-```python title="Definition"
-class DomainTypeDef(TypedDict):
-    Arn: NotRequired[str],
-    CreatedAt: NotRequired[datetime],
-    Description: NotRequired[str],
-    DomainId: NotRequired[str],
-    DomainStatus: NotRequired[DomainStatusType],  # (1)
-    Name: NotRequired[str],
-    ServerSideEncryptionConfiguration: NotRequired[ServerSideEncryptionConfigurationTypeDef],  # (2)
-    ServerSideEncryptionUpdateDetails: NotRequired[ServerSideEncryptionUpdateDetailsTypeDef],  # (3)
-    UpdatedAt: NotRequired[datetime],
-```
-
-1. See [:material-code-brackets: DomainStatusType](./literals.md#domainstatustype) 
-2. See [:material-code-braces: ServerSideEncryptionConfigurationTypeDef](./type_defs.md#serversideencryptionconfigurationtypedef) 
-3. See [:material-code-braces: ServerSideEncryptionUpdateDetailsTypeDef](./type_defs.md#serversideencryptionupdatedetailstypedef) 
 ## EnrollmentConfigTypeDef
 
 ```python title="Usage Example"
@@ -991,81 +948,6 @@ class StartFraudsterRegistrationJobRequestRequestTypeDef(TypedDict):
 1. See [:material-code-braces: InputDataConfigTypeDef](./type_defs.md#inputdataconfigtypedef) 
 2. See [:material-code-braces: OutputDataConfigTypeDef](./type_defs.md#outputdataconfigtypedef) 
 3. See [:material-code-braces: RegistrationConfigTypeDef](./type_defs.md#registrationconfigtypedef) 
-## ListDomainsRequestListDomainsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_voice_id.type_defs import ListDomainsRequestListDomainsPaginateTypeDef
-
-def get_value() -> ListDomainsRequestListDomainsPaginateTypeDef:
-    return {
-        "PaginationConfig": ...,
-    }
-```
-
-```python title="Definition"
-class ListDomainsRequestListDomainsPaginateTypeDef(TypedDict):
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListFraudsterRegistrationJobsRequestListFraudsterRegistrationJobsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_voice_id.type_defs import ListFraudsterRegistrationJobsRequestListFraudsterRegistrationJobsPaginateTypeDef
-
-def get_value() -> ListFraudsterRegistrationJobsRequestListFraudsterRegistrationJobsPaginateTypeDef:
-    return {
-        "DomainId": ...,
-    }
-```
-
-```python title="Definition"
-class ListFraudsterRegistrationJobsRequestListFraudsterRegistrationJobsPaginateTypeDef(TypedDict):
-    DomainId: str,
-    JobStatus: NotRequired[FraudsterRegistrationJobStatusType],  # (1)
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: FraudsterRegistrationJobStatusType](./literals.md#fraudsterregistrationjobstatustype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListSpeakerEnrollmentJobsRequestListSpeakerEnrollmentJobsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_voice_id.type_defs import ListSpeakerEnrollmentJobsRequestListSpeakerEnrollmentJobsPaginateTypeDef
-
-def get_value() -> ListSpeakerEnrollmentJobsRequestListSpeakerEnrollmentJobsPaginateTypeDef:
-    return {
-        "DomainId": ...,
-    }
-```
-
-```python title="Definition"
-class ListSpeakerEnrollmentJobsRequestListSpeakerEnrollmentJobsPaginateTypeDef(TypedDict):
-    DomainId: str,
-    JobStatus: NotRequired[SpeakerEnrollmentJobStatusType],  # (1)
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: SpeakerEnrollmentJobStatusType](./literals.md#speakerenrollmentjobstatustype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListSpeakersRequestListSpeakersPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_voice_id.type_defs import ListSpeakersRequestListSpeakersPaginateTypeDef
-
-def get_value() -> ListSpeakersRequestListSpeakersPaginateTypeDef:
-    return {
-        "DomainId": ...,
-    }
-```
-
-```python title="Definition"
-class ListSpeakersRequestListSpeakersPaginateTypeDef(TypedDict):
-    DomainId: str,
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListSpeakersResponseTypeDef
 
 ```python title="Usage Example"

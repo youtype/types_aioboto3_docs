@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `WAFV2`.
 
 ### From PyPI with pip
 
@@ -93,8 +88,6 @@ def get_value() -> ActionValueType:
 - [IPAddressVersionType](./literals.md#ipaddressversiontype)
 - [JsonMatchScopeType](./literals.md#jsonmatchscopetype)
 - [LabelMatchScopeType](./literals.md#labelmatchscopetype)
-- [MapMatchScopeType](./literals.md#mapmatchscopetype)
-- [OversizeHandlingType](./literals.md#oversizehandlingtype)
 - [PayloadTypeType](./literals.md#payloadtypetype)
 - [PlatformType](./literals.md#platformtype)
 - [PositionalConstraintType](./literals.md#positionalconstrainttype)
@@ -106,7 +99,6 @@ def get_value() -> ActionValueType:
 - [WAFV2ServiceName](./literals.md#wafv2servicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
-- [RegionName](./literals.md#regionname)
 
 
 
@@ -127,13 +119,11 @@ def get_value() -> ActionConditionTypeDef:
 - [ActionConditionTypeDef](./type_defs.md#actionconditiontypedef)
 - [AndStatementTypeDef](./type_defs.md#andstatementtypedef)
 - [AssociateWebACLRequestRequestTypeDef](./type_defs.md#associatewebaclrequestrequesttypedef)
-- [BodyTypeDef](./type_defs.md#bodytypedef)
 - [TextTransformationTypeDef](./type_defs.md#texttransformationtypedef)
 - [ImmunityTimePropertyTypeDef](./type_defs.md#immunitytimepropertytypedef)
 - [CaptchaResponseTypeDef](./type_defs.md#captcharesponsetypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [LabelNameConditionTypeDef](./type_defs.md#labelnameconditiontypedef)
-- [CookieMatchPatternTypeDef](./type_defs.md#cookiematchpatterntypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
 - [IPSetSummaryTypeDef](./type_defs.md#ipsetsummarytypedef)
 - [RegexTypeDef](./type_defs.md#regextypedef)
@@ -172,7 +162,6 @@ def get_value() -> ActionConditionTypeDef:
 - [GetWebACLForResourceRequestRequestTypeDef](./type_defs.md#getwebaclforresourcerequestrequesttypedef)
 - [GetWebACLRequestRequestTypeDef](./type_defs.md#getwebaclrequestrequesttypedef)
 - [HTTPHeaderTypeDef](./type_defs.md#httpheadertypedef)
-- [HeaderMatchPatternTypeDef](./type_defs.md#headermatchpatterntypedef)
 - [IPSetForwardedIPConfigTypeDef](./type_defs.md#ipsetforwardedipconfigtypedef)
 - [JsonMatchPatternTypeDef](./type_defs.md#jsonmatchpatterntypedef)
 - [LabelMatchStatementTypeDef](./type_defs.md#labelmatchstatementtypedef)
@@ -215,7 +204,6 @@ def get_value() -> ActionConditionTypeDef:
 - [UpdateRuleGroupResponseTypeDef](./type_defs.md#updaterulegroupresponsetypedef)
 - [UpdateWebACLResponseTypeDef](./type_defs.md#updatewebaclresponsetypedef)
 - [ConditionTypeDef](./type_defs.md#conditiontypedef)
-- [CookiesTypeDef](./type_defs.md#cookiestypedef)
 - [CreateIPSetRequestRequestTypeDef](./type_defs.md#createipsetrequestrequesttypedef)
 - [MobileSdkReleaseTypeDef](./type_defs.md#mobilesdkreleasetypedef)
 - [TagInfoForResourceTypeDef](./type_defs.md#taginfoforresourcetypedef)
@@ -240,7 +228,6 @@ def get_value() -> ActionConditionTypeDef:
 - [GetRateBasedStatementManagedKeysResponseTypeDef](./type_defs.md#getratebasedstatementmanagedkeysresponsetypedef)
 - [GetSampledRequestsRequestRequestTypeDef](./type_defs.md#getsampledrequestsrequestrequesttypedef)
 - [HTTPRequestTypeDef](./type_defs.md#httprequesttypedef)
-- [HeadersTypeDef](./type_defs.md#headerstypedef)
 - [IPSetReferenceStatementTypeDef](./type_defs.md#ipsetreferencestatementtypedef)
 - [JsonBodyTypeDef](./type_defs.md#jsonbodytypedef)
 - [ListAvailableManagedRuleGroupVersionsResponseTypeDef](./type_defs.md#listavailablemanagedrulegroupversionsresponsetypedef)

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = Session()
 
     async with session.client("drs") as client:  # (1)
-        result = await client.create_extended_source_server()  # (2)
+        result = await client.create_replication_configuration_template()  # (2)
     ```
 
     1. client: [drsClient](./client.md)
-    2. result: [:material-code-braces: CreateExtendedSourceServerResponseTypeDef](./type_defs.md#createextendedsourceserverresponsetypedef) 
+    2. result: [:material-code-braces: ReplicationConfigurationTemplateResponseMetadataTypeDef](./type_defs.md#replicationconfigurationtemplateresponsemetadatatypedef) 
 
 
 
@@ -72,21 +72,21 @@ However, these type annotations can be helpful in your functions and methods.
     from aioboto3.session import Session
 
     from types_aiobotocore_drs.client import drsClient
-    from types_aiobotocore_drs.type_defs import CreateExtendedSourceServerResponseTypeDef
-    from types_aiobotocore_drs.type_defs import CreateExtendedSourceServerRequestRequestTypeDef
+    from types_aiobotocore_drs.type_defs import ReplicationConfigurationTemplateResponseMetadataTypeDef
+    from types_aiobotocore_drs.type_defs import CreateReplicationConfigurationTemplateRequestRequestTypeDef
 
 
     session = Session()
 
     client: drsClient
     async with session.client("drs") as client:  # (1)
-        kwargs: CreateExtendedSourceServerRequestRequestTypeDef = {...}  # (2)
-        result: CreateExtendedSourceServerResponseTypeDef = await client.create_extended_source_server(**kwargs)  # (3)
+        kwargs: CreateReplicationConfigurationTemplateRequestRequestTypeDef = {...}  # (2)
+        result: ReplicationConfigurationTemplateResponseMetadataTypeDef = await client.create_replication_configuration_template(**kwargs)  # (3)
     ```
 
     1. client: [drsClient](./client.md)
-    2. kwargs: [:material-code-braces: CreateExtendedSourceServerRequestRequestTypeDef](./type_defs.md#createextendedsourceserverrequestrequesttypedef) 
-    3. result: [:material-code-braces: CreateExtendedSourceServerResponseTypeDef](./type_defs.md#createextendedsourceserverresponsetypedef) 
+    2. kwargs: [:material-code-braces: CreateReplicationConfigurationTemplateRequestRequestTypeDef](./type_defs.md#createreplicationconfigurationtemplaterequestrequesttypedef) 
+    3. result: [:material-code-braces: ReplicationConfigurationTemplateResponseMetadataTypeDef](./type_defs.md#replicationconfigurationtemplateresponsemetadatatypedef) 
 
 
 

@@ -286,21 +286,6 @@ parent.claim_device(**kwargs)
 
 1. See [:material-code-braces: ClaimDeviceRequestRequestTypeDef](./type_defs.md#claimdevicerequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("medialive").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_channel
 
 Creates a new channel See also: [AWS API
@@ -320,14 +305,13 @@ await def create_channel(
     InputAttachments: Sequence[InputAttachmentTypeDef] = ...,  # (5)
     InputSpecification: InputSpecificationTypeDef = ...,  # (6)
     LogLevel: LogLevelType = ...,  # (7)
-    Maintenance: MaintenanceCreateSettingsTypeDef = ...,  # (8)
     Name: str = ...,
     RequestId: str = ...,
     Reserved: str = ...,
     RoleArn: str = ...,
     Tags: Mapping[str, str] = ...,
-    Vpc: VpcOutputSettingsTypeDef = ...,  # (9)
-) -> CreateChannelResponseTypeDef:  # (10)
+    Vpc: VpcOutputSettingsTypeDef = ...,  # (8)
+) -> CreateChannelResponseTypeDef:  # (9)
     ...
 ```
 
@@ -338,9 +322,8 @@ await def create_channel(
 5. See [:material-code-braces: InputAttachmentTypeDef](./type_defs.md#inputattachmenttypedef) 
 6. See [:material-code-braces: InputSpecificationTypeDef](./type_defs.md#inputspecificationtypedef) 
 7. See [:material-code-brackets: LogLevelType](./literals.md#logleveltype) 
-8. See [:material-code-braces: MaintenanceCreateSettingsTypeDef](./type_defs.md#maintenancecreatesettingstypedef) 
-9. See [:material-code-braces: VpcOutputSettingsTypeDef](./type_defs.md#vpcoutputsettingstypedef) 
-10. See [:material-code-braces: CreateChannelResponseTypeDef](./type_defs.md#createchannelresponsetypedef) 
+8. See [:material-code-braces: VpcOutputSettingsTypeDef](./type_defs.md#vpcoutputsettingstypedef) 
+9. See [:material-code-braces: CreateChannelResponseTypeDef](./type_defs.md#createchannelresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1462,16 +1445,14 @@ await def purchase_offering(
     Count: int,
     OfferingId: str,
     Name: str = ...,
-    RenewalSettings: RenewalSettingsTypeDef = ...,  # (1)
     RequestId: str = ...,
     Start: str = ...,
     Tags: Mapping[str, str] = ...,
-) -> PurchaseOfferingResponseTypeDef:  # (2)
+) -> PurchaseOfferingResponseTypeDef:  # (1)
     ...
 ```
 
-1. See [:material-code-braces: RenewalSettingsTypeDef](./type_defs.md#renewalsettingstypedef) 
-2. See [:material-code-braces: PurchaseOfferingResponseTypeDef](./type_defs.md#purchaseofferingresponsetypedef) 
+1. See [:material-code-braces: PurchaseOfferingResponseTypeDef](./type_defs.md#purchaseofferingresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1680,10 +1661,9 @@ await def update_channel(
     InputAttachments: Sequence[InputAttachmentTypeDef] = ...,  # (4)
     InputSpecification: InputSpecificationTypeDef = ...,  # (5)
     LogLevel: LogLevelType = ...,  # (6)
-    Maintenance: MaintenanceUpdateSettingsTypeDef = ...,  # (7)
     Name: str = ...,
     RoleArn: str = ...,
-) -> UpdateChannelResponseTypeDef:  # (8)
+) -> UpdateChannelResponseTypeDef:  # (7)
     ...
 ```
 
@@ -1693,8 +1673,7 @@ await def update_channel(
 4. See [:material-code-braces: InputAttachmentTypeDef](./type_defs.md#inputattachmenttypedef) 
 5. See [:material-code-braces: InputSpecificationTypeDef](./type_defs.md#inputspecificationtypedef) 
 6. See [:material-code-brackets: LogLevelType](./literals.md#logleveltype) 
-7. See [:material-code-braces: MaintenanceUpdateSettingsTypeDef](./type_defs.md#maintenanceupdatesettingstypedef) 
-8. See [:material-code-braces: UpdateChannelResponseTypeDef](./type_defs.md#updatechannelresponsetypedef) 
+7. See [:material-code-braces: UpdateChannelResponseTypeDef](./type_defs.md#updatechannelresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1925,13 +1904,11 @@ await def update_reservation(
     *,
     ReservationId: str,
     Name: str = ...,
-    RenewalSettings: RenewalSettingsTypeDef = ...,  # (1)
-) -> UpdateReservationResponseTypeDef:  # (2)
+) -> UpdateReservationResponseTypeDef:  # (1)
     ...
 ```
 
-1. See [:material-code-braces: RenewalSettingsTypeDef](./type_defs.md#renewalsettingstypedef) 
-2. See [:material-code-braces: UpdateReservationResponseTypeDef](./type_defs.md#updatereservationresponsetypedef) 
+1. See [:material-code-braces: UpdateReservationResponseTypeDef](./type_defs.md#updatereservationresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

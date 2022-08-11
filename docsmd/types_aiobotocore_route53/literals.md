@@ -56,21 +56,6 @@ ChangeStatusType = Literal[
     "PENDING",
 ]
 ```
-## CidrCollectionChangeActionType
-
-```python title="Usage Example"
-from types_aiobotocore_route53.literals import CidrCollectionChangeActionType
-
-def get_value() -> CidrCollectionChangeActionType:
-    return "DELETE_IF_EXISTS"
-```
-
-```python title="Definition"
-CidrCollectionChangeActionType = Literal[
-    "DELETE_IF_EXISTS",
-    "PUT",
-]
-```
 ## CloudWatchRegionType
 
 ```python title="Usage Example"
@@ -201,48 +186,6 @@ InsufficientDataHealthStatusType = Literal[
     "Healthy",
     "LastKnownStatus",
     "Unhealthy",
-]
-```
-## ListCidrBlocksPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_route53.literals import ListCidrBlocksPaginatorName
-
-def get_value() -> ListCidrBlocksPaginatorName:
-    return "list_cidr_blocks"
-```
-
-```python title="Definition"
-ListCidrBlocksPaginatorName = Literal[
-    "list_cidr_blocks",
-]
-```
-## ListCidrCollectionsPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_route53.literals import ListCidrCollectionsPaginatorName
-
-def get_value() -> ListCidrCollectionsPaginatorName:
-    return "list_cidr_collections"
-```
-
-```python title="Definition"
-ListCidrCollectionsPaginatorName = Literal[
-    "list_cidr_collections",
-]
-```
-## ListCidrLocationsPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_route53.literals import ListCidrLocationsPaginatorName
-
-def get_value() -> ListCidrLocationsPaginatorName:
-    return "list_cidr_locations"
-```
-
-```python title="Definition"
-ListCidrLocationsPaginatorName = Literal[
-    "list_cidr_locations",
 ]
 ```
 ## ListHealthChecksPaginatorName
@@ -573,7 +516,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -606,7 +548,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -643,7 +584,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -657,7 +597,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -691,7 +630,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -717,7 +655,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -761,7 +698,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -774,13 +710,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -878,14 +812,11 @@ ResourceServiceName = Literal[
 from types_aiobotocore_route53.literals import PaginatorName
 
 def get_value() -> PaginatorName:
-    return "list_cidr_blocks"
+    return "list_health_checks"
 ```
 
 ```python title="Definition"
 PaginatorName = Literal[
-    "list_cidr_blocks",
-    "list_cidr_collections",
-    "list_cidr_locations",
     "list_health_checks",
     "list_hosted_zones",
     "list_query_logging_configs",

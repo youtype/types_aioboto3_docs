@@ -35,24 +35,6 @@ type checking and code completion should work out of the box.
 
 
 
-=== "Paginators"
-
-    ```python title="Paginator usage example"
-    from aioboto3.session import Session
-
-
-    session = Session()
-
-    async with session.client("voice-id") as client:  # (1)
-        paginator = client.get_paginator("list_domains")  # (2)
-        async for item in paginator.paginate(...):
-            print(item)  # (3)
-    ```
-
-    1. client: [VoiceIDClient](./client.md)
-    2. paginator: [ListDomainsPaginator](./paginators.md#listdomainspaginator)
-    3. item: [:material-code-braces: ListDomainsResponseTypeDef](./type_defs.md#listdomainsresponsetypedef) 
-
 
 
 
@@ -89,30 +71,6 @@ However, these type annotations can be helpful in your functions and methods.
     3. result: [:material-code-braces: CreateDomainResponseTypeDef](./type_defs.md#createdomainresponsetypedef) 
 
 
-
-=== "Paginators"
-
-    ```python title="Paginator usage example"
-    from aioboto3.session import Session
-
-    from types_aiobotocore_voice_id.client import VoiceIDClient
-    from types_aiobotocore_voice_id.paginator import ListDomainsPaginator
-    from types_aiobotocore_voice_id.type_defs import ListDomainsResponseTypeDef
-
-
-    session = Session()
-
-    client: VoiceIDClient
-    async with session.client("voice-id") as client:  # (1)
-        paginator: ListDomainsPaginator = client.get_paginator("list_domains")  # (2)
-        async for item in paginator.paginate(...):
-            item: ListDomainsResponseTypeDef
-            print(item)  # (3)
-    ```
-
-    1. client: [VoiceIDClient](./client.md)
-    2. paginator: [ListDomainsPaginator](./paginators.md#listdomainspaginator)
-    3. item: [:material-code-braces: ListDomainsResponseTypeDef](./type_defs.md#listdomainsresponsetypedef) 
 
 
 

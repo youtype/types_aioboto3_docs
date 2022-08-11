@@ -162,69 +162,6 @@ AuthModeType = Literal[
     "SSO",
 ]
 ```
-## BatchEntryCompletionStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_iotsitewise.literals import BatchEntryCompletionStatusType
-
-def get_value() -> BatchEntryCompletionStatusType:
-    return "ERROR"
-```
-
-```python title="Definition"
-BatchEntryCompletionStatusType = Literal[
-    "ERROR",
-    "SUCCESS",
-]
-```
-## BatchGetAssetPropertyAggregatesErrorCodeType
-
-```python title="Usage Example"
-from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyAggregatesErrorCodeType
-
-def get_value() -> BatchGetAssetPropertyAggregatesErrorCodeType:
-    return "AccessDeniedException"
-```
-
-```python title="Definition"
-BatchGetAssetPropertyAggregatesErrorCodeType = Literal[
-    "AccessDeniedException",
-    "InvalidRequestException",
-    "ResourceNotFoundException",
-]
-```
-## BatchGetAssetPropertyValueErrorCodeType
-
-```python title="Usage Example"
-from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyValueErrorCodeType
-
-def get_value() -> BatchGetAssetPropertyValueErrorCodeType:
-    return "AccessDeniedException"
-```
-
-```python title="Definition"
-BatchGetAssetPropertyValueErrorCodeType = Literal[
-    "AccessDeniedException",
-    "InvalidRequestException",
-    "ResourceNotFoundException",
-]
-```
-## BatchGetAssetPropertyValueHistoryErrorCodeType
-
-```python title="Usage Example"
-from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyValueHistoryErrorCodeType
-
-def get_value() -> BatchGetAssetPropertyValueHistoryErrorCodeType:
-    return "AccessDeniedException"
-```
-
-```python title="Definition"
-BatchGetAssetPropertyValueHistoryErrorCodeType = Literal[
-    "AccessDeniedException",
-    "InvalidRequestException",
-    "ResourceNotFoundException",
-]
-```
 ## BatchPutAssetPropertyValueErrorCodeType
 
 ```python title="Usage Example"
@@ -903,7 +840,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -936,7 +872,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -973,7 +908,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -987,7 +921,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1021,7 +954,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1047,7 +979,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1091,7 +1022,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -1104,13 +1034,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1264,11 +1192,9 @@ RegionName = Literal[
     "ap-south-1",
     "ap-southeast-1",
     "ap-southeast-2",
-    "ca-central-1",
     "eu-central-1",
     "eu-west-1",
     "us-east-1",
-    "us-east-2",
     "us-west-2",
 ]
 ```

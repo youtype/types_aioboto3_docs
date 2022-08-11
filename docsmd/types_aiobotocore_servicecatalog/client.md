@@ -325,21 +325,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("servicecatalog").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### copy\_product
 
 Copies the specified source product to the specified target product or a new
@@ -1800,8 +1785,7 @@ parent.import_as_provisioned_product(**kwargs)
 
 ### list\_accepted\_portfolio\_shares
 
-Lists all imported portfolios for which account-to-account shares were accepted
-by this account.
+Lists all portfolios for which sharing was accepted by this account.
 
 Type annotations and code completion for `#!python session.client("servicecatalog").list_accepted_portfolio_shares` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_accepted_portfolio_shares)

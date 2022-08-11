@@ -105,21 +105,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("codeartifact").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### copy\_package\_versions
 
 Copies package versions from one repository to another repository in the same
@@ -822,8 +807,7 @@ parent.get_repository_permissions_policy(**kwargs)
 
 Returns a list of
 [DomainSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html)_
-objects for all domains owned by the Amazon Web Services account that makes this
-call.
+objects for all domains owned by the AWS account that makes this call.
 
 Type annotations and code completion for `#!python session.client("codeartifact").list_domains` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_domains)
@@ -1093,8 +1077,8 @@ parent.list_repositories_in_domain(**kwargs)
 
 ### list\_tags\_for\_resource
 
-Gets information about Amazon Web Services tags for a specified Amazon Resource
-Name (ARN) in CodeArtifact.
+Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
+AWS CodeArtifact.
 
 Type annotations and code completion for `#!python session.client("codeartifact").list_tags_for_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_tags_for_resource)
@@ -1192,7 +1176,7 @@ parent.put_repository_permissions_policy(**kwargs)
 
 ### tag\_resource
 
-Adds or updates tags for a resource in CodeArtifact.
+Adds or updates tags for a resource in AWS CodeArtifact.
 
 Type annotations and code completion for `#!python session.client("codeartifact").tag_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.tag_resource)
@@ -1223,7 +1207,7 @@ parent.tag_resource(**kwargs)
 
 ### untag\_resource
 
-Removes tags from a resource in CodeArtifact.
+Removes tags from a resource in AWS CodeArtifact.
 
 Type annotations and code completion for `#!python session.client("codeartifact").untag_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.untag_resource)

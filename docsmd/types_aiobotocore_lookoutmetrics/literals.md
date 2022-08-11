@@ -126,22 +126,6 @@ CSVFileCompressionType = Literal[
     "NONE",
 ]
 ```
-## ConfidenceType
-
-```python title="Usage Example"
-from types_aiobotocore_lookoutmetrics.literals import ConfidenceType
-
-def get_value() -> ConfidenceType:
-    return "HIGH"
-```
-
-```python title="Definition"
-ConfidenceType = Literal[
-    "HIGH",
-    "LOW",
-    "NONE",
-]
-```
 ## FrequencyType
 
 ```python title="Usage Example"
@@ -187,22 +171,6 @@ def get_value() -> RelationshipTypeType:
 RelationshipTypeType = Literal[
     "CAUSE_OF_INPUT_ANOMALY_GROUP",
     "EFFECT_OF_INPUT_ANOMALY_GROUP",
-]
-```
-## SnsFormatType
-
-```python title="Usage Example"
-from types_aiobotocore_lookoutmetrics.literals import SnsFormatType
-
-def get_value() -> SnsFormatType:
-    return "JSON"
-```
-
-```python title="Definition"
-SnsFormatType = Literal[
-    "JSON",
-    "LONG_TEXT",
-    "SHORT_TEXT",
 ]
 ```
 ## LookoutMetricsServiceName
@@ -266,7 +234,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -299,7 +266,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -336,7 +302,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -350,7 +315,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -384,7 +348,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -410,7 +373,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -454,7 +416,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -467,13 +428,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

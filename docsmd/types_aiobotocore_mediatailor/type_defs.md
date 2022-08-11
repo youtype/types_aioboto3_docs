@@ -214,27 +214,6 @@ class ResponseMetadataTypeDef(TypedDict):
     RetryAttempts: int,
 ```
 
-## HttpPackageConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import HttpPackageConfigurationTypeDef
-
-def get_value() -> HttpPackageConfigurationTypeDef:
-    return {
-        "Path": ...,
-        "SourceGroup": ...,
-        "Type": ...,
-    }
-```
-
-```python title="Definition"
-class HttpPackageConfigurationTypeDef(TypedDict):
-    Path: str,
-    SourceGroup: str,
-    Type: TypeType,  # (1)
-```
-
-1. See [:material-code-brackets: TypeType](./literals.md#typetype) 
 ## PrefetchRetrievalTypeDef
 
 ```python title="Usage Example"
@@ -302,6 +281,27 @@ class SegmentDeliveryConfigurationTypeDef(TypedDict):
     Name: NotRequired[str],
 ```
 
+## HttpPackageConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_mediatailor.type_defs import HttpPackageConfigurationTypeDef
+
+def get_value() -> HttpPackageConfigurationTypeDef:
+    return {
+        "Path": ...,
+        "SourceGroup": ...,
+        "Type": ...,
+    }
+```
+
+```python title="Definition"
+class HttpPackageConfigurationTypeDef(TypedDict):
+    Path: str,
+    SourceGroup: str,
+    Type: TypeType,  # (1)
+```
+
+1. See [:material-code-brackets: TypeType](./literals.md#typetype) 
 ## DashConfigurationForPutTypeDef
 
 ```python title="Usage Example"
@@ -388,24 +388,6 @@ def get_value() -> DeleteChannelRequestRequestTypeDef:
 ```python title="Definition"
 class DeleteChannelRequestRequestTypeDef(TypedDict):
     ChannelName: str,
-```
-
-## DeleteLiveSourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import DeleteLiveSourceRequestRequestTypeDef
-
-def get_value() -> DeleteLiveSourceRequestRequestTypeDef:
-    return {
-        "LiveSourceName": ...,
-        "SourceLocationName": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteLiveSourceRequestRequestTypeDef(TypedDict):
-    LiveSourceName: str,
-    SourceLocationName: str,
 ```
 
 ## DeletePlaybackConfigurationRequestRequestTypeDef
@@ -508,24 +490,6 @@ def get_value() -> DescribeChannelRequestRequestTypeDef:
 ```python title="Definition"
 class DescribeChannelRequestRequestTypeDef(TypedDict):
     ChannelName: str,
-```
-
-## DescribeLiveSourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import DescribeLiveSourceRequestRequestTypeDef
-
-def get_value() -> DescribeLiveSourceRequestRequestTypeDef:
-    return {
-        "LiveSourceName": ...,
-        "SourceLocationName": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeLiveSourceRequestRequestTypeDef(TypedDict):
-    LiveSourceName: str,
-    SourceLocationName: str,
 ```
 
 ## DescribeProgramRequestRequestTypeDef
@@ -767,24 +731,6 @@ class ListChannelsRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
 ```
 
-## ListLiveSourcesRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import ListLiveSourcesRequestRequestTypeDef
-
-def get_value() -> ListLiveSourcesRequestRequestTypeDef:
-    return {
-        "SourceLocationName": ...,
-    }
-```
-
-```python title="Definition"
-class ListLiveSourcesRequestRequestTypeDef(TypedDict):
-    SourceLocationName: str,
-    MaxResults: NotRequired[int],
-    NextToken: NotRequired[str],
-```
-
 ## ListPlaybackConfigurationsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -925,7 +871,6 @@ def get_value() -> TransitionTypeDef:
 class TransitionTypeDef(TypedDict):
     RelativePosition: RelativePositionType,  # (1)
     Type: str,
-    DurationMillis: NotRequired[int],
     RelativeProgram: NotRequired[str],
     ScheduledStartTimeMillis: NotRequired[int],
 ```
@@ -1174,60 +1119,6 @@ class ListTagsForResourceResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateLiveSourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import CreateLiveSourceRequestRequestTypeDef
-
-def get_value() -> CreateLiveSourceRequestRequestTypeDef:
-    return {
-        "HttpPackageConfigurations": ...,
-        "LiveSourceName": ...,
-        "SourceLocationName": ...,
-    }
-```
-
-```python title="Definition"
-class CreateLiveSourceRequestRequestTypeDef(TypedDict):
-    HttpPackageConfigurations: Sequence[HttpPackageConfigurationTypeDef],  # (1)
-    LiveSourceName: str,
-    SourceLocationName: str,
-    Tags: NotRequired[Mapping[str, str]],
-```
-
-1. See [:material-code-braces: HttpPackageConfigurationTypeDef](./type_defs.md#httppackageconfigurationtypedef) 
-## CreateLiveSourceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import CreateLiveSourceResponseTypeDef
-
-def get_value() -> CreateLiveSourceResponseTypeDef:
-    return {
-        "Arn": ...,
-        "CreationTime": ...,
-        "HttpPackageConfigurations": ...,
-        "LastModifiedTime": ...,
-        "LiveSourceName": ...,
-        "SourceLocationName": ...,
-        "Tags": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateLiveSourceResponseTypeDef(TypedDict):
-    Arn: str,
-    CreationTime: datetime,
-    HttpPackageConfigurations: List[HttpPackageConfigurationTypeDef],  # (1)
-    LastModifiedTime: datetime,
-    LiveSourceName: str,
-    SourceLocationName: str,
-    Tags: Dict[str, str],
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: HttpPackageConfigurationTypeDef](./type_defs.md#httppackageconfigurationtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateVodSourceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1282,38 +1173,6 @@ class CreateVodSourceResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: HttpPackageConfigurationTypeDef](./type_defs.md#httppackageconfigurationtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DescribeLiveSourceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import DescribeLiveSourceResponseTypeDef
-
-def get_value() -> DescribeLiveSourceResponseTypeDef:
-    return {
-        "Arn": ...,
-        "CreationTime": ...,
-        "HttpPackageConfigurations": ...,
-        "LastModifiedTime": ...,
-        "LiveSourceName": ...,
-        "SourceLocationName": ...,
-        "Tags": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeLiveSourceResponseTypeDef(TypedDict):
-    Arn: str,
-    CreationTime: datetime,
-    HttpPackageConfigurations: List[HttpPackageConfigurationTypeDef],  # (1)
-    LastModifiedTime: datetime,
-    LiveSourceName: str,
-    SourceLocationName: str,
-    Tags: Dict[str, str],
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: HttpPackageConfigurationTypeDef](./type_defs.md#httppackageconfigurationtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeVodSourceResponseTypeDef
 
 ```python title="Usage Example"
@@ -1341,85 +1200,6 @@ class DescribeVodSourceResponseTypeDef(TypedDict):
     SourceLocationName: str,
     Tags: Dict[str, str],
     VodSourceName: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: HttpPackageConfigurationTypeDef](./type_defs.md#httppackageconfigurationtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## LiveSourceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import LiveSourceTypeDef
-
-def get_value() -> LiveSourceTypeDef:
-    return {
-        "Arn": ...,
-        "HttpPackageConfigurations": ...,
-        "LiveSourceName": ...,
-        "SourceLocationName": ...,
-    }
-```
-
-```python title="Definition"
-class LiveSourceTypeDef(TypedDict):
-    Arn: str,
-    HttpPackageConfigurations: List[HttpPackageConfigurationTypeDef],  # (1)
-    LiveSourceName: str,
-    SourceLocationName: str,
-    CreationTime: NotRequired[datetime],
-    LastModifiedTime: NotRequired[datetime],
-    Tags: NotRequired[Dict[str, str]],
-```
-
-1. See [:material-code-braces: HttpPackageConfigurationTypeDef](./type_defs.md#httppackageconfigurationtypedef) 
-## UpdateLiveSourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import UpdateLiveSourceRequestRequestTypeDef
-
-def get_value() -> UpdateLiveSourceRequestRequestTypeDef:
-    return {
-        "HttpPackageConfigurations": ...,
-        "LiveSourceName": ...,
-        "SourceLocationName": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateLiveSourceRequestRequestTypeDef(TypedDict):
-    HttpPackageConfigurations: Sequence[HttpPackageConfigurationTypeDef],  # (1)
-    LiveSourceName: str,
-    SourceLocationName: str,
-```
-
-1. See [:material-code-braces: HttpPackageConfigurationTypeDef](./type_defs.md#httppackageconfigurationtypedef) 
-## UpdateLiveSourceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import UpdateLiveSourceResponseTypeDef
-
-def get_value() -> UpdateLiveSourceResponseTypeDef:
-    return {
-        "Arn": ...,
-        "CreationTime": ...,
-        "HttpPackageConfigurations": ...,
-        "LastModifiedTime": ...,
-        "LiveSourceName": ...,
-        "SourceLocationName": ...,
-        "Tags": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateLiveSourceResponseTypeDef(TypedDict):
-    Arn: str,
-    CreationTime: datetime,
-    HttpPackageConfigurations: List[HttpPackageConfigurationTypeDef],  # (1)
-    LastModifiedTime: datetime,
-    LiveSourceName: str,
-    SourceLocationName: str,
-    Tags: Dict[str, str],
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
@@ -1558,24 +1338,6 @@ class ListChannelsRequestListChannelsPaginateTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListLiveSourcesRequestListLiveSourcesPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import ListLiveSourcesRequestListLiveSourcesPaginateTypeDef
-
-def get_value() -> ListLiveSourcesRequestListLiveSourcesPaginateTypeDef:
-    return {
-        "SourceLocationName": ...,
-    }
-```
-
-```python title="Definition"
-class ListLiveSourcesRequestListLiveSourcesPaginateTypeDef(TypedDict):
-    SourceLocationName: str,
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListPlaybackConfigurationsRequestListPlaybackConfigurationsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -1704,6 +1466,7 @@ def get_value() -> ScheduleEntryTypeDef:
         "ChannelName": ...,
         "ProgramName": ...,
         "SourceLocationName": ...,
+        "VodSourceName": ...,
     }
 ```
 
@@ -1713,12 +1476,11 @@ class ScheduleEntryTypeDef(TypedDict):
     ChannelName: str,
     ProgramName: str,
     SourceLocationName: str,
+    VodSourceName: str,
     ApproximateDurationSeconds: NotRequired[int],
     ApproximateStartTime: NotRequired[datetime],
-    LiveSourceName: NotRequired[str],
     ScheduleAdBreaks: NotRequired[List[ScheduleAdBreakTypeDef]],  # (1)
     ScheduleEntryType: NotRequired[ScheduleEntryTypeType],  # (2)
-    VodSourceName: NotRequired[str],
 ```
 
 1. See [:material-code-braces: ScheduleAdBreakTypeDef](./type_defs.md#scheduleadbreaktypedef) 
@@ -1949,7 +1711,6 @@ def get_value() -> CreateProgramResponseTypeDef:
         "Arn": ...,
         "ChannelName": ...,
         "CreationTime": ...,
-        "LiveSourceName": ...,
         "ProgramName": ...,
         "ScheduledStartTime": ...,
         "SourceLocationName": ...,
@@ -1964,7 +1725,6 @@ class CreateProgramResponseTypeDef(TypedDict):
     Arn: str,
     ChannelName: str,
     CreationTime: datetime,
-    LiveSourceName: str,
     ProgramName: str,
     ScheduledStartTime: datetime,
     SourceLocationName: str,
@@ -1985,7 +1745,6 @@ def get_value() -> DescribeProgramResponseTypeDef:
         "Arn": ...,
         "ChannelName": ...,
         "CreationTime": ...,
-        "LiveSourceName": ...,
         "ProgramName": ...,
         "ScheduledStartTime": ...,
         "SourceLocationName": ...,
@@ -2000,7 +1759,6 @@ class DescribeProgramResponseTypeDef(TypedDict):
     Arn: str,
     ChannelName: str,
     CreationTime: datetime,
-    LiveSourceName: str,
     ProgramName: str,
     ScheduledStartTime: datetime,
     SourceLocationName: str,
@@ -2327,28 +2085,6 @@ class PrefetchScheduleTypeDef(TypedDict):
 
 1. See [:material-code-braces: PrefetchConsumptionTypeDef](./type_defs.md#prefetchconsumptiontypedef) 
 2. See [:material-code-braces: PrefetchRetrievalTypeDef](./type_defs.md#prefetchretrievaltypedef) 
-## ListLiveSourcesResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediatailor.type_defs import ListLiveSourcesResponseTypeDef
-
-def get_value() -> ListLiveSourcesResponseTypeDef:
-    return {
-        "Items": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListLiveSourcesResponseTypeDef(TypedDict):
-    Items: List[LiveSourceTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: LiveSourceTypeDef](./type_defs.md#livesourcetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListVodSourcesResponseTypeDef
 
 ```python title="Usage Example"
@@ -2391,13 +2127,11 @@ class CreateChannelRequestRequestTypeDef(TypedDict):
     PlaybackMode: PlaybackModeType,  # (2)
     FillerSlate: NotRequired[SlateSourceTypeDef],  # (3)
     Tags: NotRequired[Mapping[str, str]],
-    Tier: NotRequired[TierType],  # (4)
 ```
 
 1. See [:material-code-braces: RequestOutputItemTypeDef](./type_defs.md#requestoutputitemtypedef) 
 2. See [:material-code-brackets: PlaybackModeType](./literals.md#playbackmodetype) 
 3. See [:material-code-braces: SlateSourceTypeDef](./type_defs.md#slatesourcetypedef) 
-4. See [:material-code-brackets: TierType](./literals.md#tiertype) 
 ## UpdateChannelRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2431,7 +2165,6 @@ def get_value() -> ChannelTypeDef:
         "ChannelState": ...,
         "Outputs": ...,
         "PlaybackMode": ...,
-        "Tier": ...,
     }
 ```
 
@@ -2442,7 +2175,6 @@ class ChannelTypeDef(TypedDict):
     ChannelState: str,
     Outputs: List[ResponseOutputItemTypeDef],  # (2)
     PlaybackMode: str,
-    Tier: str,
     CreationTime: NotRequired[datetime],
     FillerSlate: NotRequired[SlateSourceTypeDef],  # (1)
     LastModifiedTime: NotRequired[datetime],
@@ -2467,7 +2199,6 @@ def get_value() -> CreateChannelResponseTypeDef:
         "Outputs": ...,
         "PlaybackMode": ...,
         "Tags": ...,
-        "Tier": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2483,7 +2214,6 @@ class CreateChannelResponseTypeDef(TypedDict):
     Outputs: List[ResponseOutputItemTypeDef],  # (3)
     PlaybackMode: str,
     Tags: Dict[str, str],
-    Tier: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (4)
 ```
 
@@ -2507,7 +2237,6 @@ def get_value() -> DescribeChannelResponseTypeDef:
         "Outputs": ...,
         "PlaybackMode": ...,
         "Tags": ...,
-        "Tier": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2523,7 +2252,6 @@ class DescribeChannelResponseTypeDef(TypedDict):
     Outputs: List[ResponseOutputItemTypeDef],  # (3)
     PlaybackMode: str,
     Tags: Dict[str, str],
-    Tier: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (4)
 ```
 
@@ -2547,7 +2275,6 @@ def get_value() -> UpdateChannelResponseTypeDef:
         "Outputs": ...,
         "PlaybackMode": ...,
         "Tags": ...,
-        "Tier": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2563,7 +2290,6 @@ class UpdateChannelResponseTypeDef(TypedDict):
     Outputs: List[ResponseOutputItemTypeDef],  # (3)
     PlaybackMode: str,
     Tags: Dict[str, str],
-    Tier: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (4)
 ```
 
@@ -2604,6 +2330,7 @@ def get_value() -> CreateProgramRequestRequestTypeDef:
         "ProgramName": ...,
         "ScheduleConfiguration": ...,
         "SourceLocationName": ...,
+        "VodSourceName": ...,
     }
 ```
 
@@ -2613,9 +2340,8 @@ class CreateProgramRequestRequestTypeDef(TypedDict):
     ProgramName: str,
     ScheduleConfiguration: ScheduleConfigurationTypeDef,  # (1)
     SourceLocationName: str,
+    VodSourceName: str,
     AdBreaks: NotRequired[Sequence[AdBreakTypeDef]],  # (2)
-    LiveSourceName: NotRequired[str],
-    VodSourceName: NotRequired[str],
 ```
 
 1. See [:material-code-braces: ScheduleConfigurationTypeDef](./type_defs.md#scheduleconfigurationtypedef) 

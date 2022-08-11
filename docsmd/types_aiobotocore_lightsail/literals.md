@@ -37,23 +37,6 @@ AccessTypeType = Literal[
     "public",
 ]
 ```
-## AccountLevelBpaSyncStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_lightsail.literals import AccountLevelBpaSyncStatusType
-
-def get_value() -> AccountLevelBpaSyncStatusType:
-    return "Defaulted"
-```
-
-```python title="Definition"
-AccountLevelBpaSyncStatusType = Literal[
-    "Defaulted",
-    "Failed",
-    "InSync",
-    "NeverSynced",
-]
-```
 ## AddOnTypeType
 
 ```python title="Usage Example"
@@ -99,23 +82,6 @@ AutoSnapshotStatusType = Literal[
     "InProgress",
     "NotFound",
     "Success",
-]
-```
-## BPAStatusMessageType
-
-```python title="Usage Example"
-from types_aiobotocore_lightsail.literals import BPAStatusMessageType
-
-def get_value() -> BPAStatusMessageType:
-    return "DEFAULTED_FOR_SLR_MISSING"
-```
-
-```python title="Definition"
-BPAStatusMessageType = Literal[
-    "DEFAULTED_FOR_SLR_MISSING",
-    "DEFAULTED_FOR_SLR_MISSING_ON_HOLD",
-    "SYNC_ON_HOLD",
-    "Unknown",
 ]
 ```
 ## BehaviorEnumType
@@ -899,10 +865,8 @@ def get_value() -> LoadBalancerAttributeNameType:
 ```python title="Definition"
 LoadBalancerAttributeNameType = Literal[
     "HealthCheckPath",
-    "HttpsRedirectionEnabled",
     "SessionStickiness_LB_CookieDurationSeconds",
     "SessionStickinessEnabled",
-    "TlsPolicyName",
 ]
 ```
 ## LoadBalancerMetricNameType
@@ -1594,7 +1558,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1627,7 +1590,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -1664,7 +1626,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1678,7 +1639,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1712,7 +1672,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1738,7 +1697,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1782,7 +1740,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -1795,13 +1752,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

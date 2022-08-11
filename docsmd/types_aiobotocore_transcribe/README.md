@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `TranscribeService`.
 
 ### From PyPI with pip
 
@@ -150,7 +145,6 @@ def get_value() -> AbsoluteTimeRangeTypeDef:
 - [GetVocabularyRequestRequestTypeDef](./type_defs.md#getvocabularyrequestrequesttypedef)
 - [RelativeTimeRangeTypeDef](./type_defs.md#relativetimerangetypedef)
 - [JobExecutionSettingsTypeDef](./type_defs.md#jobexecutionsettingstypedef)
-- [LanguageCodeItemTypeDef](./type_defs.md#languagecodeitemtypedef)
 - [ListCallAnalyticsCategoriesRequestRequestTypeDef](./type_defs.md#listcallanalyticscategoriesrequestrequesttypedef)
 - [ListCallAnalyticsJobsRequestRequestTypeDef](./type_defs.md#listcallanalyticsjobsrequestrequesttypedef)
 - [ListLanguageModelsRequestRequestTypeDef](./type_defs.md#listlanguagemodelsrequestrequesttypedef)

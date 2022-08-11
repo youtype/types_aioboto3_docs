@@ -4260,8 +4260,6 @@ class AssociationTypeDef(TypedDict):
     Overview: NotRequired[AssociationOverviewTypeDef],  # (2)
     ScheduleExpression: NotRequired[str],
     AssociationName: NotRequired[str],
-    ScheduleOffset: NotRequired[int],
-    TargetMaps: NotRequired[List[Dict[str, List[str]]]],
 ```
 
 1. See [:material-code-braces: TargetTypeDef](./type_defs.md#targettypedef) 
@@ -4356,7 +4354,6 @@ class RunbookTypeDef(TypedDict):
     Parameters: NotRequired[Dict[str, List[str]]],
     TargetParameterName: NotRequired[str],
     Targets: NotRequired[List[TargetTypeDef]],  # (1)
-    TargetMaps: NotRequired[List[Dict[str, List[str]]]],
     MaxConcurrency: NotRequired[str],
     MaxErrors: NotRequired[str],
     TargetLocations: NotRequired[List[TargetLocationTypeDef]],  # (2)
@@ -8620,8 +8617,6 @@ class AssociationDescriptionTypeDef(TypedDict):
     ApplyOnlyAtCronInterval: NotRequired[bool],
     CalendarNames: NotRequired[List[str]],
     TargetLocations: NotRequired[List[TargetLocationTypeDef]],  # (7)
-    ScheduleOffset: NotRequired[int],
-    TargetMaps: NotRequired[List[Dict[str, List[str]]]],
 ```
 
 1. See [:material-code-braces: AssociationStatusTypeDef](./type_defs.md#associationstatustypedef) 
@@ -8661,8 +8656,6 @@ class AssociationVersionInfoTypeDef(TypedDict):
     ApplyOnlyAtCronInterval: NotRequired[bool],
     CalendarNames: NotRequired[List[str]],
     TargetLocations: NotRequired[List[TargetLocationTypeDef]],  # (5)
-    ScheduleOffset: NotRequired[int],
-    TargetMaps: NotRequired[List[Dict[str, List[str]]]],
 ```
 
 1. See [:material-code-braces: TargetTypeDef](./type_defs.md#targettypedef) 
@@ -8699,8 +8692,6 @@ class CreateAssociationBatchRequestEntryTypeDef(TypedDict):
     ApplyOnlyAtCronInterval: NotRequired[bool],
     CalendarNames: NotRequired[Sequence[str]],
     TargetLocations: NotRequired[Sequence[TargetLocationTypeDef]],  # (5)
-    ScheduleOffset: NotRequired[int],
-    TargetMaps: NotRequired[Sequence[Mapping[str, Sequence[str]]]],
 ```
 
 1. See [:material-code-braces: TargetTypeDef](./type_defs.md#targettypedef) 
@@ -8737,8 +8728,6 @@ class CreateAssociationRequestRequestTypeDef(TypedDict):
     ApplyOnlyAtCronInterval: NotRequired[bool],
     CalendarNames: NotRequired[Sequence[str]],
     TargetLocations: NotRequired[Sequence[TargetLocationTypeDef]],  # (5)
-    ScheduleOffset: NotRequired[int],
-    TargetMaps: NotRequired[Sequence[Mapping[str, Sequence[str]]]],
 ```
 
 1. See [:material-code-braces: TargetTypeDef](./type_defs.md#targettypedef) 
@@ -8776,8 +8765,6 @@ class UpdateAssociationRequestRequestTypeDef(TypedDict):
     ApplyOnlyAtCronInterval: NotRequired[bool],
     CalendarNames: NotRequired[Sequence[str]],
     TargetLocations: NotRequired[Sequence[TargetLocationTypeDef]],  # (5)
-    ScheduleOffset: NotRequired[int],
-    TargetMaps: NotRequired[Sequence[Mapping[str, Sequence[str]]]],
 ```
 
 1. See [:material-code-braces: InstanceAssociationOutputLocationTypeDef](./type_defs.md#instanceassociationoutputlocationtypedef) 

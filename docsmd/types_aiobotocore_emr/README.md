@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `EMR`.
 
 ### From PyPI with pip
 
@@ -165,7 +160,6 @@ def get_value() -> ActionOnFailureType:
 - [OnDemandCapacityReservationUsageStrategyType](./literals.md#ondemandcapacityreservationusagestrategytype)
 - [OnDemandProvisioningAllocationStrategyType](./literals.md#ondemandprovisioningallocationstrategytype)
 - [PlacementGroupStrategyType](./literals.md#placementgroupstrategytype)
-- [ReconfigurationTypeType](./literals.md#reconfigurationtypetype)
 - [RepoUpgradeOnBootType](./literals.md#repoupgradeonboottype)
 - [ScaleDownBehaviorType](./literals.md#scaledownbehaviortype)
 - [SpotProvisioningAllocationStrategyType](./literals.md#spotprovisioningallocationstrategytype)
@@ -234,7 +228,6 @@ def get_value() -> ResponseMetadataTypeDef:
 - [DescribeJobFlowsInputRequestTypeDef](./type_defs.md#describejobflowsinputrequesttypedef)
 - [DescribeNotebookExecutionInputRequestTypeDef](./type_defs.md#describenotebookexecutioninputrequesttypedef)
 - [DescribeReleaseLabelInputRequestTypeDef](./type_defs.md#describereleaselabelinputrequesttypedef)
-- [OSReleaseTypeDef](./type_defs.md#osreleasetypedef)
 - [SimplifiedApplicationTypeDef](./type_defs.md#simplifiedapplicationtypedef)
 - [DescribeSecurityConfigurationInputRequestTypeDef](./type_defs.md#describesecurityconfigurationinputrequesttypedef)
 - [DescribeStepInputRequestTypeDef](./type_defs.md#describestepinputrequesttypedef)

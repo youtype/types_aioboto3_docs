@@ -381,21 +381,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("location").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_geofence\_collection
 
 Creates a geofence collection, which manages and stores geofences.
@@ -958,7 +943,6 @@ await def get_device_position_history(
     DeviceId: str,
     TrackerName: str,
     EndTimeExclusive: Union[datetime, str] = ...,
-    MaxResults: int = ...,
     NextToken: str = ...,
     StartTimeInclusive: Union[datetime, str] = ...,
 ) -> GetDevicePositionHistoryResponseTypeDef:  # (1)
@@ -1211,7 +1195,6 @@ await def list_geofences(
     self,
     *,
     CollectionName: str,
-    MaxResults: int = ...,
     NextToken: str = ...,
 ) -> ListGeofencesResponseTypeDef:  # (1)
     ...

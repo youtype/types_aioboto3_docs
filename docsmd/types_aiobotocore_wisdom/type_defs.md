@@ -670,22 +670,6 @@ class QueryAssistantRequestRequestTypeDef(TypedDict):
     nextToken: NotRequired[str],
 ```
 
-## QueryRecommendationTriggerDataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_wisdom.type_defs import QueryRecommendationTriggerDataTypeDef
-
-def get_value() -> QueryRecommendationTriggerDataTypeDef:
-    return {
-        "text": ...,
-    }
-```
-
-```python title="Definition"
-class QueryRecommendationTriggerDataTypeDef(TypedDict):
-    text: NotRequired[str],
-```
-
 ## RemoveKnowledgeBaseTemplateUriRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1317,23 +1301,6 @@ class NotifyRecommendationsReceivedResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: NotifyRecommendationsReceivedErrorTypeDef](./type_defs.md#notifyrecommendationsreceivederrortypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## RecommendationTriggerDataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_wisdom.type_defs import RecommendationTriggerDataTypeDef
-
-def get_value() -> RecommendationTriggerDataTypeDef:
-    return {
-        "query": ...,
-    }
-```
-
-```python title="Definition"
-class RecommendationTriggerDataTypeDef(TypedDict):
-    query: NotRequired[QueryRecommendationTriggerDataTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: QueryRecommendationTriggerDataTypeDef](./type_defs.md#queryrecommendationtriggerdatatypedef) 
 ## SearchSessionsResponseTypeDef
 
 ```python title="Usage Example"
@@ -1678,33 +1645,6 @@ class SearchSessionsRequestSearchSessionsPaginateTypeDef(TypedDict):
 
 1. See [:material-code-braces: SearchExpressionTypeDef](./type_defs.md#searchexpressiontypedef) 
 2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## RecommendationTriggerTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_wisdom.type_defs import RecommendationTriggerTypeDef
-
-def get_value() -> RecommendationTriggerTypeDef:
-    return {
-        "data": ...,
-        "id": ...,
-        "recommendationIds": ...,
-        "source": ...,
-        "type": ...,
-    }
-```
-
-```python title="Definition"
-class RecommendationTriggerTypeDef(TypedDict):
-    data: RecommendationTriggerDataTypeDef,  # (1)
-    id: str,
-    recommendationIds: List[str],
-    source: RecommendationSourceTypeType,  # (2)
-    type: RecommendationTriggerTypeType,  # (3)
-```
-
-1. See [:material-code-braces: RecommendationTriggerDataTypeDef](./type_defs.md#recommendationtriggerdatatypedef) 
-2. See [:material-code-brackets: RecommendationSourceTypeType](./literals.md#recommendationsourcetypetype) 
-3. See [:material-code-brackets: RecommendationTriggerTypeType](./literals.md#recommendationtriggertypetype) 
 ## CreateKnowledgeBaseResponseTypeDef
 
 ```python title="Usage Example"
@@ -1867,12 +1807,10 @@ class RecommendationDataTypeDef(TypedDict):
     recommendationId: str,
     relevanceLevel: NotRequired[RelevanceLevelType],  # (2)
     relevanceScore: NotRequired[float],
-    type: NotRequired[RecommendationTypeType],  # (3)
 ```
 
 1. See [:material-code-braces: DocumentTypeDef](./type_defs.md#documenttypedef) 
 2. See [:material-code-brackets: RelevanceLevelType](./literals.md#relevanceleveltype) 
-3. See [:material-code-brackets: RecommendationTypeType](./literals.md#recommendationtypetype) 
 ## ResultDataTypeDef
 
 ```python title="Usage Example"
@@ -1901,7 +1839,6 @@ from types_aiobotocore_wisdom.type_defs import GetRecommendationsResponseTypeDef
 def get_value() -> GetRecommendationsResponseTypeDef:
     return {
         "recommendations": ...,
-        "triggers": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -1909,13 +1846,11 @@ def get_value() -> GetRecommendationsResponseTypeDef:
 ```python title="Definition"
 class GetRecommendationsResponseTypeDef(TypedDict):
     recommendations: List[RecommendationDataTypeDef],  # (1)
-    triggers: List[RecommendationTriggerTypeDef],  # (2)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
 1. See [:material-code-braces: RecommendationDataTypeDef](./type_defs.md#recommendationdatatypedef) 
-2. See [:material-code-braces: RecommendationTriggerTypeDef](./type_defs.md#recommendationtriggertypedef) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## QueryAssistantResponseTypeDef
 
 ```python title="Usage Example"

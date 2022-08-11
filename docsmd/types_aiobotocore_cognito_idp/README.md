@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `CognitoIdentityProvider`.
 
 ### From PyPI with pip
 
@@ -227,7 +222,6 @@ def get_value() -> RecoveryOptionTypeTypeDef:
 - [DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef)
 - [EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef)
 - [SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef)
-- [UserAttributeUpdateSettingsTypeTypeDef](./type_defs.md#userattributeupdatesettingstypetypedef)
 - [UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef)
 - [UsernameConfigurationTypeTypeDef](./type_defs.md#usernameconfigurationtypetypedef)
 - [VerificationMessageTemplateTypeTypeDef](./type_defs.md#verificationmessagetemplatetypetypedef)

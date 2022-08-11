@@ -206,24 +206,6 @@ class ContinuousHyperParameterRangeTypeDef(TypedDict):
     maxValue: NotRequired[float],
 ```
 
-## TagTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import TagTypeDef
-
-def get_value() -> TagTypeDef:
-    return {
-        "tagKey": ...,
-        "tagValue": ...,
-    }
-```
-
-```python title="Definition"
-class TagTypeDef(TypedDict):
-    tagKey: str,
-    tagValue: str,
-```
-
 ## ResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -248,6 +230,26 @@ class ResponseMetadataTypeDef(TypedDict):
     RetryAttempts: int,
 ```
 
+## CreateDatasetGroupRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_personalize.type_defs import CreateDatasetGroupRequestRequestTypeDef
+
+def get_value() -> CreateDatasetGroupRequestRequestTypeDef:
+    return {
+        "name": ...,
+    }
+```
+
+```python title="Definition"
+class CreateDatasetGroupRequestRequestTypeDef(TypedDict):
+    name: str,
+    roleArn: NotRequired[str],
+    kmsKeyArn: NotRequired[str],
+    domain: NotRequired[DomainType],  # (1)
+```
+
+1. See [:material-code-brackets: DomainType](./literals.md#domaintype) 
 ## DataSourceTypeDef
 
 ```python title="Usage Example"
@@ -262,6 +264,66 @@ def get_value() -> DataSourceTypeDef:
 ```python title="Definition"
 class DataSourceTypeDef(TypedDict):
     dataLocation: NotRequired[str],
+```
+
+## CreateDatasetRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_personalize.type_defs import CreateDatasetRequestRequestTypeDef
+
+def get_value() -> CreateDatasetRequestRequestTypeDef:
+    return {
+        "name": ...,
+        "schemaArn": ...,
+        "datasetGroupArn": ...,
+        "datasetType": ...,
+    }
+```
+
+```python title="Definition"
+class CreateDatasetRequestRequestTypeDef(TypedDict):
+    name: str,
+    schemaArn: str,
+    datasetGroupArn: str,
+    datasetType: str,
+```
+
+## CreateEventTrackerRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_personalize.type_defs import CreateEventTrackerRequestRequestTypeDef
+
+def get_value() -> CreateEventTrackerRequestRequestTypeDef:
+    return {
+        "name": ...,
+        "datasetGroupArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateEventTrackerRequestRequestTypeDef(TypedDict):
+    name: str,
+    datasetGroupArn: str,
+```
+
+## CreateFilterRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_personalize.type_defs import CreateFilterRequestRequestTypeDef
+
+def get_value() -> CreateFilterRequestRequestTypeDef:
+    return {
+        "name": ...,
+        "datasetGroupArn": ...,
+        "filterExpression": ...,
+    }
+```
+
+```python title="Definition"
+class CreateFilterRequestRequestTypeDef(TypedDict):
+    name: str,
+    datasetGroupArn: str,
+    filterExpression: str,
 ```
 
 ## RecommenderConfigTypeDef
@@ -301,6 +363,24 @@ class CreateSchemaRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: DomainType](./literals.md#domaintype) 
+## CreateSolutionVersionRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_personalize.type_defs import CreateSolutionVersionRequestRequestTypeDef
+
+def get_value() -> CreateSolutionVersionRequestRequestTypeDef:
+    return {
+        "solutionArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateSolutionVersionRequestRequestTypeDef(TypedDict):
+    solutionArn: str,
+    trainingMode: NotRequired[TrainingModeType],  # (1)
+```
+
+1. See [:material-code-brackets: TrainingModeType](./literals.md#trainingmodetype) 
 ## DatasetExportJobSummaryTypeDef
 
 ```python title="Usage Example"
@@ -1453,22 +1533,6 @@ class SolutionSummaryTypeDef(TypedDict):
     lastUpdatedDateTime: NotRequired[datetime],
 ```
 
-## ListTagsForResourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import ListTagsForResourceRequestRequestTypeDef
-
-def get_value() -> ListTagsForResourceRequestRequestTypeDef:
-    return {
-        "resourceArn": ...,
-    }
-```
-
-```python title="Definition"
-class ListTagsForResourceRequestRequestTypeDef(TypedDict):
-    resourceArn: str,
-```
-
 ## OptimizationObjectiveTypeDef
 
 ```python title="Usage Example"
@@ -1503,38 +1567,6 @@ class TunedHPOParamsTypeDef(TypedDict):
     algorithmHyperParameters: NotRequired[Dict[str, str]],
 ```
 
-## StartRecommenderRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import StartRecommenderRequestRequestTypeDef
-
-def get_value() -> StartRecommenderRequestRequestTypeDef:
-    return {
-        "recommenderArn": ...,
-    }
-```
-
-```python title="Definition"
-class StartRecommenderRequestRequestTypeDef(TypedDict):
-    recommenderArn: str,
-```
-
-## StopRecommenderRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import StopRecommenderRequestRequestTypeDef
-
-def get_value() -> StopRecommenderRequestRequestTypeDef:
-    return {
-        "recommenderArn": ...,
-    }
-```
-
-```python title="Definition"
-class StopRecommenderRequestRequestTypeDef(TypedDict):
-    recommenderArn: str,
-```
-
 ## StopSolutionVersionCreationRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1549,24 +1581,6 @@ def get_value() -> StopSolutionVersionCreationRequestRequestTypeDef:
 ```python title="Definition"
 class StopSolutionVersionCreationRequestRequestTypeDef(TypedDict):
     solutionVersionArn: str,
-```
-
-## UntagResourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import UntagResourceRequestRequestTypeDef
-
-def get_value() -> UntagResourceRequestRequestTypeDef:
-    return {
-        "resourceArn": ...,
-        "tagKeys": ...,
-    }
-```
-
-```python title="Definition"
-class UntagResourceRequestRequestTypeDef(TypedDict):
-    resourceArn: str,
-    tagKeys: Sequence[str],
 ```
 
 ## BatchInferenceJobInputTypeDef
@@ -1677,6 +1691,27 @@ class CampaignUpdateSummaryTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: CampaignConfigTypeDef](./type_defs.md#campaignconfigtypedef) 
+## CreateCampaignRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_personalize.type_defs import CreateCampaignRequestRequestTypeDef
+
+def get_value() -> CreateCampaignRequestRequestTypeDef:
+    return {
+        "name": ...,
+        "solutionVersionArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateCampaignRequestRequestTypeDef(TypedDict):
+    name: str,
+    solutionVersionArn: str,
+    minProvisionedTPS: NotRequired[int],
+    campaignConfig: NotRequired[CampaignConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: CampaignConfigTypeDef](./type_defs.md#campaignconfigtypedef) 
 ## UpdateCampaignRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1697,156 +1732,6 @@ class UpdateCampaignRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: CampaignConfigTypeDef](./type_defs.md#campaignconfigtypedef) 
-## CreateCampaignRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import CreateCampaignRequestRequestTypeDef
-
-def get_value() -> CreateCampaignRequestRequestTypeDef:
-    return {
-        "name": ...,
-        "solutionVersionArn": ...,
-    }
-```
-
-```python title="Definition"
-class CreateCampaignRequestRequestTypeDef(TypedDict):
-    name: str,
-    solutionVersionArn: str,
-    minProvisionedTPS: NotRequired[int],
-    campaignConfig: NotRequired[CampaignConfigTypeDef],  # (1)
-    tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: CampaignConfigTypeDef](./type_defs.md#campaignconfigtypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateDatasetGroupRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import CreateDatasetGroupRequestRequestTypeDef
-
-def get_value() -> CreateDatasetGroupRequestRequestTypeDef:
-    return {
-        "name": ...,
-    }
-```
-
-```python title="Definition"
-class CreateDatasetGroupRequestRequestTypeDef(TypedDict):
-    name: str,
-    roleArn: NotRequired[str],
-    kmsKeyArn: NotRequired[str],
-    domain: NotRequired[DomainType],  # (1)
-    tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-```
-
-1. See [:material-code-brackets: DomainType](./literals.md#domaintype) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateDatasetRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import CreateDatasetRequestRequestTypeDef
-
-def get_value() -> CreateDatasetRequestRequestTypeDef:
-    return {
-        "name": ...,
-        "schemaArn": ...,
-        "datasetGroupArn": ...,
-        "datasetType": ...,
-    }
-```
-
-```python title="Definition"
-class CreateDatasetRequestRequestTypeDef(TypedDict):
-    name: str,
-    schemaArn: str,
-    datasetGroupArn: str,
-    datasetType: str,
-    tags: NotRequired[Sequence[TagTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateEventTrackerRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import CreateEventTrackerRequestRequestTypeDef
-
-def get_value() -> CreateEventTrackerRequestRequestTypeDef:
-    return {
-        "name": ...,
-        "datasetGroupArn": ...,
-    }
-```
-
-```python title="Definition"
-class CreateEventTrackerRequestRequestTypeDef(TypedDict):
-    name: str,
-    datasetGroupArn: str,
-    tags: NotRequired[Sequence[TagTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateFilterRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import CreateFilterRequestRequestTypeDef
-
-def get_value() -> CreateFilterRequestRequestTypeDef:
-    return {
-        "name": ...,
-        "datasetGroupArn": ...,
-        "filterExpression": ...,
-    }
-```
-
-```python title="Definition"
-class CreateFilterRequestRequestTypeDef(TypedDict):
-    name: str,
-    datasetGroupArn: str,
-    filterExpression: str,
-    tags: NotRequired[Sequence[TagTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateSolutionVersionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import CreateSolutionVersionRequestRequestTypeDef
-
-def get_value() -> CreateSolutionVersionRequestRequestTypeDef:
-    return {
-        "solutionArn": ...,
-    }
-```
-
-```python title="Definition"
-class CreateSolutionVersionRequestRequestTypeDef(TypedDict):
-    solutionArn: str,
-    trainingMode: NotRequired[TrainingModeType],  # (1)
-    tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-```
-
-1. See [:material-code-brackets: TrainingModeType](./literals.md#trainingmodetype) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## TagResourceRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import TagResourceRequestRequestTypeDef
-
-def get_value() -> TagResourceRequestRequestTypeDef:
-    return {
-        "resourceArn": ...,
-        "tags": ...,
-    }
-```
-
-```python title="Definition"
-class TagResourceRequestRequestTypeDef(TypedDict):
-    resourceArn: str,
-    tags: Sequence[TagTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## CreateBatchInferenceJobResponseTypeDef
 
 ```python title="Usage Example"
@@ -2203,64 +2088,6 @@ class ListCampaignsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: CampaignSummaryTypeDef](./type_defs.md#campaignsummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListTagsForResourceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import ListTagsForResourceResponseTypeDef
-
-def get_value() -> ListTagsForResourceResponseTypeDef:
-    return {
-        "tags": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListTagsForResourceResponseTypeDef(TypedDict):
-    tags: List[TagTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## StartRecommenderResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import StartRecommenderResponseTypeDef
-
-def get_value() -> StartRecommenderResponseTypeDef:
-    return {
-        "recommenderArn": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class StartRecommenderResponseTypeDef(TypedDict):
-    recommenderArn: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## StopRecommenderResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_personalize.type_defs import StopRecommenderResponseTypeDef
-
-def get_value() -> StopRecommenderResponseTypeDef:
-    return {
-        "recommenderArn": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class StopRecommenderResponseTypeDef(TypedDict):
-    recommenderArn: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## UpdateCampaignResponseTypeDef
 
 ```python title="Usage Example"
@@ -2319,11 +2146,9 @@ class CreateDatasetImportJobRequestRequestTypeDef(TypedDict):
     datasetArn: str,
     dataSource: DataSourceTypeDef,  # (1)
     roleArn: str,
-    tags: NotRequired[Sequence[TagTypeDef]],  # (2)
 ```
 
 1. See [:material-code-braces: DataSourceTypeDef](./type_defs.md#datasourcetypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## DatasetImportJobTypeDef
 
 ```python title="Usage Example"
@@ -2368,11 +2193,9 @@ class CreateRecommenderRequestRequestTypeDef(TypedDict):
     datasetGroupArn: str,
     recipeArn: str,
     recommenderConfig: NotRequired[RecommenderConfigTypeDef],  # (1)
-    tags: NotRequired[Sequence[TagTypeDef]],  # (2)
 ```
 
 1. See [:material-code-braces: RecommenderConfigTypeDef](./type_defs.md#recommenderconfigtypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## RecommenderSummaryTypeDef
 
 ```python title="Usage Example"
@@ -3148,13 +2971,11 @@ class CreateBatchInferenceJobRequestRequestTypeDef(TypedDict):
     filterArn: NotRequired[str],
     numResults: NotRequired[int],
     batchInferenceJobConfig: NotRequired[BatchInferenceJobConfigTypeDef],  # (3)
-    tags: NotRequired[Sequence[TagTypeDef]],  # (4)
 ```
 
 1. See [:material-code-braces: BatchInferenceJobInputTypeDef](./type_defs.md#batchinferencejobinputtypedef) 
 2. See [:material-code-braces: BatchInferenceJobOutputTypeDef](./type_defs.md#batchinferencejoboutputtypedef) 
 3. See [:material-code-braces: BatchInferenceJobConfigTypeDef](./type_defs.md#batchinferencejobconfigtypedef) 
-4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## BatchSegmentJobTypeDef
 
 ```python title="Usage Example"
@@ -3208,12 +3029,10 @@ class CreateBatchSegmentJobRequestRequestTypeDef(TypedDict):
     roleArn: str,
     filterArn: NotRequired[str],
     numResults: NotRequired[int],
-    tags: NotRequired[Sequence[TagTypeDef]],  # (3)
 ```
 
 1. See [:material-code-braces: BatchSegmentJobInputTypeDef](./type_defs.md#batchsegmentjobinputtypedef) 
 2. See [:material-code-braces: BatchSegmentJobOutputTypeDef](./type_defs.md#batchsegmentjoboutputtypedef) 
-3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## CreateDatasetExportJobRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3235,12 +3054,10 @@ class CreateDatasetExportJobRequestRequestTypeDef(TypedDict):
     roleArn: str,
     jobOutput: DatasetExportJobOutputTypeDef,  # (1)
     ingestionMode: NotRequired[IngestionModeType],  # (2)
-    tags: NotRequired[Sequence[TagTypeDef]],  # (3)
 ```
 
 1. See [:material-code-braces: DatasetExportJobOutputTypeDef](./type_defs.md#datasetexportjoboutputtypedef) 
 2. See [:material-code-brackets: IngestionModeType](./literals.md#ingestionmodetype) 
-3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## DatasetExportJobTypeDef
 
 ```python title="Usage Example"
@@ -3360,7 +3177,6 @@ class RecommenderTypeDef(TypedDict):
     status: NotRequired[str],
     failureReason: NotRequired[str],
     latestRecommenderUpdate: NotRequired[RecommenderUpdateSummaryTypeDef],  # (2)
-    modelMetrics: NotRequired[Dict[str, float]],
 ```
 
 1. See [:material-code-braces: RecommenderConfigTypeDef](./type_defs.md#recommenderconfigtypedef) 
@@ -3578,11 +3394,9 @@ class CreateSolutionRequestRequestTypeDef(TypedDict):
     recipeArn: NotRequired[str],
     eventType: NotRequired[str],
     solutionConfig: NotRequired[SolutionConfigTypeDef],  # (1)
-    tags: NotRequired[Sequence[TagTypeDef]],  # (2)
 ```
 
 1. See [:material-code-braces: SolutionConfigTypeDef](./type_defs.md#solutionconfigtypedef) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## SolutionTypeDef
 
 ```python title="Usage Example"

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Outposts`.
 
 ### From PyPI with pip
 
@@ -82,7 +77,6 @@ def get_value() -> AddressTypeType:
 ```
 
 - [AddressTypeType](./literals.md#addresstypetype)
-- [AssetTypeType](./literals.md#assettypetype)
 - [CatalogItemClassType](./literals.md#catalogitemclasstype)
 - [CatalogItemStatusType](./literals.md#catalogitemstatustype)
 - [FiberOpticCableTypeType](./literals.md#fiberopticcabletypetype)
@@ -127,11 +121,8 @@ def get_value() -> AddressTypeDef:
 ```
 
 - [AddressTypeDef](./type_defs.md#addresstypedef)
-- [AssetLocationTypeDef](./type_defs.md#assetlocationtypedef)
-- [ComputeAttributesTypeDef](./type_defs.md#computeattributestypedef)
 - [CancelOrderInputRequestTypeDef](./type_defs.md#cancelorderinputrequesttypedef)
 - [EC2CapacityTypeDef](./type_defs.md#ec2capacitytypedef)
-- [ConnectionDetailsTypeDef](./type_defs.md#connectiondetailstypedef)
 - [LineItemRequestTypeDef](./type_defs.md#lineitemrequesttypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [CreateOutpostInputRequestTypeDef](./type_defs.md#createoutpostinputrequesttypedef)
@@ -140,7 +131,6 @@ def get_value() -> AddressTypeDef:
 - [DeleteOutpostInputRequestTypeDef](./type_defs.md#deleteoutpostinputrequesttypedef)
 - [DeleteSiteInputRequestTypeDef](./type_defs.md#deletesiteinputrequesttypedef)
 - [GetCatalogItemInputRequestTypeDef](./type_defs.md#getcatalogiteminputrequesttypedef)
-- [GetConnectionRequestRequestTypeDef](./type_defs.md#getconnectionrequestrequesttypedef)
 - [GetOrderInputRequestTypeDef](./type_defs.md#getorderinputrequesttypedef)
 - [GetOutpostInputRequestTypeDef](./type_defs.md#getoutpostinputrequesttypedef)
 - [GetOutpostInstanceTypesInputRequestTypeDef](./type_defs.md#getoutpostinstancetypesinputrequesttypedef)
@@ -148,27 +138,22 @@ def get_value() -> AddressTypeDef:
 - [GetSiteAddressInputRequestTypeDef](./type_defs.md#getsiteaddressinputrequesttypedef)
 - [GetSiteInputRequestTypeDef](./type_defs.md#getsiteinputrequesttypedef)
 - [LineItemTypeDef](./type_defs.md#lineitemtypedef)
-- [ListAssetsInputRequestTypeDef](./type_defs.md#listassetsinputrequesttypedef)
 - [ListCatalogItemsInputRequestTypeDef](./type_defs.md#listcatalogitemsinputrequesttypedef)
 - [ListOrdersInputRequestTypeDef](./type_defs.md#listordersinputrequesttypedef)
 - [OrderSummaryTypeDef](./type_defs.md#ordersummarytypedef)
 - [ListOutpostsInputRequestTypeDef](./type_defs.md#listoutpostsinputrequesttypedef)
 - [ListSitesInputRequestTypeDef](./type_defs.md#listsitesinputrequesttypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
-- [StartConnectionRequestRequestTypeDef](./type_defs.md#startconnectionrequestrequesttypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [UpdateOutpostInputRequestTypeDef](./type_defs.md#updateoutpostinputrequesttypedef)
 - [UpdateSiteInputRequestTypeDef](./type_defs.md#updatesiteinputrequesttypedef)
 - [UpdateSiteRackPhysicalPropertiesInputRequestTypeDef](./type_defs.md#updatesiterackphysicalpropertiesinputrequesttypedef)
 - [UpdateSiteAddressInputRequestTypeDef](./type_defs.md#updatesiteaddressinputrequesttypedef)
-- [AssetInfoTypeDef](./type_defs.md#assetinfotypedef)
 - [CatalogItemTypeDef](./type_defs.md#catalogitemtypedef)
 - [CreateOrderInputRequestTypeDef](./type_defs.md#createorderinputrequesttypedef)
-- [GetConnectionResponseTypeDef](./type_defs.md#getconnectionresponsetypedef)
 - [GetSiteAddressOutputTypeDef](./type_defs.md#getsiteaddressoutputtypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
-- [StartConnectionResponseTypeDef](./type_defs.md#startconnectionresponsetypedef)
 - [UpdateSiteAddressOutputTypeDef](./type_defs.md#updatesiteaddressoutputtypedef)
 - [CreateOutpostOutputTypeDef](./type_defs.md#createoutpostoutputtypedef)
 - [GetOutpostOutputTypeDef](./type_defs.md#getoutpostoutputtypedef)
@@ -179,7 +164,6 @@ def get_value() -> AddressTypeDef:
 - [GetOutpostInstanceTypesOutputTypeDef](./type_defs.md#getoutpostinstancetypesoutputtypedef)
 - [OrderTypeDef](./type_defs.md#ordertypedef)
 - [ListOrdersOutputTypeDef](./type_defs.md#listordersoutputtypedef)
-- [ListAssetsOutputTypeDef](./type_defs.md#listassetsoutputtypedef)
 - [GetCatalogItemOutputTypeDef](./type_defs.md#getcatalogitemoutputtypedef)
 - [ListCatalogItemsOutputTypeDef](./type_defs.md#listcatalogitemsoutputtypedef)
 - [CreateSiteOutputTypeDef](./type_defs.md#createsiteoutputtypedef)

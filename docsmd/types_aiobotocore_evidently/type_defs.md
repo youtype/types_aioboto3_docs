@@ -1178,7 +1178,6 @@ from types_aiobotocore_evidently.type_defs import GetExperimentResultsResponseTy
 
 def get_value() -> GetExperimentResultsResponseTypeDef:
     return {
-        "details": ...,
         "reports": ...,
         "resultsData": ...,
         "timestamps": ...,
@@ -1188,7 +1187,6 @@ def get_value() -> GetExperimentResultsResponseTypeDef:
 
 ```python title="Definition"
 class GetExperimentResultsResponseTypeDef(TypedDict):
-    details: str,
     reports: List[ExperimentReportTypeDef],  # (1)
     resultsData: List[ExperimentResultsDataTypeDef],  # (2)
     timestamps: List[datetime],

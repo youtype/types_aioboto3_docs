@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `BackupGateway`.
 
 ### From PyPI with pip
 
@@ -108,7 +103,6 @@ def get_value() -> GatewayTypeType:
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
 - [PaginatorName](./literals.md#paginatorname)
-- [RegionName](./literals.md#regionname)
 
 
 
@@ -133,9 +127,7 @@ def get_value() -> AssociateGatewayToServerInputRequestTypeDef:
 - [DeleteGatewayInputRequestTypeDef](./type_defs.md#deletegatewayinputrequesttypedef)
 - [DeleteHypervisorInputRequestTypeDef](./type_defs.md#deletehypervisorinputrequesttypedef)
 - [DisassociateGatewayFromServerInputRequestTypeDef](./type_defs.md#disassociategatewayfromserverinputrequesttypedef)
-- [GatewayDetailsTypeDef](./type_defs.md#gatewaydetailstypedef)
 - [GatewayTypeDef](./type_defs.md#gatewaytypedef)
-- [GetGatewayInputRequestTypeDef](./type_defs.md#getgatewayinputrequesttypedef)
 - [HypervisorTypeDef](./type_defs.md#hypervisortypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListGatewaysInputRequestTypeDef](./type_defs.md#listgatewaysinputrequesttypedef)
@@ -147,7 +139,6 @@ def get_value() -> AssociateGatewayToServerInputRequestTypeDef:
 - [TestHypervisorConfigurationInputRequestTypeDef](./type_defs.md#testhypervisorconfigurationinputrequesttypedef)
 - [UntagResourceInputRequestTypeDef](./type_defs.md#untagresourceinputrequesttypedef)
 - [UpdateGatewayInformationInputRequestTypeDef](./type_defs.md#updategatewayinformationinputrequesttypedef)
-- [UpdateGatewaySoftwareNowInputRequestTypeDef](./type_defs.md#updategatewaysoftwarenowinputrequesttypedef)
 - [UpdateHypervisorInputRequestTypeDef](./type_defs.md#updatehypervisorinputrequesttypedef)
 - [AssociateGatewayToServerOutputTypeDef](./type_defs.md#associategatewaytoserveroutputtypedef)
 - [CreateGatewayOutputTypeDef](./type_defs.md#creategatewayoutputtypedef)
@@ -159,13 +150,11 @@ def get_value() -> AssociateGatewayToServerInputRequestTypeDef:
 - [TagResourceOutputTypeDef](./type_defs.md#tagresourceoutputtypedef)
 - [UntagResourceOutputTypeDef](./type_defs.md#untagresourceoutputtypedef)
 - [UpdateGatewayInformationOutputTypeDef](./type_defs.md#updategatewayinformationoutputtypedef)
-- [UpdateGatewaySoftwareNowOutputTypeDef](./type_defs.md#updategatewaysoftwarenowoutputtypedef)
 - [UpdateHypervisorOutputTypeDef](./type_defs.md#updatehypervisoroutputtypedef)
 - [CreateGatewayInputRequestTypeDef](./type_defs.md#creategatewayinputrequesttypedef)
 - [ImportHypervisorConfigurationInputRequestTypeDef](./type_defs.md#importhypervisorconfigurationinputrequesttypedef)
 - [ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef)
 - [TagResourceInputRequestTypeDef](./type_defs.md#tagresourceinputrequesttypedef)
-- [GetGatewayOutputTypeDef](./type_defs.md#getgatewayoutputtypedef)
 - [ListGatewaysOutputTypeDef](./type_defs.md#listgatewaysoutputtypedef)
 - [ListHypervisorsOutputTypeDef](./type_defs.md#listhypervisorsoutputtypedef)
 - [ListGatewaysInputListGatewaysPaginateTypeDef](./type_defs.md#listgatewaysinputlistgatewayspaginatetypedef)

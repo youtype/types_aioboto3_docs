@@ -258,21 +258,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("elasticache").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### complete\_migration
 
 Complete the migration of data.
@@ -376,7 +361,6 @@ await def create_cache_cluster(
     PreferredOutpostArn: str = ...,
     PreferredOutpostArns: Sequence[str] = ...,
     LogDeliveryConfigurations: Sequence[LogDeliveryConfigurationRequestTypeDef] = ...,  # (4)
-    TransitEncryptionEnabled: bool = ...,
 ) -> CreateCacheClusterResultTypeDef:  # (5)
     ...
 ```

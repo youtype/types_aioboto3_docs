@@ -276,21 +276,6 @@ parent.clear_query_suggestions(**kwargs)
 
 1. See [:material-code-braces: ClearQuerySuggestionsRequestRequestTypeDef](./type_defs.md#clearquerysuggestionsrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("kendra").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_data\_source
 
 Creates a data source that you want to use with an Amazon Kendra index.
@@ -853,7 +838,8 @@ parent.describe_faq(**kwargs)
 
 ### describe\_index
 
-Describes an existing Amazon Kendra index.
+Describes an existing Amazon Kendra index See also: [AWS API
+Documentation](https://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex).
 
 Type annotations and code completion for `#!python session.client("kendra").describe_index` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_index)
@@ -1395,7 +1381,7 @@ parent.list_groups_older_than_ordering_id(**kwargs)
 
 ### list\_indices
 
-Lists the Amazon Kendra indexes that you created.
+Lists the Amazon Kendra indexes that you have created.
 
 Type annotations and code completion for `#!python session.client("kendra").list_indices` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_indices)

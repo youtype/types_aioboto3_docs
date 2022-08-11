@@ -94,23 +94,6 @@ class CancelJobRequestRequestTypeDef(TypedDict):
     reason: str,
 ```
 
-## UpdatePolicyTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_batch.type_defs import UpdatePolicyTypeDef
-
-def get_value() -> UpdatePolicyTypeDef:
-    return {
-        "terminateJobsOnUpdate": ...,
-    }
-```
-
-```python title="Definition"
-class UpdatePolicyTypeDef(TypedDict):
-    terminateJobsOnUpdate: NotRequired[bool],
-    jobExecutionTimeoutMinutes: NotRequired[int],
-```
-
 ## ComputeEnvironmentOrderTypeDef
 
 ```python title="Usage Example"
@@ -162,6 +145,26 @@ class LaunchTemplateSpecificationTypeDef(TypedDict):
     launchTemplateId: NotRequired[str],
     launchTemplateName: NotRequired[str],
     version: NotRequired[str],
+```
+
+## ComputeResourceUpdateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_batch.type_defs import ComputeResourceUpdateTypeDef
+
+def get_value() -> ComputeResourceUpdateTypeDef:
+    return {
+        "minvCpus": ...,
+    }
+```
+
+```python title="Definition"
+class ComputeResourceUpdateTypeDef(TypedDict):
+    minvCpus: NotRequired[int],
+    maxvCpus: NotRequired[int],
+    desiredvCpus: NotRequired[int],
+    subnets: NotRequired[Sequence[str]],
+    securityGroupIds: NotRequired[Sequence[str]],
 ```
 
 ## FargatePlatformConfigurationTypeDef
@@ -936,42 +939,28 @@ class ComputeResourceTypeDef(TypedDict):
 2. See [:material-code-brackets: CRAllocationStrategyType](./literals.md#crallocationstrategytype) 
 3. See [:material-code-braces: LaunchTemplateSpecificationTypeDef](./type_defs.md#launchtemplatespecificationtypedef) 
 4. See [:material-code-braces: Ec2ConfigurationTypeDef](./type_defs.md#ec2configurationtypedef) 
-## ComputeResourceUpdateTypeDef
+## UpdateComputeEnvironmentRequestRequestTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_batch.type_defs import ComputeResourceUpdateTypeDef
+from types_aiobotocore_batch.type_defs import UpdateComputeEnvironmentRequestRequestTypeDef
 
-def get_value() -> ComputeResourceUpdateTypeDef:
+def get_value() -> UpdateComputeEnvironmentRequestRequestTypeDef:
     return {
-        "minvCpus": ...,
+        "computeEnvironment": ...,
     }
 ```
 
 ```python title="Definition"
-class ComputeResourceUpdateTypeDef(TypedDict):
-    minvCpus: NotRequired[int],
-    maxvCpus: NotRequired[int],
-    desiredvCpus: NotRequired[int],
-    subnets: NotRequired[Sequence[str]],
-    securityGroupIds: NotRequired[Sequence[str]],
-    allocationStrategy: NotRequired[CRUpdateAllocationStrategyType],  # (1)
-    instanceTypes: NotRequired[Sequence[str]],
-    ec2KeyPair: NotRequired[str],
-    instanceRole: NotRequired[str],
-    tags: NotRequired[Mapping[str, str]],
-    placementGroup: NotRequired[str],
-    bidPercentage: NotRequired[int],
-    launchTemplate: NotRequired[LaunchTemplateSpecificationTypeDef],  # (2)
-    ec2Configuration: NotRequired[Sequence[Ec2ConfigurationTypeDef]],  # (3)
-    updateToLatestImageVersion: NotRequired[bool],
-    type: NotRequired[CRTypeType],  # (4)
-    imageId: NotRequired[str],
+class UpdateComputeEnvironmentRequestRequestTypeDef(TypedDict):
+    computeEnvironment: str,
+    state: NotRequired[CEStateType],  # (1)
+    unmanagedvCpus: NotRequired[int],
+    computeResources: NotRequired[ComputeResourceUpdateTypeDef],  # (2)
+    serviceRole: NotRequired[str],
 ```
 
-1. See [:material-code-brackets: CRUpdateAllocationStrategyType](./literals.md#crupdateallocationstrategytype) 
-2. See [:material-code-braces: LaunchTemplateSpecificationTypeDef](./type_defs.md#launchtemplatespecificationtypedef) 
-3. See [:material-code-braces: Ec2ConfigurationTypeDef](./type_defs.md#ec2configurationtypedef) 
-4. See [:material-code-brackets: CRTypeType](./literals.md#crtypetype) 
+1. See [:material-code-brackets: CEStateType](./literals.md#cestatetype) 
+2. See [:material-code-braces: ComputeResourceUpdateTypeDef](./type_defs.md#computeresourceupdatetypedef) 
 ## ContainerOverridesTypeDef
 
 ```python title="Usage Example"
@@ -1493,6 +1482,7 @@ def get_value() -> ComputeEnvironmentDetailTypeDef:
     return {
         "computeEnvironmentName": ...,
         "computeEnvironmentArn": ...,
+        "ecsClusterArn": ...,
     }
 ```
 
@@ -1500,8 +1490,8 @@ def get_value() -> ComputeEnvironmentDetailTypeDef:
 class ComputeEnvironmentDetailTypeDef(TypedDict):
     computeEnvironmentName: str,
     computeEnvironmentArn: str,
+    ecsClusterArn: str,
     unmanagedvCpus: NotRequired[int],
-    ecsClusterArn: NotRequired[str],
     tags: NotRequired[Dict[str, str]],
     type: NotRequired[CETypeType],  # (1)
     state: NotRequired[CEStateType],  # (2)
@@ -1509,14 +1499,12 @@ class ComputeEnvironmentDetailTypeDef(TypedDict):
     statusReason: NotRequired[str],
     computeResources: NotRequired[ComputeResourceTypeDef],  # (4)
     serviceRole: NotRequired[str],
-    updatePolicy: NotRequired[UpdatePolicyTypeDef],  # (5)
 ```
 
 1. See [:material-code-brackets: CETypeType](./literals.md#cetypetype) 
 2. See [:material-code-brackets: CEStateType](./literals.md#cestatetype) 
 3. See [:material-code-brackets: CEStatusType](./literals.md#cestatustype) 
 4. See [:material-code-braces: ComputeResourceTypeDef](./type_defs.md#computeresourcetypedef) 
-5. See [:material-code-braces: UpdatePolicyTypeDef](./type_defs.md#updatepolicytypedef) 
 ## CreateComputeEnvironmentRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1543,30 +1531,6 @@ class CreateComputeEnvironmentRequestRequestTypeDef(TypedDict):
 1. See [:material-code-brackets: CETypeType](./literals.md#cetypetype) 
 2. See [:material-code-brackets: CEStateType](./literals.md#cestatetype) 
 3. See [:material-code-braces: ComputeResourceTypeDef](./type_defs.md#computeresourcetypedef) 
-## UpdateComputeEnvironmentRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_batch.type_defs import UpdateComputeEnvironmentRequestRequestTypeDef
-
-def get_value() -> UpdateComputeEnvironmentRequestRequestTypeDef:
-    return {
-        "computeEnvironment": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateComputeEnvironmentRequestRequestTypeDef(TypedDict):
-    computeEnvironment: str,
-    state: NotRequired[CEStateType],  # (1)
-    unmanagedvCpus: NotRequired[int],
-    computeResources: NotRequired[ComputeResourceUpdateTypeDef],  # (2)
-    serviceRole: NotRequired[str],
-    updatePolicy: NotRequired[UpdatePolicyTypeDef],  # (3)
-```
-
-1. See [:material-code-brackets: CEStateType](./literals.md#cestatetype) 
-2. See [:material-code-braces: ComputeResourceUpdateTypeDef](./type_defs.md#computeresourceupdatetypedef) 
-3. See [:material-code-braces: UpdatePolicyTypeDef](./type_defs.md#updatepolicytypedef) 
 ## NodePropertyOverrideTypeDef
 
 ```python title="Usage Example"

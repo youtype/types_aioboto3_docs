@@ -107,7 +107,6 @@ async with session.client("ssm") as client:
         client.InvalidRole,
         client.InvalidSchedule,
         client.InvalidTarget,
-        client.InvalidTargetMaps,
         client.InvalidTypeNameException,
         client.InvalidUpdate,
         client.InvocationDoesNotExist,
@@ -315,21 +314,6 @@ parent.cancel_maintenance_window_execution(**kwargs)
 
 1. See [:material-code-braces: CancelMaintenanceWindowExecutionRequestRequestTypeDef](./type_defs.md#cancelmaintenancewindowexecutionrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("ssm").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_activation
 
 Generates an activation code and activation ID you can use to register your on-
@@ -397,8 +381,6 @@ await def create_association(
     ApplyOnlyAtCronInterval: bool = ...,
     CalendarNames: Sequence[str] = ...,
     TargetLocations: Sequence[TargetLocationTypeDef] = ...,  # (5)
-    ScheduleOffset: int = ...,
-    TargetMaps: Sequence[Mapping[str, Sequence[str]]] = ...,
 ) -> CreateAssociationResultTypeDef:  # (6)
     ...
 ```
@@ -2656,7 +2638,7 @@ parent.get_maintenance_window_execution_task_invocation(**kwargs)
 
 ### get\_maintenance\_window\_task
 
-Retrieves the details of a maintenance window task.
+Lists the tasks in a maintenance window.
 
 Type annotations and code completion for `#!python session.client("ssm").get_maintenance_window_task` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_maintenance_window_task)
@@ -4309,8 +4291,6 @@ await def update_association(
     ApplyOnlyAtCronInterval: bool = ...,
     CalendarNames: Sequence[str] = ...,
     TargetLocations: Sequence[TargetLocationTypeDef] = ...,  # (5)
-    ScheduleOffset: int = ...,
-    TargetMaps: Sequence[Mapping[str, Sequence[str]]] = ...,
 ) -> UpdateAssociationResultTypeDef:  # (6)
     ...
 ```

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `GreengrassV2`.
 
 ### From PyPI with pip
 
@@ -127,7 +122,6 @@ def get_value() -> CloudComponentStateType:
 - [ListEffectiveDeploymentsPaginatorName](./literals.md#listeffectivedeploymentspaginatorname)
 - [ListInstalledComponentsPaginatorName](./literals.md#listinstalledcomponentspaginatorname)
 - [RecipeOutputFormatType](./literals.md#recipeoutputformattype)
-- [VendorGuidanceType](./literals.md#vendorguidancetype)
 - [GreengrassV2ServiceName](./literals.md#greengrassv2servicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
@@ -169,7 +163,6 @@ def get_value() -> AssociateClientDeviceWithCoreDeviceEntryTypeDef:
 - [CoreDeviceTypeDef](./type_defs.md#coredevicetypedef)
 - [DeleteComponentRequestRequestTypeDef](./type_defs.md#deletecomponentrequestrequesttypedef)
 - [DeleteCoreDeviceRequestRequestTypeDef](./type_defs.md#deletecoredevicerequestrequesttypedef)
-- [DeleteDeploymentRequestRequestTypeDef](./type_defs.md#deletedeploymentrequestrequesttypedef)
 - [DeploymentComponentUpdatePolicyTypeDef](./type_defs.md#deploymentcomponentupdatepolicytypedef)
 - [DeploymentConfigurationValidationPolicyTypeDef](./type_defs.md#deploymentconfigurationvalidationpolicytypedef)
 - [IoTJobTimeoutConfigTypeDef](./type_defs.md#iotjobtimeoutconfigtypedef)

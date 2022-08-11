@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `CloudWatch`.
 
 ### From PyPI with pip
 
@@ -246,7 +241,6 @@ def get_value() -> AlarmHistoryItemTypeDef:
 - [ListTagsForResourceInputRequestTypeDef](./type_defs.md#listtagsforresourceinputrequesttypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
 - [StatisticSetTypeDef](./type_defs.md#statisticsettypedef)
-- [MetricStreamStatisticsMetricTypeDef](./type_defs.md#metricstreamstatisticsmetrictypedef)
 - [PutDashboardInputRequestTypeDef](./type_defs.md#putdashboardinputrequesttypedef)
 - [ServiceResourceAlarmRequestTypeDef](./type_defs.md#serviceresourcealarmrequesttypedef)
 - [ServiceResourceMetricRequestTypeDef](./type_defs.md#serviceresourcemetricrequesttypedef)
@@ -282,21 +276,20 @@ def get_value() -> AlarmHistoryItemTypeDef:
 - [ListMetricsInputListMetricsPaginateTypeDef](./type_defs.md#listmetricsinputlistmetricspaginatetypedef)
 - [ListMetricsInputRequestTypeDef](./type_defs.md#listmetricsinputrequesttypedef)
 - [MetricDataResultTypeDef](./type_defs.md#metricdataresulttypedef)
+- [GetMetricStreamOutputTypeDef](./type_defs.md#getmetricstreamoutputtypedef)
 - [InsightRuleContributorTypeDef](./type_defs.md#insightrulecontributortypedef)
 - [ListMetricStreamsOutputTypeDef](./type_defs.md#listmetricstreamsoutputtypedef)
 - [ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef)
 - [PutCompositeAlarmInputRequestTypeDef](./type_defs.md#putcompositealarminputrequesttypedef)
 - [PutInsightRuleInputRequestTypeDef](./type_defs.md#putinsightruleinputrequesttypedef)
+- [PutMetricStreamInputRequestTypeDef](./type_defs.md#putmetricstreaminputrequesttypedef)
 - [TagResourceInputRequestTypeDef](./type_defs.md#tagresourceinputrequesttypedef)
 - [MetricDatumTypeDef](./type_defs.md#metricdatumtypedef)
-- [MetricStreamStatisticsConfigurationTypeDef](./type_defs.md#metricstreamstatisticsconfigurationtypedef)
 - [ListMetricsOutputTypeDef](./type_defs.md#listmetricsoutputtypedef)
 - [MetricStatTypeDef](./type_defs.md#metricstattypedef)
 - [GetMetricDataOutputTypeDef](./type_defs.md#getmetricdataoutputtypedef)
 - [GetInsightRuleReportOutputTypeDef](./type_defs.md#getinsightrulereportoutputtypedef)
 - [PutMetricDataInputRequestTypeDef](./type_defs.md#putmetricdatainputrequesttypedef)
-- [GetMetricStreamOutputTypeDef](./type_defs.md#getmetricstreamoutputtypedef)
-- [PutMetricStreamInputRequestTypeDef](./type_defs.md#putmetricstreaminputrequesttypedef)
 - [MetricDataQueryTypeDef](./type_defs.md#metricdataquerytypedef)
 - [GetMetricDataInputGetMetricDataPaginateTypeDef](./type_defs.md#getmetricdatainputgetmetricdatapaginatetypedef)
 - [GetMetricDataInputRequestTypeDef](./type_defs.md#getmetricdatainputrequesttypedef)

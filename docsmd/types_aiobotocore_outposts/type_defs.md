@@ -37,38 +37,6 @@ class AddressTypeDef(TypedDict):
     Municipality: NotRequired[str],
 ```
 
-## AssetLocationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import AssetLocationTypeDef
-
-def get_value() -> AssetLocationTypeDef:
-    return {
-        "RackElevation": ...,
-    }
-```
-
-```python title="Definition"
-class AssetLocationTypeDef(TypedDict):
-    RackElevation: NotRequired[float],
-```
-
-## ComputeAttributesTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import ComputeAttributesTypeDef
-
-def get_value() -> ComputeAttributesTypeDef:
-    return {
-        "HostId": ...,
-    }
-```
-
-```python title="Definition"
-class ComputeAttributesTypeDef(TypedDict):
-    HostId: NotRequired[str],
-```
-
 ## CancelOrderInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -101,27 +69,6 @@ class EC2CapacityTypeDef(TypedDict):
     Family: NotRequired[str],
     MaxSize: NotRequired[str],
     Quantity: NotRequired[str],
-```
-
-## ConnectionDetailsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import ConnectionDetailsTypeDef
-
-def get_value() -> ConnectionDetailsTypeDef:
-    return {
-        "ClientPublicKey": ...,
-    }
-```
-
-```python title="Definition"
-class ConnectionDetailsTypeDef(TypedDict):
-    ClientPublicKey: NotRequired[str],
-    ServerPublicKey: NotRequired[str],
-    ServerEndpoint: NotRequired[str],
-    ClientTunnelAddress: NotRequired[str],
-    ServerTunnelAddress: NotRequired[str],
-    AllowedIps: NotRequired[List[str]],
 ```
 
 ## LineItemRequestTypeDef
@@ -298,22 +245,6 @@ class GetCatalogItemInputRequestTypeDef(TypedDict):
     CatalogItemId: str,
 ```
 
-## GetConnectionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import GetConnectionRequestRequestTypeDef
-
-def get_value() -> GetConnectionRequestRequestTypeDef:
-    return {
-        "ConnectionId": ...,
-    }
-```
-
-```python title="Definition"
-class GetConnectionRequestRequestTypeDef(TypedDict):
-    ConnectionId: str,
-```
-
 ## GetOrderInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -435,25 +366,6 @@ class LineItemTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: LineItemStatusType](./literals.md#lineitemstatustype) 
-## ListAssetsInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import ListAssetsInputRequestTypeDef
-
-def get_value() -> ListAssetsInputRequestTypeDef:
-    return {
-        "OutpostIdentifier": ...,
-    }
-```
-
-```python title="Definition"
-class ListAssetsInputRequestTypeDef(TypedDict):
-    OutpostIdentifier: str,
-    HostIdFilter: NotRequired[Sequence[str]],
-    MaxResults: NotRequired[int],
-    NextToken: NotRequired[str],
-```
-
 ## ListCatalogItemsInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -573,28 +485,6 @@ def get_value() -> ListTagsForResourceRequestRequestTypeDef:
 ```python title="Definition"
 class ListTagsForResourceRequestRequestTypeDef(TypedDict):
     ResourceArn: str,
-```
-
-## StartConnectionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import StartConnectionRequestRequestTypeDef
-
-def get_value() -> StartConnectionRequestRequestTypeDef:
-    return {
-        "DeviceSerialNumber": ...,
-        "AssetId": ...,
-        "ClientPublicKey": ...,
-        "NetworkInterfaceDeviceIndex": ...,
-    }
-```
-
-```python title="Definition"
-class StartConnectionRequestRequestTypeDef(TypedDict):
-    DeviceSerialNumber: str,
-    AssetId: str,
-    ClientPublicKey: str,
-    NetworkInterfaceDeviceIndex: int,
 ```
 
 ## TagResourceRequestRequestTypeDef
@@ -728,29 +618,6 @@ class UpdateSiteAddressInputRequestTypeDef(TypedDict):
 
 1. See [:material-code-brackets: AddressTypeType](./literals.md#addresstypetype) 
 2. See [:material-code-braces: AddressTypeDef](./type_defs.md#addresstypedef) 
-## AssetInfoTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import AssetInfoTypeDef
-
-def get_value() -> AssetInfoTypeDef:
-    return {
-        "AssetId": ...,
-    }
-```
-
-```python title="Definition"
-class AssetInfoTypeDef(TypedDict):
-    AssetId: NotRequired[str],
-    RackId: NotRequired[str],
-    AssetType: NotRequired[AssetTypeType],  # (1)
-    ComputeAttributes: NotRequired[ComputeAttributesTypeDef],  # (2)
-    AssetLocation: NotRequired[AssetLocationTypeDef],  # (3)
-```
-
-1. See [:material-code-brackets: AssetTypeType](./literals.md#assettypetype) 
-2. See [:material-code-braces: ComputeAttributesTypeDef](./type_defs.md#computeattributestypedef) 
-3. See [:material-code-braces: AssetLocationTypeDef](./type_defs.md#assetlocationtypedef) 
 ## CatalogItemTypeDef
 
 ```python title="Usage Example"
@@ -800,28 +667,6 @@ class CreateOrderInputRequestTypeDef(TypedDict):
 1. See [:material-code-braces: LineItemRequestTypeDef](./type_defs.md#lineitemrequesttypedef) 
 2. See [:material-code-brackets: PaymentOptionType](./literals.md#paymentoptiontype) 
 3. See [:material-code-brackets: PaymentTermType](./literals.md#paymenttermtype) 
-## GetConnectionResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import GetConnectionResponseTypeDef
-
-def get_value() -> GetConnectionResponseTypeDef:
-    return {
-        "ConnectionId": ...,
-        "ConnectionDetails": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetConnectionResponseTypeDef(TypedDict):
-    ConnectionId: str,
-    ConnectionDetails: ConnectionDetailsTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ConnectionDetailsTypeDef](./type_defs.md#connectiondetailstypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetSiteAddressOutputTypeDef
 
 ```python title="Usage Example"
@@ -862,27 +707,6 @@ def get_value() -> ListTagsForResourceResponseTypeDef:
 ```python title="Definition"
 class ListTagsForResourceResponseTypeDef(TypedDict):
     Tags: Dict[str, str],
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## StartConnectionResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import StartConnectionResponseTypeDef
-
-def get_value() -> StartConnectionResponseTypeDef:
-    return {
-        "ConnectionId": ...,
-        "UnderlayIpAddress": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class StartConnectionResponseTypeDef(TypedDict):
-    ConnectionId: str,
-    UnderlayIpAddress: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
@@ -1116,28 +940,6 @@ class ListOrdersOutputTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: OrderSummaryTypeDef](./type_defs.md#ordersummarytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListAssetsOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_outposts.type_defs import ListAssetsOutputTypeDef
-
-def get_value() -> ListAssetsOutputTypeDef:
-    return {
-        "Assets": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListAssetsOutputTypeDef(TypedDict):
-    Assets: List[AssetInfoTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: AssetInfoTypeDef](./type_defs.md#assetinfotypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetCatalogItemOutputTypeDef
 

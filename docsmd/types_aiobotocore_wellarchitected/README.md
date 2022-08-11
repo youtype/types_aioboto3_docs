@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `WellArchitected`.
 
 ### From PyPI with pip
 
@@ -75,13 +70,12 @@ async with session.client("wellarchitected") as client:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_wellarchitected.literals import AdditionalResourceTypeType
+from types_aiobotocore_wellarchitected.literals import AnswerReasonType
 
-def get_value() -> AdditionalResourceTypeType:
-    return "HELPFUL_RESOURCE"
+def get_value() -> AnswerReasonType:
+    return "ARCHITECTURE_CONSTRAINTS"
 ```
 
-- [AdditionalResourceTypeType](./literals.md#additionalresourcetypetype)
 - [AnswerReasonType](./literals.md#answerreasontype)
 - [ChoiceReasonType](./literals.md#choicereasontype)
 - [ChoiceStatusType](./literals.md#choicestatustype)
@@ -91,7 +85,6 @@ def get_value() -> AdditionalResourceTypeType:
 - [LensStatusTypeType](./literals.md#lensstatustypetype)
 - [LensTypeType](./literals.md#lenstypetype)
 - [NotificationTypeType](./literals.md#notificationtypetype)
-- [OrganizationSharingStatusType](./literals.md#organizationsharingstatustype)
 - [PermissionTypeType](./literals.md#permissiontypetype)
 - [RiskType](./literals.md#risktype)
 - [ShareInvitationActionType](./literals.md#shareinvitationactiontype)
@@ -102,7 +95,6 @@ def get_value() -> AdditionalResourceTypeType:
 - [WellArchitectedServiceName](./literals.md#wellarchitectedservicename)
 - [ServiceName](./literals.md#servicename)
 - [ResourceServiceName](./literals.md#resourceservicename)
-- [RegionName](./literals.md#regionname)
 
 
 
@@ -112,18 +104,18 @@ def get_value() -> AdditionalResourceTypeType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_wellarchitected.type_defs import ChoiceContentTypeDef
+from types_aiobotocore_wellarchitected.type_defs import ChoiceAnswerSummaryTypeDef
 
-def get_value() -> ChoiceContentTypeDef:
+def get_value() -> ChoiceAnswerSummaryTypeDef:
     return {
-        "DisplayText": ...,
+        "ChoiceId": ...,
     }
 ```
 
-- [ChoiceContentTypeDef](./type_defs.md#choicecontenttypedef)
 - [ChoiceAnswerSummaryTypeDef](./type_defs.md#choiceanswersummarytypedef)
 - [ChoiceAnswerTypeDef](./type_defs.md#choiceanswertypedef)
 - [AssociateLensesInputRequestTypeDef](./type_defs.md#associatelensesinputrequesttypedef)
+- [ChoiceContentTypeDef](./type_defs.md#choicecontenttypedef)
 - [ChoiceImprovementPlanTypeDef](./type_defs.md#choiceimprovementplantypedef)
 - [ChoiceUpdateTypeDef](./type_defs.md#choiceupdatetypedef)
 - [CreateLensShareInputRequestTypeDef](./type_defs.md#createlensshareinputrequesttypedef)
@@ -172,14 +164,13 @@ def get_value() -> ChoiceContentTypeDef:
 - [ShareInvitationTypeDef](./type_defs.md#shareinvitationtypedef)
 - [TagResourceInputRequestTypeDef](./type_defs.md#tagresourceinputrequesttypedef)
 - [UntagResourceInputRequestTypeDef](./type_defs.md#untagresourceinputrequesttypedef)
-- [UpdateGlobalSettingsInputRequestTypeDef](./type_defs.md#updateglobalsettingsinputrequesttypedef)
 - [UpdateLensReviewInputRequestTypeDef](./type_defs.md#updatelensreviewinputrequesttypedef)
 - [UpdateShareInvitationInputRequestTypeDef](./type_defs.md#updateshareinvitationinputrequesttypedef)
 - [UpdateWorkloadInputRequestTypeDef](./type_defs.md#updateworkloadinputrequesttypedef)
 - [UpdateWorkloadShareInputRequestTypeDef](./type_defs.md#updateworkloadshareinputrequesttypedef)
 - [WorkloadShareTypeDef](./type_defs.md#workloadsharetypedef)
 - [UpgradeLensReviewInputRequestTypeDef](./type_defs.md#upgradelensreviewinputrequesttypedef)
-- [AdditionalResourcesTypeDef](./type_defs.md#additionalresourcestypedef)
+- [ChoiceTypeDef](./type_defs.md#choicetypedef)
 - [ImprovementSummaryTypeDef](./type_defs.md#improvementsummarytypedef)
 - [UpdateAnswerInputRequestTypeDef](./type_defs.md#updateanswerinputrequesttypedef)
 - [CreateLensShareOutputTypeDef](./type_defs.md#createlensshareoutputtypedef)
@@ -208,7 +199,8 @@ def get_value() -> ChoiceContentTypeDef:
 - [PillarDifferenceTypeDef](./type_defs.md#pillardifferencetypedef)
 - [UpdateShareInvitationOutputTypeDef](./type_defs.md#updateshareinvitationoutputtypedef)
 - [UpdateWorkloadShareOutputTypeDef](./type_defs.md#updateworkloadshareoutputtypedef)
-- [ChoiceTypeDef](./type_defs.md#choicetypedef)
+- [AnswerSummaryTypeDef](./type_defs.md#answersummarytypedef)
+- [AnswerTypeDef](./type_defs.md#answertypedef)
 - [ListLensReviewImprovementsOutputTypeDef](./type_defs.md#listlensreviewimprovementsoutputtypedef)
 - [GetMilestoneOutputTypeDef](./type_defs.md#getmilestoneoutputtypedef)
 - [GetLensReviewOutputTypeDef](./type_defs.md#getlensreviewoutputtypedef)
@@ -216,10 +208,8 @@ def get_value() -> ChoiceContentTypeDef:
 - [ListNotificationsOutputTypeDef](./type_defs.md#listnotificationsoutputtypedef)
 - [ListMilestonesOutputTypeDef](./type_defs.md#listmilestonesoutputtypedef)
 - [VersionDifferencesTypeDef](./type_defs.md#versiondifferencestypedef)
-- [AnswerSummaryTypeDef](./type_defs.md#answersummarytypedef)
-- [AnswerTypeDef](./type_defs.md#answertypedef)
-- [GetLensVersionDifferenceOutputTypeDef](./type_defs.md#getlensversiondifferenceoutputtypedef)
 - [ListAnswersOutputTypeDef](./type_defs.md#listanswersoutputtypedef)
 - [GetAnswerOutputTypeDef](./type_defs.md#getansweroutputtypedef)
 - [UpdateAnswerOutputTypeDef](./type_defs.md#updateansweroutputtypedef)
+- [GetLensVersionDifferenceOutputTypeDef](./type_defs.md#getlensversiondifferenceoutputtypedef)
 

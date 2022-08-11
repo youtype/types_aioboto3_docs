@@ -758,24 +758,6 @@ class GetRecoveryPointRestoreMetadataInputRequestTypeDef(TypedDict):
     RecoveryPointArn: str,
 ```
 
-## PaginatorConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import PaginatorConfigTypeDef
-
-def get_value() -> PaginatorConfigTypeDef:
-    return {
-        "MaxItems": ...,
-    }
-```
-
-```python title="Definition"
-class PaginatorConfigTypeDef(TypedDict):
-    MaxItems: NotRequired[int],
-    PageSize: NotRequired[int],
-    StartingToken: NotRequired[str],
-```
-
 ## ListBackupJobsInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -798,8 +780,6 @@ class ListBackupJobsInputRequestTypeDef(TypedDict):
     ByCreatedAfter: NotRequired[Union[datetime, str]],
     ByResourceType: NotRequired[str],
     ByAccountId: NotRequired[str],
-    ByCompleteAfter: NotRequired[Union[datetime, str]],
-    ByCompleteBefore: NotRequired[Union[datetime, str]],
 ```
 
 1. See [:material-code-brackets: BackupJobStateType](./literals.md#backupjobstatetype) 
@@ -913,8 +893,6 @@ class ListCopyJobsInputRequestTypeDef(TypedDict):
     ByResourceType: NotRequired[str],
     ByDestinationVaultArn: NotRequired[str],
     ByAccountId: NotRequired[str],
-    ByCompleteBefore: NotRequired[Union[datetime, str]],
-    ByCompleteAfter: NotRequired[Union[datetime, str]],
 ```
 
 1. See [:material-code-brackets: CopyJobStateType](./literals.md#copyjobstatetype) 
@@ -1091,8 +1069,6 @@ class ListRestoreJobsInputRequestTypeDef(TypedDict):
     ByCreatedBefore: NotRequired[Union[datetime, str]],
     ByCreatedAfter: NotRequired[Union[datetime, str]],
     ByStatus: NotRequired[RestoreJobStatusType],  # (1)
-    ByCompleteBefore: NotRequired[Union[datetime, str]],
-    ByCompleteAfter: NotRequired[Union[datetime, str]],
 ```
 
 1. See [:material-code-brackets: RestoreJobStatusType](./literals.md#restorejobstatustype) 
@@ -1243,6 +1219,7 @@ def get_value() -> StartRestoreJobInputRequestTypeDef:
     return {
         "RecoveryPointArn": ...,
         "Metadata": ...,
+        "IamRoleArn": ...,
     }
 ```
 
@@ -1250,7 +1227,7 @@ def get_value() -> StartRestoreJobInputRequestTypeDef:
 class StartRestoreJobInputRequestTypeDef(TypedDict):
     RecoveryPointArn: str,
     Metadata: Mapping[str, str],
-    IamRoleArn: NotRequired[str],
+    IamRoleArn: str,
     IdempotencyToken: NotRequired[str],
     ResourceType: NotRequired[str],
 ```
@@ -2504,230 +2481,6 @@ class ListFrameworksOutputTypeDef(TypedDict):
 
 1. See [:material-code-braces: FrameworkTypeDef](./type_defs.md#frameworktypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListBackupJobsInputListBackupJobsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListBackupJobsInputListBackupJobsPaginateTypeDef
-
-def get_value() -> ListBackupJobsInputListBackupJobsPaginateTypeDef:
-    return {
-        "ByResourceArn": ...,
-    }
-```
-
-```python title="Definition"
-class ListBackupJobsInputListBackupJobsPaginateTypeDef(TypedDict):
-    ByResourceArn: NotRequired[str],
-    ByState: NotRequired[BackupJobStateType],  # (1)
-    ByBackupVaultName: NotRequired[str],
-    ByCreatedBefore: NotRequired[Union[datetime, str]],
-    ByCreatedAfter: NotRequired[Union[datetime, str]],
-    ByResourceType: NotRequired[str],
-    ByAccountId: NotRequired[str],
-    ByCompleteAfter: NotRequired[Union[datetime, str]],
-    ByCompleteBefore: NotRequired[Union[datetime, str]],
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: BackupJobStateType](./literals.md#backupjobstatetype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListBackupPlanTemplatesInputListBackupPlanTemplatesPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListBackupPlanTemplatesInputListBackupPlanTemplatesPaginateTypeDef
-
-def get_value() -> ListBackupPlanTemplatesInputListBackupPlanTemplatesPaginateTypeDef:
-    return {
-        "PaginationConfig": ...,
-    }
-```
-
-```python title="Definition"
-class ListBackupPlanTemplatesInputListBackupPlanTemplatesPaginateTypeDef(TypedDict):
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListBackupPlanVersionsInputListBackupPlanVersionsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListBackupPlanVersionsInputListBackupPlanVersionsPaginateTypeDef
-
-def get_value() -> ListBackupPlanVersionsInputListBackupPlanVersionsPaginateTypeDef:
-    return {
-        "BackupPlanId": ...,
-    }
-```
-
-```python title="Definition"
-class ListBackupPlanVersionsInputListBackupPlanVersionsPaginateTypeDef(TypedDict):
-    BackupPlanId: str,
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListBackupPlansInputListBackupPlansPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListBackupPlansInputListBackupPlansPaginateTypeDef
-
-def get_value() -> ListBackupPlansInputListBackupPlansPaginateTypeDef:
-    return {
-        "IncludeDeleted": ...,
-    }
-```
-
-```python title="Definition"
-class ListBackupPlansInputListBackupPlansPaginateTypeDef(TypedDict):
-    IncludeDeleted: NotRequired[bool],
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListBackupSelectionsInputListBackupSelectionsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListBackupSelectionsInputListBackupSelectionsPaginateTypeDef
-
-def get_value() -> ListBackupSelectionsInputListBackupSelectionsPaginateTypeDef:
-    return {
-        "BackupPlanId": ...,
-    }
-```
-
-```python title="Definition"
-class ListBackupSelectionsInputListBackupSelectionsPaginateTypeDef(TypedDict):
-    BackupPlanId: str,
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListBackupVaultsInputListBackupVaultsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListBackupVaultsInputListBackupVaultsPaginateTypeDef
-
-def get_value() -> ListBackupVaultsInputListBackupVaultsPaginateTypeDef:
-    return {
-        "PaginationConfig": ...,
-    }
-```
-
-```python title="Definition"
-class ListBackupVaultsInputListBackupVaultsPaginateTypeDef(TypedDict):
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListCopyJobsInputListCopyJobsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListCopyJobsInputListCopyJobsPaginateTypeDef
-
-def get_value() -> ListCopyJobsInputListCopyJobsPaginateTypeDef:
-    return {
-        "ByResourceArn": ...,
-    }
-```
-
-```python title="Definition"
-class ListCopyJobsInputListCopyJobsPaginateTypeDef(TypedDict):
-    ByResourceArn: NotRequired[str],
-    ByState: NotRequired[CopyJobStateType],  # (1)
-    ByCreatedBefore: NotRequired[Union[datetime, str]],
-    ByCreatedAfter: NotRequired[Union[datetime, str]],
-    ByResourceType: NotRequired[str],
-    ByDestinationVaultArn: NotRequired[str],
-    ByAccountId: NotRequired[str],
-    ByCompleteBefore: NotRequired[Union[datetime, str]],
-    ByCompleteAfter: NotRequired[Union[datetime, str]],
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: CopyJobStateType](./literals.md#copyjobstatetype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListProtectedResourcesInputListProtectedResourcesPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListProtectedResourcesInputListProtectedResourcesPaginateTypeDef
-
-def get_value() -> ListProtectedResourcesInputListProtectedResourcesPaginateTypeDef:
-    return {
-        "PaginationConfig": ...,
-    }
-```
-
-```python title="Definition"
-class ListProtectedResourcesInputListProtectedResourcesPaginateTypeDef(TypedDict):
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListRecoveryPointsByBackupVaultInputListRecoveryPointsByBackupVaultPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListRecoveryPointsByBackupVaultInputListRecoveryPointsByBackupVaultPaginateTypeDef
-
-def get_value() -> ListRecoveryPointsByBackupVaultInputListRecoveryPointsByBackupVaultPaginateTypeDef:
-    return {
-        "BackupVaultName": ...,
-    }
-```
-
-```python title="Definition"
-class ListRecoveryPointsByBackupVaultInputListRecoveryPointsByBackupVaultPaginateTypeDef(TypedDict):
-    BackupVaultName: str,
-    ByResourceArn: NotRequired[str],
-    ByResourceType: NotRequired[str],
-    ByBackupPlanId: NotRequired[str],
-    ByCreatedBefore: NotRequired[Union[datetime, str]],
-    ByCreatedAfter: NotRequired[Union[datetime, str]],
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListRecoveryPointsByResourceInputListRecoveryPointsByResourcePaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListRecoveryPointsByResourceInputListRecoveryPointsByResourcePaginateTypeDef
-
-def get_value() -> ListRecoveryPointsByResourceInputListRecoveryPointsByResourcePaginateTypeDef:
-    return {
-        "ResourceArn": ...,
-    }
-```
-
-```python title="Definition"
-class ListRecoveryPointsByResourceInputListRecoveryPointsByResourcePaginateTypeDef(TypedDict):
-    ResourceArn: str,
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListRestoreJobsInputListRestoreJobsPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_backup.type_defs import ListRestoreJobsInputListRestoreJobsPaginateTypeDef
-
-def get_value() -> ListRestoreJobsInputListRestoreJobsPaginateTypeDef:
-    return {
-        "ByAccountId": ...,
-    }
-```
-
-```python title="Definition"
-class ListRestoreJobsInputListRestoreJobsPaginateTypeDef(TypedDict):
-    ByAccountId: NotRequired[str],
-    ByCreatedBefore: NotRequired[Union[datetime, str]],
-    ByCreatedAfter: NotRequired[Union[datetime, str]],
-    ByStatus: NotRequired[RestoreJobStatusType],  # (1)
-    ByCompleteBefore: NotRequired[Union[datetime, str]],
-    ByCompleteAfter: NotRequired[Union[datetime, str]],
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: RestoreJobStatusType](./literals.md#restorejobstatustype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListProtectedResourcesOutputTypeDef
 
 ```python title="Usage Example"

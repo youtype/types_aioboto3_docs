@@ -689,8 +689,6 @@ class ModifyDBInstanceMessageRequestTypeDef(TypedDict):
     NewDBInstanceIdentifier: NotRequired[str],
     CACertificateIdentifier: NotRequired[str],
     PromotionTier: NotRequired[int],
-    EnablePerformanceInsights: NotRequired[bool],
-    PerformanceInsightsKMSKeyId: NotRequired[str],
 ```
 
 ## ModifyDBSubnetGroupMessageRequestTypeDef
@@ -1219,8 +1217,6 @@ class CreateDBInstanceMessageRequestTypeDef(TypedDict):
     AutoMinorVersionUpgrade: NotRequired[bool],
     Tags: NotRequired[Sequence[TagTypeDef]],  # (1)
     PromotionTier: NotRequired[int],
-    EnablePerformanceInsights: NotRequired[bool],
-    PerformanceInsightsKMSKeyId: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 

@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `WorkMail`.
 
 ### From PyPI with pip
 
@@ -78,7 +73,6 @@ def get_list_aliases_paginator() -> ListAliasesPaginator:
 ```
 
 - [ListAliasesPaginator](./paginators.md#listaliasespaginator)
-- [ListAvailabilityConfigurationsPaginator](./paginators.md#listavailabilityconfigurationspaginator)
 - [ListGroupMembersPaginator](./paginators.md#listgroupmemberspaginator)
 - [ListGroupsPaginator](./paginators.md#listgroupspaginator)
 - [ListMailboxPermissionsPaginator](./paginators.md#listmailboxpermissionspaginator)
@@ -106,12 +100,10 @@ def get_value() -> AccessControlRuleEffectType:
 ```
 
 - [AccessControlRuleEffectType](./literals.md#accesscontrolruleeffecttype)
-- [AvailabilityProviderTypeType](./literals.md#availabilityprovidertypetype)
 - [DnsRecordVerificationStatusType](./literals.md#dnsrecordverificationstatustype)
 - [EntityStateType](./literals.md#entitystatetype)
 - [FolderNameType](./literals.md#foldernametype)
 - [ListAliasesPaginatorName](./literals.md#listaliasespaginatorname)
-- [ListAvailabilityConfigurationsPaginatorName](./literals.md#listavailabilityconfigurationspaginatorname)
 - [ListGroupMembersPaginatorName](./literals.md#listgroupmemberspaginatorname)
 - [ListGroupsPaginatorName](./literals.md#listgroupspaginatorname)
 - [ListMailboxPermissionsPaginatorName](./literals.md#listmailboxpermissionspaginatorname)
@@ -151,12 +143,9 @@ def get_value() -> AccessControlRuleTypeDef:
 - [AccessControlRuleTypeDef](./type_defs.md#accesscontrolruletypedef)
 - [AssociateDelegateToResourceRequestRequestTypeDef](./type_defs.md#associatedelegatetoresourcerequestrequesttypedef)
 - [AssociateMemberToGroupRequestRequestTypeDef](./type_defs.md#associatemembertogrouprequestrequesttypedef)
-- [LambdaAvailabilityProviderTypeDef](./type_defs.md#lambdaavailabilityprovidertypedef)
-- [RedactedEwsAvailabilityProviderTypeDef](./type_defs.md#redactedewsavailabilityprovidertypedef)
 - [BookingOptionsTypeDef](./type_defs.md#bookingoptionstypedef)
 - [CancelMailboxExportJobRequestRequestTypeDef](./type_defs.md#cancelmailboxexportjobrequestrequesttypedef)
 - [CreateAliasRequestRequestTypeDef](./type_defs.md#createaliasrequestrequesttypedef)
-- [EwsAvailabilityProviderTypeDef](./type_defs.md#ewsavailabilityprovidertypedef)
 - [CreateGroupRequestRequestTypeDef](./type_defs.md#creategrouprequestrequesttypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [CreateMobileDeviceAccessRuleRequestRequestTypeDef](./type_defs.md#createmobiledeviceaccessrulerequestrequesttypedef)
@@ -166,7 +155,6 @@ def get_value() -> AccessControlRuleTypeDef:
 - [DelegateTypeDef](./type_defs.md#delegatetypedef)
 - [DeleteAccessControlRuleRequestRequestTypeDef](./type_defs.md#deleteaccesscontrolrulerequestrequesttypedef)
 - [DeleteAliasRequestRequestTypeDef](./type_defs.md#deletealiasrequestrequesttypedef)
-- [DeleteAvailabilityConfigurationRequestRequestTypeDef](./type_defs.md#deleteavailabilityconfigurationrequestrequesttypedef)
 - [DeleteEmailMonitoringConfigurationRequestRequestTypeDef](./type_defs.md#deleteemailmonitoringconfigurationrequestrequesttypedef)
 - [DeleteGroupRequestRequestTypeDef](./type_defs.md#deletegrouprequestrequesttypedef)
 - [DeleteMailboxPermissionsRequestRequestTypeDef](./type_defs.md#deletemailboxpermissionsrequestrequesttypedef)
@@ -200,7 +188,6 @@ def get_value() -> AccessControlRuleTypeDef:
 - [ListAccessControlRulesRequestRequestTypeDef](./type_defs.md#listaccesscontrolrulesrequestrequesttypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListAliasesRequestRequestTypeDef](./type_defs.md#listaliasesrequestrequesttypedef)
-- [ListAvailabilityConfigurationsRequestRequestTypeDef](./type_defs.md#listavailabilityconfigurationsrequestrequesttypedef)
 - [ListGroupMembersRequestRequestTypeDef](./type_defs.md#listgroupmembersrequestrequesttypedef)
 - [MemberTypeDef](./type_defs.md#membertypedef)
 - [ListGroupsRequestRequestTypeDef](./type_defs.md#listgroupsrequestrequesttypedef)
@@ -237,11 +224,7 @@ def get_value() -> AccessControlRuleTypeDef:
 - [UpdateMailboxQuotaRequestRequestTypeDef](./type_defs.md#updatemailboxquotarequestrequesttypedef)
 - [UpdateMobileDeviceAccessRuleRequestRequestTypeDef](./type_defs.md#updatemobiledeviceaccessrulerequestrequesttypedef)
 - [UpdatePrimaryEmailAddressRequestRequestTypeDef](./type_defs.md#updateprimaryemailaddressrequestrequesttypedef)
-- [AvailabilityConfigurationTypeDef](./type_defs.md#availabilityconfigurationtypedef)
 - [UpdateResourceRequestRequestTypeDef](./type_defs.md#updateresourcerequestrequesttypedef)
-- [CreateAvailabilityConfigurationRequestRequestTypeDef](./type_defs.md#createavailabilityconfigurationrequestrequesttypedef)
-- [TestAvailabilityConfigurationRequestRequestTypeDef](./type_defs.md#testavailabilityconfigurationrequestrequesttypedef)
-- [UpdateAvailabilityConfigurationRequestRequestTypeDef](./type_defs.md#updateavailabilityconfigurationrequestrequesttypedef)
 - [CreateGroupResponseTypeDef](./type_defs.md#creategroupresponsetypedef)
 - [CreateMobileDeviceAccessRuleResponseTypeDef](./type_defs.md#createmobiledeviceaccessruleresponsetypedef)
 - [CreateOrganizationResponseTypeDef](./type_defs.md#createorganizationresponsetypedef)
@@ -261,7 +244,6 @@ def get_value() -> AccessControlRuleTypeDef:
 - [ListAccessControlRulesResponseTypeDef](./type_defs.md#listaccesscontrolrulesresponsetypedef)
 - [ListAliasesResponseTypeDef](./type_defs.md#listaliasesresponsetypedef)
 - [StartMailboxExportJobResponseTypeDef](./type_defs.md#startmailboxexportjobresponsetypedef)
-- [TestAvailabilityConfigurationResponseTypeDef](./type_defs.md#testavailabilityconfigurationresponsetypedef)
 - [CreateOrganizationRequestRequestTypeDef](./type_defs.md#createorganizationrequestrequesttypedef)
 - [ListResourceDelegatesResponseTypeDef](./type_defs.md#listresourcedelegatesresponsetypedef)
 - [GetMailDomainResponseTypeDef](./type_defs.md#getmaildomainresponsetypedef)
@@ -270,7 +252,6 @@ def get_value() -> AccessControlRuleTypeDef:
 - [GetMobileDeviceAccessEffectResponseTypeDef](./type_defs.md#getmobiledeviceaccesseffectresponsetypedef)
 - [ListGroupsResponseTypeDef](./type_defs.md#listgroupsresponsetypedef)
 - [ListAliasesRequestListAliasesPaginateTypeDef](./type_defs.md#listaliasesrequestlistaliasespaginatetypedef)
-- [ListAvailabilityConfigurationsRequestListAvailabilityConfigurationsPaginateTypeDef](./type_defs.md#listavailabilityconfigurationsrequestlistavailabilityconfigurationspaginatetypedef)
 - [ListGroupMembersRequestListGroupMembersPaginateTypeDef](./type_defs.md#listgroupmembersrequestlistgroupmemberspaginatetypedef)
 - [ListGroupsRequestListGroupsPaginateTypeDef](./type_defs.md#listgroupsrequestlistgroupspaginatetypedef)
 - [ListMailboxPermissionsRequestListMailboxPermissionsPaginateTypeDef](./type_defs.md#listmailboxpermissionsrequestlistmailboxpermissionspaginatetypedef)
@@ -289,5 +270,4 @@ def get_value() -> AccessControlRuleTypeDef:
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef)
-- [ListAvailabilityConfigurationsResponseTypeDef](./type_defs.md#listavailabilityconfigurationsresponsetypedef)
 

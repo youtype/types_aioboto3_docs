@@ -58,7 +58,6 @@ async with session.client("efs") as client:
         client.SecurityGroupLimitExceeded,
         client.SecurityGroupNotFound,
         client.SubnetNotFound,
-        client.ThrottlingException,
         client.ThroughputLimitExceeded,
         client.TooManyRequests,
         client.UnsupportedAvailabilityZone,
@@ -90,21 +89,6 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
-    ...
-```
-
-
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("efs").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
     ...
 ```
 
@@ -711,7 +695,9 @@ parent.describe_mount_targets(**kwargs)
 
 ### describe\_replication\_configurations
 
-Retrieves the replication configuration for a specific file system.
+Retrieves the replication configurations for either a specific file system, or
+all configurations for the Amazon Web Services account in an Amazon Web Services
+Region if a file system is not specified.
 
 Type annotations and code completion for `#!python session.client("efs").describe_replication_configurations` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.describe_replication_configurations)
@@ -949,7 +935,7 @@ parent.put_file_system_policy(**kwargs)
 
 ### put\_lifecycle\_configuration
 
-Use this action to manage EFS lifecycle management and intelligent tiering.
+Enables lifecycle management by creating a new `LifecycleConfiguration` object.
 
 Type annotations and code completion for `#!python session.client("efs").put_lifecycle_configuration` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.put_lifecycle_configuration)

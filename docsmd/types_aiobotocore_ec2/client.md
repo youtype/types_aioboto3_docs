@@ -323,7 +323,6 @@ await def allocate_hosts(
     InstanceFamily: str = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
     HostRecovery: HostRecoveryType = ...,  # (3)
-    OutpostArn: str = ...,
 ) -> AllocateHostsResultTypeDef:  # (4)
     ...
 ```
@@ -779,39 +778,6 @@ parent.associate_transit_gateway_multicast_domain(**kwargs)
 ```
 
 1. See [:material-code-braces: AssociateTransitGatewayMulticastDomainRequestRequestTypeDef](./type_defs.md#associatetransitgatewaymulticastdomainrequestrequesttypedef) 
-
-### associate\_transit\_gateway\_policy\_table
-
-Associates the specified transit gateway attachment with a transit gateway
-policy table.
-
-Type annotations and code completion for `#!python session.client("ec2").associate_transit_gateway_policy_table` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_transit_gateway_policy_table)
-
-```python title="Method definition"
-await def associate_transit_gateway_policy_table(
-    self,
-    *,
-    TransitGatewayPolicyTableId: str,
-    TransitGatewayAttachmentId: str,
-    DryRun: bool = ...,
-) -> AssociateTransitGatewayPolicyTableResultTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: AssociateTransitGatewayPolicyTableResultTypeDef](./type_defs.md#associatetransitgatewaypolicytableresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: AssociateTransitGatewayPolicyTableRequestRequestTypeDef = {  # (1)
-    "TransitGatewayPolicyTableId": ...,
-    "TransitGatewayAttachmentId": ...,
-}
-
-parent.associate_transit_gateway_policy_table(**kwargs)
-```
-
-1. See [:material-code-braces: AssociateTransitGatewayPolicyTableRequestRequestTypeDef](./type_defs.md#associatetransitgatewaypolicytablerequestrequesttypedef) 
 
 ### associate\_transit\_gateway\_route\_table
 
@@ -1529,21 +1495,6 @@ parent.cancel_spot_instance_requests(**kwargs)
 
 1. See [:material-code-braces: CancelSpotInstanceRequestsRequestRequestTypeDef](./type_defs.md#cancelspotinstancerequestsrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("ec2").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### confirm\_product\_instance
 
 Determines whether a product code is associated with an instance.
@@ -1910,7 +1861,8 @@ parent.create_client_vpn_route(**kwargs)
 
 ### create\_customer\_gateway
 
-Provides information to Amazon Web Services about your customer gateway device.
+Provides information to Amazon Web Services about your VPN customer gateway
+device.
 
 Type annotations and code completion for `#!python session.client("ec2").create_customer_gateway` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_customer_gateway)
@@ -1925,7 +1877,6 @@ await def create_customer_gateway(
     CertificateArn: str = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
     DeviceName: str = ...,
-    IpAddress: str = ...,
     DryRun: bool = ...,
 ) -> CreateCustomerGatewayResultTypeDef:  # (3)
     ...
@@ -2475,8 +2426,7 @@ parent.create_ipam_scope(**kwargs)
 
 ### create\_key\_pair
 
-Creates an ED25519 or 2048-bit RSA key pair with the specified name and in the
-specified PEM or PPK format.
+Creates an ED25519 or 2048-bit RSA key pair with the specified name.
 
 Type annotations and code completion for `#!python session.client("ec2").create_key_pair` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_key_pair)
@@ -2489,15 +2439,13 @@ await def create_key_pair(
     DryRun: bool = ...,
     KeyType: KeyTypeType = ...,  # (1)
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
-    KeyFormat: KeyFormatType = ...,  # (3)
-) -> KeyPairTypeDef:  # (4)
+) -> KeyPairTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-brackets: KeyTypeType](./literals.md#keytypetype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-3. See [:material-code-brackets: KeyFormatType](./literals.md#keyformattype) 
-4. See [:material-code-braces: KeyPairTypeDef](./type_defs.md#keypairtypedef) 
+3. See [:material-code-braces: KeyPairTypeDef](./type_defs.md#keypairtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2983,15 +2931,13 @@ await def create_placement_group(
     Strategy: PlacementStrategyType = ...,  # (1)
     PartitionCount: int = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
-    SpreadLevel: SpreadLevelType = ...,  # (3)
-) -> CreatePlacementGroupResultTypeDef:  # (4)
+) -> CreatePlacementGroupResultTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-3. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
-4. See [:material-code-braces: CreatePlacementGroupResultTypeDef](./type_defs.md#createplacementgroupresulttypedef) 
+3. See [:material-code-braces: CreatePlacementGroupResultTypeDef](./type_defs.md#createplacementgroupresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3445,9 +3391,9 @@ await def create_subnet_cidr_reservation(
     SubnetId: str,
     Cidr: str,
     ReservationType: SubnetCidrReservationTypeType,  # (1)
+    TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
     Description: str = ...,
     DryRun: bool = ...,
-    TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
 ) -> CreateSubnetCidrReservationResultTypeDef:  # (3)
     ...
 ```
@@ -3644,7 +3590,6 @@ await def create_traffic_mirror_target(
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (1)
     DryRun: bool = ...,
     ClientToken: str = ...,
-    GatewayLoadBalancerEndpointId: str = ...,
 ) -> CreateTrafficMirrorTargetResultTypeDef:  # (2)
     ...
 ```
@@ -3822,16 +3767,14 @@ await def create_transit_gateway_peering_attachment(
     PeerTransitGatewayId: str,
     PeerAccountId: str,
     PeerRegion: str,
-    Options: CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef = ...,  # (1)
-    TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
+    TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (1)
     DryRun: bool = ...,
-) -> CreateTransitGatewayPeeringAttachmentResultTypeDef:  # (3)
+) -> CreateTransitGatewayPeeringAttachmentResultTypeDef:  # (2)
     ...
 ```
 
-1. See [:material-code-braces: CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentrequestoptionstypedef) 
-2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-3. See [:material-code-braces: CreateTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentresulttypedef) 
+1. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+2. See [:material-code-braces: CreateTransitGatewayPeeringAttachmentResultTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3846,38 +3789,6 @@ parent.create_transit_gateway_peering_attachment(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateTransitGatewayPeeringAttachmentRequestRequestTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentrequestrequesttypedef) 
-
-### create\_transit\_gateway\_policy\_table
-
-Creates a transit gateway policy table.
-
-Type annotations and code completion for `#!python session.client("ec2").create_transit_gateway_policy_table` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_transit_gateway_policy_table)
-
-```python title="Method definition"
-await def create_transit_gateway_policy_table(
-    self,
-    *,
-    TransitGatewayId: str,
-    TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (1)
-    DryRun: bool = ...,
-) -> CreateTransitGatewayPolicyTableResultTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-2. See [:material-code-braces: CreateTransitGatewayPolicyTableResultTypeDef](./type_defs.md#createtransitgatewaypolicytableresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: CreateTransitGatewayPolicyTableRequestRequestTypeDef = {  # (1)
-    "TransitGatewayId": ...,
-}
-
-parent.create_transit_gateway_policy_table(**kwargs)
-```
-
-1. See [:material-code-braces: CreateTransitGatewayPolicyTableRequestRequestTypeDef](./type_defs.md#createtransitgatewaypolicytablerequestrequesttypedef) 
 
 ### create\_transit\_gateway\_prefix\_list\_reference
 
@@ -3979,40 +3890,6 @@ parent.create_transit_gateway_route_table(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateTransitGatewayRouteTableRequestRequestTypeDef](./type_defs.md#createtransitgatewayroutetablerequestrequesttypedef) 
-
-### create\_transit\_gateway\_route\_table\_announcement
-
-Advertises a new transit gateway route table.
-
-Type annotations and code completion for `#!python session.client("ec2").create_transit_gateway_route_table_announcement` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_transit_gateway_route_table_announcement)
-
-```python title="Method definition"
-await def create_transit_gateway_route_table_announcement(
-    self,
-    *,
-    TransitGatewayRouteTableId: str,
-    PeeringAttachmentId: str,
-    TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (1)
-    DryRun: bool = ...,
-) -> CreateTransitGatewayRouteTableAnnouncementResultTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-2. See [:material-code-braces: CreateTransitGatewayRouteTableAnnouncementResultTypeDef](./type_defs.md#createtransitgatewayroutetableannouncementresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: CreateTransitGatewayRouteTableAnnouncementRequestRequestTypeDef = {  # (1)
-    "TransitGatewayRouteTableId": ...,
-    "PeeringAttachmentId": ...,
-}
-
-parent.create_transit_gateway_route_table_announcement(**kwargs)
-```
-
-1. See [:material-code-braces: CreateTransitGatewayRouteTableAnnouncementRequestRequestTypeDef](./type_defs.md#createtransitgatewayroutetableannouncementrequestrequesttypedef) 
 
 ### create\_transit\_gateway\_vpc\_attachment
 
@@ -4157,20 +4034,16 @@ await def create_vpc_endpoint(
     RouteTableIds: Sequence[str] = ...,
     SubnetIds: Sequence[str] = ...,
     SecurityGroupIds: Sequence[str] = ...,
-    IpAddressType: IpAddressTypeType = ...,  # (2)
-    DnsOptions: DnsOptionsSpecificationTypeDef = ...,  # (3)
     ClientToken: str = ...,
     PrivateDnsEnabled: bool = ...,
-    TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (4)
-) -> CreateVpcEndpointResultTypeDef:  # (5)
+    TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
+) -> CreateVpcEndpointResultTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-brackets: VpcEndpointTypeType](./literals.md#vpcendpointtypetype) 
-2. See [:material-code-brackets: IpAddressTypeType](./literals.md#ipaddresstypetype) 
-3. See [:material-code-braces: DnsOptionsSpecificationTypeDef](./type_defs.md#dnsoptionsspecificationtypedef) 
-4. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-5. See [:material-code-braces: CreateVpcEndpointResultTypeDef](./type_defs.md#createvpcendpointresulttypedef) 
+2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+3. See [:material-code-braces: CreateVpcEndpointResultTypeDef](./type_defs.md#createvpcendpointresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -4222,8 +4095,8 @@ parent.create_vpc_endpoint_connection_notification(**kwargs)
 
 ### create\_vpc\_endpoint\_service\_configuration
 
-Creates a VPC endpoint service to which service consumers (Amazon Web Services
-accounts, IAM users, and IAM roles) can connect.
+Creates a VPC endpoint service configuration to which service consumers (Amazon
+Web Services accounts, IAM users, and IAM roles) can connect.
 
 Type annotations and code completion for `#!python session.client("ec2").create_vpc_endpoint_service_configuration` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_vpc_endpoint_service_configuration)
@@ -4237,7 +4110,6 @@ await def create_vpc_endpoint_service_configuration(
     PrivateDnsName: str = ...,
     NetworkLoadBalancerArns: Sequence[str] = ...,
     GatewayLoadBalancerArns: Sequence[str] = ...,
-    SupportedIpAddressTypes: Sequence[str] = ...,
     ClientToken: str = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (1)
 ) -> CreateVpcEndpointServiceConfigurationResultTypeDef:  # (2)
@@ -5894,36 +5766,6 @@ parent.delete_transit_gateway_peering_attachment(**kwargs)
 
 1. See [:material-code-braces: DeleteTransitGatewayPeeringAttachmentRequestRequestTypeDef](./type_defs.md#deletetransitgatewaypeeringattachmentrequestrequesttypedef) 
 
-### delete\_transit\_gateway\_policy\_table
-
-Deletes the specified transit gateway policy table.
-
-Type annotations and code completion for `#!python session.client("ec2").delete_transit_gateway_policy_table` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_transit_gateway_policy_table)
-
-```python title="Method definition"
-await def delete_transit_gateway_policy_table(
-    self,
-    *,
-    TransitGatewayPolicyTableId: str,
-    DryRun: bool = ...,
-) -> DeleteTransitGatewayPolicyTableResultTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DeleteTransitGatewayPolicyTableResultTypeDef](./type_defs.md#deletetransitgatewaypolicytableresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DeleteTransitGatewayPolicyTableRequestRequestTypeDef = {  # (1)
-    "TransitGatewayPolicyTableId": ...,
-}
-
-parent.delete_transit_gateway_policy_table(**kwargs)
-```
-
-1. See [:material-code-braces: DeleteTransitGatewayPolicyTableRequestRequestTypeDef](./type_defs.md#deletetransitgatewaypolicytablerequestrequesttypedef) 
-
 ### delete\_transit\_gateway\_prefix\_list\_reference
 
 Deletes a reference (route) to a prefix list in a specified transit gateway
@@ -6018,36 +5860,6 @@ parent.delete_transit_gateway_route_table(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteTransitGatewayRouteTableRequestRequestTypeDef](./type_defs.md#deletetransitgatewayroutetablerequestrequesttypedef) 
-
-### delete\_transit\_gateway\_route\_table\_announcement
-
-Advertises to the transit gateway that a transit gateway route table is deleted.
-
-Type annotations and code completion for `#!python session.client("ec2").delete_transit_gateway_route_table_announcement` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_transit_gateway_route_table_announcement)
-
-```python title="Method definition"
-await def delete_transit_gateway_route_table_announcement(
-    self,
-    *,
-    TransitGatewayRouteTableAnnouncementId: str,
-    DryRun: bool = ...,
-) -> DeleteTransitGatewayRouteTableAnnouncementResultTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DeleteTransitGatewayRouteTableAnnouncementResultTypeDef](./type_defs.md#deletetransitgatewayroutetableannouncementresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DeleteTransitGatewayRouteTableAnnouncementRequestRequestTypeDef = {  # (1)
-    "TransitGatewayRouteTableAnnouncementId": ...,
-}
-
-parent.delete_transit_gateway_route_table_announcement(**kwargs)
-```
-
-1. See [:material-code-braces: DeleteTransitGatewayRouteTableAnnouncementRequestRequestTypeDef](./type_defs.md#deletetransitgatewayroutetableannouncementrequestrequesttypedef) 
 
 ### delete\_transit\_gateway\_vpc\_attachment
 
@@ -8437,7 +8249,6 @@ await def describe_key_pairs(
     KeyNames: Sequence[str] = ...,
     KeyPairIds: Sequence[str] = ...,
     DryRun: bool = ...,
-    IncludePublicKey: bool = ...,
 ) -> DescribeKeyPairsResultTypeDef:  # (2)
     ...
 ```
@@ -10386,74 +10197,6 @@ parent.describe_transit_gateway_peering_attachments(**kwargs)
 
 1. See [:material-code-braces: DescribeTransitGatewayPeeringAttachmentsRequestRequestTypeDef](./type_defs.md#describetransitgatewaypeeringattachmentsrequestrequesttypedef) 
 
-### describe\_transit\_gateway\_policy\_tables
-
-Describes one or more transit gateway route policy tables.
-
-Type annotations and code completion for `#!python session.client("ec2").describe_transit_gateway_policy_tables` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_transit_gateway_policy_tables)
-
-```python title="Method definition"
-await def describe_transit_gateway_policy_tables(
-    self,
-    *,
-    TransitGatewayPolicyTableIds: Sequence[str] = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    MaxResults: int = ...,
-    NextToken: str = ...,
-    DryRun: bool = ...,
-) -> DescribeTransitGatewayPolicyTablesResultTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: DescribeTransitGatewayPolicyTablesResultTypeDef](./type_defs.md#describetransitgatewaypolicytablesresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeTransitGatewayPolicyTablesRequestRequestTypeDef = {  # (1)
-    "TransitGatewayPolicyTableIds": ...,
-}
-
-parent.describe_transit_gateway_policy_tables(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeTransitGatewayPolicyTablesRequestRequestTypeDef](./type_defs.md#describetransitgatewaypolicytablesrequestrequesttypedef) 
-
-### describe\_transit\_gateway\_route\_table\_announcements
-
-Describes one or more transit gateway route table advertisements.
-
-Type annotations and code completion for `#!python session.client("ec2").describe_transit_gateway_route_table_announcements` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_transit_gateway_route_table_announcements)
-
-```python title="Method definition"
-await def describe_transit_gateway_route_table_announcements(
-    self,
-    *,
-    TransitGatewayRouteTableAnnouncementIds: Sequence[str] = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    MaxResults: int = ...,
-    NextToken: str = ...,
-    DryRun: bool = ...,
-) -> DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeTransitGatewayRouteTableAnnouncementsRequestRequestTypeDef = {  # (1)
-    "TransitGatewayRouteTableAnnouncementIds": ...,
-}
-
-parent.describe_transit_gateway_route_table_announcements(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeTransitGatewayRouteTableAnnouncementsRequestRequestTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsrequestrequesttypedef) 
-
 ### describe\_transit\_gateway\_route\_tables
 
 Describes one or more transit gateway route tables.
@@ -11518,9 +11261,8 @@ await def disable_transit_gateway_route_table_propagation(
     self,
     *,
     TransitGatewayRouteTableId: str,
-    TransitGatewayAttachmentId: str = ...,
+    TransitGatewayAttachmentId: str,
     DryRun: bool = ...,
-    TransitGatewayRouteTableAnnouncementId: str = ...,
 ) -> DisableTransitGatewayRouteTablePropagationResultTypeDef:  # (1)
     ...
 ```
@@ -11531,6 +11273,7 @@ await def disable_transit_gateway_route_table_propagation(
 ```python title="Usage example with kwargs"
 kwargs: DisableTransitGatewayRouteTablePropagationRequestRequestTypeDef = {  # (1)
     "TransitGatewayRouteTableId": ...,
+    "TransitGatewayAttachmentId": ...,
 }
 
 parent.disable_transit_gateway_route_table_propagation(**kwargs)
@@ -11878,38 +11621,6 @@ parent.disassociate_transit_gateway_multicast_domain(**kwargs)
 
 1. See [:material-code-braces: DisassociateTransitGatewayMulticastDomainRequestRequestTypeDef](./type_defs.md#disassociatetransitgatewaymulticastdomainrequestrequesttypedef) 
 
-### disassociate\_transit\_gateway\_policy\_table
-
-Removes the association between an an attachment and a policy table.
-
-Type annotations and code completion for `#!python session.client("ec2").disassociate_transit_gateway_policy_table` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_transit_gateway_policy_table)
-
-```python title="Method definition"
-await def disassociate_transit_gateway_policy_table(
-    self,
-    *,
-    TransitGatewayPolicyTableId: str,
-    TransitGatewayAttachmentId: str,
-    DryRun: bool = ...,
-) -> DisassociateTransitGatewayPolicyTableResultTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DisassociateTransitGatewayPolicyTableResultTypeDef](./type_defs.md#disassociatetransitgatewaypolicytableresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DisassociateTransitGatewayPolicyTableRequestRequestTypeDef = {  # (1)
-    "TransitGatewayPolicyTableId": ...,
-    "TransitGatewayAttachmentId": ...,
-}
-
-parent.disassociate_transit_gateway_policy_table(**kwargs)
-```
-
-1. See [:material-code-braces: DisassociateTransitGatewayPolicyTableRequestRequestTypeDef](./type_defs.md#disassociatetransitgatewaypolicytablerequestrequesttypedef) 
-
 ### disassociate\_transit\_gateway\_route\_table
 
 Disassociates a resource attachment from a transit gateway route table.
@@ -12205,9 +11916,8 @@ await def enable_transit_gateway_route_table_propagation(
     self,
     *,
     TransitGatewayRouteTableId: str,
-    TransitGatewayAttachmentId: str = ...,
+    TransitGatewayAttachmentId: str,
     DryRun: bool = ...,
-    TransitGatewayRouteTableAnnouncementId: str = ...,
 ) -> EnableTransitGatewayRouteTablePropagationResultTypeDef:  # (1)
     ...
 ```
@@ -12218,6 +11928,7 @@ await def enable_transit_gateway_route_table_propagation(
 ```python title="Usage example with kwargs"
 kwargs: EnableTransitGatewayRouteTablePropagationRequestRequestTypeDef = {  # (1)
     "TransitGatewayRouteTableId": ...,
+    "TransitGatewayAttachmentId": ...,
 }
 
 parent.enable_transit_gateway_route_table_propagation(**kwargs)
@@ -12929,36 +12640,6 @@ parent.get_instance_types_from_instance_requirements(**kwargs)
 
 1. See [:material-code-braces: GetInstanceTypesFromInstanceRequirementsRequestRequestTypeDef](./type_defs.md#getinstancetypesfrominstancerequirementsrequestrequesttypedef) 
 
-### get\_instance\_uefi\_data
-
-A binary representation of the UEFI variable store.
-
-Type annotations and code completion for `#!python session.client("ec2").get_instance_uefi_data` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_instance_uefi_data)
-
-```python title="Method definition"
-await def get_instance_uefi_data(
-    self,
-    *,
-    InstanceId: str,
-    DryRun: bool = ...,
-) -> GetInstanceUefiDataResultTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: GetInstanceUefiDataResultTypeDef](./type_defs.md#getinstanceuefidataresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: GetInstanceUefiDataRequestRequestTypeDef = {  # (1)
-    "InstanceId": ...,
-}
-
-parent.get_instance_uefi_data(**kwargs)
-```
-
-1. See [:material-code-braces: GetInstanceUefiDataRequestRequestTypeDef](./type_defs.md#getinstanceuefidatarequestrequesttypedef) 
-
 ### get\_ipam\_address\_history
 
 Retrieve historical information about a CIDR within an IPAM scope.
@@ -13500,74 +13181,6 @@ parent.get_transit_gateway_multicast_domain_associations(**kwargs)
 ```
 
 1. See [:material-code-braces: GetTransitGatewayMulticastDomainAssociationsRequestRequestTypeDef](./type_defs.md#gettransitgatewaymulticastdomainassociationsrequestrequesttypedef) 
-
-### get\_transit\_gateway\_policy\_table\_associations
-
-Gets a list of the transit gateway policy table associations.
-
-Type annotations and code completion for `#!python session.client("ec2").get_transit_gateway_policy_table_associations` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_transit_gateway_policy_table_associations)
-
-```python title="Method definition"
-await def get_transit_gateway_policy_table_associations(
-    self,
-    *,
-    TransitGatewayPolicyTableId: str,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    MaxResults: int = ...,
-    NextToken: str = ...,
-    DryRun: bool = ...,
-) -> GetTransitGatewayPolicyTableAssociationsResultTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: GetTransitGatewayPolicyTableAssociationsResultTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: GetTransitGatewayPolicyTableAssociationsRequestRequestTypeDef = {  # (1)
-    "TransitGatewayPolicyTableId": ...,
-}
-
-parent.get_transit_gateway_policy_table_associations(**kwargs)
-```
-
-1. See [:material-code-braces: GetTransitGatewayPolicyTableAssociationsRequestRequestTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsrequestrequesttypedef) 
-
-### get\_transit\_gateway\_policy\_table\_entries
-
-Returns a list of transit gateway policy table entries.
-
-Type annotations and code completion for `#!python session.client("ec2").get_transit_gateway_policy_table_entries` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_transit_gateway_policy_table_entries)
-
-```python title="Method definition"
-await def get_transit_gateway_policy_table_entries(
-    self,
-    *,
-    TransitGatewayPolicyTableId: str,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    MaxResults: int = ...,
-    NextToken: str = ...,
-    DryRun: bool = ...,
-) -> GetTransitGatewayPolicyTableEntriesResultTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: GetTransitGatewayPolicyTableEntriesResultTypeDef](./type_defs.md#gettransitgatewaypolicytableentriesresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: GetTransitGatewayPolicyTableEntriesRequestRequestTypeDef = {  # (1)
-    "TransitGatewayPolicyTableId": ...,
-}
-
-parent.get_transit_gateway_policy_table_entries(**kwargs)
-```
-
-1. See [:material-code-braces: GetTransitGatewayPolicyTableEntriesRequestRequestTypeDef](./type_defs.md#gettransitgatewaypolicytableentriesrequestrequesttypedef) 
 
 ### get\_transit\_gateway\_prefix\_list\_references
 
@@ -14531,8 +14144,7 @@ await def modify_instance_attribute(
     SriovNetSupport: AttributeValueTypeDef = ...,  # (7)
     UserData: BlobAttributeValueTypeDef = ...,  # (12)
     Value: str = ...,
-    DisableApiStop: AttributeBooleanValueTypeDef = ...,  # (1)
-) -> EmptyResponseMetadataTypeDef:  # (14)
+) -> EmptyResponseMetadataTypeDef:  # (13)
     ...
 ```
 
@@ -14548,8 +14160,7 @@ await def modify_instance_attribute(
 10. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 11. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 12. See [:material-code-braces: BlobAttributeValueTypeDef](./type_defs.md#blobattributevaluetypedef) 
-13. See [:material-code-braces: AttributeBooleanValueTypeDef](./type_defs.md#attributebooleanvaluetypedef) 
-14. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+13. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -14695,39 +14306,6 @@ parent.modify_instance_event_window(**kwargs)
 ```
 
 1. See [:material-code-braces: ModifyInstanceEventWindowRequestRequestTypeDef](./type_defs.md#modifyinstanceeventwindowrequestrequesttypedef) 
-
-### modify\_instance\_maintenance\_options
-
-Modifies the recovery behavior of your instance to disable simplified automatic
-recovery or set the recovery behavior to default.
-
-Type annotations and code completion for `#!python session.client("ec2").modify_instance_maintenance_options` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_instance_maintenance_options)
-
-```python title="Method definition"
-await def modify_instance_maintenance_options(
-    self,
-    *,
-    InstanceId: str,
-    AutoRecovery: InstanceAutoRecoveryStateType = ...,  # (1)
-    DryRun: bool = ...,
-) -> ModifyInstanceMaintenanceOptionsResultTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-brackets: InstanceAutoRecoveryStateType](./literals.md#instanceautorecoverystatetype) 
-2. See [:material-code-braces: ModifyInstanceMaintenanceOptionsResultTypeDef](./type_defs.md#modifyinstancemaintenanceoptionsresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ModifyInstanceMaintenanceOptionsRequestRequestTypeDef = {  # (1)
-    "InstanceId": ...,
-}
-
-parent.modify_instance_maintenance_options(**kwargs)
-```
-
-1. See [:material-code-braces: ModifyInstanceMaintenanceOptionsRequestRequestTypeDef](./type_defs.md#modifyinstancemaintenanceoptionsrequestrequesttypedef) 
 
 ### modify\_instance\_metadata\_options
 
@@ -15653,16 +15231,12 @@ await def modify_vpc_endpoint(
     RemoveSubnetIds: Sequence[str] = ...,
     AddSecurityGroupIds: Sequence[str] = ...,
     RemoveSecurityGroupIds: Sequence[str] = ...,
-    IpAddressType: IpAddressTypeType = ...,  # (1)
-    DnsOptions: DnsOptionsSpecificationTypeDef = ...,  # (2)
     PrivateDnsEnabled: bool = ...,
-) -> ModifyVpcEndpointResultTypeDef:  # (3)
+) -> ModifyVpcEndpointResultTypeDef:  # (1)
     ...
 ```
 
-1. See [:material-code-brackets: IpAddressTypeType](./literals.md#ipaddresstypetype) 
-2. See [:material-code-braces: DnsOptionsSpecificationTypeDef](./type_defs.md#dnsoptionsspecificationtypedef) 
-3. See [:material-code-braces: ModifyVpcEndpointResultTypeDef](./type_defs.md#modifyvpcendpointresulttypedef) 
+1. See [:material-code-braces: ModifyVpcEndpointResultTypeDef](./type_defs.md#modifyvpcendpointresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -15727,8 +15301,6 @@ await def modify_vpc_endpoint_service_configuration(
     RemoveNetworkLoadBalancerArns: Sequence[str] = ...,
     AddGatewayLoadBalancerArns: Sequence[str] = ...,
     RemoveGatewayLoadBalancerArns: Sequence[str] = ...,
-    AddSupportedIpAddressTypes: Sequence[str] = ...,
-    RemoveSupportedIpAddressTypes: Sequence[str] = ...,
 ) -> ModifyVpcEndpointServiceConfigurationResultTypeDef:  # (1)
     ...
 ```
@@ -15781,7 +15353,9 @@ parent.modify_vpc_endpoint_service_payer_responsibility(**kwargs)
 
 ### modify\_vpc\_endpoint\_service\_permissions
 
-Modifies the permissions for your VPC endpoint service.
+Modifies the permissions for your [VPC endpoint
+service](https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-
+service.html)_.
 
 Type annotations and code completion for `#!python session.client("ec2").modify_vpc_endpoint_service_permissions` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpc_endpoint_service_permissions)
@@ -16376,17 +15950,14 @@ await def register_image(
     SriovNetSupport: str = ...,
     VirtualizationType: str = ...,
     BootMode: BootModeValuesType = ...,  # (3)
-    TpmSupport: TpmSupportValuesType = ...,  # (4)
-    UefiData: str = ...,
-) -> RegisterImageResultTypeDef:  # (5)
+) -> RegisterImageResultTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-brackets: ArchitectureValuesType](./literals.md#architecturevaluestype) 
 2. See [:material-code-braces: BlockDeviceMappingTypeDef](./type_defs.md#blockdevicemappingtypedef) 
 3. See [:material-code-brackets: BootModeValuesType](./literals.md#bootmodevaluestype) 
-4. See [:material-code-brackets: TpmSupportValuesType](./literals.md#tpmsupportvaluestype) 
-5. See [:material-code-braces: RegisterImageResultTypeDef](./type_defs.md#registerimageresulttypedef) 
+4. See [:material-code-braces: RegisterImageResultTypeDef](./type_defs.md#registerimageresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -17632,9 +17203,7 @@ await def run_instances(
     MetadataOptions: InstanceMetadataOptionsRequestTypeDef = ...,  # (19)
     EnclaveOptions: EnclaveOptionsRequestTypeDef = ...,  # (20)
     PrivateDnsNameOptions: PrivateDnsNameOptionsRequestTypeDef = ...,  # (21)
-    MaintenanceOptions: InstanceMaintenanceOptionsRequestTypeDef = ...,  # (22)
-    DisableApiStop: bool = ...,
-) -> ReservationResponseMetadataTypeDef:  # (23)
+) -> ReservationResponseMetadataTypeDef:  # (22)
     ...
 ```
 
@@ -17659,8 +17228,7 @@ await def run_instances(
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
-22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
-23. See [:material-code-braces: ReservationResponseMetadataTypeDef](./type_defs.md#reservationresponsemetadatatypedef) 
+22. See [:material-code-braces: ReservationResponseMetadataTypeDef](./type_defs.md#reservationresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -18386,8 +17954,6 @@ Type annotations and code completion for `#!python session.client("ec2").get_pag
 - `client.get_paginator("describe_transit_gateway_connects")` -> [DescribeTransitGatewayConnectsPaginator](./paginators.md#describetransitgatewayconnectspaginator)
 - `client.get_paginator("describe_transit_gateway_multicast_domains")` -> [DescribeTransitGatewayMulticastDomainsPaginator](./paginators.md#describetransitgatewaymulticastdomainspaginator)
 - `client.get_paginator("describe_transit_gateway_peering_attachments")` -> [DescribeTransitGatewayPeeringAttachmentsPaginator](./paginators.md#describetransitgatewaypeeringattachmentspaginator)
-- `client.get_paginator("describe_transit_gateway_policy_tables")` -> [DescribeTransitGatewayPolicyTablesPaginator](./paginators.md#describetransitgatewaypolicytablespaginator)
-- `client.get_paginator("describe_transit_gateway_route_table_announcements")` -> [DescribeTransitGatewayRouteTableAnnouncementsPaginator](./paginators.md#describetransitgatewayroutetableannouncementspaginator)
 - `client.get_paginator("describe_transit_gateway_route_tables")` -> [DescribeTransitGatewayRouteTablesPaginator](./paginators.md#describetransitgatewayroutetablespaginator)
 - `client.get_paginator("describe_transit_gateway_vpc_attachments")` -> [DescribeTransitGatewayVpcAttachmentsPaginator](./paginators.md#describetransitgatewayvpcattachmentspaginator)
 - `client.get_paginator("describe_transit_gateways")` -> [DescribeTransitGatewaysPaginator](./paginators.md#describetransitgatewayspaginator)
@@ -18416,7 +17982,6 @@ Type annotations and code completion for `#!python session.client("ec2").get_pag
 - `client.get_paginator("get_spot_placement_scores")` -> [GetSpotPlacementScoresPaginator](./paginators.md#getspotplacementscorespaginator)
 - `client.get_paginator("get_transit_gateway_attachment_propagations")` -> [GetTransitGatewayAttachmentPropagationsPaginator](./paginators.md#gettransitgatewayattachmentpropagationspaginator)
 - `client.get_paginator("get_transit_gateway_multicast_domain_associations")` -> [GetTransitGatewayMulticastDomainAssociationsPaginator](./paginators.md#gettransitgatewaymulticastdomainassociationspaginator)
-- `client.get_paginator("get_transit_gateway_policy_table_associations")` -> [GetTransitGatewayPolicyTableAssociationsPaginator](./paginators.md#gettransitgatewaypolicytableassociationspaginator)
 - `client.get_paginator("get_transit_gateway_prefix_list_references")` -> [GetTransitGatewayPrefixListReferencesPaginator](./paginators.md#gettransitgatewayprefixlistreferencespaginator)
 - `client.get_paginator("get_transit_gateway_route_table_associations")` -> [GetTransitGatewayRouteTableAssociationsPaginator](./paginators.md#gettransitgatewayroutetableassociationspaginator)
 - `client.get_paginator("get_transit_gateway_route_table_propagations")` -> [GetTransitGatewayRouteTablePropagationsPaginator](./paginators.md#gettransitgatewayroutetablepropagationspaginator)
@@ -18450,7 +18015,6 @@ Type annotations and code completion for `#!python session.client("ec2").get_wai
 - `client.get_waiter("internet_gateway_exists")` -> [InternetGatewayExistsWaiter](./waiters.md#internetgatewayexistswaiter)
 - `client.get_waiter("key_pair_exists")` -> [KeyPairExistsWaiter](./waiters.md#keypairexistswaiter)
 - `client.get_waiter("nat_gateway_available")` -> [NatGatewayAvailableWaiter](./waiters.md#natgatewayavailablewaiter)
-- `client.get_waiter("nat_gateway_deleted")` -> [NatGatewayDeletedWaiter](./waiters.md#natgatewaydeletedwaiter)
 - `client.get_waiter("network_interface_available")` -> [NetworkInterfaceAvailableWaiter](./waiters.md#networkinterfaceavailablewaiter)
 - `client.get_waiter("password_data_available")` -> [PasswordDataAvailableWaiter](./waiters.md#passworddataavailablewaiter)
 - `client.get_waiter("security_group_exists")` -> [SecurityGroupExistsWaiter](./waiters.md#securitygroupexistswaiter)

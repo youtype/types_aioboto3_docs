@@ -44,14 +44,14 @@ type checking and code completion should work out of the box.
     session = Session()
 
     async with session.client("route53") as client:  # (1)
-        paginator = client.get_paginator("list_cidr_blocks")  # (2)
+        paginator = client.get_paginator("list_health_checks")  # (2)
         async for item in paginator.paginate(...):
             print(item)  # (3)
     ```
 
     1. client: [Route53Client](./client.md)
-    2. paginator: [ListCidrBlocksPaginator](./paginators.md#listcidrblockspaginator)
-    3. item: [:material-code-braces: ListCidrBlocksResponseTypeDef](./type_defs.md#listcidrblocksresponsetypedef) 
+    2. paginator: [ListHealthChecksPaginator](./paginators.md#listhealthcheckspaginator)
+    3. item: [:material-code-braces: ListHealthChecksResponseTypeDef](./type_defs.md#listhealthchecksresponsetypedef) 
 
 
 
@@ -112,23 +112,23 @@ However, these type annotations can be helpful in your functions and methods.
     from aioboto3.session import Session
 
     from types_aiobotocore_route53.client import Route53Client
-    from types_aiobotocore_route53.paginator import ListCidrBlocksPaginator
-    from types_aiobotocore_route53.type_defs import ListCidrBlocksResponseTypeDef
+    from types_aiobotocore_route53.paginator import ListHealthChecksPaginator
+    from types_aiobotocore_route53.type_defs import ListHealthChecksResponseTypeDef
 
 
     session = Session()
 
     client: Route53Client
     async with session.client("route53") as client:  # (1)
-        paginator: ListCidrBlocksPaginator = client.get_paginator("list_cidr_blocks")  # (2)
+        paginator: ListHealthChecksPaginator = client.get_paginator("list_health_checks")  # (2)
         async for item in paginator.paginate(...):
-            item: ListCidrBlocksResponseTypeDef
+            item: ListHealthChecksResponseTypeDef
             print(item)  # (3)
     ```
 
     1. client: [Route53Client](./client.md)
-    2. paginator: [ListCidrBlocksPaginator](./paginators.md#listcidrblockspaginator)
-    3. item: [:material-code-braces: ListCidrBlocksResponseTypeDef](./type_defs.md#listcidrblocksresponsetypedef) 
+    2. paginator: [ListHealthChecksPaginator](./paginators.md#listhealthcheckspaginator)
+    3. item: [:material-code-braces: ListHealthChecksResponseTypeDef](./type_defs.md#listhealthchecksresponsetypedef) 
 
 
 

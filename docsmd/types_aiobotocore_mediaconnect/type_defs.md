@@ -82,25 +82,6 @@ class VpcInterfaceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: NetworkInterfaceTypeType](./literals.md#networkinterfacetypetype) 
-## AddMaintenanceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconnect.type_defs import AddMaintenanceTypeDef
-
-def get_value() -> AddMaintenanceTypeDef:
-    return {
-        "MaintenanceDay": ...,
-        "MaintenanceStartHour": ...,
-    }
-```
-
-```python title="Definition"
-class AddMaintenanceTypeDef(TypedDict):
-    MaintenanceDay: MaintenanceDayType,  # (1)
-    MaintenanceStartHour: str,
-```
-
-1. See [:material-code-brackets: MaintenanceDayType](./literals.md#maintenancedaytype) 
 ## EncryptionTypeDef
 
 ```python title="Usage Example"
@@ -326,26 +307,6 @@ class SourcePriorityTypeDef(TypedDict):
     PrimarySource: NotRequired[str],
 ```
 
-## MaintenanceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconnect.type_defs import MaintenanceTypeDef
-
-def get_value() -> MaintenanceTypeDef:
-    return {
-        "MaintenanceDay": ...,
-    }
-```
-
-```python title="Definition"
-class MaintenanceTypeDef(TypedDict):
-    MaintenanceDay: NotRequired[MaintenanceDayType],  # (1)
-    MaintenanceDeadline: NotRequired[str],
-    MaintenanceScheduledDate: NotRequired[str],
-    MaintenanceStartHour: NotRequired[str],
-```
-
-1. See [:material-code-brackets: MaintenanceDayType](./literals.md#maintenancedaytype) 
 ## FmtpRequestTypeDef
 
 ```python title="Usage Example"
@@ -469,6 +430,34 @@ class ListFlowsRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
 ```
 
+## ListedFlowTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconnect.type_defs import ListedFlowTypeDef
+
+def get_value() -> ListedFlowTypeDef:
+    return {
+        "AvailabilityZone": ...,
+        "Description": ...,
+        "FlowArn": ...,
+        "Name": ...,
+        "SourceType": ...,
+        "Status": ...,
+    }
+```
+
+```python title="Definition"
+class ListedFlowTypeDef(TypedDict):
+    AvailabilityZone: str,
+    Description: str,
+    FlowArn: str,
+    Name: str,
+    SourceType: SourceTypeType,  # (1)
+    Status: StatusType,  # (2)
+```
+
+1. See [:material-code-brackets: SourceTypeType](./literals.md#sourcetypetype) 
+2. See [:material-code-brackets: StatusType](./literals.md#statustype) 
 ## ListOfferingsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -768,25 +757,6 @@ class UpdateEncryptionTypeDef(TypedDict):
 
 1. See [:material-code-brackets: AlgorithmType](./literals.md#algorithmtype) 
 2. See [:material-code-brackets: KeyTypeType](./literals.md#keytypetype) 
-## UpdateMaintenanceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconnect.type_defs import UpdateMaintenanceTypeDef
-
-def get_value() -> UpdateMaintenanceTypeDef:
-    return {
-        "MaintenanceDay": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateMaintenanceTypeDef(TypedDict):
-    MaintenanceDay: NotRequired[MaintenanceDayType],  # (1)
-    MaintenanceScheduledDate: NotRequired[str],
-    MaintenanceStartHour: NotRequired[str],
-```
-
-1. See [:material-code-brackets: MaintenanceDayType](./literals.md#maintenancedaytype) 
 ## DeleteFlowResponseTypeDef
 
 ```python title="Usage Example"
@@ -1268,36 +1238,6 @@ class UpdateFailoverConfigTypeDef(TypedDict):
 1. See [:material-code-brackets: FailoverModeType](./literals.md#failovermodetype) 
 2. See [:material-code-braces: SourcePriorityTypeDef](./type_defs.md#sourceprioritytypedef) 
 3. See [:material-code-brackets: StateType](./literals.md#statetype) 
-## ListedFlowTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconnect.type_defs import ListedFlowTypeDef
-
-def get_value() -> ListedFlowTypeDef:
-    return {
-        "AvailabilityZone": ...,
-        "Description": ...,
-        "FlowArn": ...,
-        "Name": ...,
-        "SourceType": ...,
-        "Status": ...,
-    }
-```
-
-```python title="Definition"
-class ListedFlowTypeDef(TypedDict):
-    AvailabilityZone: str,
-    Description: str,
-    FlowArn: str,
-    Name: str,
-    SourceType: SourceTypeType,  # (1)
-    Status: StatusType,  # (2)
-    Maintenance: NotRequired[MaintenanceTypeDef],  # (3)
-```
-
-1. See [:material-code-brackets: SourceTypeType](./literals.md#sourcetypetype) 
-2. See [:material-code-brackets: StatusType](./literals.md#statustype) 
-3. See [:material-code-braces: MaintenanceTypeDef](./type_defs.md#maintenancetypedef) 
 ## MediaStreamAttributesRequestTypeDef
 
 ```python title="Usage Example"
@@ -1423,6 +1363,28 @@ class ListEntitlementsResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ListedEntitlementTypeDef](./type_defs.md#listedentitlementtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListFlowsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconnect.type_defs import ListFlowsResponseTypeDef
+
+def get_value() -> ListFlowsResponseTypeDef:
+    return {
+        "Flows": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListFlowsResponseTypeDef(TypedDict):
+    Flows: List[ListedFlowTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ListedFlowTypeDef](./type_defs.md#listedflowtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## OfferingTypeDef
 
@@ -1691,33 +1653,9 @@ def get_value() -> UpdateFlowRequestRequestTypeDef:
 class UpdateFlowRequestRequestTypeDef(TypedDict):
     FlowArn: str,
     SourceFailoverConfig: NotRequired[UpdateFailoverConfigTypeDef],  # (1)
-    Maintenance: NotRequired[UpdateMaintenanceTypeDef],  # (2)
 ```
 
 1. See [:material-code-braces: UpdateFailoverConfigTypeDef](./type_defs.md#updatefailoverconfigtypedef) 
-2. See [:material-code-braces: UpdateMaintenanceTypeDef](./type_defs.md#updatemaintenancetypedef) 
-## ListFlowsResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_mediaconnect.type_defs import ListFlowsResponseTypeDef
-
-def get_value() -> ListFlowsResponseTypeDef:
-    return {
-        "Flows": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListFlowsResponseTypeDef(TypedDict):
-    Flows: List[ListedFlowTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: ListedFlowTypeDef](./type_defs.md#listedflowtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## AddMediaStreamRequestTypeDef
 
 ```python title="Usage Example"
@@ -2231,7 +2169,6 @@ class CreateFlowRequestRequestTypeDef(TypedDict):
     SourceFailoverConfig: NotRequired[FailoverConfigTypeDef],  # (5)
     Sources: NotRequired[Sequence[SetSourceRequestTypeDef]],  # (6)
     VpcInterfaces: NotRequired[Sequence[VpcInterfaceRequestTypeDef]],  # (7)
-    Maintenance: NotRequired[AddMaintenanceTypeDef],  # (8)
 ```
 
 1. See [:material-code-braces: GrantEntitlementRequestTypeDef](./type_defs.md#grantentitlementrequesttypedef) 
@@ -2241,7 +2178,6 @@ class CreateFlowRequestRequestTypeDef(TypedDict):
 5. See [:material-code-braces: FailoverConfigTypeDef](./type_defs.md#failoverconfigtypedef) 
 6. See [:material-code-braces: SetSourceRequestTypeDef](./type_defs.md#setsourcerequesttypedef) 
 7. See [:material-code-braces: VpcInterfaceRequestTypeDef](./type_defs.md#vpcinterfacerequesttypedef) 
-8. See [:material-code-braces: AddMaintenanceTypeDef](./type_defs.md#addmaintenancetypedef) 
 ## AddFlowOutputsResponseTypeDef
 
 ```python title="Usage Example"
@@ -2340,7 +2276,6 @@ class FlowTypeDef(TypedDict):
     SourceFailoverConfig: NotRequired[FailoverConfigTypeDef],  # (5)
     Sources: NotRequired[List[SourceTypeDef]],  # (6)
     VpcInterfaces: NotRequired[List[VpcInterfaceTypeDef]],  # (8)
-    Maintenance: NotRequired[MaintenanceTypeDef],  # (9)
 ```
 
 1. See [:material-code-braces: EntitlementTypeDef](./type_defs.md#entitlementtypedef) 
@@ -2351,7 +2286,6 @@ class FlowTypeDef(TypedDict):
 6. See [:material-code-braces: SourceTypeDef](./type_defs.md#sourcetypedef) 
 7. See [:material-code-brackets: StatusType](./literals.md#statustype) 
 8. See [:material-code-braces: VpcInterfaceTypeDef](./type_defs.md#vpcinterfacetypedef) 
-9. See [:material-code-braces: MaintenanceTypeDef](./type_defs.md#maintenancetypedef) 
 ## UpdateFlowSourceResponseTypeDef
 
 ```python title="Usage Example"

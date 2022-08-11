@@ -32,8 +32,7 @@ async with session.client("rds-data") as client:
     try:
         do_something(client)
     except (
-            client.AccessDeniedException,
-        client.BadRequestException,
+            client.BadRequestException,
         client.ClientError,
         client.ForbiddenException,
         client.InternalServerErrorException,
@@ -47,7 +46,7 @@ async with session.client("rds-data") as client:
 ```python title="Type checking example"
 from types_aiobotocore_rds_data.client import Exceptions
 
-def handle_error(exc: Exceptions.AccessDeniedException) -> None:
+def handle_error(exc: Exceptions.BadRequestException) -> None:
     ...
 ```
 
@@ -142,21 +141,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("rds-data").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### commit\_transaction
 
 Ends a SQL transaction started with the `BeginTransaction` operation and commits
@@ -242,20 +226,18 @@ await def execute_statement(
     sql: str,
     continueAfterTimeout: bool = ...,
     database: str = ...,
-    formatRecordsAs: RecordsFormatTypeType = ...,  # (1)
     includeResultMetadata: bool = ...,
-    parameters: Sequence[SqlParameterTypeDef] = ...,  # (2)
-    resultSetOptions: ResultSetOptionsTypeDef = ...,  # (3)
+    parameters: Sequence[SqlParameterTypeDef] = ...,  # (1)
+    resultSetOptions: ResultSetOptionsTypeDef = ...,  # (2)
     schema: str = ...,
     transactionId: str = ...,
-) -> ExecuteStatementResponseTypeDef:  # (4)
+) -> ExecuteStatementResponseTypeDef:  # (3)
     ...
 ```
 
-1. See [:material-code-brackets: RecordsFormatTypeType](./literals.md#recordsformattypetype) 
-2. See [:material-code-braces: SqlParameterTypeDef](./type_defs.md#sqlparametertypedef) 
-3. See [:material-code-braces: ResultSetOptionsTypeDef](./type_defs.md#resultsetoptionstypedef) 
-4. See [:material-code-braces: ExecuteStatementResponseTypeDef](./type_defs.md#executestatementresponsetypedef) 
+1. See [:material-code-braces: SqlParameterTypeDef](./type_defs.md#sqlparametertypedef) 
+2. See [:material-code-braces: ResultSetOptionsTypeDef](./type_defs.md#resultsetoptionstypedef) 
+3. See [:material-code-braces: ExecuteStatementResponseTypeDef](./type_defs.md#executestatementresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

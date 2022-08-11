@@ -105,52 +105,6 @@ parent.change_server_life_cycle_state(**kwargs)
 
 1. See [:material-code-braces: ChangeServerLifeCycleStateRequestRequestTypeDef](./type_defs.md#changeserverlifecyclestaterequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("mgn").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
-### create\_launch\_configuration\_template
-
-Creates a new ReplicationConfigurationTemplate.
-
-Type annotations and code completion for `#!python session.client("mgn").create_launch_configuration_template` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.create_launch_configuration_template)
-
-```python title="Method definition"
-await def create_launch_configuration_template(
-    self,
-    *,
-    postLaunchActions: PostLaunchActionsTypeDef = ...,  # (1)
-    tags: Mapping[str, str] = ...,
-) -> LaunchConfigurationTemplateResponseMetadataTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: PostLaunchActionsTypeDef](./type_defs.md#postlaunchactionstypedef) 
-2. See [:material-code-braces: LaunchConfigurationTemplateResponseMetadataTypeDef](./type_defs.md#launchconfigurationtemplateresponsemetadatatypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: CreateLaunchConfigurationTemplateRequestRequestTypeDef = {  # (1)
-    "postLaunchActions": ...,
-}
-
-parent.create_launch_configuration_template(**kwargs)
-```
-
-1. See [:material-code-braces: CreateLaunchConfigurationTemplateRequestRequestTypeDef](./type_defs.md#createlaunchconfigurationtemplaterequestrequesttypedef) 
-
 ### create\_replication\_configuration\_template
 
 Creates a new ReplicationConfigurationTemplate.
@@ -232,34 +186,6 @@ parent.delete_job(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteJobRequestRequestTypeDef](./type_defs.md#deletejobrequestrequesttypedef) 
-
-### delete\_launch\_configuration\_template
-
-Creates a new ReplicationConfigurationTemplate.
-
-Type annotations and code completion for `#!python session.client("mgn").delete_launch_configuration_template` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.delete_launch_configuration_template)
-
-```python title="Method definition"
-await def delete_launch_configuration_template(
-    self,
-    *,
-    launchConfigurationTemplateID: str,
-) -> Dict[str, Any]:
-    ...
-```
-
-
-
-```python title="Usage example with kwargs"
-kwargs: DeleteLaunchConfigurationTemplateRequestRequestTypeDef = {  # (1)
-    "launchConfigurationTemplateID": ...,
-}
-
-parent.delete_launch_configuration_template(**kwargs)
-```
-
-1. See [:material-code-braces: DeleteLaunchConfigurationTemplateRequestRequestTypeDef](./type_defs.md#deletelaunchconfigurationtemplaterequestrequesttypedef) 
 
 ### delete\_replication\_configuration\_template
 
@@ -389,7 +315,7 @@ Type annotations and code completion for `#!python session.client("mgn").describ
 await def describe_jobs(
     self,
     *,
-    filters: DescribeJobsRequestFiltersTypeDef = ...,  # (1)
+    filters: DescribeJobsRequestFiltersTypeDef,  # (1)
     maxResults: int = ...,
     nextToken: str = ...,
 ) -> DescribeJobsResponseTypeDef:  # (2)
@@ -410,37 +336,6 @@ parent.describe_jobs(**kwargs)
 
 1. See [:material-code-braces: DescribeJobsRequestRequestTypeDef](./type_defs.md#describejobsrequestrequesttypedef) 
 
-### describe\_launch\_configuration\_templates
-
-Creates a new ReplicationConfigurationTemplate.
-
-Type annotations and code completion for `#!python session.client("mgn").describe_launch_configuration_templates` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.describe_launch_configuration_templates)
-
-```python title="Method definition"
-await def describe_launch_configuration_templates(
-    self,
-    *,
-    launchConfigurationTemplateIDs: Sequence[str] = ...,
-    maxResults: int = ...,
-    nextToken: str = ...,
-) -> DescribeLaunchConfigurationTemplatesResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DescribeLaunchConfigurationTemplatesResponseTypeDef](./type_defs.md#describelaunchconfigurationtemplatesresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeLaunchConfigurationTemplatesRequestRequestTypeDef = {  # (1)
-    "launchConfigurationTemplateIDs": ...,
-}
-
-parent.describe_launch_configuration_templates(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeLaunchConfigurationTemplatesRequestRequestTypeDef](./type_defs.md#describelaunchconfigurationtemplatesrequestrequesttypedef) 
-
 ### describe\_replication\_configuration\_templates
 
 Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
@@ -452,9 +347,9 @@ Type annotations and code completion for `#!python session.client("mgn").describ
 await def describe_replication_configuration_templates(
     self,
     *,
+    replicationConfigurationTemplateIDs: Sequence[str],
     maxResults: int = ...,
     nextToken: str = ...,
-    replicationConfigurationTemplateIDs: Sequence[str] = ...,
 ) -> DescribeReplicationConfigurationTemplatesResponseTypeDef:  # (1)
     ...
 ```
@@ -464,7 +359,7 @@ await def describe_replication_configuration_templates(
 
 ```python title="Usage example with kwargs"
 kwargs: DescribeReplicationConfigurationTemplatesRequestRequestTypeDef = {  # (1)
-    "maxResults": ...,
+    "replicationConfigurationTemplateIDs": ...,
 }
 
 parent.describe_replication_configuration_templates(**kwargs)
@@ -483,7 +378,7 @@ Type annotations and code completion for `#!python session.client("mgn").describ
 await def describe_source_servers(
     self,
     *,
-    filters: DescribeSourceServersRequestFiltersTypeDef = ...,  # (1)
+    filters: DescribeSourceServersRequestFiltersTypeDef,  # (1)
     maxResults: int = ...,
     nextToken: str = ...,
 ) -> DescribeSourceServersResponseTypeDef:  # (2)
@@ -975,18 +870,16 @@ await def update_launch_configuration(
     launchDisposition: LaunchDispositionType = ...,  # (2)
     licensing: LicensingTypeDef = ...,  # (3)
     name: str = ...,
-    postLaunchActions: PostLaunchActionsTypeDef = ...,  # (4)
-    targetInstanceTypeRightSizingMethod: TargetInstanceTypeRightSizingMethodType = ...,  # (5)
-) -> LaunchConfigurationTypeDef:  # (6)
+    targetInstanceTypeRightSizingMethod: TargetInstanceTypeRightSizingMethodType = ...,  # (4)
+) -> LaunchConfigurationTypeDef:  # (5)
     ...
 ```
 
 1. See [:material-code-brackets: BootModeType](./literals.md#bootmodetype) 
 2. See [:material-code-brackets: LaunchDispositionType](./literals.md#launchdispositiontype) 
 3. See [:material-code-braces: LicensingTypeDef](./type_defs.md#licensingtypedef) 
-4. See [:material-code-braces: PostLaunchActionsTypeDef](./type_defs.md#postlaunchactionstypedef) 
-5. See [:material-code-brackets: TargetInstanceTypeRightSizingMethodType](./literals.md#targetinstancetyperightsizingmethodtype) 
-6. See [:material-code-braces: LaunchConfigurationTypeDef](./type_defs.md#launchconfigurationtypedef) 
+4. See [:material-code-brackets: TargetInstanceTypeRightSizingMethodType](./literals.md#targetinstancetyperightsizingmethodtype) 
+5. See [:material-code-braces: LaunchConfigurationTypeDef](./type_defs.md#launchconfigurationtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -998,37 +891,6 @@ parent.update_launch_configuration(**kwargs)
 ```
 
 1. See [:material-code-braces: UpdateLaunchConfigurationRequestRequestTypeDef](./type_defs.md#updatelaunchconfigurationrequestrequesttypedef) 
-
-### update\_launch\_configuration\_template
-
-Creates a new ReplicationConfigurationTemplate.
-
-Type annotations and code completion for `#!python session.client("mgn").update_launch_configuration_template` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.update_launch_configuration_template)
-
-```python title="Method definition"
-await def update_launch_configuration_template(
-    self,
-    *,
-    launchConfigurationTemplateID: str,
-    postLaunchActions: PostLaunchActionsTypeDef = ...,  # (1)
-) -> LaunchConfigurationTemplateResponseMetadataTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: PostLaunchActionsTypeDef](./type_defs.md#postlaunchactionstypedef) 
-2. See [:material-code-braces: LaunchConfigurationTemplateResponseMetadataTypeDef](./type_defs.md#launchconfigurationtemplateresponsemetadatatypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: UpdateLaunchConfigurationTemplateRequestRequestTypeDef = {  # (1)
-    "launchConfigurationTemplateID": ...,
-}
-
-parent.update_launch_configuration_template(**kwargs)
-```
-
-1. See [:material-code-braces: UpdateLaunchConfigurationTemplateRequestRequestTypeDef](./type_defs.md#updatelaunchconfigurationtemplaterequestrequesttypedef) 
 
 ### update\_replication\_configuration
 
@@ -1196,7 +1058,6 @@ Type annotations and code completion for `#!python session.client("mgn").get_pag
 
 - `client.get_paginator("describe_job_log_items")` -> [DescribeJobLogItemsPaginator](./paginators.md#describejoblogitemspaginator)
 - `client.get_paginator("describe_jobs")` -> [DescribeJobsPaginator](./paginators.md#describejobspaginator)
-- `client.get_paginator("describe_launch_configuration_templates")` -> [DescribeLaunchConfigurationTemplatesPaginator](./paginators.md#describelaunchconfigurationtemplatespaginator)
 - `client.get_paginator("describe_replication_configuration_templates")` -> [DescribeReplicationConfigurationTemplatesPaginator](./paginators.md#describereplicationconfigurationtemplatespaginator)
 - `client.get_paginator("describe_source_servers")` -> [DescribeSourceServersPaginator](./paginators.md#describesourceserverspaginator)
 - `client.get_paginator("describe_vcenter_clients")` -> [DescribeVcenterClientsPaginator](./paginators.md#describevcenterclientspaginator)

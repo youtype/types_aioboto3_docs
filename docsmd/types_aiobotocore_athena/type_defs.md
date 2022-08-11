@@ -39,8 +39,6 @@ def get_value() -> AthenaErrorTypeDef:
 class AthenaErrorTypeDef(TypedDict):
     ErrorCategory: NotRequired[int],
     ErrorType: NotRequired[int],
-    Retryable: NotRequired[bool],
-    ErrorMessage: NotRequired[str],
 ```
 
 ## BatchGetNamedQueryInputRequestTypeDef
@@ -120,62 +118,6 @@ def get_value() -> UnprocessedNamedQueryIdTypeDef:
 ```python title="Definition"
 class UnprocessedNamedQueryIdTypeDef(TypedDict):
     NamedQueryId: NotRequired[str],
-    ErrorCode: NotRequired[str],
-    ErrorMessage: NotRequired[str],
-```
-
-## BatchGetPreparedStatementInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_athena.type_defs import BatchGetPreparedStatementInputRequestTypeDef
-
-def get_value() -> BatchGetPreparedStatementInputRequestTypeDef:
-    return {
-        "PreparedStatementNames": ...,
-        "WorkGroup": ...,
-    }
-```
-
-```python title="Definition"
-class BatchGetPreparedStatementInputRequestTypeDef(TypedDict):
-    PreparedStatementNames: Sequence[str],
-    WorkGroup: str,
-```
-
-## PreparedStatementTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_athena.type_defs import PreparedStatementTypeDef
-
-def get_value() -> PreparedStatementTypeDef:
-    return {
-        "StatementName": ...,
-    }
-```
-
-```python title="Definition"
-class PreparedStatementTypeDef(TypedDict):
-    StatementName: NotRequired[str],
-    QueryStatement: NotRequired[str],
-    WorkGroupName: NotRequired[str],
-    Description: NotRequired[str],
-    LastModifiedTime: NotRequired[datetime],
-```
-
-## UnprocessedPreparedStatementNameTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_athena.type_defs import UnprocessedPreparedStatementNameTypeDef
-
-def get_value() -> UnprocessedPreparedStatementNameTypeDef:
-    return {
-        "StatementName": ...,
-    }
-```
-
-```python title="Definition"
-class UnprocessedPreparedStatementNameTypeDef(TypedDict):
-    StatementName: NotRequired[str],
     ErrorCode: NotRequired[str],
     ErrorMessage: NotRequired[str],
 ```
@@ -561,6 +503,26 @@ def get_value() -> GetPreparedStatementInputRequestTypeDef:
 class GetPreparedStatementInputRequestTypeDef(TypedDict):
     StatementName: str,
     WorkGroup: str,
+```
+
+## PreparedStatementTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_athena.type_defs import PreparedStatementTypeDef
+
+def get_value() -> PreparedStatementTypeDef:
+    return {
+        "StatementName": ...,
+    }
+```
+
+```python title="Definition"
+class PreparedStatementTypeDef(TypedDict):
+    StatementName: NotRequired[str],
+    QueryStatement: NotRequired[str],
+    WorkGroupName: NotRequired[str],
+    Description: NotRequired[str],
+    LastModifiedTime: NotRequired[datetime],
 ```
 
 ## GetQueryExecutionInputRequestTypeDef
@@ -1111,49 +1073,6 @@ class BatchGetNamedQueryOutputTypeDef(TypedDict):
 1. See [:material-code-braces: NamedQueryTypeDef](./type_defs.md#namedquerytypedef) 
 2. See [:material-code-braces: UnprocessedNamedQueryIdTypeDef](./type_defs.md#unprocessednamedqueryidtypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetPreparedStatementOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_athena.type_defs import GetPreparedStatementOutputTypeDef
-
-def get_value() -> GetPreparedStatementOutputTypeDef:
-    return {
-        "PreparedStatement": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetPreparedStatementOutputTypeDef(TypedDict):
-    PreparedStatement: PreparedStatementTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: PreparedStatementTypeDef](./type_defs.md#preparedstatementtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## BatchGetPreparedStatementOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_athena.type_defs import BatchGetPreparedStatementOutputTypeDef
-
-def get_value() -> BatchGetPreparedStatementOutputTypeDef:
-    return {
-        "PreparedStatements": ...,
-        "UnprocessedPreparedStatementNames": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class BatchGetPreparedStatementOutputTypeDef(TypedDict):
-    PreparedStatements: List[PreparedStatementTypeDef],  # (1)
-    UnprocessedPreparedStatementNames: List[UnprocessedPreparedStatementNameTypeDef],  # (2)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
-```
-
-1. See [:material-code-braces: PreparedStatementTypeDef](./type_defs.md#preparedstatementtypedef) 
-2. See [:material-code-braces: UnprocessedPreparedStatementNameTypeDef](./type_defs.md#unprocessedpreparedstatementnametypedef) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ResultSetMetadataTypeDef
 
 ```python title="Usage Example"
@@ -1450,6 +1369,26 @@ class WorkGroupSummaryTypeDef(TypedDict):
 
 1. See [:material-code-brackets: WorkGroupStateType](./literals.md#workgroupstatetype) 
 2. See [:material-code-braces: EngineVersionTypeDef](./type_defs.md#engineversiontypedef) 
+## GetPreparedStatementOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_athena.type_defs import GetPreparedStatementOutputTypeDef
+
+def get_value() -> GetPreparedStatementOutputTypeDef:
+    return {
+        "PreparedStatement": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetPreparedStatementOutputTypeDef(TypedDict):
+    PreparedStatement: PreparedStatementTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: PreparedStatementTypeDef](./type_defs.md#preparedstatementtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetQueryResultsInputGetQueryResultsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -1683,7 +1622,6 @@ class QueryExecutionTypeDef(TypedDict):
     Statistics: NotRequired[QueryExecutionStatisticsTypeDef],  # (5)
     WorkGroup: NotRequired[str],
     EngineVersion: NotRequired[EngineVersionTypeDef],  # (6)
-    ExecutionParameters: NotRequired[List[str]],
 ```
 
 1. See [:material-code-brackets: StatementTypeType](./literals.md#statementtypetype) 
@@ -1710,7 +1648,6 @@ class StartQueryExecutionInputRequestTypeDef(TypedDict):
     QueryExecutionContext: NotRequired[QueryExecutionContextTypeDef],  # (1)
     ResultConfiguration: NotRequired[ResultConfigurationTypeDef],  # (2)
     WorkGroup: NotRequired[str],
-    ExecutionParameters: NotRequired[Sequence[str]],
 ```
 
 1. See [:material-code-braces: QueryExecutionContextTypeDef](./type_defs.md#queryexecutioncontexttypedef) 

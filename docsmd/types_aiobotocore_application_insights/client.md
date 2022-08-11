@@ -72,21 +72,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("application-insights").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_application
 
 Adds an application that is created from a resource group.
@@ -105,14 +90,12 @@ await def create_application(
     Tags: Sequence[TagTypeDef] = ...,  # (1)
     AutoConfigEnabled: bool = ...,
     AutoCreate: bool = ...,
-    GroupingType: GroupingTypeType = ...,  # (2)
-) -> CreateApplicationResponseTypeDef:  # (3)
+) -> CreateApplicationResponseTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-2. See [:material-code-brackets: GroupingTypeType](./literals.md#groupingtypetype) 
-3. See [:material-code-braces: CreateApplicationResponseTypeDef](./type_defs.md#createapplicationresponsetypedef) 
+2. See [:material-code-braces: CreateApplicationResponseTypeDef](./type_defs.md#createapplicationresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

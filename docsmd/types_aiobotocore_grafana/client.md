@@ -103,21 +103,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("grafana").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_workspace
 
 Creates a *workspace*.
@@ -135,7 +120,6 @@ await def create_workspace(
     clientToken: str = ...,
     organizationRoleName: str = ...,
     stackSetName: str = ...,
-    tags: Mapping[str, str] = ...,
     workspaceDataSources: Sequence[DataSourceTypeType] = ...,  # (4)
     workspaceDescription: str = ...,
     workspaceName: str = ...,
@@ -166,41 +150,6 @@ parent.create_workspace(**kwargs)
 
 1. See [:material-code-braces: CreateWorkspaceRequestRequestTypeDef](./type_defs.md#createworkspacerequestrequesttypedef) 
 
-### create\_workspace\_api\_key
-
-Creates an API key for the workspace.
-
-Type annotations and code completion for `#!python session.client("grafana").create_workspace_api_key` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.create_workspace_api_key)
-
-```python title="Method definition"
-await def create_workspace_api_key(
-    self,
-    *,
-    keyName: str,
-    keyRole: str,
-    secondsToLive: int,
-    workspaceId: str,
-) -> CreateWorkspaceApiKeyResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: CreateWorkspaceApiKeyResponseTypeDef](./type_defs.md#createworkspaceapikeyresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: CreateWorkspaceApiKeyRequestRequestTypeDef = {  # (1)
-    "keyName": ...,
-    "keyRole": ...,
-    "secondsToLive": ...,
-    "workspaceId": ...,
-}
-
-parent.create_workspace_api_key(**kwargs)
-```
-
-1. See [:material-code-braces: CreateWorkspaceApiKeyRequestRequestTypeDef](./type_defs.md#createworkspaceapikeyrequestrequesttypedef) 
-
 ### delete\_workspace
 
 Deletes an Amazon Managed Grafana workspace.
@@ -229,37 +178,6 @@ parent.delete_workspace(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteWorkspaceRequestRequestTypeDef](./type_defs.md#deleteworkspacerequestrequesttypedef) 
-
-### delete\_workspace\_api\_key
-
-Deletes an API key for a workspace.
-
-Type annotations and code completion for `#!python session.client("grafana").delete_workspace_api_key` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.delete_workspace_api_key)
-
-```python title="Method definition"
-await def delete_workspace_api_key(
-    self,
-    *,
-    keyName: str,
-    workspaceId: str,
-) -> DeleteWorkspaceApiKeyResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DeleteWorkspaceApiKeyResponseTypeDef](./type_defs.md#deleteworkspaceapikeyresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DeleteWorkspaceApiKeyRequestRequestTypeDef = {  # (1)
-    "keyName": ...,
-    "workspaceId": ...,
-}
-
-parent.delete_workspace_api_key(**kwargs)
-```
-
-1. See [:material-code-braces: DeleteWorkspaceApiKeyRequestRequestTypeDef](./type_defs.md#deleteworkspaceapikeyrequestrequesttypedef) 
 
 ### describe\_workspace
 
@@ -407,36 +325,6 @@ parent.list_permissions(**kwargs)
 
 1. See [:material-code-braces: ListPermissionsRequestRequestTypeDef](./type_defs.md#listpermissionsrequestrequesttypedef) 
 
-### list\_tags\_for\_resource
-
-The `ListTagsForResource` operation returns the tags that are associated with
-the Amazon Managed Service for Grafana resource specified by the `resourceArn`.
-
-Type annotations and code completion for `#!python session.client("grafana").list_tags_for_resource` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.list_tags_for_resource)
-
-```python title="Method definition"
-await def list_tags_for_resource(
-    self,
-    *,
-    resourceArn: str,
-) -> ListTagsForResourceResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListTagsForResourceRequestRequestTypeDef = {  # (1)
-    "resourceArn": ...,
-}
-
-parent.list_tags_for_resource(**kwargs)
-```
-
-1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
-
 ### list\_workspaces
 
 Returns a list of Amazon Managed Grafana workspaces in the account, with some
@@ -467,68 +355,6 @@ parent.list_workspaces(**kwargs)
 ```
 
 1. See [:material-code-braces: ListWorkspacesRequestRequestTypeDef](./type_defs.md#listworkspacesrequestrequesttypedef) 
-
-### tag\_resource
-
-The `TagResource` operation associates tags with an Amazon Managed Grafana
-resource.
-
-Type annotations and code completion for `#!python session.client("grafana").tag_resource` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.tag_resource)
-
-```python title="Method definition"
-await def tag_resource(
-    self,
-    *,
-    resourceArn: str,
-    tags: Mapping[str, str],
-) -> Dict[str, Any]:
-    ...
-```
-
-
-
-```python title="Usage example with kwargs"
-kwargs: TagResourceRequestRequestTypeDef = {  # (1)
-    "resourceArn": ...,
-    "tags": ...,
-}
-
-parent.tag_resource(**kwargs)
-```
-
-1. See [:material-code-braces: TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef) 
-
-### untag\_resource
-
-The `UntagResource` operation removes the association of the tag with the Amazon
-Managed Grafana resource.
-
-Type annotations and code completion for `#!python session.client("grafana").untag_resource` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.untag_resource)
-
-```python title="Method definition"
-await def untag_resource(
-    self,
-    *,
-    resourceArn: str,
-    tagKeys: Sequence[str],
-) -> Dict[str, Any]:
-    ...
-```
-
-
-
-```python title="Usage example with kwargs"
-kwargs: UntagResourceRequestRequestTypeDef = {  # (1)
-    "resourceArn": ...,
-    "tagKeys": ...,
-}
-
-parent.untag_resource(**kwargs)
-```
-
-1. See [:material-code-braces: UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef) 
 
 ### update\_permissions
 

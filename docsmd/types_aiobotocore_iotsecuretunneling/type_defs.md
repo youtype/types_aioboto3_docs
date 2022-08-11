@@ -232,50 +232,6 @@ class OpenTunnelResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## RotateTunnelAccessTokenResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iotsecuretunneling.type_defs import RotateTunnelAccessTokenResponseTypeDef
-
-def get_value() -> RotateTunnelAccessTokenResponseTypeDef:
-    return {
-        "tunnelArn": ...,
-        "sourceAccessToken": ...,
-        "destinationAccessToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class RotateTunnelAccessTokenResponseTypeDef(TypedDict):
-    tunnelArn: str,
-    sourceAccessToken: str,
-    destinationAccessToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## RotateTunnelAccessTokenRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iotsecuretunneling.type_defs import RotateTunnelAccessTokenRequestRequestTypeDef
-
-def get_value() -> RotateTunnelAccessTokenRequestRequestTypeDef:
-    return {
-        "tunnelId": ...,
-        "clientMode": ...,
-    }
-```
-
-```python title="Definition"
-class RotateTunnelAccessTokenRequestRequestTypeDef(TypedDict):
-    tunnelId: str,
-    clientMode: ClientModeType,  # (1)
-    destinationConfig: NotRequired[DestinationConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: ClientModeType](./literals.md#clientmodetype) 
-2. See [:material-code-braces: DestinationConfigTypeDef](./type_defs.md#destinationconfigtypedef) 
 ## ListTagsForResourceResponseTypeDef
 
 ```python title="Usage Example"

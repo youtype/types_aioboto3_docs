@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `MediaConnect`.
 
 ### From PyPI with pip
 
@@ -133,7 +128,6 @@ def get_value() -> AlgorithmType:
 - [ListFlowsPaginatorName](./literals.md#listflowspaginatorname)
 - [ListOfferingsPaginatorName](./literals.md#listofferingspaginatorname)
 - [ListReservationsPaginatorName](./literals.md#listreservationspaginatorname)
-- [MaintenanceDayType](./literals.md#maintenancedaytype)
 - [MediaStreamTypeType](./literals.md#mediastreamtypetype)
 - [NetworkInterfaceTypeType](./literals.md#networkinterfacetypetype)
 - [PriceUnitsType](./literals.md#priceunitstype)
@@ -176,7 +170,6 @@ def get_value() -> ResponseMetadataTypeDef:
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [VpcInterfaceRequestTypeDef](./type_defs.md#vpcinterfacerequesttypedef)
 - [VpcInterfaceTypeDef](./type_defs.md#vpcinterfacetypedef)
-- [AddMaintenanceTypeDef](./type_defs.md#addmaintenancetypedef)
 - [EncryptionTypeDef](./type_defs.md#encryptiontypedef)
 - [VpcInterfaceAttachmentTypeDef](./type_defs.md#vpcinterfaceattachmenttypedef)
 - [DeleteFlowRequestRequestTypeDef](./type_defs.md#deleteflowrequestrequesttypedef)
@@ -190,13 +183,13 @@ def get_value() -> ResponseMetadataTypeDef:
 - [EncodingParametersRequestTypeDef](./type_defs.md#encodingparametersrequesttypedef)
 - [EncodingParametersTypeDef](./type_defs.md#encodingparameterstypedef)
 - [SourcePriorityTypeDef](./type_defs.md#sourceprioritytypedef)
-- [MaintenanceTypeDef](./type_defs.md#maintenancetypedef)
 - [FmtpRequestTypeDef](./type_defs.md#fmtprequesttypedef)
 - [FmtpTypeDef](./type_defs.md#fmtptypedef)
 - [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListEntitlementsRequestRequestTypeDef](./type_defs.md#listentitlementsrequestrequesttypedef)
 - [ListedEntitlementTypeDef](./type_defs.md#listedentitlementtypedef)
 - [ListFlowsRequestRequestTypeDef](./type_defs.md#listflowsrequestrequesttypedef)
+- [ListedFlowTypeDef](./type_defs.md#listedflowtypedef)
 - [ListOfferingsRequestRequestTypeDef](./type_defs.md#listofferingsrequestrequesttypedef)
 - [ListReservationsRequestRequestTypeDef](./type_defs.md#listreservationsrequestrequesttypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
@@ -213,7 +206,6 @@ def get_value() -> ResponseMetadataTypeDef:
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [UpdateEncryptionTypeDef](./type_defs.md#updateencryptiontypedef)
-- [UpdateMaintenanceTypeDef](./type_defs.md#updatemaintenancetypedef)
 - [DeleteFlowResponseTypeDef](./type_defs.md#deleteflowresponsetypedef)
 - [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
@@ -237,7 +229,6 @@ def get_value() -> ResponseMetadataTypeDef:
 - [InputConfigurationTypeDef](./type_defs.md#inputconfigurationtypedef)
 - [FailoverConfigTypeDef](./type_defs.md#failoverconfigtypedef)
 - [UpdateFailoverConfigTypeDef](./type_defs.md#updatefailoverconfigtypedef)
-- [ListedFlowTypeDef](./type_defs.md#listedflowtypedef)
 - [MediaStreamAttributesRequestTypeDef](./type_defs.md#mediastreamattributesrequesttypedef)
 - [MediaStreamAttributesTypeDef](./type_defs.md#mediastreamattributestypedef)
 - [ListEntitlementsRequestListEntitlementsPaginateTypeDef](./type_defs.md#listentitlementsrequestlistentitlementspaginatetypedef)
@@ -245,6 +236,7 @@ def get_value() -> ResponseMetadataTypeDef:
 - [ListOfferingsRequestListOfferingsPaginateTypeDef](./type_defs.md#listofferingsrequestlistofferingspaginatetypedef)
 - [ListReservationsRequestListReservationsPaginateTypeDef](./type_defs.md#listreservationsrequestlistreservationspaginatetypedef)
 - [ListEntitlementsResponseTypeDef](./type_defs.md#listentitlementsresponsetypedef)
+- [ListFlowsResponseTypeDef](./type_defs.md#listflowsresponsetypedef)
 - [OfferingTypeDef](./type_defs.md#offeringtypedef)
 - [ReservationTypeDef](./type_defs.md#reservationtypedef)
 - [UpdateFlowEntitlementRequestRequestTypeDef](./type_defs.md#updateflowentitlementrequestrequesttypedef)
@@ -256,7 +248,6 @@ def get_value() -> ResponseMetadataTypeDef:
 - [MediaStreamOutputConfigurationTypeDef](./type_defs.md#mediastreamoutputconfigurationtypedef)
 - [MediaStreamSourceConfigurationTypeDef](./type_defs.md#mediastreamsourceconfigurationtypedef)
 - [UpdateFlowRequestRequestTypeDef](./type_defs.md#updateflowrequestrequesttypedef)
-- [ListFlowsResponseTypeDef](./type_defs.md#listflowsresponsetypedef)
 - [AddMediaStreamRequestTypeDef](./type_defs.md#addmediastreamrequesttypedef)
 - [UpdateFlowMediaStreamRequestRequestTypeDef](./type_defs.md#updateflowmediastreamrequestrequesttypedef)
 - [MediaStreamTypeDef](./type_defs.md#mediastreamtypedef)

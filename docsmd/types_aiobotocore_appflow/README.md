@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Appflow`.
 
 ### From PyPI with pip
 
@@ -96,7 +91,6 @@ def get_value() -> AggregationTypeType:
 - [GoogleAnalyticsConnectorOperatorType](./literals.md#googleanalyticsconnectoroperatortype)
 - [InforNexusConnectorOperatorType](./literals.md#infornexusconnectoroperatortype)
 - [MarketoConnectorOperatorType](./literals.md#marketoconnectoroperatortype)
-- [OAuth2CustomPropTypeType](./literals.md#oauth2customproptypetype)
 - [OAuth2GrantTypeType](./literals.md#oauth2granttypetype)
 - [OperatorPropertiesKeysType](./literals.md#operatorpropertieskeystype)
 - [OperatorType](./literals.md#operatortype)
@@ -145,6 +139,7 @@ def get_value() -> AggregationConfigTypeDef:
 - [AmplitudeSourcePropertiesTypeDef](./type_defs.md#amplitudesourcepropertiestypedef)
 - [ApiKeyCredentialsTypeDef](./type_defs.md#apikeycredentialstypedef)
 - [AuthParameterTypeDef](./type_defs.md#authparametertypedef)
+- [OAuth2DefaultsTypeDef](./type_defs.md#oauth2defaultstypedef)
 - [BasicAuthCredentialsTypeDef](./type_defs.md#basicauthcredentialstypedef)
 - [ConnectorRuntimeSettingTypeDef](./type_defs.md#connectorruntimesettingtypedef)
 - [ConnectorDetailTypeDef](./type_defs.md#connectordetailtypedef)
@@ -208,7 +203,6 @@ def get_value() -> AggregationConfigTypeDef:
 - [ListFlowsRequestRequestTypeDef](./type_defs.md#listflowsrequestrequesttypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [MarketoSourcePropertiesTypeDef](./type_defs.md#marketosourcepropertiestypedef)
-- [OAuth2CustomParameterTypeDef](./type_defs.md#oauth2customparametertypedef)
 - [OAuthPropertiesTypeDef](./type_defs.md#oauthpropertiestypedef)
 - [PrefixConfigTypeDef](./type_defs.md#prefixconfigtypedef)
 - [S3InputFormatConfigTypeDef](./type_defs.md#s3inputformatconfigtypedef)
@@ -261,36 +255,35 @@ def get_value() -> AggregationConfigTypeDef:
 - [FlowDefinitionTypeDef](./type_defs.md#flowdefinitiontypedef)
 - [ExecutionResultTypeDef](./type_defs.md#executionresulttypedef)
 - [FieldTypeDetailsTypeDef](./type_defs.md#fieldtypedetailstypedef)
-- [OAuth2DefaultsTypeDef](./type_defs.md#oauth2defaultstypedef)
 - [SAPODataConnectorProfilePropertiesTypeDef](./type_defs.md#sapodataconnectorprofilepropertiestypedef)
 - [S3OutputFormatConfigTypeDef](./type_defs.md#s3outputformatconfigtypedef)
 - [UpsolverS3OutputFormatConfigTypeDef](./type_defs.md#upsolvers3outputformatconfigtypedef)
 - [S3SourcePropertiesTypeDef](./type_defs.md#s3sourcepropertiestypedef)
 - [SAPODataDestinationPropertiesTypeDef](./type_defs.md#sapodatadestinationpropertiestypedef)
 - [TriggerPropertiesTypeDef](./type_defs.md#triggerpropertiestypedef)
+- [AuthenticationConfigTypeDef](./type_defs.md#authenticationconfigtypedef)
 - [CustomConnectorProfileCredentialsTypeDef](./type_defs.md#customconnectorprofilecredentialstypedef)
 - [SAPODataConnectorProfileCredentialsTypeDef](./type_defs.md#sapodataconnectorprofilecredentialstypedef)
 - [RegisterConnectorRequestRequestTypeDef](./type_defs.md#registerconnectorrequestrequesttypedef)
 - [ListFlowsResponseTypeDef](./type_defs.md#listflowsresponsetypedef)
 - [ExecutionRecordTypeDef](./type_defs.md#executionrecordtypedef)
 - [SupportedFieldTypeDetailsTypeDef](./type_defs.md#supportedfieldtypedetailstypedef)
-- [AuthenticationConfigTypeDef](./type_defs.md#authenticationconfigtypedef)
 - [ConnectorProfilePropertiesTypeDef](./type_defs.md#connectorprofilepropertiestypedef)
 - [S3DestinationPropertiesTypeDef](./type_defs.md#s3destinationpropertiestypedef)
 - [UpsolverDestinationPropertiesTypeDef](./type_defs.md#upsolverdestinationpropertiestypedef)
 - [SourceConnectorPropertiesTypeDef](./type_defs.md#sourceconnectorpropertiestypedef)
 - [TriggerConfigTypeDef](./type_defs.md#triggerconfigtypedef)
+- [ConnectorConfigurationTypeDef](./type_defs.md#connectorconfigurationtypedef)
 - [ConnectorProfileCredentialsTypeDef](./type_defs.md#connectorprofilecredentialstypedef)
 - [DescribeFlowExecutionRecordsResponseTypeDef](./type_defs.md#describeflowexecutionrecordsresponsetypedef)
 - [ConnectorEntityFieldTypeDef](./type_defs.md#connectorentityfieldtypedef)
-- [ConnectorConfigurationTypeDef](./type_defs.md#connectorconfigurationtypedef)
 - [ConnectorProfileTypeDef](./type_defs.md#connectorprofiletypedef)
 - [DestinationConnectorPropertiesTypeDef](./type_defs.md#destinationconnectorpropertiestypedef)
 - [SourceFlowConfigTypeDef](./type_defs.md#sourceflowconfigtypedef)
-- [ConnectorProfileConfigTypeDef](./type_defs.md#connectorprofileconfigtypedef)
-- [DescribeConnectorEntityResponseTypeDef](./type_defs.md#describeconnectorentityresponsetypedef)
 - [DescribeConnectorResponseTypeDef](./type_defs.md#describeconnectorresponsetypedef)
 - [DescribeConnectorsResponseTypeDef](./type_defs.md#describeconnectorsresponsetypedef)
+- [ConnectorProfileConfigTypeDef](./type_defs.md#connectorprofileconfigtypedef)
+- [DescribeConnectorEntityResponseTypeDef](./type_defs.md#describeconnectorentityresponsetypedef)
 - [DescribeConnectorProfilesResponseTypeDef](./type_defs.md#describeconnectorprofilesresponsetypedef)
 - [DestinationFlowConfigTypeDef](./type_defs.md#destinationflowconfigtypedef)
 - [CreateConnectorProfileRequestRequestTypeDef](./type_defs.md#createconnectorprofilerequestrequesttypedef)

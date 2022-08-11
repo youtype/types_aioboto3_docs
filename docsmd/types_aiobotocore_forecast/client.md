@@ -70,21 +70,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("forecast").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_auto\_predictor
 
 Creates an Amazon Forecast predictor.
@@ -107,9 +92,7 @@ await def create_auto_predictor(
     OptimizationMetric: OptimizationMetricType = ...,  # (3)
     ExplainPredictor: bool = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (4)
-    MonitorConfig: MonitorConfigTypeDef = ...,  # (5)
-    TimeAlignmentBoundary: TimeAlignmentBoundaryTypeDef = ...,  # (6)
-) -> CreateAutoPredictorResponseTypeDef:  # (7)
+) -> CreateAutoPredictorResponseTypeDef:  # (5)
     ...
 ```
 
@@ -117,9 +100,7 @@ await def create_auto_predictor(
 2. See [:material-code-braces: EncryptionConfigTypeDef](./type_defs.md#encryptionconfigtypedef) 
 3. See [:material-code-brackets: OptimizationMetricType](./literals.md#optimizationmetrictype) 
 4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-5. See [:material-code-braces: MonitorConfigTypeDef](./type_defs.md#monitorconfigtypedef) 
-6. See [:material-code-braces: TimeAlignmentBoundaryTypeDef](./type_defs.md#timealignmentboundarytypedef) 
-7. See [:material-code-braces: CreateAutoPredictorResponseTypeDef](./type_defs.md#createautopredictorresponsetypedef) 
+5. See [:material-code-braces: CreateAutoPredictorResponseTypeDef](./type_defs.md#createautopredictorresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -229,7 +210,6 @@ await def create_dataset_import_job(
     UseGeolocationForTimeZone: bool = ...,
     GeolocationFormat: str = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (2)
-    Format: str = ...,
 ) -> CreateDatasetImportJobResponseTypeDef:  # (3)
     ...
 ```
@@ -310,7 +290,6 @@ await def create_explainability_export(
     ExplainabilityArn: str,
     Destination: DataDestinationTypeDef,  # (1)
     Tags: Sequence[TagTypeDef] = ...,  # (2)
-    Format: str = ...,
 ) -> CreateExplainabilityExportResponseTypeDef:  # (3)
     ...
 ```
@@ -348,14 +327,12 @@ await def create_forecast(
     PredictorArn: str,
     ForecastTypes: Sequence[str] = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (1)
-    TimeSeriesSelector: TimeSeriesSelectorTypeDef = ...,  # (2)
-) -> CreateForecastResponseTypeDef:  # (3)
+) -> CreateForecastResponseTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-2. See [:material-code-braces: TimeSeriesSelectorTypeDef](./type_defs.md#timeseriesselectortypedef) 
-3. See [:material-code-braces: CreateForecastResponseTypeDef](./type_defs.md#createforecastresponsetypedef) 
+2. See [:material-code-braces: CreateForecastResponseTypeDef](./type_defs.md#createforecastresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -385,7 +362,6 @@ await def create_forecast_export_job(
     ForecastArn: str,
     Destination: DataDestinationTypeDef,  # (1)
     Tags: Sequence[TagTypeDef] = ...,  # (2)
-    Format: str = ...,
 ) -> CreateForecastExportJobResponseTypeDef:  # (3)
     ...
 ```
@@ -406,39 +382,6 @@ parent.create_forecast_export_job(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateForecastExportJobRequestRequestTypeDef](./type_defs.md#createforecastexportjobrequestrequesttypedef) 
-
-### create\_monitor
-
-Creates a predictor monitor resource for an existing auto predictor.
-
-Type annotations and code completion for `#!python session.client("forecast").create_monitor` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.create_monitor)
-
-```python title="Method definition"
-await def create_monitor(
-    self,
-    *,
-    MonitorName: str,
-    ResourceArn: str,
-    Tags: Sequence[TagTypeDef] = ...,  # (1)
-) -> CreateMonitorResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-2. See [:material-code-braces: CreateMonitorResponseTypeDef](./type_defs.md#createmonitorresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: CreateMonitorRequestRequestTypeDef = {  # (1)
-    "MonitorName": ...,
-    "ResourceArn": ...,
-}
-
-parent.create_monitor(**kwargs)
-```
-
-1. See [:material-code-braces: CreateMonitorRequestRequestTypeDef](./type_defs.md#createmonitorrequestrequesttypedef) 
 
 ### create\_predictor
 
@@ -510,7 +453,6 @@ await def create_predictor_backtest_export_job(
     PredictorArn: str,
     Destination: DataDestinationTypeDef,  # (1)
     Tags: Sequence[TagTypeDef] = ...,  # (2)
-    Format: str = ...,
 ) -> CreatePredictorBacktestExportJobResponseTypeDef:  # (3)
     ...
 ```
@@ -534,8 +476,7 @@ parent.create_predictor_backtest_export_job(**kwargs)
 
 ### delete\_dataset
 
-Deletes an Amazon Forecast dataset that was created using the
-[CreateDataset](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html)_
+Deletes an Amazon Forecast dataset that was created using the  CreateDataset
 operation.
 
 Type annotations and code completion for `#!python session.client("forecast").delete_dataset` method.
@@ -565,9 +506,7 @@ parent.delete_dataset(**kwargs)
 
 ### delete\_dataset\_group
 
-Deletes a dataset group created using the
-[CreateDatasetGroup](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html)_
-operation.
+Deletes a dataset group created using the  CreateDatasetGroup operation.
 
 Type annotations and code completion for `#!python session.client("forecast").delete_dataset_group` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_dataset_group)
@@ -596,8 +535,7 @@ parent.delete_dataset_group(**kwargs)
 
 ### delete\_dataset\_import\_job
 
-Deletes a dataset import job created using the
-[CreateDatasetImportJob](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html)_
+Deletes a dataset import job created using the  CreateDatasetImportJob
 operation.
 
 Type annotations and code completion for `#!python session.client("forecast").delete_dataset_import_job` method.
@@ -742,35 +680,6 @@ parent.delete_forecast_export_job(**kwargs)
 
 1. See [:material-code-braces: DeleteForecastExportJobRequestRequestTypeDef](./type_defs.md#deleteforecastexportjobrequestrequesttypedef) 
 
-### delete\_monitor
-
-Deletes a monitor resource.
-
-Type annotations and code completion for `#!python session.client("forecast").delete_monitor` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_monitor)
-
-```python title="Method definition"
-await def delete_monitor(
-    self,
-    *,
-    MonitorArn: str,
-) -> EmptyResponseMetadataTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DeleteMonitorRequestRequestTypeDef = {  # (1)
-    "MonitorArn": ...,
-}
-
-parent.delete_monitor(**kwargs)
-```
-
-1. See [:material-code-braces: DeleteMonitorRequestRequestTypeDef](./type_defs.md#deletemonitorrequestrequesttypedef) 
-
 ### delete\_predictor
 
 Deletes a predictor created using the  DescribePredictor or  CreatePredictor
@@ -890,9 +799,7 @@ parent.describe_auto_predictor(**kwargs)
 
 ### describe\_dataset
 
-Describes an Amazon Forecast dataset created using the
-[CreateDataset](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html)_
-operation.
+Describes an Amazon Forecast dataset created using the  CreateDataset operation.
 
 Type annotations and code completion for `#!python session.client("forecast").describe_dataset` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_dataset)
@@ -921,9 +828,7 @@ parent.describe_dataset(**kwargs)
 
 ### describe\_dataset\_group
 
-Describes a dataset group created using the
-[CreateDatasetGroup](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html)_
-operation.
+Describes a dataset group created using the  CreateDatasetGroup operation.
 
 Type annotations and code completion for `#!python session.client("forecast").describe_dataset_group` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_dataset_group)
@@ -952,8 +857,7 @@ parent.describe_dataset_group(**kwargs)
 
 ### describe\_dataset\_import\_job
 
-Describes a dataset import job created using the
-[CreateDatasetImportJob](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html)_
+Describes a dataset import job created using the  CreateDatasetImportJob
 operation.
 
 Type annotations and code completion for `#!python session.client("forecast").describe_dataset_import_job` method.
@@ -1100,35 +1004,6 @@ parent.describe_forecast_export_job(**kwargs)
 
 1. See [:material-code-braces: DescribeForecastExportJobRequestRequestTypeDef](./type_defs.md#describeforecastexportjobrequestrequesttypedef) 
 
-### describe\_monitor
-
-Describes a monitor resource.
-
-Type annotations and code completion for `#!python session.client("forecast").describe_monitor` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_monitor)
-
-```python title="Method definition"
-await def describe_monitor(
-    self,
-    *,
-    MonitorArn: str,
-) -> DescribeMonitorResponseTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DescribeMonitorResponseTypeDef](./type_defs.md#describemonitorresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeMonitorRequestRequestTypeDef = {  # (1)
-    "MonitorArn": ...,
-}
-
-parent.describe_monitor(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeMonitorRequestRequestTypeDef](./type_defs.md#describemonitorrequestrequesttypedef) 
-
 ### describe\_predictor
 
 .
@@ -1239,8 +1114,7 @@ parent.get_accuracy_metrics(**kwargs)
 
 ### list\_dataset\_groups
 
-Returns a list of dataset groups created using the
-[CreateDatasetGroup](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html)_
+Returns a list of dataset groups created using the  CreateDatasetGroup
 operation.
 
 Type annotations and code completion for `#!python session.client("forecast").list_dataset_groups` method.
@@ -1271,8 +1145,7 @@ parent.list_dataset_groups(**kwargs)
 
 ### list\_dataset\_import\_jobs
 
-Returns a list of dataset import jobs created using the
-[CreateDatasetImportJob](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html)_
+Returns a list of dataset import jobs created using the  CreateDatasetImportJob
 operation.
 
 Type annotations and code completion for `#!python session.client("forecast").list_dataset_import_jobs` method.
@@ -1305,9 +1178,7 @@ parent.list_dataset_import_jobs(**kwargs)
 
 ### list\_datasets
 
-Returns a list of datasets created using the
-[CreateDataset](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html)_
-operation.
+Returns a list of datasets created using the  CreateDataset operation.
 
 Type annotations and code completion for `#!python session.client("forecast").list_datasets` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_datasets)
@@ -1466,73 +1337,6 @@ parent.list_forecasts(**kwargs)
 
 1. See [:material-code-braces: ListForecastsRequestRequestTypeDef](./type_defs.md#listforecastsrequestrequesttypedef) 
 
-### list\_monitor\_evaluations
-
-Returns a list of the monitoring evaluation results and predictor events
-collected by the monitor resource during different windows of time.
-
-Type annotations and code completion for `#!python session.client("forecast").list_monitor_evaluations` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_monitor_evaluations)
-
-```python title="Method definition"
-await def list_monitor_evaluations(
-    self,
-    *,
-    MonitorArn: str,
-    NextToken: str = ...,
-    MaxResults: int = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-) -> ListMonitorEvaluationsResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: ListMonitorEvaluationsResponseTypeDef](./type_defs.md#listmonitorevaluationsresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListMonitorEvaluationsRequestRequestTypeDef = {  # (1)
-    "MonitorArn": ...,
-}
-
-parent.list_monitor_evaluations(**kwargs)
-```
-
-1. See [:material-code-braces: ListMonitorEvaluationsRequestRequestTypeDef](./type_defs.md#listmonitorevaluationsrequestrequesttypedef) 
-
-### list\_monitors
-
-Returns a list of monitors created with the  CreateMonitor operation and
-CreateAutoPredictor operation.
-
-Type annotations and code completion for `#!python session.client("forecast").list_monitors` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_monitors)
-
-```python title="Method definition"
-await def list_monitors(
-    self,
-    *,
-    NextToken: str = ...,
-    MaxResults: int = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-) -> ListMonitorsResponseTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: ListMonitorsResponseTypeDef](./type_defs.md#listmonitorsresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListMonitorsRequestRequestTypeDef = {  # (1)
-    "NextToken": ...,
-}
-
-parent.list_monitors(**kwargs)
-```
-
-1. See [:material-code-braces: ListMonitorsRequestRequestTypeDef](./type_defs.md#listmonitorsrequestrequesttypedef) 
-
 ### list\_predictor\_backtest\_export\_jobs
 
 Returns a list of predictor backtest export jobs created using the
@@ -1627,35 +1431,6 @@ parent.list_tags_for_resource(**kwargs)
 ```
 
 1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
-
-### resume\_resource
-
-Resumes a stopped monitor resource.
-
-Type annotations and code completion for `#!python session.client("forecast").resume_resource` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.resume_resource)
-
-```python title="Method definition"
-await def resume_resource(
-    self,
-    *,
-    ResourceArn: str,
-) -> EmptyResponseMetadataTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ResumeResourceRequestRequestTypeDef = {  # (1)
-    "ResourceArn": ...,
-}
-
-parent.resume_resource(**kwargs)
-```
-
-1. See [:material-code-braces: ResumeResourceRequestRequestTypeDef](./type_defs.md#resumeresourcerequestrequesttypedef) 
 
 ### stop\_resource
 
@@ -1819,12 +1594,8 @@ Type annotations and code completion for `#!python session.client("forecast").ge
 - `client.get_paginator("list_dataset_groups")` -> [ListDatasetGroupsPaginator](./paginators.md#listdatasetgroupspaginator)
 - `client.get_paginator("list_dataset_import_jobs")` -> [ListDatasetImportJobsPaginator](./paginators.md#listdatasetimportjobspaginator)
 - `client.get_paginator("list_datasets")` -> [ListDatasetsPaginator](./paginators.md#listdatasetspaginator)
-- `client.get_paginator("list_explainabilities")` -> [ListExplainabilitiesPaginator](./paginators.md#listexplainabilitiespaginator)
-- `client.get_paginator("list_explainability_exports")` -> [ListExplainabilityExportsPaginator](./paginators.md#listexplainabilityexportspaginator)
 - `client.get_paginator("list_forecast_export_jobs")` -> [ListForecastExportJobsPaginator](./paginators.md#listforecastexportjobspaginator)
 - `client.get_paginator("list_forecasts")` -> [ListForecastsPaginator](./paginators.md#listforecastspaginator)
-- `client.get_paginator("list_monitor_evaluations")` -> [ListMonitorEvaluationsPaginator](./paginators.md#listmonitorevaluationspaginator)
-- `client.get_paginator("list_monitors")` -> [ListMonitorsPaginator](./paginators.md#listmonitorspaginator)
 - `client.get_paginator("list_predictor_backtest_export_jobs")` -> [ListPredictorBacktestExportJobsPaginator](./paginators.md#listpredictorbacktestexportjobspaginator)
 - `client.get_paginator("list_predictors")` -> [ListPredictorsPaginator](./paginators.md#listpredictorspaginator)
 

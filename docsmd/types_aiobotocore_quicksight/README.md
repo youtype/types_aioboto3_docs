@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `QuickSight`.
 
 ### From PyPI with pip
 
@@ -113,7 +108,6 @@ def get_value() -> AnalysisErrorTypeType:
 - [AnalysisErrorTypeType](./literals.md#analysiserrortypetype)
 - [AnalysisFilterAttributeType](./literals.md#analysisfilterattributetype)
 - [AssignmentStatusType](./literals.md#assignmentstatustype)
-- [AuthenticationMethodOptionType](./literals.md#authenticationmethodoptiontype)
 - [ColumnDataTypeType](./literals.md#columndatatypetype)
 - [ColumnTagNameType](./literals.md#columntagnametype)
 - [DashboardBehaviorType](./literals.md#dashboardbehaviortype)
@@ -131,8 +125,6 @@ def get_value() -> AnalysisErrorTypeType:
 - [FolderTypeType](./literals.md#foldertypetype)
 - [GeoSpatialCountryCodeType](./literals.md#geospatialcountrycodetype)
 - [GeoSpatialDataRoleType](./literals.md#geospatialdataroletype)
-- [GroupFilterAttributeType](./literals.md#groupfilterattributetype)
-- [GroupFilterOperatorType](./literals.md#groupfilteroperatortype)
 - [IdentityStoreType](./literals.md#identitystoretype)
 - [IdentityTypeType](./literals.md#identitytypetype)
 - [IngestionErrorTypeType](./literals.md#ingestionerrortypetype)
@@ -191,7 +183,6 @@ def get_value() -> AccountCustomizationTypeDef:
 ```
 
 - [AccountCustomizationTypeDef](./type_defs.md#accountcustomizationtypedef)
-- [AccountInfoTypeDef](./type_defs.md#accountinfotypedef)
 - [AccountSettingsTypeDef](./type_defs.md#accountsettingstypedef)
 - [ActiveIAMPolicyAssignmentTypeDef](./type_defs.md#activeiampolicyassignmenttypedef)
 - [AdHocFilteringOptionTypeDef](./type_defs.md#adhocfilteringoptiontypedef)
@@ -218,8 +209,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [ColumnLevelPermissionRuleTypeDef](./type_defs.md#columnlevelpermissionruletypedef)
 - [ColumnSchemaTypeDef](./type_defs.md#columnschematypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
-- [CreateAccountSubscriptionRequestRequestTypeDef](./type_defs.md#createaccountsubscriptionrequestrequesttypedef)
-- [SignupResponseTypeDef](./type_defs.md#signupresponsetypedef)
 - [ResourcePermissionTypeDef](./type_defs.md#resourcepermissiontypedef)
 - [DataSetUsageConfigurationTypeDef](./type_defs.md#datasetusageconfigurationtypedef)
 - [FieldFolderTypeDef](./type_defs.md#fieldfoldertypedef)
@@ -284,7 +273,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [DeleteUserRequestRequestTypeDef](./type_defs.md#deleteuserrequestrequesttypedef)
 - [DescribeAccountCustomizationRequestRequestTypeDef](./type_defs.md#describeaccountcustomizationrequestrequesttypedef)
 - [DescribeAccountSettingsRequestRequestTypeDef](./type_defs.md#describeaccountsettingsrequestrequesttypedef)
-- [DescribeAccountSubscriptionRequestRequestTypeDef](./type_defs.md#describeaccountsubscriptionrequestrequesttypedef)
 - [DescribeAnalysisPermissionsRequestRequestTypeDef](./type_defs.md#describeanalysispermissionsrequestrequesttypedef)
 - [DescribeAnalysisRequestRequestTypeDef](./type_defs.md#describeanalysisrequestrequesttypedef)
 - [DescribeDashboardPermissionsRequestRequestTypeDef](./type_defs.md#describedashboardpermissionsrequestrequesttypedef)
@@ -297,7 +285,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [DescribeFolderRequestRequestTypeDef](./type_defs.md#describefolderrequestrequesttypedef)
 - [DescribeFolderResolvedPermissionsRequestRequestTypeDef](./type_defs.md#describefolderresolvedpermissionsrequestrequesttypedef)
 - [FolderTypeDef](./type_defs.md#foldertypedef)
-- [DescribeGroupMembershipRequestRequestTypeDef](./type_defs.md#describegroupmembershiprequestrequesttypedef)
 - [DescribeGroupRequestRequestTypeDef](./type_defs.md#describegrouprequestrequesttypedef)
 - [DescribeIAMPolicyAssignmentRequestRequestTypeDef](./type_defs.md#describeiampolicyassignmentrequestrequesttypedef)
 - [IAMPolicyAssignmentTypeDef](./type_defs.md#iampolicyassignmenttypedef)
@@ -319,7 +306,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [SessionTagTypeDef](./type_defs.md#sessiontagtypedef)
 - [GetDashboardEmbedUrlRequestRequestTypeDef](./type_defs.md#getdashboardembedurlrequestrequesttypedef)
 - [GetSessionEmbedUrlRequestRequestTypeDef](./type_defs.md#getsessionembedurlrequestrequesttypedef)
-- [GroupSearchFilterTypeDef](./type_defs.md#groupsearchfiltertypedef)
 - [GutterStyleTypeDef](./type_defs.md#gutterstyletypedef)
 - [IAMPolicyAssignmentSummaryTypeDef](./type_defs.md#iampolicyassignmentsummarytypedef)
 - [QueueInfoTypeDef](./type_defs.md#queueinfotypedef)
@@ -379,7 +365,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [UpdateGroupRequestRequestTypeDef](./type_defs.md#updategrouprequestrequesttypedef)
 - [UpdateIAMPolicyAssignmentRequestRequestTypeDef](./type_defs.md#updateiampolicyassignmentrequestrequesttypedef)
 - [UpdateIpRestrictionRequestRequestTypeDef](./type_defs.md#updateiprestrictionrequestrequesttypedef)
-- [UpdatePublicSharingSettingsRequestRequestTypeDef](./type_defs.md#updatepublicsharingsettingsrequestrequesttypedef)
 - [UpdateTemplateAliasRequestRequestTypeDef](./type_defs.md#updatetemplatealiasrequestrequesttypedef)
 - [UpdateThemeAliasRequestRequestTypeDef](./type_defs.md#updatethemealiasrequestrequesttypedef)
 - [UpdateUserRequestRequestTypeDef](./type_defs.md#updateuserrequestrequesttypedef)
@@ -423,7 +408,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [DeleteUserResponseTypeDef](./type_defs.md#deleteuserresponsetypedef)
 - [DescribeAccountCustomizationResponseTypeDef](./type_defs.md#describeaccountcustomizationresponsetypedef)
 - [DescribeAccountSettingsResponseTypeDef](./type_defs.md#describeaccountsettingsresponsetypedef)
-- [DescribeAccountSubscriptionResponseTypeDef](./type_defs.md#describeaccountsubscriptionresponsetypedef)
 - [DescribeIpRestrictionResponseTypeDef](./type_defs.md#describeiprestrictionresponsetypedef)
 - [GenerateEmbedUrlForAnonymousUserResponseTypeDef](./type_defs.md#generateembedurlforanonymoususerresponsetypedef)
 - [GenerateEmbedUrlForRegisteredUserResponseTypeDef](./type_defs.md#generateembedurlforregistereduserresponsetypedef)
@@ -447,7 +431,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [UpdateFolderResponseTypeDef](./type_defs.md#updatefolderresponsetypedef)
 - [UpdateIAMPolicyAssignmentResponseTypeDef](./type_defs.md#updateiampolicyassignmentresponsetypedef)
 - [UpdateIpRestrictionResponseTypeDef](./type_defs.md#updateiprestrictionresponsetypedef)
-- [UpdatePublicSharingSettingsResponseTypeDef](./type_defs.md#updatepublicsharingsettingsresponsetypedef)
 - [UpdateTemplateResponseTypeDef](./type_defs.md#updatetemplateresponsetypedef)
 - [UpdateThemeResponseTypeDef](./type_defs.md#updatethemeresponsetypedef)
 - [ColumnTagTypeDef](./type_defs.md#columntagtypedef)
@@ -458,7 +441,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [CreateNamespaceRequestRequestTypeDef](./type_defs.md#createnamespacerequestrequesttypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
-- [CreateAccountSubscriptionResponseTypeDef](./type_defs.md#createaccountsubscriptionresponsetypedef)
 - [CreateFolderRequestRequestTypeDef](./type_defs.md#createfolderrequestrequesttypedef)
 - [DescribeAnalysisPermissionsResponseTypeDef](./type_defs.md#describeanalysispermissionsresponsetypedef)
 - [DescribeDataSetPermissionsResponseTypeDef](./type_defs.md#describedatasetpermissionsresponsetypedef)
@@ -482,13 +464,11 @@ def get_value() -> AccountCustomizationTypeDef:
 - [DataSetSummaryTypeDef](./type_defs.md#datasetsummarytypedef)
 - [CreateFolderMembershipResponseTypeDef](./type_defs.md#createfoldermembershipresponsetypedef)
 - [CreateGroupMembershipResponseTypeDef](./type_defs.md#creategroupmembershipresponsetypedef)
-- [DescribeGroupMembershipResponseTypeDef](./type_defs.md#describegroupmembershipresponsetypedef)
 - [ListGroupMembershipsResponseTypeDef](./type_defs.md#listgroupmembershipsresponsetypedef)
 - [CreateGroupResponseTypeDef](./type_defs.md#creategroupresponsetypedef)
 - [DescribeGroupResponseTypeDef](./type_defs.md#describegroupresponsetypedef)
 - [ListGroupsResponseTypeDef](./type_defs.md#listgroupsresponsetypedef)
 - [ListUserGroupsResponseTypeDef](./type_defs.md#listusergroupsresponsetypedef)
-- [SearchGroupsResponseTypeDef](./type_defs.md#searchgroupsresponsetypedef)
 - [UpdateGroupResponseTypeDef](./type_defs.md#updategroupresponsetypedef)
 - [CreateTemplateAliasResponseTypeDef](./type_defs.md#createtemplatealiasresponsetypedef)
 - [DescribeTemplateAliasResponseTypeDef](./type_defs.md#describetemplatealiasresponsetypedef)
@@ -515,7 +495,6 @@ def get_value() -> AccountCustomizationTypeDef:
 - [SearchFoldersRequestRequestTypeDef](./type_defs.md#searchfoldersrequestrequesttypedef)
 - [ListFoldersResponseTypeDef](./type_defs.md#listfoldersresponsetypedef)
 - [SearchFoldersResponseTypeDef](./type_defs.md#searchfoldersresponsetypedef)
-- [SearchGroupsRequestRequestTypeDef](./type_defs.md#searchgroupsrequestrequesttypedef)
 - [ListIAMPolicyAssignmentsResponseTypeDef](./type_defs.md#listiampolicyassignmentsresponsetypedef)
 - [IngestionTypeDef](./type_defs.md#ingestiontypedef)
 - [JoinInstructionTypeDef](./type_defs.md#joininstructiontypedef)

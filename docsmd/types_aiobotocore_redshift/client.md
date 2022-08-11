@@ -381,9 +381,8 @@ Type annotations and code completion for `#!python session.client("redshift").au
 await def authorize_snapshot_access(
     self,
     *,
+    SnapshotIdentifier: str,
     AccountWithRestoreAccess: str,
-    SnapshotIdentifier: str = ...,
-    SnapshotArn: str = ...,
     SnapshotClusterIdentifier: str = ...,
 ) -> AuthorizeSnapshotAccessResultTypeDef:  # (1)
     ...
@@ -394,6 +393,7 @@ await def authorize_snapshot_access(
 
 ```python title="Usage example with kwargs"
 kwargs: AuthorizeSnapshotAccessMessageRequestTypeDef = {  # (1)
+    "SnapshotIdentifier": ...,
     "AccountWithRestoreAccess": ...,
 }
 
@@ -508,21 +508,6 @@ parent.cancel_resize(**kwargs)
 
 1. See [:material-code-braces: CancelResizeMessageRequestTypeDef](./type_defs.md#cancelresizemessagerequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("redshift").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### copy\_cluster\_snapshot
 
 Copies the specified automated cluster snapshot to a new manual cluster
@@ -632,7 +617,6 @@ await def create_cluster(
     AvailabilityZoneRelocation: bool = ...,
     AquaConfigurationStatus: AquaConfigurationStatusType = ...,  # (2)
     DefaultIamRoleArn: str = ...,
-    LoadSampleData: str = ...,
 ) -> CreateClusterResultTypeDef:  # (3)
     ...
 ```
@@ -1127,8 +1111,7 @@ parent.create_usage_limit(**kwargs)
 
 ### deauthorize\_data\_share
 
-From a datashare producer account, removes authorization from the specified
-datashare.
+From the producer account, removes authorization from the specified datashare.
 
 Type annotations and code completion for `#!python session.client("redshift").deauthorize_data_share` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.deauthorize_data_share)
@@ -1838,7 +1821,6 @@ await def describe_cluster_snapshots(
     *,
     ClusterIdentifier: str = ...,
     SnapshotIdentifier: str = ...,
-    SnapshotArn: str = ...,
     SnapshotType: str = ...,
     StartTime: Union[datetime, str] = ...,
     EndTime: Union[datetime, str] = ...,
@@ -2409,7 +2391,6 @@ await def describe_node_configuration_options(
     ActionType: ActionTypeType,  # (1)
     ClusterIdentifier: str = ...,
     SnapshotIdentifier: str = ...,
-    SnapshotArn: str = ...,
     OwnerAccount: str = ...,
     Filters: Sequence[NodeConfigurationOptionsFilterTypeDef] = ...,  # (2)
     Marker: str = ...,
@@ -2911,8 +2892,7 @@ parent.disable_snapshot_copy(**kwargs)
 
 ### disassociate\_data\_share\_consumer
 
-From a datashare consumer account, remove association for the specified
-datashare.
+From a consumer account, remove association for the specified datashare.
 
 Type annotations and code completion for `#!python session.client("redshift").disassociate_data_share_consumer` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.disassociate_data_share_consumer)
@@ -2955,21 +2935,19 @@ await def enable_logging(
     self,
     *,
     ClusterIdentifier: str,
-    BucketName: str = ...,
+    BucketName: str,
     S3KeyPrefix: str = ...,
-    LogDestinationType: LogDestinationTypeType = ...,  # (1)
-    LogExports: Sequence[str] = ...,
-) -> LoggingStatusTypeDef:  # (2)
+) -> LoggingStatusTypeDef:  # (1)
     ...
 ```
 
-1. See [:material-code-brackets: LogDestinationTypeType](./literals.md#logdestinationtypetype) 
-2. See [:material-code-braces: LoggingStatusTypeDef](./type_defs.md#loggingstatustypedef) 
+1. See [:material-code-braces: LoggingStatusTypeDef](./type_defs.md#loggingstatustypedef) 
 
 
 ```python title="Usage example with kwargs"
 kwargs: EnableLoggingMessageRequestTypeDef = {  # (1)
     "ClusterIdentifier": ...,
+    "BucketName": ...,
 }
 
 parent.enable_logging(**kwargs)
@@ -3066,38 +3044,6 @@ parent.get_cluster_credentials(**kwargs)
 ```
 
 1. See [:material-code-braces: GetClusterCredentialsMessageRequestTypeDef](./type_defs.md#getclustercredentialsmessagerequesttypedef) 
-
-### get\_cluster\_credentials\_with\_iam
-
-Returns a database user name and temporary password with temporary authorization
-to log in to an Amazon Redshift database.
-
-Type annotations and code completion for `#!python session.client("redshift").get_cluster_credentials_with_iam` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.get_cluster_credentials_with_iam)
-
-```python title="Method definition"
-await def get_cluster_credentials_with_iam(
-    self,
-    *,
-    ClusterIdentifier: str,
-    DbName: str = ...,
-    DurationSeconds: int = ...,
-) -> ClusterExtendedCredentialsTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: ClusterExtendedCredentialsTypeDef](./type_defs.md#clusterextendedcredentialstypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: GetClusterCredentialsWithIAMMessageRequestTypeDef = {  # (1)
-    "ClusterIdentifier": ...,
-}
-
-parent.get_cluster_credentials_with_iam(**kwargs)
-```
-
-1. See [:material-code-braces: GetClusterCredentialsWithIAMMessageRequestTypeDef](./type_defs.md#getclustercredentialswithiammessagerequesttypedef) 
 
 ### get\_reserved\_node\_exchange\_configuration\_options
 
@@ -3793,7 +3739,7 @@ parent.reboot_cluster(**kwargs)
 
 ### reject\_data\_share
 
-From a datashare consumer account, rejects the specified datashare.
+From the consumer account, rejects the specified datashare.
 
 Type annotations and code completion for `#!python session.client("redshift").reject_data_share` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.reject_data_share)
@@ -3900,8 +3846,7 @@ await def restore_from_cluster_snapshot(
     self,
     *,
     ClusterIdentifier: str,
-    SnapshotIdentifier: str = ...,
-    SnapshotArn: str = ...,
+    SnapshotIdentifier: str,
     SnapshotClusterIdentifier: str = ...,
     Port: int = ...,
     AvailabilityZone: str = ...,
@@ -3931,7 +3876,6 @@ await def restore_from_cluster_snapshot(
     DefaultIamRoleArn: str = ...,
     ReservedNodeId: str = ...,
     TargetReservedNodeOfferingId: str = ...,
-    Encrypted: bool = ...,
 ) -> RestoreFromClusterSnapshotResultTypeDef:  # (2)
     ...
 ```
@@ -3943,6 +3887,7 @@ await def restore_from_cluster_snapshot(
 ```python title="Usage example with kwargs"
 kwargs: RestoreFromClusterSnapshotMessageRequestTypeDef = {  # (1)
     "ClusterIdentifier": ...,
+    "SnapshotIdentifier": ...,
 }
 
 parent.restore_from_cluster_snapshot(**kwargs)
@@ -4097,9 +4042,8 @@ Type annotations and code completion for `#!python session.client("redshift").re
 await def revoke_snapshot_access(
     self,
     *,
+    SnapshotIdentifier: str,
     AccountWithRestoreAccess: str,
-    SnapshotIdentifier: str = ...,
-    SnapshotArn: str = ...,
     SnapshotClusterIdentifier: str = ...,
 ) -> RevokeSnapshotAccessResultTypeDef:  # (1)
     ...
@@ -4110,6 +4054,7 @@ await def revoke_snapshot_access(
 
 ```python title="Usage example with kwargs"
 kwargs: RevokeSnapshotAccessMessageRequestTypeDef = {  # (1)
+    "SnapshotIdentifier": ...,
     "AccountWithRestoreAccess": ...,
 }
 

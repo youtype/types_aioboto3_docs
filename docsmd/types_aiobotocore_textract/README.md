@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `Textract`.
 
 ### From PyPI with pip
 
@@ -115,7 +110,6 @@ def get_value() -> DocumentMetadataTypeDef:
 - [HumanLoopActivationOutputTypeDef](./type_defs.md#humanloopactivationoutputtypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [NormalizedValueTypeDef](./type_defs.md#normalizedvaluetypedef)
-- [QueryTypeDef](./type_defs.md#querytypedef)
 - [RelationshipTypeDef](./type_defs.md#relationshiptypedef)
 - [BoundingBoxTypeDef](./type_defs.md#boundingboxtypedef)
 - [S3ObjectTypeDef](./type_defs.md#s3objecttypedef)
@@ -132,7 +126,6 @@ def get_value() -> DocumentMetadataTypeDef:
 - [StartDocumentTextDetectionResponseTypeDef](./type_defs.md#startdocumenttextdetectionresponsetypedef)
 - [StartExpenseAnalysisResponseTypeDef](./type_defs.md#startexpenseanalysisresponsetypedef)
 - [AnalyzeIDDetectionsTypeDef](./type_defs.md#analyzeiddetectionstypedef)
-- [QueriesConfigTypeDef](./type_defs.md#queriesconfigtypedef)
 - [DocumentLocationTypeDef](./type_defs.md#documentlocationtypedef)
 - [DocumentTypeDef](./type_defs.md#documenttypedef)
 - [GeometryTypeDef](./type_defs.md#geometrytypedef)

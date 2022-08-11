@@ -96,24 +96,9 @@ parent.cancel_job(**kwargs)
 
 1. See [:material-code-braces: CancelJobRequestRequestTypeDef](./type_defs.md#canceljobrequestrequesttypedef) 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("batch").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_compute\_environment
 
-.
+Creates an Batch compute environment.
 
 Type annotations and code completion for `#!python session.client("batch").create_compute_environment` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.create_compute_environment)
@@ -802,15 +787,13 @@ await def update_compute_environment(
     unmanagedvCpus: int = ...,
     computeResources: ComputeResourceUpdateTypeDef = ...,  # (2)
     serviceRole: str = ...,
-    updatePolicy: UpdatePolicyTypeDef = ...,  # (3)
-) -> UpdateComputeEnvironmentResponseTypeDef:  # (4)
+) -> UpdateComputeEnvironmentResponseTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-brackets: CEStateType](./literals.md#cestatetype) 
 2. See [:material-code-braces: ComputeResourceUpdateTypeDef](./type_defs.md#computeresourceupdatetypedef) 
-3. See [:material-code-braces: UpdatePolicyTypeDef](./type_defs.md#updatepolicytypedef) 
-4. See [:material-code-braces: UpdateComputeEnvironmentResponseTypeDef](./type_defs.md#updatecomputeenvironmentresponsetypedef) 
+3. See [:material-code-braces: UpdateComputeEnvironmentResponseTypeDef](./type_defs.md#updatecomputeenvironmentresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

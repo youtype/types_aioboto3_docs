@@ -7,6 +7,28 @@
     Auto-generated documentation for [SSMIncidents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents)
     type annotations stubs module [types-aiobotocore-ssm-incidents](https://pypi.org/project/types-aiobotocore-ssm-incidents/).
 
+## SsmAutomationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ssm_incidents.type_defs import SsmAutomationTypeDef
+
+def get_value() -> SsmAutomationTypeDef:
+    return {
+        "documentName": ...,
+        "roleArn": ...,
+    }
+```
+
+```python title="Definition"
+class SsmAutomationTypeDef(TypedDict):
+    documentName: str,
+    roleArn: str,
+    documentVersion: NotRequired[str],
+    parameters: NotRequired[Mapping[str, Sequence[str]]],
+    targetAccount: NotRequired[SsmTargetAccountType],  # (1)
+```
+
+1. See [:material-code-brackets: SsmTargetAccountType](./literals.md#ssmtargetaccounttype) 
 ## AddRegionActionTypeDef
 
 ```python title="Usage Example"
@@ -237,23 +259,6 @@ class DeleteTimelineEventInputRequestTypeDef(TypedDict):
     incidentRecordArn: str,
 ```
 
-## DynamicSsmParameterValueTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ssm_incidents.type_defs import DynamicSsmParameterValueTypeDef
-
-def get_value() -> DynamicSsmParameterValueTypeDef:
-    return {
-        "variable": ...,
-    }
-```
-
-```python title="Definition"
-class DynamicSsmParameterValueTypeDef(TypedDict):
-    variable: NotRequired[VariableTypeType],  # (1)
-```
-
-1. See [:material-code-brackets: VariableTypeType](./literals.md#variabletypetype) 
 ## EventSummaryTypeDef
 
 ```python title="Usage Example"
@@ -720,6 +725,23 @@ class UpdateTimelineEventInputRequestTypeDef(TypedDict):
     eventType: NotRequired[str],
 ```
 
+## ActionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ssm_incidents.type_defs import ActionTypeDef
+
+def get_value() -> ActionTypeDef:
+    return {
+        "ssmAutomation": ...,
+    }
+```
+
+```python title="Definition"
+class ActionTypeDef(TypedDict):
+    ssmAutomation: NotRequired[SsmAutomationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: SsmAutomationTypeDef](./type_defs.md#ssmautomationtypedef) 
 ## ConditionTypeDef
 
 ```python title="Usage Example"
@@ -913,30 +935,6 @@ class UpdateReplicationSetActionTypeDef(TypedDict):
 
 1. See [:material-code-braces: AddRegionActionTypeDef](./type_defs.md#addregionactiontypedef) 
 2. See [:material-code-braces: DeleteRegionActionTypeDef](./type_defs.md#deleteregionactiontypedef) 
-## SsmAutomationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ssm_incidents.type_defs import SsmAutomationTypeDef
-
-def get_value() -> SsmAutomationTypeDef:
-    return {
-        "documentName": ...,
-        "roleArn": ...,
-    }
-```
-
-```python title="Definition"
-class SsmAutomationTypeDef(TypedDict):
-    documentName: str,
-    roleArn: str,
-    documentVersion: NotRequired[str],
-    dynamicParameters: NotRequired[Mapping[str, DynamicSsmParameterValueTypeDef]],  # (1)
-    parameters: NotRequired[Mapping[str, Sequence[str]]],
-    targetAccount: NotRequired[SsmTargetAccountType],  # (2)
-```
-
-1. See [:material-code-braces: DynamicSsmParameterValueTypeDef](./type_defs.md#dynamicssmparametervaluetypedef) 
-2. See [:material-code-brackets: SsmTargetAccountType](./literals.md#ssmtargetaccounttype) 
 ## ListTimelineEventsOutputTypeDef
 
 ```python title="Usage Example"
@@ -1195,7 +1193,6 @@ class IncidentTemplateTypeDef(TypedDict):
     impact: int,
     title: str,
     dedupeString: NotRequired[str],
-    incidentTags: NotRequired[Mapping[str, str]],
     notificationTargets: NotRequired[Sequence[NotificationTargetItemTypeDef]],  # (1)
     summary: NotRequired[str],
 ```
@@ -1300,6 +1297,35 @@ class ReplicationSetTypeDef(TypedDict):
 
 1. See [:material-code-braces: RegionInfoTypeDef](./type_defs.md#regioninfotypedef) 
 2. See [:material-code-brackets: ReplicationSetStatusType](./literals.md#replicationsetstatustype) 
+## UpdateResponsePlanInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ssm_incidents.type_defs import UpdateResponsePlanInputRequestTypeDef
+
+def get_value() -> UpdateResponsePlanInputRequestTypeDef:
+    return {
+        "arn": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateResponsePlanInputRequestTypeDef(TypedDict):
+    arn: str,
+    actions: NotRequired[Sequence[ActionTypeDef]],  # (1)
+    chatChannel: NotRequired[ChatChannelTypeDef],  # (2)
+    clientToken: NotRequired[str],
+    displayName: NotRequired[str],
+    engagements: NotRequired[Sequence[str]],
+    incidentTemplateDedupeString: NotRequired[str],
+    incidentTemplateImpact: NotRequired[int],
+    incidentTemplateNotificationTargets: NotRequired[Sequence[NotificationTargetItemTypeDef]],  # (3)
+    incidentTemplateSummary: NotRequired[str],
+    incidentTemplateTitle: NotRequired[str],
+```
+
+1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
+2. See [:material-code-braces: ChatChannelTypeDef](./type_defs.md#chatchanneltypedef) 
+3. See [:material-code-braces: NotificationTargetItemTypeDef](./type_defs.md#notificationtargetitemtypedef) 
 ## FilterTypeDef
 
 ```python title="Usage Example"
@@ -1339,23 +1365,6 @@ class UpdateReplicationSetInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: UpdateReplicationSetActionTypeDef](./type_defs.md#updatereplicationsetactiontypedef) 
-## ActionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ssm_incidents.type_defs import ActionTypeDef
-
-def get_value() -> ActionTypeDef:
-    return {
-        "ssmAutomation": ...,
-    }
-```
-
-```python title="Definition"
-class ActionTypeDef(TypedDict):
-    ssmAutomation: NotRequired[SsmAutomationTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: SsmAutomationTypeDef](./type_defs.md#ssmautomationtypedef) 
 ## ListIncidentRecordsOutputTypeDef
 
 ```python title="Usage Example"
@@ -1398,6 +1407,67 @@ class GetIncidentRecordOutputTypeDef(TypedDict):
 
 1. See [:material-code-braces: IncidentRecordTypeDef](./type_defs.md#incidentrecordtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateResponsePlanInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ssm_incidents.type_defs import CreateResponsePlanInputRequestTypeDef
+
+def get_value() -> CreateResponsePlanInputRequestTypeDef:
+    return {
+        "incidentTemplate": ...,
+        "name": ...,
+    }
+```
+
+```python title="Definition"
+class CreateResponsePlanInputRequestTypeDef(TypedDict):
+    incidentTemplate: IncidentTemplateTypeDef,  # (1)
+    name: str,
+    actions: NotRequired[Sequence[ActionTypeDef]],  # (2)
+    chatChannel: NotRequired[ChatChannelTypeDef],  # (3)
+    clientToken: NotRequired[str],
+    displayName: NotRequired[str],
+    engagements: NotRequired[Sequence[str]],
+    tags: NotRequired[Mapping[str, str]],
+```
+
+1. See [:material-code-braces: IncidentTemplateTypeDef](./type_defs.md#incidenttemplatetypedef) 
+2. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
+3. See [:material-code-braces: ChatChannelTypeDef](./type_defs.md#chatchanneltypedef) 
+## GetResponsePlanOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ssm_incidents.type_defs import GetResponsePlanOutputTypeDef
+
+def get_value() -> GetResponsePlanOutputTypeDef:
+    return {
+        "actions": ...,
+        "arn": ...,
+        "chatChannel": ...,
+        "displayName": ...,
+        "engagements": ...,
+        "incidentTemplate": ...,
+        "name": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetResponsePlanOutputTypeDef(TypedDict):
+    actions: List[ActionTypeDef],  # (1)
+    arn: str,
+    chatChannel: ChatChannelTypeDef,  # (2)
+    displayName: str,
+    engagements: List[str],
+    incidentTemplate: IncidentTemplateTypeDef,  # (3)
+    name: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
+```
+
+1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
+2. See [:material-code-braces: ChatChannelTypeDef](./type_defs.md#chatchanneltypedef) 
+3. See [:material-code-braces: IncidentTemplateTypeDef](./type_defs.md#incidenttemplatetypedef) 
+4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## RelatedItemTypeDef
 
 ```python title="Usage Example"
@@ -1522,97 +1592,6 @@ class ListTimelineEventsInputRequestTypeDef(TypedDict):
 1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
 2. See [:material-code-brackets: TimelineEventSortType](./literals.md#timelineeventsorttype) 
 3. See [:material-code-brackets: SortOrderType](./literals.md#sortordertype) 
-## CreateResponsePlanInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ssm_incidents.type_defs import CreateResponsePlanInputRequestTypeDef
-
-def get_value() -> CreateResponsePlanInputRequestTypeDef:
-    return {
-        "incidentTemplate": ...,
-        "name": ...,
-    }
-```
-
-```python title="Definition"
-class CreateResponsePlanInputRequestTypeDef(TypedDict):
-    incidentTemplate: IncidentTemplateTypeDef,  # (1)
-    name: str,
-    actions: NotRequired[Sequence[ActionTypeDef]],  # (2)
-    chatChannel: NotRequired[ChatChannelTypeDef],  # (3)
-    clientToken: NotRequired[str],
-    displayName: NotRequired[str],
-    engagements: NotRequired[Sequence[str]],
-    tags: NotRequired[Mapping[str, str]],
-```
-
-1. See [:material-code-braces: IncidentTemplateTypeDef](./type_defs.md#incidenttemplatetypedef) 
-2. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
-3. See [:material-code-braces: ChatChannelTypeDef](./type_defs.md#chatchanneltypedef) 
-## GetResponsePlanOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ssm_incidents.type_defs import GetResponsePlanOutputTypeDef
-
-def get_value() -> GetResponsePlanOutputTypeDef:
-    return {
-        "actions": ...,
-        "arn": ...,
-        "chatChannel": ...,
-        "displayName": ...,
-        "engagements": ...,
-        "incidentTemplate": ...,
-        "name": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetResponsePlanOutputTypeDef(TypedDict):
-    actions: List[ActionTypeDef],  # (1)
-    arn: str,
-    chatChannel: ChatChannelTypeDef,  # (2)
-    displayName: str,
-    engagements: List[str],
-    incidentTemplate: IncidentTemplateTypeDef,  # (3)
-    name: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
-```
-
-1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
-2. See [:material-code-braces: ChatChannelTypeDef](./type_defs.md#chatchanneltypedef) 
-3. See [:material-code-braces: IncidentTemplateTypeDef](./type_defs.md#incidenttemplatetypedef) 
-4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## UpdateResponsePlanInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ssm_incidents.type_defs import UpdateResponsePlanInputRequestTypeDef
-
-def get_value() -> UpdateResponsePlanInputRequestTypeDef:
-    return {
-        "arn": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateResponsePlanInputRequestTypeDef(TypedDict):
-    arn: str,
-    actions: NotRequired[Sequence[ActionTypeDef]],  # (1)
-    chatChannel: NotRequired[ChatChannelTypeDef],  # (2)
-    clientToken: NotRequired[str],
-    displayName: NotRequired[str],
-    engagements: NotRequired[Sequence[str]],
-    incidentTemplateDedupeString: NotRequired[str],
-    incidentTemplateImpact: NotRequired[int],
-    incidentTemplateNotificationTargets: NotRequired[Sequence[NotificationTargetItemTypeDef]],  # (3)
-    incidentTemplateSummary: NotRequired[str],
-    incidentTemplateTags: NotRequired[Mapping[str, str]],
-    incidentTemplateTitle: NotRequired[str],
-```
-
-1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
-2. See [:material-code-braces: ChatChannelTypeDef](./type_defs.md#chatchanneltypedef) 
-3. See [:material-code-braces: NotificationTargetItemTypeDef](./type_defs.md#notificationtargetitemtypedef) 
 ## ListRelatedItemsOutputTypeDef
 
 ```python title="Usage Example"

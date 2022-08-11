@@ -797,13 +797,12 @@ from types_aiobotocore_cognito_idp.type_defs import UserContextDataTypeTypeDef
 
 def get_value() -> UserContextDataTypeTypeDef:
     return {
-        "IpAddress": ...,
+        "EncodedData": ...,
     }
 ```
 
 ```python title="Definition"
 class UserContextDataTypeTypeDef(TypedDict):
-    IpAddress: NotRequired[str],
     EncodedData: NotRequired[str],
 ```
 
@@ -1054,23 +1053,6 @@ class SmsConfigurationTypeTypeDef(TypedDict):
     SnsRegion: NotRequired[str],
 ```
 
-## UserAttributeUpdateSettingsTypeTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_cognito_idp.type_defs import UserAttributeUpdateSettingsTypeTypeDef
-
-def get_value() -> UserAttributeUpdateSettingsTypeTypeDef:
-    return {
-        "AttributesRequireVerificationBeforeUpdate": ...,
-    }
-```
-
-```python title="Definition"
-class UserAttributeUpdateSettingsTypeTypeDef(TypedDict):
-    AttributesRequireVerificationBeforeUpdate: NotRequired[Sequence[VerifiedAttributeTypeType]],  # (1)
-```
-
-1. See [:material-code-brackets: VerifiedAttributeTypeType](./literals.md#verifiedattributetypetype) 
 ## UserPoolAddOnsTypeTypeDef
 
 ```python title="Usage Example"
@@ -3691,7 +3673,6 @@ class CreateUserPoolClientRequestRequestTypeDef(TypedDict):
     AnalyticsConfiguration: NotRequired[AnalyticsConfigurationTypeTypeDef],  # (4)
     PreventUserExistenceErrors: NotRequired[PreventUserExistenceErrorTypesType],  # (5)
     EnableTokenRevocation: NotRequired[bool],
-    EnablePropagateAdditionalUserContextData: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: TokenValidityUnitsTypeTypeDef](./type_defs.md#tokenvalidityunitstypetypedef) 
@@ -3733,7 +3714,6 @@ class UpdateUserPoolClientRequestRequestTypeDef(TypedDict):
     AnalyticsConfiguration: NotRequired[AnalyticsConfigurationTypeTypeDef],  # (4)
     PreventUserExistenceErrors: NotRequired[PreventUserExistenceErrorTypesType],  # (5)
     EnableTokenRevocation: NotRequired[bool],
-    EnablePropagateAdditionalUserContextData: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: TokenValidityUnitsTypeTypeDef](./type_defs.md#tokenvalidityunitstypetypedef) 
@@ -3777,7 +3757,6 @@ class UserPoolClientTypeTypeDef(TypedDict):
     AnalyticsConfiguration: NotRequired[AnalyticsConfigurationTypeTypeDef],  # (4)
     PreventUserExistenceErrors: NotRequired[PreventUserExistenceErrorTypesType],  # (5)
     EnableTokenRevocation: NotRequired[bool],
-    EnablePropagateAdditionalUserContextData: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: TokenValidityUnitsTypeTypeDef](./type_defs.md#tokenvalidityunitstypetypedef) 
@@ -4682,29 +4661,27 @@ class UpdateUserPoolRequestRequestTypeDef(TypedDict):
     EmailVerificationSubject: NotRequired[str],
     VerificationMessageTemplate: NotRequired[VerificationMessageTemplateTypeTypeDef],  # (4)
     SmsAuthenticationMessage: NotRequired[str],
-    UserAttributeUpdateSettings: NotRequired[UserAttributeUpdateSettingsTypeTypeDef],  # (5)
-    MfaConfiguration: NotRequired[UserPoolMfaTypeType],  # (6)
-    DeviceConfiguration: NotRequired[DeviceConfigurationTypeTypeDef],  # (7)
-    EmailConfiguration: NotRequired[EmailConfigurationTypeTypeDef],  # (8)
-    SmsConfiguration: NotRequired[SmsConfigurationTypeTypeDef],  # (9)
+    MfaConfiguration: NotRequired[UserPoolMfaTypeType],  # (5)
+    DeviceConfiguration: NotRequired[DeviceConfigurationTypeTypeDef],  # (6)
+    EmailConfiguration: NotRequired[EmailConfigurationTypeTypeDef],  # (7)
+    SmsConfiguration: NotRequired[SmsConfigurationTypeTypeDef],  # (8)
     UserPoolTags: NotRequired[Mapping[str, str]],
-    AdminCreateUserConfig: NotRequired[AdminCreateUserConfigTypeTypeDef],  # (10)
-    UserPoolAddOns: NotRequired[UserPoolAddOnsTypeTypeDef],  # (11)
-    AccountRecoverySetting: NotRequired[AccountRecoverySettingTypeTypeDef],  # (12)
+    AdminCreateUserConfig: NotRequired[AdminCreateUserConfigTypeTypeDef],  # (9)
+    UserPoolAddOns: NotRequired[UserPoolAddOnsTypeTypeDef],  # (10)
+    AccountRecoverySetting: NotRequired[AccountRecoverySettingTypeTypeDef],  # (11)
 ```
 
 1. See [:material-code-braces: UserPoolPolicyTypeTypeDef](./type_defs.md#userpoolpolicytypetypedef) 
 2. See [:material-code-braces: LambdaConfigTypeTypeDef](./type_defs.md#lambdaconfigtypetypedef) 
 3. See [:material-code-brackets: VerifiedAttributeTypeType](./literals.md#verifiedattributetypetype) 
 4. See [:material-code-braces: VerificationMessageTemplateTypeTypeDef](./type_defs.md#verificationmessagetemplatetypetypedef) 
-5. See [:material-code-braces: UserAttributeUpdateSettingsTypeTypeDef](./type_defs.md#userattributeupdatesettingstypetypedef) 
-6. See [:material-code-brackets: UserPoolMfaTypeType](./literals.md#userpoolmfatypetype) 
-7. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
-8. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
-9. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
-10. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
-11. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
-12. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
+5. See [:material-code-brackets: UserPoolMfaTypeType](./literals.md#userpoolmfatypetype) 
+6. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
+7. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
+8. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
+9. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
+10. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
+11. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
 ## AddCustomAttributesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4749,16 +4726,15 @@ class CreateUserPoolRequestRequestTypeDef(TypedDict):
     VerificationMessageTemplate: NotRequired[VerificationMessageTemplateTypeTypeDef],  # (6)
     SmsAuthenticationMessage: NotRequired[str],
     MfaConfiguration: NotRequired[UserPoolMfaTypeType],  # (7)
-    UserAttributeUpdateSettings: NotRequired[UserAttributeUpdateSettingsTypeTypeDef],  # (8)
-    DeviceConfiguration: NotRequired[DeviceConfigurationTypeTypeDef],  # (9)
-    EmailConfiguration: NotRequired[EmailConfigurationTypeTypeDef],  # (10)
-    SmsConfiguration: NotRequired[SmsConfigurationTypeTypeDef],  # (11)
+    DeviceConfiguration: NotRequired[DeviceConfigurationTypeTypeDef],  # (8)
+    EmailConfiguration: NotRequired[EmailConfigurationTypeTypeDef],  # (9)
+    SmsConfiguration: NotRequired[SmsConfigurationTypeTypeDef],  # (10)
     UserPoolTags: NotRequired[Mapping[str, str]],
-    AdminCreateUserConfig: NotRequired[AdminCreateUserConfigTypeTypeDef],  # (12)
-    Schema: NotRequired[Sequence[SchemaAttributeTypeTypeDef]],  # (13)
-    UserPoolAddOns: NotRequired[UserPoolAddOnsTypeTypeDef],  # (14)
-    UsernameConfiguration: NotRequired[UsernameConfigurationTypeTypeDef],  # (15)
-    AccountRecoverySetting: NotRequired[AccountRecoverySettingTypeTypeDef],  # (16)
+    AdminCreateUserConfig: NotRequired[AdminCreateUserConfigTypeTypeDef],  # (11)
+    Schema: NotRequired[Sequence[SchemaAttributeTypeTypeDef]],  # (12)
+    UserPoolAddOns: NotRequired[UserPoolAddOnsTypeTypeDef],  # (13)
+    UsernameConfiguration: NotRequired[UsernameConfigurationTypeTypeDef],  # (14)
+    AccountRecoverySetting: NotRequired[AccountRecoverySettingTypeTypeDef],  # (15)
 ```
 
 1. See [:material-code-braces: UserPoolPolicyTypeTypeDef](./type_defs.md#userpoolpolicytypetypedef) 
@@ -4768,15 +4744,14 @@ class CreateUserPoolRequestRequestTypeDef(TypedDict):
 5. See [:material-code-brackets: UsernameAttributeTypeType](./literals.md#usernameattributetypetype) 
 6. See [:material-code-braces: VerificationMessageTemplateTypeTypeDef](./type_defs.md#verificationmessagetemplatetypetypedef) 
 7. See [:material-code-brackets: UserPoolMfaTypeType](./literals.md#userpoolmfatypetype) 
-8. See [:material-code-braces: UserAttributeUpdateSettingsTypeTypeDef](./type_defs.md#userattributeupdatesettingstypetypedef) 
-9. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
-10. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
-11. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
-12. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
-13. See [:material-code-braces: SchemaAttributeTypeTypeDef](./type_defs.md#schemaattributetypetypedef) 
-14. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
-15. See [:material-code-braces: UsernameConfigurationTypeTypeDef](./type_defs.md#usernameconfigurationtypetypedef) 
-16. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
+8. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
+9. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
+10. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
+11. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
+12. See [:material-code-braces: SchemaAttributeTypeTypeDef](./type_defs.md#schemaattributetypetypedef) 
+13. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
+14. See [:material-code-braces: UsernameConfigurationTypeTypeDef](./type_defs.md#usernameconfigurationtypetypedef) 
+15. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
 ## UserPoolTypeTypeDef
 
 ```python title="Usage Example"
@@ -4806,22 +4781,21 @@ class UserPoolTypeTypeDef(TypedDict):
     EmailVerificationSubject: NotRequired[str],
     VerificationMessageTemplate: NotRequired[VerificationMessageTemplateTypeTypeDef],  # (8)
     SmsAuthenticationMessage: NotRequired[str],
-    UserAttributeUpdateSettings: NotRequired[UserAttributeUpdateSettingsTypeTypeDef],  # (9)
-    MfaConfiguration: NotRequired[UserPoolMfaTypeType],  # (10)
-    DeviceConfiguration: NotRequired[DeviceConfigurationTypeTypeDef],  # (11)
+    MfaConfiguration: NotRequired[UserPoolMfaTypeType],  # (9)
+    DeviceConfiguration: NotRequired[DeviceConfigurationTypeTypeDef],  # (10)
     EstimatedNumberOfUsers: NotRequired[int],
-    EmailConfiguration: NotRequired[EmailConfigurationTypeTypeDef],  # (12)
-    SmsConfiguration: NotRequired[SmsConfigurationTypeTypeDef],  # (13)
+    EmailConfiguration: NotRequired[EmailConfigurationTypeTypeDef],  # (11)
+    SmsConfiguration: NotRequired[SmsConfigurationTypeTypeDef],  # (12)
     UserPoolTags: NotRequired[Dict[str, str]],
     SmsConfigurationFailure: NotRequired[str],
     EmailConfigurationFailure: NotRequired[str],
     Domain: NotRequired[str],
     CustomDomain: NotRequired[str],
-    AdminCreateUserConfig: NotRequired[AdminCreateUserConfigTypeTypeDef],  # (14)
-    UserPoolAddOns: NotRequired[UserPoolAddOnsTypeTypeDef],  # (15)
-    UsernameConfiguration: NotRequired[UsernameConfigurationTypeTypeDef],  # (16)
+    AdminCreateUserConfig: NotRequired[AdminCreateUserConfigTypeTypeDef],  # (13)
+    UserPoolAddOns: NotRequired[UserPoolAddOnsTypeTypeDef],  # (14)
+    UsernameConfiguration: NotRequired[UsernameConfigurationTypeTypeDef],  # (15)
     Arn: NotRequired[str],
-    AccountRecoverySetting: NotRequired[AccountRecoverySettingTypeTypeDef],  # (17)
+    AccountRecoverySetting: NotRequired[AccountRecoverySettingTypeTypeDef],  # (16)
 ```
 
 1. See [:material-code-braces: UserPoolPolicyTypeTypeDef](./type_defs.md#userpoolpolicytypetypedef) 
@@ -4832,15 +4806,14 @@ class UserPoolTypeTypeDef(TypedDict):
 6. See [:material-code-brackets: AliasAttributeTypeType](./literals.md#aliasattributetypetype) 
 7. See [:material-code-brackets: UsernameAttributeTypeType](./literals.md#usernameattributetypetype) 
 8. See [:material-code-braces: VerificationMessageTemplateTypeTypeDef](./type_defs.md#verificationmessagetemplatetypetypedef) 
-9. See [:material-code-braces: UserAttributeUpdateSettingsTypeTypeDef](./type_defs.md#userattributeupdatesettingstypetypedef) 
-10. See [:material-code-brackets: UserPoolMfaTypeType](./literals.md#userpoolmfatypetype) 
-11. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
-12. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
-13. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
-14. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
-15. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
-16. See [:material-code-braces: UsernameConfigurationTypeTypeDef](./type_defs.md#usernameconfigurationtypetypedef) 
-17. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
+9. See [:material-code-brackets: UserPoolMfaTypeType](./literals.md#userpoolmfatypetype) 
+10. See [:material-code-braces: DeviceConfigurationTypeTypeDef](./type_defs.md#deviceconfigurationtypetypedef) 
+11. See [:material-code-braces: EmailConfigurationTypeTypeDef](./type_defs.md#emailconfigurationtypetypedef) 
+12. See [:material-code-braces: SmsConfigurationTypeTypeDef](./type_defs.md#smsconfigurationtypetypedef) 
+13. See [:material-code-braces: AdminCreateUserConfigTypeTypeDef](./type_defs.md#admincreateuserconfigtypetypedef) 
+14. See [:material-code-braces: UserPoolAddOnsTypeTypeDef](./type_defs.md#userpooladdonstypetypedef) 
+15. See [:material-code-braces: UsernameConfigurationTypeTypeDef](./type_defs.md#usernameconfigurationtypetypedef) 
+16. See [:material-code-braces: AccountRecoverySettingTypeTypeDef](./type_defs.md#accountrecoverysettingtypetypedef) 
 ## ListUserPoolsResponseTypeDef
 
 ```python title="Usage Example"

@@ -757,7 +757,6 @@ Type annotations and code completion for `#!python GetRelationalDatabaseBundlesP
 def paginate(
     self,
     *,
-    includeInactive: bool = ...,
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
 ) -> AsyncIterator[GetRelationalDatabaseBundlesResultTypeDef]:  # (2)
     ...
@@ -769,7 +768,7 @@ def paginate(
 
 ```python title="Usage example with kwargs"
 kwargs: GetRelationalDatabaseBundlesRequestGetRelationalDatabaseBundlesPaginateTypeDef = {  # (1)
-    "includeInactive": ...,
+    "PaginationConfig": ...,
 }
 
 parent.paginate(**kwargs)

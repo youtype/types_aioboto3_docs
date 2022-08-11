@@ -590,7 +590,6 @@ class GetDevicePositionHistoryRequestRequestTypeDef(TypedDict):
     DeviceId: str,
     TrackerName: str,
     EndTimeExclusive: NotRequired[Union[datetime, str]],
-    MaxResults: NotRequired[int],
     NextToken: NotRequired[str],
     StartTimeInclusive: NotRequired[Union[datetime, str]],
 ```
@@ -820,7 +819,6 @@ def get_value() -> ListGeofencesRequestRequestTypeDef:
 ```python title="Definition"
 class ListGeofencesRequestRequestTypeDef(TypedDict):
     CollectionName: str,
-    MaxResults: NotRequired[int],
     NextToken: NotRequired[str],
 ```
 

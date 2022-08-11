@@ -55,25 +55,6 @@ AssociationStatusType = Literal[
     "PENDING_DISASSOCIATION",
 ]
 ```
-## ClientDeviceTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_workspaces.literals import ClientDeviceTypeType
-
-def get_value() -> ClientDeviceTypeType:
-    return "DeviceTypeAndroid"
-```
-
-```python title="Definition"
-ClientDeviceTypeType = Literal[
-    "DeviceTypeAndroid",
-    "DeviceTypeIos",
-    "DeviceTypeLinux",
-    "DeviceTypeOsx",
-    "DeviceTypeWeb",
-    "DeviceTypeWindows",
-]
-```
 ## ComputeType
 
 ```python title="Usage Example"
@@ -86,9 +67,7 @@ def get_value() -> ComputeType:
 ```python title="Definition"
 ComputeType = Literal[
     "GRAPHICS",
-    "GRAPHICS_G4DN",
     "GRAPHICSPRO",
-    "GRAPHICSPRO_G4DN",
     "PERFORMANCE",
     "POWER",
     "POWERPRO",
@@ -451,7 +430,6 @@ def get_value() -> WorkspaceImageIngestionProcessType:
 ```python title="Definition"
 WorkspaceImageIngestionProcessType = Literal[
     "BYOL_GRAPHICS",
-    "BYOL_GRAPHICS_G4DN",
     "BYOL_GRAPHICSPRO",
     "BYOL_REGULAR",
     "BYOL_REGULAR_WSP",
@@ -579,7 +557,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -612,7 +589,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -649,7 +625,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -663,7 +638,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -697,7 +671,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -723,7 +696,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -767,7 +739,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -780,13 +751,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",

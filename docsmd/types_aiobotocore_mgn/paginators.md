@@ -92,7 +92,7 @@ Type annotations and code completion for `#!python DescribeJobsPaginator.paginat
 def paginate(
     self,
     *,
-    filters: DescribeJobsRequestFiltersTypeDef = ...,  # (1)
+    filters: DescribeJobsRequestFiltersTypeDef,  # (1)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
 ) -> AsyncIterator[DescribeJobsResponseTypeDef]:  # (3)
     ...
@@ -112,58 +112,6 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeJobsRequestDescribeJobsPaginateTypeDef](./type_defs.md#describejobsrequestdescribejobspaginatetypedef) 
-## DescribeLaunchConfigurationTemplatesPaginator
-
-Type annotations and code completion for `#!python session.client("mgn").get_paginator("describe_launch_configuration_templates")`.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Paginator.DescribeLaunchConfigurationTemplates)
-
-```python title="Usage example"
-from aioboto3.session import Session
-
-from types_aiobotocore_mgn.paginator import DescribeLaunchConfigurationTemplatesPaginator
-
-session = Session()
-
-session = get_session()
-async with session.client("mgn") as client:  # (1)
-    paginator: DescribeLaunchConfigurationTemplatesPaginator = client.get_paginator("describe_launch_configuration_templates")  # (2)
-    async for item in paginator.paginate(...):
-        item: DescribeLaunchConfigurationTemplatesResponseTypeDef
-        print(item)  # (3)
-```
-
-1. client: [mgnClient](./client.md)
-2. paginator: [DescribeLaunchConfigurationTemplatesPaginator](./paginators.md#describelaunchconfigurationtemplatespaginator)
-3. item: [:material-code-braces: DescribeLaunchConfigurationTemplatesResponseTypeDef](./type_defs.md#describelaunchconfigurationtemplatesresponsetypedef) 
-
-
-### paginate
-
-Type annotations and code completion for `#!python DescribeLaunchConfigurationTemplatesPaginator.paginate` method.
-
-```python title="Method definition"
-def paginate(
-    self,
-    *,
-    launchConfigurationTemplateIDs: Sequence[str] = ...,
-    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
-) -> AsyncIterator[DescribeLaunchConfigurationTemplatesResponseTypeDef]:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-2. See [:material-code-braces: DescribeLaunchConfigurationTemplatesResponseTypeDef](./type_defs.md#describelaunchconfigurationtemplatesresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeLaunchConfigurationTemplatesRequestDescribeLaunchConfigurationTemplatesPaginateTypeDef = {  # (1)
-    "launchConfigurationTemplateIDs": ...,
-}
-
-parent.paginate(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeLaunchConfigurationTemplatesRequestDescribeLaunchConfigurationTemplatesPaginateTypeDef](./type_defs.md#describelaunchconfigurationtemplatesrequestdescribelaunchconfigurationtemplatespaginatetypedef) 
 ## DescribeReplicationConfigurationTemplatesPaginator
 
 Type annotations and code completion for `#!python session.client("mgn").get_paginator("describe_replication_configuration_templates")`.
@@ -197,7 +145,7 @@ Type annotations and code completion for `#!python DescribeReplicationConfigurat
 def paginate(
     self,
     *,
-    replicationConfigurationTemplateIDs: Sequence[str] = ...,
+    replicationConfigurationTemplateIDs: Sequence[str],
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
 ) -> AsyncIterator[DescribeReplicationConfigurationTemplatesResponseTypeDef]:  # (2)
     ...
@@ -249,7 +197,7 @@ Type annotations and code completion for `#!python DescribeSourceServersPaginato
 def paginate(
     self,
     *,
-    filters: DescribeSourceServersRequestFiltersTypeDef = ...,  # (1)
+    filters: DescribeSourceServersRequestFiltersTypeDef,  # (1)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
 ) -> AsyncIterator[DescribeSourceServersResponseTypeDef]:  # (3)
     ...

@@ -163,58 +163,6 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListChannelsRequestListChannelsPaginateTypeDef](./type_defs.md#listchannelsrequestlistchannelspaginatetypedef) 
-## ListLiveSourcesPaginator
-
-Type annotations and code completion for `#!python session.client("mediatailor").get_paginator("list_live_sources")`.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Paginator.ListLiveSources)
-
-```python title="Usage example"
-from aioboto3.session import Session
-
-from types_aiobotocore_mediatailor.paginator import ListLiveSourcesPaginator
-
-session = Session()
-
-session = get_session()
-async with session.client("mediatailor") as client:  # (1)
-    paginator: ListLiveSourcesPaginator = client.get_paginator("list_live_sources")  # (2)
-    async for item in paginator.paginate(...):
-        item: ListLiveSourcesResponseTypeDef
-        print(item)  # (3)
-```
-
-1. client: [MediaTailorClient](./client.md)
-2. paginator: [ListLiveSourcesPaginator](./paginators.md#listlivesourcespaginator)
-3. item: [:material-code-braces: ListLiveSourcesResponseTypeDef](./type_defs.md#listlivesourcesresponsetypedef) 
-
-
-### paginate
-
-Type annotations and code completion for `#!python ListLiveSourcesPaginator.paginate` method.
-
-```python title="Method definition"
-def paginate(
-    self,
-    *,
-    SourceLocationName: str,
-    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
-) -> AsyncIterator[ListLiveSourcesResponseTypeDef]:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-2. See [:material-code-braces: ListLiveSourcesResponseTypeDef](./type_defs.md#listlivesourcesresponsetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ListLiveSourcesRequestListLiveSourcesPaginateTypeDef = {  # (1)
-    "SourceLocationName": ...,
-}
-
-parent.paginate(**kwargs)
-```
-
-1. See [:material-code-braces: ListLiveSourcesRequestListLiveSourcesPaginateTypeDef](./type_defs.md#listlivesourcesrequestlistlivesourcespaginatetypedef) 
 ## ListPlaybackConfigurationsPaginator
 
 Type annotations and code completion for `#!python session.client("mediatailor").get_paginator("list_playback_configurations")`.

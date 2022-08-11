@@ -3565,7 +3565,6 @@ class JobSummaryTypeDef(TypedDict):
     createdAt: NotRequired[datetime],
     lastUpdatedAt: NotRequired[datetime],
     completedAt: NotRequired[datetime],
-    isConcurrent: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: TargetSelectionType](./literals.md#targetselectiontype) 
@@ -4045,33 +4044,6 @@ class ManagedJobTemplateSummaryTypeDef(TypedDict):
     templateVersion: NotRequired[str],
 ```
 
-## ListMetricValuesRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iot.type_defs import ListMetricValuesRequestRequestTypeDef
-
-def get_value() -> ListMetricValuesRequestRequestTypeDef:
-    return {
-        "thingName": ...,
-        "metricName": ...,
-        "startTime": ...,
-        "endTime": ...,
-    }
-```
-
-```python title="Definition"
-class ListMetricValuesRequestRequestTypeDef(TypedDict):
-    thingName: str,
-    metricName: str,
-    startTime: Union[datetime, str],
-    endTime: Union[datetime, str],
-    dimensionName: NotRequired[str],
-    dimensionValueOperator: NotRequired[DimensionValueOperatorType],  # (1)
-    maxResults: NotRequired[int],
-    nextToken: NotRequired[str],
-```
-
-1. See [:material-code-brackets: DimensionValueOperatorType](./literals.md#dimensionvalueoperatortype) 
 ## ListMitigationActionsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -5667,24 +5639,6 @@ class AbortConfigTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: AbortCriteriaTypeDef](./type_defs.md#abortcriteriatypedef) 
-## MetricDatumTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iot.type_defs import MetricDatumTypeDef
-
-def get_value() -> MetricDatumTypeDef:
-    return {
-        "timestamp": ...,
-    }
-```
-
-```python title="Definition"
-class MetricDatumTypeDef(TypedDict):
-    timestamp: NotRequired[datetime],
-    value: NotRequired[MetricValueTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: MetricValueTypeDef](./type_defs.md#metricvaluetypedef) 
 ## UpdateFleetMetricRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -8129,13 +8083,11 @@ class CACertificateDescriptionTypeDef(TypedDict):
     customerVersion: NotRequired[int],
     generationId: NotRequired[str],
     validity: NotRequired[CertificateValidityTypeDef],  # (3)
-    certificateMode: NotRequired[CertificateModeType],  # (4)
 ```
 
 1. See [:material-code-brackets: CACertificateStatusType](./literals.md#cacertificatestatustype) 
 2. See [:material-code-brackets: AutoRegistrationStatusType](./literals.md#autoregistrationstatustype) 
 3. See [:material-code-braces: CertificateValidityTypeDef](./type_defs.md#certificatevaliditytypedef) 
-4. See [:material-code-brackets: CertificateModeType](./literals.md#certificatemodetype) 
 ## ListCACertificatesResponseTypeDef
 
 ```python title="Usage Example"
@@ -8757,23 +8709,22 @@ from types_aiobotocore_iot.type_defs import RegisterCACertificateRequestRequestT
 def get_value() -> RegisterCACertificateRequestRequestTypeDef:
     return {
         "caCertificate": ...,
+        "verificationCertificate": ...,
     }
 ```
 
 ```python title="Definition"
 class RegisterCACertificateRequestRequestTypeDef(TypedDict):
     caCertificate: str,
-    verificationCertificate: NotRequired[str],
+    verificationCertificate: str,
     setAsActive: NotRequired[bool],
     allowAutoRegistration: NotRequired[bool],
     registrationConfig: NotRequired[RegistrationConfigTypeDef],  # (1)
     tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-    certificateMode: NotRequired[CertificateModeType],  # (3)
 ```
 
 1. See [:material-code-braces: RegistrationConfigTypeDef](./type_defs.md#registrationconfigtypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-brackets: CertificateModeType](./literals.md#certificatemodetype) 
 ## UpdateCACertificateRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -9630,33 +9581,6 @@ class ListJobsRequestListJobsPaginateTypeDef(TypedDict):
 1. See [:material-code-brackets: JobStatusType](./literals.md#jobstatustype) 
 2. See [:material-code-brackets: TargetSelectionType](./literals.md#targetselectiontype) 
 3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListMetricValuesRequestListMetricValuesPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iot.type_defs import ListMetricValuesRequestListMetricValuesPaginateTypeDef
-
-def get_value() -> ListMetricValuesRequestListMetricValuesPaginateTypeDef:
-    return {
-        "thingName": ...,
-        "metricName": ...,
-        "startTime": ...,
-        "endTime": ...,
-    }
-```
-
-```python title="Definition"
-class ListMetricValuesRequestListMetricValuesPaginateTypeDef(TypedDict):
-    thingName: str,
-    metricName: str,
-    startTime: Union[datetime, str],
-    endTime: Union[datetime, str],
-    dimensionName: NotRequired[str],
-    dimensionValueOperator: NotRequired[DimensionValueOperatorType],  # (1)
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-brackets: DimensionValueOperatorType](./literals.md#dimensionvalueoperatortype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListMitigationActionsRequestListMitigationActionsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -11061,28 +10985,6 @@ class ValidateSecurityProfileBehaviorsResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ValidationErrorTypeDef](./type_defs.md#validationerrortypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListMetricValuesResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iot.type_defs import ListMetricValuesResponseTypeDef
-
-def get_value() -> ListMetricValuesResponseTypeDef:
-    return {
-        "metricDatumList": ...,
-        "nextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListMetricValuesResponseTypeDef(TypedDict):
-    metricDatumList: List[MetricDatumTypeDef],  # (1)
-    nextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: MetricDatumTypeDef](./type_defs.md#metricdatumtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DeniedTypeDef
 
@@ -12544,7 +12446,6 @@ class JobTypeDef(TypedDict):
     jobTemplateArn: NotRequired[str],
     jobExecutionsRetryConfig: NotRequired[JobExecutionsRetryConfigTypeDef],  # (8)
     documentParameters: NotRequired[Dict[str, str]],
-    isConcurrent: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: TargetSelectionType](./literals.md#targetselectiontype) 

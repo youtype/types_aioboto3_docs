@@ -10,12 +10,7 @@
 
 ## How to install
 
-### VSCode extension
 
-Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
-extension to your VSCode and run `AWS boto3: Quick Start` command.
-
-Click `Modify` and select `boto3 common` and `ApplicationInsights`.
 
 ### From PyPI with pip
 
@@ -87,7 +82,6 @@ def get_value() -> CloudWatchEventSourceType:
 - [DiscoveryTypeType](./literals.md#discoverytypetype)
 - [FeedbackKeyType](./literals.md#feedbackkeytype)
 - [FeedbackValueType](./literals.md#feedbackvaluetype)
-- [GroupingTypeType](./literals.md#groupingtypetype)
 - [LogFilterType](./literals.md#logfiltertype)
 - [OsTypeType](./literals.md#ostypetype)
 - [SeverityLevelType](./literals.md#severityleveltype)

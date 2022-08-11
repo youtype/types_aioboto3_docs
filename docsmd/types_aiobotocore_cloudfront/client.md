@@ -110,7 +110,6 @@ async with session.client("cloudfront") as client:
         client.StreamingDistributionAlreadyExists,
         client.StreamingDistributionNotDisabled,
         client.TestFunctionFailed,
-        client.TooLongCSPInResponseHeadersPolicy,
         client.TooManyCacheBehaviors,
         client.TooManyCachePolicies,
         client.TooManyCertificates,
@@ -220,21 +219,6 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
-    ...
-```
-
-
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("cloudfront").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
     ...
 ```
 

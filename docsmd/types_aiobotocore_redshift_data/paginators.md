@@ -47,7 +47,6 @@ def paginate(
     Schema: str = ...,
     SecretArn: str = ...,
     Table: str = ...,
-    WorkgroupName: str = ...,
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
 ) -> AsyncIterator[DescribeTableResponseTypeDef]:  # (2)
     ...
@@ -155,7 +154,6 @@ def paginate(
     ClusterIdentifier: str = ...,
     DbUser: str = ...,
     SecretArn: str = ...,
-    WorkgroupName: str = ...,
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
 ) -> AsyncIterator[ListDatabasesResponseTypeDef]:  # (2)
     ...
@@ -213,7 +211,6 @@ def paginate(
     DbUser: str = ...,
     SchemaPattern: str = ...,
     SecretArn: str = ...,
-    WorkgroupName: str = ...,
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
 ) -> AsyncIterator[ListSchemasResponseTypeDef]:  # (2)
     ...
@@ -327,7 +324,6 @@ def paginate(
     SchemaPattern: str = ...,
     SecretArn: str = ...,
     TablePattern: str = ...,
-    WorkgroupName: str = ...,
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
 ) -> AsyncIterator[ListTablesResponseTypeDef]:  # (2)
     ...

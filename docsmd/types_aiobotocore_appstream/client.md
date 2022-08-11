@@ -231,21 +231,6 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("appstream").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### copy\_image
 
 Copies the image within the same region or to a new region within the same AWS
@@ -467,8 +452,7 @@ await def create_fleet(
     Platform: PlatformTypeType = ...,  # (6)
     MaxConcurrentSessions: int = ...,
     UsbDeviceFilterStrings: Sequence[str] = ...,
-    SessionScriptS3Location: S3LocationTypeDef = ...,  # (7)
-) -> CreateFleetResultTypeDef:  # (8)
+) -> CreateFleetResultTypeDef:  # (7)
     ...
 ```
 
@@ -478,8 +462,7 @@ await def create_fleet(
 4. See [:material-code-braces: DomainJoinInfoTypeDef](./type_defs.md#domainjoininfotypedef) 
 5. See [:material-code-brackets: StreamViewType](./literals.md#streamviewtype) 
 6. See [:material-code-brackets: PlatformTypeType](./literals.md#platformtypetype) 
-7. See [:material-code-braces: S3LocationTypeDef](./type_defs.md#s3locationtypedef) 
-8. See [:material-code-braces: CreateFleetResultTypeDef](./type_defs.md#createfleetresulttypedef) 
+7. See [:material-code-braces: CreateFleetResultTypeDef](./type_defs.md#createfleetresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -590,8 +573,7 @@ await def create_stack(
     Tags: Mapping[str, str] = ...,
     AccessEndpoints: Sequence[AccessEndpointTypeDef] = ...,  # (4)
     EmbedHostDomains: Sequence[str] = ...,
-    StreamingExperienceSettings: StreamingExperienceSettingsTypeDef = ...,  # (5)
-) -> CreateStackResultTypeDef:  # (6)
+) -> CreateStackResultTypeDef:  # (5)
     ...
 ```
 
@@ -599,8 +581,7 @@ await def create_stack(
 2. See [:material-code-braces: UserSettingTypeDef](./type_defs.md#usersettingtypedef) 
 3. See [:material-code-braces: ApplicationSettingsTypeDef](./type_defs.md#applicationsettingstypedef) 
 4. See [:material-code-braces: AccessEndpointTypeDef](./type_defs.md#accessendpointtypedef) 
-5. See [:material-code-braces: StreamingExperienceSettingsTypeDef](./type_defs.md#streamingexperiencesettingstypedef) 
-6. See [:material-code-braces: CreateStackResultTypeDef](./type_defs.md#createstackresulttypedef) 
+5. See [:material-code-braces: CreateStackResultTypeDef](./type_defs.md#createstackresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2131,8 +2112,7 @@ await def update_fleet(
     Platform: PlatformTypeType = ...,  # (6)
     MaxConcurrentSessions: int = ...,
     UsbDeviceFilterStrings: Sequence[str] = ...,
-    SessionScriptS3Location: S3LocationTypeDef = ...,  # (7)
-) -> UpdateFleetResultTypeDef:  # (8)
+) -> UpdateFleetResultTypeDef:  # (7)
     ...
 ```
 
@@ -2142,8 +2122,7 @@ await def update_fleet(
 4. See [:material-code-brackets: FleetAttributeType](./literals.md#fleetattributetype) 
 5. See [:material-code-brackets: StreamViewType](./literals.md#streamviewtype) 
 6. See [:material-code-brackets: PlatformTypeType](./literals.md#platformtypetype) 
-7. See [:material-code-braces: S3LocationTypeDef](./type_defs.md#s3locationtypedef) 
-8. See [:material-code-braces: UpdateFleetResultTypeDef](./type_defs.md#updatefleetresulttypedef) 
+7. See [:material-code-braces: UpdateFleetResultTypeDef](./type_defs.md#updatefleetresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2212,8 +2191,7 @@ await def update_stack(
     ApplicationSettings: ApplicationSettingsTypeDef = ...,  # (4)
     AccessEndpoints: Sequence[AccessEndpointTypeDef] = ...,  # (5)
     EmbedHostDomains: Sequence[str] = ...,
-    StreamingExperienceSettings: StreamingExperienceSettingsTypeDef = ...,  # (6)
-) -> UpdateStackResultTypeDef:  # (7)
+) -> UpdateStackResultTypeDef:  # (6)
     ...
 ```
 
@@ -2222,8 +2200,7 @@ await def update_stack(
 3. See [:material-code-braces: UserSettingTypeDef](./type_defs.md#usersettingtypedef) 
 4. See [:material-code-braces: ApplicationSettingsTypeDef](./type_defs.md#applicationsettingstypedef) 
 5. See [:material-code-braces: AccessEndpointTypeDef](./type_defs.md#accessendpointtypedef) 
-6. See [:material-code-braces: StreamingExperienceSettingsTypeDef](./type_defs.md#streamingexperiencesettingstypedef) 
-7. See [:material-code-braces: UpdateStackResultTypeDef](./type_defs.md#updatestackresulttypedef) 
+6. See [:material-code-braces: UpdateStackResultTypeDef](./type_defs.md#updatestackresulttypedef) 
 
 
 ```python title="Usage example with kwargs"

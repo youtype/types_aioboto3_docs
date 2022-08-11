@@ -35,24 +35,6 @@ type checking and code completion should work out of the box.
 
 
 
-=== "Paginators"
-
-    ```python title="Paginator usage example"
-    from aioboto3.session import Session
-
-
-    session = Session()
-
-    async with session.client("cloudcontrol") as client:  # (1)
-        paginator = client.get_paginator("list_resource_requests")  # (2)
-        async for item in paginator.paginate(...):
-            print(item)  # (3)
-    ```
-
-    1. client: [CloudControlApiClient](./client.md)
-    2. paginator: [ListResourceRequestsPaginator](./paginators.md#listresourcerequestspaginator)
-    3. item: [:material-code-braces: ListResourceRequestsOutputTypeDef](./type_defs.md#listresourcerequestsoutputtypedef) 
-
 
 
 === "Waiters"
@@ -105,30 +87,6 @@ However, these type annotations can be helpful in your functions and methods.
     3. result: [:material-code-braces: CancelResourceRequestOutputTypeDef](./type_defs.md#cancelresourcerequestoutputtypedef) 
 
 
-
-=== "Paginators"
-
-    ```python title="Paginator usage example"
-    from aioboto3.session import Session
-
-    from types_aiobotocore_cloudcontrol.client import CloudControlApiClient
-    from types_aiobotocore_cloudcontrol.paginator import ListResourceRequestsPaginator
-    from types_aiobotocore_cloudcontrol.type_defs import ListResourceRequestsOutputTypeDef
-
-
-    session = Session()
-
-    client: CloudControlApiClient
-    async with session.client("cloudcontrol") as client:  # (1)
-        paginator: ListResourceRequestsPaginator = client.get_paginator("list_resource_requests")  # (2)
-        async for item in paginator.paginate(...):
-            item: ListResourceRequestsOutputTypeDef
-            print(item)  # (3)
-    ```
-
-    1. client: [CloudControlApiClient](./client.md)
-    2. paginator: [ListResourceRequestsPaginator](./paginators.md#listresourcerequestspaginator)
-    3. item: [:material-code-braces: ListResourceRequestsOutputTypeDef](./type_defs.md#listresourcerequestsoutputtypedef) 
 
 
 

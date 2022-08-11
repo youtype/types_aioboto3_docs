@@ -35,34 +35,6 @@ HandlerErrorCodeType = Literal[
     "Throttling",
 ]
 ```
-## ListResourceRequestsPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_cloudcontrol.literals import ListResourceRequestsPaginatorName
-
-def get_value() -> ListResourceRequestsPaginatorName:
-    return "list_resource_requests"
-```
-
-```python title="Definition"
-ListResourceRequestsPaginatorName = Literal[
-    "list_resource_requests",
-]
-```
-## ListResourcesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_cloudcontrol.literals import ListResourcesPaginatorName
-
-def get_value() -> ListResourcesPaginatorName:
-    return "list_resources"
-```
-
-```python title="Definition"
-ListResourcesPaginatorName = Literal[
-    "list_resources",
-]
-```
 ## OperationStatusType
 
 ```python title="Usage Example"
@@ -173,7 +145,6 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
-    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -206,7 +177,6 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
-    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -243,7 +213,6 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
-    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -257,7 +226,6 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
-    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -291,7 +259,6 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
-    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -317,7 +284,6 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
-    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -361,7 +327,6 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
-    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -374,13 +339,11 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
-    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -470,21 +433,6 @@ ResourceServiceName = Literal[
     "s3",
     "sns",
     "sqs",
-]
-```
-## PaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_cloudcontrol.literals import PaginatorName
-
-def get_value() -> PaginatorName:
-    return "list_resource_requests"
-```
-
-```python title="Definition"
-PaginatorName = Literal[
-    "list_resource_requests",
-    "list_resources",
 ]
 ```
 ## WaiterName

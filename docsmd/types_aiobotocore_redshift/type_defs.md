@@ -199,15 +199,15 @@ from types_aiobotocore_redshift.type_defs import AuthorizeSnapshotAccessMessageR
 
 def get_value() -> AuthorizeSnapshotAccessMessageRequestTypeDef:
     return {
+        "SnapshotIdentifier": ...,
         "AccountWithRestoreAccess": ...,
     }
 ```
 
 ```python title="Definition"
 class AuthorizeSnapshotAccessMessageRequestTypeDef(TypedDict):
+    SnapshotIdentifier: str,
     AccountWithRestoreAccess: str,
-    SnapshotIdentifier: NotRequired[str],
-    SnapshotArn: NotRequired[str],
     SnapshotClusterIdentifier: NotRequired[str],
 ```
 
@@ -1812,19 +1812,17 @@ from types_aiobotocore_redshift.type_defs import EnableLoggingMessageRequestType
 def get_value() -> EnableLoggingMessageRequestTypeDef:
     return {
         "ClusterIdentifier": ...,
+        "BucketName": ...,
     }
 ```
 
 ```python title="Definition"
 class EnableLoggingMessageRequestTypeDef(TypedDict):
     ClusterIdentifier: str,
-    BucketName: NotRequired[str],
+    BucketName: str,
     S3KeyPrefix: NotRequired[str],
-    LogDestinationType: NotRequired[LogDestinationTypeType],  # (1)
-    LogExports: NotRequired[Sequence[str]],
 ```
 
-1. See [:material-code-brackets: LogDestinationTypeType](./literals.md#logdestinationtypetype) 
 ## EnableSnapshotCopyMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -1933,24 +1931,6 @@ class GetClusterCredentialsMessageRequestTypeDef(TypedDict):
     DurationSeconds: NotRequired[int],
     AutoCreate: NotRequired[bool],
     DbGroups: NotRequired[Sequence[str]],
-```
-
-## GetClusterCredentialsWithIAMMessageRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_redshift.type_defs import GetClusterCredentialsWithIAMMessageRequestTypeDef
-
-def get_value() -> GetClusterCredentialsWithIAMMessageRequestTypeDef:
-    return {
-        "ClusterIdentifier": ...,
-    }
-```
-
-```python title="Definition"
-class GetClusterCredentialsWithIAMMessageRequestTypeDef(TypedDict):
-    ClusterIdentifier: str,
-    DbName: NotRequired[str],
-    DurationSeconds: NotRequired[int],
 ```
 
 ## GetReservedNodeExchangeConfigurationOptionsInputMessageRequestTypeDef
@@ -2487,14 +2467,14 @@ from types_aiobotocore_redshift.type_defs import RestoreFromClusterSnapshotMessa
 def get_value() -> RestoreFromClusterSnapshotMessageRequestTypeDef:
     return {
         "ClusterIdentifier": ...,
+        "SnapshotIdentifier": ...,
     }
 ```
 
 ```python title="Definition"
 class RestoreFromClusterSnapshotMessageRequestTypeDef(TypedDict):
     ClusterIdentifier: str,
-    SnapshotIdentifier: NotRequired[str],
-    SnapshotArn: NotRequired[str],
+    SnapshotIdentifier: str,
     SnapshotClusterIdentifier: NotRequired[str],
     Port: NotRequired[int],
     AvailabilityZone: NotRequired[str],
@@ -2524,7 +2504,6 @@ class RestoreFromClusterSnapshotMessageRequestTypeDef(TypedDict):
     DefaultIamRoleArn: NotRequired[str],
     ReservedNodeId: NotRequired[str],
     TargetReservedNodeOfferingId: NotRequired[str],
-    Encrypted: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: AquaConfigurationStatusType](./literals.md#aquaconfigurationstatustype) 
@@ -2663,15 +2642,15 @@ from types_aiobotocore_redshift.type_defs import RevokeSnapshotAccessMessageRequ
 
 def get_value() -> RevokeSnapshotAccessMessageRequestTypeDef:
     return {
+        "SnapshotIdentifier": ...,
         "AccountWithRestoreAccess": ...,
     }
 ```
 
 ```python title="Definition"
 class RevokeSnapshotAccessMessageRequestTypeDef(TypedDict):
+    SnapshotIdentifier: str,
     AccountWithRestoreAccess: str,
-    SnapshotIdentifier: NotRequired[str],
-    SnapshotArn: NotRequired[str],
     SnapshotClusterIdentifier: NotRequired[str],
 ```
 
@@ -2752,31 +2731,6 @@ class ClusterCredentialsTypeDef(TypedDict):
     DbUser: str,
     DbPassword: str,
     Expiration: datetime,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ClusterExtendedCredentialsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_redshift.type_defs import ClusterExtendedCredentialsTypeDef
-
-def get_value() -> ClusterExtendedCredentialsTypeDef:
-    return {
-        "DbUser": ...,
-        "DbPassword": ...,
-        "Expiration": ...,
-        "NextRefreshTime": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ClusterExtendedCredentialsTypeDef(TypedDict):
-    DbUser: str,
-    DbPassword: str,
-    Expiration: datetime,
-    NextRefreshTime: datetime,
     ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
@@ -2929,8 +2883,6 @@ def get_value() -> LoggingStatusTypeDef:
         "LastSuccessfulDeliveryTime": ...,
         "LastFailureTime": ...,
         "LastFailureMessage": ...,
-        "LogDestinationType": ...,
-        "LogExports": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2943,13 +2895,10 @@ class LoggingStatusTypeDef(TypedDict):
     LastSuccessfulDeliveryTime: datetime,
     LastFailureTime: datetime,
     LastFailureMessage: str,
-    LogDestinationType: LogDestinationTypeType,  # (1)
-    LogExports: List[str],
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
-1. See [:material-code-brackets: LogDestinationTypeType](./literals.md#logdestinationtypetype) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ModifyAuthenticationProfileResultTypeDef
 
 ```python title="Usage Example"
@@ -3365,7 +3314,6 @@ class CreateClusterMessageRequestTypeDef(TypedDict):
     AvailabilityZoneRelocation: NotRequired[bool],
     AquaConfigurationStatus: NotRequired[AquaConfigurationStatusType],  # (2)
     DefaultIamRoleArn: NotRequired[str],
-    LoadSampleData: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -4613,7 +4561,6 @@ def get_value() -> DescribeClusterSnapshotsMessageDescribeClusterSnapshotsPagina
 class DescribeClusterSnapshotsMessageDescribeClusterSnapshotsPaginateTypeDef(TypedDict):
     ClusterIdentifier: NotRequired[str],
     SnapshotIdentifier: NotRequired[str],
-    SnapshotArn: NotRequired[str],
     SnapshotType: NotRequired[str],
     StartTime: NotRequired[Union[datetime, str]],
     EndTime: NotRequired[Union[datetime, str]],
@@ -4642,7 +4589,6 @@ def get_value() -> DescribeClusterSnapshotsMessageRequestTypeDef:
 class DescribeClusterSnapshotsMessageRequestTypeDef(TypedDict):
     ClusterIdentifier: NotRequired[str],
     SnapshotIdentifier: NotRequired[str],
-    SnapshotArn: NotRequired[str],
     SnapshotType: NotRequired[str],
     StartTime: NotRequired[Union[datetime, str]],
     EndTime: NotRequired[Union[datetime, str]],
@@ -4671,7 +4617,6 @@ def get_value() -> DescribeClusterSnapshotsMessageSnapshotAvailableWaitTypeDef:
 class DescribeClusterSnapshotsMessageSnapshotAvailableWaitTypeDef(TypedDict):
     ClusterIdentifier: NotRequired[str],
     SnapshotIdentifier: NotRequired[str],
-    SnapshotArn: NotRequired[str],
     SnapshotType: NotRequired[str],
     StartTime: NotRequired[Union[datetime, str]],
     EndTime: NotRequired[Union[datetime, str]],
@@ -4769,7 +4714,6 @@ class DescribeNodeConfigurationOptionsMessageDescribeNodeConfigurationOptionsPag
     ActionType: ActionTypeType,  # (1)
     ClusterIdentifier: NotRequired[str],
     SnapshotIdentifier: NotRequired[str],
-    SnapshotArn: NotRequired[str],
     OwnerAccount: NotRequired[str],
     Filters: NotRequired[Sequence[NodeConfigurationOptionsFilterTypeDef]],  # (2)
     PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (3)
@@ -4794,7 +4738,6 @@ class DescribeNodeConfigurationOptionsMessageRequestTypeDef(TypedDict):
     ActionType: ActionTypeType,  # (1)
     ClusterIdentifier: NotRequired[str],
     SnapshotIdentifier: NotRequired[str],
-    SnapshotArn: NotRequired[str],
     OwnerAccount: NotRequired[str],
     Filters: NotRequired[Sequence[NodeConfigurationOptionsFilterTypeDef]],  # (2)
     Marker: NotRequired[str],

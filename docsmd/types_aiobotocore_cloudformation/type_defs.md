@@ -317,10 +317,8 @@ class DeploymentTargetsTypeDef(TypedDict):
     Accounts: NotRequired[Sequence[str]],
     AccountsUrl: NotRequired[str],
     OrganizationalUnitIds: NotRequired[Sequence[str]],
-    AccountFilterType: NotRequired[AccountFilterTypeType],  # (1)
 ```
 
-1. See [:material-code-brackets: AccountFilterTypeType](./literals.md#accountfiltertypetype) 
 ## StackSetOperationPreferencesTypeDef
 
 ```python title="Usage Example"
@@ -1126,7 +1124,6 @@ class StackSetOperationSummaryTypeDef(TypedDict):
     Status: NotRequired[StackSetOperationStatusType],  # (2)
     CreationTimestamp: NotRequired[datetime],
     EndTimestamp: NotRequired[datetime],
-    StatusReason: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: StackSetOperationActionType](./literals.md#stacksetoperationactiontype) 
@@ -3955,7 +3952,6 @@ class StackSetOperationTypeDef(TypedDict):
     EndTimestamp: NotRequired[datetime],
     DeploymentTargets: NotRequired[DeploymentTargetsTypeDef],  # (4)
     StackSetDriftDetectionDetails: NotRequired[StackSetDriftDetectionDetailsTypeDef],  # (5)
-    StatusReason: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: StackSetOperationActionType](./literals.md#stacksetoperationactiontype) 

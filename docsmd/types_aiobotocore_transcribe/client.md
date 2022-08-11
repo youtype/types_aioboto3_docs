@@ -69,24 +69,9 @@ def can_paginate(
 ```
 
 
-### close
-
-Closes underlying endpoint connections.
-
-Type annotations and code completion for `#!python session.client("transcribe").close` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.close)
-
-```python title="Method definition"
-await def close(
-    self,
-) -> None:
-    ...
-```
-
-
 ### create\_call\_analytics\_category
 
-Creates a new Call Analytics category.
+Creates a call analytics category.
 
 Type annotations and code completion for `#!python session.client("transcribe").create_call_analytics_category` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.create_call_analytics_category)
@@ -230,7 +215,8 @@ parent.create_vocabulary(**kwargs)
 
 ### create\_vocabulary\_filter
 
-Creates a new custom vocabulary filter.
+Creates a new vocabulary filter that you can use to filter words from your
+transcription output.
 
 Type annotations and code completion for `#!python session.client("transcribe").create_vocabulary_filter` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.create_vocabulary_filter)
@@ -266,7 +252,7 @@ parent.create_vocabulary_filter(**kwargs)
 
 ### delete\_call\_analytics\_category
 
-Deletes a Call Analytics category.
+Deletes a call analytics category.
 
 Type annotations and code completion for `#!python session.client("transcribe").delete_call_analytics_category` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_call_analytics_category)
@@ -294,7 +280,7 @@ parent.delete_call_analytics_category(**kwargs)
 
 ### delete\_call\_analytics\_job
 
-Deletes a Call Analytics job.
+Deletes a call analytics job.
 
 Type annotations and code completion for `#!python session.client("transcribe").delete_call_analytics_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_call_analytics_job)
@@ -351,7 +337,7 @@ parent.delete_language_model(**kwargs)
 
 ### delete\_medical\_transcription\_job
 
-Deletes a medical transcription job.
+Deletes a medical transcription job, along with any related information.
 
 Type annotations and code completion for `#!python session.client("transcribe").delete_medical_transcription_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_medical_transcription_job)
@@ -409,7 +395,7 @@ parent.delete_medical_vocabulary(**kwargs)
 
 ### delete\_transcription\_job
 
-Deletes a transcription job.
+Deletes a transcription job, along with any related information.
 
 Type annotations and code completion for `#!python session.client("transcribe").delete_transcription_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_transcription_job)
@@ -496,7 +482,8 @@ parent.delete_vocabulary_filter(**kwargs)
 
 ### describe\_language\_model
 
-Provides information about the specified custom language model.
+Provides information about a specific custom language model in your Amazon Web
+Services account.
 
 Type annotations and code completion for `#!python session.client("transcribe").describe_language_model` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.describe_language_model)
@@ -544,7 +531,7 @@ await def generate_presigned_url(
 
 ### get\_call\_analytics\_category
 
-Provides information about the specified Call Analytics category.
+Retrieves information about a call analytics category.
 
 Type annotations and code completion for `#!python session.client("transcribe").get_call_analytics_category` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_call_analytics_category)
@@ -573,7 +560,7 @@ parent.get_call_analytics_category(**kwargs)
 
 ### get\_call\_analytics\_job
 
-Provides information about the specified Call Analytics job.
+Retrieves information about a call analytics job.
 
 Type annotations and code completion for `#!python session.client("transcribe").get_call_analytics_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_call_analytics_job)
@@ -602,7 +589,7 @@ parent.get_call_analytics_job(**kwargs)
 
 ### get\_medical\_transcription\_job
 
-Provides information about the specified medical transcription job.
+Retrieves information about a medical transcription job.
 
 Type annotations and code completion for `#!python session.client("transcribe").get_medical_transcription_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_medical_transcription_job)
@@ -631,7 +618,7 @@ parent.get_medical_transcription_job(**kwargs)
 
 ### get\_medical\_vocabulary
 
-Provides information about the specified custom medical vocabulary.
+Retrieves information about a medical vocabulary.
 
 Type annotations and code completion for `#!python session.client("transcribe").get_medical_vocabulary` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_medical_vocabulary)
@@ -660,7 +647,7 @@ parent.get_medical_vocabulary(**kwargs)
 
 ### get\_transcription\_job
 
-Provides information about the specified transcription job.
+Returns information about a transcription job.
 
 Type annotations and code completion for `#!python session.client("transcribe").get_transcription_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_transcription_job)
@@ -689,7 +676,7 @@ parent.get_transcription_job(**kwargs)
 
 ### get\_vocabulary
 
-Provides information about the specified custom vocabulary.
+Gets information about a vocabulary.
 
 Type annotations and code completion for `#!python session.client("transcribe").get_vocabulary` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_vocabulary)
@@ -718,7 +705,7 @@ parent.get_vocabulary(**kwargs)
 
 ### get\_vocabulary\_filter
 
-Provides information about the specified custom vocabulary filter.
+Returns information about a vocabulary filter.
 
 Type annotations and code completion for `#!python session.client("transcribe").get_vocabulary_filter` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_vocabulary_filter)
@@ -747,8 +734,8 @@ parent.get_vocabulary_filter(**kwargs)
 
 ### list\_call\_analytics\_categories
 
-Provides a list of Call Analytics categories, including all rules that make up
-each category.
+Provides more information about the call analytics categories that you've
+created.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_call_analytics_categories` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_call_analytics_categories)
@@ -778,7 +765,8 @@ parent.list_call_analytics_categories(**kwargs)
 
 ### list\_call\_analytics\_jobs
 
-Provides a list of Call Analytics jobs that match the specified criteria.
+List call analytics jobs with a specified status or substring that matches their
+names.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_call_analytics_jobs` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_call_analytics_jobs)
@@ -811,7 +799,7 @@ parent.list_call_analytics_jobs(**kwargs)
 
 ### list\_language\_models
 
-Provides a list of custom language models that match the specified criteria.
+Provides more information about the custom language models you've created.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_language_models` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_language_models)
@@ -844,7 +832,8 @@ parent.list_language_models(**kwargs)
 
 ### list\_medical\_transcription\_jobs
 
-Provides a list of medical transcription jobs that match the specified criteria.
+Lists medical transcription jobs with a specified status or substring that
+matches their names.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_medical_transcription_jobs` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_medical_transcription_jobs)
@@ -877,8 +866,7 @@ parent.list_medical_transcription_jobs(**kwargs)
 
 ### list\_medical\_vocabularies
 
-Provides a list of custom medical vocabularies that match the specified
-criteria.
+Returns a list of vocabularies that match the specified criteria.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_medical_vocabularies` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_medical_vocabularies)
@@ -911,8 +899,8 @@ parent.list_medical_vocabularies(**kwargs)
 
 ### list\_tags\_for\_resource
 
-Lists all tags associated with the specified transcription job, vocabulary,
-model, or resource.
+Lists all tags associated with a given transcription job, vocabulary, or
+resource.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_tags_for_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_tags_for_resource)
@@ -941,7 +929,7 @@ parent.list_tags_for_resource(**kwargs)
 
 ### list\_transcription\_jobs
 
-Provides a list of transcription jobs that match the specified criteria.
+Lists transcription jobs with the specified status.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_transcription_jobs` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_transcription_jobs)
@@ -974,7 +962,7 @@ parent.list_transcription_jobs(**kwargs)
 
 ### list\_vocabularies
 
-Provides a list of custom vocabularies that match the specified criteria.
+Returns a list of vocabularies that match the specified criteria.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_vocabularies` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_vocabularies)
@@ -1007,7 +995,7 @@ parent.list_vocabularies(**kwargs)
 
 ### list\_vocabulary\_filters
 
-Provides a list of custom vocabulary filters that match the specified criteria.
+Gets information about vocabulary filters.
 
 Type annotations and code completion for `#!python session.client("transcribe").list_vocabulary_filters` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_vocabulary_filters)
@@ -1038,8 +1026,8 @@ parent.list_vocabulary_filters(**kwargs)
 
 ### start\_call\_analytics\_job
 
-Transcribes the audio from a customer service call and applies any additional
-Request Parameters you choose to include in your request.
+Starts an asynchronous analytics job that not only transcribes the audio
+recording of a caller and agent, but also returns additional insights.
 
 Type annotations and code completion for `#!python session.client("transcribe").start_call_analytics_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.start_call_analytics_job)
@@ -1050,9 +1038,9 @@ await def start_call_analytics_job(
     *,
     CallAnalyticsJobName: str,
     Media: MediaTypeDef,  # (1)
+    DataAccessRoleArn: str,
     OutputLocation: str = ...,
     OutputEncryptionKMSKeyId: str = ...,
-    DataAccessRoleArn: str = ...,
     Settings: CallAnalyticsJobSettingsTypeDef = ...,  # (2)
     ChannelDefinitions: Sequence[ChannelDefinitionTypeDef] = ...,  # (3)
 ) -> StartCallAnalyticsJobResponseTypeDef:  # (4)
@@ -1069,6 +1057,7 @@ await def start_call_analytics_job(
 kwargs: StartCallAnalyticsJobRequestRequestTypeDef = {  # (1)
     "CallAnalyticsJobName": ...,
     "Media": ...,
+    "DataAccessRoleArn": ...,
 }
 
 parent.start_call_analytics_job(**kwargs)
@@ -1078,8 +1067,7 @@ parent.start_call_analytics_job(**kwargs)
 
 ### start\_medical\_transcription\_job
 
-Transcribes the audio from a medical dictation or conversation and applies any
-additional Request Parameters you choose to include in your request.
+Starts a batch job to transcribe medical speech to text.
 
 Type annotations and code completion for `#!python session.client("transcribe").start_medical_transcription_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.start_medical_transcription_job)
@@ -1134,8 +1122,7 @@ parent.start_medical_transcription_job(**kwargs)
 
 ### start\_transcription\_job
 
-Transcribes the audio from a media file and applies any additional Request
-Parameters you choose to include in your request.
+Starts an asynchronous job to transcribe speech to text.
 
 Type annotations and code completion for `#!python session.client("transcribe").start_transcription_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.start_transcription_job)
@@ -1158,7 +1145,6 @@ await def start_transcription_job(
     JobExecutionSettings: JobExecutionSettingsTypeDef = ...,  # (6)
     ContentRedaction: ContentRedactionTypeDef = ...,  # (7)
     IdentifyLanguage: bool = ...,
-    IdentifyMultipleLanguages: bool = ...,
     LanguageOptions: Sequence[LanguageCodeType] = ...,  # (8)
     Subtitles: SubtitlesTypeDef = ...,  # (9)
     Tags: Sequence[TagTypeDef] = ...,  # (10)
@@ -1194,8 +1180,7 @@ parent.start_transcription_job(**kwargs)
 
 ### tag\_resource
 
-Adds one or more custom tags, each in the form of a key:value pair, to the
-specified resource.
+Tags an Amazon Transcribe resource with the given list of tags.
 
 Type annotations and code completion for `#!python session.client("transcribe").tag_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.tag_resource)
@@ -1226,7 +1211,7 @@ parent.tag_resource(**kwargs)
 
 ### untag\_resource
 
-Removes the specified tags from the specified Amazon Transcribe resource.
+Removes specified tags from a specified Amazon Transcribe resource.
 
 Type annotations and code completion for `#!python session.client("transcribe").untag_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.untag_resource)
@@ -1256,7 +1241,7 @@ parent.untag_resource(**kwargs)
 
 ### update\_call\_analytics\_category
 
-Updates the specified Call Analytics category with new rules.
+Updates the call analytics category with new values.
 
 Type annotations and code completion for `#!python session.client("transcribe").update_call_analytics_category` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.update_call_analytics_category)
@@ -1288,7 +1273,8 @@ parent.update_call_analytics_category(**kwargs)
 
 ### update\_medical\_vocabulary
 
-Updates an existing custom medical vocabulary with new values.
+Updates a vocabulary with new values that you provide in a different text file
+from the one you used to create the vocabulary.
 
 Type annotations and code completion for `#!python session.client("transcribe").update_medical_vocabulary` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.update_medical_vocabulary)
@@ -1321,7 +1307,7 @@ parent.update_medical_vocabulary(**kwargs)
 
 ### update\_vocabulary
 
-Updates an existing custom vocabulary with new values.
+Updates an existing vocabulary with new values.
 
 Type annotations and code completion for `#!python session.client("transcribe").update_vocabulary` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.update_vocabulary)
@@ -1355,7 +1341,7 @@ parent.update_vocabulary(**kwargs)
 
 ### update\_vocabulary\_filter
 
-Updates an existing custom vocabulary filter with a new list of words.
+Updates a vocabulary filter with a new list of filtered words.
 
 Type annotations and code completion for `#!python session.client("transcribe").update_vocabulary_filter` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.update_vocabulary_filter)
