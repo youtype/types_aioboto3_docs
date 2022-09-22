@@ -570,6 +570,22 @@ class DescribeReleaseLabelInputRequestTypeDef(TypedDict):
     MaxResults: NotRequired[int],
 ```
 
+## OSReleaseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_emr.type_defs import OSReleaseTypeDef
+
+def get_value() -> OSReleaseTypeDef:
+    return {
+        "Label": ...,
+    }
+```
+
+```python title="Definition"
+class OSReleaseTypeDef(TypedDict):
+    Label: NotRequired[str],
+```
+
 ## SimplifiedApplicationTypeDef
 
 ```python title="Usage Example"
@@ -654,6 +670,7 @@ class VolumeSpecificationTypeDef(TypedDict):
     VolumeType: str,
     SizeInGB: int,
     Iops: NotRequired[int],
+    Throughput: NotRequired[int],
 ```
 
 ## EbsVolumeTypeDef
@@ -2272,6 +2289,7 @@ def get_value() -> DescribeReleaseLabelOutputTypeDef:
         "ReleaseLabel": ...,
         "Applications": ...,
         "NextToken": ...,
+        "AvailableOSReleases": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2281,11 +2299,13 @@ class DescribeReleaseLabelOutputTypeDef(TypedDict):
     ReleaseLabel: str,
     Applications: List[SimplifiedApplicationTypeDef],  # (1)
     NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+    AvailableOSReleases: List[OSReleaseTypeDef],  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
 ```
 
 1. See [:material-code-braces: SimplifiedApplicationTypeDef](./type_defs.md#simplifiedapplicationtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+2. See [:material-code-braces: OSReleaseTypeDef](./type_defs.md#osreleasetypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## EbsBlockDeviceConfigTypeDef
 
 ```python title="Usage Example"
@@ -3078,6 +3098,7 @@ class ClusterTypeDef(TypedDict):
     OutpostArn: NotRequired[str],
     StepConcurrencyLevel: NotRequired[int],
     PlacementGroups: NotRequired[List[PlacementGroupConfigTypeDef]],  # (10)
+    OSReleaseLabel: NotRequired[str],
 ```
 
 1. See [:material-code-braces: ClusterStatusTypeDef](./type_defs.md#clusterstatustypedef) 
@@ -3230,11 +3251,13 @@ class InstanceGroupModifyConfigTypeDef(TypedDict):
     InstanceCount: NotRequired[int],
     EC2InstanceIdsToTerminate: NotRequired[Sequence[str]],
     ShrinkPolicy: NotRequired[ShrinkPolicyTypeDef],  # (1)
-    Configurations: NotRequired[Sequence[ConfigurationTypeDef]],  # (2)
+    ReconfigurationType: NotRequired[ReconfigurationTypeType],  # (2)
+    Configurations: NotRequired[Sequence[ConfigurationTypeDef]],  # (3)
 ```
 
 1. See [:material-code-braces: ShrinkPolicyTypeDef](./type_defs.md#shrinkpolicytypedef) 
-2. See [:material-code-braces: ConfigurationTypeDef](./type_defs.md#configurationtypedef) 
+2. See [:material-code-brackets: ReconfigurationTypeType](./literals.md#reconfigurationtypetype) 
+3. See [:material-code-braces: ConfigurationTypeDef](./type_defs.md#configurationtypedef) 
 ## InstanceTypeDef
 
 ```python title="Usage Example"
@@ -3325,6 +3348,7 @@ class StepTypeDef(TypedDict):
     Config: NotRequired[HadoopStepConfigTypeDef],  # (1)
     ActionOnFailure: NotRequired[ActionOnFailureType],  # (2)
     Status: NotRequired[StepStatusTypeDef],  # (3)
+    ExecutionRoleArn: NotRequired[str],
 ```
 
 1. See [:material-code-braces: HadoopStepConfigTypeDef](./type_defs.md#hadoopstepconfigtypedef) 
@@ -3435,6 +3459,7 @@ def get_value() -> AddJobFlowStepsInputRequestTypeDef:
 class AddJobFlowStepsInputRequestTypeDef(TypedDict):
     JobFlowId: str,
     Steps: Sequence[StepConfigTypeDef],  # (1)
+    ExecutionRoleArn: NotRequired[str],
 ```
 
 1. See [:material-code-braces: StepConfigTypeDef](./type_defs.md#stepconfigtypedef) 
@@ -3971,6 +3996,7 @@ class RunJobFlowInputRequestTypeDef(TypedDict):
     ManagedScalingPolicy: NotRequired[ManagedScalingPolicyTypeDef],  # (11)
     PlacementGroupConfigs: NotRequired[Sequence[PlacementGroupConfigTypeDef]],  # (12)
     AutoTerminationPolicy: NotRequired[AutoTerminationPolicyTypeDef],  # (13)
+    OSReleaseLabel: NotRequired[str],
 ```
 
 1. See [:material-code-braces: JobFlowInstancesConfigTypeDef](./type_defs.md#jobflowinstancesconfigtypedef) 

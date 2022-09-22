@@ -21,6 +21,7 @@ APINameType = Literal[
     "GET_CLIP",
     "GET_DASH_STREAMING_SESSION_URL",
     "GET_HLS_STREAMING_SESSION_URL",
+    "GET_IMAGES",
     "GET_MEDIA",
     "GET_MEDIA_FOR_FRAGMENT_LIST",
     "LIST_FRAGMENTS",
@@ -63,11 +64,12 @@ ChannelRoleType = Literal[
 from types_aiobotocore_kinesisvideo.literals import ChannelTypeType
 
 def get_value() -> ChannelTypeType:
-    return "SINGLE_MASTER"
+    return "FULL_MESH"
 ```
 
 ```python title="Definition"
 ChannelTypeType = Literal[
+    "FULL_MESH",
     "SINGLE_MASTER",
 ]
 ```
@@ -83,6 +85,65 @@ def get_value() -> ComparisonOperatorType:
 ```python title="Definition"
 ComparisonOperatorType = Literal[
     "BEGINS_WITH",
+]
+```
+## ConfigurationStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.literals import ConfigurationStatusType
+
+def get_value() -> ConfigurationStatusType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+ConfigurationStatusType = Literal[
+    "DISABLED",
+    "ENABLED",
+]
+```
+## FormatConfigKeyType
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.literals import FormatConfigKeyType
+
+def get_value() -> FormatConfigKeyType:
+    return "JPEGQuality"
+```
+
+```python title="Definition"
+FormatConfigKeyType = Literal[
+    "JPEGQuality",
+]
+```
+## FormatType
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.literals import FormatType
+
+def get_value() -> FormatType:
+    return "JPEG"
+```
+
+```python title="Definition"
+FormatType = Literal[
+    "JPEG",
+    "PNG",
+]
+```
+## ImageSelectorTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.literals import ImageSelectorTypeType
+
+def get_value() -> ImageSelectorTypeType:
+    return "PRODUCER_TIMESTAMP"
+```
+
+```python title="Definition"
+ImageSelectorTypeType = Literal[
+    "PRODUCER_TIMESTAMP",
+    "SERVER_TIMESTAMP",
 ]
 ```
 ## ListSignalingChannelsPaginatorName
@@ -199,6 +260,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -206,6 +268,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -238,6 +301,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -274,6 +338,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -287,6 +352,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -320,6 +386,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -339,12 +406,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -388,8 +457,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -400,11 +471,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -450,6 +523,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -517,11 +591,12 @@ PaginatorName = Literal[
 from types_aiobotocore_kinesisvideo.literals import RegionName
 
 def get_value() -> RegionName:
-    return "ap-east-1"
+    return "af-south-1"
 ```
 
 ```python title="Definition"
 RegionName = Literal[
+    "af-south-1",
     "ap-east-1",
     "ap-northeast-1",
     "ap-northeast-2",

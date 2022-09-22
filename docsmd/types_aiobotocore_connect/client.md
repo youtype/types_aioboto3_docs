@@ -46,6 +46,7 @@ async with session.client("connect") as client:
         client.InvalidRequestException,
         client.LimitExceededException,
         client.OutboundContactNotPermittedException,
+        client.PropertyValidationException,
         client.ResourceConflictException,
         client.ResourceInUseException,
         client.ResourceNotFoundException,
@@ -261,6 +262,39 @@ parent.associate_lex_bot(**kwargs)
 
 1. See [:material-code-braces: AssociateLexBotRequestRequestTypeDef](./type_defs.md#associatelexbotrequestrequesttypedef) 
 
+### associate\_phone\_number\_contact\_flow
+
+Associates a flow with a phone number claimed to your Amazon Connect instance.
+
+Type annotations and code completion for `#!python session.client("connect").associate_phone_number_contact_flow` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.associate_phone_number_contact_flow)
+
+```python title="Method definition"
+await def associate_phone_number_contact_flow(
+    self,
+    *,
+    PhoneNumberId: str,
+    InstanceId: str,
+    ContactFlowId: str,
+) -> EmptyResponseMetadataTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: AssociatePhoneNumberContactFlowRequestRequestTypeDef = {  # (1)
+    "PhoneNumberId": ...,
+    "InstanceId": ...,
+    "ContactFlowId": ...,
+}
+
+parent.associate_phone_number_contact_flow(**kwargs)
+```
+
+1. See [:material-code-braces: AssociatePhoneNumberContactFlowRequestRequestTypeDef](./type_defs.md#associatephonenumbercontactflowrequestrequesttypedef) 
+
 ### associate\_queue\_quick\_connects
 
 This API is in preview release for Amazon Connect and is subject to change.
@@ -375,6 +409,55 @@ def can_paginate(
 ```
 
 
+### claim\_phone\_number
+
+Claims an available phone number to your Amazon Connect instance.
+
+Type annotations and code completion for `#!python session.client("connect").claim_phone_number` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.claim_phone_number)
+
+```python title="Method definition"
+await def claim_phone_number(
+    self,
+    *,
+    TargetArn: str,
+    PhoneNumber: str,
+    PhoneNumberDescription: str = ...,
+    Tags: Mapping[str, str] = ...,
+    ClientToken: str = ...,
+) -> ClaimPhoneNumberResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ClaimPhoneNumberResponseTypeDef](./type_defs.md#claimphonenumberresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ClaimPhoneNumberRequestRequestTypeDef = {  # (1)
+    "TargetArn": ...,
+    "PhoneNumber": ...,
+}
+
+parent.claim_phone_number(**kwargs)
+```
+
+1. See [:material-code-braces: ClaimPhoneNumberRequestRequestTypeDef](./type_defs.md#claimphonenumberrequestrequesttypedef) 
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("connect").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_agent\_status
 
 This API is in preview release for Amazon Connect and is subject to change.
@@ -414,7 +497,7 @@ parent.create_agent_status(**kwargs)
 
 ### create\_contact\_flow
 
-Creates a contact flow for the specified Amazon Connect instance.
+Creates a flow for the specified Amazon Connect instance.
 
 Type annotations and code completion for `#!python session.client("connect").create_contact_flow` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_contact_flow)
@@ -452,7 +535,7 @@ parent.create_contact_flow(**kwargs)
 
 ### create\_contact\_flow\_module
 
-Creates a contact flow module for the specified Amazon Connect instance.
+Creates a flow module for the specified Amazon Connect instance.
 
 Type annotations and code completion for `#!python session.client("connect").create_contact_flow_module` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_contact_flow_module)
@@ -751,6 +834,49 @@ parent.create_security_profile(**kwargs)
 
 1. See [:material-code-braces: CreateSecurityProfileRequestRequestTypeDef](./type_defs.md#createsecurityprofilerequestrequesttypedef) 
 
+### create\_task\_template
+
+Creates a new task template in the specified Amazon Connect instance.
+
+Type annotations and code completion for `#!python session.client("connect").create_task_template` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_task_template)
+
+```python title="Method definition"
+await def create_task_template(
+    self,
+    *,
+    InstanceId: str,
+    Name: str,
+    Fields: Sequence[TaskTemplateFieldTypeDef],  # (1)
+    Description: str = ...,
+    ContactFlowId: str = ...,
+    Constraints: TaskTemplateConstraintsTypeDef = ...,  # (2)
+    Defaults: TaskTemplateDefaultsTypeDef = ...,  # (3)
+    Status: TaskTemplateStatusType = ...,  # (4)
+    ClientToken: str = ...,
+) -> CreateTaskTemplateResponseTypeDef:  # (5)
+    ...
+```
+
+1. See [:material-code-braces: TaskTemplateFieldTypeDef](./type_defs.md#tasktemplatefieldtypedef) 
+2. See [:material-code-braces: TaskTemplateConstraintsTypeDef](./type_defs.md#tasktemplateconstraintstypedef) 
+3. See [:material-code-braces: TaskTemplateDefaultsTypeDef](./type_defs.md#tasktemplatedefaultstypedef) 
+4. See [:material-code-brackets: TaskTemplateStatusType](./literals.md#tasktemplatestatustype) 
+5. See [:material-code-braces: CreateTaskTemplateResponseTypeDef](./type_defs.md#createtasktemplateresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateTaskTemplateRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+    "Name": ...,
+    "Fields": ...,
+}
+
+parent.create_task_template(**kwargs)
+```
+
+1. See [:material-code-braces: CreateTaskTemplateRequestRequestTypeDef](./type_defs.md#createtasktemplaterequestrequesttypedef) 
+
 ### create\_use\_case
 
 Creates a use case for an integration association.
@@ -903,7 +1029,7 @@ parent.create_vocabulary(**kwargs)
 
 ### delete\_contact\_flow
 
-Deletes a contact flow for the specified Amazon Connect instance.
+Deletes a flow for the specified Amazon Connect instance.
 
 Type annotations and code completion for `#!python session.client("connect").delete_contact_flow` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_contact_flow)
@@ -934,7 +1060,7 @@ parent.delete_contact_flow(**kwargs)
 
 ### delete\_contact\_flow\_module
 
-Deletes the specified contact flow module.
+Deletes the specified flow module.
 
 Type annotations and code completion for `#!python session.client("connect").delete_contact_flow_module` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_contact_flow_module)
@@ -1115,6 +1241,36 @@ parent.delete_security_profile(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteSecurityProfileRequestRequestTypeDef](./type_defs.md#deletesecurityprofilerequestrequesttypedef) 
+
+### delete\_task\_template
+
+Deletes the task template.
+
+Type annotations and code completion for `#!python session.client("connect").delete_task_template` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_task_template)
+
+```python title="Method definition"
+await def delete_task_template(
+    self,
+    *,
+    InstanceId: str,
+    TaskTemplateId: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteTaskTemplateRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+    "TaskTemplateId": ...,
+}
+
+parent.delete_task_template(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteTaskTemplateRequestRequestTypeDef](./type_defs.md#deletetasktemplaterequestrequesttypedef) 
 
 ### delete\_use\_case
 
@@ -1306,7 +1462,7 @@ parent.describe_contact(**kwargs)
 
 ### describe\_contact\_flow
 
-Describes the specified contact flow.
+Describes the specified flow.
 
 Type annotations and code completion for `#!python session.client("connect").describe_contact_flow` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_contact_flow)
@@ -1337,7 +1493,7 @@ parent.describe_contact_flow(**kwargs)
 
 ### describe\_contact\_flow\_module
 
-Describes the specified contact flow module.
+Describes the specified flow module.
 
 Type annotations and code completion for `#!python session.client("connect").describe_contact_flow_module` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_contact_flow_module)
@@ -1491,6 +1647,37 @@ parent.describe_instance_storage_config(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeInstanceStorageConfigRequestRequestTypeDef](./type_defs.md#describeinstancestorageconfigrequestrequesttypedef) 
+
+### describe\_phone\_number
+
+Gets details and status of a phone number that’s claimed to your Amazon Connect
+instance See also: [AWS API
+Documentation](https://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber).
+
+Type annotations and code completion for `#!python session.client("connect").describe_phone_number` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_phone_number)
+
+```python title="Method definition"
+await def describe_phone_number(
+    self,
+    *,
+    PhoneNumberId: str,
+) -> DescribePhoneNumberResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribePhoneNumberResponseTypeDef](./type_defs.md#describephonenumberresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribePhoneNumberRequestRequestTypeDef = {  # (1)
+    "PhoneNumberId": ...,
+}
+
+parent.describe_phone_number(**kwargs)
+```
+
+1. See [:material-code-braces: DescribePhoneNumberRequestRequestTypeDef](./type_defs.md#describephonenumberrequestrequesttypedef) 
 
 ### describe\_queue
 
@@ -1900,6 +2087,38 @@ parent.disassociate_lex_bot(**kwargs)
 
 1. See [:material-code-braces: DisassociateLexBotRequestRequestTypeDef](./type_defs.md#disassociatelexbotrequestrequesttypedef) 
 
+### disassociate\_phone\_number\_contact\_flow
+
+Removes the flow association from a phone number claimed to your Amazon Connect
+instance, if a flow association exists.
+
+Type annotations and code completion for `#!python session.client("connect").disassociate_phone_number_contact_flow` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.disassociate_phone_number_contact_flow)
+
+```python title="Method definition"
+await def disassociate_phone_number_contact_flow(
+    self,
+    *,
+    PhoneNumberId: str,
+    InstanceId: str,
+) -> EmptyResponseMetadataTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DisassociatePhoneNumberContactFlowRequestRequestTypeDef = {  # (1)
+    "PhoneNumberId": ...,
+    "InstanceId": ...,
+}
+
+parent.disassociate_phone_number_contact_flow(**kwargs)
+```
+
+1. See [:material-code-braces: DisassociatePhoneNumberContactFlowRequestRequestTypeDef](./type_defs.md#disassociatephonenumbercontactflowrequestrequesttypedef) 
+
 ### disassociate\_queue\_quick\_connects
 
 This API is in preview release for Amazon Connect and is subject to change.
@@ -2087,6 +2306,40 @@ parent.get_current_metric_data(**kwargs)
 
 1. See [:material-code-braces: GetCurrentMetricDataRequestRequestTypeDef](./type_defs.md#getcurrentmetricdatarequestrequesttypedef) 
 
+### get\_current\_user\_data
+
+Gets the real-time active user data from the specified Amazon Connect instance.
+
+Type annotations and code completion for `#!python session.client("connect").get_current_user_data` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.get_current_user_data)
+
+```python title="Method definition"
+await def get_current_user_data(
+    self,
+    *,
+    InstanceId: str,
+    Filters: UserDataFiltersTypeDef,  # (1)
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> GetCurrentUserDataResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: UserDataFiltersTypeDef](./type_defs.md#userdatafilterstypedef) 
+2. See [:material-code-braces: GetCurrentUserDataResponseTypeDef](./type_defs.md#getcurrentuserdataresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetCurrentUserDataRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+    "Filters": ...,
+}
+
+parent.get_current_user_data(**kwargs)
+```
+
+1. See [:material-code-braces: GetCurrentUserDataRequestRequestTypeDef](./type_defs.md#getcurrentuserdatarequestrequesttypedef) 
+
 ### get\_federation\_token
 
 Retrieves a token for federation.
@@ -2158,6 +2411,39 @@ parent.get_metric_data(**kwargs)
 ```
 
 1. See [:material-code-braces: GetMetricDataRequestRequestTypeDef](./type_defs.md#getmetricdatarequestrequesttypedef) 
+
+### get\_task\_template
+
+Gets details about a specific task template in the specified Amazon Connect
+instance.
+
+Type annotations and code completion for `#!python session.client("connect").get_task_template` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.get_task_template)
+
+```python title="Method definition"
+await def get_task_template(
+    self,
+    *,
+    InstanceId: str,
+    TaskTemplateId: str,
+    SnapshotVersion: str = ...,
+) -> GetTaskTemplateResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetTaskTemplateResponseTypeDef](./type_defs.md#gettasktemplateresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetTaskTemplateRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+    "TaskTemplateId": ...,
+}
+
+parent.get_task_template(**kwargs)
+```
+
+1. See [:material-code-braces: GetTaskTemplateRequestRequestTypeDef](./type_defs.md#gettasktemplaterequestrequesttypedef) 
 
 ### list\_agent\_statuses
 
@@ -2259,8 +2545,8 @@ parent.list_bots(**kwargs)
 
 ### list\_contact\_flow\_modules
 
-Provides information about the contact flow modules for the specified Amazon
-Connect instance.
+Provides information about the flow modules for the specified Amazon Connect
+instance.
 
 Type annotations and code completion for `#!python session.client("connect").list_contact_flow_modules` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_contact_flow_modules)
@@ -2293,8 +2579,7 @@ parent.list_contact_flow_modules(**kwargs)
 
 ### list\_contact\_flows
 
-Provides information about the contact flows for the specified Amazon Connect
-instance.
+Provides information about the flows for the specified Amazon Connect instance.
 
 Type annotations and code completion for `#!python session.client("connect").list_contact_flows` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_contact_flows)
@@ -2652,6 +2937,42 @@ parent.list_phone_numbers(**kwargs)
 
 1. See [:material-code-braces: ListPhoneNumbersRequestRequestTypeDef](./type_defs.md#listphonenumbersrequestrequesttypedef) 
 
+### list\_phone\_numbers\_v2
+
+Lists phone numbers claimed to your Amazon Connect instance.
+
+Type annotations and code completion for `#!python session.client("connect").list_phone_numbers_v2` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_phone_numbers_v2)
+
+```python title="Method definition"
+await def list_phone_numbers_v2(
+    self,
+    *,
+    TargetArn: str = ...,
+    MaxResults: int = ...,
+    NextToken: str = ...,
+    PhoneNumberCountryCodes: Sequence[PhoneNumberCountryCodeType] = ...,  # (1)
+    PhoneNumberTypes: Sequence[PhoneNumberTypeType] = ...,  # (2)
+    PhoneNumberPrefix: str = ...,
+) -> ListPhoneNumbersV2ResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+3. See [:material-code-braces: ListPhoneNumbersV2ResponseTypeDef](./type_defs.md#listphonenumbersv2responsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListPhoneNumbersV2RequestRequestTypeDef = {  # (1)
+    "TargetArn": ...,
+}
+
+parent.list_phone_numbers_v2(**kwargs)
+```
+
+1. See [:material-code-braces: ListPhoneNumbersV2RequestRequestTypeDef](./type_defs.md#listphonenumbersv2requestrequesttypedef) 
+
 ### list\_prompts
 
 Provides information about the prompts for the specified Amazon Connect
@@ -2974,6 +3295,40 @@ parent.list_tags_for_resource(**kwargs)
 
 1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
 
+### list\_task\_templates
+
+Lists task templates for the specified Amazon Connect instance.
+
+Type annotations and code completion for `#!python session.client("connect").list_task_templates` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_task_templates)
+
+```python title="Method definition"
+await def list_task_templates(
+    self,
+    *,
+    InstanceId: str,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+    Status: TaskTemplateStatusType = ...,  # (1)
+    Name: str = ...,
+) -> ListTaskTemplatesResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: TaskTemplateStatusType](./literals.md#tasktemplatestatustype) 
+2. See [:material-code-braces: ListTaskTemplatesResponseTypeDef](./type_defs.md#listtasktemplatesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListTaskTemplatesRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+}
+
+parent.list_task_templates(**kwargs)
+```
+
+1. See [:material-code-braces: ListTaskTemplatesRequestRequestTypeDef](./type_defs.md#listtasktemplatesrequestrequesttypedef) 
+
 ### list\_use\_cases
 
 Lists the use cases for the integration association.
@@ -3071,6 +3426,68 @@ parent.list_users(**kwargs)
 
 1. See [:material-code-braces: ListUsersRequestRequestTypeDef](./type_defs.md#listusersrequestrequesttypedef) 
 
+### put\_user\_status
+
+Changes the current status of a user or agent in Amazon Connect.
+
+Type annotations and code completion for `#!python session.client("connect").put_user_status` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.put_user_status)
+
+```python title="Method definition"
+await def put_user_status(
+    self,
+    *,
+    UserId: str,
+    InstanceId: str,
+    AgentStatusId: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: PutUserStatusRequestRequestTypeDef = {  # (1)
+    "UserId": ...,
+    "InstanceId": ...,
+    "AgentStatusId": ...,
+}
+
+parent.put_user_status(**kwargs)
+```
+
+1. See [:material-code-braces: PutUserStatusRequestRequestTypeDef](./type_defs.md#putuserstatusrequestrequesttypedef) 
+
+### release\_phone\_number
+
+Releases a phone number previously claimed to an Amazon Connect instance.
+
+Type annotations and code completion for `#!python session.client("connect").release_phone_number` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.release_phone_number)
+
+```python title="Method definition"
+await def release_phone_number(
+    self,
+    *,
+    PhoneNumberId: str,
+    ClientToken: str = ...,
+) -> EmptyResponseMetadataTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ReleasePhoneNumberRequestRequestTypeDef = {  # (1)
+    "PhoneNumberId": ...,
+}
+
+parent.release_phone_number(**kwargs)
+```
+
+1. See [:material-code-braces: ReleasePhoneNumberRequestRequestTypeDef](./type_defs.md#releasephonenumberrequestrequesttypedef) 
+
 ### resume\_contact\_recording
 
 When a contact is being recorded, and the recording has been suspended using
@@ -3103,6 +3520,115 @@ parent.resume_contact_recording(**kwargs)
 ```
 
 1. See [:material-code-braces: ResumeContactRecordingRequestRequestTypeDef](./type_defs.md#resumecontactrecordingrequestrequesttypedef) 
+
+### search\_available\_phone\_numbers
+
+Searches for available phone numbers that you can claim to your Amazon Connect
+instance.
+
+Type annotations and code completion for `#!python session.client("connect").search_available_phone_numbers` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.search_available_phone_numbers)
+
+```python title="Method definition"
+await def search_available_phone_numbers(
+    self,
+    *,
+    TargetArn: str,
+    PhoneNumberCountryCode: PhoneNumberCountryCodeType,  # (1)
+    PhoneNumberType: PhoneNumberTypeType,  # (2)
+    PhoneNumberPrefix: str = ...,
+    MaxResults: int = ...,
+    NextToken: str = ...,
+) -> SearchAvailablePhoneNumbersResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+3. See [:material-code-braces: SearchAvailablePhoneNumbersResponseTypeDef](./type_defs.md#searchavailablephonenumbersresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: SearchAvailablePhoneNumbersRequestRequestTypeDef = {  # (1)
+    "TargetArn": ...,
+    "PhoneNumberCountryCode": ...,
+    "PhoneNumberType": ...,
+}
+
+parent.search_available_phone_numbers(**kwargs)
+```
+
+1. See [:material-code-braces: SearchAvailablePhoneNumbersRequestRequestTypeDef](./type_defs.md#searchavailablephonenumbersrequestrequesttypedef) 
+
+### search\_security\_profiles
+
+This API is in preview release for Amazon Connect and is subject to change.
+
+Type annotations and code completion for `#!python session.client("connect").search_security_profiles` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.search_security_profiles)
+
+```python title="Method definition"
+await def search_security_profiles(
+    self,
+    *,
+    InstanceId: str,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+    SearchCriteria: SecurityProfileSearchCriteriaTypeDef = ...,  # (1)
+    SearchFilter: SecurityProfilesSearchFilterTypeDef = ...,  # (2)
+) -> SearchSecurityProfilesResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: SecurityProfileSearchCriteriaTypeDef](./type_defs.md#securityprofilesearchcriteriatypedef) 
+2. See [:material-code-braces: SecurityProfilesSearchFilterTypeDef](./type_defs.md#securityprofilessearchfiltertypedef) 
+3. See [:material-code-braces: SearchSecurityProfilesResponseTypeDef](./type_defs.md#searchsecurityprofilesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: SearchSecurityProfilesRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+}
+
+parent.search_security_profiles(**kwargs)
+```
+
+1. See [:material-code-braces: SearchSecurityProfilesRequestRequestTypeDef](./type_defs.md#searchsecurityprofilesrequestrequesttypedef) 
+
+### search\_users
+
+Searches users in an Amazon Connect instance, with optional filtering.
+
+Type annotations and code completion for `#!python session.client("connect").search_users` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.search_users)
+
+```python title="Method definition"
+await def search_users(
+    self,
+    *,
+    InstanceId: str = ...,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+    SearchFilter: UserSearchFilterTypeDef = ...,  # (1)
+    SearchCriteria: UserSearchCriteriaTypeDef = ...,  # (2)
+) -> SearchUsersResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: UserSearchFilterTypeDef](./type_defs.md#usersearchfiltertypedef) 
+2. See [:material-code-braces: UserSearchCriteriaTypeDef](./type_defs.md#usersearchcriteriatypedef) 
+3. See [:material-code-braces: SearchUsersResponseTypeDef](./type_defs.md#searchusersresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: SearchUsersRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+}
+
+parent.search_users(**kwargs)
+```
+
+1. See [:material-code-braces: SearchUsersRequestRequestTypeDef](./type_defs.md#searchusersrequestrequesttypedef) 
 
 ### search\_vocabularies
 
@@ -3143,7 +3669,7 @@ parent.search_vocabularies(**kwargs)
 
 ### start\_chat\_contact
 
-Initiates a contact flow to start a new chat for the customer.
+Initiates a flow to start a new chat for the customer.
 
 Type annotations and code completion for `#!python session.client("connect").start_chat_contact` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.start_chat_contact)
@@ -3255,7 +3781,7 @@ parent.start_contact_streaming(**kwargs)
 
 ### start\_outbound\_voice\_contact
 
-Places an outbound call to a contact, and then initiates the contact flow.
+Places an outbound call to a contact, and then initiates the flow.
 
 Type annotations and code completion for `#!python session.client("connect").start_outbound_voice_contact` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.start_outbound_voice_contact)
@@ -3297,7 +3823,7 @@ parent.start_outbound_voice_contact(**kwargs)
 
 ### start\_task\_contact
 
-Initiates a contact flow to start a new task.
+Initiates a flow to start a new task.
 
 Type annotations and code completion for `#!python session.client("connect").start_task_contact` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.start_task_contact)
@@ -3307,14 +3833,16 @@ await def start_task_contact(
     self,
     *,
     InstanceId: str,
-    ContactFlowId: str,
     Name: str,
     PreviousContactId: str = ...,
+    ContactFlowId: str = ...,
     Attributes: Mapping[str, str] = ...,
     References: Mapping[str, ReferenceTypeDef] = ...,  # (1)
     Description: str = ...,
     ClientToken: str = ...,
     ScheduledTime: Union[datetime, str] = ...,
+    TaskTemplateId: str = ...,
+    QuickConnectId: str = ...,
 ) -> StartTaskContactResponseTypeDef:  # (2)
     ...
 ```
@@ -3326,7 +3854,6 @@ await def start_task_contact(
 ```python title="Usage example with kwargs"
 kwargs: StartTaskContactRequestRequestTypeDef = {  # (1)
     "InstanceId": ...,
-    "ContactFlowId": ...,
     "Name": ...,
 }
 
@@ -3492,6 +4019,43 @@ parent.tag_resource(**kwargs)
 
 1. See [:material-code-braces: TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef) 
 
+### transfer\_contact
+
+Transfers contacts from one agent or queue to another agent or queue at any
+point after a contact is created.
+
+Type annotations and code completion for `#!python session.client("connect").transfer_contact` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.transfer_contact)
+
+```python title="Method definition"
+await def transfer_contact(
+    self,
+    *,
+    InstanceId: str,
+    ContactId: str,
+    ContactFlowId: str,
+    QueueId: str = ...,
+    UserId: str = ...,
+    ClientToken: str = ...,
+) -> TransferContactResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: TransferContactResponseTypeDef](./type_defs.md#transfercontactresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: TransferContactRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+    "ContactId": ...,
+    "ContactFlowId": ...,
+}
+
+parent.transfer_contact(**kwargs)
+```
+
+1. See [:material-code-braces: TransferContactRequestRequestTypeDef](./type_defs.md#transfercontactrequestrequesttypedef) 
+
 ### untag\_resource
 
 Removes the specified tags from the specified resource.
@@ -3629,7 +4193,7 @@ parent.update_contact_attributes(**kwargs)
 
 ### update\_contact\_flow\_content
 
-Updates the specified contact flow.
+Updates the specified flow.
 
 Type annotations and code completion for `#!python session.client("connect").update_contact_flow_content` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_content)
@@ -3662,7 +4226,7 @@ parent.update_contact_flow_content(**kwargs)
 
 ### update\_contact\_flow\_metadata
 
-Updates metadata about specified contact flow.
+Updates metadata about specified flow.
 
 Type annotations and code completion for `#!python session.client("connect").update_contact_flow_metadata` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_metadata)
@@ -3697,7 +4261,7 @@ parent.update_contact_flow_metadata(**kwargs)
 
 ### update\_contact\_flow\_module\_content
 
-Updates specified contact flow module for the specified Amazon Connect instance.
+Updates specified flow module for the specified Amazon Connect instance.
 
 Type annotations and code completion for `#!python session.client("connect").update_contact_flow_module_content` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_module_content)
@@ -3729,7 +4293,7 @@ parent.update_contact_flow_module_content(**kwargs)
 
 ### update\_contact\_flow\_module\_metadata
 
-Updates metadata about specified contact flow module.
+Updates metadata about specified flow module.
 
 Type annotations and code completion for `#!python session.client("connect").update_contact_flow_module_metadata` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_module_metadata)
@@ -3763,7 +4327,7 @@ parent.update_contact_flow_module_metadata(**kwargs)
 
 ### update\_contact\_flow\_name
 
-The name of the contact flow.
+The name of the flow.
 
 Type annotations and code completion for `#!python session.client("connect").update_contact_flow_name` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_name)
@@ -3932,6 +4496,39 @@ parent.update_instance_storage_config(**kwargs)
 ```
 
 1. See [:material-code-braces: UpdateInstanceStorageConfigRequestRequestTypeDef](./type_defs.md#updateinstancestorageconfigrequestrequesttypedef) 
+
+### update\_phone\_number
+
+Updates your claimed phone number from its current Amazon Connect instance to
+another Amazon Connect instance in the same Region.
+
+Type annotations and code completion for `#!python session.client("connect").update_phone_number` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_phone_number)
+
+```python title="Method definition"
+await def update_phone_number(
+    self,
+    *,
+    PhoneNumberId: str,
+    TargetArn: str,
+    ClientToken: str = ...,
+) -> UpdatePhoneNumberResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: UpdatePhoneNumberResponseTypeDef](./type_defs.md#updatephonenumberresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdatePhoneNumberRequestRequestTypeDef = {  # (1)
+    "PhoneNumberId": ...,
+    "TargetArn": ...,
+}
+
+parent.update_phone_number(**kwargs)
+```
+
+1. See [:material-code-braces: UpdatePhoneNumberRequestRequestTypeDef](./type_defs.md#updatephonenumberrequestrequesttypedef) 
 
 ### update\_queue\_hours\_of\_operation
 
@@ -4334,6 +4931,49 @@ parent.update_security_profile(**kwargs)
 
 1. See [:material-code-braces: UpdateSecurityProfileRequestRequestTypeDef](./type_defs.md#updatesecurityprofilerequestrequesttypedef) 
 
+### update\_task\_template
+
+Updates details about a specific task template in the specified Amazon Connect
+instance.
+
+Type annotations and code completion for `#!python session.client("connect").update_task_template` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_task_template)
+
+```python title="Method definition"
+await def update_task_template(
+    self,
+    *,
+    TaskTemplateId: str,
+    InstanceId: str,
+    Name: str = ...,
+    Description: str = ...,
+    ContactFlowId: str = ...,
+    Constraints: TaskTemplateConstraintsTypeDef = ...,  # (1)
+    Defaults: TaskTemplateDefaultsTypeDef = ...,  # (2)
+    Status: TaskTemplateStatusType = ...,  # (3)
+    Fields: Sequence[TaskTemplateFieldTypeDef] = ...,  # (4)
+) -> UpdateTaskTemplateResponseTypeDef:  # (5)
+    ...
+```
+
+1. See [:material-code-braces: TaskTemplateConstraintsTypeDef](./type_defs.md#tasktemplateconstraintstypedef) 
+2. See [:material-code-braces: TaskTemplateDefaultsTypeDef](./type_defs.md#tasktemplatedefaultstypedef) 
+3. See [:material-code-brackets: TaskTemplateStatusType](./literals.md#tasktemplatestatustype) 
+4. See [:material-code-braces: TaskTemplateFieldTypeDef](./type_defs.md#tasktemplatefieldtypedef) 
+5. See [:material-code-braces: UpdateTaskTemplateResponseTypeDef](./type_defs.md#updatetasktemplateresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdateTaskTemplateRequestRequestTypeDef = {  # (1)
+    "TaskTemplateId": ...,
+    "InstanceId": ...,
+}
+
+parent.update_task_template(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateTaskTemplateRequestRequestTypeDef](./type_defs.md#updatetasktemplaterequestrequesttypedef) 
+
 ### update\_user\_hierarchy
 
 Assigns the specified hierarchy group to the specified user.
@@ -4621,6 +5261,7 @@ Type annotations and code completion for `#!python session.client("connect").get
 - `client.get_paginator("list_lambda_functions")` -> [ListLambdaFunctionsPaginator](./paginators.md#listlambdafunctionspaginator)
 - `client.get_paginator("list_lex_bots")` -> [ListLexBotsPaginator](./paginators.md#listlexbotspaginator)
 - `client.get_paginator("list_phone_numbers")` -> [ListPhoneNumbersPaginator](./paginators.md#listphonenumberspaginator)
+- `client.get_paginator("list_phone_numbers_v2")` -> [ListPhoneNumbersV2Paginator](./paginators.md#listphonenumbersv2paginator)
 - `client.get_paginator("list_prompts")` -> [ListPromptsPaginator](./paginators.md#listpromptspaginator)
 - `client.get_paginator("list_queue_quick_connects")` -> [ListQueueQuickConnectsPaginator](./paginators.md#listqueuequickconnectspaginator)
 - `client.get_paginator("list_queues")` -> [ListQueuesPaginator](./paginators.md#listqueuespaginator)
@@ -4630,9 +5271,13 @@ Type annotations and code completion for `#!python session.client("connect").get
 - `client.get_paginator("list_security_keys")` -> [ListSecurityKeysPaginator](./paginators.md#listsecuritykeyspaginator)
 - `client.get_paginator("list_security_profile_permissions")` -> [ListSecurityProfilePermissionsPaginator](./paginators.md#listsecurityprofilepermissionspaginator)
 - `client.get_paginator("list_security_profiles")` -> [ListSecurityProfilesPaginator](./paginators.md#listsecurityprofilespaginator)
+- `client.get_paginator("list_task_templates")` -> [ListTaskTemplatesPaginator](./paginators.md#listtasktemplatespaginator)
 - `client.get_paginator("list_use_cases")` -> [ListUseCasesPaginator](./paginators.md#listusecasespaginator)
 - `client.get_paginator("list_user_hierarchy_groups")` -> [ListUserHierarchyGroupsPaginator](./paginators.md#listuserhierarchygroupspaginator)
 - `client.get_paginator("list_users")` -> [ListUsersPaginator](./paginators.md#listuserspaginator)
+- `client.get_paginator("search_available_phone_numbers")` -> [SearchAvailablePhoneNumbersPaginator](./paginators.md#searchavailablephonenumberspaginator)
+- `client.get_paginator("search_security_profiles")` -> [SearchSecurityProfilesPaginator](./paginators.md#searchsecurityprofilespaginator)
+- `client.get_paginator("search_users")` -> [SearchUsersPaginator](./paginators.md#searchuserspaginator)
 - `client.get_paginator("search_vocabularies")` -> [SearchVocabulariesPaginator](./paginators.md#searchvocabulariespaginator)
 
 

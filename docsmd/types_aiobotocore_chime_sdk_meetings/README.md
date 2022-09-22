@@ -70,12 +70,13 @@ async with session.client("chime-sdk-meetings") as client:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_chime_sdk_meetings.literals import MeetingFeatureStatusType
+from types_aiobotocore_chime_sdk_meetings.literals import MediaCapabilitiesType
 
-def get_value() -> MeetingFeatureStatusType:
-    return "AVAILABLE"
+def get_value() -> MediaCapabilitiesType:
+    return "None"
 ```
 
+- [MediaCapabilitiesType](./literals.md#mediacapabilitiestype)
 - [MeetingFeatureStatusType](./literals.md#meetingfeaturestatustype)
 - [TranscribeContentIdentificationTypeType](./literals.md#transcribecontentidentificationtypetype)
 - [TranscribeContentRedactionTypeType](./literals.md#transcribecontentredactiontypetype)
@@ -101,21 +102,23 @@ def get_value() -> MeetingFeatureStatusType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_chime_sdk_meetings.type_defs import AttendeeTypeDef
+from types_aiobotocore_chime_sdk_meetings.type_defs import AttendeeCapabilitiesTypeDef
 
-def get_value() -> AttendeeTypeDef:
+def get_value() -> AttendeeCapabilitiesTypeDef:
     return {
-        "ExternalUserId": ...,
+        "Audio": ...,
+        "Video": ...,
+        "Content": ...,
     }
 ```
 
-- [AttendeeTypeDef](./type_defs.md#attendeetypedef)
+- [AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef)
+- [AttendeeIdItemTypeDef](./type_defs.md#attendeeiditemtypedef)
 - [AudioFeaturesTypeDef](./type_defs.md#audiofeaturestypedef)
-- [CreateAttendeeRequestItemTypeDef](./type_defs.md#createattendeerequestitemtypedef)
 - [CreateAttendeeErrorTypeDef](./type_defs.md#createattendeeerrortypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
-- [CreateAttendeeRequestRequestTypeDef](./type_defs.md#createattendeerequestrequesttypedef)
 - [NotificationsConfigurationTypeDef](./type_defs.md#notificationsconfigurationtypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)
 - [DeleteAttendeeRequestRequestTypeDef](./type_defs.md#deleteattendeerequestrequesttypedef)
 - [DeleteMeetingRequestRequestTypeDef](./type_defs.md#deletemeetingrequestrequesttypedef)
 - [EngineTranscribeMedicalSettingsTypeDef](./type_defs.md#enginetranscribemedicalsettingstypedef)
@@ -123,16 +126,26 @@ def get_value() -> AttendeeTypeDef:
 - [GetAttendeeRequestRequestTypeDef](./type_defs.md#getattendeerequestrequesttypedef)
 - [GetMeetingRequestRequestTypeDef](./type_defs.md#getmeetingrequestrequesttypedef)
 - [ListAttendeesRequestRequestTypeDef](./type_defs.md#listattendeesrequestrequesttypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [MediaPlacementTypeDef](./type_defs.md#mediaplacementtypedef)
 - [StopMeetingTranscriptionRequestRequestTypeDef](./type_defs.md#stopmeetingtranscriptionrequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [AttendeeTypeDef](./type_defs.md#attendeetypedef)
+- [CreateAttendeeRequestItemTypeDef](./type_defs.md#createattendeerequestitemtypedef)
+- [CreateAttendeeRequestRequestTypeDef](./type_defs.md#createattendeerequestrequesttypedef)
+- [UpdateAttendeeCapabilitiesRequestRequestTypeDef](./type_defs.md#updateattendeecapabilitiesrequestrequesttypedef)
+- [BatchUpdateAttendeeCapabilitiesExceptRequestRequestTypeDef](./type_defs.md#batchupdateattendeecapabilitiesexceptrequestrequesttypedef)
 - [MeetingFeaturesConfigurationTypeDef](./type_defs.md#meetingfeaturesconfigurationtypedef)
-- [BatchCreateAttendeeRequestRequestTypeDef](./type_defs.md#batchcreateattendeerequestrequesttypedef)
+- [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [TranscriptionConfigurationTypeDef](./type_defs.md#transcriptionconfigurationtypedef)
 - [BatchCreateAttendeeResponseTypeDef](./type_defs.md#batchcreateattendeeresponsetypedef)
 - [CreateAttendeeResponseTypeDef](./type_defs.md#createattendeeresponsetypedef)
-- [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
 - [GetAttendeeResponseTypeDef](./type_defs.md#getattendeeresponsetypedef)
 - [ListAttendeesResponseTypeDef](./type_defs.md#listattendeesresponsetypedef)
-- [TranscriptionConfigurationTypeDef](./type_defs.md#transcriptionconfigurationtypedef)
+- [UpdateAttendeeCapabilitiesResponseTypeDef](./type_defs.md#updateattendeecapabilitiesresponsetypedef)
+- [BatchCreateAttendeeRequestRequestTypeDef](./type_defs.md#batchcreateattendeerequestrequesttypedef)
 - [CreateMeetingRequestRequestTypeDef](./type_defs.md#createmeetingrequestrequesttypedef)
 - [CreateMeetingWithAttendeesRequestRequestTypeDef](./type_defs.md#createmeetingwithattendeesrequestrequesttypedef)
 - [MeetingTypeDef](./type_defs.md#meetingtypedef)

@@ -166,6 +166,60 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: GetConnectionsRequestGetConnectionsPaginateTypeDef](./type_defs.md#getconnectionsrequestgetconnectionspaginatetypedef) 
+## GetCoreNetworkChangeEventsPaginator
+
+Type annotations and code completion for `#!python session.client("networkmanager").get_paginator("get_core_network_change_events")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Paginator.GetCoreNetworkChangeEvents)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_networkmanager.paginator import GetCoreNetworkChangeEventsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("networkmanager") as client:  # (1)
+    paginator: GetCoreNetworkChangeEventsPaginator = client.get_paginator("get_core_network_change_events")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetCoreNetworkChangeEventsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [GetCoreNetworkChangeEventsPaginator](./paginators.md#getcorenetworkchangeeventspaginator)
+3. item: [:material-code-braces: GetCoreNetworkChangeEventsResponseTypeDef](./type_defs.md#getcorenetworkchangeeventsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python GetCoreNetworkChangeEventsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    CoreNetworkId: str,
+    PolicyVersionId: int,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[GetCoreNetworkChangeEventsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: GetCoreNetworkChangeEventsResponseTypeDef](./type_defs.md#getcorenetworkchangeeventsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetCoreNetworkChangeEventsRequestGetCoreNetworkChangeEventsPaginateTypeDef = {  # (1)
+    "CoreNetworkId": ...,
+    "PolicyVersionId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: GetCoreNetworkChangeEventsRequestGetCoreNetworkChangeEventsPaginateTypeDef](./type_defs.md#getcorenetworkchangeeventsrequestgetcorenetworkchangeeventspaginatetypedef) 
 ## GetCoreNetworkChangeSetPaginator
 
 Type annotations and code completion for `#!python session.client("networkmanager").get_paginator("get_core_network_change_set")`.
@@ -1036,3 +1090,60 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListCoreNetworksRequestListCoreNetworksPaginateTypeDef](./type_defs.md#listcorenetworksrequestlistcorenetworkspaginatetypedef) 
+## ListPeeringsPaginator
+
+Type annotations and code completion for `#!python session.client("networkmanager").get_paginator("list_peerings")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Paginator.ListPeerings)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_networkmanager.paginator import ListPeeringsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("networkmanager") as client:  # (1)
+    paginator: ListPeeringsPaginator = client.get_paginator("list_peerings")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListPeeringsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [NetworkManagerClient](./client.md)
+2. paginator: [ListPeeringsPaginator](./paginators.md#listpeeringspaginator)
+3. item: [:material-code-braces: ListPeeringsResponseTypeDef](./type_defs.md#listpeeringsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListPeeringsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    CoreNetworkId: str = ...,
+    PeeringType: PeeringTypeType = ...,  # (1)
+    EdgeLocation: str = ...,
+    State: PeeringStateType = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[ListPeeringsResponseTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-brackets: PeeringTypeType](./literals.md#peeringtypetype) 
+2. See [:material-code-brackets: PeeringStateType](./literals.md#peeringstatetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: ListPeeringsResponseTypeDef](./type_defs.md#listpeeringsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListPeeringsRequestListPeeringsPaginateTypeDef = {  # (1)
+    "CoreNetworkId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListPeeringsRequestListPeeringsPaginateTypeDef](./type_defs.md#listpeeringsrequestlistpeeringspaginatetypedef) 

@@ -66,16 +66,19 @@ Type annotations and code completion for
 from `#!python session.client("kms").get_paginator("...")`.
 
 ```python title="Usage example"
-from types_aiobotocore_kms.paginator import ListAliasesPaginator
+from types_aiobotocore_kms.paginator import DescribeCustomKeyStoresPaginator
 
-def get_list_aliases_paginator() -> ListAliasesPaginator:
-    return client.get_paginator("list_aliases"))
+def get_describe_custom_key_stores_paginator() -> DescribeCustomKeyStoresPaginator:
+    return client.get_paginator("describe_custom_key_stores"))
 ```
 
+- [DescribeCustomKeyStoresPaginator](./paginators.md#describecustomkeystorespaginator)
 - [ListAliasesPaginator](./paginators.md#listaliasespaginator)
 - [ListGrantsPaginator](./paginators.md#listgrantspaginator)
 - [ListKeyPoliciesPaginator](./paginators.md#listkeypoliciespaginator)
 - [ListKeysPaginator](./paginators.md#listkeyspaginator)
+- [ListResourceTagsPaginator](./paginators.md#listresourcetagspaginator)
+- [ListRetirableGrantsPaginator](./paginators.md#listretirablegrantspaginator)
 
 
 
@@ -101,6 +104,7 @@ def get_value() -> AlgorithmSpecType:
 - [CustomerMasterKeySpecType](./literals.md#customermasterkeyspectype)
 - [DataKeyPairSpecType](./literals.md#datakeypairspectype)
 - [DataKeySpecType](./literals.md#datakeyspectype)
+- [DescribeCustomKeyStoresPaginatorName](./literals.md#describecustomkeystorespaginatorname)
 - [EncryptionAlgorithmSpecType](./literals.md#encryptionalgorithmspectype)
 - [ExpirationModelTypeType](./literals.md#expirationmodeltypetype)
 - [GrantOperationType](./literals.md#grantoperationtype)
@@ -112,6 +116,9 @@ def get_value() -> AlgorithmSpecType:
 - [ListGrantsPaginatorName](./literals.md#listgrantspaginatorname)
 - [ListKeyPoliciesPaginatorName](./literals.md#listkeypoliciespaginatorname)
 - [ListKeysPaginatorName](./literals.md#listkeyspaginatorname)
+- [ListResourceTagsPaginatorName](./literals.md#listresourcetagspaginatorname)
+- [ListRetirableGrantsPaginatorName](./literals.md#listretirablegrantspaginatorname)
+- [MacAlgorithmSpecType](./literals.md#macalgorithmspectype)
 - [MessageTypeType](./literals.md#messagetypetype)
 - [MultiRegionKeyTypeType](./literals.md#multiregionkeytypetype)
 - [OriginTypeType](./literals.md#origintypetype)
@@ -152,6 +159,7 @@ def get_value() -> AliasListEntryTypeDef:
 - [DeleteAliasRequestRequestTypeDef](./type_defs.md#deletealiasrequestrequesttypedef)
 - [DeleteCustomKeyStoreRequestRequestTypeDef](./type_defs.md#deletecustomkeystorerequestrequesttypedef)
 - [DeleteImportedKeyMaterialRequestRequestTypeDef](./type_defs.md#deleteimportedkeymaterialrequestrequesttypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [DescribeCustomKeyStoresRequestRequestTypeDef](./type_defs.md#describecustomkeystoresrequestrequesttypedef)
 - [DescribeKeyRequestRequestTypeDef](./type_defs.md#describekeyrequestrequesttypedef)
 - [DisableKeyRequestRequestTypeDef](./type_defs.md#disablekeyrequestrequesttypedef)
@@ -164,6 +172,7 @@ def get_value() -> AliasListEntryTypeDef:
 - [GenerateDataKeyPairWithoutPlaintextRequestRequestTypeDef](./type_defs.md#generatedatakeypairwithoutplaintextrequestrequesttypedef)
 - [GenerateDataKeyRequestRequestTypeDef](./type_defs.md#generatedatakeyrequestrequesttypedef)
 - [GenerateDataKeyWithoutPlaintextRequestRequestTypeDef](./type_defs.md#generatedatakeywithoutplaintextrequestrequesttypedef)
+- [GenerateMacRequestRequestTypeDef](./type_defs.md#generatemacrequestrequesttypedef)
 - [GenerateRandomRequestRequestTypeDef](./type_defs.md#generaterandomrequestrequesttypedef)
 - [GetKeyPolicyRequestRequestTypeDef](./type_defs.md#getkeypolicyrequestrequesttypedef)
 - [GetKeyRotationStatusRequestRequestTypeDef](./type_defs.md#getkeyrotationstatusrequestrequesttypedef)
@@ -171,7 +180,6 @@ def get_value() -> AliasListEntryTypeDef:
 - [GetPublicKeyRequestRequestTypeDef](./type_defs.md#getpublickeyrequestrequesttypedef)
 - [ImportKeyMaterialRequestRequestTypeDef](./type_defs.md#importkeymaterialrequestrequesttypedef)
 - [KeyListEntryTypeDef](./type_defs.md#keylistentrytypedef)
-- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 - [ListAliasesRequestRequestTypeDef](./type_defs.md#listaliasesrequestrequesttypedef)
 - [ListGrantsRequestRequestTypeDef](./type_defs.md#listgrantsrequestrequesttypedef)
 - [ListKeyPoliciesRequestRequestTypeDef](./type_defs.md#listkeypoliciesrequestrequesttypedef)
@@ -190,6 +198,7 @@ def get_value() -> AliasListEntryTypeDef:
 - [UpdateCustomKeyStoreRequestRequestTypeDef](./type_defs.md#updatecustomkeystorerequestrequesttypedef)
 - [UpdateKeyDescriptionRequestRequestTypeDef](./type_defs.md#updatekeydescriptionrequestrequesttypedef)
 - [UpdatePrimaryRegionRequestRequestTypeDef](./type_defs.md#updateprimaryregionrequestrequesttypedef)
+- [VerifyMacRequestRequestTypeDef](./type_defs.md#verifymacrequestrequesttypedef)
 - [VerifyRequestRequestTypeDef](./type_defs.md#verifyrequestrequesttypedef)
 - [CancelKeyDeletionResponseTypeDef](./type_defs.md#cancelkeydeletionresponsetypedef)
 - [CreateCustomKeyStoreResponseTypeDef](./type_defs.md#createcustomkeystoreresponsetypedef)
@@ -201,6 +210,7 @@ def get_value() -> AliasListEntryTypeDef:
 - [GenerateDataKeyPairWithoutPlaintextResponseTypeDef](./type_defs.md#generatedatakeypairwithoutplaintextresponsetypedef)
 - [GenerateDataKeyResponseTypeDef](./type_defs.md#generatedatakeyresponsetypedef)
 - [GenerateDataKeyWithoutPlaintextResponseTypeDef](./type_defs.md#generatedatakeywithoutplaintextresponsetypedef)
+- [GenerateMacResponseTypeDef](./type_defs.md#generatemacresponsetypedef)
 - [GenerateRandomResponseTypeDef](./type_defs.md#generaterandomresponsetypedef)
 - [GetKeyPolicyResponseTypeDef](./type_defs.md#getkeypolicyresponsetypedef)
 - [GetKeyRotationStatusResponseTypeDef](./type_defs.md#getkeyrotationstatusresponsetypedef)
@@ -211,6 +221,7 @@ def get_value() -> AliasListEntryTypeDef:
 - [ReEncryptResponseTypeDef](./type_defs.md#reencryptresponsetypedef)
 - [ScheduleKeyDeletionResponseTypeDef](./type_defs.md#schedulekeydeletionresponsetypedef)
 - [SignResponseTypeDef](./type_defs.md#signresponsetypedef)
+- [VerifyMacResponseTypeDef](./type_defs.md#verifymacresponsetypedef)
 - [VerifyResponseTypeDef](./type_defs.md#verifyresponsetypedef)
 - [CreateGrantRequestRequestTypeDef](./type_defs.md#creategrantrequestrequesttypedef)
 - [GrantListEntryTypeDef](./type_defs.md#grantlistentrytypedef)
@@ -219,11 +230,14 @@ def get_value() -> AliasListEntryTypeDef:
 - [ReplicateKeyRequestRequestTypeDef](./type_defs.md#replicatekeyrequestrequesttypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [DescribeCustomKeyStoresResponseTypeDef](./type_defs.md#describecustomkeystoresresponsetypedef)
-- [ListKeysResponseTypeDef](./type_defs.md#listkeysresponsetypedef)
+- [DescribeCustomKeyStoresRequestDescribeCustomKeyStoresPaginateTypeDef](./type_defs.md#describecustomkeystoresrequestdescribecustomkeystorespaginatetypedef)
 - [ListAliasesRequestListAliasesPaginateTypeDef](./type_defs.md#listaliasesrequestlistaliasespaginatetypedef)
 - [ListGrantsRequestListGrantsPaginateTypeDef](./type_defs.md#listgrantsrequestlistgrantspaginatetypedef)
 - [ListKeyPoliciesRequestListKeyPoliciesPaginateTypeDef](./type_defs.md#listkeypoliciesrequestlistkeypoliciespaginatetypedef)
 - [ListKeysRequestListKeysPaginateTypeDef](./type_defs.md#listkeysrequestlistkeyspaginatetypedef)
+- [ListResourceTagsRequestListResourceTagsPaginateTypeDef](./type_defs.md#listresourcetagsrequestlistresourcetagspaginatetypedef)
+- [ListRetirableGrantsRequestListRetirableGrantsPaginateTypeDef](./type_defs.md#listretirablegrantsrequestlistretirablegrantspaginatetypedef)
+- [ListKeysResponseTypeDef](./type_defs.md#listkeysresponsetypedef)
 - [MultiRegionConfigurationTypeDef](./type_defs.md#multiregionconfigurationtypedef)
 - [ListGrantsResponseTypeDef](./type_defs.md#listgrantsresponsetypedef)
 - [KeyMetadataTypeDef](./type_defs.md#keymetadatatypedef)

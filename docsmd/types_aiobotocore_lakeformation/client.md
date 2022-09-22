@@ -100,6 +100,41 @@ parent.add_lf_tags_to_resource(**kwargs)
 
 1. See [:material-code-braces: AddLFTagsToResourceRequestRequestTypeDef](./type_defs.md#addlftagstoresourcerequestrequesttypedef) 
 
+### assume\_decorated\_role\_with\_saml
+
+Allows a caller to assume an IAM role decorated as the SAML user specified in
+the SAML assertion included in the request.
+
+Type annotations and code completion for `#!python session.client("lakeformation").assume_decorated_role_with_saml` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.assume_decorated_role_with_saml)
+
+```python title="Method definition"
+await def assume_decorated_role_with_saml(
+    self,
+    *,
+    SAMLAssertion: str,
+    RoleArn: str,
+    PrincipalArn: str,
+    DurationSeconds: int = ...,
+) -> AssumeDecoratedRoleWithSAMLResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: AssumeDecoratedRoleWithSAMLResponseTypeDef](./type_defs.md#assumedecoratedrolewithsamlresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: AssumeDecoratedRoleWithSAMLRequestRequestTypeDef = {  # (1)
+    "SAMLAssertion": ...,
+    "RoleArn": ...,
+    "PrincipalArn": ...,
+}
+
+parent.assume_decorated_role_with_saml(**kwargs)
+```
+
+1. See [:material-code-braces: AssumeDecoratedRoleWithSAMLRequestRequestTypeDef](./type_defs.md#assumedecoratedrolewithsamlrequestrequesttypedef) 
+
 ### batch\_grant\_permissions
 
 Batch operation to grant permissions to the principal.
@@ -205,6 +240,21 @@ parent.cancel_transaction(**kwargs)
 ```
 
 1. See [:material-code-braces: CancelTransactionRequestRequestTypeDef](./type_defs.md#canceltransactionrequestrequesttypedef) 
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("lakeformation").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
 
 ### commit\_transaction
 
@@ -329,7 +379,7 @@ parent.delete_data_cells_filter(**kwargs)
 
 ### delete\_lf\_tag
 
-Deletes the specified LF-tag key name.
+Deletes the specified LF-tag given a key name.
 
 Type annotations and code completion for `#!python session.client("lakeformation").delete_lf_tag` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.delete_lf_tag)

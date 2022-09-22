@@ -105,6 +105,7 @@ await def batch_create_channel_membership(
     MemberArns: Sequence[str],
     ChimeBearer: str,
     Type: ChannelMembershipTypeType = ...,  # (1)
+    SubChannelId: str = ...,
 ) -> BatchCreateChannelMembershipResponseTypeDef:  # (2)
     ...
 ```
@@ -176,6 +177,21 @@ parent.channel_flow_callback(**kwargs)
 
 1. See [:material-code-braces: ChannelFlowCallbackRequestRequestTypeDef](./type_defs.md#channelflowcallbackrequestrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("chime-sdk-messaging").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_channel
 
 Creates a channel to which you can add users and send messages.
@@ -195,14 +211,19 @@ await def create_channel(
     Privacy: ChannelPrivacyType = ...,  # (2)
     Metadata: str = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (3)
-) -> CreateChannelResponseTypeDef:  # (4)
+    ChannelId: str = ...,
+    MemberArns: Sequence[str] = ...,
+    ModeratorArns: Sequence[str] = ...,
+    ElasticChannelConfiguration: ElasticChannelConfigurationTypeDef = ...,  # (4)
+) -> CreateChannelResponseTypeDef:  # (5)
     ...
 ```
 
 1. See [:material-code-brackets: ChannelModeType](./literals.md#channelmodetype) 
 2. See [:material-code-brackets: ChannelPrivacyType](./literals.md#channelprivacytype) 
 3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-4. See [:material-code-braces: CreateChannelResponseTypeDef](./type_defs.md#createchannelresponsetypedef) 
+4. See [:material-code-braces: ElasticChannelConfigurationTypeDef](./type_defs.md#elasticchannelconfigurationtypedef) 
+5. See [:material-code-braces: CreateChannelResponseTypeDef](./type_defs.md#createchannelresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -304,6 +325,7 @@ await def create_channel_membership(
     MemberArn: str,
     Type: ChannelMembershipTypeType,  # (1)
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> CreateChannelMembershipResponseTypeDef:  # (2)
     ...
 ```
@@ -372,6 +394,7 @@ await def delete_channel(
     *,
     ChannelArn: str,
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
@@ -466,6 +489,7 @@ await def delete_channel_membership(
     ChannelArn: str,
     MemberArn: str,
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
@@ -499,6 +523,7 @@ await def delete_channel_message(
     ChannelArn: str,
     MessageId: str,
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
@@ -658,6 +683,7 @@ await def describe_channel_membership(
     ChannelArn: str,
     MemberArn: str,
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> DescribeChannelMembershipResponseTypeDef:  # (1)
     ...
 ```
@@ -878,6 +904,7 @@ await def get_channel_message(
     ChannelArn: str,
     MessageId: str,
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> GetChannelMessageResponseTypeDef:  # (1)
     ...
 ```
@@ -911,6 +938,7 @@ await def get_channel_message_status(
     ChannelArn: str,
     MessageId: str,
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> GetChannelMessageStatusResponseTypeDef:  # (1)
     ...
 ```
@@ -1026,6 +1054,7 @@ await def list_channel_memberships(
     Type: ChannelMembershipTypeType = ...,  # (1)
     MaxResults: int = ...,
     NextToken: str = ...,
+    SubChannelId: str = ...,
 ) -> ListChannelMembershipsResponseTypeDef:  # (2)
     ...
 ```
@@ -1095,6 +1124,7 @@ await def list_channel_messages(
     NotAfter: Union[datetime, str] = ...,
     MaxResults: int = ...,
     NextToken: str = ...,
+    SubChannelId: str = ...,
 ) -> ListChannelMessagesResponseTypeDef:  # (2)
     ...
 ```
@@ -1245,6 +1275,39 @@ parent.list_channels_moderated_by_app_instance_user(**kwargs)
 
 1. See [:material-code-braces: ListChannelsModeratedByAppInstanceUserRequestRequestTypeDef](./type_defs.md#listchannelsmoderatedbyappinstanceuserrequestrequesttypedef) 
 
+### list\_sub\_channels
+
+Lists all the SubChannels in an elastic channel when given a channel ID.
+
+Type annotations and code completion for `#!python session.client("chime-sdk-messaging").list_sub_channels` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.list_sub_channels)
+
+```python title="Method definition"
+await def list_sub_channels(
+    self,
+    *,
+    ChannelArn: str,
+    ChimeBearer: str,
+    MaxResults: int = ...,
+    NextToken: str = ...,
+) -> ListSubChannelsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListSubChannelsResponseTypeDef](./type_defs.md#listsubchannelsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListSubChannelsRequestRequestTypeDef = {  # (1)
+    "ChannelArn": ...,
+    "ChimeBearer": ...,
+}
+
+parent.list_sub_channels(**kwargs)
+```
+
+1. See [:material-code-braces: ListSubChannelsRequestRequestTypeDef](./type_defs.md#listsubchannelsrequestrequesttypedef) 
+
 ### list\_tags\_for\_resource
 
 Lists the tags applied to an Amazon Chime SDK messaging resource.
@@ -1325,6 +1388,7 @@ await def redact_channel_message(
     ChannelArn: str,
     MessageId: str,
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> RedactChannelMessageResponseTypeDef:  # (1)
     ...
 ```
@@ -1343,6 +1407,39 @@ parent.redact_channel_message(**kwargs)
 ```
 
 1. See [:material-code-braces: RedactChannelMessageRequestRequestTypeDef](./type_defs.md#redactchannelmessagerequestrequesttypedef) 
+
+### search\_channels
+
+Allows an `AppInstanceUser` to search the channels that they belong to.
+
+Type annotations and code completion for `#!python session.client("chime-sdk-messaging").search_channels` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.search_channels)
+
+```python title="Method definition"
+await def search_channels(
+    self,
+    *,
+    Fields: Sequence[SearchFieldTypeDef],  # (1)
+    ChimeBearer: str = ...,
+    MaxResults: int = ...,
+    NextToken: str = ...,
+) -> SearchChannelsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: SearchFieldTypeDef](./type_defs.md#searchfieldtypedef) 
+2. See [:material-code-braces: SearchChannelsResponseTypeDef](./type_defs.md#searchchannelsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: SearchChannelsRequestRequestTypeDef = {  # (1)
+    "Fields": ...,
+}
+
+parent.search_channels(**kwargs)
+```
+
+1. See [:material-code-braces: SearchChannelsRequestRequestTypeDef](./type_defs.md#searchchannelsrequestrequesttypedef) 
 
 ### send\_channel\_message
 
@@ -1364,6 +1461,7 @@ await def send_channel_message(
     Metadata: str = ...,
     PushNotification: PushNotificationConfigurationTypeDef = ...,  # (3)
     MessageAttributes: Mapping[str, MessageAttributeValueTypeDef] = ...,  # (4)
+    SubChannelId: str = ...,
 ) -> SendChannelMessageResponseTypeDef:  # (5)
     ...
 ```
@@ -1466,9 +1564,9 @@ await def update_channel(
     self,
     *,
     ChannelArn: str,
-    Name: str,
-    Mode: ChannelModeType,  # (1)
     ChimeBearer: str,
+    Name: str = ...,
+    Mode: ChannelModeType = ...,  # (1)
     Metadata: str = ...,
 ) -> UpdateChannelResponseTypeDef:  # (2)
     ...
@@ -1481,8 +1579,6 @@ await def update_channel(
 ```python title="Usage example with kwargs"
 kwargs: UpdateChannelRequestRequestTypeDef = {  # (1)
     "ChannelArn": ...,
-    "Name": ...,
-    "Mode": ...,
     "ChimeBearer": ...,
 }
 
@@ -1541,6 +1637,7 @@ await def update_channel_message(
     ChimeBearer: str,
     Content: str = ...,
     Metadata: str = ...,
+    SubChannelId: str = ...,
 ) -> UpdateChannelMessageResponseTypeDef:  # (1)
     ...
 ```
@@ -1573,6 +1670,7 @@ await def update_channel_read_marker(
     *,
     ChannelArn: str,
     ChimeBearer: str,
+    SubChannelId: str = ...,
 ) -> UpdateChannelReadMarkerResponseTypeDef:  # (1)
     ...
 ```

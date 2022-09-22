@@ -138,6 +138,40 @@ class DeleteStreamInputRequestTypeDef(TypedDict):
     CurrentVersion: NotRequired[str],
 ```
 
+## DescribeImageGenerationConfigurationInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import DescribeImageGenerationConfigurationInputRequestTypeDef
+
+def get_value() -> DescribeImageGenerationConfigurationInputRequestTypeDef:
+    return {
+        "StreamName": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeImageGenerationConfigurationInputRequestTypeDef(TypedDict):
+    StreamName: NotRequired[str],
+    StreamARN: NotRequired[str],
+```
+
+## DescribeNotificationConfigurationInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import DescribeNotificationConfigurationInputRequestTypeDef
+
+def get_value() -> DescribeNotificationConfigurationInputRequestTypeDef:
+    return {
+        "StreamName": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeNotificationConfigurationInputRequestTypeDef(TypedDict):
+    StreamName: NotRequired[str],
+    StreamARN: NotRequired[str],
+```
+
 ## DescribeSignalingChannelInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -253,6 +287,24 @@ class ResourceEndpointListItemTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ChannelProtocolType](./literals.md#channelprotocoltype) 
+## ImageGenerationDestinationConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import ImageGenerationDestinationConfigTypeDef
+
+def get_value() -> ImageGenerationDestinationConfigTypeDef:
+    return {
+        "Uri": ...,
+        "DestinationRegion": ...,
+    }
+```
+
+```python title="Definition"
+class ImageGenerationDestinationConfigTypeDef(TypedDict):
+    Uri: str,
+    DestinationRegion: str,
+```
+
 ## PaginatorConfigTypeDef
 
 ```python title="Usage Example"
@@ -322,6 +374,22 @@ class ListTagsForStreamInputRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
     StreamARN: NotRequired[str],
     StreamName: NotRequired[str],
+```
+
+## NotificationDestinationConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import NotificationDestinationConfigTypeDef
+
+def get_value() -> NotificationDestinationConfigTypeDef:
+    return {
+        "Uri": ...,
+    }
+```
+
+```python title="Definition"
+class NotificationDestinationConfigTypeDef(TypedDict):
+    Uri: str,
 ```
 
 ## TagStreamInputRequestTypeDef
@@ -705,6 +773,38 @@ class GetSignalingChannelEndpointOutputTypeDef(TypedDict):
 
 1. See [:material-code-braces: ResourceEndpointListItemTypeDef](./type_defs.md#resourceendpointlistitemtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ImageGenerationConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import ImageGenerationConfigurationTypeDef
+
+def get_value() -> ImageGenerationConfigurationTypeDef:
+    return {
+        "Status": ...,
+        "ImageSelectorType": ...,
+        "DestinationConfig": ...,
+        "SamplingInterval": ...,
+        "Format": ...,
+    }
+```
+
+```python title="Definition"
+class ImageGenerationConfigurationTypeDef(TypedDict):
+    Status: ConfigurationStatusType,  # (1)
+    ImageSelectorType: ImageSelectorTypeType,  # (2)
+    DestinationConfig: ImageGenerationDestinationConfigTypeDef,  # (3)
+    SamplingInterval: int,
+    Format: FormatType,  # (4)
+    FormatConfig: NotRequired[Dict[FormatConfigKeyType, str]],  # (5)
+    WidthPixels: NotRequired[int],
+    HeightPixels: NotRequired[int],
+```
+
+1. See [:material-code-brackets: ConfigurationStatusType](./literals.md#configurationstatustype) 
+2. See [:material-code-brackets: ImageSelectorTypeType](./literals.md#imageselectortypetype) 
+3. See [:material-code-braces: ImageGenerationDestinationConfigTypeDef](./type_defs.md#imagegenerationdestinationconfigtypedef) 
+4. See [:material-code-brackets: FormatType](./literals.md#formattype) 
+5. See [:material-code-brackets: FormatConfigKeyType](./literals.md#formatconfigkeytype) 
 ## ListSignalingChannelsInputListSignalingChannelsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -762,6 +862,26 @@ class ListStreamsInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: StreamNameConditionTypeDef](./type_defs.md#streamnameconditiontypedef) 
+## NotificationConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import NotificationConfigurationTypeDef
+
+def get_value() -> NotificationConfigurationTypeDef:
+    return {
+        "Status": ...,
+        "DestinationConfig": ...,
+    }
+```
+
+```python title="Definition"
+class NotificationConfigurationTypeDef(TypedDict):
+    Status: ConfigurationStatusType,  # (1)
+    DestinationConfig: NotificationDestinationConfigTypeDef,  # (2)
+```
+
+1. See [:material-code-brackets: ConfigurationStatusType](./literals.md#configurationstatustype) 
+2. See [:material-code-braces: NotificationDestinationConfigTypeDef](./type_defs.md#notificationdestinationconfigtypedef) 
 ## DescribeSignalingChannelOutputTypeDef
 
 ```python title="Usage Example"
@@ -804,3 +924,81 @@ class ListSignalingChannelsOutputTypeDef(TypedDict):
 
 1. See [:material-code-braces: ChannelInfoTypeDef](./type_defs.md#channelinfotypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeImageGenerationConfigurationOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import DescribeImageGenerationConfigurationOutputTypeDef
+
+def get_value() -> DescribeImageGenerationConfigurationOutputTypeDef:
+    return {
+        "ImageGenerationConfiguration": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeImageGenerationConfigurationOutputTypeDef(TypedDict):
+    ImageGenerationConfiguration: ImageGenerationConfigurationTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ImageGenerationConfigurationTypeDef](./type_defs.md#imagegenerationconfigurationtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateImageGenerationConfigurationInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import UpdateImageGenerationConfigurationInputRequestTypeDef
+
+def get_value() -> UpdateImageGenerationConfigurationInputRequestTypeDef:
+    return {
+        "StreamName": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateImageGenerationConfigurationInputRequestTypeDef(TypedDict):
+    StreamName: NotRequired[str],
+    StreamARN: NotRequired[str],
+    ImageGenerationConfiguration: NotRequired[ImageGenerationConfigurationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: ImageGenerationConfigurationTypeDef](./type_defs.md#imagegenerationconfigurationtypedef) 
+## DescribeNotificationConfigurationOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import DescribeNotificationConfigurationOutputTypeDef
+
+def get_value() -> DescribeNotificationConfigurationOutputTypeDef:
+    return {
+        "NotificationConfiguration": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeNotificationConfigurationOutputTypeDef(TypedDict):
+    NotificationConfiguration: NotificationConfigurationTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: NotificationConfigurationTypeDef](./type_defs.md#notificationconfigurationtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateNotificationConfigurationInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.type_defs import UpdateNotificationConfigurationInputRequestTypeDef
+
+def get_value() -> UpdateNotificationConfigurationInputRequestTypeDef:
+    return {
+        "StreamName": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateNotificationConfigurationInputRequestTypeDef(TypedDict):
+    StreamName: NotRequired[str],
+    StreamARN: NotRequired[str],
+    NotificationConfiguration: NotRequired[NotificationConfigurationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: NotificationConfigurationTypeDef](./type_defs.md#notificationconfigurationtypedef) 

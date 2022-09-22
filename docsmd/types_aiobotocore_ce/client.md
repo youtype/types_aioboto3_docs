@@ -40,6 +40,7 @@ async with session.client("ce") as client:
         client.RequestChangedException,
         client.ResourceNotFoundException,
         client.ServiceQuotaExceededException,
+        client.TooManyTagsException,
         client.UnknownMonitorException,
         client.UnknownSubscriptionException,
         client.UnresolvableUsageUnitException,
@@ -74,10 +75,24 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("ce").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_anomaly\_monitor
 
-Creates a new cost anomaly detection monitor with the requested type and monitor
-specification.
+.
 
 Type annotations and code completion for `#!python session.client("ce").create_anomaly_monitor` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.create_anomaly_monitor)
@@ -87,12 +102,14 @@ await def create_anomaly_monitor(
     self,
     *,
     AnomalyMonitor: AnomalyMonitorTypeDef,  # (1)
-) -> CreateAnomalyMonitorResponseTypeDef:  # (2)
+    ResourceTags: Sequence[ResourceTagTypeDef] = ...,  # (2)
+) -> CreateAnomalyMonitorResponseTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: AnomalyMonitorTypeDef](./type_defs.md#anomalymonitortypedef) 
-2. See [:material-code-braces: CreateAnomalyMonitorResponseTypeDef](./type_defs.md#createanomalymonitorresponsetypedef) 
+2. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
+3. See [:material-code-braces: CreateAnomalyMonitorResponseTypeDef](./type_defs.md#createanomalymonitorresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -107,7 +124,7 @@ parent.create_anomaly_monitor(**kwargs)
 
 ### create\_anomaly\_subscription
 
-Adds a subscription to a cost anomaly detection monitor.
+.
 
 Type annotations and code completion for `#!python session.client("ce").create_anomaly_subscription` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.create_anomaly_subscription)
@@ -117,12 +134,14 @@ await def create_anomaly_subscription(
     self,
     *,
     AnomalySubscription: AnomalySubscriptionTypeDef,  # (1)
-) -> CreateAnomalySubscriptionResponseTypeDef:  # (2)
+    ResourceTags: Sequence[ResourceTagTypeDef] = ...,  # (2)
+) -> CreateAnomalySubscriptionResponseTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: AnomalySubscriptionTypeDef](./type_defs.md#anomalysubscriptiontypedef) 
-2. See [:material-code-braces: CreateAnomalySubscriptionResponseTypeDef](./type_defs.md#createanomalysubscriptionresponsetypedef) 
+2. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
+3. See [:material-code-braces: CreateAnomalySubscriptionResponseTypeDef](./type_defs.md#createanomalysubscriptionresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -137,7 +156,7 @@ parent.create_anomaly_subscription(**kwargs)
 
 ### create\_cost\_category\_definition
 
-Creates a new Cost Category with the requested name and rules.
+.
 
 Type annotations and code completion for `#!python session.client("ce").create_cost_category_definition` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.create_cost_category_definition)
@@ -151,14 +170,16 @@ await def create_cost_category_definition(
     Rules: Sequence[CostCategoryRuleTypeDef],  # (2)
     DefaultValue: str = ...,
     SplitChargeRules: Sequence[CostCategorySplitChargeRuleTypeDef] = ...,  # (3)
-) -> CreateCostCategoryDefinitionResponseTypeDef:  # (4)
+    ResourceTags: Sequence[ResourceTagTypeDef] = ...,  # (4)
+) -> CreateCostCategoryDefinitionResponseTypeDef:  # (5)
     ...
 ```
 
 1. See [:material-code-brackets: CostCategoryRuleVersionType](./literals.md#costcategoryruleversiontype) 
 2. See [:material-code-braces: CostCategoryRuleTypeDef](./type_defs.md#costcategoryruletypedef) 
 3. See [:material-code-braces: CostCategorySplitChargeRuleTypeDef](./type_defs.md#costcategorysplitchargeruletypedef) 
-4. See [:material-code-braces: CreateCostCategoryDefinitionResponseTypeDef](./type_defs.md#createcostcategorydefinitionresponsetypedef) 
+4. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
+5. See [:material-code-braces: CreateCostCategoryDefinitionResponseTypeDef](./type_defs.md#createcostcategorydefinitionresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -260,8 +281,8 @@ parent.delete_cost_category_definition(**kwargs)
 
 ### describe\_cost\_category\_definition
 
-Returns the name, ARN, rules, definition, and effective dates of a Cost Category
-that's defined in the account.
+Returns the name, Amazon Resource Name (ARN), rules, definition, and effective
+dates of a Cost Category that's defined in the account.
 
 Type annotations and code completion for `#!python session.client("ce").describe_cost_category_definition` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.describe_cost_category_definition)
@@ -612,7 +633,10 @@ parent.get_dimension_values(**kwargs)
 
 ### get\_reservation\_coverage
 
-Retrieves the reservation coverage for your account.
+Retrieves the reservation coverage for your account, which you can use to see
+how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
+Relational Database Service, or Amazon Redshift usage is covered by a
+reservation.
 
 Type annotations and code completion for `#!python session.client("ce").get_reservation_coverage` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_reservation_coverage)
@@ -653,7 +677,7 @@ parent.get_reservation_coverage(**kwargs)
 
 ### get\_reservation\_purchase\_recommendation
 
-Gets recommendations for which reservations to purchase.
+Gets recommendations for reservation purchases.
 
 Type annotations and code completion for `#!python session.client("ce").get_reservation_purchase_recommendation` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_reservation_purchase_recommendation)
@@ -1012,10 +1036,45 @@ parent.get_usage_forecast(**kwargs)
 
 1. See [:material-code-braces: GetUsageForecastRequestRequestTypeDef](./type_defs.md#getusageforecastrequestrequesttypedef) 
 
+### list\_cost\_allocation\_tags
+
+Get a list of cost allocation tags.
+
+Type annotations and code completion for `#!python session.client("ce").list_cost_allocation_tags` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.list_cost_allocation_tags)
+
+```python title="Method definition"
+await def list_cost_allocation_tags(
+    self,
+    *,
+    Status: CostAllocationTagStatusType = ...,  # (1)
+    TagKeys: Sequence[str] = ...,
+    Type: CostAllocationTagTypeType = ...,  # (2)
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> ListCostAllocationTagsResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: CostAllocationTagStatusType](./literals.md#costallocationtagstatustype) 
+2. See [:material-code-brackets: CostAllocationTagTypeType](./literals.md#costallocationtagtypetype) 
+3. See [:material-code-braces: ListCostAllocationTagsResponseTypeDef](./type_defs.md#listcostallocationtagsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListCostAllocationTagsRequestRequestTypeDef = {  # (1)
+    "Status": ...,
+}
+
+parent.list_cost_allocation_tags(**kwargs)
+```
+
+1. See [:material-code-braces: ListCostAllocationTagsRequestRequestTypeDef](./type_defs.md#listcostallocationtagsrequestrequesttypedef) 
+
 ### list\_cost\_category\_definitions
 
-Returns the name, ARN, `NumberOfRules` and effective dates of all Cost
-Categories defined in the account.
+Returns the name, Amazon Resource Name (ARN), `NumberOfRules` and effective
+dates of all Cost Categories defined in the account.
 
 Type annotations and code completion for `#!python session.client("ce").list_cost_category_definitions` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.list_cost_category_definitions)
@@ -1043,6 +1102,35 @@ parent.list_cost_category_definitions(**kwargs)
 ```
 
 1. See [:material-code-braces: ListCostCategoryDefinitionsRequestRequestTypeDef](./type_defs.md#listcostcategorydefinitionsrequestrequesttypedef) 
+
+### list\_tags\_for\_resource
+
+.
+
+Type annotations and code completion for `#!python session.client("ce").list_tags_for_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.list_tags_for_resource)
+
+```python title="Method definition"
+await def list_tags_for_resource(
+    self,
+    *,
+    ResourceArn: str,
+) -> ListTagsForResourceResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListTagsForResourceRequestRequestTypeDef = {  # (1)
+    "ResourceArn": ...,
+}
+
+parent.list_tags_for_resource(**kwargs)
+```
+
+1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
 
 ### provide\_anomaly\_feedback
 
@@ -1075,6 +1163,67 @@ parent.provide_anomaly_feedback(**kwargs)
 ```
 
 1. See [:material-code-braces: ProvideAnomalyFeedbackRequestRequestTypeDef](./type_defs.md#provideanomalyfeedbackrequestrequesttypedef) 
+
+### tag\_resource
+
+.
+
+Type annotations and code completion for `#!python session.client("ce").tag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.tag_resource)
+
+```python title="Method definition"
+await def tag_resource(
+    self,
+    *,
+    ResourceArn: str,
+    ResourceTags: Sequence[ResourceTagTypeDef],  # (1)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: ResourceTagTypeDef](./type_defs.md#resourcetagtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: TagResourceRequestRequestTypeDef = {  # (1)
+    "ResourceArn": ...,
+    "ResourceTags": ...,
+}
+
+parent.tag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef) 
+
+### untag\_resource
+
+Removes one or more tags from a resource.
+
+Type annotations and code completion for `#!python session.client("ce").untag_resource` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.untag_resource)
+
+```python title="Method definition"
+await def untag_resource(
+    self,
+    *,
+    ResourceArn: str,
+    ResourceTagKeys: Sequence[str],
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: UntagResourceRequestRequestTypeDef = {  # (1)
+    "ResourceArn": ...,
+    "ResourceTagKeys": ...,
+}
+
+parent.untag_resource(**kwargs)
+```
+
+1. See [:material-code-braces: UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef) 
 
 ### update\_anomaly\_monitor
 
@@ -1141,6 +1290,36 @@ parent.update_anomaly_subscription(**kwargs)
 ```
 
 1. See [:material-code-braces: UpdateAnomalySubscriptionRequestRequestTypeDef](./type_defs.md#updateanomalysubscriptionrequestrequesttypedef) 
+
+### update\_cost\_allocation\_tags\_status
+
+Updates status for cost allocation tags in bulk, with maximum batch size of 20.
+
+Type annotations and code completion for `#!python session.client("ce").update_cost_allocation_tags_status` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.update_cost_allocation_tags_status)
+
+```python title="Method definition"
+await def update_cost_allocation_tags_status(
+    self,
+    *,
+    CostAllocationTagsStatus: Sequence[CostAllocationTagStatusEntryTypeDef],  # (1)
+) -> UpdateCostAllocationTagsStatusResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: CostAllocationTagStatusEntryTypeDef](./type_defs.md#costallocationtagstatusentrytypedef) 
+2. See [:material-code-braces: UpdateCostAllocationTagsStatusResponseTypeDef](./type_defs.md#updatecostallocationtagsstatusresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdateCostAllocationTagsStatusRequestRequestTypeDef = {  # (1)
+    "CostAllocationTagsStatus": ...,
+}
+
+parent.update_cost_allocation_tags_status(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateCostAllocationTagsStatusRequestRequestTypeDef](./type_defs.md#updatecostallocationtagsstatusrequestrequesttypedef) 
 
 ### update\_cost\_category\_definition
 

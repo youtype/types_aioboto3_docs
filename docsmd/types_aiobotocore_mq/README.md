@@ -115,14 +115,15 @@ def get_value() -> AuthenticationStrategyType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_mq.type_defs import AvailabilityZoneTypeDef
+from types_aiobotocore_mq.type_defs import ActionRequiredTypeDef
 
-def get_value() -> AvailabilityZoneTypeDef:
+def get_value() -> ActionRequiredTypeDef:
     return {
-        "Name": ...,
+        "ActionRequiredCode": ...,
     }
 ```
 
+- [ActionRequiredTypeDef](./type_defs.md#actionrequiredtypedef)
 - [AvailabilityZoneTypeDef](./type_defs.md#availabilityzonetypedef)
 - [EngineVersionTypeDef](./type_defs.md#engineversiontypedef)
 - [BrokerInstanceTypeDef](./type_defs.md#brokerinstancetypedef)

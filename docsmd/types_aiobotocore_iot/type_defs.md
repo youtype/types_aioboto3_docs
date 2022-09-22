@@ -2262,6 +2262,7 @@ def get_value() -> RegistrationConfigTypeDef:
 class RegistrationConfigTypeDef(TypedDict):
     templateBody: NotRequired[str],
     roleArn: NotRequired[str],
+    templateName: NotRequired[str],
 ```
 
 ## DescribeCertificateRequestRequestTypeDef
@@ -3463,6 +3464,22 @@ class HttpUrlDestinationSummaryTypeDef(TypedDict):
     confirmationUrl: NotRequired[str],
 ```
 
+## IndexingFilterTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iot.type_defs import IndexingFilterTypeDef
+
+def get_value() -> IndexingFilterTypeDef:
+    return {
+        "namedShadowNames": ...,
+    }
+```
+
+```python title="Definition"
+class IndexingFilterTypeDef(TypedDict):
+    namedShadowNames: NotRequired[List[str]],
+```
+
 ## JobExecutionStatusDetailsTypeDef
 
 ```python title="Usage Example"
@@ -3565,6 +3582,7 @@ class JobSummaryTypeDef(TypedDict):
     createdAt: NotRequired[datetime],
     lastUpdatedAt: NotRequired[datetime],
     completedAt: NotRequired[datetime],
+    isConcurrent: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: TargetSelectionType](./literals.md#targetselectiontype) 
@@ -3755,6 +3773,7 @@ class ListCACertificatesRequestRequestTypeDef(TypedDict):
     pageSize: NotRequired[int],
     marker: NotRequired[str],
     ascendingOrder: NotRequired[bool],
+    templateName: NotRequired[str],
 ```
 
 ## ListCertificatesByCARequestRequestTypeDef
@@ -4044,6 +4063,33 @@ class ManagedJobTemplateSummaryTypeDef(TypedDict):
     templateVersion: NotRequired[str],
 ```
 
+## ListMetricValuesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iot.type_defs import ListMetricValuesRequestRequestTypeDef
+
+def get_value() -> ListMetricValuesRequestRequestTypeDef:
+    return {
+        "thingName": ...,
+        "metricName": ...,
+        "startTime": ...,
+        "endTime": ...,
+    }
+```
+
+```python title="Definition"
+class ListMetricValuesRequestRequestTypeDef(TypedDict):
+    thingName: str,
+    metricName: str,
+    startTime: Union[datetime, str],
+    endTime: Union[datetime, str],
+    dimensionName: NotRequired[str],
+    dimensionValueOperator: NotRequired[DimensionValueOperatorType],  # (1)
+    maxResults: NotRequired[int],
+    nextToken: NotRequired[str],
+```
+
+1. See [:material-code-brackets: DimensionValueOperatorType](./literals.md#dimensionvalueoperatortype) 
 ## ListMitigationActionsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4337,8 +4383,10 @@ class ProvisioningTemplateSummaryTypeDef(TypedDict):
     creationDate: NotRequired[datetime],
     lastModifiedDate: NotRequired[datetime],
     enabled: NotRequired[bool],
+    type: NotRequired[TemplateTypeType],  # (1)
 ```
 
+1. See [:material-code-brackets: TemplateTypeType](./literals.md#templatetypetype) 
 ## ListRoleAliasesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -5639,6 +5687,24 @@ class AbortConfigTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: AbortCriteriaTypeDef](./type_defs.md#abortcriteriatypedef) 
+## MetricDatumTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iot.type_defs import MetricDatumTypeDef
+
+def get_value() -> MetricDatumTypeDef:
+    return {
+        "timestamp": ...,
+    }
+```
+
+```python title="Definition"
+class MetricDatumTypeDef(TypedDict):
+    timestamp: NotRequired[datetime],
+    value: NotRequired[MetricValueTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: MetricValueTypeDef](./type_defs.md#metricvaluetypedef) 
 ## UpdateFleetMetricRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -8083,11 +8149,13 @@ class CACertificateDescriptionTypeDef(TypedDict):
     customerVersion: NotRequired[int],
     generationId: NotRequired[str],
     validity: NotRequired[CertificateValidityTypeDef],  # (3)
+    certificateMode: NotRequired[CertificateModeType],  # (4)
 ```
 
 1. See [:material-code-brackets: CACertificateStatusType](./literals.md#cacertificatestatustype) 
 2. See [:material-code-brackets: AutoRegistrationStatusType](./literals.md#autoregistrationstatustype) 
 3. See [:material-code-braces: CertificateValidityTypeDef](./type_defs.md#certificatevaliditytypedef) 
+4. See [:material-code-brackets: CertificateModeType](./literals.md#certificatemodetype) 
 ## ListCACertificatesResponseTypeDef
 
 ```python title="Usage Example"
@@ -8583,10 +8651,12 @@ class CreateProvisioningTemplateRequestRequestTypeDef(TypedDict):
     enabled: NotRequired[bool],
     preProvisioningHook: NotRequired[ProvisioningHookTypeDef],  # (1)
     tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    type: NotRequired[TemplateTypeType],  # (3)
 ```
 
 1. See [:material-code-braces: ProvisioningHookTypeDef](./type_defs.md#provisioninghooktypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-brackets: TemplateTypeType](./literals.md#templatetypetype) 
 ## DescribeProvisioningTemplateResponseTypeDef
 
 ```python title="Usage Example"
@@ -8604,6 +8674,7 @@ def get_value() -> DescribeProvisioningTemplateResponseTypeDef:
         "enabled": ...,
         "provisioningRoleArn": ...,
         "preProvisioningHook": ...,
+        "type": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -8620,11 +8691,13 @@ class DescribeProvisioningTemplateResponseTypeDef(TypedDict):
     enabled: bool,
     provisioningRoleArn: str,
     preProvisioningHook: ProvisioningHookTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+    type: TemplateTypeType,  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
 ```
 
 1. See [:material-code-braces: ProvisioningHookTypeDef](./type_defs.md#provisioninghooktypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+2. See [:material-code-brackets: TemplateTypeType](./literals.md#templatetypetype) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## UpdateProvisioningTemplateRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -8709,22 +8782,23 @@ from types_aiobotocore_iot.type_defs import RegisterCACertificateRequestRequestT
 def get_value() -> RegisterCACertificateRequestRequestTypeDef:
     return {
         "caCertificate": ...,
-        "verificationCertificate": ...,
     }
 ```
 
 ```python title="Definition"
 class RegisterCACertificateRequestRequestTypeDef(TypedDict):
     caCertificate: str,
-    verificationCertificate: str,
+    verificationCertificate: NotRequired[str],
     setAsActive: NotRequired[bool],
     allowAutoRegistration: NotRequired[bool],
     registrationConfig: NotRequired[RegistrationConfigTypeDef],  # (1)
     tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    certificateMode: NotRequired[CertificateModeType],  # (3)
 ```
 
 1. See [:material-code-braces: RegistrationConfigTypeDef](./type_defs.md#registrationconfigtypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-brackets: CertificateModeType](./literals.md#certificatemodetype) 
 ## UpdateCACertificateRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -9059,33 +9133,6 @@ class ThingGroupIndexingConfigurationTypeDef(TypedDict):
 1. See [:material-code-brackets: ThingGroupIndexingModeType](./literals.md#thinggroupindexingmodetype) 
 2. See [:material-code-braces: FieldTypeDef](./type_defs.md#fieldtypedef) 
 3. See [:material-code-braces: FieldTypeDef](./type_defs.md#fieldtypedef) 
-## ThingIndexingConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iot.type_defs import ThingIndexingConfigurationTypeDef
-
-def get_value() -> ThingIndexingConfigurationTypeDef:
-    return {
-        "thingIndexingMode": ...,
-    }
-```
-
-```python title="Definition"
-class ThingIndexingConfigurationTypeDef(TypedDict):
-    thingIndexingMode: ThingIndexingModeType,  # (1)
-    thingConnectivityIndexingMode: NotRequired[ThingConnectivityIndexingModeType],  # (2)
-    deviceDefenderIndexingMode: NotRequired[DeviceDefenderIndexingModeType],  # (3)
-    namedShadowIndexingMode: NotRequired[NamedShadowIndexingModeType],  # (4)
-    managedFields: NotRequired[List[FieldTypeDef]],  # (5)
-    customFields: NotRequired[List[FieldTypeDef]],  # (5)
-```
-
-1. See [:material-code-brackets: ThingIndexingModeType](./literals.md#thingindexingmodetype) 
-2. See [:material-code-brackets: ThingConnectivityIndexingModeType](./literals.md#thingconnectivityindexingmodetype) 
-3. See [:material-code-brackets: DeviceDefenderIndexingModeType](./literals.md#devicedefenderindexingmodetype) 
-4. See [:material-code-brackets: NamedShadowIndexingModeType](./literals.md#namedshadowindexingmodetype) 
-5. See [:material-code-braces: FieldTypeDef](./type_defs.md#fieldtypedef) 
-6. See [:material-code-braces: FieldTypeDef](./type_defs.md#fieldtypedef) 
 ## StreamFileTypeDef
 
 ```python title="Usage Example"
@@ -9328,6 +9375,7 @@ def get_value() -> ListCACertificatesRequestListCACertificatesPaginateTypeDef:
 ```python title="Definition"
 class ListCACertificatesRequestListCACertificatesPaginateTypeDef(TypedDict):
     ascendingOrder: NotRequired[bool],
+    templateName: NotRequired[str],
     PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
 ```
 
@@ -9581,6 +9629,33 @@ class ListJobsRequestListJobsPaginateTypeDef(TypedDict):
 1. See [:material-code-brackets: JobStatusType](./literals.md#jobstatustype) 
 2. See [:material-code-brackets: TargetSelectionType](./literals.md#targetselectiontype) 
 3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListMetricValuesRequestListMetricValuesPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iot.type_defs import ListMetricValuesRequestListMetricValuesPaginateTypeDef
+
+def get_value() -> ListMetricValuesRequestListMetricValuesPaginateTypeDef:
+    return {
+        "thingName": ...,
+        "metricName": ...,
+        "startTime": ...,
+        "endTime": ...,
+    }
+```
+
+```python title="Definition"
+class ListMetricValuesRequestListMetricValuesPaginateTypeDef(TypedDict):
+    thingName: str,
+    metricName: str,
+    startTime: Union[datetime, str],
+    endTime: Union[datetime, str],
+    dimensionName: NotRequired[str],
+    dimensionValueOperator: NotRequired[DimensionValueOperatorType],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-brackets: DimensionValueOperatorType](./literals.md#dimensionvalueoperatortype) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListMitigationActionsRequestListMitigationActionsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -10287,6 +10362,35 @@ class HttpAuthorizationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: SigV4AuthorizationTypeDef](./type_defs.md#sigv4authorizationtypedef) 
+## ThingIndexingConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iot.type_defs import ThingIndexingConfigurationTypeDef
+
+def get_value() -> ThingIndexingConfigurationTypeDef:
+    return {
+        "thingIndexingMode": ...,
+    }
+```
+
+```python title="Definition"
+class ThingIndexingConfigurationTypeDef(TypedDict):
+    thingIndexingMode: ThingIndexingModeType,  # (1)
+    thingConnectivityIndexingMode: NotRequired[ThingConnectivityIndexingModeType],  # (2)
+    deviceDefenderIndexingMode: NotRequired[DeviceDefenderIndexingModeType],  # (3)
+    namedShadowIndexingMode: NotRequired[NamedShadowIndexingModeType],  # (4)
+    managedFields: NotRequired[List[FieldTypeDef]],  # (5)
+    customFields: NotRequired[List[FieldTypeDef]],  # (5)
+    filter: NotRequired[IndexingFilterTypeDef],  # (7)
+```
+
+1. See [:material-code-brackets: ThingIndexingModeType](./literals.md#thingindexingmodetype) 
+2. See [:material-code-brackets: ThingConnectivityIndexingModeType](./literals.md#thingconnectivityindexingmodetype) 
+3. See [:material-code-brackets: DeviceDefenderIndexingModeType](./literals.md#devicedefenderindexingmodetype) 
+4. See [:material-code-brackets: NamedShadowIndexingModeType](./literals.md#namedshadowindexingmodetype) 
+5. See [:material-code-braces: FieldTypeDef](./type_defs.md#fieldtypedef) 
+6. See [:material-code-braces: FieldTypeDef](./type_defs.md#fieldtypedef) 
+7. See [:material-code-braces: IndexingFilterTypeDef](./type_defs.md#indexingfiltertypedef) 
 ## JobExecutionTypeDef
 
 ```python title="Usage Example"
@@ -10986,6 +11090,28 @@ class ValidateSecurityProfileBehaviorsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: ValidationErrorTypeDef](./type_defs.md#validationerrortypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListMetricValuesResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iot.type_defs import ListMetricValuesResponseTypeDef
+
+def get_value() -> ListMetricValuesResponseTypeDef:
+    return {
+        "metricDatumList": ...,
+        "nextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListMetricValuesResponseTypeDef(TypedDict):
+    metricDatumList: List[MetricDatumTypeDef],  # (1)
+    nextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: MetricDatumTypeDef](./type_defs.md#metricdatumtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DeniedTypeDef
 
 ```python title="Usage Example"
@@ -11280,48 +11406,6 @@ class JobExecutionsRolloutConfigTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ExponentialRolloutRateTypeDef](./type_defs.md#exponentialrolloutratetypedef) 
-## GetIndexingConfigurationResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iot.type_defs import GetIndexingConfigurationResponseTypeDef
-
-def get_value() -> GetIndexingConfigurationResponseTypeDef:
-    return {
-        "thingIndexingConfiguration": ...,
-        "thingGroupIndexingConfiguration": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetIndexingConfigurationResponseTypeDef(TypedDict):
-    thingIndexingConfiguration: ThingIndexingConfigurationTypeDef,  # (1)
-    thingGroupIndexingConfiguration: ThingGroupIndexingConfigurationTypeDef,  # (2)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
-```
-
-1. See [:material-code-braces: ThingIndexingConfigurationTypeDef](./type_defs.md#thingindexingconfigurationtypedef) 
-2. See [:material-code-braces: ThingGroupIndexingConfigurationTypeDef](./type_defs.md#thinggroupindexingconfigurationtypedef) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## UpdateIndexingConfigurationRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_iot.type_defs import UpdateIndexingConfigurationRequestRequestTypeDef
-
-def get_value() -> UpdateIndexingConfigurationRequestRequestTypeDef:
-    return {
-        "thingIndexingConfiguration": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateIndexingConfigurationRequestRequestTypeDef(TypedDict):
-    thingIndexingConfiguration: NotRequired[ThingIndexingConfigurationTypeDef],  # (1)
-    thingGroupIndexingConfiguration: NotRequired[ThingGroupIndexingConfigurationTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: ThingIndexingConfigurationTypeDef](./type_defs.md#thingindexingconfigurationtypedef) 
-2. See [:material-code-braces: ThingGroupIndexingConfigurationTypeDef](./type_defs.md#thinggroupindexingconfigurationtypedef) 
 ## CreateStreamRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -11451,6 +11535,48 @@ class HttpActionTypeDef(TypedDict):
 
 1. See [:material-code-braces: HttpActionHeaderTypeDef](./type_defs.md#httpactionheadertypedef) 
 2. See [:material-code-braces: HttpAuthorizationTypeDef](./type_defs.md#httpauthorizationtypedef) 
+## GetIndexingConfigurationResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iot.type_defs import GetIndexingConfigurationResponseTypeDef
+
+def get_value() -> GetIndexingConfigurationResponseTypeDef:
+    return {
+        "thingIndexingConfiguration": ...,
+        "thingGroupIndexingConfiguration": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetIndexingConfigurationResponseTypeDef(TypedDict):
+    thingIndexingConfiguration: ThingIndexingConfigurationTypeDef,  # (1)
+    thingGroupIndexingConfiguration: ThingGroupIndexingConfigurationTypeDef,  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-braces: ThingIndexingConfigurationTypeDef](./type_defs.md#thingindexingconfigurationtypedef) 
+2. See [:material-code-braces: ThingGroupIndexingConfigurationTypeDef](./type_defs.md#thinggroupindexingconfigurationtypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateIndexingConfigurationRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iot.type_defs import UpdateIndexingConfigurationRequestRequestTypeDef
+
+def get_value() -> UpdateIndexingConfigurationRequestRequestTypeDef:
+    return {
+        "thingIndexingConfiguration": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateIndexingConfigurationRequestRequestTypeDef(TypedDict):
+    thingIndexingConfiguration: NotRequired[ThingIndexingConfigurationTypeDef],  # (1)
+    thingGroupIndexingConfiguration: NotRequired[ThingGroupIndexingConfigurationTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: ThingIndexingConfigurationTypeDef](./type_defs.md#thingindexingconfigurationtypedef) 
+2. See [:material-code-braces: ThingGroupIndexingConfigurationTypeDef](./type_defs.md#thinggroupindexingconfigurationtypedef) 
 ## DescribeJobExecutionResponseTypeDef
 
 ```python title="Usage Example"
@@ -12446,6 +12572,7 @@ class JobTypeDef(TypedDict):
     jobTemplateArn: NotRequired[str],
     jobExecutionsRetryConfig: NotRequired[JobExecutionsRetryConfigTypeDef],  # (8)
     documentParameters: NotRequired[Dict[str, str]],
+    isConcurrent: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: TargetSelectionType](./literals.md#targetselectiontype) 

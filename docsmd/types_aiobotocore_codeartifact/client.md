@@ -105,6 +105,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("codeartifact").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### copy\_package\_versions
 
 Copies package versions from one repository to another repository in the same
@@ -418,6 +433,46 @@ parent.describe_domain(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeDomainRequestRequestTypeDef](./type_defs.md#describedomainrequestrequesttypedef) 
+
+### describe\_package
+
+Returns a
+[PackageDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html)_
+object that contains information about the requested package.
+
+Type annotations and code completion for `#!python session.client("codeartifact").describe_package` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.describe_package)
+
+```python title="Method definition"
+await def describe_package(
+    self,
+    *,
+    domain: str,
+    repository: str,
+    format: PackageFormatType,  # (1)
+    package: str,
+    domainOwner: str = ...,
+    namespace: str = ...,
+) -> DescribePackageResultTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: PackageFormatType](./literals.md#packageformattype) 
+2. See [:material-code-braces: DescribePackageResultTypeDef](./type_defs.md#describepackageresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribePackageRequestRequestTypeDef = {  # (1)
+    "domain": ...,
+    "repository": ...,
+    "format": ...,
+    "package": ...,
+}
+
+parent.describe_package(**kwargs)
+```
+
+1. See [:material-code-braces: DescribePackageRequestRequestTypeDef](./type_defs.md#describepackagerequestrequesttypedef) 
 
 ### describe\_package\_version
 
@@ -807,7 +862,8 @@ parent.get_repository_permissions_policy(**kwargs)
 
 Returns a list of
 [DomainSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html)_
-objects for all domains owned by the AWS account that makes this call.
+objects for all domains owned by the Amazon Web Services account that makes this
+call.
 
 Type annotations and code completion for `#!python session.client("codeartifact").list_domains` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_domains)
@@ -943,14 +999,16 @@ await def list_package_versions(
     sortBy: PackageVersionSortTypeType = ...,  # (3)
     maxResults: int = ...,
     nextToken: str = ...,
-) -> ListPackageVersionsResultTypeDef:  # (4)
+    originType: PackageVersionOriginTypeType = ...,  # (4)
+) -> ListPackageVersionsResultTypeDef:  # (5)
     ...
 ```
 
 1. See [:material-code-brackets: PackageFormatType](./literals.md#packageformattype) 
 2. See [:material-code-brackets: PackageVersionStatusType](./literals.md#packageversionstatustype) 
 3. See [:material-code-brackets: PackageVersionSortTypeType](./literals.md#packageversionsorttypetype) 
-4. See [:material-code-braces: ListPackageVersionsResultTypeDef](./type_defs.md#listpackageversionsresulttypedef) 
+4. See [:material-code-brackets: PackageVersionOriginTypeType](./literals.md#packageversionorigintypetype) 
+5. See [:material-code-braces: ListPackageVersionsResultTypeDef](./type_defs.md#listpackageversionsresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -987,12 +1045,16 @@ await def list_packages(
     packagePrefix: str = ...,
     maxResults: int = ...,
     nextToken: str = ...,
-) -> ListPackagesResultTypeDef:  # (2)
+    publish: AllowPublishType = ...,  # (2)
+    upstream: AllowUpstreamType = ...,  # (3)
+) -> ListPackagesResultTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-brackets: PackageFormatType](./literals.md#packageformattype) 
-2. See [:material-code-braces: ListPackagesResultTypeDef](./type_defs.md#listpackagesresulttypedef) 
+2. See [:material-code-brackets: AllowPublishType](./literals.md#allowpublishtype) 
+3. See [:material-code-brackets: AllowUpstreamType](./literals.md#allowupstreamtype) 
+4. See [:material-code-braces: ListPackagesResultTypeDef](./type_defs.md#listpackagesresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1077,8 +1139,8 @@ parent.list_repositories_in_domain(**kwargs)
 
 ### list\_tags\_for\_resource
 
-Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
-AWS CodeArtifact.
+Gets information about Amazon Web Services tags for a specified Amazon Resource
+Name (ARN) in CodeArtifact.
 
 Type annotations and code completion for `#!python session.client("codeartifact").list_tags_for_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_tags_for_resource)
@@ -1138,6 +1200,47 @@ parent.put_domain_permissions_policy(**kwargs)
 
 1. See [:material-code-braces: PutDomainPermissionsPolicyRequestRequestTypeDef](./type_defs.md#putdomainpermissionspolicyrequestrequesttypedef) 
 
+### put\_package\_origin\_configuration
+
+Sets the package origin configuration for a package.
+
+Type annotations and code completion for `#!python session.client("codeartifact").put_package_origin_configuration` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.put_package_origin_configuration)
+
+```python title="Method definition"
+await def put_package_origin_configuration(
+    self,
+    *,
+    domain: str,
+    repository: str,
+    format: PackageFormatType,  # (1)
+    package: str,
+    restrictions: PackageOriginRestrictionsTypeDef,  # (2)
+    domainOwner: str = ...,
+    namespace: str = ...,
+) -> PutPackageOriginConfigurationResultTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: PackageFormatType](./literals.md#packageformattype) 
+2. See [:material-code-braces: PackageOriginRestrictionsTypeDef](./type_defs.md#packageoriginrestrictionstypedef) 
+3. See [:material-code-braces: PutPackageOriginConfigurationResultTypeDef](./type_defs.md#putpackageoriginconfigurationresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: PutPackageOriginConfigurationRequestRequestTypeDef = {  # (1)
+    "domain": ...,
+    "repository": ...,
+    "format": ...,
+    "package": ...,
+    "restrictions": ...,
+}
+
+parent.put_package_origin_configuration(**kwargs)
+```
+
+1. See [:material-code-braces: PutPackageOriginConfigurationRequestRequestTypeDef](./type_defs.md#putpackageoriginconfigurationrequestrequesttypedef) 
+
 ### put\_repository\_permissions\_policy
 
 Sets the resource policy on a repository that specifies permissions to access
@@ -1176,7 +1279,7 @@ parent.put_repository_permissions_policy(**kwargs)
 
 ### tag\_resource
 
-Adds or updates tags for a resource in AWS CodeArtifact.
+Adds or updates tags for a resource in CodeArtifact.
 
 Type annotations and code completion for `#!python session.client("codeartifact").tag_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.tag_resource)
@@ -1207,7 +1310,7 @@ parent.tag_resource(**kwargs)
 
 ### untag\_resource
 
-Removes tags from a resource in AWS CodeArtifact.
+Removes tags from a resource in CodeArtifact.
 
 Type annotations and code completion for `#!python session.client("codeartifact").untag_resource` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.untag_resource)

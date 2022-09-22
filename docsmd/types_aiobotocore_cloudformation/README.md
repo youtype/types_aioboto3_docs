@@ -169,12 +169,13 @@ def get_resource() -> Event:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_cloudformation.literals import AccountGateStatusType
+from types_aiobotocore_cloudformation.literals import AccountFilterTypeType
 
-def get_value() -> AccountGateStatusType:
-    return "FAILED"
+def get_value() -> AccountFilterTypeType:
+    return "DIFFERENCE"
 ```
 
+- [AccountFilterTypeType](./literals.md#accountfiltertypetype)
 - [AccountGateStatusType](./literals.md#accountgatestatustype)
 - [CallAsType](./literals.md#callastype)
 - [CapabilityType](./literals.md#capabilitytype)

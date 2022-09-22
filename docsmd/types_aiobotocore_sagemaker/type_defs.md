@@ -357,6 +357,22 @@ class AthenaDatasetDefinitionTypeDef(TypedDict):
 
 1. See [:material-code-brackets: AthenaResultFormatType](./literals.md#athenaresultformattype) 
 2. See [:material-code-brackets: AthenaResultCompressionTypeType](./literals.md#athenaresultcompressiontypetype) 
+## AutoMLCandidateGenerationConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import AutoMLCandidateGenerationConfigTypeDef
+
+def get_value() -> AutoMLCandidateGenerationConfigTypeDef:
+    return {
+        "FeatureSpecificationS3Uri": ...,
+    }
+```
+
+```python title="Definition"
+class AutoMLCandidateGenerationConfigTypeDef(TypedDict):
+    FeatureSpecificationS3Uri: NotRequired[str],
+```
+
 ## AutoMLCandidateStepTypeDef
 
 ```python title="Usage Example"
@@ -437,6 +453,22 @@ class AutoMLS3DataSourceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: AutoMLS3DataTypeType](./literals.md#automls3datatypetype) 
+## AutoMLDataSplitConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import AutoMLDataSplitConfigTypeDef
+
+def get_value() -> AutoMLDataSplitConfigTypeDef:
+    return {
+        "ValidationFraction": ...,
+    }
+```
+
+```python title="Definition"
+class AutoMLDataSplitConfigTypeDef(TypedDict):
+    ValidationFraction: NotRequired[float],
+```
+
 ## AutoMLJobArtifactsTypeDef
 
 ```python title="Usage Example"
@@ -660,10 +692,12 @@ class MetricDatumTypeDef(TypedDict):
     MetricName: NotRequired[AutoMLMetricEnumType],  # (1)
     Value: NotRequired[float],
     Set: NotRequired[MetricSetSourceType],  # (2)
+    StandardMetricName: NotRequired[AutoMLMetricExtendedEnumType],  # (3)
 ```
 
 1. See [:material-code-brackets: AutoMLMetricEnumType](./literals.md#automlmetricenumtype) 
 2. See [:material-code-brackets: MetricSetSourceType](./literals.md#metricsetsourcetype) 
+3. See [:material-code-brackets: AutoMLMetricExtendedEnumType](./literals.md#automlmetricextendedenumtype) 
 ## CapacitySizeTypeDef
 
 ```python title="Usage Example"
@@ -1219,6 +1253,24 @@ class EdgeOutputConfigTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: EdgePresetDeploymentTypeType](./literals.md#edgepresetdeploymenttypetype) 
+## EdgeDeploymentModelConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import EdgeDeploymentModelConfigTypeDef
+
+def get_value() -> EdgeDeploymentModelConfigTypeDef:
+    return {
+        "ModelHandle": ...,
+        "EdgePackagingJobName": ...,
+    }
+```
+
+```python title="Definition"
+class EdgeDeploymentModelConfigTypeDef(TypedDict):
+    ModelHandle: str,
+    EdgePackagingJobName: str,
+```
+
 ## FeatureDefinitionTypeDef
 
 ```python title="Usage Example"
@@ -1420,6 +1472,22 @@ class ModelQualityAppSpecificationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: MonitoringProblemTypeType](./literals.md#monitoringproblemtypetype) 
+## InstanceMetadataServiceConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import InstanceMetadataServiceConfigurationTypeDef
+
+def get_value() -> InstanceMetadataServiceConfigurationTypeDef:
+    return {
+        "MinimumInstanceMetadataServiceVersion": ...,
+    }
+```
+
+```python title="Definition"
+class InstanceMetadataServiceConfigurationTypeDef(TypedDict):
+    MinimumInstanceMetadataServiceVersion: str,
+```
+
 ## NotebookInstanceLifecycleHookTypeDef
 
 ```python title="Usage Example"
@@ -1625,28 +1693,6 @@ class ProfilerRuleConfigurationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ProcessingInstanceTypeType](./literals.md#processinginstancetypetype) 
-## ResourceConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import ResourceConfigTypeDef
-
-def get_value() -> ResourceConfigTypeDef:
-    return {
-        "InstanceType": ...,
-        "InstanceCount": ...,
-        "VolumeSizeInGB": ...,
-    }
-```
-
-```python title="Definition"
-class ResourceConfigTypeDef(TypedDict):
-    InstanceType: TrainingInstanceTypeType,  # (1)
-    InstanceCount: int,
-    VolumeSizeInGB: int,
-    VolumeKmsKeyId: NotRequired[str],
-```
-
-1. See [:material-code-brackets: TrainingInstanceTypeType](./literals.md#traininginstancetypetype) 
 ## RetryStrategyTypeDef
 
 ```python title="Usage Example"
@@ -1854,6 +1900,24 @@ class SourceIpConfigTypeDef(TypedDict):
     Cidrs: Sequence[str],
 ```
 
+## WorkforceVpcConfigRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import WorkforceVpcConfigRequestTypeDef
+
+def get_value() -> WorkforceVpcConfigRequestTypeDef:
+    return {
+        "VpcId": ...,
+    }
+```
+
+```python title="Definition"
+class WorkforceVpcConfigRequestTypeDef(TypedDict):
+    VpcId: NotRequired[str],
+    SecurityGroupIds: NotRequired[Sequence[str]],
+    Subnets: NotRequired[Sequence[str]],
+```
+
 ## NotificationConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -2036,6 +2100,7 @@ class S3DataSourceTypeDef(TypedDict):
     S3Uri: str,
     S3DataDistributionType: NotRequired[S3DataDistributionType],  # (2)
     AttributeNames: NotRequired[Sequence[str]],
+    InstanceGroupNames: NotRequired[Sequence[str]],
 ```
 
 1. See [:material-code-brackets: S3DataTypeType](./literals.md#s3datatypetype) 
@@ -2263,6 +2328,40 @@ class RetentionPolicyTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: RetentionTypeType](./literals.md#retentiontypetype) 
+## DeleteEdgeDeploymentPlanRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DeleteEdgeDeploymentPlanRequestRequestTypeDef
+
+def get_value() -> DeleteEdgeDeploymentPlanRequestRequestTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteEdgeDeploymentPlanRequestRequestTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+```
+
+## DeleteEdgeDeploymentStageRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DeleteEdgeDeploymentStageRequestRequestTypeDef
+
+def get_value() -> DeleteEdgeDeploymentStageRequestRequestTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+        "StageName": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteEdgeDeploymentStageRequestRequestTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+    StageName: str,
+```
+
 ## DeleteEndpointConfigInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -2721,6 +2820,68 @@ class DeployedImageTypeDef(TypedDict):
     ResolutionTime: NotRequired[datetime],
 ```
 
+## DeviceSelectionConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DeviceSelectionConfigTypeDef
+
+def get_value() -> DeviceSelectionConfigTypeDef:
+    return {
+        "DeviceSubsetType": ...,
+    }
+```
+
+```python title="Definition"
+class DeviceSelectionConfigTypeDef(TypedDict):
+    DeviceSubsetType: DeviceSubsetTypeType,  # (1)
+    Percentage: NotRequired[int],
+    DeviceNames: NotRequired[Sequence[str]],
+    DeviceNameContains: NotRequired[str],
+```
+
+1. See [:material-code-brackets: DeviceSubsetTypeType](./literals.md#devicesubsettypetype) 
+## EdgeDeploymentConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import EdgeDeploymentConfigTypeDef
+
+def get_value() -> EdgeDeploymentConfigTypeDef:
+    return {
+        "FailureHandlingPolicy": ...,
+    }
+```
+
+```python title="Definition"
+class EdgeDeploymentConfigTypeDef(TypedDict):
+    FailureHandlingPolicy: FailureHandlingPolicyType,  # (1)
+```
+
+1. See [:material-code-brackets: FailureHandlingPolicyType](./literals.md#failurehandlingpolicytype) 
+## EdgeDeploymentStatusTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import EdgeDeploymentStatusTypeDef
+
+def get_value() -> EdgeDeploymentStatusTypeDef:
+    return {
+        "StageStatus": ...,
+        "EdgeDeploymentSuccessInStage": ...,
+        "EdgeDeploymentPendingInStage": ...,
+        "EdgeDeploymentFailedInStage": ...,
+    }
+```
+
+```python title="Definition"
+class EdgeDeploymentStatusTypeDef(TypedDict):
+    StageStatus: StageStatusType,  # (1)
+    EdgeDeploymentSuccessInStage: int,
+    EdgeDeploymentPendingInStage: int,
+    EdgeDeploymentFailedInStage: int,
+    EdgeDeploymentStatusMessage: NotRequired[str],
+    EdgeDeploymentStageStartTime: NotRequired[datetime],
+```
+
+1. See [:material-code-brackets: StageStatusType](./literals.md#stagestatustype) 
 ## DeregisterDevicesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3025,6 +3186,24 @@ class DescribeDomainRequestRequestTypeDef(TypedDict):
     DomainId: str,
 ```
 
+## DescribeEdgeDeploymentPlanRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DescribeEdgeDeploymentPlanRequestRequestTypeDef
+
+def get_value() -> DescribeEdgeDeploymentPlanRequestRequestTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeEdgeDeploymentPlanRequestRequestTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+```
+
 ## DescribeEdgePackagingJobRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3161,6 +3340,24 @@ class DescribeFeatureGroupRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
 ```
 
+## LastUpdateStatusTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import LastUpdateStatusTypeDef
+
+def get_value() -> LastUpdateStatusTypeDef:
+    return {
+        "Status": ...,
+    }
+```
+
+```python title="Definition"
+class LastUpdateStatusTypeDef(TypedDict):
+    Status: LastUpdateStatusValueType,  # (1)
+    FailureReason: NotRequired[str],
+```
+
+1. See [:material-code-brackets: LastUpdateStatusValueType](./literals.md#lastupdatestatusvaluetype) 
 ## OfflineStoreStatusTypeDef
 
 ```python title="Usage Example"
@@ -3179,6 +3376,41 @@ class OfflineStoreStatusTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: OfflineStoreStatusValueType](./literals.md#offlinestorestatusvaluetype) 
+## DescribeFeatureMetadataRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DescribeFeatureMetadataRequestRequestTypeDef
+
+def get_value() -> DescribeFeatureMetadataRequestRequestTypeDef:
+    return {
+        "FeatureGroupName": ...,
+        "FeatureName": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeFeatureMetadataRequestRequestTypeDef(TypedDict):
+    FeatureGroupName: str,
+    FeatureName: str,
+```
+
+## FeatureParameterTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import FeatureParameterTypeDef
+
+def get_value() -> FeatureParameterTypeDef:
+    return {
+        "Key": ...,
+    }
+```
+
+```python title="Definition"
+class FeatureParameterTypeDef(TypedDict):
+    Key: NotRequired[str],
+    Value: NotRequired[str],
+```
+
 ## DescribeFlowDefinitionRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3991,6 +4223,37 @@ class DesiredWeightAndCapacityTypeDef(TypedDict):
     DesiredInstanceCount: NotRequired[int],
 ```
 
+## DeviceDeploymentSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DeviceDeploymentSummaryTypeDef
+
+def get_value() -> DeviceDeploymentSummaryTypeDef:
+    return {
+        "EdgeDeploymentPlanArn": ...,
+        "EdgeDeploymentPlanName": ...,
+        "StageName": ...,
+        "DeviceName": ...,
+        "DeviceArn": ...,
+    }
+```
+
+```python title="Definition"
+class DeviceDeploymentSummaryTypeDef(TypedDict):
+    EdgeDeploymentPlanArn: str,
+    EdgeDeploymentPlanName: str,
+    StageName: str,
+    DeviceName: str,
+    DeviceArn: str,
+    DeployedStageName: NotRequired[str],
+    DeviceFleetName: NotRequired[str],
+    DeviceDeploymentStatus: NotRequired[DeviceDeploymentStatusType],  # (1)
+    DeviceDeploymentStatusMessage: NotRequired[str],
+    Description: NotRequired[str],
+    DeploymentStartTime: NotRequired[datetime],
+```
+
+1. See [:material-code-brackets: DeviceDeploymentStatusType](./literals.md#devicedeploymentstatustype) 
 ## DeviceFleetSummaryTypeDef
 
 ```python title="Usage Example"
@@ -4141,6 +4404,34 @@ class EMRStepMetadataTypeDef(TypedDict):
     StepId: NotRequired[str],
     StepName: NotRequired[str],
     LogFilePath: NotRequired[str],
+```
+
+## EdgeDeploymentPlanSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import EdgeDeploymentPlanSummaryTypeDef
+
+def get_value() -> EdgeDeploymentPlanSummaryTypeDef:
+    return {
+        "EdgeDeploymentPlanArn": ...,
+        "EdgeDeploymentPlanName": ...,
+        "DeviceFleetName": ...,
+        "EdgeDeploymentSuccess": ...,
+        "EdgeDeploymentPending": ...,
+        "EdgeDeploymentFailed": ...,
+    }
+```
+
+```python title="Definition"
+class EdgeDeploymentPlanSummaryTypeDef(TypedDict):
+    EdgeDeploymentPlanArn: str,
+    EdgeDeploymentPlanName: str,
+    DeviceFleetName: str,
+    EdgeDeploymentSuccess: int,
+    EdgeDeploymentPending: int,
+    EdgeDeploymentFailed: int,
+    CreationTime: NotRequired[datetime],
+    LastModifiedTime: NotRequired[datetime],
 ```
 
 ## EdgeModelStatTypeDef
@@ -4551,6 +4842,27 @@ class HyperParameterTuningJobObjectiveTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: HyperParameterTuningJobObjectiveTypeType](./literals.md#hyperparametertuningjobobjectivetypetype) 
+## HyperParameterTuningInstanceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import HyperParameterTuningInstanceConfigTypeDef
+
+def get_value() -> HyperParameterTuningInstanceConfigTypeDef:
+    return {
+        "InstanceType": ...,
+        "InstanceCount": ...,
+        "VolumeSizeInGB": ...,
+    }
+```
+
+```python title="Definition"
+class HyperParameterTuningInstanceConfigTypeDef(TypedDict):
+    InstanceType: TrainingInstanceTypeType,  # (1)
+    InstanceCount: int,
+    VolumeSizeInGB: int,
+```
+
+1. See [:material-code-brackets: TrainingInstanceTypeType](./literals.md#traininginstancetypetype) 
 ## ResourceLimitsTypeDef
 
 ```python title="Usage Example"
@@ -4729,6 +5041,27 @@ class InferenceRecommendationsJobTypeDef(TypedDict):
 
 1. See [:material-code-brackets: RecommendationJobTypeType](./literals.md#recommendationjobtypetype) 
 2. See [:material-code-brackets: RecommendationJobStatusType](./literals.md#recommendationjobstatustype) 
+## InstanceGroupTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import InstanceGroupTypeDef
+
+def get_value() -> InstanceGroupTypeDef:
+    return {
+        "InstanceType": ...,
+        "InstanceCount": ...,
+        "InstanceGroupName": ...,
+    }
+```
+
+```python title="Definition"
+class InstanceGroupTypeDef(TypedDict):
+    InstanceType: TrainingInstanceTypeType,  # (1)
+    InstanceCount: int,
+    InstanceGroupName: str,
+```
+
+1. See [:material-code-brackets: TrainingInstanceTypeType](./literals.md#traininginstancetypetype) 
 ## IntegerParameterRangeSpecificationTypeDef
 
 ```python title="Usage Example"
@@ -4802,22 +5135,6 @@ class LabelCountersForWorkteamTypeDef(TypedDict):
     HumanLabeled: NotRequired[int],
     PendingHuman: NotRequired[int],
     Total: NotRequired[int],
-```
-
-## LabelingJobResourceConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import LabelingJobResourceConfigTypeDef
-
-def get_value() -> LabelingJobResourceConfigTypeDef:
-    return {
-        "VolumeKmsKeyId": ...,
-    }
-```
-
-```python title="Definition"
-class LabelingJobResourceConfigTypeDef(TypedDict):
-    VolumeKmsKeyId: NotRequired[str],
 ```
 
 ## LabelingJobDataAttributesTypeDef
@@ -5301,6 +5618,33 @@ class ListDomainsRequestRequestTypeDef(TypedDict):
     MaxResults: NotRequired[int],
 ```
 
+## ListEdgeDeploymentPlansRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import ListEdgeDeploymentPlansRequestRequestTypeDef
+
+def get_value() -> ListEdgeDeploymentPlansRequestRequestTypeDef:
+    return {
+        "NextToken": ...,
+    }
+```
+
+```python title="Definition"
+class ListEdgeDeploymentPlansRequestRequestTypeDef(TypedDict):
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+    CreationTimeAfter: NotRequired[Union[datetime, str]],
+    CreationTimeBefore: NotRequired[Union[datetime, str]],
+    LastModifiedTimeAfter: NotRequired[Union[datetime, str]],
+    LastModifiedTimeBefore: NotRequired[Union[datetime, str]],
+    NameContains: NotRequired[str],
+    DeviceFleetNameContains: NotRequired[str],
+    SortBy: NotRequired[ListEdgeDeploymentPlansSortByType],  # (1)
+    SortOrder: NotRequired[SortOrderType],  # (2)
+```
+
+1. See [:material-code-brackets: ListEdgeDeploymentPlansSortByType](./literals.md#listedgedeploymentplanssortbytype) 
+2. See [:material-code-brackets: SortOrderType](./literals.md#sortordertype) 
 ## ListEdgePackagingJobsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -6361,6 +6705,27 @@ class ProjectSummaryTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ProjectStatusType](./literals.md#projectstatustype) 
+## ListStageDevicesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import ListStageDevicesRequestRequestTypeDef
+
+def get_value() -> ListStageDevicesRequestRequestTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+        "StageName": ...,
+    }
+```
+
+```python title="Definition"
+class ListStageDevicesRequestRequestTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+    StageName: str,
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+    ExcludeDevicesDeployedInOtherStage: NotRequired[bool],
+```
+
 ## ListStudioLifecycleConfigsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -7420,6 +7785,22 @@ class RStudioServerProAppSettingsTypeDef(TypedDict):
 
 1. See [:material-code-brackets: RStudioServerProAccessStatusType](./literals.md#rstudioserverproaccessstatustype) 
 2. See [:material-code-brackets: RStudioServerProUserGroupType](./literals.md#rstudioserverprousergrouptype) 
+## RecommendationJobCompiledOutputConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import RecommendationJobCompiledOutputConfigTypeDef
+
+def get_value() -> RecommendationJobCompiledOutputConfigTypeDef:
+    return {
+        "S3OutputUri": ...,
+    }
+```
+
+```python title="Definition"
+class RecommendationJobCompiledOutputConfigTypeDef(TypedDict):
+    S3OutputUri: NotRequired[str],
+```
+
 ## RecommendationJobResourceLimitTypeDef
 
 ```python title="Usage Example"
@@ -7549,6 +7930,24 @@ class SourceAlgorithmTypeDef(TypedDict):
     ModelDataUrl: NotRequired[str],
 ```
 
+## StartEdgeDeploymentStageRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import StartEdgeDeploymentStageRequestRequestTypeDef
+
+def get_value() -> StartEdgeDeploymentStageRequestRequestTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+        "StageName": ...,
+    }
+```
+
+```python title="Definition"
+class StartEdgeDeploymentStageRequestRequestTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+    StageName: str,
+```
+
 ## StartMonitoringScheduleRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -7611,6 +8010,24 @@ def get_value() -> StopCompilationJobRequestRequestTypeDef:
 ```python title="Definition"
 class StopCompilationJobRequestRequestTypeDef(TypedDict):
     CompilationJobName: str,
+```
+
+## StopEdgeDeploymentStageRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import StopEdgeDeploymentStageRequestRequestTypeDef
+
+def get_value() -> StopEdgeDeploymentStageRequestRequestTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+        "StageName": ...,
+    }
+```
+
+```python title="Definition"
+class StopEdgeDeploymentStageRequestRequestTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+    StageName: str,
 ```
 
 ## StopEdgePackagingJobRequestRequestTypeDef
@@ -7908,37 +8325,6 @@ class UpdateImageRequestRequestTypeDef(TypedDict):
     RoleArn: NotRequired[str],
 ```
 
-## UpdateNotebookInstanceInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import UpdateNotebookInstanceInputRequestTypeDef
-
-def get_value() -> UpdateNotebookInstanceInputRequestTypeDef:
-    return {
-        "NotebookInstanceName": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateNotebookInstanceInputRequestTypeDef(TypedDict):
-    NotebookInstanceName: str,
-    InstanceType: NotRequired[InstanceTypeType],  # (1)
-    RoleArn: NotRequired[str],
-    LifecycleConfigName: NotRequired[str],
-    DisassociateLifecycleConfig: NotRequired[bool],
-    VolumeSizeInGB: NotRequired[int],
-    DefaultCodeRepository: NotRequired[str],
-    AdditionalCodeRepositories: NotRequired[Sequence[str]],
-    AcceleratorTypes: NotRequired[Sequence[NotebookInstanceAcceleratorTypeType]],  # (2)
-    DisassociateAcceleratorTypes: NotRequired[bool],
-    DisassociateDefaultCodeRepository: NotRequired[bool],
-    DisassociateAdditionalCodeRepositories: NotRequired[bool],
-    RootAccess: NotRequired[RootAccessType],  # (3)
-```
-
-1. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
-2. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
-3. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
 ## UpdateTrialRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -7954,6 +8340,27 @@ def get_value() -> UpdateTrialRequestRequestTypeDef:
 class UpdateTrialRequestRequestTypeDef(TypedDict):
     TrialName: str,
     DisplayName: NotRequired[str],
+```
+
+## WorkforceVpcConfigResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import WorkforceVpcConfigResponseTypeDef
+
+def get_value() -> WorkforceVpcConfigResponseTypeDef:
+    return {
+        "VpcId": ...,
+        "SecurityGroupIds": ...,
+        "Subnets": ...,
+    }
+```
+
+```python title="Definition"
+class WorkforceVpcConfigResponseTypeDef(TypedDict):
+    VpcId: str,
+    SecurityGroupIds: List[str],
+    Subnets: List[str],
+    VpcEndpointId: NotRequired[str],
 ```
 
 ## ActionSummaryTypeDef
@@ -8229,6 +8636,25 @@ def get_value() -> CreateDomainResponseTypeDef:
 class CreateDomainResponseTypeDef(TypedDict):
     DomainArn: str,
     Url: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateEdgeDeploymentPlanResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import CreateEdgeDeploymentPlanResponseTypeDef
+
+def get_value() -> CreateEdgeDeploymentPlanResponseTypeDef:
+    return {
+        "EdgeDeploymentPlanArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateEdgeDeploymentPlanResponseTypeDef(TypedDict):
+    EdgeDeploymentPlanArn: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
@@ -9107,70 +9533,6 @@ class DescribeImageVersionResponseTypeDef(TypedDict):
 
 1. See [:material-code-brackets: ImageVersionStatusType](./literals.md#imageversionstatustype) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DescribeNotebookInstanceOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import DescribeNotebookInstanceOutputTypeDef
-
-def get_value() -> DescribeNotebookInstanceOutputTypeDef:
-    return {
-        "NotebookInstanceArn": ...,
-        "NotebookInstanceName": ...,
-        "NotebookInstanceStatus": ...,
-        "FailureReason": ...,
-        "Url": ...,
-        "InstanceType": ...,
-        "SubnetId": ...,
-        "SecurityGroups": ...,
-        "RoleArn": ...,
-        "KmsKeyId": ...,
-        "NetworkInterfaceId": ...,
-        "LastModifiedTime": ...,
-        "CreationTime": ...,
-        "NotebookInstanceLifecycleConfigName": ...,
-        "DirectInternetAccess": ...,
-        "VolumeSizeInGB": ...,
-        "AcceleratorTypes": ...,
-        "DefaultCodeRepository": ...,
-        "AdditionalCodeRepositories": ...,
-        "RootAccess": ...,
-        "PlatformIdentifier": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeNotebookInstanceOutputTypeDef(TypedDict):
-    NotebookInstanceArn: str,
-    NotebookInstanceName: str,
-    NotebookInstanceStatus: NotebookInstanceStatusType,  # (1)
-    FailureReason: str,
-    Url: str,
-    InstanceType: InstanceTypeType,  # (2)
-    SubnetId: str,
-    SecurityGroups: List[str],
-    RoleArn: str,
-    KmsKeyId: str,
-    NetworkInterfaceId: str,
-    LastModifiedTime: datetime,
-    CreationTime: datetime,
-    NotebookInstanceLifecycleConfigName: str,
-    DirectInternetAccess: DirectInternetAccessType,  # (3)
-    VolumeSizeInGB: int,
-    AcceleratorTypes: List[NotebookInstanceAcceleratorTypeType],  # (4)
-    DefaultCodeRepository: str,
-    AdditionalCodeRepositories: List[str],
-    RootAccess: RootAccessType,  # (5)
-    PlatformIdentifier: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (6)
-```
-
-1. See [:material-code-brackets: NotebookInstanceStatusType](./literals.md#notebookinstancestatustype) 
-2. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
-3. See [:material-code-brackets: DirectInternetAccessType](./literals.md#directinternetaccesstype) 
-4. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
-5. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
-6. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribePipelineDefinitionForExecutionResponseTypeDef
 
 ```python title="Usage Example"
@@ -9605,6 +9967,25 @@ class UpdateExperimentResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateFeatureGroupResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import UpdateFeatureGroupResponseTypeDef
+
+def get_value() -> UpdateFeatureGroupResponseTypeDef:
+    return {
+        "FeatureGroupArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateFeatureGroupResponseTypeDef(TypedDict):
+    FeatureGroupArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## UpdateImageResponseTypeDef
 
 ```python title="Usage Example"
@@ -9895,43 +10276,6 @@ class CreateModelPackageGroupInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateNotebookInstanceInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import CreateNotebookInstanceInputRequestTypeDef
-
-def get_value() -> CreateNotebookInstanceInputRequestTypeDef:
-    return {
-        "NotebookInstanceName": ...,
-        "InstanceType": ...,
-        "RoleArn": ...,
-    }
-```
-
-```python title="Definition"
-class CreateNotebookInstanceInputRequestTypeDef(TypedDict):
-    NotebookInstanceName: str,
-    InstanceType: InstanceTypeType,  # (1)
-    RoleArn: str,
-    SubnetId: NotRequired[str],
-    SecurityGroupIds: NotRequired[Sequence[str]],
-    KmsKeyId: NotRequired[str],
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
-    LifecycleConfigName: NotRequired[str],
-    DirectInternetAccess: NotRequired[DirectInternetAccessType],  # (3)
-    VolumeSizeInGB: NotRequired[int],
-    AcceleratorTypes: NotRequired[Sequence[NotebookInstanceAcceleratorTypeType]],  # (4)
-    DefaultCodeRepository: NotRequired[str],
-    AdditionalCodeRepositories: NotRequired[Sequence[str]],
-    RootAccess: NotRequired[RootAccessType],  # (5)
-    PlatformIdentifier: NotRequired[str],
-```
-
-1. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
-2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-3. See [:material-code-brackets: DirectInternetAccessType](./literals.md#directinternetaccesstype) 
-4. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
-5. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
 ## CreateStudioLifecycleConfigRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -10339,6 +10683,24 @@ def get_value() -> AutoMLSecurityConfigTypeDef:
 class AutoMLSecurityConfigTypeDef(TypedDict):
     VolumeKmsKeyId: NotRequired[str],
     EnableInterContainerTrafficEncryption: NotRequired[bool],
+    VpcConfig: NotRequired[VpcConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: VpcConfigTypeDef](./type_defs.md#vpcconfigtypedef) 
+## LabelingJobResourceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import LabelingJobResourceConfigTypeDef
+
+def get_value() -> LabelingJobResourceConfigTypeDef:
+    return {
+        "VolumeKmsKeyId": ...,
+    }
+```
+
+```python title="Definition"
+class LabelingJobResourceConfigTypeDef(TypedDict):
+    VolumeKmsKeyId: NotRequired[str],
     VpcConfig: NotRequired[VpcConfigTypeDef],  # (1)
 ```
 
@@ -11191,6 +11553,24 @@ class UpdateDeviceFleetRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: EdgeOutputConfigTypeDef](./type_defs.md#edgeoutputconfigtypedef) 
+## UpdateFeatureGroupRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import UpdateFeatureGroupRequestRequestTypeDef
+
+def get_value() -> UpdateFeatureGroupRequestRequestTypeDef:
+    return {
+        "FeatureGroupName": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateFeatureGroupRequestRequestTypeDef(TypedDict):
+    FeatureGroupName: str,
+    FeatureAdditions: NotRequired[Sequence[FeatureDefinitionTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: FeatureDefinitionTypeDef](./type_defs.md#featuredefinitiontypedef) 
 ## CreateHumanTaskUiRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -11212,6 +11592,145 @@ class CreateHumanTaskUiRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-braces: UiTemplateTypeDef](./type_defs.md#uitemplatetypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## CreateNotebookInstanceInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import CreateNotebookInstanceInputRequestTypeDef
+
+def get_value() -> CreateNotebookInstanceInputRequestTypeDef:
+    return {
+        "NotebookInstanceName": ...,
+        "InstanceType": ...,
+        "RoleArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateNotebookInstanceInputRequestTypeDef(TypedDict):
+    NotebookInstanceName: str,
+    InstanceType: InstanceTypeType,  # (1)
+    RoleArn: str,
+    SubnetId: NotRequired[str],
+    SecurityGroupIds: NotRequired[Sequence[str]],
+    KmsKeyId: NotRequired[str],
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    LifecycleConfigName: NotRequired[str],
+    DirectInternetAccess: NotRequired[DirectInternetAccessType],  # (3)
+    VolumeSizeInGB: NotRequired[int],
+    AcceleratorTypes: NotRequired[Sequence[NotebookInstanceAcceleratorTypeType]],  # (4)
+    DefaultCodeRepository: NotRequired[str],
+    AdditionalCodeRepositories: NotRequired[Sequence[str]],
+    RootAccess: NotRequired[RootAccessType],  # (5)
+    PlatformIdentifier: NotRequired[str],
+    InstanceMetadataServiceConfiguration: NotRequired[InstanceMetadataServiceConfigurationTypeDef],  # (6)
+```
+
+1. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
+2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-brackets: DirectInternetAccessType](./literals.md#directinternetaccesstype) 
+4. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
+5. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
+6. See [:material-code-braces: InstanceMetadataServiceConfigurationTypeDef](./type_defs.md#instancemetadataserviceconfigurationtypedef) 
+## DescribeNotebookInstanceOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DescribeNotebookInstanceOutputTypeDef
+
+def get_value() -> DescribeNotebookInstanceOutputTypeDef:
+    return {
+        "NotebookInstanceArn": ...,
+        "NotebookInstanceName": ...,
+        "NotebookInstanceStatus": ...,
+        "FailureReason": ...,
+        "Url": ...,
+        "InstanceType": ...,
+        "SubnetId": ...,
+        "SecurityGroups": ...,
+        "RoleArn": ...,
+        "KmsKeyId": ...,
+        "NetworkInterfaceId": ...,
+        "LastModifiedTime": ...,
+        "CreationTime": ...,
+        "NotebookInstanceLifecycleConfigName": ...,
+        "DirectInternetAccess": ...,
+        "VolumeSizeInGB": ...,
+        "AcceleratorTypes": ...,
+        "DefaultCodeRepository": ...,
+        "AdditionalCodeRepositories": ...,
+        "RootAccess": ...,
+        "PlatformIdentifier": ...,
+        "InstanceMetadataServiceConfiguration": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeNotebookInstanceOutputTypeDef(TypedDict):
+    NotebookInstanceArn: str,
+    NotebookInstanceName: str,
+    NotebookInstanceStatus: NotebookInstanceStatusType,  # (1)
+    FailureReason: str,
+    Url: str,
+    InstanceType: InstanceTypeType,  # (2)
+    SubnetId: str,
+    SecurityGroups: List[str],
+    RoleArn: str,
+    KmsKeyId: str,
+    NetworkInterfaceId: str,
+    LastModifiedTime: datetime,
+    CreationTime: datetime,
+    NotebookInstanceLifecycleConfigName: str,
+    DirectInternetAccess: DirectInternetAccessType,  # (3)
+    VolumeSizeInGB: int,
+    AcceleratorTypes: List[NotebookInstanceAcceleratorTypeType],  # (4)
+    DefaultCodeRepository: str,
+    AdditionalCodeRepositories: List[str],
+    RootAccess: RootAccessType,  # (5)
+    PlatformIdentifier: str,
+    InstanceMetadataServiceConfiguration: InstanceMetadataServiceConfigurationTypeDef,  # (6)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (7)
+```
+
+1. See [:material-code-brackets: NotebookInstanceStatusType](./literals.md#notebookinstancestatustype) 
+2. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
+3. See [:material-code-brackets: DirectInternetAccessType](./literals.md#directinternetaccesstype) 
+4. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
+5. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
+6. See [:material-code-braces: InstanceMetadataServiceConfigurationTypeDef](./type_defs.md#instancemetadataserviceconfigurationtypedef) 
+7. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateNotebookInstanceInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import UpdateNotebookInstanceInputRequestTypeDef
+
+def get_value() -> UpdateNotebookInstanceInputRequestTypeDef:
+    return {
+        "NotebookInstanceName": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateNotebookInstanceInputRequestTypeDef(TypedDict):
+    NotebookInstanceName: str,
+    InstanceType: NotRequired[InstanceTypeType],  # (1)
+    RoleArn: NotRequired[str],
+    LifecycleConfigName: NotRequired[str],
+    DisassociateLifecycleConfig: NotRequired[bool],
+    VolumeSizeInGB: NotRequired[int],
+    DefaultCodeRepository: NotRequired[str],
+    AdditionalCodeRepositories: NotRequired[Sequence[str]],
+    AcceleratorTypes: NotRequired[Sequence[NotebookInstanceAcceleratorTypeType]],  # (2)
+    DisassociateAcceleratorTypes: NotRequired[bool],
+    DisassociateDefaultCodeRepository: NotRequired[bool],
+    DisassociateAdditionalCodeRepositories: NotRequired[bool],
+    RootAccess: NotRequired[RootAccessType],  # (3)
+    InstanceMetadataServiceConfiguration: NotRequired[InstanceMetadataServiceConfigurationTypeDef],  # (4)
+```
+
+1. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
+2. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
+3. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
+4. See [:material-code-braces: InstanceMetadataServiceConfigurationTypeDef](./type_defs.md#instancemetadataserviceconfigurationtypedef) 
 ## CreateNotebookInstanceLifecycleConfigInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -11535,12 +12054,14 @@ class CreateWorkforceRequestRequestTypeDef(TypedDict):
     OidcConfig: NotRequired[OidcConfigTypeDef],  # (2)
     SourceIpConfig: NotRequired[SourceIpConfigTypeDef],  # (3)
     Tags: NotRequired[Sequence[TagTypeDef]],  # (4)
+    WorkforceVpcConfig: NotRequired[WorkforceVpcConfigRequestTypeDef],  # (5)
 ```
 
 1. See [:material-code-braces: CognitoConfigTypeDef](./type_defs.md#cognitoconfigtypedef) 
 2. See [:material-code-braces: OidcConfigTypeDef](./type_defs.md#oidcconfigtypedef) 
 3. See [:material-code-braces: SourceIpConfigTypeDef](./type_defs.md#sourceipconfigtypedef) 
 4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+5. See [:material-code-braces: WorkforceVpcConfigRequestTypeDef](./type_defs.md#workforcevpcconfigrequesttypedef) 
 ## UpdateWorkforceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -11557,10 +12078,12 @@ class UpdateWorkforceRequestRequestTypeDef(TypedDict):
     WorkforceName: str,
     SourceIpConfig: NotRequired[SourceIpConfigTypeDef],  # (1)
     OidcConfig: NotRequired[OidcConfigTypeDef],  # (2)
+    WorkforceVpcConfig: NotRequired[WorkforceVpcConfigRequestTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: SourceIpConfigTypeDef](./type_defs.md#sourceipconfigtypedef) 
 2. See [:material-code-braces: OidcConfigTypeDef](./type_defs.md#oidcconfigtypedef) 
+3. See [:material-code-braces: WorkforceVpcConfigRequestTypeDef](./type_defs.md#workforcevpcconfigrequesttypedef) 
 ## KernelGatewayAppSettingsTypeDef
 
 ```python title="Usage Example"
@@ -11577,6 +12100,25 @@ class KernelGatewayAppSettingsTypeDef(TypedDict):
     DefaultResourceSpec: NotRequired[ResourceSpecTypeDef],  # (1)
     CustomImages: NotRequired[Sequence[CustomImageTypeDef]],  # (2)
     LifecycleConfigArns: NotRequired[Sequence[str]],
+```
+
+1. See [:material-code-braces: ResourceSpecTypeDef](./type_defs.md#resourcespectypedef) 
+2. See [:material-code-braces: CustomImageTypeDef](./type_defs.md#customimagetypedef) 
+## RSessionAppSettingsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import RSessionAppSettingsTypeDef
+
+def get_value() -> RSessionAppSettingsTypeDef:
+    return {
+        "DefaultResourceSpec": ...,
+    }
+```
+
+```python title="Definition"
+class RSessionAppSettingsTypeDef(TypedDict):
+    DefaultResourceSpec: NotRequired[ResourceSpecTypeDef],  # (1)
+    CustomImages: NotRequired[Sequence[CustomImageTypeDef]],  # (2)
 ```
 
 1. See [:material-code-braces: ResourceSpecTypeDef](./type_defs.md#resourcespectypedef) 
@@ -11787,6 +12329,52 @@ class DeleteDomainRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: RetentionPolicyTypeDef](./type_defs.md#retentionpolicytypedef) 
+## DeploymentStageTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DeploymentStageTypeDef
+
+def get_value() -> DeploymentStageTypeDef:
+    return {
+        "StageName": ...,
+        "DeviceSelectionConfig": ...,
+    }
+```
+
+```python title="Definition"
+class DeploymentStageTypeDef(TypedDict):
+    StageName: str,
+    DeviceSelectionConfig: DeviceSelectionConfigTypeDef,  # (1)
+    DeploymentConfig: NotRequired[EdgeDeploymentConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: DeviceSelectionConfigTypeDef](./type_defs.md#deviceselectionconfigtypedef) 
+2. See [:material-code-braces: EdgeDeploymentConfigTypeDef](./type_defs.md#edgedeploymentconfigtypedef) 
+## DeploymentStageStatusSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DeploymentStageStatusSummaryTypeDef
+
+def get_value() -> DeploymentStageStatusSummaryTypeDef:
+    return {
+        "StageName": ...,
+        "DeviceSelectionConfig": ...,
+        "DeploymentConfig": ...,
+        "DeploymentStatus": ...,
+    }
+```
+
+```python title="Definition"
+class DeploymentStageStatusSummaryTypeDef(TypedDict):
+    StageName: str,
+    DeviceSelectionConfig: DeviceSelectionConfigTypeDef,  # (1)
+    DeploymentConfig: EdgeDeploymentConfigTypeDef,  # (2)
+    DeploymentStatus: EdgeDeploymentStatusTypeDef,  # (3)
+```
+
+1. See [:material-code-braces: DeviceSelectionConfigTypeDef](./type_defs.md#deviceselectionconfigtypedef) 
+2. See [:material-code-braces: EdgeDeploymentConfigTypeDef](./type_defs.md#edgedeploymentconfigtypedef) 
+3. See [:material-code-braces: EdgeDeploymentStatusTypeDef](./type_defs.md#edgedeploymentstatustypedef) 
 ## DescribeDeviceResponseTypeDef
 
 ```python title="Usage Example"
@@ -12226,6 +12814,88 @@ class FeatureGroupSummaryTypeDef(TypedDict):
 
 1. See [:material-code-brackets: FeatureGroupStatusType](./literals.md#featuregroupstatustype) 
 2. See [:material-code-braces: OfflineStoreStatusTypeDef](./type_defs.md#offlinestorestatustypedef) 
+## DescribeFeatureMetadataResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DescribeFeatureMetadataResponseTypeDef
+
+def get_value() -> DescribeFeatureMetadataResponseTypeDef:
+    return {
+        "FeatureGroupArn": ...,
+        "FeatureGroupName": ...,
+        "FeatureName": ...,
+        "FeatureType": ...,
+        "CreationTime": ...,
+        "LastModifiedTime": ...,
+        "Description": ...,
+        "Parameters": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeFeatureMetadataResponseTypeDef(TypedDict):
+    FeatureGroupArn: str,
+    FeatureGroupName: str,
+    FeatureName: str,
+    FeatureType: FeatureTypeType,  # (1)
+    CreationTime: datetime,
+    LastModifiedTime: datetime,
+    Description: str,
+    Parameters: List[FeatureParameterTypeDef],  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-brackets: FeatureTypeType](./literals.md#featuretypetype) 
+2. See [:material-code-braces: FeatureParameterTypeDef](./type_defs.md#featureparametertypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## FeatureMetadataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import FeatureMetadataTypeDef
+
+def get_value() -> FeatureMetadataTypeDef:
+    return {
+        "FeatureGroupArn": ...,
+    }
+```
+
+```python title="Definition"
+class FeatureMetadataTypeDef(TypedDict):
+    FeatureGroupArn: NotRequired[str],
+    FeatureGroupName: NotRequired[str],
+    FeatureName: NotRequired[str],
+    FeatureType: NotRequired[FeatureTypeType],  # (1)
+    CreationTime: NotRequired[datetime],
+    LastModifiedTime: NotRequired[datetime],
+    Description: NotRequired[str],
+    Parameters: NotRequired[List[FeatureParameterTypeDef]],  # (2)
+```
+
+1. See [:material-code-brackets: FeatureTypeType](./literals.md#featuretypetype) 
+2. See [:material-code-braces: FeatureParameterTypeDef](./type_defs.md#featureparametertypedef) 
+## UpdateFeatureMetadataRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import UpdateFeatureMetadataRequestRequestTypeDef
+
+def get_value() -> UpdateFeatureMetadataRequestRequestTypeDef:
+    return {
+        "FeatureGroupName": ...,
+        "FeatureName": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateFeatureMetadataRequestRequestTypeDef(TypedDict):
+    FeatureGroupName: str,
+    FeatureName: str,
+    Description: NotRequired[str],
+    ParameterAdditions: NotRequired[Sequence[FeatureParameterTypeDef]],  # (1)
+    ParameterRemovals: NotRequired[Sequence[str]],
+```
+
+1. See [:material-code-braces: FeatureParameterTypeDef](./type_defs.md#featureparametertypedef) 
 ## DescribeHumanTaskUiResponseTypeDef
 
 ```python title="Usage Example"
@@ -12559,6 +13229,28 @@ class UpdateEndpointWeightsAndCapacitiesInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: DesiredWeightAndCapacityTypeDef](./type_defs.md#desiredweightandcapacitytypedef) 
+## ListStageDevicesResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import ListStageDevicesResponseTypeDef
+
+def get_value() -> ListStageDevicesResponseTypeDef:
+    return {
+        "DeviceDeploymentSummaries": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListStageDevicesResponseTypeDef(TypedDict):
+    DeviceDeploymentSummaries: List[DeviceDeploymentSummaryTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: DeviceDeploymentSummaryTypeDef](./type_defs.md#devicedeploymentsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListDeviceFleetsResponseTypeDef
 
 ```python title="Usage Example"
@@ -12709,6 +13401,28 @@ class DriftCheckExplainabilityTypeDef(TypedDict):
 
 1. See [:material-code-braces: MetricsSourceTypeDef](./type_defs.md#metricssourcetypedef) 
 2. See [:material-code-braces: FileSourceTypeDef](./type_defs.md#filesourcetypedef) 
+## ListEdgeDeploymentPlansResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import ListEdgeDeploymentPlansResponseTypeDef
+
+def get_value() -> ListEdgeDeploymentPlansResponseTypeDef:
+    return {
+        "EdgeDeploymentPlanSummaries": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListEdgeDeploymentPlansResponseTypeDef(TypedDict):
+    EdgeDeploymentPlanSummaries: List[EdgeDeploymentPlanSummaryTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: EdgeDeploymentPlanSummaryTypeDef](./type_defs.md#edgedeploymentplansummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetDeviceFleetReportResponseTypeDef
 
 ```python title="Usage Example"
@@ -12982,6 +13696,30 @@ class ListHumanTaskUisResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: HumanTaskUiSummaryTypeDef](./type_defs.md#humantaskuisummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## HyperParameterTuningResourceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import HyperParameterTuningResourceConfigTypeDef
+
+def get_value() -> HyperParameterTuningResourceConfigTypeDef:
+    return {
+        "InstanceType": ...,
+    }
+```
+
+```python title="Definition"
+class HyperParameterTuningResourceConfigTypeDef(TypedDict):
+    InstanceType: NotRequired[TrainingInstanceTypeType],  # (1)
+    InstanceCount: NotRequired[int],
+    VolumeSizeInGB: NotRequired[int],
+    VolumeKmsKeyId: NotRequired[str],
+    AllocationStrategy: NotRequired[HyperParameterTuningAllocationStrategyType],  # (2)
+    InstanceConfigs: NotRequired[Sequence[HyperParameterTuningInstanceConfigTypeDef]],  # (3)
+```
+
+1. See [:material-code-brackets: TrainingInstanceTypeType](./literals.md#traininginstancetypetype) 
+2. See [:material-code-brackets: HyperParameterTuningAllocationStrategyType](./literals.md#hyperparametertuningallocationstrategytype) 
+3. See [:material-code-braces: HyperParameterTuningInstanceConfigTypeDef](./type_defs.md#hyperparametertuninginstanceconfigtypedef) 
 ## HyperParameterTuningJobSummaryTypeDef
 
 ```python title="Usage Example"
@@ -13123,6 +13861,28 @@ class ListInferenceRecommendationsJobsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: InferenceRecommendationsJobTypeDef](./type_defs.md#inferencerecommendationsjobtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ResourceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import ResourceConfigTypeDef
+
+def get_value() -> ResourceConfigTypeDef:
+    return {
+        "VolumeSizeInGB": ...,
+    }
+```
+
+```python title="Definition"
+class ResourceConfigTypeDef(TypedDict):
+    VolumeSizeInGB: int,
+    InstanceType: NotRequired[TrainingInstanceTypeType],  # (1)
+    InstanceCount: NotRequired[int],
+    VolumeKmsKeyId: NotRequired[str],
+    InstanceGroups: NotRequired[Sequence[InstanceGroupTypeDef]],  # (2)
+```
+
+1. See [:material-code-brackets: TrainingInstanceTypeType](./literals.md#traininginstancetypetype) 
+2. See [:material-code-braces: InstanceGroupTypeDef](./type_defs.md#instancegrouptypedef) 
 ## ParameterRangeTypeDef
 
 ```python title="Usage Example"
@@ -13208,25 +13968,6 @@ class LabelingJobForWorkteamSummaryTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: LabelCountersForWorkteamTypeDef](./type_defs.md#labelcountersforworkteamtypedef) 
-## LabelingJobAlgorithmsConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import LabelingJobAlgorithmsConfigTypeDef
-
-def get_value() -> LabelingJobAlgorithmsConfigTypeDef:
-    return {
-        "LabelingJobAlgorithmSpecificationArn": ...,
-    }
-```
-
-```python title="Definition"
-class LabelingJobAlgorithmsConfigTypeDef(TypedDict):
-    LabelingJobAlgorithmSpecificationArn: str,
-    InitialActiveLearningModelArn: NotRequired[str],
-    LabelingJobResourceConfig: NotRequired[LabelingJobResourceConfigTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: LabelingJobResourceConfigTypeDef](./type_defs.md#labelingjobresourceconfigtypedef) 
 ## LabelingJobDataSourceTypeDef
 
 ```python title="Usage Example"
@@ -13640,6 +14381,33 @@ class ListDomainsRequestListDomainsPaginateTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListEdgeDeploymentPlansRequestListEdgeDeploymentPlansPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import ListEdgeDeploymentPlansRequestListEdgeDeploymentPlansPaginateTypeDef
+
+def get_value() -> ListEdgeDeploymentPlansRequestListEdgeDeploymentPlansPaginateTypeDef:
+    return {
+        "CreationTimeAfter": ...,
+    }
+```
+
+```python title="Definition"
+class ListEdgeDeploymentPlansRequestListEdgeDeploymentPlansPaginateTypeDef(TypedDict):
+    CreationTimeAfter: NotRequired[Union[datetime, str]],
+    CreationTimeBefore: NotRequired[Union[datetime, str]],
+    LastModifiedTimeAfter: NotRequired[Union[datetime, str]],
+    LastModifiedTimeBefore: NotRequired[Union[datetime, str]],
+    NameContains: NotRequired[str],
+    DeviceFleetNameContains: NotRequired[str],
+    SortBy: NotRequired[ListEdgeDeploymentPlansSortByType],  # (1)
+    SortOrder: NotRequired[SortOrderType],  # (2)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (3)
+```
+
+1. See [:material-code-brackets: ListEdgeDeploymentPlansSortByType](./literals.md#listedgedeploymentplanssortbytype) 
+2. See [:material-code-brackets: SortOrderType](./literals.md#sortordertype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListEdgePackagingJobsRequestListEdgePackagingJobsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -14387,6 +15155,27 @@ class ListProcessingJobsRequestListProcessingJobsPaginateTypeDef(TypedDict):
 2. See [:material-code-brackets: SortByType](./literals.md#sortbytype) 
 3. See [:material-code-brackets: SortOrderType](./literals.md#sortordertype) 
 4. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListStageDevicesRequestListStageDevicesPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import ListStageDevicesRequestListStageDevicesPaginateTypeDef
+
+def get_value() -> ListStageDevicesRequestListStageDevicesPaginateTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+        "StageName": ...,
+    }
+```
+
+```python title="Definition"
+class ListStageDevicesRequestListStageDevicesPaginateTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+    StageName: str,
+    ExcludeDevicesDeployedInOtherStage: NotRequired[bool],
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListStudioLifecycleConfigsRequestListStudioLifecycleConfigsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -15364,33 +16153,6 @@ class OfflineStoreConfigTypeDef(TypedDict):
 
 1. See [:material-code-braces: S3StorageConfigTypeDef](./type_defs.md#s3storageconfigtypedef) 
 2. See [:material-code-braces: DataCatalogConfigTypeDef](./type_defs.md#datacatalogconfigtypedef) 
-## WorkforceTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import WorkforceTypeDef
-
-def get_value() -> WorkforceTypeDef:
-    return {
-        "WorkforceName": ...,
-        "WorkforceArn": ...,
-    }
-```
-
-```python title="Definition"
-class WorkforceTypeDef(TypedDict):
-    WorkforceName: str,
-    WorkforceArn: str,
-    LastUpdatedDate: NotRequired[datetime],
-    SourceIpConfig: NotRequired[SourceIpConfigTypeDef],  # (1)
-    SubDomain: NotRequired[str],
-    CognitoConfig: NotRequired[CognitoConfigTypeDef],  # (2)
-    OidcConfig: NotRequired[OidcConfigForResponseTypeDef],  # (3)
-    CreateDate: NotRequired[datetime],
-```
-
-1. See [:material-code-braces: SourceIpConfigTypeDef](./type_defs.md#sourceipconfigtypedef) 
-2. See [:material-code-braces: CognitoConfigTypeDef](./type_defs.md#cognitoconfigtypedef) 
-3. See [:material-code-braces: OidcConfigForResponseTypeDef](./type_defs.md#oidcconfigforresponsetypedef) 
 ## OnlineStoreConfigTypeDef
 
 ```python title="Usage Example"
@@ -15681,7 +16443,7 @@ def get_value() -> QueryLineageRequestRequestTypeDef:
 
 ```python title="Definition"
 class QueryLineageRequestRequestTypeDef(TypedDict):
-    StartArns: Sequence[str],
+    StartArns: NotRequired[Sequence[str]],
     Direction: NotRequired[DirectionType],  # (1)
     IncludeEdges: NotRequired[bool],
     Filters: NotRequired[QueryFiltersTypeDef],  # (2)
@@ -15717,6 +16479,24 @@ class QueryLineageResponseTypeDef(TypedDict):
 1. See [:material-code-braces: VertexTypeDef](./type_defs.md#vertextypedef) 
 2. See [:material-code-braces: EdgeTypeDef](./type_defs.md#edgetypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## RecommendationJobOutputConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import RecommendationJobOutputConfigTypeDef
+
+def get_value() -> RecommendationJobOutputConfigTypeDef:
+    return {
+        "KmsKeyId": ...,
+    }
+```
+
+```python title="Definition"
+class RecommendationJobOutputConfigTypeDef(TypedDict):
+    KmsKeyId: NotRequired[str],
+    CompiledOutputConfig: NotRequired[RecommendationJobCompiledOutputConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: RecommendationJobCompiledOutputConfigTypeDef](./type_defs.md#recommendationjobcompiledoutputconfigtypedef) 
 ## RenderUiTemplateRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -15795,6 +16575,38 @@ class TransformDataSourceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TransformS3DataSourceTypeDef](./type_defs.md#transforms3datasourcetypedef) 
+## WorkforceTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import WorkforceTypeDef
+
+def get_value() -> WorkforceTypeDef:
+    return {
+        "WorkforceName": ...,
+        "WorkforceArn": ...,
+    }
+```
+
+```python title="Definition"
+class WorkforceTypeDef(TypedDict):
+    WorkforceName: str,
+    WorkforceArn: str,
+    LastUpdatedDate: NotRequired[datetime],
+    SourceIpConfig: NotRequired[SourceIpConfigTypeDef],  # (1)
+    SubDomain: NotRequired[str],
+    CognitoConfig: NotRequired[CognitoConfigTypeDef],  # (2)
+    OidcConfig: NotRequired[OidcConfigForResponseTypeDef],  # (3)
+    CreateDate: NotRequired[datetime],
+    WorkforceVpcConfig: NotRequired[WorkforceVpcConfigResponseTypeDef],  # (4)
+    Status: NotRequired[WorkforceStatusType],  # (5)
+    FailureReason: NotRequired[str],
+```
+
+1. See [:material-code-braces: SourceIpConfigTypeDef](./type_defs.md#sourceipconfigtypedef) 
+2. See [:material-code-braces: CognitoConfigTypeDef](./type_defs.md#cognitoconfigtypedef) 
+3. See [:material-code-braces: OidcConfigForResponseTypeDef](./type_defs.md#oidcconfigforresponsetypedef) 
+4. See [:material-code-braces: WorkforceVpcConfigResponseTypeDef](./type_defs.md#workforcevpcconfigresponsetypedef) 
+5. See [:material-code-brackets: WorkforceStatusType](./literals.md#workforcestatustype) 
 ## ListActionsResponseTypeDef
 
 ```python title="Usage Example"
@@ -15984,10 +16796,12 @@ class AutoMLChannelTypeDef(TypedDict):
     TargetAttributeName: str,
     CompressionType: NotRequired[CompressionTypeType],  # (2)
     ContentType: NotRequired[str],
+    ChannelType: NotRequired[AutoMLChannelTypeType],  # (3)
 ```
 
 1. See [:material-code-braces: AutoMLDataSourceTypeDef](./type_defs.md#automldatasourcetypedef) 
 2. See [:material-code-brackets: CompressionTypeType](./literals.md#compressiontypetype) 
+3. See [:material-code-brackets: AutoMLChannelTypeType](./literals.md#automlchanneltypetype) 
 ## ListAutoMLJobsResponseTypeDef
 
 ```python title="Usage Example"
@@ -16025,10 +16839,33 @@ def get_value() -> AutoMLJobConfigTypeDef:
 class AutoMLJobConfigTypeDef(TypedDict):
     CompletionCriteria: NotRequired[AutoMLJobCompletionCriteriaTypeDef],  # (1)
     SecurityConfig: NotRequired[AutoMLSecurityConfigTypeDef],  # (2)
+    DataSplitConfig: NotRequired[AutoMLDataSplitConfigTypeDef],  # (3)
+    CandidateGenerationConfig: NotRequired[AutoMLCandidateGenerationConfigTypeDef],  # (4)
 ```
 
 1. See [:material-code-braces: AutoMLJobCompletionCriteriaTypeDef](./type_defs.md#automljobcompletioncriteriatypedef) 
 2. See [:material-code-braces: AutoMLSecurityConfigTypeDef](./type_defs.md#automlsecurityconfigtypedef) 
+3. See [:material-code-braces: AutoMLDataSplitConfigTypeDef](./type_defs.md#automldatasplitconfigtypedef) 
+4. See [:material-code-braces: AutoMLCandidateGenerationConfigTypeDef](./type_defs.md#automlcandidategenerationconfigtypedef) 
+## LabelingJobAlgorithmsConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import LabelingJobAlgorithmsConfigTypeDef
+
+def get_value() -> LabelingJobAlgorithmsConfigTypeDef:
+    return {
+        "LabelingJobAlgorithmSpecificationArn": ...,
+    }
+```
+
+```python title="Definition"
+class LabelingJobAlgorithmsConfigTypeDef(TypedDict):
+    LabelingJobAlgorithmSpecificationArn: str,
+    InitialActiveLearningModelArn: NotRequired[str],
+    LabelingJobResourceConfig: NotRequired[LabelingJobResourceConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: LabelingJobResourceConfigTypeDef](./type_defs.md#labelingjobresourceconfigtypedef) 
 ## ModelMetricsTypeDef
 
 ```python title="Usage Example"
@@ -16268,7 +17105,7 @@ class UserSettingsTypeDef(TypedDict):
     KernelGatewayAppSettings: NotRequired[KernelGatewayAppSettingsTypeDef],  # (3)
     TensorBoardAppSettings: NotRequired[TensorBoardAppSettingsTypeDef],  # (4)
     RStudioServerProAppSettings: NotRequired[RStudioServerProAppSettingsTypeDef],  # (5)
-    RSessionAppSettings: NotRequired[Mapping[str, Any]],
+    RSessionAppSettings: NotRequired[RSessionAppSettingsTypeDef],  # (6)
 ```
 
 1. See [:material-code-braces: SharingSettingsTypeDef](./type_defs.md#sharingsettingstypedef) 
@@ -16276,6 +17113,7 @@ class UserSettingsTypeDef(TypedDict):
 3. See [:material-code-braces: KernelGatewayAppSettingsTypeDef](./type_defs.md#kernelgatewayappsettingstypedef) 
 4. See [:material-code-braces: TensorBoardAppSettingsTypeDef](./type_defs.md#tensorboardappsettingstypedef) 
 5. See [:material-code-braces: RStudioServerProAppSettingsTypeDef](./type_defs.md#rstudioserverproappsettingstypedef) 
+6. See [:material-code-braces: RSessionAppSettingsTypeDef](./type_defs.md#rsessionappsettingstypedef) 
 ## ChannelTypeDef
 
 ```python title="Usage Example"
@@ -16325,6 +17163,91 @@ class ProcessingInputTypeDef(TypedDict):
 
 1. See [:material-code-braces: ProcessingS3InputTypeDef](./type_defs.md#processings3inputtypedef) 
 2. See [:material-code-braces: DatasetDefinitionTypeDef](./type_defs.md#datasetdefinitiontypedef) 
+## CreateEdgeDeploymentPlanRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import CreateEdgeDeploymentPlanRequestRequestTypeDef
+
+def get_value() -> CreateEdgeDeploymentPlanRequestRequestTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+        "ModelConfigs": ...,
+        "DeviceFleetName": ...,
+    }
+```
+
+```python title="Definition"
+class CreateEdgeDeploymentPlanRequestRequestTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+    ModelConfigs: Sequence[EdgeDeploymentModelConfigTypeDef],  # (1)
+    DeviceFleetName: str,
+    Stages: NotRequired[Sequence[DeploymentStageTypeDef]],  # (2)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (3)
+```
+
+1. See [:material-code-braces: EdgeDeploymentModelConfigTypeDef](./type_defs.md#edgedeploymentmodelconfigtypedef) 
+2. See [:material-code-braces: DeploymentStageTypeDef](./type_defs.md#deploymentstagetypedef) 
+3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## CreateEdgeDeploymentStageRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import CreateEdgeDeploymentStageRequestRequestTypeDef
+
+def get_value() -> CreateEdgeDeploymentStageRequestRequestTypeDef:
+    return {
+        "EdgeDeploymentPlanName": ...,
+        "Stages": ...,
+    }
+```
+
+```python title="Definition"
+class CreateEdgeDeploymentStageRequestRequestTypeDef(TypedDict):
+    EdgeDeploymentPlanName: str,
+    Stages: Sequence[DeploymentStageTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: DeploymentStageTypeDef](./type_defs.md#deploymentstagetypedef) 
+## DescribeEdgeDeploymentPlanResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DescribeEdgeDeploymentPlanResponseTypeDef
+
+def get_value() -> DescribeEdgeDeploymentPlanResponseTypeDef:
+    return {
+        "EdgeDeploymentPlanArn": ...,
+        "EdgeDeploymentPlanName": ...,
+        "ModelConfigs": ...,
+        "DeviceFleetName": ...,
+        "EdgeDeploymentSuccess": ...,
+        "EdgeDeploymentPending": ...,
+        "EdgeDeploymentFailed": ...,
+        "Stages": ...,
+        "NextToken": ...,
+        "CreationTime": ...,
+        "LastModifiedTime": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeEdgeDeploymentPlanResponseTypeDef(TypedDict):
+    EdgeDeploymentPlanArn: str,
+    EdgeDeploymentPlanName: str,
+    ModelConfigs: List[EdgeDeploymentModelConfigTypeDef],  # (1)
+    DeviceFleetName: str,
+    EdgeDeploymentSuccess: int,
+    EdgeDeploymentPending: int,
+    EdgeDeploymentFailed: int,
+    Stages: List[DeploymentStageStatusSummaryTypeDef],  # (2)
+    NextToken: str,
+    CreationTime: datetime,
+    LastModifiedTime: datetime,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-braces: EdgeDeploymentModelConfigTypeDef](./type_defs.md#edgedeploymentmodelconfigtypedef) 
+2. See [:material-code-braces: DeploymentStageStatusSummaryTypeDef](./type_defs.md#deploymentstagestatussummarytypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListExperimentsResponseTypeDef
 
 ```python title="Usage Example"
@@ -16973,68 +17896,6 @@ class MonitoringOutputConfigTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: MonitoringOutputTypeDef](./type_defs.md#monitoringoutputtypedef) 
-## DescribeWorkforceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import DescribeWorkforceResponseTypeDef
-
-def get_value() -> DescribeWorkforceResponseTypeDef:
-    return {
-        "Workforce": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeWorkforceResponseTypeDef(TypedDict):
-    Workforce: WorkforceTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: WorkforceTypeDef](./type_defs.md#workforcetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ListWorkforcesResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import ListWorkforcesResponseTypeDef
-
-def get_value() -> ListWorkforcesResponseTypeDef:
-    return {
-        "Workforces": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class ListWorkforcesResponseTypeDef(TypedDict):
-    Workforces: List[WorkforceTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: WorkforceTypeDef](./type_defs.md#workforcetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## UpdateWorkforceResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker.type_defs import UpdateWorkforceResponseTypeDef
-
-def get_value() -> UpdateWorkforceResponseTypeDef:
-    return {
-        "Workforce": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class UpdateWorkforceResponseTypeDef(TypedDict):
-    Workforce: WorkforceTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: WorkforceTypeDef](./type_defs.md#workforcetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateFeatureGroupRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -17079,14 +17940,17 @@ def get_value() -> DescribeFeatureGroupResponseTypeDef:
         "EventTimeFeatureName": ...,
         "FeatureDefinitions": ...,
         "CreationTime": ...,
+        "LastModifiedTime": ...,
         "OnlineStoreConfig": ...,
         "OfflineStoreConfig": ...,
         "RoleArn": ...,
         "FeatureGroupStatus": ...,
         "OfflineStoreStatus": ...,
+        "LastUpdateStatus": ...,
         "FailureReason": ...,
         "Description": ...,
         "NextToken": ...,
+        "OnlineStoreTotalSizeBytes": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -17099,15 +17963,18 @@ class DescribeFeatureGroupResponseTypeDef(TypedDict):
     EventTimeFeatureName: str,
     FeatureDefinitions: List[FeatureDefinitionTypeDef],  # (1)
     CreationTime: datetime,
+    LastModifiedTime: datetime,
     OnlineStoreConfig: OnlineStoreConfigTypeDef,  # (2)
     OfflineStoreConfig: OfflineStoreConfigTypeDef,  # (3)
     RoleArn: str,
     FeatureGroupStatus: FeatureGroupStatusType,  # (4)
     OfflineStoreStatus: OfflineStoreStatusTypeDef,  # (5)
+    LastUpdateStatus: LastUpdateStatusTypeDef,  # (6)
     FailureReason: str,
     Description: str,
     NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (6)
+    OnlineStoreTotalSizeBytes: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (7)
 ```
 
 1. See [:material-code-braces: FeatureDefinitionTypeDef](./type_defs.md#featuredefinitiontypedef) 
@@ -17115,7 +17982,8 @@ class DescribeFeatureGroupResponseTypeDef(TypedDict):
 3. See [:material-code-braces: OfflineStoreConfigTypeDef](./type_defs.md#offlinestoreconfigtypedef) 
 4. See [:material-code-brackets: FeatureGroupStatusType](./literals.md#featuregroupstatustype) 
 5. See [:material-code-braces: OfflineStoreStatusTypeDef](./type_defs.md#offlinestorestatustypedef) 
-6. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+6. See [:material-code-braces: LastUpdateStatusTypeDef](./type_defs.md#lastupdatestatustypedef) 
+7. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## FeatureGroupTypeDef
 
 ```python title="Usage Example"
@@ -17135,14 +18003,16 @@ class FeatureGroupTypeDef(TypedDict):
     EventTimeFeatureName: NotRequired[str],
     FeatureDefinitions: NotRequired[List[FeatureDefinitionTypeDef]],  # (1)
     CreationTime: NotRequired[datetime],
+    LastModifiedTime: NotRequired[datetime],
     OnlineStoreConfig: NotRequired[OnlineStoreConfigTypeDef],  # (2)
     OfflineStoreConfig: NotRequired[OfflineStoreConfigTypeDef],  # (3)
     RoleArn: NotRequired[str],
     FeatureGroupStatus: NotRequired[FeatureGroupStatusType],  # (4)
     OfflineStoreStatus: NotRequired[OfflineStoreStatusTypeDef],  # (5)
+    LastUpdateStatus: NotRequired[LastUpdateStatusTypeDef],  # (6)
     FailureReason: NotRequired[str],
     Description: NotRequired[str],
-    Tags: NotRequired[List[TagTypeDef]],  # (6)
+    Tags: NotRequired[List[TagTypeDef]],  # (7)
 ```
 
 1. See [:material-code-braces: FeatureDefinitionTypeDef](./type_defs.md#featuredefinitiontypedef) 
@@ -17150,7 +18020,8 @@ class FeatureGroupTypeDef(TypedDict):
 3. See [:material-code-braces: OfflineStoreConfigTypeDef](./type_defs.md#offlinestoreconfigtypedef) 
 4. See [:material-code-brackets: FeatureGroupStatusType](./literals.md#featuregroupstatustype) 
 5. See [:material-code-braces: OfflineStoreStatusTypeDef](./type_defs.md#offlinestorestatustypedef) 
-6. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+6. See [:material-code-braces: LastUpdateStatusTypeDef](./type_defs.md#lastupdatestatustypedef) 
+7. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## CreateCompilationJobRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -17504,6 +18375,68 @@ class TransformInputTypeDef(TypedDict):
 1. See [:material-code-braces: TransformDataSourceTypeDef](./type_defs.md#transformdatasourcetypedef) 
 2. See [:material-code-brackets: CompressionTypeType](./literals.md#compressiontypetype) 
 3. See [:material-code-brackets: SplitTypeType](./literals.md#splittypetype) 
+## DescribeWorkforceResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import DescribeWorkforceResponseTypeDef
+
+def get_value() -> DescribeWorkforceResponseTypeDef:
+    return {
+        "Workforce": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeWorkforceResponseTypeDef(TypedDict):
+    Workforce: WorkforceTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: WorkforceTypeDef](./type_defs.md#workforcetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListWorkforcesResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import ListWorkforcesResponseTypeDef
+
+def get_value() -> ListWorkforcesResponseTypeDef:
+    return {
+        "Workforces": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListWorkforcesResponseTypeDef(TypedDict):
+    Workforces: List[WorkforceTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: WorkforceTypeDef](./type_defs.md#workforcetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateWorkforceResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import UpdateWorkforceResponseTypeDef
+
+def get_value() -> UpdateWorkforceResponseTypeDef:
+    return {
+        "Workforce": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateWorkforceResponseTypeDef(TypedDict):
+    Workforce: WorkforceTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: WorkforceTypeDef](./type_defs.md#workforcetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListArtifactsResponseTypeDef
 
 ```python title="Usage Example"
@@ -17780,6 +18713,7 @@ class RecommendationJobInputConfigTypeDef(TypedDict):
     TrafficPattern: NotRequired[TrafficPatternTypeDef],  # (1)
     ResourceLimit: NotRequired[RecommendationJobResourceLimitTypeDef],  # (2)
     EndpointConfigurations: NotRequired[Sequence[EndpointInputConfigurationTypeDef]],  # (3)
+    VolumeKmsKeyId: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TrafficPatternTypeDef](./type_defs.md#trafficpatterntypedef) 
@@ -18175,7 +19109,6 @@ def get_value() -> HyperParameterTrainingJobDefinitionTypeDef:
         "AlgorithmSpecification": ...,
         "RoleArn": ...,
         "OutputDataConfig": ...,
-        "ResourceConfig": ...,
         "StoppingCondition": ...,
     }
 ```
@@ -18185,7 +19118,6 @@ class HyperParameterTrainingJobDefinitionTypeDef(TypedDict):
     AlgorithmSpecification: HyperParameterAlgorithmSpecificationTypeDef,  # (3)
     RoleArn: str,
     OutputDataConfig: OutputDataConfigTypeDef,  # (6)
-    ResourceConfig: ResourceConfigTypeDef,  # (7)
     StoppingCondition: StoppingConditionTypeDef,  # (8)
     DefinitionName: NotRequired[str],
     TuningObjective: NotRequired[HyperParameterTuningJobObjectiveTypeDef],  # (1)
@@ -18193,11 +19125,13 @@ class HyperParameterTrainingJobDefinitionTypeDef(TypedDict):
     StaticHyperParameters: NotRequired[Mapping[str, str]],
     InputDataConfig: NotRequired[Sequence[ChannelTypeDef]],  # (4)
     VpcConfig: NotRequired[VpcConfigTypeDef],  # (5)
+    ResourceConfig: NotRequired[ResourceConfigTypeDef],  # (7)
     EnableNetworkIsolation: NotRequired[bool],
     EnableInterContainerTrafficEncryption: NotRequired[bool],
     EnableManagedSpotTraining: NotRequired[bool],
     CheckpointConfig: NotRequired[CheckpointConfigTypeDef],  # (9)
     RetryStrategy: NotRequired[RetryStrategyTypeDef],  # (10)
+    HyperParameterTuningResourceConfig: NotRequired[HyperParameterTuningResourceConfigTypeDef],  # (11)
 ```
 
 1. See [:material-code-braces: HyperParameterTuningJobObjectiveTypeDef](./type_defs.md#hyperparametertuningjobobjectivetypedef) 
@@ -18210,6 +19144,7 @@ class HyperParameterTrainingJobDefinitionTypeDef(TypedDict):
 8. See [:material-code-braces: StoppingConditionTypeDef](./type_defs.md#stoppingconditiontypedef) 
 9. See [:material-code-braces: CheckpointConfigTypeDef](./type_defs.md#checkpointconfigtypedef) 
 10. See [:material-code-braces: RetryStrategyTypeDef](./type_defs.md#retrystrategytypedef) 
+11. See [:material-code-braces: HyperParameterTuningResourceConfigTypeDef](./type_defs.md#hyperparametertuningresourceconfigtypedef) 
 ## TrainingJobDefinitionTypeDef
 
 ```python title="Usage Example"
@@ -19590,13 +20525,15 @@ class CreateInferenceRecommendationsJobRequestRequestTypeDef(TypedDict):
     InputConfig: RecommendationJobInputConfigTypeDef,  # (2)
     JobDescription: NotRequired[str],
     StoppingConditions: NotRequired[RecommendationJobStoppingConditionsTypeDef],  # (3)
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (4)
+    OutputConfig: NotRequired[RecommendationJobOutputConfigTypeDef],  # (4)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (5)
 ```
 
 1. See [:material-code-brackets: RecommendationJobTypeType](./literals.md#recommendationjobtypetype) 
 2. See [:material-code-braces: RecommendationJobInputConfigTypeDef](./type_defs.md#recommendationjobinputconfigtypedef) 
 3. See [:material-code-braces: RecommendationJobStoppingConditionsTypeDef](./type_defs.md#recommendationjobstoppingconditionstypedef) 
-4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+4. See [:material-code-braces: RecommendationJobOutputConfigTypeDef](./type_defs.md#recommendationjoboutputconfigtypedef) 
+5. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## DescribeInferenceRecommendationsJobResponseTypeDef
 
 ```python title="Usage Example"
@@ -20360,6 +21297,7 @@ class SearchRecordTypeDef(TypedDict):
     PipelineExecution: NotRequired[PipelineExecutionTypeDef],  # (9)
     FeatureGroup: NotRequired[FeatureGroupTypeDef],  # (10)
     Project: NotRequired[ProjectTypeDef],  # (11)
+    FeatureMetadata: NotRequired[FeatureMetadataTypeDef],  # (12)
 ```
 
 1. See [:material-code-braces: TrainingJobTypeDef](./type_defs.md#trainingjobtypedef) 
@@ -20373,6 +21311,7 @@ class SearchRecordTypeDef(TypedDict):
 9. See [:material-code-braces: PipelineExecutionTypeDef](./type_defs.md#pipelineexecutiontypedef) 
 10. See [:material-code-braces: FeatureGroupTypeDef](./type_defs.md#featuregrouptypedef) 
 11. See [:material-code-braces: ProjectTypeDef](./type_defs.md#projecttypedef) 
+12. See [:material-code-braces: FeatureMetadataTypeDef](./type_defs.md#featuremetadatatypedef) 
 ## SearchResponseTypeDef
 
 ```python title="Usage Example"

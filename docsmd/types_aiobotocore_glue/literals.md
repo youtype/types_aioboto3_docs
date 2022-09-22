@@ -7,6 +7,34 @@
     Auto-generated documentation for [Glue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue)
     type annotations stubs module [types-aiobotocore-glue](https://pypi.org/project/types-aiobotocore-glue/).
 
+## AggFunctionType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import AggFunctionType
+
+def get_value() -> AggFunctionType:
+    return "avg"
+```
+
+```python title="Definition"
+AggFunctionType = Literal[
+    "avg",
+    "count",
+    "countDistinct",
+    "first",
+    "kurtosis",
+    "last",
+    "max",
+    "min",
+    "skewness",
+    "stddev_pop",
+    "stddev_samp",
+    "sum",
+    "sumDistinct",
+    "var_pop",
+    "var_samp",
+]
+```
 ## BackfillErrorCodeType
 
 ```python title="Usage Example"
@@ -148,6 +176,21 @@ CompatibilityType = Literal[
     "NONE",
 ]
 ```
+## CompressionTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import CompressionTypeType
+
+def get_value() -> CompressionTypeType:
+    return "bzip2"
+```
+
+```python title="Definition"
+CompressionTypeType = Literal[
+    "bzip2",
+    "gzip",
+]
+```
 ## ConnectionPropertyKeyType
 
 ```python title="Usage Example"
@@ -224,9 +267,27 @@ def get_value() -> CrawlStateType:
 CrawlStateType = Literal[
     "CANCELLED",
     "CANCELLING",
+    "ERROR",
     "FAILED",
     "RUNNING",
     "SUCCEEDED",
+]
+```
+## CrawlerHistoryStateType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import CrawlerHistoryStateType
+
+def get_value() -> CrawlerHistoryStateType:
+    return "COMPLETED"
+```
+
+```python title="Definition"
+CrawlerHistoryStateType = Literal[
+    "COMPLETED",
+    "FAILED",
+    "RUNNING",
+    "STOPPED",
 ]
 ```
 ## CrawlerLineageSettingsType
@@ -323,6 +384,21 @@ EnableHybridValuesType = Literal[
     "TRUE",
 ]
 ```
+## ExecutionClassType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import ExecutionClassType
+
+def get_value() -> ExecutionClassType:
+    return "FLEX"
+```
+
+```python title="Definition"
+ExecutionClassType = Literal[
+    "FLEX",
+    "STANDARD",
+]
+```
 ## ExistConditionType
 
 ```python title="Usage Example"
@@ -337,6 +413,93 @@ ExistConditionType = Literal[
     "MUST_EXIST",
     "NONE",
     "NOT_EXIST",
+]
+```
+## FieldNameType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import FieldNameType
+
+def get_value() -> FieldNameType:
+    return "CRAWL_ID"
+```
+
+```python title="Definition"
+FieldNameType = Literal[
+    "CRAWL_ID",
+    "DPU_HOUR",
+    "END_TIME",
+    "START_TIME",
+    "STATE",
+]
+```
+## FilterLogicalOperatorType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import FilterLogicalOperatorType
+
+def get_value() -> FilterLogicalOperatorType:
+    return "AND"
+```
+
+```python title="Definition"
+FilterLogicalOperatorType = Literal[
+    "AND",
+    "OR",
+]
+```
+## FilterOperationType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import FilterOperationType
+
+def get_value() -> FilterOperationType:
+    return "EQ"
+```
+
+```python title="Definition"
+FilterOperationType = Literal[
+    "EQ",
+    "GT",
+    "GTE",
+    "ISNULL",
+    "LT",
+    "LTE",
+    "REGEX",
+]
+```
+## FilterOperatorType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import FilterOperatorType
+
+def get_value() -> FilterOperatorType:
+    return "EQ"
+```
+
+```python title="Definition"
+FilterOperatorType = Literal[
+    "EQ",
+    "GE",
+    "GT",
+    "LE",
+    "LT",
+    "NE",
+]
+```
+## FilterValueTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import FilterValueTypeType
+
+def get_value() -> FilterValueTypeType:
+    return "COLUMNEXTRACTED"
+```
+
+```python title="Definition"
+FilterValueTypeType = Literal[
+    "COLUMNEXTRACTED",
+    "CONSTANT",
 ]
 ```
 ## GetClassifiersPaginatorName
@@ -563,6 +726,81 @@ GetUserDefinedFunctionsPaginatorName = Literal[
     "get_user_defined_functions",
 ]
 ```
+## GlueRecordTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import GlueRecordTypeType
+
+def get_value() -> GlueRecordTypeType:
+    return "BIGDECIMAL"
+```
+
+```python title="Definition"
+GlueRecordTypeType = Literal[
+    "BIGDECIMAL",
+    "BYTE",
+    "DATE",
+    "DOUBLE",
+    "FLOAT",
+    "INT",
+    "LONG",
+    "SHORT",
+    "STRING",
+    "TIMESTAMP",
+]
+```
+## JDBCDataTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import JDBCDataTypeType
+
+def get_value() -> JDBCDataTypeType:
+    return "ARRAY"
+```
+
+```python title="Definition"
+JDBCDataTypeType = Literal[
+    "ARRAY",
+    "BIGINT",
+    "BINARY",
+    "BIT",
+    "BLOB",
+    "BOOLEAN",
+    "CHAR",
+    "CLOB",
+    "DATALINK",
+    "DATE",
+    "DECIMAL",
+    "DISTINCT",
+    "DOUBLE",
+    "FLOAT",
+    "INTEGER",
+    "JAVA_OBJECT",
+    "LONGNVARCHAR",
+    "LONGVARBINARY",
+    "LONGVARCHAR",
+    "NCHAR",
+    "NCLOB",
+    "NULL",
+    "NUMERIC",
+    "NVARCHAR",
+    "OTHER",
+    "REAL",
+    "REF",
+    "REF_CURSOR",
+    "ROWID",
+    "SMALLINT",
+    "SQLXML",
+    "STRUCT",
+    "TIME",
+    "TIME_WITH_TIMEZONE",
+    "TIMESTAMP",
+    "TIMESTAMP_WITH_TIMEZONE",
+    "TINYINT",
+    "VARBINARY",
+    "VARCHAR",
+]
+```
 ## JobBookmarksEncryptionModeType
 
 ```python title="Usage Example"
@@ -584,11 +822,12 @@ JobBookmarksEncryptionModeType = Literal[
 from types_aiobotocore_glue.literals import JobRunStateType
 
 def get_value() -> JobRunStateType:
-    return "FAILED"
+    return "ERROR"
 ```
 
 ```python title="Definition"
 JobRunStateType = Literal[
+    "ERROR",
     "FAILED",
     "RUNNING",
     "STARTING",
@@ -596,6 +835,26 @@ JobRunStateType = Literal[
     "STOPPING",
     "SUCCEEDED",
     "TIMEOUT",
+    "WAITING",
+]
+```
+## JoinTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import JoinTypeType
+
+def get_value() -> JoinTypeType:
+    return "equijoin"
+```
+
+```python title="Definition"
+JoinTypeType = Literal[
+    "equijoin",
+    "left",
+    "leftanti",
+    "leftsemi",
+    "outer",
+    "right",
 ]
 ```
 ## LanguageType
@@ -731,6 +990,24 @@ NodeTypeType = Literal[
     "TRIGGER",
 ]
 ```
+## ParquetCompressionTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import ParquetCompressionTypeType
+
+def get_value() -> ParquetCompressionTypeType:
+    return "gzip"
+```
+
+```python title="Definition"
+ParquetCompressionTypeType = Literal[
+    "gzip",
+    "lzo",
+    "none",
+    "snappy",
+    "uncompressed",
+]
+```
 ## PartitionIndexStatusType
 
 ```python title="Usage Example"
@@ -785,6 +1062,23 @@ PermissionTypeType = Literal[
     "COLUMN_PERMISSION",
 ]
 ```
+## PiiTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import PiiTypeType
+
+def get_value() -> PiiTypeType:
+    return "ColumnAudit"
+```
+
+```python title="Definition"
+PiiTypeType = Literal[
+    "ColumnAudit",
+    "ColumnMasking",
+    "RowAudit",
+    "RowMasking",
+]
+```
 ## PrincipalTypeType
 
 ```python title="Usage Example"
@@ -799,6 +1093,23 @@ PrincipalTypeType = Literal[
     "GROUP",
     "ROLE",
     "USER",
+]
+```
+## QuoteCharType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import QuoteCharType
+
+def get_value() -> QuoteCharType:
+    return "disabled"
+```
+
+```python title="Definition"
+QuoteCharType = Literal[
+    "disabled",
+    "quillemet",
+    "quote",
+    "single_quote",
 ]
 ```
 ## RecrawlBehaviorType
@@ -942,6 +1253,43 @@ SchemaVersionStatusType = Literal[
     "PENDING",
 ]
 ```
+## SeparatorType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import SeparatorType
+
+def get_value() -> SeparatorType:
+    return "comma"
+```
+
+```python title="Definition"
+SeparatorType = Literal[
+    "comma",
+    "ctrla",
+    "pipe",
+    "semicolon",
+    "tab",
+]
+```
+## SessionStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import SessionStatusType
+
+def get_value() -> SessionStatusType:
+    return "FAILED"
+```
+
+```python title="Definition"
+SessionStatusType = Literal[
+    "FAILED",
+    "PROVISIONING",
+    "READY",
+    "STOPPED",
+    "STOPPING",
+    "TIMEOUT",
+]
+```
 ## SortDirectionTypeType
 
 ```python title="Usage Example"
@@ -970,6 +1318,59 @@ def get_value() -> SortType:
 SortType = Literal[
     "ASC",
     "DESC",
+]
+```
+## StartingPositionType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import StartingPositionType
+
+def get_value() -> StartingPositionType:
+    return "earliest"
+```
+
+```python title="Definition"
+StartingPositionType = Literal[
+    "earliest",
+    "latest",
+    "trim_horizon",
+]
+```
+## StatementStateType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import StatementStateType
+
+def get_value() -> StatementStateType:
+    return "AVAILABLE"
+```
+
+```python title="Definition"
+StatementStateType = Literal[
+    "AVAILABLE",
+    "CANCELLED",
+    "CANCELLING",
+    "ERROR",
+    "RUNNING",
+    "WAITING",
+]
+```
+## TargetFormatType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import TargetFormatType
+
+def get_value() -> TargetFormatType:
+    return "avro"
+```
+
+```python title="Definition"
+TargetFormatType = Literal[
+    "avro",
+    "csv",
+    "json",
+    "orc",
+    "parquet",
 ]
 ```
 ## TaskRunSortColumnTypeType
@@ -1112,6 +1513,21 @@ TriggerTypeType = Literal[
     "SCHEDULED",
 ]
 ```
+## UnionTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import UnionTypeType
+
+def get_value() -> UnionTypeType:
+    return "ALL"
+```
+
+```python title="Definition"
+UnionTypeType = Literal[
+    "ALL",
+    "DISTINCT",
+]
+```
 ## UpdateBehaviorType
 
 ```python title="Usage Example"
@@ -1127,17 +1543,33 @@ UpdateBehaviorType = Literal[
     "UPDATE_IN_DATABASE",
 ]
 ```
+## UpdateCatalogBehaviorType
+
+```python title="Usage Example"
+from types_aiobotocore_glue.literals import UpdateCatalogBehaviorType
+
+def get_value() -> UpdateCatalogBehaviorType:
+    return "LOG"
+```
+
+```python title="Definition"
+UpdateCatalogBehaviorType = Literal[
+    "LOG",
+    "UPDATE_IN_DATABASE",
+]
+```
 ## WorkerTypeType
 
 ```python title="Usage Example"
 from types_aiobotocore_glue.literals import WorkerTypeType
 
 def get_value() -> WorkerTypeType:
-    return "G.1X"
+    return "G.025X"
 ```
 
 ```python title="Definition"
 WorkerTypeType = Literal[
+    "G.025X",
     "G.1X",
     "G.2X",
     "Standard",
@@ -1215,6 +1647,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -1222,6 +1655,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1254,6 +1688,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -1290,6 +1725,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1303,6 +1739,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1336,6 +1773,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1355,12 +1793,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1404,8 +1844,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1416,11 +1858,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1466,6 +1910,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

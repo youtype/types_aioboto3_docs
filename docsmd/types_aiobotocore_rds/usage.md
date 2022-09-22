@@ -64,12 +64,12 @@ type checking and code completion should work out of the box.
     session = Session()
 
     async with session.client("rds") as client:  # (1)
-        waiter = client.get_waiter("db_cluster_snapshot_available")  # (2)
+        waiter = client.get_waiter("db_cluster_available")  # (2)
         await waiter.wait()
     ```
 
     1. client: [RDSClient](./client.md)
-    2. waiter: [DBClusterSnapshotAvailableWaiter](./waiters.md#dbclustersnapshotavailablewaiter)
+    2. waiter: [DBClusterAvailableWaiter](./waiters.md#dbclusteravailablewaiter)
 
 
 ### Explicit type annotations
@@ -138,17 +138,17 @@ However, these type annotations can be helpful in your functions and methods.
     from aioboto3.session import Session
 
     from types_aiobotocore_rds.client import RDSClient
-    from types_aiobotocore_rds.waiter import DBClusterSnapshotAvailableWaiter
+    from types_aiobotocore_rds.waiter import DBClusterAvailableWaiter
 
 
     session = Session()
 
     async with session.client("rds") as client:  # (1)
-        waiter = client.get_waiter("db_cluster_snapshot_available")  # (2)
+        waiter = client.get_waiter("db_cluster_available")  # (2)
         await waiter.wait()
     ```
 
     1. client: [RDSClient](./client.md)
-    2. waiter: [DBClusterSnapshotAvailableWaiter](./waiters.md#dbclustersnapshotavailablewaiter)
+    2. waiter: [DBClusterAvailableWaiter](./waiters.md#dbclusteravailablewaiter)
 
 

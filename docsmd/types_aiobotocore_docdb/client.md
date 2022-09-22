@@ -218,6 +218,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("docdb").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### copy\_db\_cluster\_parameter\_group
 
 Copies the specified cluster parameter group.
@@ -428,7 +443,10 @@ await def create_db_instance(
     PreferredMaintenanceWindow: str = ...,
     AutoMinorVersionUpgrade: bool = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (1)
+    CopyTagsToSnapshot: bool = ...,
     PromotionTier: int = ...,
+    EnablePerformanceInsights: bool = ...,
+    PerformanceInsightsKMSKeyId: str = ...,
 ) -> CreateDBInstanceResultTypeDef:  # (2)
     ...
 ```
@@ -525,7 +543,7 @@ parent.create_event_subscription(**kwargs)
 ### create\_global\_cluster
 
 Creates an Amazon DocumentDB global cluster that can span multiple multiple
-Regions.
+Amazon Web Services Regions.
 
 Type annotations and code completion for `#!python session.client("docdb").create_global_cluster` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.create_global_cluster)
@@ -766,7 +784,7 @@ parent.delete_global_cluster(**kwargs)
 ### describe\_certificates
 
 Returns a list of certificate authority (CA) certificates provided by Amazon
-DocumentDB for this account.
+DocumentDB for this Amazon Web Services account.
 
 Type annotations and code completion for `#!python session.client("docdb").describe_certificates` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_certificates)
@@ -1517,7 +1535,10 @@ await def modify_db_instance(
     AutoMinorVersionUpgrade: bool = ...,
     NewDBInstanceIdentifier: str = ...,
     CACertificateIdentifier: str = ...,
+    CopyTagsToSnapshot: bool = ...,
     PromotionTier: int = ...,
+    EnablePerformanceInsights: bool = ...,
+    PerformanceInsightsKMSKeyId: str = ...,
 ) -> ModifyDBInstanceResultTypeDef:  # (1)
     ...
 ```
@@ -1843,6 +1864,7 @@ await def restore_db_cluster_to_point_in_time(
     *,
     DBClusterIdentifier: str,
     SourceDBClusterIdentifier: str,
+    RestoreType: str = ...,
     RestoreToTime: Union[datetime, str] = ...,
     UseLatestRestorableTime: bool = ...,
     Port: int = ...,

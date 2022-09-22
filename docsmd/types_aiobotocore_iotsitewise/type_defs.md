@@ -312,6 +312,202 @@ class BatchDisassociateProjectAssetsRequestRequestTypeDef(TypedDict):
     clientToken: NotRequired[str],
 ```
 
+## BatchGetAssetPropertyAggregatesEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyAggregatesEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyAggregatesEntryTypeDef:
+    return {
+        "entryId": ...,
+        "aggregateTypes": ...,
+        "resolution": ...,
+        "startDate": ...,
+        "endDate": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyAggregatesEntryTypeDef(TypedDict):
+    entryId: str,
+    aggregateTypes: Sequence[AggregateTypeType],  # (1)
+    resolution: str,
+    startDate: Union[datetime, str],
+    endDate: Union[datetime, str],
+    assetId: NotRequired[str],
+    propertyId: NotRequired[str],
+    propertyAlias: NotRequired[str],
+    qualities: NotRequired[Sequence[QualityType]],  # (2)
+    timeOrdering: NotRequired[TimeOrderingType],  # (3)
+```
+
+1. See [:material-code-brackets: AggregateTypeType](./literals.md#aggregatetypetype) 
+2. See [:material-code-brackets: QualityType](./literals.md#qualitytype) 
+3. See [:material-code-brackets: TimeOrderingType](./literals.md#timeorderingtype) 
+## BatchGetAssetPropertyAggregatesErrorEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyAggregatesErrorEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyAggregatesErrorEntryTypeDef:
+    return {
+        "errorCode": ...,
+        "errorMessage": ...,
+        "entryId": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyAggregatesErrorEntryTypeDef(TypedDict):
+    errorCode: BatchGetAssetPropertyAggregatesErrorCodeType,  # (1)
+    errorMessage: str,
+    entryId: str,
+```
+
+1. See [:material-code-brackets: BatchGetAssetPropertyAggregatesErrorCodeType](./literals.md#batchgetassetpropertyaggregateserrorcodetype) 
+## BatchGetAssetPropertyAggregatesErrorInfoTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyAggregatesErrorInfoTypeDef
+
+def get_value() -> BatchGetAssetPropertyAggregatesErrorInfoTypeDef:
+    return {
+        "errorCode": ...,
+        "errorTimestamp": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyAggregatesErrorInfoTypeDef(TypedDict):
+    errorCode: BatchGetAssetPropertyAggregatesErrorCodeType,  # (1)
+    errorTimestamp: datetime,
+```
+
+1. See [:material-code-brackets: BatchGetAssetPropertyAggregatesErrorCodeType](./literals.md#batchgetassetpropertyaggregateserrorcodetype) 
+## BatchGetAssetPropertyValueEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueEntryTypeDef:
+    return {
+        "entryId": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueEntryTypeDef(TypedDict):
+    entryId: str,
+    assetId: NotRequired[str],
+    propertyId: NotRequired[str],
+    propertyAlias: NotRequired[str],
+```
+
+## BatchGetAssetPropertyValueErrorEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueErrorEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueErrorEntryTypeDef:
+    return {
+        "errorCode": ...,
+        "errorMessage": ...,
+        "entryId": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueErrorEntryTypeDef(TypedDict):
+    errorCode: BatchGetAssetPropertyValueErrorCodeType,  # (1)
+    errorMessage: str,
+    entryId: str,
+```
+
+1. See [:material-code-brackets: BatchGetAssetPropertyValueErrorCodeType](./literals.md#batchgetassetpropertyvalueerrorcodetype) 
+## BatchGetAssetPropertyValueErrorInfoTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueErrorInfoTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueErrorInfoTypeDef:
+    return {
+        "errorCode": ...,
+        "errorTimestamp": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueErrorInfoTypeDef(TypedDict):
+    errorCode: BatchGetAssetPropertyValueErrorCodeType,  # (1)
+    errorTimestamp: datetime,
+```
+
+1. See [:material-code-brackets: BatchGetAssetPropertyValueErrorCodeType](./literals.md#batchgetassetpropertyvalueerrorcodetype) 
+## BatchGetAssetPropertyValueHistoryEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueHistoryEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueHistoryEntryTypeDef:
+    return {
+        "entryId": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueHistoryEntryTypeDef(TypedDict):
+    entryId: str,
+    assetId: NotRequired[str],
+    propertyId: NotRequired[str],
+    propertyAlias: NotRequired[str],
+    startDate: NotRequired[Union[datetime, str]],
+    endDate: NotRequired[Union[datetime, str]],
+    qualities: NotRequired[Sequence[QualityType]],  # (1)
+    timeOrdering: NotRequired[TimeOrderingType],  # (2)
+```
+
+1. See [:material-code-brackets: QualityType](./literals.md#qualitytype) 
+2. See [:material-code-brackets: TimeOrderingType](./literals.md#timeorderingtype) 
+## BatchGetAssetPropertyValueHistoryErrorEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueHistoryErrorEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueHistoryErrorEntryTypeDef:
+    return {
+        "errorCode": ...,
+        "errorMessage": ...,
+        "entryId": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueHistoryErrorEntryTypeDef(TypedDict):
+    errorCode: BatchGetAssetPropertyValueHistoryErrorCodeType,  # (1)
+    errorMessage: str,
+    entryId: str,
+```
+
+1. See [:material-code-brackets: BatchGetAssetPropertyValueHistoryErrorCodeType](./literals.md#batchgetassetpropertyvaluehistoryerrorcodetype) 
+## BatchGetAssetPropertyValueHistoryErrorInfoTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueHistoryErrorInfoTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueHistoryErrorInfoTypeDef:
+    return {
+        "errorCode": ...,
+        "errorTimestamp": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueHistoryErrorInfoTypeDef(TypedDict):
+    errorCode: BatchGetAssetPropertyValueHistoryErrorCodeType,  # (1)
+    errorTimestamp: datetime,
+```
+
+1. See [:material-code-brackets: BatchGetAssetPropertyValueHistoryErrorCodeType](./literals.md#batchgetassetpropertyvaluehistoryerrorcodetype) 
 ## ConfigurationErrorDetailsTypeDef
 
 ```python title="Usage Example"
@@ -349,6 +545,44 @@ class CreateAssetRequestRequestTypeDef(TypedDict):
     assetModelId: str,
     clientToken: NotRequired[str],
     tags: NotRequired[Mapping[str, str]],
+    assetDescription: NotRequired[str],
+```
+
+## ErrorReportLocationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import ErrorReportLocationTypeDef
+
+def get_value() -> ErrorReportLocationTypeDef:
+    return {
+        "bucket": ...,
+        "prefix": ...,
+    }
+```
+
+```python title="Definition"
+class ErrorReportLocationTypeDef(TypedDict):
+    bucket: str,
+    prefix: str,
+```
+
+## FileTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import FileTypeDef
+
+def get_value() -> FileTypeDef:
+    return {
+        "bucket": ...,
+        "key": ...,
+    }
+```
+
+```python title="Definition"
+class FileTypeDef(TypedDict):
+    bucket: str,
+    key: str,
+    versionId: NotRequired[str],
 ```
 
 ## CreateDashboardRequestRequestTypeDef
@@ -414,6 +648,23 @@ class CreateProjectRequestRequestTypeDef(TypedDict):
     tags: NotRequired[Mapping[str, str]],
 ```
 
+## CsvTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import CsvTypeDef
+
+def get_value() -> CsvTypeDef:
+    return {
+        "columnNames": ...,
+    }
+```
+
+```python title="Definition"
+class CsvTypeDef(TypedDict):
+    columnNames: NotRequired[Sequence[ColumnNameType]],  # (1)
+```
+
+1. See [:material-code-brackets: ColumnNameType](./literals.md#columnnametype) 
 ## CustomerManagedS3StorageTypeDef
 
 ```python title="Usage Example"
@@ -671,6 +922,22 @@ def get_value() -> DescribeAssetRequestRequestTypeDef:
 ```python title="Definition"
 class DescribeAssetRequestRequestTypeDef(TypedDict):
     assetId: str,
+```
+
+## DescribeBulkImportJobRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import DescribeBulkImportJobRequestRequestTypeDef
+
+def get_value() -> DescribeBulkImportJobRequestRequestTypeDef:
+    return {
+        "jobId": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeBulkImportJobRequestRequestTypeDef(TypedDict):
+    jobId: str,
 ```
 
 ## DescribeDashboardRequestRequestTypeDef
@@ -1162,6 +1429,27 @@ class UserIdentityTypeDef(TypedDict):
     id: str,
 ```
 
+## JobSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import JobSummaryTypeDef
+
+def get_value() -> JobSummaryTypeDef:
+    return {
+        "id": ...,
+        "name": ...,
+        "status": ...,
+    }
+```
+
+```python title="Definition"
+class JobSummaryTypeDef(TypedDict):
+    id: str,
+    name: str,
+    status: JobStatusType,  # (1)
+```
+
+1. See [:material-code-brackets: JobStatusType](./literals.md#jobstatustype) 
 ## ListAccessPoliciesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1265,6 +1553,25 @@ class ListAssociatedAssetsRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: TraversalDirectionType](./literals.md#traversaldirectiontype) 
+## ListBulkImportJobsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import ListBulkImportJobsRequestRequestTypeDef
+
+def get_value() -> ListBulkImportJobsRequestRequestTypeDef:
+    return {
+        "nextToken": ...,
+    }
+```
+
+```python title="Definition"
+class ListBulkImportJobsRequestRequestTypeDef(TypedDict):
+    nextToken: NotRequired[str],
+    maxResults: NotRequired[int],
+    filter: NotRequired[ListBulkImportJobsFilterType],  # (1)
+```
+
+1. See [:material-code-brackets: ListBulkImportJobsFilterType](./literals.md#listbulkimportjobsfiltertype) 
 ## ListDashboardsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1615,6 +1922,7 @@ class UpdateAssetRequestRequestTypeDef(TypedDict):
     assetId: str,
     assetName: str,
     clientToken: NotRequired[str],
+    assetDescription: NotRequired[str],
 ```
 
 ## UpdateDashboardRequestRequestTypeDef
@@ -1888,6 +2196,30 @@ class CreateAccessPolicyResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateBulkImportJobResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import CreateBulkImportJobResponseTypeDef
+
+def get_value() -> CreateBulkImportJobResponseTypeDef:
+    return {
+        "jobId": ...,
+        "jobName": ...,
+        "jobStatus": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateBulkImportJobResponseTypeDef(TypedDict):
+    jobId: str,
+    jobName: str,
+    jobStatus: JobStatusType,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-brackets: JobStatusType](./literals.md#jobstatustype) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateDashboardResponseTypeDef
 
 ```python title="Usage Example"
@@ -2154,6 +2486,125 @@ class UpdateGatewayCapabilityConfigurationResponseTypeDef(TypedDict):
 
 1. See [:material-code-brackets: CapabilitySyncStatusType](./literals.md#capabilitysyncstatustype) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## BatchGetAssetPropertyAggregatesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyAggregatesRequestRequestTypeDef
+
+def get_value() -> BatchGetAssetPropertyAggregatesRequestRequestTypeDef:
+    return {
+        "entries": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyAggregatesRequestRequestTypeDef(TypedDict):
+    entries: Sequence[BatchGetAssetPropertyAggregatesEntryTypeDef],  # (1)
+    nextToken: NotRequired[str],
+    maxResults: NotRequired[int],
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyAggregatesEntryTypeDef](./type_defs.md#batchgetassetpropertyaggregatesentrytypedef) 
+## BatchGetAssetPropertyAggregatesSkippedEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyAggregatesSkippedEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyAggregatesSkippedEntryTypeDef:
+    return {
+        "entryId": ...,
+        "completionStatus": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyAggregatesSkippedEntryTypeDef(TypedDict):
+    entryId: str,
+    completionStatus: BatchEntryCompletionStatusType,  # (1)
+    errorInfo: NotRequired[BatchGetAssetPropertyAggregatesErrorInfoTypeDef],  # (2)
+```
+
+1. See [:material-code-brackets: BatchEntryCompletionStatusType](./literals.md#batchentrycompletionstatustype) 
+2. See [:material-code-braces: BatchGetAssetPropertyAggregatesErrorInfoTypeDef](./type_defs.md#batchgetassetpropertyaggregateserrorinfotypedef) 
+## BatchGetAssetPropertyValueRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueRequestRequestTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueRequestRequestTypeDef:
+    return {
+        "entries": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueRequestRequestTypeDef(TypedDict):
+    entries: Sequence[BatchGetAssetPropertyValueEntryTypeDef],  # (1)
+    nextToken: NotRequired[str],
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyValueEntryTypeDef](./type_defs.md#batchgetassetpropertyvalueentrytypedef) 
+## BatchGetAssetPropertyValueSkippedEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueSkippedEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueSkippedEntryTypeDef:
+    return {
+        "entryId": ...,
+        "completionStatus": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueSkippedEntryTypeDef(TypedDict):
+    entryId: str,
+    completionStatus: BatchEntryCompletionStatusType,  # (1)
+    errorInfo: NotRequired[BatchGetAssetPropertyValueErrorInfoTypeDef],  # (2)
+```
+
+1. See [:material-code-brackets: BatchEntryCompletionStatusType](./literals.md#batchentrycompletionstatustype) 
+2. See [:material-code-braces: BatchGetAssetPropertyValueErrorInfoTypeDef](./type_defs.md#batchgetassetpropertyvalueerrorinfotypedef) 
+## BatchGetAssetPropertyValueHistoryRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueHistoryRequestRequestTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueHistoryRequestRequestTypeDef:
+    return {
+        "entries": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueHistoryRequestRequestTypeDef(TypedDict):
+    entries: Sequence[BatchGetAssetPropertyValueHistoryEntryTypeDef],  # (1)
+    nextToken: NotRequired[str],
+    maxResults: NotRequired[int],
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyValueHistoryEntryTypeDef](./type_defs.md#batchgetassetpropertyvaluehistoryentrytypedef) 
+## BatchGetAssetPropertyValueHistorySkippedEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueHistorySkippedEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueHistorySkippedEntryTypeDef:
+    return {
+        "entryId": ...,
+        "completionStatus": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueHistorySkippedEntryTypeDef(TypedDict):
+    entryId: str,
+    completionStatus: BatchEntryCompletionStatusType,  # (1)
+    errorInfo: NotRequired[BatchGetAssetPropertyValueHistoryErrorInfoTypeDef],  # (2)
+```
+
+1. See [:material-code-brackets: BatchEntryCompletionStatusType](./literals.md#batchentrycompletionstatustype) 
+2. See [:material-code-braces: BatchGetAssetPropertyValueHistoryErrorInfoTypeDef](./type_defs.md#batchgetassetpropertyvaluehistoryerrorinfotypedef) 
 ## ConfigurationStatusTypeDef
 
 ```python title="Usage Example"
@@ -2221,6 +2672,23 @@ class ImageTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ImageFileTypeDef](./type_defs.md#imagefiletypedef) 
+## FileFormatTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import FileFormatTypeDef
+
+def get_value() -> FileFormatTypeDef:
+    return {
+        "csv": ...,
+    }
+```
+
+```python title="Definition"
+class FileFormatTypeDef(TypedDict):
+    csv: NotRequired[CsvTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: CsvTypeDef](./type_defs.md#csvtypedef) 
 ## MultiLayerStorageTypeDef
 
 ```python title="Usage Example"
@@ -2694,6 +3162,25 @@ class ListAssociatedAssetsRequestListAssociatedAssetsPaginateTypeDef(TypedDict):
 
 1. See [:material-code-brackets: TraversalDirectionType](./literals.md#traversaldirectiontype) 
 2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListBulkImportJobsRequestListBulkImportJobsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import ListBulkImportJobsRequestListBulkImportJobsPaginateTypeDef
+
+def get_value() -> ListBulkImportJobsRequestListBulkImportJobsPaginateTypeDef:
+    return {
+        "filter": ...,
+    }
+```
+
+```python title="Definition"
+class ListBulkImportJobsRequestListBulkImportJobsPaginateTypeDef(TypedDict):
+    filter: NotRequired[ListBulkImportJobsFilterType],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-brackets: ListBulkImportJobsFilterType](./literals.md#listbulkimportjobsfiltertype) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListDashboardsRequestListDashboardsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -2826,6 +3313,28 @@ class IdentityTypeDef(TypedDict):
 2. See [:material-code-braces: GroupIdentityTypeDef](./type_defs.md#groupidentitytypedef) 
 3. See [:material-code-braces: IAMUserIdentityTypeDef](./type_defs.md#iamuseridentitytypedef) 
 4. See [:material-code-braces: IAMRoleIdentityTypeDef](./type_defs.md#iamroleidentitytypedef) 
+## ListBulkImportJobsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import ListBulkImportJobsResponseTypeDef
+
+def get_value() -> ListBulkImportJobsResponseTypeDef:
+    return {
+        "jobSummaries": ...,
+        "nextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListBulkImportJobsResponseTypeDef(TypedDict):
+    jobSummaries: List[JobSummaryTypeDef],  # (1)
+    nextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: JobSummaryTypeDef](./type_defs.md#jobsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListProjectsResponseTypeDef
 
 ```python title="Usage Example"
@@ -2925,6 +3434,25 @@ class ResourceTypeDef(TypedDict):
 
 1. See [:material-code-braces: PortalResourceTypeDef](./type_defs.md#portalresourcetypedef) 
 2. See [:material-code-braces: ProjectResourceTypeDef](./type_defs.md#projectresourcetypedef) 
+## BatchGetAssetPropertyAggregatesSuccessEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyAggregatesSuccessEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyAggregatesSuccessEntryTypeDef:
+    return {
+        "entryId": ...,
+        "aggregatedValues": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyAggregatesSuccessEntryTypeDef(TypedDict):
+    entryId: str,
+    aggregatedValues: List[AggregatedValueTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: AggregatedValueTypeDef](./type_defs.md#aggregatedvaluetypedef) 
 ## GetAssetPropertyAggregatesResponseTypeDef
 
 ```python title="Usage Example"
@@ -3010,6 +3538,43 @@ class BatchPutAssetPropertyErrorEntryTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: BatchPutAssetPropertyErrorTypeDef](./type_defs.md#batchputassetpropertyerrortypedef) 
+## BatchGetAssetPropertyValueHistorySuccessEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueHistorySuccessEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueHistorySuccessEntryTypeDef:
+    return {
+        "entryId": ...,
+        "assetPropertyValueHistory": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueHistorySuccessEntryTypeDef(TypedDict):
+    entryId: str,
+    assetPropertyValueHistory: List[AssetPropertyValueTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: AssetPropertyValueTypeDef](./type_defs.md#assetpropertyvaluetypedef) 
+## BatchGetAssetPropertyValueSuccessEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueSuccessEntryTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueSuccessEntryTypeDef:
+    return {
+        "entryId": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueSuccessEntryTypeDef(TypedDict):
+    entryId: str,
+    assetPropertyValue: NotRequired[AssetPropertyValueTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: AssetPropertyValueTypeDef](./type_defs.md#assetpropertyvaluetypedef) 
 ## GetAssetPropertyValueHistoryResponseTypeDef
 
 ```python title="Usage Example"
@@ -3175,6 +3740,23 @@ class UpdatePortalRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-braces: ImageTypeDef](./type_defs.md#imagetypedef) 
 2. See [:material-code-braces: AlarmsTypeDef](./type_defs.md#alarmstypedef) 
+## JobConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import JobConfigurationTypeDef
+
+def get_value() -> JobConfigurationTypeDef:
+    return {
+        "fileFormat": ...,
+    }
+```
+
+```python title="Definition"
+class JobConfigurationTypeDef(TypedDict):
+    fileFormat: FileFormatTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: FileFormatTypeDef](./type_defs.md#fileformattypedef) 
 ## DescribeStorageConfigurationResponseTypeDef
 
 ```python title="Usage Example"
@@ -3701,6 +4283,34 @@ class UpdateAccessPolicyRequestRequestTypeDef(TypedDict):
 1. See [:material-code-braces: IdentityTypeDef](./type_defs.md#identitytypedef) 
 2. See [:material-code-braces: ResourceTypeDef](./type_defs.md#resourcetypedef) 
 3. See [:material-code-brackets: PermissionType](./literals.md#permissiontype) 
+## BatchGetAssetPropertyAggregatesResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyAggregatesResponseTypeDef
+
+def get_value() -> BatchGetAssetPropertyAggregatesResponseTypeDef:
+    return {
+        "errorEntries": ...,
+        "successEntries": ...,
+        "skippedEntries": ...,
+        "nextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyAggregatesResponseTypeDef(TypedDict):
+    errorEntries: List[BatchGetAssetPropertyAggregatesErrorEntryTypeDef],  # (1)
+    successEntries: List[BatchGetAssetPropertyAggregatesSuccessEntryTypeDef],  # (2)
+    skippedEntries: List[BatchGetAssetPropertyAggregatesSkippedEntryTypeDef],  # (3)
+    nextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyAggregatesErrorEntryTypeDef](./type_defs.md#batchgetassetpropertyaggregateserrorentrytypedef) 
+2. See [:material-code-braces: BatchGetAssetPropertyAggregatesSuccessEntryTypeDef](./type_defs.md#batchgetassetpropertyaggregatessuccessentrytypedef) 
+3. See [:material-code-braces: BatchGetAssetPropertyAggregatesSkippedEntryTypeDef](./type_defs.md#batchgetassetpropertyaggregatesskippedentrytypedef) 
+4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## BatchPutAssetPropertyValueResponseTypeDef
 
 ```python title="Usage Example"
@@ -3721,6 +4331,62 @@ class BatchPutAssetPropertyValueResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: BatchPutAssetPropertyErrorEntryTypeDef](./type_defs.md#batchputassetpropertyerrorentrytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## BatchGetAssetPropertyValueHistoryResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueHistoryResponseTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueHistoryResponseTypeDef:
+    return {
+        "errorEntries": ...,
+        "successEntries": ...,
+        "skippedEntries": ...,
+        "nextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueHistoryResponseTypeDef(TypedDict):
+    errorEntries: List[BatchGetAssetPropertyValueHistoryErrorEntryTypeDef],  # (1)
+    successEntries: List[BatchGetAssetPropertyValueHistorySuccessEntryTypeDef],  # (2)
+    skippedEntries: List[BatchGetAssetPropertyValueHistorySkippedEntryTypeDef],  # (3)
+    nextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyValueHistoryErrorEntryTypeDef](./type_defs.md#batchgetassetpropertyvaluehistoryerrorentrytypedef) 
+2. See [:material-code-braces: BatchGetAssetPropertyValueHistorySuccessEntryTypeDef](./type_defs.md#batchgetassetpropertyvaluehistorysuccessentrytypedef) 
+3. See [:material-code-braces: BatchGetAssetPropertyValueHistorySkippedEntryTypeDef](./type_defs.md#batchgetassetpropertyvaluehistoryskippedentrytypedef) 
+4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## BatchGetAssetPropertyValueResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import BatchGetAssetPropertyValueResponseTypeDef
+
+def get_value() -> BatchGetAssetPropertyValueResponseTypeDef:
+    return {
+        "errorEntries": ...,
+        "successEntries": ...,
+        "skippedEntries": ...,
+        "nextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class BatchGetAssetPropertyValueResponseTypeDef(TypedDict):
+    errorEntries: List[BatchGetAssetPropertyValueErrorEntryTypeDef],  # (1)
+    successEntries: List[BatchGetAssetPropertyValueSuccessEntryTypeDef],  # (2)
+    skippedEntries: List[BatchGetAssetPropertyValueSkippedEntryTypeDef],  # (3)
+    nextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyValueErrorEntryTypeDef](./type_defs.md#batchgetassetpropertyvalueerrorentrytypedef) 
+2. See [:material-code-braces: BatchGetAssetPropertyValueSuccessEntryTypeDef](./type_defs.md#batchgetassetpropertyvaluesuccessentrytypedef) 
+3. See [:material-code-braces: BatchGetAssetPropertyValueSkippedEntryTypeDef](./type_defs.md#batchgetassetpropertyvalueskippedentrytypedef) 
+4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## BatchPutAssetPropertyValueRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3738,6 +4404,72 @@ class BatchPutAssetPropertyValueRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PutAssetPropertyValueEntryTypeDef](./type_defs.md#putassetpropertyvalueentrytypedef) 
+## CreateBulkImportJobRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import CreateBulkImportJobRequestRequestTypeDef
+
+def get_value() -> CreateBulkImportJobRequestRequestTypeDef:
+    return {
+        "jobName": ...,
+        "jobRoleArn": ...,
+        "files": ...,
+        "errorReportLocation": ...,
+        "jobConfiguration": ...,
+    }
+```
+
+```python title="Definition"
+class CreateBulkImportJobRequestRequestTypeDef(TypedDict):
+    jobName: str,
+    jobRoleArn: str,
+    files: Sequence[FileTypeDef],  # (1)
+    errorReportLocation: ErrorReportLocationTypeDef,  # (2)
+    jobConfiguration: JobConfigurationTypeDef,  # (3)
+```
+
+1. See [:material-code-braces: FileTypeDef](./type_defs.md#filetypedef) 
+2. See [:material-code-braces: ErrorReportLocationTypeDef](./type_defs.md#errorreportlocationtypedef) 
+3. See [:material-code-braces: JobConfigurationTypeDef](./type_defs.md#jobconfigurationtypedef) 
+## DescribeBulkImportJobResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.type_defs import DescribeBulkImportJobResponseTypeDef
+
+def get_value() -> DescribeBulkImportJobResponseTypeDef:
+    return {
+        "jobId": ...,
+        "jobName": ...,
+        "jobStatus": ...,
+        "jobRoleArn": ...,
+        "files": ...,
+        "errorReportLocation": ...,
+        "jobConfiguration": ...,
+        "jobCreationDate": ...,
+        "jobLastUpdateDate": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeBulkImportJobResponseTypeDef(TypedDict):
+    jobId: str,
+    jobName: str,
+    jobStatus: JobStatusType,  # (1)
+    jobRoleArn: str,
+    files: List[FileTypeDef],  # (2)
+    errorReportLocation: ErrorReportLocationTypeDef,  # (3)
+    jobConfiguration: JobConfigurationTypeDef,  # (4)
+    jobCreationDate: datetime,
+    jobLastUpdateDate: datetime,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+```
+
+1. See [:material-code-brackets: JobStatusType](./literals.md#jobstatustype) 
+2. See [:material-code-braces: FileTypeDef](./type_defs.md#filetypedef) 
+3. See [:material-code-braces: ErrorReportLocationTypeDef](./type_defs.md#errorreportlocationtypedef) 
+4. See [:material-code-braces: JobConfigurationTypeDef](./type_defs.md#jobconfigurationtypedef) 
+5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## AssetModelSummaryTypeDef
 
 ```python title="Usage Example"
@@ -3859,6 +4591,7 @@ class AssetSummaryTypeDef(TypedDict):
     lastUpdateDate: datetime,
     status: AssetStatusTypeDef,  # (1)
     hierarchies: List[AssetHierarchyTypeDef],  # (2)
+    description: NotRequired[str],
 ```
 
 1. See [:material-code-braces: AssetStatusTypeDef](./type_defs.md#assetstatustypedef) 
@@ -3891,6 +4624,7 @@ class AssociatedAssetsSummaryTypeDef(TypedDict):
     lastUpdateDate: datetime,
     status: AssetStatusTypeDef,  # (1)
     hierarchies: List[AssetHierarchyTypeDef],  # (2)
+    description: NotRequired[str],
 ```
 
 1. See [:material-code-braces: AssetStatusTypeDef](./type_defs.md#assetstatustypedef) 
@@ -3956,6 +4690,7 @@ def get_value() -> DescribeAssetResponseTypeDef:
         "assetCreationDate": ...,
         "assetLastUpdateDate": ...,
         "assetStatus": ...,
+        "assetDescription": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -3972,6 +4707,7 @@ class DescribeAssetResponseTypeDef(TypedDict):
     assetCreationDate: datetime,
     assetLastUpdateDate: datetime,
     assetStatus: AssetStatusTypeDef,  # (4)
+    assetDescription: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (5)
 ```
 

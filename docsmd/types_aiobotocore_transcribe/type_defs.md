@@ -495,6 +495,24 @@ class JobExecutionSettingsTypeDef(TypedDict):
     DataAccessRoleArn: NotRequired[str],
 ```
 
+## LanguageCodeItemTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_transcribe.type_defs import LanguageCodeItemTypeDef
+
+def get_value() -> LanguageCodeItemTypeDef:
+    return {
+        "LanguageCode": ...,
+    }
+```
+
+```python title="Definition"
+class LanguageCodeItemTypeDef(TypedDict):
+    LanguageCode: NotRequired[LanguageCodeType],  # (1)
+    DurationInSeconds: NotRequired[float],
+```
+
+1. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) 
 ## ListCallAnalyticsCategoriesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -829,6 +847,7 @@ def get_value() -> SubtitlesTypeDef:
 ```python title="Definition"
 class SubtitlesTypeDef(TypedDict):
     Formats: NotRequired[Sequence[SubtitleFormatType]],  # (1)
+    OutputStartIndex: NotRequired[int],
 ```
 
 1. See [:material-code-brackets: SubtitleFormatType](./literals.md#subtitleformattype) 
@@ -847,6 +866,7 @@ def get_value() -> SubtitlesOutputTypeDef:
 class SubtitlesOutputTypeDef(TypedDict):
     Formats: NotRequired[List[SubtitleFormatType]],  # (1)
     SubtitleFileUris: NotRequired[List[str]],
+    OutputStartIndex: NotRequired[int],
 ```
 
 1. See [:material-code-brackets: SubtitleFormatType](./literals.md#subtitleformattype) 
@@ -877,6 +897,7 @@ def get_value() -> UpdateMedicalVocabularyRequestRequestTypeDef:
     return {
         "VocabularyName": ...,
         "LanguageCode": ...,
+        "VocabularyFileUri": ...,
     }
 ```
 
@@ -884,7 +905,7 @@ def get_value() -> UpdateMedicalVocabularyRequestRequestTypeDef:
 class UpdateMedicalVocabularyRequestRequestTypeDef(TypedDict):
     VocabularyName: str,
     LanguageCode: LanguageCodeType,  # (1)
-    VocabularyFileUri: NotRequired[str],
+    VocabularyFileUri: str,
 ```
 
 1. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) 
@@ -1737,7 +1758,9 @@ class TranscriptionJobSummaryTypeDef(TypedDict):
     ContentRedaction: NotRequired[ContentRedactionTypeDef],  # (4)
     ModelSettings: NotRequired[ModelSettingsTypeDef],  # (5)
     IdentifyLanguage: NotRequired[bool],
+    IdentifyMultipleLanguages: NotRequired[bool],
     IdentifiedLanguageScore: NotRequired[float],
+    LanguageCodes: NotRequired[List[LanguageCodeItemTypeDef]],  # (6)
 ```
 
 1. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) 
@@ -1745,6 +1768,7 @@ class TranscriptionJobSummaryTypeDef(TypedDict):
 3. See [:material-code-brackets: OutputLocationTypeType](./literals.md#outputlocationtypetype) 
 4. See [:material-code-braces: ContentRedactionTypeDef](./type_defs.md#contentredactiontypedef) 
 5. See [:material-code-braces: ModelSettingsTypeDef](./type_defs.md#modelsettingstypedef) 
+6. See [:material-code-braces: LanguageCodeItemTypeDef](./type_defs.md#languagecodeitemtypedef) 
 ## StartTranscriptionJobRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1773,6 +1797,7 @@ class StartTranscriptionJobRequestRequestTypeDef(TypedDict):
     JobExecutionSettings: NotRequired[JobExecutionSettingsTypeDef],  # (6)
     ContentRedaction: NotRequired[ContentRedactionTypeDef],  # (7)
     IdentifyLanguage: NotRequired[bool],
+    IdentifyMultipleLanguages: NotRequired[bool],
     LanguageOptions: NotRequired[Sequence[LanguageCodeType]],  # (8)
     Subtitles: NotRequired[SubtitlesTypeDef],  # (9)
     Tags: NotRequired[Sequence[TagTypeDef]],  # (10)
@@ -1819,11 +1844,13 @@ class TranscriptionJobTypeDef(TypedDict):
     JobExecutionSettings: NotRequired[JobExecutionSettingsTypeDef],  # (8)
     ContentRedaction: NotRequired[ContentRedactionTypeDef],  # (9)
     IdentifyLanguage: NotRequired[bool],
+    IdentifyMultipleLanguages: NotRequired[bool],
     LanguageOptions: NotRequired[List[LanguageCodeType]],  # (10)
     IdentifiedLanguageScore: NotRequired[float],
-    Tags: NotRequired[List[TagTypeDef]],  # (11)
-    Subtitles: NotRequired[SubtitlesOutputTypeDef],  # (12)
-    LanguageIdSettings: NotRequired[Dict[LanguageCodeType, LanguageIdSettingsTypeDef]],  # (13)
+    LanguageCodes: NotRequired[List[LanguageCodeItemTypeDef]],  # (11)
+    Tags: NotRequired[List[TagTypeDef]],  # (12)
+    Subtitles: NotRequired[SubtitlesOutputTypeDef],  # (13)
+    LanguageIdSettings: NotRequired[Dict[LanguageCodeType, LanguageIdSettingsTypeDef]],  # (14)
 ```
 
 1. See [:material-code-brackets: TranscriptionJobStatusType](./literals.md#transcriptionjobstatustype) 
@@ -1836,9 +1863,10 @@ class TranscriptionJobTypeDef(TypedDict):
 8. See [:material-code-braces: JobExecutionSettingsTypeDef](./type_defs.md#jobexecutionsettingstypedef) 
 9. See [:material-code-braces: ContentRedactionTypeDef](./type_defs.md#contentredactiontypedef) 
 10. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) 
-11. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-12. See [:material-code-braces: SubtitlesOutputTypeDef](./type_defs.md#subtitlesoutputtypedef) 
-13. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) [:material-code-braces: LanguageIdSettingsTypeDef](./type_defs.md#languageidsettingstypedef) 
+11. See [:material-code-braces: LanguageCodeItemTypeDef](./type_defs.md#languagecodeitemtypedef) 
+12. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+13. See [:material-code-braces: SubtitlesOutputTypeDef](./type_defs.md#subtitlesoutputtypedef) 
+14. See [:material-code-brackets: LanguageCodeType](./literals.md#languagecodetype) [:material-code-braces: LanguageIdSettingsTypeDef](./type_defs.md#languageidsettingstypedef) 
 ## CallAnalyticsJobTypeDef
 
 ```python title="Usage Example"
@@ -1885,7 +1913,6 @@ def get_value() -> StartCallAnalyticsJobRequestRequestTypeDef:
     return {
         "CallAnalyticsJobName": ...,
         "Media": ...,
-        "DataAccessRoleArn": ...,
     }
 ```
 
@@ -1893,9 +1920,9 @@ def get_value() -> StartCallAnalyticsJobRequestRequestTypeDef:
 class StartCallAnalyticsJobRequestRequestTypeDef(TypedDict):
     CallAnalyticsJobName: str,
     Media: MediaTypeDef,  # (1)
-    DataAccessRoleArn: str,
     OutputLocation: NotRequired[str],
     OutputEncryptionKMSKeyId: NotRequired[str],
+    DataAccessRoleArn: NotRequired[str],
     Settings: NotRequired[CallAnalyticsJobSettingsTypeDef],  # (2)
     ChannelDefinitions: NotRequired[Sequence[ChannelDefinitionTypeDef]],  # (3)
 ```

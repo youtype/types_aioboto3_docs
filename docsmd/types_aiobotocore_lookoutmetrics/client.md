@@ -127,6 +127,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("lookoutmetrics").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_alert
 
 Creates an alert for an anomaly detector.
@@ -139,23 +154,24 @@ await def create_alert(
     self,
     *,
     AlertName: str,
-    AlertSensitivityThreshold: int,
     AnomalyDetectorArn: str,
     Action: ActionTypeDef,  # (1)
+    AlertSensitivityThreshold: int = ...,
     AlertDescription: str = ...,
     Tags: Mapping[str, str] = ...,
-) -> CreateAlertResponseTypeDef:  # (2)
+    AlertFilters: AlertFiltersTypeDef = ...,  # (2)
+) -> CreateAlertResponseTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
-2. See [:material-code-braces: CreateAlertResponseTypeDef](./type_defs.md#createalertresponsetypedef) 
+2. See [:material-code-braces: AlertFiltersTypeDef](./type_defs.md#alertfilterstypedef) 
+3. See [:material-code-braces: CreateAlertResponseTypeDef](./type_defs.md#createalertresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
 kwargs: CreateAlertRequestRequestTypeDef = {  # (1)
     "AlertName": ...,
-    "AlertSensitivityThreshold": ...,
     "AnomalyDetectorArn": ...,
     "Action": ...,
 }
@@ -449,6 +465,38 @@ parent.describe_metric_set(**kwargs)
 
 1. See [:material-code-braces: DescribeMetricSetRequestRequestTypeDef](./type_defs.md#describemetricsetrequestrequesttypedef) 
 
+### detect\_metric\_set\_config
+
+Detects an Amazon S3 dataset's file format, interval, and offset.
+
+Type annotations and code completion for `#!python session.client("lookoutmetrics").detect_metric_set_config` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.detect_metric_set_config)
+
+```python title="Method definition"
+await def detect_metric_set_config(
+    self,
+    *,
+    AnomalyDetectorArn: str,
+    AutoDetectionMetricSource: AutoDetectionMetricSourceTypeDef,  # (1)
+) -> DetectMetricSetConfigResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: AutoDetectionMetricSourceTypeDef](./type_defs.md#autodetectionmetricsourcetypedef) 
+2. See [:material-code-braces: DetectMetricSetConfigResponseTypeDef](./type_defs.md#detectmetricsetconfigresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DetectMetricSetConfigRequestRequestTypeDef = {  # (1)
+    "AnomalyDetectorArn": ...,
+    "AutoDetectionMetricSource": ...,
+}
+
+parent.detect_metric_set_config(**kwargs)
+```
+
+1. See [:material-code-braces: DetectMetricSetConfigRequestRequestTypeDef](./type_defs.md#detectmetricsetconfigrequestrequesttypedef) 
+
 ### generate\_presigned\_url
 
 Generate a presigned url given a client, its method, and arguments.
@@ -498,6 +546,36 @@ parent.get_anomaly_group(**kwargs)
 ```
 
 1. See [:material-code-braces: GetAnomalyGroupRequestRequestTypeDef](./type_defs.md#getanomalygrouprequestrequesttypedef) 
+
+### get\_data\_quality\_metrics
+
+Returns details about the requested data quality metrics.
+
+Type annotations and code completion for `#!python session.client("lookoutmetrics").get_data_quality_metrics` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.get_data_quality_metrics)
+
+```python title="Method definition"
+await def get_data_quality_metrics(
+    self,
+    *,
+    AnomalyDetectorArn: str,
+    MetricSetArn: str = ...,
+) -> GetDataQualityMetricsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetDataQualityMetricsResponseTypeDef](./type_defs.md#getdataqualitymetricsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetDataQualityMetricsRequestRequestTypeDef = {  # (1)
+    "AnomalyDetectorArn": ...,
+}
+
+parent.get_data_quality_metrics(**kwargs)
+```
+
+1. See [:material-code-braces: GetDataQualityMetricsRequestRequestTypeDef](./type_defs.md#getdataqualitymetricsrequestrequesttypedef) 
 
 ### get\_feedback
 
@@ -882,6 +960,41 @@ parent.untag_resource(**kwargs)
 ```
 
 1. See [:material-code-braces: UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef) 
+
+### update\_alert
+
+Make changes to an existing alert.
+
+Type annotations and code completion for `#!python session.client("lookoutmetrics").update_alert` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.update_alert)
+
+```python title="Method definition"
+await def update_alert(
+    self,
+    *,
+    AlertArn: str,
+    AlertDescription: str = ...,
+    AlertSensitivityThreshold: int = ...,
+    Action: ActionTypeDef = ...,  # (1)
+    AlertFilters: AlertFiltersTypeDef = ...,  # (2)
+) -> UpdateAlertResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
+2. See [:material-code-braces: AlertFiltersTypeDef](./type_defs.md#alertfilterstypedef) 
+3. See [:material-code-braces: UpdateAlertResponseTypeDef](./type_defs.md#updatealertresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdateAlertRequestRequestTypeDef = {  # (1)
+    "AlertArn": ...,
+}
+
+parent.update_alert(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateAlertRequestRequestTypeDef](./type_defs.md#updatealertrequestrequesttypedef) 
 
 ### update\_anomaly\_detector
 

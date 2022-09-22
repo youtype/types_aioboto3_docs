@@ -171,6 +171,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("workspaces").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### copy\_workspace\_image
 
 Copies the specified image from the specified Region to the current Region.
@@ -414,6 +429,41 @@ parent.create_workspace_bundle(**kwargs)
 
 1. See [:material-code-braces: CreateWorkspaceBundleRequestRequestTypeDef](./type_defs.md#createworkspacebundlerequestrequesttypedef) 
 
+### create\_workspace\_image
+
+Creates a new WorkSpace image from an existing WorkSpace.
+
+Type annotations and code completion for `#!python session.client("workspaces").create_workspace_image` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.create_workspace_image)
+
+```python title="Method definition"
+await def create_workspace_image(
+    self,
+    *,
+    Name: str,
+    Description: str,
+    WorkspaceId: str,
+    Tags: Sequence[TagTypeDef] = ...,  # (1)
+) -> CreateWorkspaceImageResultTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: CreateWorkspaceImageResultTypeDef](./type_defs.md#createworkspaceimageresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateWorkspaceImageRequestRequestTypeDef = {  # (1)
+    "Name": ...,
+    "Description": ...,
+    "WorkspaceId": ...,
+}
+
+parent.create_workspace_image(**kwargs)
+```
+
+1. See [:material-code-braces: CreateWorkspaceImageRequestRequestTypeDef](./type_defs.md#createworkspaceimagerequestrequesttypedef) 
+
 ### create\_workspaces
 
 Creates one or more WorkSpaces.
@@ -443,6 +493,37 @@ parent.create_workspaces(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateWorkspacesRequestRequestTypeDef](./type_defs.md#createworkspacesrequestrequesttypedef) 
+
+### delete\_client\_branding
+
+Deletes customized client branding.
+
+Type annotations and code completion for `#!python session.client("workspaces").delete_client_branding` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.delete_client_branding)
+
+```python title="Method definition"
+await def delete_client_branding(
+    self,
+    *,
+    ResourceId: str,
+    Platforms: Sequence[ClientDeviceTypeType],  # (1)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-brackets: ClientDeviceTypeType](./literals.md#clientdevicetypetype) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteClientBrandingRequestRequestTypeDef = {  # (1)
+    "ResourceId": ...,
+    "Platforms": ...,
+}
+
+parent.delete_client_branding(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteClientBrandingRequestRequestTypeDef](./type_defs.md#deleteclientbrandingrequestrequesttypedef) 
 
 ### delete\_connect\_client\_add\_in
 
@@ -691,6 +772,35 @@ parent.describe_account_modifications(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeAccountModificationsRequestRequestTypeDef](./type_defs.md#describeaccountmodificationsrequestrequesttypedef) 
+
+### describe\_client\_branding
+
+Describes the specified client branding.
+
+Type annotations and code completion for `#!python session.client("workspaces").describe_client_branding` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_client_branding)
+
+```python title="Method definition"
+await def describe_client_branding(
+    self,
+    *,
+    ResourceId: str,
+) -> DescribeClientBrandingResultTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeClientBrandingResultTypeDef](./type_defs.md#describeclientbrandingresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeClientBrandingRequestRequestTypeDef = {  # (1)
+    "ResourceId": ...,
+}
+
+parent.describe_client_branding(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeClientBrandingRequestRequestTypeDef](./type_defs.md#describeclientbrandingrequestrequesttypedef) 
 
 ### describe\_client\_properties
 
@@ -1176,6 +1286,47 @@ await def generate_presigned_url(
 ```
 
 
+### import\_client\_branding
+
+Imports client branding.
+
+Type annotations and code completion for `#!python session.client("workspaces").import_client_branding` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.import_client_branding)
+
+```python title="Method definition"
+await def import_client_branding(
+    self,
+    *,
+    ResourceId: str,
+    DeviceTypeWindows: DefaultImportClientBrandingAttributesTypeDef = ...,  # (1)
+    DeviceTypeOsx: DefaultImportClientBrandingAttributesTypeDef = ...,  # (1)
+    DeviceTypeAndroid: DefaultImportClientBrandingAttributesTypeDef = ...,  # (1)
+    DeviceTypeIos: IosImportClientBrandingAttributesTypeDef = ...,  # (4)
+    DeviceTypeLinux: DefaultImportClientBrandingAttributesTypeDef = ...,  # (1)
+    DeviceTypeWeb: DefaultImportClientBrandingAttributesTypeDef = ...,  # (1)
+) -> ImportClientBrandingResultTypeDef:  # (7)
+    ...
+```
+
+1. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+2. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+3. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+4. See [:material-code-braces: IosImportClientBrandingAttributesTypeDef](./type_defs.md#iosimportclientbrandingattributestypedef) 
+5. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+6. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+7. See [:material-code-braces: ImportClientBrandingResultTypeDef](./type_defs.md#importclientbrandingresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ImportClientBrandingRequestRequestTypeDef = {  # (1)
+    "ResourceId": ...,
+}
+
+parent.import_client_branding(**kwargs)
+```
+
+1. See [:material-code-braces: ImportClientBrandingRequestRequestTypeDef](./type_defs.md#importclientbrandingrequestrequesttypedef) 
+
 ### import\_workspace\_image
 
 Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon
@@ -1343,6 +1494,40 @@ parent.modify_client_properties(**kwargs)
 ```
 
 1. See [:material-code-braces: ModifyClientPropertiesRequestRequestTypeDef](./type_defs.md#modifyclientpropertiesrequestrequesttypedef) 
+
+### modify\_saml\_properties
+
+Modifies multiple properties related to SAML 2.0 authentication, including the
+enablement status, user access URL, and relay state parameter name that are used
+for configuring federation with an SAML 2.0 identity provider.
+
+Type annotations and code completion for `#!python session.client("workspaces").modify_saml_properties` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.modify_saml_properties)
+
+```python title="Method definition"
+await def modify_saml_properties(
+    self,
+    *,
+    ResourceId: str,
+    SamlProperties: SamlPropertiesTypeDef = ...,  # (1)
+    PropertiesToDelete: Sequence[DeletableSamlPropertyType] = ...,  # (2)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: SamlPropertiesTypeDef](./type_defs.md#samlpropertiestypedef) 
+2. See [:material-code-brackets: DeletableSamlPropertyType](./literals.md#deletablesamlpropertytype) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ModifySamlPropertiesRequestRequestTypeDef = {  # (1)
+    "ResourceId": ...,
+}
+
+parent.modify_saml_properties(**kwargs)
+```
+
+1. See [:material-code-braces: ModifySamlPropertiesRequestRequestTypeDef](./type_defs.md#modifysamlpropertiesrequestrequesttypedef) 
 
 ### modify\_selfservice\_permissions
 

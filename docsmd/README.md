@@ -102,6 +102,8 @@ python -m pip uninstall -y types-aioboto3
 
 - [types-aiobotocore-backup-gateway](./types_aiobotocore_backup_gateway/README.md) for [BackupGateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway) service
 
+- [types-aiobotocore-backupstorage](./types_aiobotocore_backupstorage/README.md) for [BackupStorage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backupstorage.html#BackupStorage) service
+
 - [types-aiobotocore-batch](./types_aiobotocore_batch/README.md) for [Batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch) service
 
 - [types-aiobotocore-billingconductor](./types_aiobotocore_billingconductor/README.md) for [BillingConductor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/billingconductor.html#BillingConductor) service
@@ -115,6 +117,8 @@ python -m pip uninstall -y types-aioboto3
 - [types-aiobotocore-chime](./types_aiobotocore_chime/README.md) for [Chime](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime) service
 
 - [types-aiobotocore-chime-sdk-identity](./types_aiobotocore_chime_sdk_identity/README.md) for [ChimeSDKIdentity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity) service
+
+- [types-aiobotocore-chime-sdk-media-pipelines](./types_aiobotocore_chime_sdk_media_pipelines/README.md) for [ChimeSDKMediaPipelines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-media-pipelines.html#ChimeSDKMediaPipelines) service
 
 - [types-aiobotocore-chime-sdk-meetings](./types_aiobotocore_chime_sdk_meetings/README.md) for [ChimeSDKMeetings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings) service
 
@@ -179,6 +183,8 @@ python -m pip uninstall -y types-aioboto3
 - [types-aiobotocore-connect](./types_aiobotocore_connect/README.md) for [Connect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect) service
 
 - [types-aiobotocore-connect-contact-lens](./types_aiobotocore_connect_contact_lens/README.md) for [ConnectContactLens](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect-contact-lens.html#ConnectContactLens) service
+
+- [types-aiobotocore-connectcampaigns](./types_aiobotocore_connectcampaigns/README.md) for [ConnectCampaignService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectcampaigns.html#ConnectCampaignService) service
 
 - [types-aiobotocore-connectparticipant](./types_aiobotocore_connectparticipant/README.md) for [ConnectParticipant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant) service
 
@@ -252,6 +258,8 @@ python -m pip uninstall -y types-aioboto3
 
 - [types-aiobotocore-emr-containers](./types_aiobotocore_emr_containers/README.md) for [EMRContainers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers) service
 
+- [types-aiobotocore-emr-serverless](./types_aiobotocore_emr_serverless/README.md) for [EMRServerless](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-serverless.html#EMRServerless) service
+
 - [types-aiobotocore-es](./types_aiobotocore_es/README.md) for [ElasticsearchService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService) service
 
 - [types-aiobotocore-events](./types_aiobotocore_events/README.md) for [EventBridge](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge) service
@@ -277,6 +285,8 @@ python -m pip uninstall -y types-aioboto3
 - [types-aiobotocore-fsx](./types_aiobotocore_fsx/README.md) for [FSx](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx) service
 
 - [types-aiobotocore-gamelift](./types_aiobotocore_gamelift/README.md) for [GameLift](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift) service
+
+- [types-aiobotocore-gamesparks](./types_aiobotocore_gamesparks/README.md) for [GameSparks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamesparks.html#GameSparks) service
 
 - [types-aiobotocore-glacier](./types_aiobotocore_glacier/README.md) for [Glacier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier) service
 
@@ -344,6 +354,8 @@ python -m pip uninstall -y types-aioboto3
 
 - [types-aiobotocore-ivs](./types_aiobotocore_ivs/README.md) for [IVS](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS) service
 
+- [types-aiobotocore-ivschat](./types_aiobotocore_ivschat/README.md) for [ivschat](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivschat.html#ivschat) service
+
 - [types-aiobotocore-kafka](./types_aiobotocore_kafka/README.md) for [Kafka](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka) service
 
 - [types-aiobotocore-kafkaconnect](./types_aiobotocore_kafkaconnect/README.md) for [KafkaConnect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect) service
@@ -382,6 +394,8 @@ python -m pip uninstall -y types-aioboto3
 
 - [types-aiobotocore-license-manager](./types_aiobotocore_license_manager/README.md) for [LicenseManager](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager) service
 
+- [types-aiobotocore-license-manager-user-subscriptions](./types_aiobotocore_license_manager_user_subscriptions/README.md) for [LicenseManagerUserSubscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager-user-subscriptions.html#LicenseManagerUserSubscriptions) service
+
 - [types-aiobotocore-lightsail](./types_aiobotocore_lightsail/README.md) for [Lightsail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail) service
 
 - [types-aiobotocore-location](./types_aiobotocore_location/README.md) for [LocationService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService) service
@@ -393,6 +407,8 @@ python -m pip uninstall -y types-aioboto3
 - [types-aiobotocore-lookoutmetrics](./types_aiobotocore_lookoutmetrics/README.md) for [LookoutMetrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics) service
 
 - [types-aiobotocore-lookoutvision](./types_aiobotocore_lookoutvision/README.md) for [LookoutforVision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision) service
+
+- [types-aiobotocore-m2](./types_aiobotocore_m2/README.md) for [MainframeModernization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/m2.html#MainframeModernization) service
 
 - [types-aiobotocore-machinelearning](./types_aiobotocore_machinelearning/README.md) for [MachineLearning](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning) service
 
@@ -480,9 +496,13 @@ python -m pip uninstall -y types-aioboto3
 
 - [types-aiobotocore-pinpoint-sms-voice](./types_aiobotocore_pinpoint_sms_voice/README.md) for [PinpointSMSVoice](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice) service
 
+- [types-aiobotocore-pinpoint-sms-voice-v2](./types_aiobotocore_pinpoint_sms_voice_v2/README.md) for [PinpointSMSVoiceV2](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice-v2.html#PinpointSMSVoiceV2) service
+
 - [types-aiobotocore-polly](./types_aiobotocore_polly/README.md) for [Polly](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly) service
 
 - [types-aiobotocore-pricing](./types_aiobotocore_pricing/README.md) for [Pricing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing) service
+
+- [types-aiobotocore-privatenetworks](./types_aiobotocore_privatenetworks/README.md) for [Private5G](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/privatenetworks.html#Private5G) service
 
 - [types-aiobotocore-proton](./types_aiobotocore_proton/README.md) for [Proton](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton) service
 
@@ -504,6 +524,8 @@ python -m pip uninstall -y types-aioboto3
 
 - [types-aiobotocore-redshift-data](./types_aiobotocore_redshift_data/README.md) for [RedshiftDataAPIService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService) service
 
+- [types-aiobotocore-redshift-serverless](./types_aiobotocore_redshift_serverless/README.md) for [RedshiftServerless](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-serverless.html#RedshiftServerless) service
+
 - [types-aiobotocore-rekognition](./types_aiobotocore_rekognition/README.md) for [Rekognition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition) service
 
 - [types-aiobotocore-resiliencehub](./types_aiobotocore_resiliencehub/README.md) for [ResilienceHub](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub) service
@@ -513,6 +535,8 @@ python -m pip uninstall -y types-aioboto3
 - [types-aiobotocore-resourcegroupstaggingapi](./types_aiobotocore_resourcegroupstaggingapi/README.md) for [ResourceGroupsTaggingAPI](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI) service
 
 - [types-aiobotocore-robomaker](./types_aiobotocore_robomaker/README.md) for [RoboMaker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker) service
+
+- [types-aiobotocore-rolesanywhere](./types_aiobotocore_rolesanywhere/README.md) for [IAMRolesAnywhere](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rolesanywhere.html#IAMRolesAnywhere) service
 
 - [types-aiobotocore-route53](./types_aiobotocore_route53/README.md) for [Route53](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53) service
 
@@ -603,6 +627,8 @@ python -m pip uninstall -y types-aioboto3
 - [types-aiobotocore-sts](./types_aiobotocore_sts/README.md) for [STS](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS) service
 
 - [types-aiobotocore-support](./types_aiobotocore_support/README.md) for [Support](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support) service
+
+- [types-aiobotocore-support-app](./types_aiobotocore_support_app/README.md) for [SupportApp](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support-app.html#SupportApp) service
 
 - [types-aiobotocore-swf](./types_aiobotocore_swf/README.md) for [SWF](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF) service
 

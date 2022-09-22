@@ -105,6 +105,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("customer-profiles").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_domain
 
 Creates a domain, which is a container for all customer data, such as customer
@@ -496,6 +511,7 @@ await def get_auto_merging_preview(
     DomainName: str,
     Consolidation: ConsolidationTypeDef,  # (1)
     ConflictResolution: ConflictResolutionTypeDef,  # (2)
+    MinAllowedConfidenceScoreForMerging: float = ...,
 ) -> GetAutoMergingPreviewResponseTypeDef:  # (3)
     ...
 ```

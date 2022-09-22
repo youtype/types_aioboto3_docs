@@ -21,6 +21,7 @@ AuthenticationDecisionType = Literal[
     "ACCEPT",
     "NOT_ENOUGH_SPEECH",
     "REJECT",
+    "SPEAKER_EXPIRED",
     "SPEAKER_ID_NOT_PROVIDED",
     "SPEAKER_NOT_ENROLLED",
     "SPEAKER_OPTED_OUT",
@@ -135,6 +136,78 @@ FraudsterRegistrationJobStatusType = Literal[
     "SUBMITTED",
 ]
 ```
+## ListDomainsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_voice_id.literals import ListDomainsPaginatorName
+
+def get_value() -> ListDomainsPaginatorName:
+    return "list_domains"
+```
+
+```python title="Definition"
+ListDomainsPaginatorName = Literal[
+    "list_domains",
+]
+```
+## ListFraudsterRegistrationJobsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_voice_id.literals import ListFraudsterRegistrationJobsPaginatorName
+
+def get_value() -> ListFraudsterRegistrationJobsPaginatorName:
+    return "list_fraudster_registration_jobs"
+```
+
+```python title="Definition"
+ListFraudsterRegistrationJobsPaginatorName = Literal[
+    "list_fraudster_registration_jobs",
+]
+```
+## ListSpeakerEnrollmentJobsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_voice_id.literals import ListSpeakerEnrollmentJobsPaginatorName
+
+def get_value() -> ListSpeakerEnrollmentJobsPaginatorName:
+    return "list_speaker_enrollment_jobs"
+```
+
+```python title="Definition"
+ListSpeakerEnrollmentJobsPaginatorName = Literal[
+    "list_speaker_enrollment_jobs",
+]
+```
+## ListSpeakersPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_voice_id.literals import ListSpeakersPaginatorName
+
+def get_value() -> ListSpeakersPaginatorName:
+    return "list_speakers"
+```
+
+```python title="Definition"
+ListSpeakersPaginatorName = Literal[
+    "list_speakers",
+]
+```
+## ServerSideEncryptionUpdateStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_voice_id.literals import ServerSideEncryptionUpdateStatusType
+
+def get_value() -> ServerSideEncryptionUpdateStatusType:
+    return "COMPLETED"
+```
+
+```python title="Definition"
+ServerSideEncryptionUpdateStatusType = Literal[
+    "COMPLETED",
+    "FAILED",
+    "IN_PROGRESS",
+]
+```
 ## SpeakerEnrollmentJobStatusType
 
 ```python title="Usage Example"
@@ -240,6 +313,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -247,6 +321,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -279,6 +354,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -315,6 +391,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -328,6 +405,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -361,6 +439,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -380,12 +459,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -429,8 +510,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -441,11 +524,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -491,6 +576,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -535,6 +621,23 @@ ResourceServiceName = Literal[
     "s3",
     "sns",
     "sqs",
+]
+```
+## PaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_voice_id.literals import PaginatorName
+
+def get_value() -> PaginatorName:
+    return "list_domains"
+```
+
+```python title="Definition"
+PaginatorName = Literal[
+    "list_domains",
+    "list_fraudster_registration_jobs",
+    "list_speaker_enrollment_jobs",
+    "list_speakers",
 ]
 ```
 ## RegionName

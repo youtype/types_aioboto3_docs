@@ -24,6 +24,27 @@ class AccountCustomizationTypeDef(TypedDict):
     DefaultEmailCustomizationTemplate: NotRequired[str],
 ```
 
+## AccountInfoTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import AccountInfoTypeDef
+
+def get_value() -> AccountInfoTypeDef:
+    return {
+        "AccountName": ...,
+    }
+```
+
+```python title="Definition"
+class AccountInfoTypeDef(TypedDict):
+    AccountName: NotRequired[str],
+    Edition: NotRequired[EditionType],  # (1)
+    NotificationEmail: NotRequired[str],
+    AuthenticationType: NotRequired[str],
+    AccountSubscriptionStatus: NotRequired[str],
+```
+
+1. See [:material-code-brackets: EditionType](./literals.md#editiontype) 
 ## AccountSettingsTypeDef
 
 ```python title="Usage Example"
@@ -41,6 +62,7 @@ class AccountSettingsTypeDef(TypedDict):
     Edition: NotRequired[EditionType],  # (1)
     DefaultNamespace: NotRequired[str],
     NotificationEmail: NotRequired[str],
+    PublicSharingEnabled: NotRequired[bool],
 ```
 
 1. See [:material-code-brackets: EditionType](./literals.md#editiontype) 
@@ -219,6 +241,26 @@ def get_value() -> AnonymousUserDashboardEmbeddingConfigurationTypeDef:
 ```python title="Definition"
 class AnonymousUserDashboardEmbeddingConfigurationTypeDef(TypedDict):
     InitialDashboardId: str,
+```
+
+## DashboardVisualIdTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import DashboardVisualIdTypeDef
+
+def get_value() -> DashboardVisualIdTypeDef:
+    return {
+        "DashboardId": ...,
+        "SheetId": ...,
+        "VisualId": ...,
+    }
+```
+
+```python title="Definition"
+class DashboardVisualIdTypeDef(TypedDict):
+    DashboardId: str,
+    SheetId: str,
+    VisualId: str,
 ```
 
 ## AthenaParametersTypeDef
@@ -497,6 +539,61 @@ def get_value() -> TagTypeDef:
 class TagTypeDef(TypedDict):
     Key: str,
     Value: str,
+```
+
+## CreateAccountSubscriptionRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import CreateAccountSubscriptionRequestRequestTypeDef
+
+def get_value() -> CreateAccountSubscriptionRequestRequestTypeDef:
+    return {
+        "Edition": ...,
+        "AuthenticationMethod": ...,
+        "AwsAccountId": ...,
+        "AccountName": ...,
+        "NotificationEmail": ...,
+    }
+```
+
+```python title="Definition"
+class CreateAccountSubscriptionRequestRequestTypeDef(TypedDict):
+    Edition: EditionType,  # (1)
+    AuthenticationMethod: AuthenticationMethodOptionType,  # (2)
+    AwsAccountId: str,
+    AccountName: str,
+    NotificationEmail: str,
+    ActiveDirectoryName: NotRequired[str],
+    Realm: NotRequired[str],
+    DirectoryId: NotRequired[str],
+    AdminGroup: NotRequired[Sequence[str]],
+    AuthorGroup: NotRequired[Sequence[str]],
+    ReaderGroup: NotRequired[Sequence[str]],
+    FirstName: NotRequired[str],
+    LastName: NotRequired[str],
+    EmailAddress: NotRequired[str],
+    ContactNumber: NotRequired[str],
+```
+
+1. See [:material-code-brackets: EditionType](./literals.md#editiontype) 
+2. See [:material-code-brackets: AuthenticationMethodOptionType](./literals.md#authenticationmethodoptiontype) 
+## SignupResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import SignupResponseTypeDef
+
+def get_value() -> SignupResponseTypeDef:
+    return {
+        "IAMUser": ...,
+    }
+```
+
+```python title="Definition"
+class SignupResponseTypeDef(TypedDict):
+    IAMUser: NotRequired[bool],
+    userLoginName: NotRequired[str],
+    accountName: NotRequired[str],
+    directoryType: NotRequired[str],
 ```
 
 ## ResourcePermissionTypeDef
@@ -1728,6 +1825,22 @@ class DescribeAccountSettingsRequestRequestTypeDef(TypedDict):
     AwsAccountId: str,
 ```
 
+## DescribeAccountSubscriptionRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import DescribeAccountSubscriptionRequestRequestTypeDef
+
+def get_value() -> DescribeAccountSubscriptionRequestRequestTypeDef:
+    return {
+        "AwsAccountId": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeAccountSubscriptionRequestRequestTypeDef(TypedDict):
+    AwsAccountId: str,
+```
+
 ## DescribeAnalysisPermissionsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1951,6 +2064,28 @@ class FolderTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: FolderTypeType](./literals.md#foldertypetype) 
+## DescribeGroupMembershipRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import DescribeGroupMembershipRequestRequestTypeDef
+
+def get_value() -> DescribeGroupMembershipRequestRequestTypeDef:
+    return {
+        "MemberName": ...,
+        "GroupName": ...,
+        "AwsAccountId": ...,
+        "Namespace": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeGroupMembershipRequestRequestTypeDef(TypedDict):
+    MemberName: str,
+    GroupName: str,
+    AwsAccountId: str,
+    Namespace: str,
+```
+
 ## DescribeGroupRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2372,6 +2507,28 @@ class GetSessionEmbedUrlRequestRequestTypeDef(TypedDict):
     UserArn: NotRequired[str],
 ```
 
+## GroupSearchFilterTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import GroupSearchFilterTypeDef
+
+def get_value() -> GroupSearchFilterTypeDef:
+    return {
+        "Operator": ...,
+        "Name": ...,
+        "Value": ...,
+    }
+```
+
+```python title="Definition"
+class GroupSearchFilterTypeDef(TypedDict):
+    Operator: GroupFilterOperatorType,  # (1)
+    Name: GroupFilterAttributeType,  # (2)
+    Value: str,
+```
+
+1. See [:material-code-brackets: GroupFilterOperatorType](./literals.md#groupfilteroperatortype) 
+2. See [:material-code-brackets: GroupFilterAttributeType](./literals.md#groupfilterattributetype) 
 ## GutterStyleTypeDef
 
 ```python title="Usage Example"
@@ -3512,6 +3669,23 @@ class UpdateIpRestrictionRequestRequestTypeDef(TypedDict):
     Enabled: NotRequired[bool],
 ```
 
+## UpdatePublicSharingSettingsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import UpdatePublicSharingSettingsRequestRequestTypeDef
+
+def get_value() -> UpdatePublicSharingSettingsRequestRequestTypeDef:
+    return {
+        "AwsAccountId": ...,
+    }
+```
+
+```python title="Definition"
+class UpdatePublicSharingSettingsRequestRequestTypeDef(TypedDict):
+    AwsAccountId: str,
+    PublicSharingEnabled: NotRequired[bool],
+```
+
 ## UpdateTemplateAliasRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3712,23 +3886,40 @@ class AnalysisTypeDef(TypedDict):
 1. See [:material-code-brackets: ResourceStatusType](./literals.md#resourcestatustype) 
 2. See [:material-code-braces: AnalysisErrorTypeDef](./type_defs.md#analysiserrortypedef) 
 3. See [:material-code-braces: SheetTypeDef](./type_defs.md#sheettypedef) 
-## AnonymousUserEmbeddingExperienceConfigurationTypeDef
+## AnonymousUserDashboardVisualEmbeddingConfigurationTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_quicksight.type_defs import AnonymousUserEmbeddingExperienceConfigurationTypeDef
+from types_aiobotocore_quicksight.type_defs import AnonymousUserDashboardVisualEmbeddingConfigurationTypeDef
 
-def get_value() -> AnonymousUserEmbeddingExperienceConfigurationTypeDef:
+def get_value() -> AnonymousUserDashboardVisualEmbeddingConfigurationTypeDef:
     return {
-        "Dashboard": ...,
+        "InitialDashboardVisualId": ...,
     }
 ```
 
 ```python title="Definition"
-class AnonymousUserEmbeddingExperienceConfigurationTypeDef(TypedDict):
-    Dashboard: NotRequired[AnonymousUserDashboardEmbeddingConfigurationTypeDef],  # (1)
+class AnonymousUserDashboardVisualEmbeddingConfigurationTypeDef(TypedDict):
+    InitialDashboardVisualId: DashboardVisualIdTypeDef,  # (1)
 ```
 
-1. See [:material-code-braces: AnonymousUserDashboardEmbeddingConfigurationTypeDef](./type_defs.md#anonymoususerdashboardembeddingconfigurationtypedef) 
+1. See [:material-code-braces: DashboardVisualIdTypeDef](./type_defs.md#dashboardvisualidtypedef) 
+## RegisteredUserDashboardVisualEmbeddingConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import RegisteredUserDashboardVisualEmbeddingConfigurationTypeDef
+
+def get_value() -> RegisteredUserDashboardVisualEmbeddingConfigurationTypeDef:
+    return {
+        "InitialDashboardVisualId": ...,
+    }
+```
+
+```python title="Definition"
+class RegisteredUserDashboardVisualEmbeddingConfigurationTypeDef(TypedDict):
+    InitialDashboardVisualId: DashboardVisualIdTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: DashboardVisualIdTypeDef](./type_defs.md#dashboardvisualidtypedef) 
 ## TileStyleTypeDef
 
 ```python title="Usage Example"
@@ -4566,6 +4757,30 @@ class DescribeAccountSettingsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: AccountSettingsTypeDef](./type_defs.md#accountsettingstypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeAccountSubscriptionResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import DescribeAccountSubscriptionResponseTypeDef
+
+def get_value() -> DescribeAccountSubscriptionResponseTypeDef:
+    return {
+        "AccountInfo": ...,
+        "Status": ...,
+        "RequestId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeAccountSubscriptionResponseTypeDef(TypedDict):
+    AccountInfo: AccountInfoTypeDef,  # (1)
+    Status: int,
+    RequestId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: AccountInfoTypeDef](./type_defs.md#accountinfotypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeIpRestrictionResponseTypeDef
 
 ```python title="Usage Example"
@@ -5151,6 +5366,27 @@ class UpdateIpRestrictionResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdatePublicSharingSettingsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import UpdatePublicSharingSettingsResponseTypeDef
+
+def get_value() -> UpdatePublicSharingSettingsResponseTypeDef:
+    return {
+        "RequestId": ...,
+        "Status": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class UpdatePublicSharingSettingsResponseTypeDef(TypedDict):
+    RequestId: str,
+    Status: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## UpdateTemplateResponseTypeDef
 
 ```python title="Usage Example"
@@ -5370,6 +5606,30 @@ class TagResourceRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## CreateAccountSubscriptionResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import CreateAccountSubscriptionResponseTypeDef
+
+def get_value() -> CreateAccountSubscriptionResponseTypeDef:
+    return {
+        "SignupResponse": ...,
+        "Status": ...,
+        "RequestId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateAccountSubscriptionResponseTypeDef(TypedDict):
+    SignupResponse: SignupResponseTypeDef,  # (1)
+    Status: int,
+    RequestId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: SignupResponseTypeDef](./type_defs.md#signupresponsetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateFolderRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -5953,6 +6213,30 @@ class CreateGroupMembershipResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: GroupMemberTypeDef](./type_defs.md#groupmembertypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeGroupMembershipResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import DescribeGroupMembershipResponseTypeDef
+
+def get_value() -> DescribeGroupMembershipResponseTypeDef:
+    return {
+        "GroupMember": ...,
+        "RequestId": ...,
+        "Status": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeGroupMembershipResponseTypeDef(TypedDict):
+    GroupMember: GroupMemberTypeDef,  # (1)
+    RequestId: str,
+    Status: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: GroupMemberTypeDef](./type_defs.md#groupmembertypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListGroupMembershipsResponseTypeDef
 
 ```python title="Usage Example"
@@ -6070,6 +6354,32 @@ def get_value() -> ListUserGroupsResponseTypeDef:
 
 ```python title="Definition"
 class ListUserGroupsResponseTypeDef(TypedDict):
+    GroupList: List[GroupTypeDef],  # (1)
+    NextToken: str,
+    RequestId: str,
+    Status: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: GroupTypeDef](./type_defs.md#grouptypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## SearchGroupsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import SearchGroupsResponseTypeDef
+
+def get_value() -> SearchGroupsResponseTypeDef:
+    return {
+        "GroupList": ...,
+        "NextToken": ...,
+        "RequestId": ...,
+        "Status": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class SearchGroupsResponseTypeDef(TypedDict):
     GroupList: List[GroupTypeDef],  # (1)
     NextToken: str,
     RequestId: str,
@@ -6713,6 +7023,29 @@ class SearchFoldersResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: FolderSummaryTypeDef](./type_defs.md#foldersummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## SearchGroupsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import SearchGroupsRequestRequestTypeDef
+
+def get_value() -> SearchGroupsRequestRequestTypeDef:
+    return {
+        "AwsAccountId": ...,
+        "Namespace": ...,
+        "Filters": ...,
+    }
+```
+
+```python title="Definition"
+class SearchGroupsRequestRequestTypeDef(TypedDict):
+    AwsAccountId: str,
+    Namespace: str,
+    Filters: Sequence[GroupSearchFilterTypeDef],  # (1)
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+```
+
+1. See [:material-code-braces: GroupSearchFilterTypeDef](./type_defs.md#groupsearchfiltertypedef) 
 ## ListIAMPolicyAssignmentsResponseTypeDef
 
 ```python title="Usage Example"
@@ -7283,27 +7616,6 @@ class ParametersTypeDef(TypedDict):
 2. See [:material-code-braces: IntegerParameterTypeDef](./type_defs.md#integerparametertypedef) 
 3. See [:material-code-braces: DecimalParameterTypeDef](./type_defs.md#decimalparametertypedef) 
 4. See [:material-code-braces: DateTimeParameterTypeDef](./type_defs.md#datetimeparametertypedef) 
-## RegisteredUserEmbeddingExperienceConfigurationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_quicksight.type_defs import RegisteredUserEmbeddingExperienceConfigurationTypeDef
-
-def get_value() -> RegisteredUserEmbeddingExperienceConfigurationTypeDef:
-    return {
-        "Dashboard": ...,
-    }
-```
-
-```python title="Definition"
-class RegisteredUserEmbeddingExperienceConfigurationTypeDef(TypedDict):
-    Dashboard: NotRequired[RegisteredUserDashboardEmbeddingConfigurationTypeDef],  # (1)
-    QuickSightConsole: NotRequired[RegisteredUserQuickSightConsoleEmbeddingConfigurationTypeDef],  # (2)
-    QSearchBar: NotRequired[RegisteredUserQSearchBarEmbeddingConfigurationTypeDef],  # (3)
-```
-
-1. See [:material-code-braces: RegisteredUserDashboardEmbeddingConfigurationTypeDef](./type_defs.md#registereduserdashboardembeddingconfigurationtypedef) 
-2. See [:material-code-braces: RegisteredUserQuickSightConsoleEmbeddingConfigurationTypeDef](./type_defs.md#registereduserquicksightconsoleembeddingconfigurationtypedef) 
-3. See [:material-code-braces: RegisteredUserQSearchBarEmbeddingConfigurationTypeDef](./type_defs.md#registereduserqsearchbarembeddingconfigurationtypedef) 
 ## RowLevelPermissionTagConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -7421,32 +7733,48 @@ class DescribeAnalysisResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: AnalysisTypeDef](./type_defs.md#analysistypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef
+## AnonymousUserEmbeddingExperienceConfigurationTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_quicksight.type_defs import GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef
+from types_aiobotocore_quicksight.type_defs import AnonymousUserEmbeddingExperienceConfigurationTypeDef
 
-def get_value() -> GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef:
+def get_value() -> AnonymousUserEmbeddingExperienceConfigurationTypeDef:
     return {
-        "AwsAccountId": ...,
-        "Namespace": ...,
-        "AuthorizedResourceArns": ...,
-        "ExperienceConfiguration": ...,
+        "Dashboard": ...,
     }
 ```
 
 ```python title="Definition"
-class GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef(TypedDict):
-    AwsAccountId: str,
-    Namespace: str,
-    AuthorizedResourceArns: Sequence[str],
-    ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfigurationTypeDef,  # (1)
-    SessionLifetimeInMinutes: NotRequired[int],
-    SessionTags: NotRequired[Sequence[SessionTagTypeDef]],  # (2)
+class AnonymousUserEmbeddingExperienceConfigurationTypeDef(TypedDict):
+    Dashboard: NotRequired[AnonymousUserDashboardEmbeddingConfigurationTypeDef],  # (1)
+    DashboardVisual: NotRequired[AnonymousUserDashboardVisualEmbeddingConfigurationTypeDef],  # (2)
 ```
 
-1. See [:material-code-braces: AnonymousUserEmbeddingExperienceConfigurationTypeDef](./type_defs.md#anonymoususerembeddingexperienceconfigurationtypedef) 
-2. See [:material-code-braces: SessionTagTypeDef](./type_defs.md#sessiontagtypedef) 
+1. See [:material-code-braces: AnonymousUserDashboardEmbeddingConfigurationTypeDef](./type_defs.md#anonymoususerdashboardembeddingconfigurationtypedef) 
+2. See [:material-code-braces: AnonymousUserDashboardVisualEmbeddingConfigurationTypeDef](./type_defs.md#anonymoususerdashboardvisualembeddingconfigurationtypedef) 
+## RegisteredUserEmbeddingExperienceConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import RegisteredUserEmbeddingExperienceConfigurationTypeDef
+
+def get_value() -> RegisteredUserEmbeddingExperienceConfigurationTypeDef:
+    return {
+        "Dashboard": ...,
+    }
+```
+
+```python title="Definition"
+class RegisteredUserEmbeddingExperienceConfigurationTypeDef(TypedDict):
+    Dashboard: NotRequired[RegisteredUserDashboardEmbeddingConfigurationTypeDef],  # (1)
+    QuickSightConsole: NotRequired[RegisteredUserQuickSightConsoleEmbeddingConfigurationTypeDef],  # (2)
+    QSearchBar: NotRequired[RegisteredUserQSearchBarEmbeddingConfigurationTypeDef],  # (3)
+    DashboardVisual: NotRequired[RegisteredUserDashboardVisualEmbeddingConfigurationTypeDef],  # (4)
+```
+
+1. See [:material-code-braces: RegisteredUserDashboardEmbeddingConfigurationTypeDef](./type_defs.md#registereduserdashboardembeddingconfigurationtypedef) 
+2. See [:material-code-braces: RegisteredUserQuickSightConsoleEmbeddingConfigurationTypeDef](./type_defs.md#registereduserquicksightconsoleembeddingconfigurationtypedef) 
+3. See [:material-code-braces: RegisteredUserQSearchBarEmbeddingConfigurationTypeDef](./type_defs.md#registereduserqsearchbarembeddingconfigurationtypedef) 
+4. See [:material-code-braces: RegisteredUserDashboardVisualEmbeddingConfigurationTypeDef](./type_defs.md#registereduserdashboardvisualembeddingconfigurationtypedef) 
 ## TagColumnOperationTypeDef
 
 ```python title="Usage Example"
@@ -7794,28 +8122,6 @@ class ListNamespacesResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: NamespaceInfoV2TypeDef](./type_defs.md#namespaceinfov2typedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_quicksight.type_defs import GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef
-
-def get_value() -> GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef:
-    return {
-        "AwsAccountId": ...,
-        "UserArn": ...,
-        "ExperienceConfiguration": ...,
-    }
-```
-
-```python title="Definition"
-class GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef(TypedDict):
-    AwsAccountId: str,
-    UserArn: str,
-    ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfigurationTypeDef,  # (1)
-    SessionLifetimeInMinutes: NotRequired[int],
-```
-
-1. See [:material-code-braces: RegisteredUserEmbeddingExperienceConfigurationTypeDef](./type_defs.md#registereduserembeddingexperienceconfigurationtypedef) 
 ## PhysicalTableTypeDef
 
 ```python title="Usage Example"
@@ -8005,6 +8311,56 @@ class UpdateTemplateRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TemplateSourceEntityTypeDef](./type_defs.md#templatesourceentitytypedef) 
+## GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef
+
+def get_value() -> GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef:
+    return {
+        "AwsAccountId": ...,
+        "Namespace": ...,
+        "AuthorizedResourceArns": ...,
+        "ExperienceConfiguration": ...,
+    }
+```
+
+```python title="Definition"
+class GenerateEmbedUrlForAnonymousUserRequestRequestTypeDef(TypedDict):
+    AwsAccountId: str,
+    Namespace: str,
+    AuthorizedResourceArns: Sequence[str],
+    ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfigurationTypeDef,  # (1)
+    SessionLifetimeInMinutes: NotRequired[int],
+    SessionTags: NotRequired[Sequence[SessionTagTypeDef]],  # (2)
+    AllowedDomains: NotRequired[Sequence[str]],
+```
+
+1. See [:material-code-braces: AnonymousUserEmbeddingExperienceConfigurationTypeDef](./type_defs.md#anonymoususerembeddingexperienceconfigurationtypedef) 
+2. See [:material-code-braces: SessionTagTypeDef](./type_defs.md#sessiontagtypedef) 
+## GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_quicksight.type_defs import GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef
+
+def get_value() -> GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef:
+    return {
+        "AwsAccountId": ...,
+        "UserArn": ...,
+        "ExperienceConfiguration": ...,
+    }
+```
+
+```python title="Definition"
+class GenerateEmbedUrlForRegisteredUserRequestRequestTypeDef(TypedDict):
+    AwsAccountId: str,
+    UserArn: str,
+    ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfigurationTypeDef,  # (1)
+    SessionLifetimeInMinutes: NotRequired[int],
+    AllowedDomains: NotRequired[Sequence[str]],
+```
+
+1. See [:material-code-braces: RegisteredUserEmbeddingExperienceConfigurationTypeDef](./type_defs.md#registereduserembeddingexperienceconfigurationtypedef) 
 ## TransformOperationTypeDef
 
 ```python title="Usage Example"

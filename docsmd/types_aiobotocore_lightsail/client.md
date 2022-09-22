@@ -259,6 +259,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("lightsail").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### close\_instance\_public\_ports
 
 Closes ports for a specific Amazon Lightsail instance.
@@ -506,14 +521,16 @@ await def create_container_service(
     tags: Sequence[TagTypeDef] = ...,  # (2)
     publicDomainNames: Mapping[str, Sequence[str]] = ...,
     deployment: ContainerServiceDeploymentRequestTypeDef = ...,  # (3)
-) -> CreateContainerServiceResultTypeDef:  # (4)
+    privateRegistryAccess: PrivateRegistryAccessRequestTypeDef = ...,  # (4)
+) -> CreateContainerServiceResultTypeDef:  # (5)
     ...
 ```
 
 1. See [:material-code-brackets: ContainerServicePowerNameType](./literals.md#containerservicepowernametype) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 3. See [:material-code-braces: ContainerServiceDeploymentRequestTypeDef](./type_defs.md#containerservicedeploymentrequesttypedef) 
-4. See [:material-code-braces: CreateContainerServiceResultTypeDef](./type_defs.md#createcontainerserviceresulttypedef) 
+4. See [:material-code-braces: PrivateRegistryAccessRequestTypeDef](./type_defs.md#privateregistryaccessrequesttypedef) 
+5. See [:material-code-braces: CreateContainerServiceResultTypeDef](./type_defs.md#createcontainerserviceresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -976,6 +993,7 @@ await def create_load_balancer(
     certificateAlternativeNames: Sequence[str] = ...,
     tags: Sequence[TagTypeDef] = ...,  # (1)
     ipAddressType: IpAddressTypeType = ...,  # (2)
+    tlsPolicyName: str = ...,
 ) -> CreateLoadBalancerResultTypeDef:  # (3)
     ...
 ```
@@ -2278,7 +2296,8 @@ parent.get_buckets(**kwargs)
 
 ### get\_bundles
 
-Returns the list of bundles that are available for purchase.
+Returns the bundles that you can apply to an Amazon Lightsail instance when you
+create it.
 
 Type annotations and code completion for `#!python session.client("lightsail").get_bundles` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_bundles)
@@ -3347,6 +3366,36 @@ parent.get_load_balancer_tls_certificates(**kwargs)
 
 1. See [:material-code-braces: GetLoadBalancerTlsCertificatesRequestRequestTypeDef](./type_defs.md#getloadbalancertlscertificatesrequestrequesttypedef) 
 
+### get\_load\_balancer\_tls\_policies
+
+Returns a list of TLS security policies that you can apply to Lightsail load
+balancers.
+
+Type annotations and code completion for `#!python session.client("lightsail").get_load_balancer_tls_policies` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_load_balancer_tls_policies)
+
+```python title="Method definition"
+await def get_load_balancer_tls_policies(
+    self,
+    *,
+    pageToken: str = ...,
+) -> GetLoadBalancerTlsPoliciesResultTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetLoadBalancerTlsPoliciesResultTypeDef](./type_defs.md#getloadbalancertlspoliciesresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetLoadBalancerTlsPoliciesRequestRequestTypeDef = {  # (1)
+    "pageToken": ...,
+}
+
+parent.get_load_balancer_tls_policies(**kwargs)
+```
+
+1. See [:material-code-braces: GetLoadBalancerTlsPoliciesRequestRequestTypeDef](./type_defs.md#getloadbalancertlspoliciesrequestrequesttypedef) 
+
 ### get\_load\_balancers
 
 Returns information about all load balancers in an account.
@@ -3564,6 +3613,7 @@ await def get_relational_database_bundles(
     self,
     *,
     pageToken: str = ...,
+    includeInactive: bool = ...,
 ) -> GetRelationalDatabaseBundlesResultTypeDef:  # (1)
     ...
 ```
@@ -4676,12 +4726,14 @@ await def update_container_service(
     scale: int = ...,
     isDisabled: bool = ...,
     publicDomainNames: Mapping[str, Sequence[str]] = ...,
-) -> UpdateContainerServiceResultTypeDef:  # (2)
+    privateRegistryAccess: PrivateRegistryAccessRequestTypeDef = ...,  # (2)
+) -> UpdateContainerServiceResultTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-brackets: ContainerServicePowerNameType](./literals.md#containerservicepowernametype) 
-2. See [:material-code-braces: UpdateContainerServiceResultTypeDef](./type_defs.md#updatecontainerserviceresulttypedef) 
+2. See [:material-code-braces: PrivateRegistryAccessRequestTypeDef](./type_defs.md#privateregistryaccessrequesttypedef) 
+3. See [:material-code-braces: UpdateContainerServiceResultTypeDef](./type_defs.md#updatecontainerserviceresulttypedef) 
 
 
 ```python title="Usage example with kwargs"

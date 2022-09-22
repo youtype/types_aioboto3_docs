@@ -55,6 +55,22 @@ type checking and code completion should work out of the box.
 
 
 
+=== "Waiters"
+
+    ```python title="Waiter usage example"
+    from aioboto3.session import Session
+
+
+    session = Session()
+
+    async with session.client("macie2") as client:  # (1)
+        waiter = client.get_waiter("finding_revealed")  # (2)
+        await waiter.wait()
+    ```
+
+    1. client: [Macie2Client](./client.md)
+    2. waiter: [FindingRevealedWaiter](./waiters.md#findingrevealedwaiter)
+
 
 ### Explicit type annotations
 
@@ -115,5 +131,24 @@ However, these type annotations can be helpful in your functions and methods.
     3. item: [:material-code-braces: DescribeBucketsResponseTypeDef](./type_defs.md#describebucketsresponsetypedef) 
 
 
+
+=== "Waiters"
+
+    ```python title="Waiter usage example"
+    from aioboto3.session import Session
+
+    from types_aiobotocore_macie2.client import Macie2Client
+    from types_aiobotocore_macie2.waiter import FindingRevealedWaiter
+
+
+    session = Session()
+
+    async with session.client("macie2") as client:  # (1)
+        waiter = client.get_waiter("finding_revealed")  # (2)
+        await waiter.wait()
+    ```
+
+    1. client: [Macie2Client](./client.md)
+    2. waiter: [FindingRevealedWaiter](./waiters.md#findingrevealedwaiter)
 
 

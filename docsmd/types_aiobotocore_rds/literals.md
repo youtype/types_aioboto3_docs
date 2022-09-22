@@ -22,6 +22,23 @@ ActivityStreamModeType = Literal[
     "sync",
 ]
 ```
+## ActivityStreamPolicyStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_rds.literals import ActivityStreamPolicyStatusType
+
+def get_value() -> ActivityStreamPolicyStatusType:
+    return "locked"
+```
+
+```python title="Definition"
+ActivityStreamPolicyStatusType = Literal[
+    "locked",
+    "locking-policy",
+    "unlocked",
+    "unlocking-policy",
+]
+```
 ## ActivityStreamStatusType
 
 ```python title="Usage Example"
@@ -52,6 +69,21 @@ def get_value() -> ApplyMethodType:
 ApplyMethodType = Literal[
     "immediate",
     "pending-reboot",
+]
+```
+## AuditPolicyStateType
+
+```python title="Usage Example"
+from types_aiobotocore_rds.literals import AuditPolicyStateType
+
+def get_value() -> AuditPolicyStateType:
+    return "locked"
+```
+
+```python title="Definition"
+AuditPolicyStateType = Literal[
+    "locked",
+    "unlocked",
 ]
 ```
 ## AuthSchemeType
@@ -97,6 +129,34 @@ CustomEngineVersionStatusType = Literal[
     "available",
     "inactive",
     "inactive-except-restore",
+]
+```
+## DBClusterAvailableWaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_rds.literals import DBClusterAvailableWaiterName
+
+def get_value() -> DBClusterAvailableWaiterName:
+    return "db_cluster_available"
+```
+
+```python title="Definition"
+DBClusterAvailableWaiterName = Literal[
+    "db_cluster_available",
+]
+```
+## DBClusterDeletedWaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_rds.literals import DBClusterDeletedWaiterName
+
+def get_value() -> DBClusterDeletedWaiterName:
+    return "db_cluster_deleted"
+```
+
+```python title="Definition"
+DBClusterDeletedWaiterName = Literal[
+    "db_cluster_deleted",
 ]
 ```
 ## DBClusterSnapshotAvailableWaiterName
@@ -265,20 +325,6 @@ def get_value() -> DescribeCertificatesPaginatorName:
 ```python title="Definition"
 DescribeCertificatesPaginatorName = Literal[
     "describe_certificates",
-]
-```
-## DescribeCustomAvailabilityZonesPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_rds.literals import DescribeCustomAvailabilityZonesPaginatorName
-
-def get_value() -> DescribeCustomAvailabilityZonesPaginatorName:
-    return "describe_custom_availability_zones"
-```
-
-```python title="Definition"
-DescribeCustomAvailabilityZonesPaginatorName = Literal[
-    "describe_custom_availability_zones",
 ]
 ```
 ## DescribeDBClusterBacktracksPaginatorName
@@ -631,20 +677,6 @@ DescribeGlobalClustersPaginatorName = Literal[
     "describe_global_clusters",
 ]
 ```
-## DescribeInstallationMediaPaginatorName
-
-```python title="Usage Example"
-from types_aiobotocore_rds.literals import DescribeInstallationMediaPaginatorName
-
-def get_value() -> DescribeInstallationMediaPaginatorName:
-    return "describe_installation_media"
-```
-
-```python title="Definition"
-DescribeInstallationMediaPaginatorName = Literal[
-    "describe_installation_media",
-]
-```
 ## DescribeOptionGroupOptionsPaginatorName
 
 ```python title="Usage Example"
@@ -977,6 +1009,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -984,6 +1017,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1016,6 +1050,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -1052,6 +1087,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1065,6 +1101,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1098,6 +1135,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1117,12 +1155,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1166,8 +1206,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1178,11 +1220,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1228,6 +1272,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -1286,7 +1331,6 @@ def get_value() -> PaginatorName:
 ```python title="Definition"
 PaginatorName = Literal[
     "describe_certificates",
-    "describe_custom_availability_zones",
     "describe_db_cluster_backtracks",
     "describe_db_cluster_endpoints",
     "describe_db_cluster_parameter_groups",
@@ -1312,7 +1356,6 @@ PaginatorName = Literal[
     "describe_events",
     "describe_export_tasks",
     "describe_global_clusters",
-    "describe_installation_media",
     "describe_option_group_options",
     "describe_option_groups",
     "describe_orderable_db_instance_options",
@@ -1329,11 +1372,13 @@ PaginatorName = Literal[
 from types_aiobotocore_rds.literals import WaiterName
 
 def get_value() -> WaiterName:
-    return "db_cluster_snapshot_available"
+    return "db_cluster_available"
 ```
 
 ```python title="Definition"
 WaiterName = Literal[
+    "db_cluster_available",
+    "db_cluster_deleted",
     "db_cluster_snapshot_available",
     "db_cluster_snapshot_deleted",
     "db_instance_available",

@@ -61,60 +61,6 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeCertificatesMessageDescribeCertificatesPaginateTypeDef](./type_defs.md#describecertificatesmessagedescribecertificatespaginatetypedef) 
-## DescribeCustomAvailabilityZonesPaginator
-
-Type annotations and code completion for `#!python session.client("rds").get_paginator("describe_custom_availability_zones")`.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Paginator.DescribeCustomAvailabilityZones)
-
-```python title="Usage example"
-from aioboto3.session import Session
-
-from types_aiobotocore_rds.paginator import DescribeCustomAvailabilityZonesPaginator
-
-session = Session()
-
-session = get_session()
-async with session.client("rds") as client:  # (1)
-    paginator: DescribeCustomAvailabilityZonesPaginator = client.get_paginator("describe_custom_availability_zones")  # (2)
-    async for item in paginator.paginate(...):
-        item: CustomAvailabilityZoneMessageTypeDef
-        print(item)  # (3)
-```
-
-1. client: [RDSClient](./client.md)
-2. paginator: [DescribeCustomAvailabilityZonesPaginator](./paginators.md#describecustomavailabilityzonespaginator)
-3. item: [:material-code-braces: CustomAvailabilityZoneMessageTypeDef](./type_defs.md#customavailabilityzonemessagetypedef) 
-
-
-### paginate
-
-Type annotations and code completion for `#!python DescribeCustomAvailabilityZonesPaginator.paginate` method.
-
-```python title="Method definition"
-def paginate(
-    self,
-    *,
-    CustomAvailabilityZoneId: str = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
-) -> AsyncIterator[CustomAvailabilityZoneMessageTypeDef]:  # (3)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-3. See [:material-code-braces: CustomAvailabilityZoneMessageTypeDef](./type_defs.md#customavailabilityzonemessagetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeCustomAvailabilityZonesMessageDescribeCustomAvailabilityZonesPaginateTypeDef = {  # (1)
-    "CustomAvailabilityZoneId": ...,
-}
-
-parent.paginate(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeCustomAvailabilityZonesMessageDescribeCustomAvailabilityZonesPaginateTypeDef](./type_defs.md#describecustomavailabilityzonesmessagedescribecustomavailabilityzonespaginatetypedef) 
 ## DescribeDBClusterBacktracksPaginator
 
 Type annotations and code completion for `#!python session.client("rds").get_paginator("describe_db_cluster_backtracks")`.
@@ -1500,60 +1446,6 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeGlobalClustersMessageDescribeGlobalClustersPaginateTypeDef](./type_defs.md#describeglobalclustersmessagedescribeglobalclusterspaginatetypedef) 
-## DescribeInstallationMediaPaginator
-
-Type annotations and code completion for `#!python session.client("rds").get_paginator("describe_installation_media")`.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Paginator.DescribeInstallationMedia)
-
-```python title="Usage example"
-from aioboto3.session import Session
-
-from types_aiobotocore_rds.paginator import DescribeInstallationMediaPaginator
-
-session = Session()
-
-session = get_session()
-async with session.client("rds") as client:  # (1)
-    paginator: DescribeInstallationMediaPaginator = client.get_paginator("describe_installation_media")  # (2)
-    async for item in paginator.paginate(...):
-        item: InstallationMediaMessageTypeDef
-        print(item)  # (3)
-```
-
-1. client: [RDSClient](./client.md)
-2. paginator: [DescribeInstallationMediaPaginator](./paginators.md#describeinstallationmediapaginator)
-3. item: [:material-code-braces: InstallationMediaMessageTypeDef](./type_defs.md#installationmediamessagetypedef) 
-
-
-### paginate
-
-Type annotations and code completion for `#!python DescribeInstallationMediaPaginator.paginate` method.
-
-```python title="Method definition"
-def paginate(
-    self,
-    *,
-    InstallationMediaId: str = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
-) -> AsyncIterator[InstallationMediaMessageTypeDef]:  # (3)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-3. See [:material-code-braces: InstallationMediaMessageTypeDef](./type_defs.md#installationmediamessagetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeInstallationMediaMessageDescribeInstallationMediaPaginateTypeDef = {  # (1)
-    "InstallationMediaId": ...,
-}
-
-parent.paginate(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeInstallationMediaMessageDescribeInstallationMediaPaginateTypeDef](./type_defs.md#describeinstallationmediamessagedescribeinstallationmediapaginatetypedef) 
 ## DescribeOptionGroupOptionsPaginator
 
 Type annotations and code completion for `#!python session.client("rds").get_paginator("describe_option_group_options")`.

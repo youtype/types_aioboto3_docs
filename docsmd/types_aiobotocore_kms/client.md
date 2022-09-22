@@ -58,6 +58,7 @@ async with session.client("kms") as client:
         client.InvalidKeyUsageException,
         client.InvalidMarkerException,
         client.KMSInternalException,
+        client.KMSInvalidMacException,
         client.KMSInvalidSignatureException,
         client.KMSInvalidStateException,
         client.KeyUnavailableException,
@@ -125,6 +126,21 @@ parent.cancel_key_deletion(**kwargs)
 ```
 
 1. See [:material-code-braces: CancelKeyDeletionRequestRequestTypeDef](./type_defs.md#cancelkeydeletionrequestrequesttypedef) 
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("kms").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
 
 ### connect\_custom\_key\_store
 
@@ -203,9 +219,9 @@ await def create_custom_key_store(
     self,
     *,
     CustomKeyStoreName: str,
-    CloudHsmClusterId: str,
-    TrustAnchorCertificate: str,
-    KeyStorePassword: str,
+    CloudHsmClusterId: str = ...,
+    TrustAnchorCertificate: str = ...,
+    KeyStorePassword: str = ...,
 ) -> CreateCustomKeyStoreResponseTypeDef:  # (1)
     ...
 ```
@@ -216,9 +232,6 @@ await def create_custom_key_store(
 ```python title="Usage example with kwargs"
 kwargs: CreateCustomKeyStoreRequestRequestTypeDef = {  # (1)
     "CustomKeyStoreName": ...,
-    "CloudHsmClusterId": ...,
-    "TrustAnchorCertificate": ...,
-    "KeyStorePassword": ...,
 }
 
 parent.create_custom_key_store(**kwargs)
@@ -532,7 +545,7 @@ parent.disable_key(**kwargs)
 
 Disables [automatic rotation of the key
 material](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-
-keys.html)_ for the specified symmetric KMS key.
+keys.html)_ of the specified symmetric encryption KMS key.
 
 Type annotations and code completion for `#!python session.client("kms").disable_key_rotation` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.disable_key_rotation)
@@ -622,7 +635,7 @@ parent.enable_key(**kwargs)
 
 Enables [automatic rotation of the key
 material](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-
-keys.html)_ for the specified symmetric KMS key.
+keys.html)_ of the specified symmetric encryption KMS key.
 
 Type annotations and code completion for `#!python session.client("kms").enable_key_rotation` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.enable_key_rotation)
@@ -651,7 +664,7 @@ parent.enable_key_rotation(**kwargs)
 
 ### encrypt
 
-Encrypts plaintext into ciphertext by using a KMS key.
+Encrypts plaintext of up to 4,096 bytes using a KMS key.
 
 Type annotations and code completion for `#!python session.client("kms").encrypt` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.encrypt)
@@ -686,7 +699,7 @@ parent.encrypt(**kwargs)
 
 ### generate\_data\_key
 
-Generates a unique symmetric data key for client-side encryption.
+Returns a unique symmetric data key for use outside of KMS.
 
 Type annotations and code completion for `#!python session.client("kms").generate_data_key` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_data_key)
@@ -720,7 +733,7 @@ parent.generate_data_key(**kwargs)
 
 ### generate\_data\_key\_pair
 
-Generates a unique asymmetric data key pair.
+Returns a unique asymmetric data key pair for use outside of KMS.
 
 Type annotations and code completion for `#!python session.client("kms").generate_data_key_pair` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_data_key_pair)
@@ -754,7 +767,7 @@ parent.generate_data_key_pair(**kwargs)
 
 ### generate\_data\_key\_pair\_without\_plaintext
 
-Generates a unique asymmetric data key pair.
+Returns a unique asymmetric data key pair for use outside of KMS.
 
 Type annotations and code completion for `#!python session.client("kms").generate_data_key_pair_without_plaintext` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_data_key_pair_without_plaintext)
@@ -788,7 +801,7 @@ parent.generate_data_key_pair_without_plaintext(**kwargs)
 
 ### generate\_data\_key\_without\_plaintext
 
-Generates a unique symmetric data key.
+Returns a unique symmetric data key for use outside of KMS.
 
 Type annotations and code completion for `#!python session.client("kms").generate_data_key_without_plaintext` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_data_key_without_plaintext)
@@ -819,6 +832,42 @@ parent.generate_data_key_without_plaintext(**kwargs)
 ```
 
 1. See [:material-code-braces: GenerateDataKeyWithoutPlaintextRequestRequestTypeDef](./type_defs.md#generatedatakeywithoutplaintextrequestrequesttypedef) 
+
+### generate\_mac
+
+Generates a hash-based message authentication code (HMAC) for a message using an
+HMAC KMS key and a MAC algorithm that the key supports.
+
+Type annotations and code completion for `#!python session.client("kms").generate_mac` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_mac)
+
+```python title="Method definition"
+await def generate_mac(
+    self,
+    *,
+    Message: Union[str, bytes, IO[Any], StreamingBody],
+    KeyId: str,
+    MacAlgorithm: MacAlgorithmSpecType,  # (1)
+    GrantTokens: Sequence[str] = ...,
+) -> GenerateMacResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: MacAlgorithmSpecType](./literals.md#macalgorithmspectype) 
+2. See [:material-code-braces: GenerateMacResponseTypeDef](./type_defs.md#generatemacresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GenerateMacRequestRequestTypeDef = {  # (1)
+    "Message": ...,
+    "KeyId": ...,
+    "MacAlgorithm": ...,
+}
+
+parent.generate_mac(**kwargs)
+```
+
+1. See [:material-code-braces: GenerateMacRequestRequestTypeDef](./type_defs.md#generatemacrequestrequesttypedef) 
 
 ### generate\_presigned\_url
 
@@ -933,8 +982,8 @@ parent.get_key_rotation_status(**kwargs)
 
 ### get\_parameters\_for\_import
 
-Returns the items you need to import key material into a symmetric, customer
-managed KMS key.
+Returns the items you need to import key material into a symmetric encryption
+KMS key.
 
 Type annotations and code completion for `#!python session.client("kms").get_parameters_for_import` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.get_parameters_for_import)
@@ -999,8 +1048,8 @@ parent.get_public_key(**kwargs)
 
 ### import\_key\_material
 
-Imports key material into an existing symmetric KMS KMS key that was created
-without key material.
+Imports key material into an existing symmetric encryption KMS key that was
+created without key material.
 
 Type annotations and code completion for `#!python session.client("kms").import_key_material` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.import_key_material)
@@ -1426,8 +1475,8 @@ parent.schedule_key_deletion(**kwargs)
 ### sign
 
 Creates a [digital signature](https://en.wikipedia.org/wiki/Digital_signature)_
-for a message or message digest by using the private key in an asymmetric KMS
-key.
+for a message or message digest by using the private key in an asymmetric
+signing KMS key.
 
 Type annotations and code completion for `#!python session.client("kms").sign` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.sign)
@@ -1692,6 +1741,44 @@ parent.verify(**kwargs)
 
 1. See [:material-code-braces: VerifyRequestRequestTypeDef](./type_defs.md#verifyrequestrequesttypedef) 
 
+### verify\_mac
+
+Verifies the hash-based message authentication code (HMAC) for a specified
+message, HMAC KMS key, and MAC algorithm.
+
+Type annotations and code completion for `#!python session.client("kms").verify_mac` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.verify_mac)
+
+```python title="Method definition"
+await def verify_mac(
+    self,
+    *,
+    Message: Union[str, bytes, IO[Any], StreamingBody],
+    KeyId: str,
+    MacAlgorithm: MacAlgorithmSpecType,  # (1)
+    Mac: Union[str, bytes, IO[Any], StreamingBody],
+    GrantTokens: Sequence[str] = ...,
+) -> VerifyMacResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: MacAlgorithmSpecType](./literals.md#macalgorithmspectype) 
+2. See [:material-code-braces: VerifyMacResponseTypeDef](./type_defs.md#verifymacresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: VerifyMacRequestRequestTypeDef = {  # (1)
+    "Message": ...,
+    "KeyId": ...,
+    "MacAlgorithm": ...,
+    "Mac": ...,
+}
+
+parent.verify_mac(**kwargs)
+```
+
+1. See [:material-code-braces: VerifyMacRequestRequestTypeDef](./type_defs.md#verifymacrequestrequesttypedef) 
+
 ### \_\_aenter\_\_
 
 
@@ -1731,10 +1818,13 @@ await def __aexit__(
 
 Type annotations and code completion for `#!python session.client("kms").get_paginator` method with overloads.
 
+- `client.get_paginator("describe_custom_key_stores")` -> [DescribeCustomKeyStoresPaginator](./paginators.md#describecustomkeystorespaginator)
 - `client.get_paginator("list_aliases")` -> [ListAliasesPaginator](./paginators.md#listaliasespaginator)
 - `client.get_paginator("list_grants")` -> [ListGrantsPaginator](./paginators.md#listgrantspaginator)
 - `client.get_paginator("list_key_policies")` -> [ListKeyPoliciesPaginator](./paginators.md#listkeypoliciespaginator)
 - `client.get_paginator("list_keys")` -> [ListKeysPaginator](./paginators.md#listkeyspaginator)
+- `client.get_paginator("list_resource_tags")` -> [ListResourceTagsPaginator](./paginators.md#listresourcetagspaginator)
+- `client.get_paginator("list_retirable_grants")` -> [ListRetirableGrantsPaginator](./paginators.md#listretirablegrantspaginator)
 
 
 

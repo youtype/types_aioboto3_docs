@@ -41,8 +41,10 @@ async with session.client("rekognition") as client:
         client.InvalidImageFormatException,
         client.InvalidPaginationTokenException,
         client.InvalidParameterException,
+        client.InvalidPolicyRevisionIdException,
         client.InvalidS3ObjectException,
         client.LimitExceededException,
+        client.MalformedPolicyDocumentException,
         client.ProvisionedThroughputExceededException,
         client.ResourceAlreadyExistsException,
         client.ResourceInUseException,
@@ -78,6 +80,21 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("rekognition").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
     ...
 ```
 
@@ -118,6 +135,47 @@ parent.compare_faces(**kwargs)
 ```
 
 1. See [:material-code-braces: CompareFacesRequestRequestTypeDef](./type_defs.md#comparefacesrequestrequesttypedef) 
+
+### copy\_project\_version
+
+Copies a version of an Amazon Rekognition Custom Labels model from a source
+project to a destination project.
+
+Type annotations and code completion for `#!python session.client("rekognition").copy_project_version` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.copy_project_version)
+
+```python title="Method definition"
+await def copy_project_version(
+    self,
+    *,
+    SourceProjectArn: str,
+    SourceProjectVersionArn: str,
+    DestinationProjectArn: str,
+    VersionName: str,
+    OutputConfig: OutputConfigTypeDef,  # (1)
+    Tags: Mapping[str, str] = ...,
+    KmsKeyId: str = ...,
+) -> CopyProjectVersionResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: OutputConfigTypeDef](./type_defs.md#outputconfigtypedef) 
+2. See [:material-code-braces: CopyProjectVersionResponseTypeDef](./type_defs.md#copyprojectversionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CopyProjectVersionRequestRequestTypeDef = {  # (1)
+    "SourceProjectArn": ...,
+    "SourceProjectVersionArn": ...,
+    "DestinationProjectArn": ...,
+    "VersionName": ...,
+    "OutputConfig": ...,
+}
+
+parent.copy_project_version(**kwargs)
+```
+
+1. See [:material-code-braces: CopyProjectVersionRequestRequestTypeDef](./type_defs.md#copyprojectversionrequestrequesttypedef) 
 
 ### create\_collection
 
@@ -255,7 +313,7 @@ parent.create_project_version(**kwargs)
 ### create\_stream\_processor
 
 Creates an Amazon Rekognition stream processor that you can use to detect and
-recognize faces in a streaming video.
+recognize faces or to detect labels in a streaming video.
 
 Type annotations and code completion for `#!python session.client("rekognition").create_stream_processor` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.create_stream_processor)
@@ -270,14 +328,21 @@ await def create_stream_processor(
     Settings: StreamProcessorSettingsTypeDef,  # (3)
     RoleArn: str,
     Tags: Mapping[str, str] = ...,
-) -> CreateStreamProcessorResponseTypeDef:  # (4)
+    NotificationChannel: StreamProcessorNotificationChannelTypeDef = ...,  # (4)
+    KmsKeyId: str = ...,
+    RegionsOfInterest: Sequence[RegionOfInterestTypeDef] = ...,  # (5)
+    DataSharingPreference: StreamProcessorDataSharingPreferenceTypeDef = ...,  # (6)
+) -> CreateStreamProcessorResponseTypeDef:  # (7)
     ...
 ```
 
 1. See [:material-code-braces: StreamProcessorInputTypeDef](./type_defs.md#streamprocessorinputtypedef) 
 2. See [:material-code-braces: StreamProcessorOutputTypeDef](./type_defs.md#streamprocessoroutputtypedef) 
 3. See [:material-code-braces: StreamProcessorSettingsTypeDef](./type_defs.md#streamprocessorsettingstypedef) 
-4. See [:material-code-braces: CreateStreamProcessorResponseTypeDef](./type_defs.md#createstreamprocessorresponsetypedef) 
+4. See [:material-code-braces: StreamProcessorNotificationChannelTypeDef](./type_defs.md#streamprocessornotificationchanneltypedef) 
+5. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
+6. See [:material-code-braces: StreamProcessorDataSharingPreferenceTypeDef](./type_defs.md#streamprocessordatasharingpreferencetypedef) 
+7. See [:material-code-braces: CreateStreamProcessorResponseTypeDef](./type_defs.md#createstreamprocessorresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -410,6 +475,37 @@ parent.delete_project(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteProjectRequestRequestTypeDef](./type_defs.md#deleteprojectrequestrequesttypedef) 
+
+### delete\_project\_policy
+
+Deletes an existing project policy.
+
+Type annotations and code completion for `#!python session.client("rekognition").delete_project_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.delete_project_policy)
+
+```python title="Method definition"
+await def delete_project_policy(
+    self,
+    *,
+    ProjectArn: str,
+    PolicyName: str,
+    PolicyRevisionId: str = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteProjectPolicyRequestRequestTypeDef = {  # (1)
+    "ProjectArn": ...,
+    "PolicyName": ...,
+}
+
+parent.delete_project_policy(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteProjectPolicyRequestRequestTypeDef](./type_defs.md#deleteprojectpolicyrequestrequesttypedef) 
 
 ### delete\_project\_version
 
@@ -1326,6 +1422,37 @@ parent.list_faces(**kwargs)
 
 1. See [:material-code-braces: ListFacesRequestRequestTypeDef](./type_defs.md#listfacesrequestrequesttypedef) 
 
+### list\_project\_policies
+
+Gets a list of the project policies attached to a project.
+
+Type annotations and code completion for `#!python session.client("rekognition").list_project_policies` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.list_project_policies)
+
+```python title="Method definition"
+await def list_project_policies(
+    self,
+    *,
+    ProjectArn: str,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> ListProjectPoliciesResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListProjectPoliciesResponseTypeDef](./type_defs.md#listprojectpoliciesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListProjectPoliciesRequestRequestTypeDef = {  # (1)
+    "ProjectArn": ...,
+}
+
+parent.list_project_policies(**kwargs)
+```
+
+1. See [:material-code-braces: ListProjectPoliciesRequestRequestTypeDef](./type_defs.md#listprojectpoliciesrequestrequesttypedef) 
+
 ### list\_stream\_processors
 
 Gets a list of stream processors that you have created with
@@ -1386,6 +1513,41 @@ parent.list_tags_for_resource(**kwargs)
 ```
 
 1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
+
+### put\_project\_policy
+
+Attaches a project policy to a Amazon Rekognition Custom Labels project in a
+trusting AWS account.
+
+Type annotations and code completion for `#!python session.client("rekognition").put_project_policy` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.put_project_policy)
+
+```python title="Method definition"
+await def put_project_policy(
+    self,
+    *,
+    ProjectArn: str,
+    PolicyName: str,
+    PolicyDocument: str,
+    PolicyRevisionId: str = ...,
+) -> PutProjectPolicyResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: PutProjectPolicyResponseTypeDef](./type_defs.md#putprojectpolicyresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: PutProjectPolicyRequestRequestTypeDef = {  # (1)
+    "ProjectArn": ...,
+    "PolicyName": ...,
+    "PolicyDocument": ...,
+}
+
+parent.put_project_policy(**kwargs)
+```
+
+1. See [:material-code-braces: PutProjectPolicyRequestRequestTypeDef](./type_defs.md#putprojectpolicyrequestrequesttypedef) 
 
 ### recognize\_celebrities
 
@@ -1714,6 +1876,7 @@ await def start_project_version(
     *,
     ProjectVersionArn: str,
     MinInferenceUnits: int,
+    MaxInferenceUnits: int = ...,
 ) -> StartProjectVersionResponseTypeDef:  # (1)
     ...
 ```
@@ -1783,10 +1946,15 @@ await def start_stream_processor(
     self,
     *,
     Name: str,
-) -> Dict[str, Any]:
+    StartSelector: StreamProcessingStartSelectorTypeDef = ...,  # (1)
+    StopSelector: StreamProcessingStopSelectorTypeDef = ...,  # (2)
+) -> StartStreamProcessorResponseTypeDef:  # (3)
     ...
 ```
 
+1. See [:material-code-braces: StreamProcessingStartSelectorTypeDef](./type_defs.md#streamprocessingstartselectortypedef) 
+2. See [:material-code-braces: StreamProcessingStopSelectorTypeDef](./type_defs.md#streamprocessingstopselectortypedef) 
+3. See [:material-code-braces: StartStreamProcessorResponseTypeDef](./type_defs.md#startstreamprocessorresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1985,6 +2153,42 @@ parent.update_dataset_entries(**kwargs)
 
 1. See [:material-code-braces: UpdateDatasetEntriesRequestRequestTypeDef](./type_defs.md#updatedatasetentriesrequestrequesttypedef) 
 
+### update\_stream\_processor
+
+Allows you to update a stream processor.
+
+Type annotations and code completion for `#!python session.client("rekognition").update_stream_processor` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.update_stream_processor)
+
+```python title="Method definition"
+await def update_stream_processor(
+    self,
+    *,
+    Name: str,
+    SettingsForUpdate: StreamProcessorSettingsForUpdateTypeDef = ...,  # (1)
+    RegionsOfInterestForUpdate: Sequence[RegionOfInterestTypeDef] = ...,  # (2)
+    DataSharingPreferenceForUpdate: StreamProcessorDataSharingPreferenceTypeDef = ...,  # (3)
+    ParametersToDelete: Sequence[StreamProcessorParameterToDeleteType] = ...,  # (4)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: StreamProcessorSettingsForUpdateTypeDef](./type_defs.md#streamprocessorsettingsforupdatetypedef) 
+2. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
+3. See [:material-code-braces: StreamProcessorDataSharingPreferenceTypeDef](./type_defs.md#streamprocessordatasharingpreferencetypedef) 
+4. See [:material-code-brackets: StreamProcessorParameterToDeleteType](./literals.md#streamprocessorparametertodeletetype) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdateStreamProcessorRequestRequestTypeDef = {  # (1)
+    "Name": ...,
+}
+
+parent.update_stream_processor(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateStreamProcessorRequestRequestTypeDef](./type_defs.md#updatestreamprocessorrequestrequesttypedef) 
+
 ### \_\_aenter\_\_
 
 
@@ -2030,6 +2234,7 @@ Type annotations and code completion for `#!python session.client("rekognition")
 - `client.get_paginator("list_dataset_entries")` -> [ListDatasetEntriesPaginator](./paginators.md#listdatasetentriespaginator)
 - `client.get_paginator("list_dataset_labels")` -> [ListDatasetLabelsPaginator](./paginators.md#listdatasetlabelspaginator)
 - `client.get_paginator("list_faces")` -> [ListFacesPaginator](./paginators.md#listfacespaginator)
+- `client.get_paginator("list_project_policies")` -> [ListProjectPoliciesPaginator](./paginators.md#listprojectpoliciespaginator)
 - `client.get_paginator("list_stream_processors")` -> [ListStreamProcessorsPaginator](./paginators.md#liststreamprocessorspaginator)
 
 

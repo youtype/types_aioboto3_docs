@@ -191,6 +191,102 @@ parent.batch_disassociate_project_assets(**kwargs)
 
 1. See [:material-code-braces: BatchDisassociateProjectAssetsRequestRequestTypeDef](./type_defs.md#batchdisassociateprojectassetsrequestrequesttypedef) 
 
+### batch\_get\_asset\_property\_aggregates
+
+Gets aggregated values (for example, average, minimum, and maximum) for one or
+more asset properties.
+
+Type annotations and code completion for `#!python session.client("iotsitewise").batch_get_asset_property_aggregates` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.batch_get_asset_property_aggregates)
+
+```python title="Method definition"
+await def batch_get_asset_property_aggregates(
+    self,
+    *,
+    entries: Sequence[BatchGetAssetPropertyAggregatesEntryTypeDef],  # (1)
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> BatchGetAssetPropertyAggregatesResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyAggregatesEntryTypeDef](./type_defs.md#batchgetassetpropertyaggregatesentrytypedef) 
+2. See [:material-code-braces: BatchGetAssetPropertyAggregatesResponseTypeDef](./type_defs.md#batchgetassetpropertyaggregatesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: BatchGetAssetPropertyAggregatesRequestRequestTypeDef = {  # (1)
+    "entries": ...,
+}
+
+parent.batch_get_asset_property_aggregates(**kwargs)
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyAggregatesRequestRequestTypeDef](./type_defs.md#batchgetassetpropertyaggregatesrequestrequesttypedef) 
+
+### batch\_get\_asset\_property\_value
+
+Gets the current value for one or more asset properties.
+
+Type annotations and code completion for `#!python session.client("iotsitewise").batch_get_asset_property_value` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.batch_get_asset_property_value)
+
+```python title="Method definition"
+await def batch_get_asset_property_value(
+    self,
+    *,
+    entries: Sequence[BatchGetAssetPropertyValueEntryTypeDef],  # (1)
+    nextToken: str = ...,
+) -> BatchGetAssetPropertyValueResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyValueEntryTypeDef](./type_defs.md#batchgetassetpropertyvalueentrytypedef) 
+2. See [:material-code-braces: BatchGetAssetPropertyValueResponseTypeDef](./type_defs.md#batchgetassetpropertyvalueresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: BatchGetAssetPropertyValueRequestRequestTypeDef = {  # (1)
+    "entries": ...,
+}
+
+parent.batch_get_asset_property_value(**kwargs)
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyValueRequestRequestTypeDef](./type_defs.md#batchgetassetpropertyvaluerequestrequesttypedef) 
+
+### batch\_get\_asset\_property\_value\_history
+
+Gets the historical values for one or more asset properties.
+
+Type annotations and code completion for `#!python session.client("iotsitewise").batch_get_asset_property_value_history` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.batch_get_asset_property_value_history)
+
+```python title="Method definition"
+await def batch_get_asset_property_value_history(
+    self,
+    *,
+    entries: Sequence[BatchGetAssetPropertyValueHistoryEntryTypeDef],  # (1)
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> BatchGetAssetPropertyValueHistoryResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyValueHistoryEntryTypeDef](./type_defs.md#batchgetassetpropertyvaluehistoryentrytypedef) 
+2. See [:material-code-braces: BatchGetAssetPropertyValueHistoryResponseTypeDef](./type_defs.md#batchgetassetpropertyvaluehistoryresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: BatchGetAssetPropertyValueHistoryRequestRequestTypeDef = {  # (1)
+    "entries": ...,
+}
+
+parent.batch_get_asset_property_value_history(**kwargs)
+```
+
+1. See [:material-code-braces: BatchGetAssetPropertyValueHistoryRequestRequestTypeDef](./type_defs.md#batchgetassetpropertyvaluehistoryrequestrequesttypedef) 
+
 ### batch\_put\_asset\_property\_value
 
 Sends a list of asset property values to IoT SiteWise.
@@ -233,6 +329,21 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("iotsitewise").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
     ...
 ```
 
@@ -292,6 +403,7 @@ await def create_asset(
     assetModelId: str,
     clientToken: str = ...,
     tags: Mapping[str, str] = ...,
+    assetDescription: str = ...,
 ) -> CreateAssetResponseTypeDef:  # (1)
     ...
 ```
@@ -347,6 +459,46 @@ parent.create_asset_model(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateAssetModelRequestRequestTypeDef](./type_defs.md#createassetmodelrequestrequesttypedef) 
+
+### create\_bulk\_import\_job
+
+.
+
+Type annotations and code completion for `#!python session.client("iotsitewise").create_bulk_import_job` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.create_bulk_import_job)
+
+```python title="Method definition"
+await def create_bulk_import_job(
+    self,
+    *,
+    jobName: str,
+    jobRoleArn: str,
+    files: Sequence[FileTypeDef],  # (1)
+    errorReportLocation: ErrorReportLocationTypeDef,  # (2)
+    jobConfiguration: JobConfigurationTypeDef,  # (3)
+) -> CreateBulkImportJobResponseTypeDef:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: FileTypeDef](./type_defs.md#filetypedef) 
+2. See [:material-code-braces: ErrorReportLocationTypeDef](./type_defs.md#errorreportlocationtypedef) 
+3. See [:material-code-braces: JobConfigurationTypeDef](./type_defs.md#jobconfigurationtypedef) 
+4. See [:material-code-braces: CreateBulkImportJobResponseTypeDef](./type_defs.md#createbulkimportjobresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateBulkImportJobRequestRequestTypeDef = {  # (1)
+    "jobName": ...,
+    "jobRoleArn": ...,
+    "files": ...,
+    "errorReportLocation": ...,
+    "jobConfiguration": ...,
+}
+
+parent.create_bulk_import_job(**kwargs)
+```
+
+1. See [:material-code-braces: CreateBulkImportJobRequestRequestTypeDef](./type_defs.md#createbulkimportjobrequestrequesttypedef) 
 
 ### create\_dashboard
 
@@ -852,6 +1004,35 @@ parent.describe_asset_property(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeAssetPropertyRequestRequestTypeDef](./type_defs.md#describeassetpropertyrequestrequesttypedef) 
+
+### describe\_bulk\_import\_job
+
+.
+
+Type annotations and code completion for `#!python session.client("iotsitewise").describe_bulk_import_job` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_bulk_import_job)
+
+```python title="Method definition"
+await def describe_bulk_import_job(
+    self,
+    *,
+    jobId: str,
+) -> DescribeBulkImportJobResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeBulkImportJobResponseTypeDef](./type_defs.md#describebulkimportjobresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeBulkImportJobRequestRequestTypeDef = {  # (1)
+    "jobId": ...,
+}
+
+parent.describe_bulk_import_job(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeBulkImportJobRequestRequestTypeDef](./type_defs.md#describebulkimportjobrequestrequesttypedef) 
 
 ### describe\_dashboard
 
@@ -1500,6 +1681,38 @@ parent.list_associated_assets(**kwargs)
 
 1. See [:material-code-braces: ListAssociatedAssetsRequestRequestTypeDef](./type_defs.md#listassociatedassetsrequestrequesttypedef) 
 
+### list\_bulk\_import\_jobs
+
+.
+
+Type annotations and code completion for `#!python session.client("iotsitewise").list_bulk_import_jobs` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_bulk_import_jobs)
+
+```python title="Method definition"
+await def list_bulk_import_jobs(
+    self,
+    *,
+    nextToken: str = ...,
+    maxResults: int = ...,
+    filter: ListBulkImportJobsFilterType = ...,  # (1)
+) -> ListBulkImportJobsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: ListBulkImportJobsFilterType](./literals.md#listbulkimportjobsfiltertype) 
+2. See [:material-code-braces: ListBulkImportJobsResponseTypeDef](./type_defs.md#listbulkimportjobsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListBulkImportJobsRequestRequestTypeDef = {  # (1)
+    "nextToken": ...,
+}
+
+parent.list_bulk_import_jobs(**kwargs)
+```
+
+1. See [:material-code-braces: ListBulkImportJobsRequestRequestTypeDef](./type_defs.md#listbulkimportjobsrequestrequesttypedef) 
+
 ### list\_dashboards
 
 Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.
@@ -1926,6 +2139,7 @@ await def update_asset(
     assetId: str,
     assetName: str,
     clientToken: str = ...,
+    assetDescription: str = ...,
 ) -> UpdateAssetResponseTypeDef:  # (1)
     ...
 ```
@@ -2238,6 +2452,7 @@ Type annotations and code completion for `#!python session.client("iotsitewise")
 - `client.get_paginator("list_asset_relationships")` -> [ListAssetRelationshipsPaginator](./paginators.md#listassetrelationshipspaginator)
 - `client.get_paginator("list_assets")` -> [ListAssetsPaginator](./paginators.md#listassetspaginator)
 - `client.get_paginator("list_associated_assets")` -> [ListAssociatedAssetsPaginator](./paginators.md#listassociatedassetspaginator)
+- `client.get_paginator("list_bulk_import_jobs")` -> [ListBulkImportJobsPaginator](./paginators.md#listbulkimportjobspaginator)
 - `client.get_paginator("list_dashboards")` -> [ListDashboardsPaginator](./paginators.md#listdashboardspaginator)
 - `client.get_paginator("list_gateways")` -> [ListGatewaysPaginator](./paginators.md#listgatewayspaginator)
 - `client.get_paginator("list_portals")` -> [ListPortalsPaginator](./paginators.md#listportalspaginator)

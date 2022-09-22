@@ -101,6 +101,50 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("devops-guru").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
+### delete\_insight
+
+Deletes the insight along with the associated anomalies, events and
+recommendations.
+
+Type annotations and code completion for `#!python session.client("devops-guru").delete_insight` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.delete_insight)
+
+```python title="Method definition"
+await def delete_insight(
+    self,
+    *,
+    Id: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteInsightRequestRequestTypeDef = {  # (1)
+    "Id": ...,
+}
+
+parent.delete_insight(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteInsightRequestRequestTypeDef](./type_defs.md#deleteinsightrequestrequesttypedef) 
+
 ### describe\_account\_health
 
 Returns the number of open reactive insights, the number of open proactive
@@ -183,8 +227,8 @@ parent.describe_anomaly(**kwargs)
 
 ### describe\_event\_sources\_config
 
-This operation lists details about a DevOps Guru event source that is shared
-with your account.
+Returns the integration status of services that are integrated with DevOps Guru
+as Consumer via EventBridge.
 
 Type annotations and code completion for `#!python session.client("devops-guru").describe_event_sources_config` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_event_sources_config)
@@ -521,6 +565,37 @@ parent.list_anomalies_for_insight(**kwargs)
 
 1. See [:material-code-braces: ListAnomaliesForInsightRequestRequestTypeDef](./type_defs.md#listanomaliesforinsightrequestrequesttypedef) 
 
+### list\_anomalous\_log\_groups
+
+Returns the list of log groups that contain log anomalies.
+
+Type annotations and code completion for `#!python session.client("devops-guru").list_anomalous_log_groups` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.list_anomalous_log_groups)
+
+```python title="Method definition"
+await def list_anomalous_log_groups(
+    self,
+    *,
+    InsightId: str,
+    MaxResults: int = ...,
+    NextToken: str = ...,
+) -> ListAnomalousLogGroupsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListAnomalousLogGroupsResponseTypeDef](./type_defs.md#listanomalousloggroupsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAnomalousLogGroupsRequestRequestTypeDef = {  # (1)
+    "InsightId": ...,
+}
+
+parent.list_anomalous_log_groups(**kwargs)
+```
+
+1. See [:material-code-braces: ListAnomalousLogGroupsRequestRequestTypeDef](./type_defs.md#listanomalousloggroupsrequestrequesttypedef) 
+
 ### list\_events
 
 Returns a list of the events emitted by the resources that are evaluated by
@@ -586,6 +661,39 @@ parent.list_insights(**kwargs)
 ```
 
 1. See [:material-code-braces: ListInsightsRequestRequestTypeDef](./type_defs.md#listinsightsrequestrequesttypedef) 
+
+### list\_monitored\_resources
+
+Returns the list of all log groups that are being monitored and tagged by DevOps
+Guru.
+
+Type annotations and code completion for `#!python session.client("devops-guru").list_monitored_resources` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.list_monitored_resources)
+
+```python title="Method definition"
+await def list_monitored_resources(
+    self,
+    *,
+    Filters: ListMonitoredResourcesFiltersTypeDef,  # (1)
+    MaxResults: int = ...,
+    NextToken: str = ...,
+) -> ListMonitoredResourcesResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: ListMonitoredResourcesFiltersTypeDef](./type_defs.md#listmonitoredresourcesfilterstypedef) 
+2. See [:material-code-braces: ListMonitoredResourcesResponseTypeDef](./type_defs.md#listmonitoredresourcesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListMonitoredResourcesRequestRequestTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.list_monitored_resources(**kwargs)
+```
+
+1. See [:material-code-braces: ListMonitoredResourcesRequestRequestTypeDef](./type_defs.md#listmonitoredresourcesrequestrequesttypedef) 
 
 ### list\_notification\_channels
 
@@ -849,7 +957,8 @@ parent.start_cost_estimation(**kwargs)
 
 ### update\_event\_sources\_config
 
-Updates the event source configuration.
+Enables or disables integration with a service that can be integrated with
+DevOps Guru.
 
 Type annotations and code completion for `#!python session.client("devops-guru").update_event_sources_config` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.update_event_sources_config)
@@ -982,8 +1091,10 @@ Type annotations and code completion for `#!python session.client("devops-guru")
 - `client.get_paginator("get_cost_estimation")` -> [GetCostEstimationPaginator](./paginators.md#getcostestimationpaginator)
 - `client.get_paginator("get_resource_collection")` -> [GetResourceCollectionPaginator](./paginators.md#getresourcecollectionpaginator)
 - `client.get_paginator("list_anomalies_for_insight")` -> [ListAnomaliesForInsightPaginator](./paginators.md#listanomaliesforinsightpaginator)
+- `client.get_paginator("list_anomalous_log_groups")` -> [ListAnomalousLogGroupsPaginator](./paginators.md#listanomalousloggroupspaginator)
 - `client.get_paginator("list_events")` -> [ListEventsPaginator](./paginators.md#listeventspaginator)
 - `client.get_paginator("list_insights")` -> [ListInsightsPaginator](./paginators.md#listinsightspaginator)
+- `client.get_paginator("list_monitored_resources")` -> [ListMonitoredResourcesPaginator](./paginators.md#listmonitoredresourcespaginator)
 - `client.get_paginator("list_notification_channels")` -> [ListNotificationChannelsPaginator](./paginators.md#listnotificationchannelspaginator)
 - `client.get_paginator("list_organization_insights")` -> [ListOrganizationInsightsPaginator](./paginators.md#listorganizationinsightspaginator)
 - `client.get_paginator("list_recommendations")` -> [ListRecommendationsPaginator](./paginators.md#listrecommendationspaginator)

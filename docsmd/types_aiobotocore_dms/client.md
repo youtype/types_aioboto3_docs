@@ -34,8 +34,10 @@ async with session.client("dms") as client:
     except (
             client.AccessDeniedFault,
         client.ClientError,
+        client.CollectorNotFoundFault,
         client.InsufficientResourceCapacityFault,
         client.InvalidCertificateFault,
+        client.InvalidOperationFault,
         client.InvalidResourceStateFault,
         client.InvalidSubnet,
         client.KMSAccessDeniedFault,
@@ -181,6 +183,21 @@ parent.cancel_replication_task_assessment_run(**kwargs)
 
 1. See [:material-code-braces: CancelReplicationTaskAssessmentRunMessageRequestTypeDef](./type_defs.md#cancelreplicationtaskassessmentrunmessagerequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("dms").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_endpoint
 
 .
@@ -302,6 +319,40 @@ parent.create_event_subscription(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateEventSubscriptionMessageRequestTypeDef](./type_defs.md#createeventsubscriptionmessagerequesttypedef) 
+
+### create\_fleet\_advisor\_collector
+
+Creates a Fleet Advisor collector using the specified parameters.
+
+Type annotations and code completion for `#!python session.client("dms").create_fleet_advisor_collector` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.create_fleet_advisor_collector)
+
+```python title="Method definition"
+await def create_fleet_advisor_collector(
+    self,
+    *,
+    CollectorName: str,
+    ServiceAccessRoleArn: str,
+    S3BucketName: str,
+    Description: str = ...,
+) -> CreateFleetAdvisorCollectorResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: CreateFleetAdvisorCollectorResponseTypeDef](./type_defs.md#createfleetadvisorcollectorresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateFleetAdvisorCollectorRequestRequestTypeDef = {  # (1)
+    "CollectorName": ...,
+    "ServiceAccessRoleArn": ...,
+    "S3BucketName": ...,
+}
+
+parent.create_fleet_advisor_collector(**kwargs)
+```
+
+1. See [:material-code-braces: CreateFleetAdvisorCollectorRequestRequestTypeDef](./type_defs.md#createfleetadvisorcollectorrequestrequesttypedef) 
 
 ### create\_replication\_instance
 
@@ -548,6 +599,64 @@ parent.delete_event_subscription(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteEventSubscriptionMessageRequestTypeDef](./type_defs.md#deleteeventsubscriptionmessagerequesttypedef) 
+
+### delete\_fleet\_advisor\_collector
+
+Deletes the specified Fleet Advisor collector.
+
+Type annotations and code completion for `#!python session.client("dms").delete_fleet_advisor_collector` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_fleet_advisor_collector)
+
+```python title="Method definition"
+await def delete_fleet_advisor_collector(
+    self,
+    *,
+    CollectorReferencedId: str,
+) -> EmptyResponseMetadataTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteCollectorRequestRequestTypeDef = {  # (1)
+    "CollectorReferencedId": ...,
+}
+
+parent.delete_fleet_advisor_collector(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteCollectorRequestRequestTypeDef](./type_defs.md#deletecollectorrequestrequesttypedef) 
+
+### delete\_fleet\_advisor\_databases
+
+Deletes the specified Fleet Advisor collector databases.
+
+Type annotations and code completion for `#!python session.client("dms").delete_fleet_advisor_databases` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_fleet_advisor_databases)
+
+```python title="Method definition"
+await def delete_fleet_advisor_databases(
+    self,
+    *,
+    DatabaseIds: Sequence[str],
+) -> DeleteFleetAdvisorDatabasesResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteFleetAdvisorDatabasesResponseTypeDef](./type_defs.md#deletefleetadvisordatabasesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteFleetAdvisorDatabasesRequestRequestTypeDef = {  # (1)
+    "DatabaseIds": ...,
+}
+
+parent.delete_fleet_advisor_databases(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteFleetAdvisorDatabasesRequestRequestTypeDef](./type_defs.md#deletefleetadvisordatabasesrequestrequesttypedef) 
 
 ### delete\_replication\_instance
 
@@ -980,6 +1089,166 @@ parent.describe_events(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeEventsMessageRequestTypeDef](./type_defs.md#describeeventsmessagerequesttypedef) 
+
+### describe\_fleet\_advisor\_collectors
+
+Returns a list of the Fleet Advisor collectors in your account.
+
+Type annotations and code completion for `#!python session.client("dms").describe_fleet_advisor_collectors` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_fleet_advisor_collectors)
+
+```python title="Method definition"
+await def describe_fleet_advisor_collectors(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    MaxRecords: int = ...,
+    NextToken: str = ...,
+) -> DescribeFleetAdvisorCollectorsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: DescribeFleetAdvisorCollectorsResponseTypeDef](./type_defs.md#describefleetadvisorcollectorsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeFleetAdvisorCollectorsRequestRequestTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.describe_fleet_advisor_collectors(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeFleetAdvisorCollectorsRequestRequestTypeDef](./type_defs.md#describefleetadvisorcollectorsrequestrequesttypedef) 
+
+### describe\_fleet\_advisor\_databases
+
+Returns a list of Fleet Advisor databases in your account.
+
+Type annotations and code completion for `#!python session.client("dms").describe_fleet_advisor_databases` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_fleet_advisor_databases)
+
+```python title="Method definition"
+await def describe_fleet_advisor_databases(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    MaxRecords: int = ...,
+    NextToken: str = ...,
+) -> DescribeFleetAdvisorDatabasesResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: DescribeFleetAdvisorDatabasesResponseTypeDef](./type_defs.md#describefleetadvisordatabasesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeFleetAdvisorDatabasesRequestRequestTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.describe_fleet_advisor_databases(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeFleetAdvisorDatabasesRequestRequestTypeDef](./type_defs.md#describefleetadvisordatabasesrequestrequesttypedef) 
+
+### describe\_fleet\_advisor\_lsa\_analysis
+
+Provides descriptions of large-scale assessment (LSA) analyses produced by your
+Fleet Advisor collectors.
+
+Type annotations and code completion for `#!python session.client("dms").describe_fleet_advisor_lsa_analysis` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_fleet_advisor_lsa_analysis)
+
+```python title="Method definition"
+await def describe_fleet_advisor_lsa_analysis(
+    self,
+    *,
+    MaxRecords: int = ...,
+    NextToken: str = ...,
+) -> DescribeFleetAdvisorLsaAnalysisResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeFleetAdvisorLsaAnalysisResponseTypeDef](./type_defs.md#describefleetadvisorlsaanalysisresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeFleetAdvisorLsaAnalysisRequestRequestTypeDef = {  # (1)
+    "MaxRecords": ...,
+}
+
+parent.describe_fleet_advisor_lsa_analysis(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeFleetAdvisorLsaAnalysisRequestRequestTypeDef](./type_defs.md#describefleetadvisorlsaanalysisrequestrequesttypedef) 
+
+### describe\_fleet\_advisor\_schema\_object\_summary
+
+Provides descriptions of the schemas discovered by your Fleet Advisor
+collectors.
+
+Type annotations and code completion for `#!python session.client("dms").describe_fleet_advisor_schema_object_summary` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_fleet_advisor_schema_object_summary)
+
+```python title="Method definition"
+await def describe_fleet_advisor_schema_object_summary(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    MaxRecords: int = ...,
+    NextToken: str = ...,
+) -> DescribeFleetAdvisorSchemaObjectSummaryResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: DescribeFleetAdvisorSchemaObjectSummaryResponseTypeDef](./type_defs.md#describefleetadvisorschemaobjectsummaryresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeFleetAdvisorSchemaObjectSummaryRequestRequestTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.describe_fleet_advisor_schema_object_summary(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeFleetAdvisorSchemaObjectSummaryRequestRequestTypeDef](./type_defs.md#describefleetadvisorschemaobjectsummaryrequestrequesttypedef) 
+
+### describe\_fleet\_advisor\_schemas
+
+Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+
+Type annotations and code completion for `#!python session.client("dms").describe_fleet_advisor_schemas` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_fleet_advisor_schemas)
+
+```python title="Method definition"
+await def describe_fleet_advisor_schemas(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    MaxRecords: int = ...,
+    NextToken: str = ...,
+) -> DescribeFleetAdvisorSchemasResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: DescribeFleetAdvisorSchemasResponseTypeDef](./type_defs.md#describefleetadvisorschemasresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeFleetAdvisorSchemasRequestRequestTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.describe_fleet_advisor_schemas(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeFleetAdvisorSchemasRequestRequestTypeDef](./type_defs.md#describefleetadvisorschemasrequestrequesttypedef) 
 
 ### describe\_orderable\_replication\_instances
 
@@ -1828,6 +2097,23 @@ parent.remove_tags_from_resource(**kwargs)
 
 1. See [:material-code-braces: RemoveTagsFromResourceMessageRequestTypeDef](./type_defs.md#removetagsfromresourcemessagerequesttypedef) 
 
+### run\_fleet\_advisor\_lsa\_analysis
+
+Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in
+your account.
+
+Type annotations and code completion for `#!python session.client("dms").run_fleet_advisor_lsa_analysis` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.run_fleet_advisor_lsa_analysis)
+
+```python title="Method definition"
+await def run_fleet_advisor_lsa_analysis(
+    self,
+) -> RunFleetAdvisorLsaAnalysisResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: RunFleetAdvisorLsaAnalysisResponseTypeDef](./type_defs.md#runfleetadvisorlsaanalysisresponsetypedef) 
+
 ### start\_replication\_task
 
 .
@@ -1992,6 +2278,36 @@ parent.test_connection(**kwargs)
 ```
 
 1. See [:material-code-braces: TestConnectionMessageRequestTypeDef](./type_defs.md#testconnectionmessagerequesttypedef) 
+
+### update\_subscriptions\_to\_event\_bridge
+
+Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts
+them to corresponding Amazon EventBridge rules.
+
+Type annotations and code completion for `#!python session.client("dms").update_subscriptions_to_event_bridge` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.update_subscriptions_to_event_bridge)
+
+```python title="Method definition"
+await def update_subscriptions_to_event_bridge(
+    self,
+    *,
+    ForceMove: bool = ...,
+) -> UpdateSubscriptionsToEventBridgeResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: UpdateSubscriptionsToEventBridgeResponseTypeDef](./type_defs.md#updatesubscriptionstoeventbridgeresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdateSubscriptionsToEventBridgeMessageRequestTypeDef = {  # (1)
+    "ForceMove": ...,
+}
+
+parent.update_subscriptions_to_event_bridge(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateSubscriptionsToEventBridgeMessageRequestTypeDef](./type_defs.md#updatesubscriptionstoeventbridgemessagerequesttypedef) 
 
 ### \_\_aenter\_\_
 

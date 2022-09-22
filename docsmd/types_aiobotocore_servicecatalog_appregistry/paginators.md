@@ -213,3 +213,55 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListAttributeGroupsRequestListAttributeGroupsPaginateTypeDef](./type_defs.md#listattributegroupsrequestlistattributegroupspaginatetypedef) 
+## ListAttributeGroupsForApplicationPaginator
+
+Type annotations and code completion for `#!python session.client("servicecatalog-appregistry").get_paginator("list_attribute_groups_for_application")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Paginator.ListAttributeGroupsForApplication)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_servicecatalog_appregistry.paginator import ListAttributeGroupsForApplicationPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("servicecatalog-appregistry") as client:  # (1)
+    paginator: ListAttributeGroupsForApplicationPaginator = client.get_paginator("list_attribute_groups_for_application")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAttributeGroupsForApplicationResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [AppRegistryClient](./client.md)
+2. paginator: [ListAttributeGroupsForApplicationPaginator](./paginators.md#listattributegroupsforapplicationpaginator)
+3. item: [:material-code-braces: ListAttributeGroupsForApplicationResponseTypeDef](./type_defs.md#listattributegroupsforapplicationresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListAttributeGroupsForApplicationPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    application: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListAttributeGroupsForApplicationResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListAttributeGroupsForApplicationResponseTypeDef](./type_defs.md#listattributegroupsforapplicationresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAttributeGroupsForApplicationRequestListAttributeGroupsForApplicationPaginateTypeDef = {  # (1)
+    "application": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListAttributeGroupsForApplicationRequestListAttributeGroupsForApplicationPaginateTypeDef](./type_defs.md#listattributegroupsforapplicationrequestlistattributegroupsforapplicationpaginatetypedef) 

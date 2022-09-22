@@ -70,12 +70,13 @@ async with session.client("iotsecuretunneling") as client:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_iotsecuretunneling.literals import ConnectionStatusType
+from types_aiobotocore_iotsecuretunneling.literals import ClientModeType
 
-def get_value() -> ConnectionStatusType:
-    return "CONNECTED"
+def get_value() -> ClientModeType:
+    return "ALL"
 ```
 
+- [ClientModeType](./literals.md#clientmodetype)
 - [ConnectionStatusType](./literals.md#connectionstatustype)
 - [TunnelStatusType](./literals.md#tunnelstatustype)
 - [IoTSecureTunnelingServiceName](./literals.md#iotsecuretunnelingservicename)
@@ -111,6 +112,8 @@ def get_value() -> CloseTunnelRequestRequestTypeDef:
 - [TimeoutConfigTypeDef](./type_defs.md#timeoutconfigtypedef)
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [OpenTunnelResponseTypeDef](./type_defs.md#opentunnelresponsetypedef)
+- [RotateTunnelAccessTokenResponseTypeDef](./type_defs.md#rotatetunnelaccesstokenresponsetypedef)
+- [RotateTunnelAccessTokenRequestRequestTypeDef](./type_defs.md#rotatetunnelaccesstokenrequestrequesttypedef)
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
 - [ListTunnelsResponseTypeDef](./type_defs.md#listtunnelsresponsetypedef)

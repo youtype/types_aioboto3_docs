@@ -98,6 +98,21 @@ parent.cancel_order(**kwargs)
 
 1. See [:material-code-braces: CancelOrderInputRequestTypeDef](./type_defs.md#cancelorderinputrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("outposts").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_order
 
 Creates an order for an Outpost.
@@ -314,6 +329,35 @@ parent.get_catalog_item(**kwargs)
 
 1. See [:material-code-braces: GetCatalogItemInputRequestTypeDef](./type_defs.md#getcatalogiteminputrequesttypedef) 
 
+### get\_connection
+
+.
+
+Type annotations and code completion for `#!python session.client("outposts").get_connection` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.get_connection)
+
+```python title="Method definition"
+await def get_connection(
+    self,
+    *,
+    ConnectionId: str,
+) -> GetConnectionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetConnectionResponseTypeDef](./type_defs.md#getconnectionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetConnectionRequestRequestTypeDef = {  # (1)
+    "ConnectionId": ...,
+}
+
+parent.get_connection(**kwargs)
+```
+
+1. See [:material-code-braces: GetConnectionRequestRequestTypeDef](./type_defs.md#getconnectionrequestrequesttypedef) 
+
 ### get\_order
 
 Gets an order.
@@ -374,7 +418,7 @@ parent.get_outpost(**kwargs)
 
 ### get\_outpost\_instance\_types
 
-Lists the instance types for the specified Outpost.
+Gets the instance types for the specified Outpost.
 
 Type annotations and code completion for `#!python session.client("outposts").get_outpost_instance_types` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.get_outpost_instance_types)
@@ -464,9 +508,41 @@ parent.get_site_address(**kwargs)
 
 1. See [:material-code-braces: GetSiteAddressInputRequestTypeDef](./type_defs.md#getsiteaddressinputrequesttypedef) 
 
+### list\_assets
+
+Lists the hardware assets in an Outpost.
+
+Type annotations and code completion for `#!python session.client("outposts").list_assets` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_assets)
+
+```python title="Method definition"
+await def list_assets(
+    self,
+    *,
+    OutpostIdentifier: str,
+    HostIdFilter: Sequence[str] = ...,
+    MaxResults: int = ...,
+    NextToken: str = ...,
+) -> ListAssetsOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListAssetsOutputTypeDef](./type_defs.md#listassetsoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAssetsInputRequestTypeDef = {  # (1)
+    "OutpostIdentifier": ...,
+}
+
+parent.list_assets(**kwargs)
+```
+
+1. See [:material-code-braces: ListAssetsInputRequestTypeDef](./type_defs.md#listassetsinputrequesttypedef) 
+
 ### list\_catalog\_items
 
-Use to create a list of every item in the catalog.
+Lists the items in the catalog.
 
 Type annotations and code completion for `#!python session.client("outposts").list_catalog_items` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_catalog_items)
@@ -501,7 +577,7 @@ parent.list_catalog_items(**kwargs)
 
 ### list\_orders
 
-Create a list of the Outpost orders for your Amazon Web Services account.
+Lists the Outpost orders for your Amazon Web Services account.
 
 Type annotations and code completion for `#!python session.client("outposts").list_orders` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_orders)
@@ -532,7 +608,7 @@ parent.list_orders(**kwargs)
 
 ### list\_outposts
 
-Create a list of the Outposts for your Amazon Web Services account.
+Lists the Outposts for your Amazon Web Services account.
 
 Type annotations and code completion for `#!python session.client("outposts").list_outposts` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_outposts)
@@ -565,7 +641,7 @@ parent.list_outposts(**kwargs)
 
 ### list\_sites
 
-Create a list of the Outpost sites for your Amazon Web Services account.
+Lists the Outpost sites for your Amazon Web Services account.
 
 Type annotations and code completion for `#!python session.client("outposts").list_sites` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_sites)
@@ -624,6 +700,41 @@ parent.list_tags_for_resource(**kwargs)
 ```
 
 1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
+
+### start\_connection
+
+.
+
+Type annotations and code completion for `#!python session.client("outposts").start_connection` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.start_connection)
+
+```python title="Method definition"
+await def start_connection(
+    self,
+    *,
+    DeviceSerialNumber: str,
+    AssetId: str,
+    ClientPublicKey: str,
+    NetworkInterfaceDeviceIndex: int,
+) -> StartConnectionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: StartConnectionResponseTypeDef](./type_defs.md#startconnectionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: StartConnectionRequestRequestTypeDef = {  # (1)
+    "DeviceSerialNumber": ...,
+    "AssetId": ...,
+    "ClientPublicKey": ...,
+    "NetworkInterfaceDeviceIndex": ...,
+}
+
+parent.start_connection(**kwargs)
+```
+
+1. See [:material-code-braces: StartConnectionRequestRequestTypeDef](./type_defs.md#startconnectionrequestrequesttypedef) 
 
 ### tag\_resource
 

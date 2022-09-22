@@ -69,6 +69,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("account").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### delete\_alternate\_contact
 
 Deletes the specified alternate contact from an Amazon Web Services account.
@@ -151,6 +166,35 @@ parent.get_alternate_contact(**kwargs)
 
 1. See [:material-code-braces: GetAlternateContactRequestRequestTypeDef](./type_defs.md#getalternatecontactrequestrequesttypedef) 
 
+### get\_contact\_information
+
+Retrieves the primary contact information of an Amazon Web Services account.
+
+Type annotations and code completion for `#!python session.client("account").get_contact_information` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.get_contact_information)
+
+```python title="Method definition"
+await def get_contact_information(
+    self,
+    *,
+    AccountId: str = ...,
+) -> GetContactInformationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetContactInformationResponseTypeDef](./type_defs.md#getcontactinformationresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetContactInformationRequestRequestTypeDef = {  # (1)
+    "AccountId": ...,
+}
+
+parent.get_contact_information(**kwargs)
+```
+
+1. See [:material-code-braces: GetContactInformationRequestRequestTypeDef](./type_defs.md#getcontactinformationrequestrequesttypedef) 
+
 ### put\_alternate\_contact
 
 Modifies the specified alternate contact attached to an Amazon Web Services
@@ -190,6 +234,37 @@ parent.put_alternate_contact(**kwargs)
 ```
 
 1. See [:material-code-braces: PutAlternateContactRequestRequestTypeDef](./type_defs.md#putalternatecontactrequestrequesttypedef) 
+
+### put\_contact\_information
+
+Updates the primary contact information of an Amazon Web Services account.
+
+Type annotations and code completion for `#!python session.client("account").put_contact_information` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.put_contact_information)
+
+```python title="Method definition"
+await def put_contact_information(
+    self,
+    *,
+    ContactInformation: ContactInformationTypeDef,  # (1)
+    AccountId: str = ...,
+) -> EmptyResponseMetadataTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: ContactInformationTypeDef](./type_defs.md#contactinformationtypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: PutContactInformationRequestRequestTypeDef = {  # (1)
+    "ContactInformation": ...,
+}
+
+parent.put_contact_information(**kwargs)
+```
+
+1. See [:material-code-braces: PutContactInformationRequestRequestTypeDef](./type_defs.md#putcontactinformationrequestrequesttypedef) 
 
 ### \_\_aenter\_\_
 

@@ -184,6 +184,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("ram").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_resource\_share
 
 Creates a resource share.
@@ -722,8 +737,8 @@ parent.list_resource_types(**kwargs)
 
 ### list\_resources
 
-Lists the resources that you added to a resource shares or the resources that
-are shared with you.
+Lists the resources that you added to a resource share or the resources that are
+shared with you.
 
 Type annotations and code completion for `#!python session.client("ram").list_resources` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_resources)

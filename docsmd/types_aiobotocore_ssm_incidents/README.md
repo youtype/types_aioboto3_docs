@@ -127,6 +127,7 @@ def get_value() -> GetResourcePoliciesPaginatorName:
 - [SortOrderType](./literals.md#sortordertype)
 - [SsmTargetAccountType](./literals.md#ssmtargetaccounttype)
 - [TimelineEventSortType](./literals.md#timelineeventsorttype)
+- [VariableTypeType](./literals.md#variabletypetype)
 - [WaitForReplicationSetActiveWaiterName](./literals.md#waitforreplicationsetactivewaitername)
 - [WaitForReplicationSetDeletedWaiterName](./literals.md#waitforreplicationsetdeletedwaitername)
 - [SSMIncidentsServiceName](./literals.md#ssmincidentsservicename)
@@ -144,16 +145,14 @@ def get_value() -> GetResourcePoliciesPaginatorName:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_ssm_incidents.type_defs import SsmAutomationTypeDef
+from types_aiobotocore_ssm_incidents.type_defs import AddRegionActionTypeDef
 
-def get_value() -> SsmAutomationTypeDef:
+def get_value() -> AddRegionActionTypeDef:
     return {
-        "documentName": ...,
-        "roleArn": ...,
+        "regionName": ...,
     }
 ```
 
-- [SsmAutomationTypeDef](./type_defs.md#ssmautomationtypedef)
 - [AddRegionActionTypeDef](./type_defs.md#addregionactiontypedef)
 - [AttributeValueListTypeDef](./type_defs.md#attributevaluelisttypedef)
 - [AutomationExecutionTypeDef](./type_defs.md#automationexecutiontypedef)
@@ -167,6 +166,7 @@ def get_value() -> SsmAutomationTypeDef:
 - [DeleteResourcePolicyInputRequestTypeDef](./type_defs.md#deleteresourcepolicyinputrequesttypedef)
 - [DeleteResponsePlanInputRequestTypeDef](./type_defs.md#deleteresponseplaninputrequesttypedef)
 - [DeleteTimelineEventInputRequestTypeDef](./type_defs.md#deletetimelineeventinputrequesttypedef)
+- [DynamicSsmParameterValueTypeDef](./type_defs.md#dynamicssmparametervaluetypedef)
 - [EventSummaryTypeDef](./type_defs.md#eventsummarytypedef)
 - [GetIncidentRecordInputRequestTypeDef](./type_defs.md#getincidentrecordinputrequesttypedef)
 - [GetReplicationSetInputRequestTypeDef](./type_defs.md#getreplicationsetinputrequesttypedef)
@@ -192,7 +192,6 @@ def get_value() -> SsmAutomationTypeDef:
 - [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
 - [UpdateDeletionProtectionInputRequestTypeDef](./type_defs.md#updatedeletionprotectioninputrequesttypedef)
 - [UpdateTimelineEventInputRequestTypeDef](./type_defs.md#updatetimelineeventinputrequesttypedef)
-- [ActionTypeDef](./type_defs.md#actiontypedef)
 - [ConditionTypeDef](./type_defs.md#conditiontypedef)
 - [CreateReplicationSetInputRequestTypeDef](./type_defs.md#createreplicationsetinputrequesttypedef)
 - [CreateReplicationSetOutputTypeDef](./type_defs.md#createreplicationsetoutputtypedef)
@@ -203,6 +202,7 @@ def get_value() -> SsmAutomationTypeDef:
 - [PutResourcePolicyOutputTypeDef](./type_defs.md#putresourcepolicyoutputtypedef)
 - [StartIncidentOutputTypeDef](./type_defs.md#startincidentoutputtypedef)
 - [UpdateReplicationSetActionTypeDef](./type_defs.md#updatereplicationsetactiontypedef)
+- [SsmAutomationTypeDef](./type_defs.md#ssmautomationtypedef)
 - [ListTimelineEventsOutputTypeDef](./type_defs.md#listtimelineeventsoutputtypedef)
 - [GetReplicationSetInputWaitForReplicationSetActiveWaitTypeDef](./type_defs.md#getreplicationsetinputwaitforreplicationsetactivewaittypedef)
 - [GetReplicationSetInputWaitForReplicationSetDeletedWaitTypeDef](./type_defs.md#getreplicationsetinputwaitforreplicationsetdeletedwaittypedef)
@@ -219,19 +219,20 @@ def get_value() -> SsmAutomationTypeDef:
 - [ItemIdentifierTypeDef](./type_defs.md#itemidentifiertypedef)
 - [ListResponsePlansOutputTypeDef](./type_defs.md#listresponseplansoutputtypedef)
 - [ReplicationSetTypeDef](./type_defs.md#replicationsettypedef)
-- [UpdateResponsePlanInputRequestTypeDef](./type_defs.md#updateresponseplaninputrequesttypedef)
 - [FilterTypeDef](./type_defs.md#filtertypedef)
 - [UpdateReplicationSetInputRequestTypeDef](./type_defs.md#updatereplicationsetinputrequesttypedef)
+- [ActionTypeDef](./type_defs.md#actiontypedef)
 - [ListIncidentRecordsOutputTypeDef](./type_defs.md#listincidentrecordsoutputtypedef)
 - [GetIncidentRecordOutputTypeDef](./type_defs.md#getincidentrecordoutputtypedef)
-- [CreateResponsePlanInputRequestTypeDef](./type_defs.md#createresponseplaninputrequesttypedef)
-- [GetResponsePlanOutputTypeDef](./type_defs.md#getresponseplanoutputtypedef)
 - [RelatedItemTypeDef](./type_defs.md#relateditemtypedef)
 - [GetReplicationSetOutputTypeDef](./type_defs.md#getreplicationsetoutputtypedef)
 - [ListIncidentRecordsInputListIncidentRecordsPaginateTypeDef](./type_defs.md#listincidentrecordsinputlistincidentrecordspaginatetypedef)
 - [ListIncidentRecordsInputRequestTypeDef](./type_defs.md#listincidentrecordsinputrequesttypedef)
 - [ListTimelineEventsInputListTimelineEventsPaginateTypeDef](./type_defs.md#listtimelineeventsinputlisttimelineeventspaginatetypedef)
 - [ListTimelineEventsInputRequestTypeDef](./type_defs.md#listtimelineeventsinputrequesttypedef)
+- [CreateResponsePlanInputRequestTypeDef](./type_defs.md#createresponseplaninputrequesttypedef)
+- [GetResponsePlanOutputTypeDef](./type_defs.md#getresponseplanoutputtypedef)
+- [UpdateResponsePlanInputRequestTypeDef](./type_defs.md#updateresponseplaninputrequesttypedef)
 - [ListRelatedItemsOutputTypeDef](./type_defs.md#listrelateditemsoutputtypedef)
 - [RelatedItemsUpdateTypeDef](./type_defs.md#relateditemsupdatetypedef)
 - [StartIncidentInputRequestTypeDef](./type_defs.md#startincidentinputrequesttypedef)

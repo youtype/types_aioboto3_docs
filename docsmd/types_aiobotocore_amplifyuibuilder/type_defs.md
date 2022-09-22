@@ -1032,6 +1032,7 @@ def get_value() -> ComponentEventTypeDef:
 ```python title="Definition"
 class ComponentEventTypeDef(TypedDict):
     action: NotRequired[str],
+    bindingEvent: NotRequired[str],
     parameters: NotRequired[ActionParametersTypeDef],  # (1)
 ```
 
@@ -1056,6 +1057,7 @@ class ComponentChildTypeDef(TypedDict):
     properties: Mapping[str, ComponentPropertyTypeDef],  # (3)
     children: NotRequired[Sequence[ComponentChildTypeDef]],  # (1)
     events: NotRequired[Mapping[str, ComponentEventTypeDef]],  # (2)
+    sourceId: NotRequired[str],
 ```
 
 1. See [:material-code-braces: ComponentChildTypeDef](./type_defs.md#componentchildtypedef) 

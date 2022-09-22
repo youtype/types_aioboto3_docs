@@ -187,6 +187,24 @@ class WaiterConfigTypeDef(TypedDict):
     MaxAttempts: NotRequired[int],
 ```
 
+## PaginatorConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudcontrol.type_defs import PaginatorConfigTypeDef
+
+def get_value() -> PaginatorConfigTypeDef:
+    return {
+        "MaxItems": ...,
+    }
+```
+
+```python title="Definition"
+class PaginatorConfigTypeDef(TypedDict):
+    MaxItems: NotRequired[int],
+    PageSize: NotRequired[int],
+    StartingToken: NotRequired[str],
+```
+
 ## ResourceRequestStatusFilterTypeDef
 
 ```python title="Usage Example"
@@ -436,6 +454,46 @@ class GetResourceRequestStatusInputResourceRequestSuccessWaitTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+## ListResourcesInputListResourcesPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudcontrol.type_defs import ListResourcesInputListResourcesPaginateTypeDef
+
+def get_value() -> ListResourcesInputListResourcesPaginateTypeDef:
+    return {
+        "TypeName": ...,
+    }
+```
+
+```python title="Definition"
+class ListResourcesInputListResourcesPaginateTypeDef(TypedDict):
+    TypeName: str,
+    TypeVersionId: NotRequired[str],
+    RoleArn: NotRequired[str],
+    ResourceModel: NotRequired[str],
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListResourceRequestsInputListResourceRequestsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudcontrol.type_defs import ListResourceRequestsInputListResourceRequestsPaginateTypeDef
+
+def get_value() -> ListResourceRequestsInputListResourceRequestsPaginateTypeDef:
+    return {
+        "ResourceRequestStatusFilter": ...,
+    }
+```
+
+```python title="Definition"
+class ListResourceRequestsInputListResourceRequestsPaginateTypeDef(TypedDict):
+    ResourceRequestStatusFilter: NotRequired[ResourceRequestStatusFilterTypeDef],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: ResourceRequestStatusFilterTypeDef](./type_defs.md#resourcerequeststatusfiltertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListResourceRequestsInputRequestTypeDef
 
 ```python title="Usage Example"

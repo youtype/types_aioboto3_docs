@@ -272,6 +272,21 @@ parent.classify_document(**kwargs)
 
 1. See [:material-code-braces: ClassifyDocumentRequestRequestTypeDef](./type_defs.md#classifydocumentrequestrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("comprehend").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### contains\_pii\_entities
 
 Analyzes input text for the presence of personally identifiable information
@@ -359,8 +374,9 @@ parent.create_document_classifier(**kwargs)
 ### create\_endpoint
 
 Creates a model-specific endpoint for synchronous inference for a previously
-trained custom model See also: [AWS API
-Documentation](https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint).
+trained custom model For information about endpoints, see [Managing
+endpoints](https://docs.aws.amazon.com/comprehend/latest/dg/manage-
+endpoints.html)_ .
 
 Type annotations and code completion for `#!python session.client("comprehend").create_endpoint` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.create_endpoint)

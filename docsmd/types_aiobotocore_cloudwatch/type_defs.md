@@ -92,9 +92,16 @@ class CompositeAlarmTypeDef(TypedDict):
     StateReasonData: NotRequired[str],
     StateUpdatedTimestamp: NotRequired[datetime],
     StateValue: NotRequired[StateValueType],  # (1)
+    StateTransitionedTimestamp: NotRequired[datetime],
+    ActionsSuppressedBy: NotRequired[ActionsSuppressedByType],  # (2)
+    ActionsSuppressedReason: NotRequired[str],
+    ActionsSuppressor: NotRequired[str],
+    ActionsSuppressorWaitPeriod: NotRequired[int],
+    ActionsSuppressorExtensionPeriod: NotRequired[int],
 ```
 
 1. See [:material-code-brackets: StateValueType](./literals.md#statevaluetype) 
+2. See [:material-code-brackets: ActionsSuppressedByType](./literals.md#actionssuppressedbytype) 
 ## DashboardEntryTypeDef
 
 ```python title="Usage Example"
@@ -411,6 +418,7 @@ class InsightRuleTypeDef(TypedDict):
     State: str,
     Schema: str,
     Definition: str,
+    ManagedRule: NotRequired[bool],
 ```
 
 ## DimensionFilterTypeDef
@@ -675,6 +683,24 @@ class ListDashboardsInputRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
 ```
 
+## ListManagedInsightRulesInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import ListManagedInsightRulesInputRequestTypeDef
+
+def get_value() -> ListManagedInsightRulesInputRequestTypeDef:
+    return {
+        "ResourceARN": ...,
+    }
+```
+
+```python title="Definition"
+class ListManagedInsightRulesInputRequestTypeDef(TypedDict):
+    ResourceARN: str,
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+```
+
 ## ListMetricStreamsInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -749,6 +775,24 @@ class TagTypeDef(TypedDict):
     Value: str,
 ```
 
+## ManagedRuleStateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import ManagedRuleStateTypeDef
+
+def get_value() -> ManagedRuleStateTypeDef:
+    return {
+        "RuleName": ...,
+        "State": ...,
+    }
+```
+
+```python title="Definition"
+class ManagedRuleStateTypeDef(TypedDict):
+    RuleName: str,
+    State: str,
+```
+
 ## StatisticSetTypeDef
 
 ```python title="Usage Example"
@@ -769,6 +813,24 @@ class StatisticSetTypeDef(TypedDict):
     Sum: float,
     Minimum: float,
     Maximum: float,
+```
+
+## MetricStreamStatisticsMetricTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import MetricStreamStatisticsMetricTypeDef
+
+def get_value() -> MetricStreamStatisticsMetricTypeDef:
+    return {
+        "Namespace": ...,
+        "MetricName": ...,
+    }
+```
+
+```python title="Definition"
+class MetricStreamStatisticsMetricTypeDef(TypedDict):
+    Namespace: str,
+    MetricName: str,
 ```
 
 ## PutDashboardInputRequestTypeDef
@@ -1284,6 +1346,26 @@ class PutDashboardOutputTypeDef(TypedDict):
 
 1. See [:material-code-braces: DashboardValidationMessageTypeDef](./type_defs.md#dashboardvalidationmessagetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## PutManagedInsightRulesOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import PutManagedInsightRulesOutputTypeDef
+
+def get_value() -> PutManagedInsightRulesOutputTypeDef:
+    return {
+        "Failures": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class PutManagedInsightRulesOutputTypeDef(TypedDict):
+    Failures: List[PartialFailureTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: PartialFailureTypeDef](./type_defs.md#partialfailuretypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## PutMetricStreamOutputTypeDef
 
 ```python title="Usage Example"
@@ -1354,6 +1436,29 @@ class DescribeAlarmsInputDescribeAlarmsPaginateTypeDef(TypedDict):
 
 1. See [:material-code-brackets: AlarmTypeType](./literals.md#alarmtypetype) 
 2. See [:material-code-brackets: StateValueType](./literals.md#statevaluetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef
+
+def get_value() -> DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef:
+    return {
+        "Namespace": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef(TypedDict):
+    Namespace: NotRequired[str],
+    MetricName: NotRequired[str],
+    Dimensions: NotRequired[Sequence[DimensionTypeDef]],  # (1)
+    AnomalyDetectorTypes: NotRequired[Sequence[AnomalyDetectorTypeType]],  # (2)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (3)
+```
+
+1. See [:material-code-braces: DimensionTypeDef](./type_defs.md#dimensiontypedef) 
+2. See [:material-code-brackets: AnomalyDetectorTypeType](./literals.md#anomalydetectortypetype) 
 3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListDashboardsInputListDashboardsPaginateTypeDef
 
@@ -1519,46 +1624,6 @@ class MetricDataResultTypeDef(TypedDict):
 
 1. See [:material-code-brackets: StatusCodeType](./literals.md#statuscodetype) 
 2. See [:material-code-braces: MessageDataTypeDef](./type_defs.md#messagedatatypedef) 
-## GetMetricStreamOutputTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_cloudwatch.type_defs import GetMetricStreamOutputTypeDef
-
-def get_value() -> GetMetricStreamOutputTypeDef:
-    return {
-        "Arn": ...,
-        "Name": ...,
-        "IncludeFilters": ...,
-        "ExcludeFilters": ...,
-        "FirehoseArn": ...,
-        "RoleArn": ...,
-        "State": ...,
-        "CreationDate": ...,
-        "LastUpdateDate": ...,
-        "OutputFormat": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetMetricStreamOutputTypeDef(TypedDict):
-    Arn: str,
-    Name: str,
-    IncludeFilters: List[MetricStreamFilterTypeDef],  # (1)
-    ExcludeFilters: List[MetricStreamFilterTypeDef],  # (1)
-    FirehoseArn: str,
-    RoleArn: str,
-    State: str,
-    CreationDate: datetime,
-    LastUpdateDate: datetime,
-    OutputFormat: MetricStreamOutputFormatType,  # (3)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
-```
-
-1. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
-2. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
-3. See [:material-code-brackets: MetricStreamOutputFormatType](./literals.md#metricstreamoutputformattype) 
-4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## InsightRuleContributorTypeDef
 
 ```python title="Usage Example"
@@ -1622,6 +1687,26 @@ class ListTagsForResourceOutputTypeDef(TypedDict):
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ManagedRuleTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import ManagedRuleTypeDef
+
+def get_value() -> ManagedRuleTypeDef:
+    return {
+        "TemplateName": ...,
+        "ResourceARN": ...,
+    }
+```
+
+```python title="Definition"
+class ManagedRuleTypeDef(TypedDict):
+    TemplateName: str,
+    ResourceARN: str,
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## PutCompositeAlarmInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -1644,6 +1729,9 @@ class PutCompositeAlarmInputRequestTypeDef(TypedDict):
     InsufficientDataActions: NotRequired[Sequence[str]],
     OKActions: NotRequired[Sequence[str]],
     Tags: NotRequired[Sequence[TagTypeDef]],  # (1)
+    ActionsSuppressor: NotRequired[str],
+    ActionsSuppressorWaitPeriod: NotRequired[int],
+    ActionsSuppressorExtensionPeriod: NotRequired[int],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -1668,35 +1756,6 @@ class PutInsightRuleInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## PutMetricStreamInputRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_cloudwatch.type_defs import PutMetricStreamInputRequestTypeDef
-
-def get_value() -> PutMetricStreamInputRequestTypeDef:
-    return {
-        "Name": ...,
-        "FirehoseArn": ...,
-        "RoleArn": ...,
-        "OutputFormat": ...,
-    }
-```
-
-```python title="Definition"
-class PutMetricStreamInputRequestTypeDef(TypedDict):
-    Name: str,
-    FirehoseArn: str,
-    RoleArn: str,
-    OutputFormat: MetricStreamOutputFormatType,  # (1)
-    IncludeFilters: NotRequired[Sequence[MetricStreamFilterTypeDef]],  # (2)
-    ExcludeFilters: NotRequired[Sequence[MetricStreamFilterTypeDef]],  # (2)
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (4)
-```
-
-1. See [:material-code-brackets: MetricStreamOutputFormatType](./literals.md#metricstreamoutputformattype) 
-2. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
-3. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
-4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## TagResourceInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -1716,6 +1775,25 @@ class TagResourceInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## ManagedRuleDescriptionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import ManagedRuleDescriptionTypeDef
+
+def get_value() -> ManagedRuleDescriptionTypeDef:
+    return {
+        "TemplateName": ...,
+    }
+```
+
+```python title="Definition"
+class ManagedRuleDescriptionTypeDef(TypedDict):
+    TemplateName: NotRequired[str],
+    ResourceARN: NotRequired[str],
+    RuleState: NotRequired[ManagedRuleStateTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: ManagedRuleStateTypeDef](./type_defs.md#managedrulestatetypedef) 
 ## MetricDatumTypeDef
 
 ```python title="Usage Example"
@@ -1743,6 +1821,25 @@ class MetricDatumTypeDef(TypedDict):
 1. See [:material-code-braces: DimensionTypeDef](./type_defs.md#dimensiontypedef) 
 2. See [:material-code-braces: StatisticSetTypeDef](./type_defs.md#statisticsettypedef) 
 3. See [:material-code-brackets: StandardUnitType](./literals.md#standardunittype) 
+## MetricStreamStatisticsConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import MetricStreamStatisticsConfigurationTypeDef
+
+def get_value() -> MetricStreamStatisticsConfigurationTypeDef:
+    return {
+        "IncludeMetrics": ...,
+        "AdditionalStatistics": ...,
+    }
+```
+
+```python title="Definition"
+class MetricStreamStatisticsConfigurationTypeDef(TypedDict):
+    IncludeMetrics: List[MetricStreamStatisticsMetricTypeDef],  # (1)
+    AdditionalStatistics: List[str],
+```
+
+1. See [:material-code-braces: MetricStreamStatisticsMetricTypeDef](./type_defs.md#metricstreamstatisticsmetrictypedef) 
 ## ListMetricsOutputTypeDef
 
 ```python title="Usage Example"
@@ -1844,6 +1941,45 @@ class GetInsightRuleReportOutputTypeDef(TypedDict):
 1. See [:material-code-braces: InsightRuleContributorTypeDef](./type_defs.md#insightrulecontributortypedef) 
 2. See [:material-code-braces: InsightRuleMetricDatapointTypeDef](./type_defs.md#insightrulemetricdatapointtypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## PutManagedInsightRulesInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import PutManagedInsightRulesInputRequestTypeDef
+
+def get_value() -> PutManagedInsightRulesInputRequestTypeDef:
+    return {
+        "ManagedRules": ...,
+    }
+```
+
+```python title="Definition"
+class PutManagedInsightRulesInputRequestTypeDef(TypedDict):
+    ManagedRules: Sequence[ManagedRuleTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: ManagedRuleTypeDef](./type_defs.md#managedruletypedef) 
+## ListManagedInsightRulesOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import ListManagedInsightRulesOutputTypeDef
+
+def get_value() -> ListManagedInsightRulesOutputTypeDef:
+    return {
+        "ManagedRules": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListManagedInsightRulesOutputTypeDef(TypedDict):
+    ManagedRules: List[ManagedRuleDescriptionTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ManagedRuleDescriptionTypeDef](./type_defs.md#managedruledescriptiontypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## PutMetricDataInputRequestTypeDef
 
 ```python title="Usage Example"
@@ -1863,6 +1999,80 @@ class PutMetricDataInputRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: MetricDatumTypeDef](./type_defs.md#metricdatumtypedef) 
+## GetMetricStreamOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import GetMetricStreamOutputTypeDef
+
+def get_value() -> GetMetricStreamOutputTypeDef:
+    return {
+        "Arn": ...,
+        "Name": ...,
+        "IncludeFilters": ...,
+        "ExcludeFilters": ...,
+        "FirehoseArn": ...,
+        "RoleArn": ...,
+        "State": ...,
+        "CreationDate": ...,
+        "LastUpdateDate": ...,
+        "OutputFormat": ...,
+        "StatisticsConfigurations": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetMetricStreamOutputTypeDef(TypedDict):
+    Arn: str,
+    Name: str,
+    IncludeFilters: List[MetricStreamFilterTypeDef],  # (1)
+    ExcludeFilters: List[MetricStreamFilterTypeDef],  # (1)
+    FirehoseArn: str,
+    RoleArn: str,
+    State: str,
+    CreationDate: datetime,
+    LastUpdateDate: datetime,
+    OutputFormat: MetricStreamOutputFormatType,  # (3)
+    StatisticsConfigurations: List[MetricStreamStatisticsConfigurationTypeDef],  # (4)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+```
+
+1. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
+2. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
+3. See [:material-code-brackets: MetricStreamOutputFormatType](./literals.md#metricstreamoutputformattype) 
+4. See [:material-code-braces: MetricStreamStatisticsConfigurationTypeDef](./type_defs.md#metricstreamstatisticsconfigurationtypedef) 
+5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## PutMetricStreamInputRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudwatch.type_defs import PutMetricStreamInputRequestTypeDef
+
+def get_value() -> PutMetricStreamInputRequestTypeDef:
+    return {
+        "Name": ...,
+        "FirehoseArn": ...,
+        "RoleArn": ...,
+        "OutputFormat": ...,
+    }
+```
+
+```python title="Definition"
+class PutMetricStreamInputRequestTypeDef(TypedDict):
+    Name: str,
+    FirehoseArn: str,
+    RoleArn: str,
+    OutputFormat: MetricStreamOutputFormatType,  # (1)
+    IncludeFilters: NotRequired[Sequence[MetricStreamFilterTypeDef]],  # (2)
+    ExcludeFilters: NotRequired[Sequence[MetricStreamFilterTypeDef]],  # (2)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (4)
+    StatisticsConfigurations: NotRequired[Sequence[MetricStreamStatisticsConfigurationTypeDef]],  # (5)
+```
+
+1. See [:material-code-brackets: MetricStreamOutputFormatType](./literals.md#metricstreamoutputformattype) 
+2. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
+3. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
+4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+5. See [:material-code-braces: MetricStreamStatisticsConfigurationTypeDef](./type_defs.md#metricstreamstatisticsconfigurationtypedef) 
 ## MetricDataQueryTypeDef
 
 ```python title="Usage Example"

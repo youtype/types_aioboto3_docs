@@ -203,6 +203,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("mediaconnect").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_flow
 
 Creates a new flow.
@@ -223,7 +238,8 @@ await def create_flow(
     SourceFailoverConfig: FailoverConfigTypeDef = ...,  # (5)
     Sources: Sequence[SetSourceRequestTypeDef] = ...,  # (6)
     VpcInterfaces: Sequence[VpcInterfaceRequestTypeDef] = ...,  # (7)
-) -> CreateFlowResponseTypeDef:  # (8)
+    Maintenance: AddMaintenanceTypeDef = ...,  # (8)
+) -> CreateFlowResponseTypeDef:  # (9)
     ...
 ```
 
@@ -234,7 +250,8 @@ await def create_flow(
 5. See [:material-code-braces: FailoverConfigTypeDef](./type_defs.md#failoverconfigtypedef) 
 6. See [:material-code-braces: SetSourceRequestTypeDef](./type_defs.md#setsourcerequesttypedef) 
 7. See [:material-code-braces: VpcInterfaceRequestTypeDef](./type_defs.md#vpcinterfacerequesttypedef) 
-8. See [:material-code-braces: CreateFlowResponseTypeDef](./type_defs.md#createflowresponsetypedef) 
+8. See [:material-code-braces: AddMaintenanceTypeDef](./type_defs.md#addmaintenancetypedef) 
+9. See [:material-code-braces: CreateFlowResponseTypeDef](./type_defs.md#createflowresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -888,12 +905,14 @@ await def update_flow(
     *,
     FlowArn: str,
     SourceFailoverConfig: UpdateFailoverConfigTypeDef = ...,  # (1)
-) -> UpdateFlowResponseTypeDef:  # (2)
+    Maintenance: UpdateMaintenanceTypeDef = ...,  # (2)
+) -> UpdateFlowResponseTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: UpdateFailoverConfigTypeDef](./type_defs.md#updatefailoverconfigtypedef) 
-2. See [:material-code-braces: UpdateFlowResponseTypeDef](./type_defs.md#updateflowresponsetypedef) 
+2. See [:material-code-braces: UpdateMaintenanceTypeDef](./type_defs.md#updatemaintenancetypedef) 
+3. See [:material-code-braces: UpdateFlowResponseTypeDef](./type_defs.md#updateflowresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

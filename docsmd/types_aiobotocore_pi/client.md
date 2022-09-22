@@ -67,6 +67,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("pi").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pi.html#PI.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### describe\_dimension\_keys
 
 For a specific time period, retrieve the top `N` dimension keys for a metric.
@@ -206,7 +221,7 @@ parent.get_resource_metadata(**kwargs)
 
 ### get\_resource\_metrics
 
-Retrieve Performance Insights metrics for a set of data sources, over a time
+Retrieve Performance Insights metrics for a set of data sources over a time
 period.
 
 Type annotations and code completion for `#!python session.client("pi").get_resource_metrics` method.

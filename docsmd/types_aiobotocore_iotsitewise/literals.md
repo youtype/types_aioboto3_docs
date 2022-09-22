@@ -162,6 +162,69 @@ AuthModeType = Literal[
     "SSO",
 ]
 ```
+## BatchEntryCompletionStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import BatchEntryCompletionStatusType
+
+def get_value() -> BatchEntryCompletionStatusType:
+    return "ERROR"
+```
+
+```python title="Definition"
+BatchEntryCompletionStatusType = Literal[
+    "ERROR",
+    "SUCCESS",
+]
+```
+## BatchGetAssetPropertyAggregatesErrorCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyAggregatesErrorCodeType
+
+def get_value() -> BatchGetAssetPropertyAggregatesErrorCodeType:
+    return "AccessDeniedException"
+```
+
+```python title="Definition"
+BatchGetAssetPropertyAggregatesErrorCodeType = Literal[
+    "AccessDeniedException",
+    "InvalidRequestException",
+    "ResourceNotFoundException",
+]
+```
+## BatchGetAssetPropertyValueErrorCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyValueErrorCodeType
+
+def get_value() -> BatchGetAssetPropertyValueErrorCodeType:
+    return "AccessDeniedException"
+```
+
+```python title="Definition"
+BatchGetAssetPropertyValueErrorCodeType = Literal[
+    "AccessDeniedException",
+    "InvalidRequestException",
+    "ResourceNotFoundException",
+]
+```
+## BatchGetAssetPropertyValueHistoryErrorCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyValueHistoryErrorCodeType
+
+def get_value() -> BatchGetAssetPropertyValueHistoryErrorCodeType:
+    return "AccessDeniedException"
+```
+
+```python title="Definition"
+BatchGetAssetPropertyValueHistoryErrorCodeType = Literal[
+    "AccessDeniedException",
+    "InvalidRequestException",
+    "ResourceNotFoundException",
+]
+```
 ## BatchPutAssetPropertyValueErrorCodeType
 
 ```python title="Usage Example"
@@ -199,6 +262,27 @@ CapabilitySyncStatusType = Literal[
     "OUT_OF_SYNC",
     "SYNC_FAILED",
     "UNKNOWN",
+]
+```
+## ColumnNameType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import ColumnNameType
+
+def get_value() -> ColumnNameType:
+    return "ALIAS"
+```
+
+```python title="Definition"
+ColumnNameType = Literal[
+    "ALIAS",
+    "ASSET_ID",
+    "DATA_TYPE",
+    "PROPERTY_ID",
+    "QUALITY",
+    "TIMESTAMP_NANO_OFFSET",
+    "TIMESTAMP_SECONDS",
+    "VALUE",
 ]
 ```
 ## ComputeLocationType
@@ -379,6 +463,25 @@ ImageFileTypeType = Literal[
     "PNG",
 ]
 ```
+## JobStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import JobStatusType
+
+def get_value() -> JobStatusType:
+    return "CANCELLED"
+```
+
+```python title="Definition"
+JobStatusType = Literal[
+    "CANCELLED",
+    "COMPLETED",
+    "COMPLETED_WITH_FAILURES",
+    "FAILED",
+    "PENDING",
+    "RUNNING",
+]
+```
 ## ListAccessPoliciesPaginatorName
 
 ```python title="Usage Example"
@@ -462,6 +565,40 @@ def get_value() -> ListAssociatedAssetsPaginatorName:
 ```python title="Definition"
 ListAssociatedAssetsPaginatorName = Literal[
     "list_associated_assets",
+]
+```
+## ListBulkImportJobsFilterType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import ListBulkImportJobsFilterType
+
+def get_value() -> ListBulkImportJobsFilterType:
+    return "ALL"
+```
+
+```python title="Definition"
+ListBulkImportJobsFilterType = Literal[
+    "ALL",
+    "CANCELLED",
+    "COMPLETED",
+    "COMPLETED_WITH_FAILURES",
+    "FAILED",
+    "PENDING",
+    "RUNNING",
+]
+```
+## ListBulkImportJobsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import ListBulkImportJobsPaginatorName
+
+def get_value() -> ListBulkImportJobsPaginatorName:
+    return "list_bulk_import_jobs"
+```
+
+```python title="Definition"
+ListBulkImportJobsPaginatorName = Literal[
+    "list_bulk_import_jobs",
 ]
 ```
 ## ListDashboardsPaginatorName
@@ -833,6 +970,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -840,6 +978,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -872,6 +1011,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -908,6 +1048,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -921,6 +1062,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -954,6 +1096,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -973,12 +1116,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1022,8 +1167,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1034,11 +1181,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1084,6 +1233,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -1149,6 +1299,7 @@ PaginatorName = Literal[
     "list_asset_relationships",
     "list_assets",
     "list_associated_assets",
+    "list_bulk_import_jobs",
     "list_dashboards",
     "list_gateways",
     "list_portals",
@@ -1192,9 +1343,11 @@ RegionName = Literal[
     "ap-south-1",
     "ap-southeast-1",
     "ap-southeast-2",
+    "ca-central-1",
     "eu-central-1",
     "eu-west-1",
     "us-east-1",
+    "us-east-2",
     "us-west-2",
 ]
 ```

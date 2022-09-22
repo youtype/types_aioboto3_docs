@@ -22,6 +22,21 @@ AccessControlRuleEffectType = Literal[
     "DENY",
 ]
 ```
+## AvailabilityProviderTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_workmail.literals import AvailabilityProviderTypeType
+
+def get_value() -> AvailabilityProviderTypeType:
+    return "EWS"
+```
+
+```python title="Definition"
+AvailabilityProviderTypeType = Literal[
+    "EWS",
+    "LAMBDA",
+]
+```
 ## DnsRecordVerificationStatusType
 
 ```python title="Usage Example"
@@ -84,6 +99,20 @@ def get_value() -> ListAliasesPaginatorName:
 ```python title="Definition"
 ListAliasesPaginatorName = Literal[
     "list_aliases",
+]
+```
+## ListAvailabilityConfigurationsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_workmail.literals import ListAvailabilityConfigurationsPaginatorName
+
+def get_value() -> ListAvailabilityConfigurationsPaginatorName:
+    return "list_availability_configurations"
+```
+
+```python title="Definition"
+ListAvailabilityConfigurationsPaginatorName = Literal[
+    "list_availability_configurations",
 ]
 ```
 ## ListGroupMembersPaginatorName
@@ -348,6 +377,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -355,6 +385,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -387,6 +418,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -423,6 +455,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -436,6 +469,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -469,6 +503,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -488,12 +523,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -537,8 +574,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -549,11 +588,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -599,6 +640,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -657,6 +699,7 @@ def get_value() -> PaginatorName:
 ```python title="Definition"
 PaginatorName = Literal[
     "list_aliases",
+    "list_availability_configurations",
     "list_group_members",
     "list_groups",
     "list_mailbox_permissions",

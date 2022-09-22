@@ -120,8 +120,10 @@ class AddPermissionRequestRequestTypeDef(TypedDict):
     Qualifier: NotRequired[str],
     RevisionId: NotRequired[str],
     PrincipalOrgID: NotRequired[str],
+    FunctionUrlAuthType: NotRequired[FunctionUrlAuthTypeType],  # (1)
 ```
 
+1. See [:material-code-brackets: FunctionUrlAuthTypeType](./literals.md#functionurlauthtypetype) 
 ## AliasRoutingConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -152,6 +154,22 @@ def get_value() -> AllowedPublishersTypeDef:
 ```python title="Definition"
 class AllowedPublishersTypeDef(TypedDict):
     SigningProfileVersionArns: Sequence[str],
+```
+
+## AmazonManagedKafkaEventSourceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import AmazonManagedKafkaEventSourceConfigTypeDef
+
+def get_value() -> AmazonManagedKafkaEventSourceConfigTypeDef:
+    return {
+        "ConsumerGroupId": ...,
+    }
+```
+
+```python title="Definition"
+class AmazonManagedKafkaEventSourceConfigTypeDef(TypedDict):
+    ConsumerGroupId: NotRequired[str],
 ```
 
 ## CodeSigningPoliciesTypeDef
@@ -187,6 +205,27 @@ class ConcurrencyTypeDef(TypedDict):
     ReservedConcurrentExecutions: NotRequired[int],
 ```
 
+## CorsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import CorsTypeDef
+
+def get_value() -> CorsTypeDef:
+    return {
+        "AllowCredentials": ...,
+    }
+```
+
+```python title="Definition"
+class CorsTypeDef(TypedDict):
+    AllowCredentials: NotRequired[bool],
+    AllowHeaders: NotRequired[Sequence[str]],
+    AllowMethods: NotRequired[Sequence[str]],
+    AllowOrigins: NotRequired[Sequence[str]],
+    ExposeHeaders: NotRequired[Sequence[str]],
+    MaxAge: NotRequired[int],
+```
+
 ## SelfManagedEventSourceTypeDef
 
 ```python title="Usage Example"
@@ -204,6 +243,22 @@ class SelfManagedEventSourceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: EndPointTypeType](./literals.md#endpointtypetype) 
+## SelfManagedKafkaEventSourceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import SelfManagedKafkaEventSourceConfigTypeDef
+
+def get_value() -> SelfManagedKafkaEventSourceConfigTypeDef:
+    return {
+        "ConsumerGroupId": ...,
+    }
+```
+
+```python title="Definition"
+class SelfManagedKafkaEventSourceConfigTypeDef(TypedDict):
+    ConsumerGroupId: NotRequired[str],
+```
+
 ## SourceAccessConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -252,6 +307,22 @@ def get_value() -> EnvironmentTypeDef:
 ```python title="Definition"
 class EnvironmentTypeDef(TypedDict):
     Variables: NotRequired[Mapping[str, str]],
+```
+
+## EphemeralStorageTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import EphemeralStorageTypeDef
+
+def get_value() -> EphemeralStorageTypeDef:
+    return {
+        "Size": ...,
+    }
+```
+
+```python title="Definition"
+class EphemeralStorageTypeDef(TypedDict):
+    Size: int,
 ```
 
 ## FileSystemConfigTypeDef
@@ -456,6 +527,23 @@ def get_value() -> DeleteFunctionRequestRequestTypeDef:
 
 ```python title="Definition"
 class DeleteFunctionRequestRequestTypeDef(TypedDict):
+    FunctionName: str,
+    Qualifier: NotRequired[str],
+```
+
+## DeleteFunctionUrlConfigRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import DeleteFunctionUrlConfigRequestRequestTypeDef
+
+def get_value() -> DeleteFunctionUrlConfigRequestRequestTypeDef:
+    return {
+        "FunctionName": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteFunctionUrlConfigRequestRequestTypeDef(TypedDict):
     FunctionName: str,
     Qualifier: NotRequired[str],
 ```
@@ -784,6 +872,23 @@ class GetFunctionRequestRequestTypeDef(TypedDict):
     Qualifier: NotRequired[str],
 ```
 
+## GetFunctionUrlConfigRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import GetFunctionUrlConfigRequestRequestTypeDef
+
+def get_value() -> GetFunctionUrlConfigRequestRequestTypeDef:
+    return {
+        "FunctionName": ...,
+    }
+```
+
+```python title="Definition"
+class GetFunctionUrlConfigRequestRequestTypeDef(TypedDict):
+    FunctionName: str,
+    Qualifier: NotRequired[str],
+```
+
 ## GetLayerVersionByArnRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1078,6 +1183,24 @@ def get_value() -> ListFunctionEventInvokeConfigsRequestRequestTypeDef:
 
 ```python title="Definition"
 class ListFunctionEventInvokeConfigsRequestRequestTypeDef(TypedDict):
+    FunctionName: str,
+    Marker: NotRequired[str],
+    MaxItems: NotRequired[int],
+```
+
+## ListFunctionUrlConfigsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import ListFunctionUrlConfigsRequestRequestTypeDef
+
+def get_value() -> ListFunctionUrlConfigsRequestRequestTypeDef:
+    return {
+        "FunctionName": ...,
+    }
+```
+
+```python title="Definition"
+class ListFunctionUrlConfigsRequestRequestTypeDef(TypedDict):
     FunctionName: str,
     Marker: NotRequired[str],
     MaxItems: NotRequired[int],
@@ -1931,6 +2054,167 @@ class UpdateCodeSigningConfigRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-braces: AllowedPublishersTypeDef](./type_defs.md#allowedpublisherstypedef) 
 2. See [:material-code-braces: CodeSigningPoliciesTypeDef](./type_defs.md#codesigningpoliciestypedef) 
+## CreateFunctionUrlConfigRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import CreateFunctionUrlConfigRequestRequestTypeDef
+
+def get_value() -> CreateFunctionUrlConfigRequestRequestTypeDef:
+    return {
+        "FunctionName": ...,
+        "AuthType": ...,
+    }
+```
+
+```python title="Definition"
+class CreateFunctionUrlConfigRequestRequestTypeDef(TypedDict):
+    FunctionName: str,
+    AuthType: FunctionUrlAuthTypeType,  # (1)
+    Qualifier: NotRequired[str],
+    Cors: NotRequired[CorsTypeDef],  # (2)
+```
+
+1. See [:material-code-brackets: FunctionUrlAuthTypeType](./literals.md#functionurlauthtypetype) 
+2. See [:material-code-braces: CorsTypeDef](./type_defs.md#corstypedef) 
+## CreateFunctionUrlConfigResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import CreateFunctionUrlConfigResponseTypeDef
+
+def get_value() -> CreateFunctionUrlConfigResponseTypeDef:
+    return {
+        "FunctionUrl": ...,
+        "FunctionArn": ...,
+        "AuthType": ...,
+        "Cors": ...,
+        "CreationTime": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateFunctionUrlConfigResponseTypeDef(TypedDict):
+    FunctionUrl: str,
+    FunctionArn: str,
+    AuthType: FunctionUrlAuthTypeType,  # (1)
+    Cors: CorsTypeDef,  # (2)
+    CreationTime: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-brackets: FunctionUrlAuthTypeType](./literals.md#functionurlauthtypetype) 
+2. See [:material-code-braces: CorsTypeDef](./type_defs.md#corstypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## FunctionUrlConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import FunctionUrlConfigTypeDef
+
+def get_value() -> FunctionUrlConfigTypeDef:
+    return {
+        "FunctionUrl": ...,
+        "FunctionArn": ...,
+        "CreationTime": ...,
+        "LastModifiedTime": ...,
+        "AuthType": ...,
+    }
+```
+
+```python title="Definition"
+class FunctionUrlConfigTypeDef(TypedDict):
+    FunctionUrl: str,
+    FunctionArn: str,
+    CreationTime: str,
+    LastModifiedTime: str,
+    AuthType: FunctionUrlAuthTypeType,  # (2)
+    Cors: NotRequired[CorsTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: CorsTypeDef](./type_defs.md#corstypedef) 
+2. See [:material-code-brackets: FunctionUrlAuthTypeType](./literals.md#functionurlauthtypetype) 
+## GetFunctionUrlConfigResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import GetFunctionUrlConfigResponseTypeDef
+
+def get_value() -> GetFunctionUrlConfigResponseTypeDef:
+    return {
+        "FunctionUrl": ...,
+        "FunctionArn": ...,
+        "AuthType": ...,
+        "Cors": ...,
+        "CreationTime": ...,
+        "LastModifiedTime": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetFunctionUrlConfigResponseTypeDef(TypedDict):
+    FunctionUrl: str,
+    FunctionArn: str,
+    AuthType: FunctionUrlAuthTypeType,  # (1)
+    Cors: CorsTypeDef,  # (2)
+    CreationTime: str,
+    LastModifiedTime: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-brackets: FunctionUrlAuthTypeType](./literals.md#functionurlauthtypetype) 
+2. See [:material-code-braces: CorsTypeDef](./type_defs.md#corstypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateFunctionUrlConfigRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import UpdateFunctionUrlConfigRequestRequestTypeDef
+
+def get_value() -> UpdateFunctionUrlConfigRequestRequestTypeDef:
+    return {
+        "FunctionName": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateFunctionUrlConfigRequestRequestTypeDef(TypedDict):
+    FunctionName: str,
+    Qualifier: NotRequired[str],
+    AuthType: NotRequired[FunctionUrlAuthTypeType],  # (1)
+    Cors: NotRequired[CorsTypeDef],  # (2)
+```
+
+1. See [:material-code-brackets: FunctionUrlAuthTypeType](./literals.md#functionurlauthtypetype) 
+2. See [:material-code-braces: CorsTypeDef](./type_defs.md#corstypedef) 
+## UpdateFunctionUrlConfigResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import UpdateFunctionUrlConfigResponseTypeDef
+
+def get_value() -> UpdateFunctionUrlConfigResponseTypeDef:
+    return {
+        "FunctionUrl": ...,
+        "FunctionArn": ...,
+        "AuthType": ...,
+        "Cors": ...,
+        "CreationTime": ...,
+        "LastModifiedTime": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateFunctionUrlConfigResponseTypeDef(TypedDict):
+    FunctionUrl: str,
+    FunctionArn: str,
+    AuthType: FunctionUrlAuthTypeType,  # (1)
+    Cors: CorsTypeDef,  # (2)
+    CreationTime: str,
+    LastModifiedTime: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-brackets: FunctionUrlAuthTypeType](./literals.md#functionurlauthtypetype) 
+2. See [:material-code-braces: CorsTypeDef](./type_defs.md#corstypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateFunctionRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1967,6 +2251,7 @@ class CreateFunctionRequestRequestTypeDef(TypedDict):
     ImageConfig: NotRequired[ImageConfigTypeDef],  # (9)
     CodeSigningConfigArn: NotRequired[str],
     Architectures: NotRequired[Sequence[ArchitectureType]],  # (10)
+    EphemeralStorage: NotRequired[EphemeralStorageTypeDef],  # (11)
 ```
 
 1. See [:material-code-braces: FunctionCodeTypeDef](./type_defs.md#functioncodetypedef) 
@@ -1979,6 +2264,7 @@ class CreateFunctionRequestRequestTypeDef(TypedDict):
 8. See [:material-code-braces: FileSystemConfigTypeDef](./type_defs.md#filesystemconfigtypedef) 
 9. See [:material-code-braces: ImageConfigTypeDef](./type_defs.md#imageconfigtypedef) 
 10. See [:material-code-brackets: ArchitectureType](./literals.md#architecturetype) 
+11. See [:material-code-braces: EphemeralStorageTypeDef](./type_defs.md#ephemeralstoragetypedef) 
 ## UpdateFunctionConfigurationRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2008,6 +2294,7 @@ class UpdateFunctionConfigurationRequestRequestTypeDef(TypedDict):
     Layers: NotRequired[Sequence[str]],
     FileSystemConfigs: NotRequired[Sequence[FileSystemConfigTypeDef]],  # (6)
     ImageConfig: NotRequired[ImageConfigTypeDef],  # (7)
+    EphemeralStorage: NotRequired[EphemeralStorageTypeDef],  # (8)
 ```
 
 1. See [:material-code-braces: VpcConfigTypeDef](./type_defs.md#vpcconfigtypedef) 
@@ -2017,6 +2304,7 @@ class UpdateFunctionConfigurationRequestRequestTypeDef(TypedDict):
 5. See [:material-code-braces: TracingConfigTypeDef](./type_defs.md#tracingconfigtypedef) 
 6. See [:material-code-braces: FileSystemConfigTypeDef](./type_defs.md#filesystemconfigtypedef) 
 7. See [:material-code-braces: ImageConfigTypeDef](./type_defs.md#imageconfigtypedef) 
+8. See [:material-code-braces: EphemeralStorageTypeDef](./type_defs.md#ephemeralstoragetypedef) 
 ## DestinationConfigTypeDef
 
 ```python title="Usage Example"
@@ -2400,6 +2688,24 @@ class ListFunctionEventInvokeConfigsRequestListFunctionEventInvokeConfigsPaginat
 ```
 
 1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListFunctionUrlConfigsRequestListFunctionUrlConfigsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import ListFunctionUrlConfigsRequestListFunctionUrlConfigsPaginateTypeDef
+
+def get_value() -> ListFunctionUrlConfigsRequestListFunctionUrlConfigsPaginateTypeDef:
+    return {
+        "FunctionName": ...,
+    }
+```
+
+```python title="Definition"
+class ListFunctionUrlConfigsRequestListFunctionUrlConfigsPaginateTypeDef(TypedDict):
+    FunctionName: str,
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListFunctionsByCodeSigningConfigRequestListFunctionsByCodeSigningConfigPaginateTypeDef
 
 ```python title="Usage Example"
@@ -2643,6 +2949,28 @@ class UpdateCodeSigningConfigResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: CodeSigningConfigTypeDef](./type_defs.md#codesigningconfigtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListFunctionUrlConfigsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.type_defs import ListFunctionUrlConfigsResponseTypeDef
+
+def get_value() -> ListFunctionUrlConfigsResponseTypeDef:
+    return {
+        "FunctionUrlConfigs": ...,
+        "NextMarker": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListFunctionUrlConfigsResponseTypeDef(TypedDict):
+    FunctionUrlConfigs: List[FunctionUrlConfigTypeDef],  # (1)
+    NextMarker: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: FunctionUrlConfigTypeDef](./type_defs.md#functionurlconfigtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## FunctionEventInvokeConfigResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -2766,6 +3094,8 @@ class CreateEventSourceMappingRequestRequestTypeDef(TypedDict):
     SourceAccessConfigurations: NotRequired[Sequence[SourceAccessConfigurationTypeDef]],  # (4)
     SelfManagedEventSource: NotRequired[SelfManagedEventSourceTypeDef],  # (5)
     FunctionResponseTypes: NotRequired[Sequence[FunctionResponseTypeType]],  # (6)
+    AmazonManagedKafkaEventSourceConfig: NotRequired[AmazonManagedKafkaEventSourceConfigTypeDef],  # (7)
+    SelfManagedKafkaEventSourceConfig: NotRequired[SelfManagedKafkaEventSourceConfigTypeDef],  # (8)
 ```
 
 1. See [:material-code-braces: FilterCriteriaTypeDef](./type_defs.md#filtercriteriatypedef) 
@@ -2774,6 +3104,8 @@ class CreateEventSourceMappingRequestRequestTypeDef(TypedDict):
 4. See [:material-code-braces: SourceAccessConfigurationTypeDef](./type_defs.md#sourceaccessconfigurationtypedef) 
 5. See [:material-code-braces: SelfManagedEventSourceTypeDef](./type_defs.md#selfmanagedeventsourcetypedef) 
 6. See [:material-code-brackets: FunctionResponseTypeType](./literals.md#functionresponsetypetype) 
+7. See [:material-code-braces: AmazonManagedKafkaEventSourceConfigTypeDef](./type_defs.md#amazonmanagedkafkaeventsourceconfigtypedef) 
+8. See [:material-code-braces: SelfManagedKafkaEventSourceConfigTypeDef](./type_defs.md#selfmanagedkafkaeventsourceconfigtypedef) 
 ## EventSourceMappingConfigurationResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -2804,6 +3136,8 @@ def get_value() -> EventSourceMappingConfigurationResponseMetadataTypeDef:
         "MaximumRetryAttempts": ...,
         "TumblingWindowInSeconds": ...,
         "FunctionResponseTypes": ...,
+        "AmazonManagedKafkaEventSourceConfig": ...,
+        "SelfManagedKafkaEventSourceConfig": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2833,7 +3167,9 @@ class EventSourceMappingConfigurationResponseMetadataTypeDef(TypedDict):
     MaximumRetryAttempts: int,
     TumblingWindowInSeconds: int,
     FunctionResponseTypes: List[FunctionResponseTypeType],  # (6)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (7)
+    AmazonManagedKafkaEventSourceConfig: AmazonManagedKafkaEventSourceConfigTypeDef,  # (7)
+    SelfManagedKafkaEventSourceConfig: SelfManagedKafkaEventSourceConfigTypeDef,  # (8)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (9)
 ```
 
 1. See [:material-code-brackets: EventSourcePositionType](./literals.md#eventsourcepositiontype) 
@@ -2842,7 +3178,9 @@ class EventSourceMappingConfigurationResponseMetadataTypeDef(TypedDict):
 4. See [:material-code-braces: SourceAccessConfigurationTypeDef](./type_defs.md#sourceaccessconfigurationtypedef) 
 5. See [:material-code-braces: SelfManagedEventSourceTypeDef](./type_defs.md#selfmanagedeventsourcetypedef) 
 6. See [:material-code-brackets: FunctionResponseTypeType](./literals.md#functionresponsetypetype) 
-7. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+7. See [:material-code-braces: AmazonManagedKafkaEventSourceConfigTypeDef](./type_defs.md#amazonmanagedkafkaeventsourceconfigtypedef) 
+8. See [:material-code-braces: SelfManagedKafkaEventSourceConfigTypeDef](./type_defs.md#selfmanagedkafkaeventsourceconfigtypedef) 
+9. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## EventSourceMappingConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -2879,6 +3217,8 @@ class EventSourceMappingConfigurationTypeDef(TypedDict):
     MaximumRetryAttempts: NotRequired[int],
     TumblingWindowInSeconds: NotRequired[int],
     FunctionResponseTypes: NotRequired[List[FunctionResponseTypeType]],  # (6)
+    AmazonManagedKafkaEventSourceConfig: NotRequired[AmazonManagedKafkaEventSourceConfigTypeDef],  # (7)
+    SelfManagedKafkaEventSourceConfig: NotRequired[SelfManagedKafkaEventSourceConfigTypeDef],  # (8)
 ```
 
 1. See [:material-code-brackets: EventSourcePositionType](./literals.md#eventsourcepositiontype) 
@@ -2887,6 +3227,8 @@ class EventSourceMappingConfigurationTypeDef(TypedDict):
 4. See [:material-code-braces: SourceAccessConfigurationTypeDef](./type_defs.md#sourceaccessconfigurationtypedef) 
 5. See [:material-code-braces: SelfManagedEventSourceTypeDef](./type_defs.md#selfmanagedeventsourcetypedef) 
 6. See [:material-code-brackets: FunctionResponseTypeType](./literals.md#functionresponsetypetype) 
+7. See [:material-code-braces: AmazonManagedKafkaEventSourceConfigTypeDef](./type_defs.md#amazonmanagedkafkaeventsourceconfigtypedef) 
+8. See [:material-code-braces: SelfManagedKafkaEventSourceConfigTypeDef](./type_defs.md#selfmanagedkafkaeventsourceconfigtypedef) 
 ## UpdateEventSourceMappingRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2959,6 +3301,7 @@ def get_value() -> FunctionConfigurationResponseMetadataTypeDef:
         "SigningProfileVersionArn": ...,
         "SigningJobArn": ...,
         "Architectures": ...,
+        "EphemeralStorage": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2997,7 +3340,8 @@ class FunctionConfigurationResponseMetadataTypeDef(TypedDict):
     SigningProfileVersionArn: str,
     SigningJobArn: str,
     Architectures: List[ArchitectureType],  # (14)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (15)
+    EphemeralStorage: EphemeralStorageTypeDef,  # (15)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (16)
 ```
 
 1. See [:material-code-brackets: RuntimeType](./literals.md#runtimetype) 
@@ -3014,7 +3358,8 @@ class FunctionConfigurationResponseMetadataTypeDef(TypedDict):
 12. See [:material-code-brackets: PackageTypeType](./literals.md#packagetypetype) 
 13. See [:material-code-braces: ImageConfigResponseTypeDef](./type_defs.md#imageconfigresponsetypedef) 
 14. See [:material-code-brackets: ArchitectureType](./literals.md#architecturetype) 
-15. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+15. See [:material-code-braces: EphemeralStorageTypeDef](./type_defs.md#ephemeralstoragetypedef) 
+16. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## FunctionConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -3060,6 +3405,7 @@ class FunctionConfigurationTypeDef(TypedDict):
     SigningProfileVersionArn: NotRequired[str],
     SigningJobArn: NotRequired[str],
     Architectures: NotRequired[List[ArchitectureType]],  # (14)
+    EphemeralStorage: NotRequired[EphemeralStorageTypeDef],  # (15)
 ```
 
 1. See [:material-code-brackets: RuntimeType](./literals.md#runtimetype) 
@@ -3076,6 +3422,7 @@ class FunctionConfigurationTypeDef(TypedDict):
 12. See [:material-code-brackets: PackageTypeType](./literals.md#packagetypetype) 
 13. See [:material-code-braces: ImageConfigResponseTypeDef](./type_defs.md#imageconfigresponsetypedef) 
 14. See [:material-code-brackets: ArchitectureType](./literals.md#architecturetype) 
+15. See [:material-code-braces: EphemeralStorageTypeDef](./type_defs.md#ephemeralstoragetypedef) 
 ## ListLayersResponseTypeDef
 
 ```python title="Usage Example"

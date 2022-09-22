@@ -71,6 +71,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("lookoutvision").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_dataset
 
 Creates a new dataset in an Amazon Lookout for Vision project.
@@ -543,7 +558,8 @@ parent.list_models(**kwargs)
 
 ### list\_projects
 
-Lists the Amazon Lookout for Vision projects in your AWS account.
+Lists the Amazon Lookout for Vision projects in your AWS account that are in the
+AWS Region in which you call `ListProjects` .
 
 Type annotations and code completion for `#!python session.client("lookoutvision").list_projects` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.list_projects)
@@ -616,6 +632,7 @@ await def start_model(
     ModelVersion: str,
     MinInferenceUnits: int,
     ClientToken: str = ...,
+    MaxInferenceUnits: int = ...,
 ) -> StartModelResponseTypeDef:  # (1)
     ...
 ```

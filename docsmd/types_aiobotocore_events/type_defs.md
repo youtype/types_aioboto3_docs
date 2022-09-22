@@ -429,6 +429,39 @@ class CreateConnectionOAuthClientRequestParametersTypeDef(TypedDict):
     ClientSecret: str,
 ```
 
+## EndpointEventBusTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import EndpointEventBusTypeDef
+
+def get_value() -> EndpointEventBusTypeDef:
+    return {
+        "EventBusArn": ...,
+    }
+```
+
+```python title="Definition"
+class EndpointEventBusTypeDef(TypedDict):
+    EventBusArn: str,
+```
+
+## ReplicationConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import ReplicationConfigTypeDef
+
+def get_value() -> ReplicationConfigTypeDef:
+    return {
+        "State": ...,
+    }
+```
+
+```python title="Definition"
+class ReplicationConfigTypeDef(TypedDict):
+    State: NotRequired[ReplicationStateType],  # (1)
+```
+
+1. See [:material-code-brackets: ReplicationStateType](./literals.md#replicationstatetype) 
 ## TagTypeDef
 
 ```python title="Usage Example"
@@ -561,6 +594,22 @@ class DeleteConnectionRequestRequestTypeDef(TypedDict):
     Name: str,
 ```
 
+## DeleteEndpointRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import DeleteEndpointRequestRequestTypeDef
+
+def get_value() -> DeleteEndpointRequestRequestTypeDef:
+    return {
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteEndpointRequestRequestTypeDef(TypedDict):
+    Name: str,
+```
+
 ## DeleteEventBusRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -659,6 +708,23 @@ def get_value() -> DescribeConnectionRequestRequestTypeDef:
 ```python title="Definition"
 class DescribeConnectionRequestRequestTypeDef(TypedDict):
     Name: str,
+```
+
+## DescribeEndpointRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import DescribeEndpointRequestRequestTypeDef
+
+def get_value() -> DescribeEndpointRequestRequestTypeDef:
+    return {
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeEndpointRequestRequestTypeDef(TypedDict):
+    Name: str,
+    HomeRegion: NotRequired[str],
 ```
 
 ## DescribeEventBusRequestRequestTypeDef
@@ -869,6 +935,38 @@ class EventSourceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: EventSourceStateType](./literals.md#eventsourcestatetype) 
+## PrimaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import PrimaryTypeDef
+
+def get_value() -> PrimaryTypeDef:
+    return {
+        "HealthCheck": ...,
+    }
+```
+
+```python title="Definition"
+class PrimaryTypeDef(TypedDict):
+    HealthCheck: str,
+```
+
+## SecondaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import SecondaryTypeDef
+
+def get_value() -> SecondaryTypeDef:
+    return {
+        "Route": ...,
+    }
+```
+
+```python title="Definition"
+class SecondaryTypeDef(TypedDict):
+    Route: str,
+```
+
 ## HttpParametersTypeDef
 
 ```python title="Usage Example"
@@ -980,6 +1078,25 @@ class ListConnectionsRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ConnectionStateType](./literals.md#connectionstatetype) 
+## ListEndpointsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import ListEndpointsRequestRequestTypeDef
+
+def get_value() -> ListEndpointsRequestRequestTypeDef:
+    return {
+        "NamePrefix": ...,
+    }
+```
+
+```python title="Definition"
+class ListEndpointsRequestRequestTypeDef(TypedDict):
+    NamePrefix: NotRequired[str],
+    HomeRegion: NotRequired[str],
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+```
+
 ## ListEventBusesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2535,6 +2652,26 @@ class ListEventSourcesResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: EventSourceTypeDef](./type_defs.md#eventsourcetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## FailoverConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import FailoverConfigTypeDef
+
+def get_value() -> FailoverConfigTypeDef:
+    return {
+        "Primary": ...,
+        "Secondary": ...,
+    }
+```
+
+```python title="Definition"
+class FailoverConfigTypeDef(TypedDict):
+    Primary: PrimaryTypeDef,  # (1)
+    Secondary: SecondaryTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: PrimaryTypeDef](./type_defs.md#primarytypedef) 
+2. See [:material-code-braces: SecondaryTypeDef](./type_defs.md#secondarytypedef) 
 ## ListPartnerEventSourceAccountsResponseTypeDef
 
 ```python title="Usage Example"
@@ -2694,6 +2831,7 @@ def get_value() -> PutEventsRequestRequestTypeDef:
 ```python title="Definition"
 class PutEventsRequestRequestTypeDef(TypedDict):
     Entries: Sequence[PutEventsRequestEntryTypeDef],  # (1)
+    EndpointId: NotRequired[str],
 ```
 
 1. See [:material-code-braces: PutEventsRequestEntryTypeDef](./type_defs.md#puteventsrequestentrytypedef) 
@@ -2940,6 +3078,23 @@ class UpdateConnectionOAuthRequestParametersTypeDef(TypedDict):
 1. See [:material-code-braces: UpdateConnectionOAuthClientRequestParametersTypeDef](./type_defs.md#updateconnectionoauthclientrequestparameterstypedef) 
 2. See [:material-code-brackets: ConnectionOAuthHttpMethodType](./literals.md#connectionoauthhttpmethodtype) 
 3. See [:material-code-braces: ConnectionHttpParametersTypeDef](./type_defs.md#connectionhttpparameterstypedef) 
+## RoutingConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import RoutingConfigTypeDef
+
+def get_value() -> RoutingConfigTypeDef:
+    return {
+        "FailoverConfig": ...,
+    }
+```
+
+```python title="Definition"
+class RoutingConfigTypeDef(TypedDict):
+    FailoverConfig: FailoverConfigTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: FailoverConfigTypeDef](./type_defs.md#failoverconfigtypedef) 
 ## TargetTypeDef
 
 ```python title="Usage Example"
@@ -3052,6 +3207,209 @@ class UpdateConnectionAuthRequestParametersTypeDef(TypedDict):
 2. See [:material-code-braces: UpdateConnectionOAuthRequestParametersTypeDef](./type_defs.md#updateconnectionoauthrequestparameterstypedef) 
 3. See [:material-code-braces: UpdateConnectionApiKeyAuthRequestParametersTypeDef](./type_defs.md#updateconnectionapikeyauthrequestparameterstypedef) 
 4. See [:material-code-braces: ConnectionHttpParametersTypeDef](./type_defs.md#connectionhttpparameterstypedef) 
+## CreateEndpointRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import CreateEndpointRequestRequestTypeDef
+
+def get_value() -> CreateEndpointRequestRequestTypeDef:
+    return {
+        "Name": ...,
+        "RoutingConfig": ...,
+        "EventBuses": ...,
+    }
+```
+
+```python title="Definition"
+class CreateEndpointRequestRequestTypeDef(TypedDict):
+    Name: str,
+    RoutingConfig: RoutingConfigTypeDef,  # (1)
+    EventBuses: Sequence[EndpointEventBusTypeDef],  # (2)
+    Description: NotRequired[str],
+    ReplicationConfig: NotRequired[ReplicationConfigTypeDef],  # (3)
+    RoleArn: NotRequired[str],
+```
+
+1. See [:material-code-braces: RoutingConfigTypeDef](./type_defs.md#routingconfigtypedef) 
+2. See [:material-code-braces: EndpointEventBusTypeDef](./type_defs.md#endpointeventbustypedef) 
+3. See [:material-code-braces: ReplicationConfigTypeDef](./type_defs.md#replicationconfigtypedef) 
+## CreateEndpointResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import CreateEndpointResponseTypeDef
+
+def get_value() -> CreateEndpointResponseTypeDef:
+    return {
+        "Name": ...,
+        "Arn": ...,
+        "RoutingConfig": ...,
+        "ReplicationConfig": ...,
+        "EventBuses": ...,
+        "RoleArn": ...,
+        "State": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateEndpointResponseTypeDef(TypedDict):
+    Name: str,
+    Arn: str,
+    RoutingConfig: RoutingConfigTypeDef,  # (1)
+    ReplicationConfig: ReplicationConfigTypeDef,  # (2)
+    EventBuses: List[EndpointEventBusTypeDef],  # (3)
+    RoleArn: str,
+    State: EndpointStateType,  # (4)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+```
+
+1. See [:material-code-braces: RoutingConfigTypeDef](./type_defs.md#routingconfigtypedef) 
+2. See [:material-code-braces: ReplicationConfigTypeDef](./type_defs.md#replicationconfigtypedef) 
+3. See [:material-code-braces: EndpointEventBusTypeDef](./type_defs.md#endpointeventbustypedef) 
+4. See [:material-code-brackets: EndpointStateType](./literals.md#endpointstatetype) 
+5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeEndpointResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import DescribeEndpointResponseTypeDef
+
+def get_value() -> DescribeEndpointResponseTypeDef:
+    return {
+        "Name": ...,
+        "Description": ...,
+        "Arn": ...,
+        "RoutingConfig": ...,
+        "ReplicationConfig": ...,
+        "EventBuses": ...,
+        "RoleArn": ...,
+        "EndpointId": ...,
+        "EndpointUrl": ...,
+        "State": ...,
+        "StateReason": ...,
+        "CreationTime": ...,
+        "LastModifiedTime": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeEndpointResponseTypeDef(TypedDict):
+    Name: str,
+    Description: str,
+    Arn: str,
+    RoutingConfig: RoutingConfigTypeDef,  # (1)
+    ReplicationConfig: ReplicationConfigTypeDef,  # (2)
+    EventBuses: List[EndpointEventBusTypeDef],  # (3)
+    RoleArn: str,
+    EndpointId: str,
+    EndpointUrl: str,
+    State: EndpointStateType,  # (4)
+    StateReason: str,
+    CreationTime: datetime,
+    LastModifiedTime: datetime,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+```
+
+1. See [:material-code-braces: RoutingConfigTypeDef](./type_defs.md#routingconfigtypedef) 
+2. See [:material-code-braces: ReplicationConfigTypeDef](./type_defs.md#replicationconfigtypedef) 
+3. See [:material-code-braces: EndpointEventBusTypeDef](./type_defs.md#endpointeventbustypedef) 
+4. See [:material-code-brackets: EndpointStateType](./literals.md#endpointstatetype) 
+5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## EndpointTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import EndpointTypeDef
+
+def get_value() -> EndpointTypeDef:
+    return {
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class EndpointTypeDef(TypedDict):
+    Name: NotRequired[str],
+    Description: NotRequired[str],
+    Arn: NotRequired[str],
+    RoutingConfig: NotRequired[RoutingConfigTypeDef],  # (1)
+    ReplicationConfig: NotRequired[ReplicationConfigTypeDef],  # (2)
+    EventBuses: NotRequired[List[EndpointEventBusTypeDef]],  # (3)
+    RoleArn: NotRequired[str],
+    EndpointId: NotRequired[str],
+    EndpointUrl: NotRequired[str],
+    State: NotRequired[EndpointStateType],  # (4)
+    StateReason: NotRequired[str],
+    CreationTime: NotRequired[datetime],
+    LastModifiedTime: NotRequired[datetime],
+```
+
+1. See [:material-code-braces: RoutingConfigTypeDef](./type_defs.md#routingconfigtypedef) 
+2. See [:material-code-braces: ReplicationConfigTypeDef](./type_defs.md#replicationconfigtypedef) 
+3. See [:material-code-braces: EndpointEventBusTypeDef](./type_defs.md#endpointeventbustypedef) 
+4. See [:material-code-brackets: EndpointStateType](./literals.md#endpointstatetype) 
+## UpdateEndpointRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import UpdateEndpointRequestRequestTypeDef
+
+def get_value() -> UpdateEndpointRequestRequestTypeDef:
+    return {
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateEndpointRequestRequestTypeDef(TypedDict):
+    Name: str,
+    Description: NotRequired[str],
+    RoutingConfig: NotRequired[RoutingConfigTypeDef],  # (1)
+    ReplicationConfig: NotRequired[ReplicationConfigTypeDef],  # (2)
+    EventBuses: NotRequired[Sequence[EndpointEventBusTypeDef]],  # (3)
+    RoleArn: NotRequired[str],
+```
+
+1. See [:material-code-braces: RoutingConfigTypeDef](./type_defs.md#routingconfigtypedef) 
+2. See [:material-code-braces: ReplicationConfigTypeDef](./type_defs.md#replicationconfigtypedef) 
+3. See [:material-code-braces: EndpointEventBusTypeDef](./type_defs.md#endpointeventbustypedef) 
+## UpdateEndpointResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import UpdateEndpointResponseTypeDef
+
+def get_value() -> UpdateEndpointResponseTypeDef:
+    return {
+        "Name": ...,
+        "Arn": ...,
+        "RoutingConfig": ...,
+        "ReplicationConfig": ...,
+        "EventBuses": ...,
+        "RoleArn": ...,
+        "EndpointId": ...,
+        "EndpointUrl": ...,
+        "State": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateEndpointResponseTypeDef(TypedDict):
+    Name: str,
+    Arn: str,
+    RoutingConfig: RoutingConfigTypeDef,  # (1)
+    ReplicationConfig: ReplicationConfigTypeDef,  # (2)
+    EventBuses: List[EndpointEventBusTypeDef],  # (3)
+    RoleArn: str,
+    EndpointId: str,
+    EndpointUrl: str,
+    State: EndpointStateType,  # (4)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+```
+
+1. See [:material-code-braces: RoutingConfigTypeDef](./type_defs.md#routingconfigtypedef) 
+2. See [:material-code-braces: ReplicationConfigTypeDef](./type_defs.md#replicationconfigtypedef) 
+3. See [:material-code-braces: EndpointEventBusTypeDef](./type_defs.md#endpointeventbustypedef) 
+4. See [:material-code-brackets: EndpointStateType](./literals.md#endpointstatetype) 
+5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListTargetsByRuleResponseTypeDef
 
 ```python title="Usage Example"
@@ -3180,3 +3538,25 @@ class UpdateConnectionRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-brackets: ConnectionAuthorizationTypeType](./literals.md#connectionauthorizationtypetype) 
 2. See [:material-code-braces: UpdateConnectionAuthRequestParametersTypeDef](./type_defs.md#updateconnectionauthrequestparameterstypedef) 
+## ListEndpointsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_events.type_defs import ListEndpointsResponseTypeDef
+
+def get_value() -> ListEndpointsResponseTypeDef:
+    return {
+        "Endpoints": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListEndpointsResponseTypeDef(TypedDict):
+    Endpoints: List[EndpointTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: EndpointTypeDef](./type_defs.md#endpointtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 

@@ -290,6 +290,24 @@ class AddPrefixListEntryTypeDef(TypedDict):
     Description: NotRequired[str],
 ```
 
+## AnalysisComponentTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import AnalysisComponentTypeDef
+
+def get_value() -> AnalysisComponentTypeDef:
+    return {
+        "Id": ...,
+    }
+```
+
+```python title="Definition"
+class AnalysisComponentTypeDef(TypedDict):
+    Id: NotRequired[str],
+    Arn: NotRequired[str],
+    Name: NotRequired[str],
+```
+
 ## PtrUpdateStatusTypeDef
 
 ```python title="Usage Example"
@@ -458,24 +476,6 @@ def get_value() -> PortRangeTypeDef:
 class PortRangeTypeDef(TypedDict):
     From: NotRequired[int],
     To: NotRequired[int],
-```
-
-## AnalysisComponentTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import AnalysisComponentTypeDef
-
-def get_value() -> AnalysisComponentTypeDef:
-    return {
-        "Id": ...,
-    }
-```
-
-```python title="Definition"
-class AnalysisComponentTypeDef(TypedDict):
-    Id: NotRequired[str],
-    Arn: NotRequired[str],
-    Name: NotRequired[str],
 ```
 
 ## AnalysisLoadBalancerListenerTypeDef
@@ -916,6 +916,47 @@ class AssociateTransitGatewayMulticastDomainRequestRequestTypeDef(TypedDict):
     DryRun: NotRequired[bool],
 ```
 
+## AssociateTransitGatewayPolicyTableRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import AssociateTransitGatewayPolicyTableRequestRequestTypeDef
+
+def get_value() -> AssociateTransitGatewayPolicyTableRequestRequestTypeDef:
+    return {
+        "TransitGatewayPolicyTableId": ...,
+        "TransitGatewayAttachmentId": ...,
+    }
+```
+
+```python title="Definition"
+class AssociateTransitGatewayPolicyTableRequestRequestTypeDef(TypedDict):
+    TransitGatewayPolicyTableId: str,
+    TransitGatewayAttachmentId: str,
+    DryRun: NotRequired[bool],
+```
+
+## TransitGatewayPolicyTableAssociationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayPolicyTableAssociationTypeDef
+
+def get_value() -> TransitGatewayPolicyTableAssociationTypeDef:
+    return {
+        "TransitGatewayPolicyTableId": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayPolicyTableAssociationTypeDef(TypedDict):
+    TransitGatewayPolicyTableId: NotRequired[str],
+    TransitGatewayAttachmentId: NotRequired[str],
+    ResourceId: NotRequired[str],
+    ResourceType: NotRequired[TransitGatewayAttachmentResourceTypeType],  # (1)
+    State: NotRequired[TransitGatewayAssociationStateType],  # (2)
+```
+
+1. See [:material-code-brackets: TransitGatewayAttachmentResourceTypeType](./literals.md#transitgatewayattachmentresourcetypetype) 
+2. See [:material-code-brackets: TransitGatewayAssociationStateType](./literals.md#transitgatewayassociationstatetype) 
 ## AssociateTransitGatewayRouteTableRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2232,6 +2273,42 @@ class ClientVpnRouteStatusTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ClientVpnRouteStatusCodeType](./literals.md#clientvpnroutestatuscodetype) 
+## CloudWatchLogOptionsSpecificationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CloudWatchLogOptionsSpecificationTypeDef
+
+def get_value() -> CloudWatchLogOptionsSpecificationTypeDef:
+    return {
+        "LogEnabled": ...,
+    }
+```
+
+```python title="Definition"
+class CloudWatchLogOptionsSpecificationTypeDef(TypedDict):
+    LogEnabled: NotRequired[bool],
+    LogGroupArn: NotRequired[str],
+    LogOutputFormat: NotRequired[str],
+```
+
+## CloudWatchLogOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CloudWatchLogOptionsTypeDef
+
+def get_value() -> CloudWatchLogOptionsTypeDef:
+    return {
+        "LogEnabled": ...,
+    }
+```
+
+```python title="Definition"
+class CloudWatchLogOptionsTypeDef(TypedDict):
+    LogEnabled: NotRequired[bool],
+    LogGroupArn: NotRequired[str],
+    LogOutputFormat: NotRequired[str],
+```
+
 ## CoipAddressUsageTypeDef
 
 ```python title="Usage Example"
@@ -2853,6 +2930,7 @@ def get_value() -> InstanceSpecificationTypeDef:
 class InstanceSpecificationTypeDef(TypedDict):
     InstanceId: NotRequired[str],
     ExcludeBootVolume: NotRequired[bool],
+    ExcludeDataVolumeIds: NotRequired[Sequence[str]],
 ```
 
 ## CreateSpotDatafeedSubscriptionRequestRequestTypeDef
@@ -2961,6 +3039,23 @@ class CreateTransitGatewayMulticastDomainRequestOptionsTypeDef(TypedDict):
 1. See [:material-code-brackets: Igmpv2SupportValueType](./literals.md#igmpv2supportvaluetype) 
 2. See [:material-code-brackets: StaticSourcesSupportValueType](./literals.md#staticsourcessupportvaluetype) 
 3. See [:material-code-brackets: AutoAcceptSharedAssociationsValueType](./literals.md#autoacceptsharedassociationsvaluetype) 
+## CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef
+
+def get_value() -> CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef:
+    return {
+        "DynamicRouting": ...,
+    }
+```
+
+```python title="Definition"
+class CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef(TypedDict):
+    DynamicRouting: NotRequired[DynamicRoutingValueType],  # (1)
+```
+
+1. See [:material-code-brackets: DynamicRoutingValueType](./literals.md#dynamicroutingvaluetype) 
 ## CreateTransitGatewayPrefixListReferenceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3093,6 +3188,23 @@ class CreateVpcEndpointConnectionNotificationRequestRequestTypeDef(TypedDict):
     ClientToken: NotRequired[str],
 ```
 
+## DnsOptionsSpecificationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DnsOptionsSpecificationTypeDef
+
+def get_value() -> DnsOptionsSpecificationTypeDef:
+    return {
+        "DnsRecordIpType": ...,
+    }
+```
+
+```python title="Definition"
+class DnsOptionsSpecificationTypeDef(TypedDict):
+    DnsRecordIpType: NotRequired[DnsRecordIpTypeType],  # (1)
+```
+
+1. See [:material-code-brackets: DnsRecordIpTypeType](./literals.md#dnsrecordiptypetype) 
 ## CreateVpnConnectionRouteRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4321,6 +4433,23 @@ class DeleteTransitGatewayPeeringAttachmentRequestRequestTypeDef(TypedDict):
     DryRun: NotRequired[bool],
 ```
 
+## DeleteTransitGatewayPolicyTableRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DeleteTransitGatewayPolicyTableRequestRequestTypeDef
+
+def get_value() -> DeleteTransitGatewayPolicyTableRequestRequestTypeDef:
+    return {
+        "TransitGatewayPolicyTableId": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteTransitGatewayPolicyTableRequestRequestTypeDef(TypedDict):
+    TransitGatewayPolicyTableId: str,
+    DryRun: NotRequired[bool],
+```
+
 ## DeleteTransitGatewayPrefixListReferenceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -4373,6 +4502,23 @@ def get_value() -> DeleteTransitGatewayRouteRequestRequestTypeDef:
 class DeleteTransitGatewayRouteRequestRequestTypeDef(TypedDict):
     TransitGatewayRouteTableId: str,
     DestinationCidrBlock: str,
+    DryRun: NotRequired[bool],
+```
+
+## DeleteTransitGatewayRouteTableAnnouncementRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DeleteTransitGatewayRouteTableAnnouncementRequestRequestTypeDef
+
+def get_value() -> DeleteTransitGatewayRouteTableAnnouncementRequestRequestTypeDef:
+    return {
+        "TransitGatewayRouteTableAnnouncementId": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteTransitGatewayRouteTableAnnouncementRequestRequestTypeDef(TypedDict):
+    TransitGatewayRouteTableAnnouncementId: str,
     DryRun: NotRequired[bool],
 ```
 
@@ -6218,15 +6364,15 @@ from types_aiobotocore_ec2.type_defs import DisableTransitGatewayRouteTablePropa
 def get_value() -> DisableTransitGatewayRouteTablePropagationRequestRequestTypeDef:
     return {
         "TransitGatewayRouteTableId": ...,
-        "TransitGatewayAttachmentId": ...,
     }
 ```
 
 ```python title="Definition"
 class DisableTransitGatewayRouteTablePropagationRequestRequestTypeDef(TypedDict):
     TransitGatewayRouteTableId: str,
-    TransitGatewayAttachmentId: str,
+    TransitGatewayAttachmentId: NotRequired[str],
     DryRun: NotRequired[bool],
+    TransitGatewayRouteTableAnnouncementId: NotRequired[str],
 ```
 
 ## TransitGatewayPropagationTypeDef
@@ -6247,6 +6393,7 @@ class TransitGatewayPropagationTypeDef(TypedDict):
     ResourceType: NotRequired[TransitGatewayAttachmentResourceTypeType],  # (1)
     TransitGatewayRouteTableId: NotRequired[str],
     State: NotRequired[TransitGatewayPropagationStateType],  # (2)
+    TransitGatewayRouteTableAnnouncementId: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: TransitGatewayAttachmentResourceTypeType](./literals.md#transitgatewayattachmentresourcetypetype) 
@@ -6510,6 +6657,25 @@ class DisassociateTransitGatewayMulticastDomainRequestRequestTypeDef(TypedDict):
     DryRun: NotRequired[bool],
 ```
 
+## DisassociateTransitGatewayPolicyTableRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DisassociateTransitGatewayPolicyTableRequestRequestTypeDef
+
+def get_value() -> DisassociateTransitGatewayPolicyTableRequestRequestTypeDef:
+    return {
+        "TransitGatewayPolicyTableId": ...,
+        "TransitGatewayAttachmentId": ...,
+    }
+```
+
+```python title="Definition"
+class DisassociateTransitGatewayPolicyTableRequestRequestTypeDef(TypedDict):
+    TransitGatewayPolicyTableId: str,
+    TransitGatewayAttachmentId: str,
+    DryRun: NotRequired[bool],
+```
+
 ## DisassociateTransitGatewayRouteTableRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -6673,6 +6839,23 @@ class DnsEntryTypeDef(TypedDict):
     HostedZoneId: NotRequired[str],
 ```
 
+## DnsOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DnsOptionsTypeDef
+
+def get_value() -> DnsOptionsTypeDef:
+    return {
+        "DnsRecordIpType": ...,
+    }
+```
+
+```python title="Definition"
+class DnsOptionsTypeDef(TypedDict):
+    DnsRecordIpType: NotRequired[DnsRecordIpTypeType],  # (1)
+```
+
+1. See [:material-code-brackets: DnsRecordIpTypeType](./literals.md#dnsrecordiptypetype) 
 ## DnsServersOptionsModifyStructureTypeDef
 
 ```python title="Usage Example"
@@ -7059,15 +7242,15 @@ from types_aiobotocore_ec2.type_defs import EnableTransitGatewayRouteTablePropag
 def get_value() -> EnableTransitGatewayRouteTablePropagationRequestRequestTypeDef:
     return {
         "TransitGatewayRouteTableId": ...,
-        "TransitGatewayAttachmentId": ...,
     }
 ```
 
 ```python title="Definition"
 class EnableTransitGatewayRouteTablePropagationRequestRequestTypeDef(TypedDict):
     TransitGatewayRouteTableId: str,
-    TransitGatewayAttachmentId: str,
+    TransitGatewayAttachmentId: NotRequired[str],
     DryRun: NotRequired[bool],
+    TransitGatewayRouteTableAnnouncementId: NotRequired[str],
 ```
 
 ## EnableVgwRoutePropagationRequestRequestTypeDef
@@ -7219,6 +7402,28 @@ class EventInformationTypeDef(TypedDict):
     EventDescription: NotRequired[str],
     EventSubType: NotRequired[str],
     InstanceId: NotRequired[str],
+```
+
+## TransitGatewayRouteTableRouteTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayRouteTableRouteTypeDef
+
+def get_value() -> TransitGatewayRouteTableRouteTypeDef:
+    return {
+        "DestinationCidr": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayRouteTableRouteTypeDef(TypedDict):
+    DestinationCidr: NotRequired[str],
+    State: NotRequired[str],
+    RouteOrigin: NotRequired[str],
+    PrefixListId: NotRequired[str],
+    AttachmentId: NotRequired[str],
+    ResourceId: NotRequired[str],
+    ResourceType: NotRequired[str],
 ```
 
 ## ExportClientVpnClientCertificateRevocationListRequestRequestTypeDef
@@ -7821,6 +8026,23 @@ class InstanceTypeInfoFromInstanceRequirementsTypeDef(TypedDict):
     InstanceType: NotRequired[str],
 ```
 
+## GetInstanceUefiDataRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import GetInstanceUefiDataRequestRequestTypeDef
+
+def get_value() -> GetInstanceUefiDataRequestRequestTypeDef:
+    return {
+        "InstanceId": ...,
+    }
+```
+
+```python title="Definition"
+class GetInstanceUefiDataRequestRequestTypeDef(TypedDict):
+    InstanceId: str,
+    DryRun: NotRequired[bool],
+```
+
 ## GetIpamAddressHistoryRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -8141,6 +8363,7 @@ class TransitGatewayRouteTablePropagationTypeDef(TypedDict):
     ResourceId: NotRequired[str],
     ResourceType: NotRequired[TransitGatewayAttachmentResourceTypeType],  # (1)
     State: NotRequired[TransitGatewayPropagationStateType],  # (2)
+    TransitGatewayRouteTableAnnouncementId: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: TransitGatewayAttachmentResourceTypeType](./literals.md#transitgatewayattachmentresourcetypetype) 
@@ -8600,6 +8823,40 @@ class InstanceIpv6PrefixTypeDef(TypedDict):
     Ipv6Prefix: NotRequired[str],
 ```
 
+## InstanceMaintenanceOptionsRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import InstanceMaintenanceOptionsRequestTypeDef
+
+def get_value() -> InstanceMaintenanceOptionsRequestTypeDef:
+    return {
+        "AutoRecovery": ...,
+    }
+```
+
+```python title="Definition"
+class InstanceMaintenanceOptionsRequestTypeDef(TypedDict):
+    AutoRecovery: NotRequired[InstanceAutoRecoveryStateType],  # (1)
+```
+
+1. See [:material-code-brackets: InstanceAutoRecoveryStateType](./literals.md#instanceautorecoverystatetype) 
+## InstanceMaintenanceOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import InstanceMaintenanceOptionsTypeDef
+
+def get_value() -> InstanceMaintenanceOptionsTypeDef:
+    return {
+        "AutoRecovery": ...,
+    }
+```
+
+```python title="Definition"
+class InstanceMaintenanceOptionsTypeDef(TypedDict):
+    AutoRecovery: NotRequired[InstanceAutoRecoveryStateType],  # (1)
+```
+
+1. See [:material-code-brackets: InstanceAutoRecoveryStateType](./literals.md#instanceautorecoverystatetype) 
 ## SpotMarketOptionsTypeDef
 
 ```python title="Usage Example"
@@ -9554,6 +9811,40 @@ class LaunchTemplateIamInstanceProfileSpecificationTypeDef(TypedDict):
     Name: NotRequired[str],
 ```
 
+## LaunchTemplateInstanceMaintenanceOptionsRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import LaunchTemplateInstanceMaintenanceOptionsRequestTypeDef
+
+def get_value() -> LaunchTemplateInstanceMaintenanceOptionsRequestTypeDef:
+    return {
+        "AutoRecovery": ...,
+    }
+```
+
+```python title="Definition"
+class LaunchTemplateInstanceMaintenanceOptionsRequestTypeDef(TypedDict):
+    AutoRecovery: NotRequired[LaunchTemplateAutoRecoveryStateType],  # (1)
+```
+
+1. See [:material-code-brackets: LaunchTemplateAutoRecoveryStateType](./literals.md#launchtemplateautorecoverystatetype) 
+## LaunchTemplateInstanceMaintenanceOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import LaunchTemplateInstanceMaintenanceOptionsTypeDef
+
+def get_value() -> LaunchTemplateInstanceMaintenanceOptionsTypeDef:
+    return {
+        "AutoRecovery": ...,
+    }
+```
+
+```python title="Definition"
+class LaunchTemplateInstanceMaintenanceOptionsTypeDef(TypedDict):
+    AutoRecovery: NotRequired[LaunchTemplateAutoRecoveryStateType],  # (1)
+```
+
+1. See [:material-code-brackets: LaunchTemplateAutoRecoveryStateType](./literals.md#launchtemplateautorecoverystatetype) 
 ## LaunchTemplateSpotMarketOptionsRequestTypeDef
 
 ```python title="Usage Example"
@@ -10123,6 +10414,25 @@ class ModifyInstanceEventStartTimeRequestRequestTypeDef(TypedDict):
     DryRun: NotRequired[bool],
 ```
 
+## ModifyInstanceMaintenanceOptionsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import ModifyInstanceMaintenanceOptionsRequestRequestTypeDef
+
+def get_value() -> ModifyInstanceMaintenanceOptionsRequestRequestTypeDef:
+    return {
+        "InstanceId": ...,
+    }
+```
+
+```python title="Definition"
+class ModifyInstanceMaintenanceOptionsRequestRequestTypeDef(TypedDict):
+    InstanceId: str,
+    AutoRecovery: NotRequired[InstanceAutoRecoveryStateType],  # (1)
+    DryRun: NotRequired[bool],
+```
+
+1. See [:material-code-brackets: InstanceAutoRecoveryStateType](./literals.md#instanceautorecoverystatetype) 
 ## ModifyInstanceMetadataOptionsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -10416,6 +10726,7 @@ class ModifyTransitGatewayOptionsTypeDef(TypedDict):
     AssociationDefaultRouteTableId: NotRequired[str],
     DefaultRouteTablePropagation: NotRequired[DefaultRouteTablePropagationValueType],  # (5)
     PropagationDefaultRouteTableId: NotRequired[str],
+    AmazonSideAsn: NotRequired[int],
 ```
 
 1. See [:material-code-brackets: VpnEcmpSupportValueType](./literals.md#vpnecmpsupportvaluetype) 
@@ -10507,32 +10818,6 @@ class ModifyVpcEndpointConnectionNotificationRequestRequestTypeDef(TypedDict):
     ConnectionEvents: NotRequired[Sequence[str]],
 ```
 
-## ModifyVpcEndpointRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import ModifyVpcEndpointRequestRequestTypeDef
-
-def get_value() -> ModifyVpcEndpointRequestRequestTypeDef:
-    return {
-        "VpcEndpointId": ...,
-    }
-```
-
-```python title="Definition"
-class ModifyVpcEndpointRequestRequestTypeDef(TypedDict):
-    VpcEndpointId: str,
-    DryRun: NotRequired[bool],
-    ResetPolicy: NotRequired[bool],
-    PolicyDocument: NotRequired[str],
-    AddRouteTableIds: NotRequired[Sequence[str]],
-    RemoveRouteTableIds: NotRequired[Sequence[str]],
-    AddSubnetIds: NotRequired[Sequence[str]],
-    RemoveSubnetIds: NotRequired[Sequence[str]],
-    AddSecurityGroupIds: NotRequired[Sequence[str]],
-    RemoveSecurityGroupIds: NotRequired[Sequence[str]],
-    PrivateDnsEnabled: NotRequired[bool],
-```
-
 ## ModifyVpcEndpointServiceConfigurationRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -10555,6 +10840,8 @@ class ModifyVpcEndpointServiceConfigurationRequestRequestTypeDef(TypedDict):
     RemoveNetworkLoadBalancerArns: NotRequired[Sequence[str]],
     AddGatewayLoadBalancerArns: NotRequired[Sequence[str]],
     RemoveGatewayLoadBalancerArns: NotRequired[Sequence[str]],
+    AddSupportedIpAddressTypes: NotRequired[Sequence[str]],
+    RemoveSupportedIpAddressTypes: NotRequired[Sequence[str]],
 ```
 
 ## ModifyVpcEndpointServicePayerResponsibilityRequestRequestTypeDef
@@ -11121,6 +11408,7 @@ def get_value() -> PeeringTgwInfoTypeDef:
 ```python title="Definition"
 class PeeringTgwInfoTypeDef(TypedDict):
     TransitGatewayId: NotRequired[str],
+    CoreNetworkId: NotRequired[str],
     OwnerId: NotRequired[str],
     Region: NotRequired[str],
 ```
@@ -13436,6 +13724,40 @@ class TransitGatewayOptionsTypeDef(TypedDict):
 4. See [:material-code-brackets: VpnEcmpSupportValueType](./literals.md#vpnecmpsupportvaluetype) 
 5. See [:material-code-brackets: DnsSupportValueType](./literals.md#dnssupportvaluetype) 
 6. See [:material-code-brackets: MulticastSupportValueType](./literals.md#multicastsupportvaluetype) 
+## TransitGatewayPeeringAttachmentOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayPeeringAttachmentOptionsTypeDef
+
+def get_value() -> TransitGatewayPeeringAttachmentOptionsTypeDef:
+    return {
+        "DynamicRouting": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayPeeringAttachmentOptionsTypeDef(TypedDict):
+    DynamicRouting: NotRequired[DynamicRoutingValueType],  # (1)
+```
+
+1. See [:material-code-brackets: DynamicRoutingValueType](./literals.md#dynamicroutingvaluetype) 
+## TransitGatewayPolicyRuleMetaDataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayPolicyRuleMetaDataTypeDef
+
+def get_value() -> TransitGatewayPolicyRuleMetaDataTypeDef:
+    return {
+        "MetaDataKey": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayPolicyRuleMetaDataTypeDef(TypedDict):
+    MetaDataKey: NotRequired[str],
+    MetaDataValue: NotRequired[str],
+```
+
 ## TransitGatewayPrefixListAttachmentTypeDef
 
 ```python title="Usage Example"
@@ -15064,6 +15386,27 @@ class GetFlowLogsIntegrationTemplateResultTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetInstanceUefiDataResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import GetInstanceUefiDataResultTypeDef
+
+def get_value() -> GetInstanceUefiDataResultTypeDef:
+    return {
+        "InstanceId": ...,
+        "UefiData": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetInstanceUefiDataResultTypeDef(TypedDict):
+    InstanceId: str,
+    UefiData: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetPasswordDataResultTypeDef
 
 ```python title="Usage Example"
@@ -15184,6 +15527,26 @@ class ImportClientVpnClientCertificateRevocationListResultTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## InstanceMaintenanceOptionsResponseMetadataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import InstanceMaintenanceOptionsResponseMetadataTypeDef
+
+def get_value() -> InstanceMaintenanceOptionsResponseMetadataTypeDef:
+    return {
+        "AutoRecovery": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class InstanceMaintenanceOptionsResponseMetadataTypeDef(TypedDict):
+    AutoRecovery: InstanceAutoRecoveryStateType,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-brackets: InstanceAutoRecoveryStateType](./literals.md#instanceautorecoverystatetype) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## InstanceMetadataOptionsResponseResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -15373,6 +15736,28 @@ class ModifyInstanceCapacityReservationAttributesResultTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ModifyInstanceMaintenanceOptionsResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import ModifyInstanceMaintenanceOptionsResultTypeDef
+
+def get_value() -> ModifyInstanceMaintenanceOptionsResultTypeDef:
+    return {
+        "InstanceId": ...,
+        "AutoRecovery": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ModifyInstanceMaintenanceOptionsResultTypeDef(TypedDict):
+    InstanceId: str,
+    AutoRecovery: InstanceAutoRecoveryStateType,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-brackets: InstanceAutoRecoveryStateType](./literals.md#instanceautorecoverystatetype) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ModifyInstancePlacementResultTypeDef
 
 ```python title="Usage Example"
@@ -16308,6 +16693,44 @@ class DescribeSpotFleetInstancesResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: ActiveInstanceTypeDef](./type_defs.md#activeinstancetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## AdditionalDetailTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import AdditionalDetailTypeDef
+
+def get_value() -> AdditionalDetailTypeDef:
+    return {
+        "AdditionalDetailType": ...,
+    }
+```
+
+```python title="Definition"
+class AdditionalDetailTypeDef(TypedDict):
+    AdditionalDetailType: NotRequired[str],
+    Component: NotRequired[AnalysisComponentTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+## AnalysisLoadBalancerTargetTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import AnalysisLoadBalancerTargetTypeDef
+
+def get_value() -> AnalysisLoadBalancerTargetTypeDef:
+    return {
+        "Address": ...,
+    }
+```
+
+```python title="Definition"
+class AnalysisLoadBalancerTargetTypeDef(TypedDict):
+    Address: NotRequired[str],
+    AvailabilityZone: NotRequired[str],
+    Instance: NotRequired[AnalysisComponentTypeDef],  # (1)
+    Port: NotRequired[int],
+```
+
+1. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
 ## AddressAttributeTypeDef
 
 ```python title="Usage Example"
@@ -16969,6 +17392,8 @@ class KeyPairInfoTypeDef(TypedDict):
     KeyName: NotRequired[str],
     KeyType: NotRequired[KeyTypeType],  # (1)
     Tags: NotRequired[List[TagTypeDef]],  # (2)
+    PublicKey: NotRequired[str],
+    CreateTime: NotRequired[datetime],
 ```
 
 1. See [:material-code-brackets: KeyTypeType](./literals.md#keytypetype) 
@@ -17324,11 +17749,13 @@ class PlacementGroupTypeDef(TypedDict):
     GroupId: NotRequired[str],
     Tags: NotRequired[List[TagTypeDef]],  # (3)
     GroupArn: NotRequired[str],
+    SpreadLevel: NotRequired[SpreadLevelType],  # (4)
 ```
 
 1. See [:material-code-brackets: PlacementGroupStateType](./literals.md#placementgroupstatetype) 
 2. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+4. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
 ## ReplaceRootVolumeTaskTypeDef
 
 ```python title="Usage Example"
@@ -17608,10 +18035,62 @@ class TrafficMirrorTargetTypeDef(TypedDict):
     Description: NotRequired[str],
     OwnerId: NotRequired[str],
     Tags: NotRequired[List[TagTypeDef]],  # (2)
+    GatewayLoadBalancerEndpointId: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: TrafficMirrorTargetTypeType](./literals.md#trafficmirrortargettypetype) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## TransitGatewayPolicyTableTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayPolicyTableTypeDef
+
+def get_value() -> TransitGatewayPolicyTableTypeDef:
+    return {
+        "TransitGatewayPolicyTableId": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayPolicyTableTypeDef(TypedDict):
+    TransitGatewayPolicyTableId: NotRequired[str],
+    TransitGatewayId: NotRequired[str],
+    State: NotRequired[TransitGatewayPolicyTableStateType],  # (1)
+    CreationTime: NotRequired[datetime],
+    Tags: NotRequired[List[TagTypeDef]],  # (2)
+```
+
+1. See [:material-code-brackets: TransitGatewayPolicyTableStateType](./literals.md#transitgatewaypolicytablestatetype) 
+2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## TransitGatewayRouteTableAnnouncementTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayRouteTableAnnouncementTypeDef
+
+def get_value() -> TransitGatewayRouteTableAnnouncementTypeDef:
+    return {
+        "TransitGatewayRouteTableAnnouncementId": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayRouteTableAnnouncementTypeDef(TypedDict):
+    TransitGatewayRouteTableAnnouncementId: NotRequired[str],
+    TransitGatewayId: NotRequired[str],
+    CoreNetworkId: NotRequired[str],
+    PeerTransitGatewayId: NotRequired[str],
+    PeerCoreNetworkId: NotRequired[str],
+    PeeringAttachmentId: NotRequired[str],
+    AnnouncementDirection: NotRequired[TransitGatewayRouteTableAnnouncementDirectionType],  # (1)
+    TransitGatewayRouteTableId: NotRequired[str],
+    State: NotRequired[TransitGatewayRouteTableAnnouncementStateType],  # (2)
+    CreationTime: NotRequired[datetime],
+    Tags: NotRequired[List[TagTypeDef]],  # (3)
+```
+
+1. See [:material-code-brackets: TransitGatewayRouteTableAnnouncementDirectionType](./literals.md#transitgatewayroutetableannouncementdirectiontype) 
+2. See [:material-code-brackets: TransitGatewayRouteTableAnnouncementStateType](./literals.md#transitgatewayroutetableannouncementstatetype) 
+3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## TransitGatewayRouteTableTypeDef
 
 ```python title="Usage Example"
@@ -17931,26 +18410,6 @@ class AnalysisSecurityGroupRuleTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PortRangeTypeDef](./type_defs.md#portrangetypedef) 
-## AnalysisLoadBalancerTargetTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import AnalysisLoadBalancerTargetTypeDef
-
-def get_value() -> AnalysisLoadBalancerTargetTypeDef:
-    return {
-        "Address": ...,
-    }
-```
-
-```python title="Definition"
-class AnalysisLoadBalancerTargetTypeDef(TypedDict):
-    Address: NotRequired[str],
-    AvailabilityZone: NotRequired[str],
-    Instance: NotRequired[AnalysisComponentTypeDef],  # (1)
-    Port: NotRequired[int],
-```
-
-1. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
 ## AssignPrivateIpAddressesResultTypeDef
 
 ```python title="Usage Example"
@@ -18146,6 +18605,68 @@ class RouteTableAssociationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: RouteTableAssociationStateTypeDef](./type_defs.md#routetableassociationstatetypedef) 
+## AssociateTransitGatewayPolicyTableResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import AssociateTransitGatewayPolicyTableResultTypeDef
+
+def get_value() -> AssociateTransitGatewayPolicyTableResultTypeDef:
+    return {
+        "Association": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class AssociateTransitGatewayPolicyTableResultTypeDef(TypedDict):
+    Association: TransitGatewayPolicyTableAssociationTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyTableAssociationTypeDef](./type_defs.md#transitgatewaypolicytableassociationtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DisassociateTransitGatewayPolicyTableResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DisassociateTransitGatewayPolicyTableResultTypeDef
+
+def get_value() -> DisassociateTransitGatewayPolicyTableResultTypeDef:
+    return {
+        "Association": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DisassociateTransitGatewayPolicyTableResultTypeDef(TypedDict):
+    Association: TransitGatewayPolicyTableAssociationTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyTableAssociationTypeDef](./type_defs.md#transitgatewaypolicytableassociationtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetTransitGatewayPolicyTableAssociationsResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import GetTransitGatewayPolicyTableAssociationsResultTypeDef
+
+def get_value() -> GetTransitGatewayPolicyTableAssociationsResultTypeDef:
+    return {
+        "Associations": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetTransitGatewayPolicyTableAssociationsResultTypeDef(TypedDict):
+    Associations: List[TransitGatewayPolicyTableAssociationTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyTableAssociationTypeDef](./type_defs.md#transitgatewaypolicytableassociationtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## AssociateTransitGatewayRouteTableResultTypeDef
 
 ```python title="Usage Example"
@@ -19154,6 +19675,40 @@ class DeleteClientVpnRouteResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: ClientVpnRouteStatusTypeDef](./type_defs.md#clientvpnroutestatustypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## VpnTunnelLogOptionsSpecificationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import VpnTunnelLogOptionsSpecificationTypeDef
+
+def get_value() -> VpnTunnelLogOptionsSpecificationTypeDef:
+    return {
+        "CloudWatchLogOptions": ...,
+    }
+```
+
+```python title="Definition"
+class VpnTunnelLogOptionsSpecificationTypeDef(TypedDict):
+    CloudWatchLogOptions: NotRequired[CloudWatchLogOptionsSpecificationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: CloudWatchLogOptionsSpecificationTypeDef](./type_defs.md#cloudwatchlogoptionsspecificationtypedef) 
+## VpnTunnelLogOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import VpnTunnelLogOptionsTypeDef
+
+def get_value() -> VpnTunnelLogOptionsTypeDef:
+    return {
+        "CloudWatchLogOptions": ...,
+    }
+```
+
+```python title="Definition"
+class VpnTunnelLogOptionsTypeDef(TypedDict):
+    CloudWatchLogOptions: NotRequired[CloudWatchLogOptionsTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: CloudWatchLogOptionsTypeDef](./type_defs.md#cloudwatchlogoptionstypedef) 
 ## GetCoipPoolUsageResultTypeDef
 
 ```python title="Usage Example"
@@ -19651,6 +20206,36 @@ class CreateVolumePermissionModificationsTypeDef(TypedDict):
 
 1. See [:material-code-braces: CreateVolumePermissionTypeDef](./type_defs.md#createvolumepermissiontypedef) 
 2. See [:material-code-braces: CreateVolumePermissionTypeDef](./type_defs.md#createvolumepermissiontypedef) 
+## ModifyVpcEndpointRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import ModifyVpcEndpointRequestRequestTypeDef
+
+def get_value() -> ModifyVpcEndpointRequestRequestTypeDef:
+    return {
+        "VpcEndpointId": ...,
+    }
+```
+
+```python title="Definition"
+class ModifyVpcEndpointRequestRequestTypeDef(TypedDict):
+    VpcEndpointId: str,
+    DryRun: NotRequired[bool],
+    ResetPolicy: NotRequired[bool],
+    PolicyDocument: NotRequired[str],
+    AddRouteTableIds: NotRequired[Sequence[str]],
+    RemoveRouteTableIds: NotRequired[Sequence[str]],
+    AddSubnetIds: NotRequired[Sequence[str]],
+    RemoveSubnetIds: NotRequired[Sequence[str]],
+    AddSecurityGroupIds: NotRequired[Sequence[str]],
+    RemoveSecurityGroupIds: NotRequired[Sequence[str]],
+    IpAddressType: NotRequired[IpAddressTypeType],  # (1)
+    DnsOptions: NotRequired[DnsOptionsSpecificationTypeDef],  # (2)
+    PrivateDnsEnabled: NotRequired[bool],
+```
+
+1. See [:material-code-brackets: IpAddressTypeType](./literals.md#ipaddresstypetype) 
+2. See [:material-code-braces: DnsOptionsSpecificationTypeDef](./type_defs.md#dnsoptionsspecificationtypedef) 
 ## DeleteFleetErrorItemTypeDef
 
 ```python title="Usage Example"
@@ -21787,6 +22372,7 @@ class DescribeKeyPairsRequestRequestTypeDef(TypedDict):
     KeyNames: NotRequired[Sequence[str]],
     KeyPairIds: NotRequired[Sequence[str]],
     DryRun: NotRequired[bool],
+    IncludePublicKey: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
@@ -23651,6 +24237,90 @@ class DescribeTransitGatewayPeeringAttachmentsRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef
+
+def get_value() -> DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef:
+    return {
+        "TransitGatewayPolicyTableIds": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef(TypedDict):
+    TransitGatewayPolicyTableIds: NotRequired[Sequence[str]],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    DryRun: NotRequired[bool],
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## DescribeTransitGatewayPolicyTablesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DescribeTransitGatewayPolicyTablesRequestRequestTypeDef
+
+def get_value() -> DescribeTransitGatewayPolicyTablesRequestRequestTypeDef:
+    return {
+        "TransitGatewayPolicyTableIds": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeTransitGatewayPolicyTablesRequestRequestTypeDef(TypedDict):
+    TransitGatewayPolicyTableIds: NotRequired[Sequence[str]],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    MaxResults: NotRequired[int],
+    NextToken: NotRequired[str],
+    DryRun: NotRequired[bool],
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef
+
+def get_value() -> DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef:
+    return {
+        "TransitGatewayRouteTableAnnouncementIds": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef(TypedDict):
+    TransitGatewayRouteTableAnnouncementIds: NotRequired[Sequence[str]],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    DryRun: NotRequired[bool],
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## DescribeTransitGatewayRouteTableAnnouncementsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DescribeTransitGatewayRouteTableAnnouncementsRequestRequestTypeDef
+
+def get_value() -> DescribeTransitGatewayRouteTableAnnouncementsRequestRequestTypeDef:
+    return {
+        "TransitGatewayRouteTableAnnouncementIds": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeTransitGatewayRouteTableAnnouncementsRequestRequestTypeDef(TypedDict):
+    TransitGatewayRouteTableAnnouncementIds: NotRequired[Sequence[str]],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    MaxResults: NotRequired[int],
+    NextToken: NotRequired[str],
+    DryRun: NotRequired[bool],
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
 ## DescribeTransitGatewayRouteTablesRequestDescribeTransitGatewayRouteTablesPaginateTypeDef
 
 ```python title="Usage Example"
@@ -24645,6 +25315,69 @@ class GetTransitGatewayMulticastDomainAssociationsRequestRequestTypeDef(TypedDic
 ```
 
 1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef
+
+def get_value() -> GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef:
+    return {
+        "TransitGatewayPolicyTableId": ...,
+    }
+```
+
+```python title="Definition"
+class GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef(TypedDict):
+    TransitGatewayPolicyTableId: str,
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    DryRun: NotRequired[bool],
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## GetTransitGatewayPolicyTableAssociationsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import GetTransitGatewayPolicyTableAssociationsRequestRequestTypeDef
+
+def get_value() -> GetTransitGatewayPolicyTableAssociationsRequestRequestTypeDef:
+    return {
+        "TransitGatewayPolicyTableId": ...,
+    }
+```
+
+```python title="Definition"
+class GetTransitGatewayPolicyTableAssociationsRequestRequestTypeDef(TypedDict):
+    TransitGatewayPolicyTableId: str,
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    MaxResults: NotRequired[int],
+    NextToken: NotRequired[str],
+    DryRun: NotRequired[bool],
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## GetTransitGatewayPolicyTableEntriesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import GetTransitGatewayPolicyTableEntriesRequestRequestTypeDef
+
+def get_value() -> GetTransitGatewayPolicyTableEntriesRequestRequestTypeDef:
+    return {
+        "TransitGatewayPolicyTableId": ...,
+    }
+```
+
+```python title="Definition"
+class GetTransitGatewayPolicyTableEntriesRequestRequestTypeDef(TypedDict):
+    TransitGatewayPolicyTableId: str,
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    MaxResults: NotRequired[int],
+    NextToken: NotRequired[str],
+    DryRun: NotRequired[bool],
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
 ## GetTransitGatewayPrefixListReferencesRequestGetTransitGatewayPrefixListReferencesPaginateTypeDef
 
 ```python title="Usage Example"
@@ -25323,6 +26056,7 @@ class DescribeKeyPairsRequestKeyPairExistsWaitTypeDef(TypedDict):
     KeyNames: NotRequired[Sequence[str]],
     KeyPairIds: NotRequired[Sequence[str]],
     DryRun: NotRequired[bool],
+    IncludePublicKey: NotRequired[bool],
     WaiterConfig: NotRequired[WaiterConfigTypeDef],  # (2)
 ```
 
@@ -25341,6 +26075,29 @@ def get_value() -> DescribeNatGatewaysRequestNatGatewayAvailableWaitTypeDef:
 
 ```python title="Definition"
 class DescribeNatGatewaysRequestNatGatewayAvailableWaitTypeDef(TypedDict):
+    DryRun: NotRequired[bool],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    MaxResults: NotRequired[int],
+    NatGatewayIds: NotRequired[Sequence[str]],
+    NextToken: NotRequired[str],
+    WaiterConfig: NotRequired[WaiterConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: WaiterConfigTypeDef](./type_defs.md#waiterconfigtypedef) 
+## DescribeNatGatewaysRequestNatGatewayDeletedWaitTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DescribeNatGatewaysRequestNatGatewayDeletedWaitTypeDef
+
+def get_value() -> DescribeNatGatewaysRequestNatGatewayDeletedWaitTypeDef:
+    return {
+        "DryRun": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeNatGatewaysRequestNatGatewayDeletedWaitTypeDef(TypedDict):
     DryRun: NotRequired[bool],
     Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
     MaxResults: NotRequired[int],
@@ -26483,10 +27240,12 @@ class VpcEndpointConnectionTypeDef(TypedDict):
     DnsEntries: NotRequired[List[DnsEntryTypeDef]],  # (2)
     NetworkLoadBalancerArns: NotRequired[List[str]],
     GatewayLoadBalancerArns: NotRequired[List[str]],
+    IpAddressType: NotRequired[IpAddressTypeType],  # (3)
 ```
 
 1. See [:material-code-brackets: StateType](./literals.md#statetype) 
 2. See [:material-code-braces: DnsEntryTypeDef](./type_defs.md#dnsentrytypedef) 
+3. See [:material-code-brackets: IpAddressTypeType](./literals.md#ipaddresstypetype) 
 ## ModifyClientVpnEndpointRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -28361,86 +29120,6 @@ class ModifyVpcPeeringConnectionOptionsResultTypeDef(TypedDict):
 1. See [:material-code-braces: PeeringConnectionOptionsTypeDef](./type_defs.md#peeringconnectionoptionstypedef) 
 2. See [:material-code-braces: PeeringConnectionOptionsTypeDef](./type_defs.md#peeringconnectionoptionstypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ModifyVpnTunnelOptionsSpecificationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import ModifyVpnTunnelOptionsSpecificationTypeDef
-
-def get_value() -> ModifyVpnTunnelOptionsSpecificationTypeDef:
-    return {
-        "TunnelInsideCidr": ...,
-    }
-```
-
-```python title="Definition"
-class ModifyVpnTunnelOptionsSpecificationTypeDef(TypedDict):
-    TunnelInsideCidr: NotRequired[str],
-    TunnelInsideIpv6Cidr: NotRequired[str],
-    PreSharedKey: NotRequired[str],
-    Phase1LifetimeSeconds: NotRequired[int],
-    Phase2LifetimeSeconds: NotRequired[int],
-    RekeyMarginTimeSeconds: NotRequired[int],
-    RekeyFuzzPercentage: NotRequired[int],
-    ReplayWindowSize: NotRequired[int],
-    DPDTimeoutSeconds: NotRequired[int],
-    DPDTimeoutAction: NotRequired[str],
-    Phase1EncryptionAlgorithms: NotRequired[Sequence[Phase1EncryptionAlgorithmsRequestListValueTypeDef]],  # (1)
-    Phase2EncryptionAlgorithms: NotRequired[Sequence[Phase2EncryptionAlgorithmsRequestListValueTypeDef]],  # (2)
-    Phase1IntegrityAlgorithms: NotRequired[Sequence[Phase1IntegrityAlgorithmsRequestListValueTypeDef]],  # (3)
-    Phase2IntegrityAlgorithms: NotRequired[Sequence[Phase2IntegrityAlgorithmsRequestListValueTypeDef]],  # (4)
-    Phase1DHGroupNumbers: NotRequired[Sequence[Phase1DHGroupNumbersRequestListValueTypeDef]],  # (5)
-    Phase2DHGroupNumbers: NotRequired[Sequence[Phase2DHGroupNumbersRequestListValueTypeDef]],  # (6)
-    IKEVersions: NotRequired[Sequence[IKEVersionsRequestListValueTypeDef]],  # (7)
-    StartupAction: NotRequired[str],
-```
-
-1. See [:material-code-braces: Phase1EncryptionAlgorithmsRequestListValueTypeDef](./type_defs.md#phase1encryptionalgorithmsrequestlistvaluetypedef) 
-2. See [:material-code-braces: Phase2EncryptionAlgorithmsRequestListValueTypeDef](./type_defs.md#phase2encryptionalgorithmsrequestlistvaluetypedef) 
-3. See [:material-code-braces: Phase1IntegrityAlgorithmsRequestListValueTypeDef](./type_defs.md#phase1integrityalgorithmsrequestlistvaluetypedef) 
-4. See [:material-code-braces: Phase2IntegrityAlgorithmsRequestListValueTypeDef](./type_defs.md#phase2integrityalgorithmsrequestlistvaluetypedef) 
-5. See [:material-code-braces: Phase1DHGroupNumbersRequestListValueTypeDef](./type_defs.md#phase1dhgroupnumbersrequestlistvaluetypedef) 
-6. See [:material-code-braces: Phase2DHGroupNumbersRequestListValueTypeDef](./type_defs.md#phase2dhgroupnumbersrequestlistvaluetypedef) 
-7. See [:material-code-braces: IKEVersionsRequestListValueTypeDef](./type_defs.md#ikeversionsrequestlistvaluetypedef) 
-## VpnTunnelOptionsSpecificationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import VpnTunnelOptionsSpecificationTypeDef
-
-def get_value() -> VpnTunnelOptionsSpecificationTypeDef:
-    return {
-        "TunnelInsideCidr": ...,
-    }
-```
-
-```python title="Definition"
-class VpnTunnelOptionsSpecificationTypeDef(TypedDict):
-    TunnelInsideCidr: NotRequired[str],
-    TunnelInsideIpv6Cidr: NotRequired[str],
-    PreSharedKey: NotRequired[str],
-    Phase1LifetimeSeconds: NotRequired[int],
-    Phase2LifetimeSeconds: NotRequired[int],
-    RekeyMarginTimeSeconds: NotRequired[int],
-    RekeyFuzzPercentage: NotRequired[int],
-    ReplayWindowSize: NotRequired[int],
-    DPDTimeoutSeconds: NotRequired[int],
-    DPDTimeoutAction: NotRequired[str],
-    Phase1EncryptionAlgorithms: NotRequired[Sequence[Phase1EncryptionAlgorithmsRequestListValueTypeDef]],  # (1)
-    Phase2EncryptionAlgorithms: NotRequired[Sequence[Phase2EncryptionAlgorithmsRequestListValueTypeDef]],  # (2)
-    Phase1IntegrityAlgorithms: NotRequired[Sequence[Phase1IntegrityAlgorithmsRequestListValueTypeDef]],  # (3)
-    Phase2IntegrityAlgorithms: NotRequired[Sequence[Phase2IntegrityAlgorithmsRequestListValueTypeDef]],  # (4)
-    Phase1DHGroupNumbers: NotRequired[Sequence[Phase1DHGroupNumbersRequestListValueTypeDef]],  # (5)
-    Phase2DHGroupNumbers: NotRequired[Sequence[Phase2DHGroupNumbersRequestListValueTypeDef]],  # (6)
-    IKEVersions: NotRequired[Sequence[IKEVersionsRequestListValueTypeDef]],  # (7)
-    StartupAction: NotRequired[str],
-```
-
-1. See [:material-code-braces: Phase1EncryptionAlgorithmsRequestListValueTypeDef](./type_defs.md#phase1encryptionalgorithmsrequestlistvaluetypedef) 
-2. See [:material-code-braces: Phase2EncryptionAlgorithmsRequestListValueTypeDef](./type_defs.md#phase2encryptionalgorithmsrequestlistvaluetypedef) 
-3. See [:material-code-braces: Phase1IntegrityAlgorithmsRequestListValueTypeDef](./type_defs.md#phase1integrityalgorithmsrequestlistvaluetypedef) 
-4. See [:material-code-braces: Phase2IntegrityAlgorithmsRequestListValueTypeDef](./type_defs.md#phase2integrityalgorithmsrequestlistvaluetypedef) 
-5. See [:material-code-braces: Phase1DHGroupNumbersRequestListValueTypeDef](./type_defs.md#phase1dhgroupnumbersrequestlistvaluetypedef) 
-6. See [:material-code-braces: Phase2DHGroupNumbersRequestListValueTypeDef](./type_defs.md#phase2dhgroupnumbersrequestlistvaluetypedef) 
-7. See [:material-code-braces: IKEVersionsRequestListValueTypeDef](./type_defs.md#ikeversionsrequestlistvaluetypedef) 
 ## NatGatewayTypeDef
 
 ```python title="Usage Example"
@@ -28618,74 +29297,6 @@ class ThroughResourcesStatementTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResourceStatementTypeDef](./type_defs.md#resourcestatementtypedef) 
-## TransitGatewayPeeringAttachmentTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import TransitGatewayPeeringAttachmentTypeDef
-
-def get_value() -> TransitGatewayPeeringAttachmentTypeDef:
-    return {
-        "TransitGatewayAttachmentId": ...,
-    }
-```
-
-```python title="Definition"
-class TransitGatewayPeeringAttachmentTypeDef(TypedDict):
-    TransitGatewayAttachmentId: NotRequired[str],
-    RequesterTgwInfo: NotRequired[PeeringTgwInfoTypeDef],  # (1)
-    AccepterTgwInfo: NotRequired[PeeringTgwInfoTypeDef],  # (1)
-    Status: NotRequired[PeeringAttachmentStatusTypeDef],  # (3)
-    State: NotRequired[TransitGatewayAttachmentStateType],  # (4)
-    CreationTime: NotRequired[datetime],
-    Tags: NotRequired[List[TagTypeDef]],  # (5)
-```
-
-1. See [:material-code-braces: PeeringTgwInfoTypeDef](./type_defs.md#peeringtgwinfotypedef) 
-2. See [:material-code-braces: PeeringTgwInfoTypeDef](./type_defs.md#peeringtgwinfotypedef) 
-3. See [:material-code-braces: PeeringAttachmentStatusTypeDef](./type_defs.md#peeringattachmentstatustypedef) 
-4. See [:material-code-brackets: TransitGatewayAttachmentStateType](./literals.md#transitgatewayattachmentstatetype) 
-5. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## TunnelOptionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import TunnelOptionTypeDef
-
-def get_value() -> TunnelOptionTypeDef:
-    return {
-        "OutsideIpAddress": ...,
-    }
-```
-
-```python title="Definition"
-class TunnelOptionTypeDef(TypedDict):
-    OutsideIpAddress: NotRequired[str],
-    TunnelInsideCidr: NotRequired[str],
-    TunnelInsideIpv6Cidr: NotRequired[str],
-    PreSharedKey: NotRequired[str],
-    Phase1LifetimeSeconds: NotRequired[int],
-    Phase2LifetimeSeconds: NotRequired[int],
-    RekeyMarginTimeSeconds: NotRequired[int],
-    RekeyFuzzPercentage: NotRequired[int],
-    ReplayWindowSize: NotRequired[int],
-    DpdTimeoutSeconds: NotRequired[int],
-    DpdTimeoutAction: NotRequired[str],
-    Phase1EncryptionAlgorithms: NotRequired[List[Phase1EncryptionAlgorithmsListValueTypeDef]],  # (1)
-    Phase2EncryptionAlgorithms: NotRequired[List[Phase2EncryptionAlgorithmsListValueTypeDef]],  # (2)
-    Phase1IntegrityAlgorithms: NotRequired[List[Phase1IntegrityAlgorithmsListValueTypeDef]],  # (3)
-    Phase2IntegrityAlgorithms: NotRequired[List[Phase2IntegrityAlgorithmsListValueTypeDef]],  # (4)
-    Phase1DHGroupNumbers: NotRequired[List[Phase1DHGroupNumbersListValueTypeDef]],  # (5)
-    Phase2DHGroupNumbers: NotRequired[List[Phase2DHGroupNumbersListValueTypeDef]],  # (6)
-    IkeVersions: NotRequired[List[IKEVersionsListValueTypeDef]],  # (7)
-    StartupAction: NotRequired[str],
-```
-
-1. See [:material-code-braces: Phase1EncryptionAlgorithmsListValueTypeDef](./type_defs.md#phase1encryptionalgorithmslistvaluetypedef) 
-2. See [:material-code-braces: Phase2EncryptionAlgorithmsListValueTypeDef](./type_defs.md#phase2encryptionalgorithmslistvaluetypedef) 
-3. See [:material-code-braces: Phase1IntegrityAlgorithmsListValueTypeDef](./type_defs.md#phase1integrityalgorithmslistvaluetypedef) 
-4. See [:material-code-braces: Phase2IntegrityAlgorithmsListValueTypeDef](./type_defs.md#phase2integrityalgorithmslistvaluetypedef) 
-5. See [:material-code-braces: Phase1DHGroupNumbersListValueTypeDef](./type_defs.md#phase1dhgroupnumberslistvaluetypedef) 
-6. See [:material-code-braces: Phase2DHGroupNumbersListValueTypeDef](./type_defs.md#phase2dhgroupnumberslistvaluetypedef) 
-7. See [:material-code-braces: IKEVersionsListValueTypeDef](./type_defs.md#ikeversionslistvaluetypedef) 
 ## ReservedInstancesListingTypeDef
 
 ```python title="Usage Example"
@@ -29142,22 +29753,26 @@ class VpcEndpointTypeDef(TypedDict):
     RouteTableIds: NotRequired[List[str]],
     SubnetIds: NotRequired[List[str]],
     Groups: NotRequired[List[SecurityGroupIdentifierTypeDef]],  # (3)
+    IpAddressType: NotRequired[IpAddressTypeType],  # (4)
+    DnsOptions: NotRequired[DnsOptionsTypeDef],  # (5)
     PrivateDnsEnabled: NotRequired[bool],
     RequesterManaged: NotRequired[bool],
     NetworkInterfaceIds: NotRequired[List[str]],
-    DnsEntries: NotRequired[List[DnsEntryTypeDef]],  # (4)
+    DnsEntries: NotRequired[List[DnsEntryTypeDef]],  # (6)
     CreationTimestamp: NotRequired[datetime],
-    Tags: NotRequired[List[TagTypeDef]],  # (5)
+    Tags: NotRequired[List[TagTypeDef]],  # (7)
     OwnerId: NotRequired[str],
-    LastError: NotRequired[LastErrorTypeDef],  # (6)
+    LastError: NotRequired[LastErrorTypeDef],  # (8)
 ```
 
 1. See [:material-code-brackets: VpcEndpointTypeType](./literals.md#vpcendpointtypetype) 
 2. See [:material-code-brackets: StateType](./literals.md#statetype) 
 3. See [:material-code-braces: SecurityGroupIdentifierTypeDef](./type_defs.md#securitygroupidentifiertypedef) 
-4. See [:material-code-braces: DnsEntryTypeDef](./type_defs.md#dnsentrytypedef) 
-5. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-6. See [:material-code-braces: LastErrorTypeDef](./type_defs.md#lasterrortypedef) 
+4. See [:material-code-brackets: IpAddressTypeType](./literals.md#ipaddresstypetype) 
+5. See [:material-code-braces: DnsOptionsTypeDef](./type_defs.md#dnsoptionstypedef) 
+6. See [:material-code-braces: DnsEntryTypeDef](./type_defs.md#dnsentrytypedef) 
+7. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+8. See [:material-code-braces: LastErrorTypeDef](./type_defs.md#lasterrortypedef) 
 ## SecurityGroupRuleUpdateTypeDef
 
 ```python title="Usage Example"
@@ -29198,18 +29813,20 @@ class ServiceConfigurationTypeDef(TypedDict):
     ManagesVpcEndpoints: NotRequired[bool],
     NetworkLoadBalancerArns: NotRequired[List[str]],
     GatewayLoadBalancerArns: NotRequired[List[str]],
+    SupportedIpAddressTypes: NotRequired[List[ServiceConnectivityTypeType]],  # (3)
     BaseEndpointDnsNames: NotRequired[List[str]],
     PrivateDnsName: NotRequired[str],
-    PrivateDnsNameConfiguration: NotRequired[PrivateDnsNameConfigurationTypeDef],  # (3)
-    PayerResponsibility: NotRequired[PayerResponsibilityType],  # (4)
-    Tags: NotRequired[List[TagTypeDef]],  # (5)
+    PrivateDnsNameConfiguration: NotRequired[PrivateDnsNameConfigurationTypeDef],  # (4)
+    PayerResponsibility: NotRequired[PayerResponsibilityType],  # (5)
+    Tags: NotRequired[List[TagTypeDef]],  # (6)
 ```
 
 1. See [:material-code-braces: ServiceTypeDetailTypeDef](./type_defs.md#servicetypedetailtypedef) 
 2. See [:material-code-brackets: ServiceStateType](./literals.md#servicestatetype) 
-3. See [:material-code-braces: PrivateDnsNameConfigurationTypeDef](./type_defs.md#privatednsnameconfigurationtypedef) 
-4. See [:material-code-brackets: PayerResponsibilityType](./literals.md#payerresponsibilitytype) 
-5. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-brackets: ServiceConnectivityTypeType](./literals.md#serviceconnectivitytypetype) 
+4. See [:material-code-braces: PrivateDnsNameConfigurationTypeDef](./type_defs.md#privatednsnameconfigurationtypedef) 
+5. See [:material-code-brackets: PayerResponsibilityType](./literals.md#payerresponsibilitytype) 
+6. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## ServiceDetailTypeDef
 
 ```python title="Usage Example"
@@ -29237,6 +29854,7 @@ class ServiceDetailTypeDef(TypedDict):
     PayerResponsibility: NotRequired[PayerResponsibilityType],  # (3)
     Tags: NotRequired[List[TagTypeDef]],  # (4)
     PrivateDnsNameVerificationState: NotRequired[DnsNameStateType],  # (5)
+    SupportedIpAddressTypes: NotRequired[List[ServiceConnectivityTypeType]],  # (6)
 ```
 
 1. See [:material-code-braces: ServiceTypeDetailTypeDef](./type_defs.md#servicetypedetailtypedef) 
@@ -29244,6 +29862,7 @@ class ServiceDetailTypeDef(TypedDict):
 3. See [:material-code-brackets: PayerResponsibilityType](./literals.md#payerresponsibilitytype) 
 4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 5. See [:material-code-brackets: DnsNameStateType](./literals.md#dnsnamestatetype) 
+6. See [:material-code-brackets: ServiceConnectivityTypeType](./literals.md#serviceconnectivitytypetype) 
 ## SnapshotDetailTypeDef
 
 ```python title="Usage Example"
@@ -29594,6 +30213,58 @@ class TransitGatewayTypeDef(TypedDict):
 1. See [:material-code-brackets: TransitGatewayStateType](./literals.md#transitgatewaystatetype) 
 2. See [:material-code-braces: TransitGatewayOptionsTypeDef](./type_defs.md#transitgatewayoptionstypedef) 
 3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## TransitGatewayPeeringAttachmentTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayPeeringAttachmentTypeDef
+
+def get_value() -> TransitGatewayPeeringAttachmentTypeDef:
+    return {
+        "TransitGatewayAttachmentId": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayPeeringAttachmentTypeDef(TypedDict):
+    TransitGatewayAttachmentId: NotRequired[str],
+    AccepterTransitGatewayAttachmentId: NotRequired[str],
+    RequesterTgwInfo: NotRequired[PeeringTgwInfoTypeDef],  # (1)
+    AccepterTgwInfo: NotRequired[PeeringTgwInfoTypeDef],  # (1)
+    Options: NotRequired[TransitGatewayPeeringAttachmentOptionsTypeDef],  # (3)
+    Status: NotRequired[PeeringAttachmentStatusTypeDef],  # (4)
+    State: NotRequired[TransitGatewayAttachmentStateType],  # (5)
+    CreationTime: NotRequired[datetime],
+    Tags: NotRequired[List[TagTypeDef]],  # (6)
+```
+
+1. See [:material-code-braces: PeeringTgwInfoTypeDef](./type_defs.md#peeringtgwinfotypedef) 
+2. See [:material-code-braces: PeeringTgwInfoTypeDef](./type_defs.md#peeringtgwinfotypedef) 
+3. See [:material-code-braces: TransitGatewayPeeringAttachmentOptionsTypeDef](./type_defs.md#transitgatewaypeeringattachmentoptionstypedef) 
+4. See [:material-code-braces: PeeringAttachmentStatusTypeDef](./type_defs.md#peeringattachmentstatustypedef) 
+5. See [:material-code-brackets: TransitGatewayAttachmentStateType](./literals.md#transitgatewayattachmentstatetype) 
+6. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## TransitGatewayPolicyRuleTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayPolicyRuleTypeDef
+
+def get_value() -> TransitGatewayPolicyRuleTypeDef:
+    return {
+        "SourceCidrBlock": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayPolicyRuleTypeDef(TypedDict):
+    SourceCidrBlock: NotRequired[str],
+    SourcePortRange: NotRequired[str],
+    DestinationCidrBlock: NotRequired[str],
+    DestinationPortRange: NotRequired[str],
+    Protocol: NotRequired[str],
+    MetaData: NotRequired[TransitGatewayPolicyRuleMetaDataTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyRuleMetaDataTypeDef](./type_defs.md#transitgatewaypolicyrulemetadatatypedef) 
 ## TransitGatewayPrefixListReferenceTypeDef
 
 ```python title="Usage Example"
@@ -29632,6 +30303,7 @@ def get_value() -> TransitGatewayRouteTypeDef:
 class TransitGatewayRouteTypeDef(TypedDict):
     DestinationCidrBlock: NotRequired[str],
     PrefixListId: NotRequired[str],
+    TransitGatewayRouteTableAnnouncementId: NotRequired[str],
     TransitGatewayAttachments: NotRequired[List[TransitGatewayRouteAttachmentTypeDef]],  # (1)
     Type: NotRequired[TransitGatewayRouteTypeType],  # (2)
     State: NotRequired[TransitGatewayRouteStateType],  # (3)
@@ -31083,6 +31755,7 @@ class AllocateHostsRequestRequestTypeDef(TypedDict):
     InstanceFamily: NotRequired[str],
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
     HostRecovery: NotRequired[HostRecoveryType],  # (3)
+    OutpostArn: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: AutoPlacementType](./literals.md#autoplacementtype) 
@@ -31247,6 +31920,7 @@ class CreateCustomerGatewayRequestRequestTypeDef(TypedDict):
     CertificateArn: NotRequired[str],
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
     DeviceName: NotRequired[str],
+    IpAddress: NotRequired[str],
     DryRun: NotRequired[bool],
 ```
 
@@ -31321,7 +31995,6 @@ def get_value() -> CreateFlowLogsRequestRequestTypeDef:
     return {
         "ResourceIds": ...,
         "ResourceType": ...,
-        "TrafficType": ...,
     }
 ```
 
@@ -31329,11 +32002,11 @@ def get_value() -> CreateFlowLogsRequestRequestTypeDef:
 class CreateFlowLogsRequestRequestTypeDef(TypedDict):
     ResourceIds: Sequence[str],
     ResourceType: FlowLogsResourceTypeType,  # (1)
-    TrafficType: TrafficTypeType,  # (2)
     DryRun: NotRequired[bool],
     ClientToken: NotRequired[str],
     DeliverLogsPermissionArn: NotRequired[str],
     LogGroupName: NotRequired[str],
+    TrafficType: NotRequired[TrafficTypeType],  # (2)
     LogDestinationType: NotRequired[LogDestinationTypeType],  # (3)
     LogDestination: NotRequired[str],
     LogFormat: NotRequired[str],
@@ -31550,10 +32223,12 @@ class CreateKeyPairRequestRequestTypeDef(TypedDict):
     DryRun: NotRequired[bool],
     KeyType: NotRequired[KeyTypeType],  # (1)
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+    KeyFormat: NotRequired[KeyFormatType],  # (3)
 ```
 
 1. See [:material-code-brackets: KeyTypeType](./literals.md#keytypetype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+3. See [:material-code-brackets: KeyFormatType](./literals.md#keyformattype) 
 ## CreateKeyPairRequestServiceResourceCreateKeyPairTypeDef
 
 ```python title="Usage Example"
@@ -31571,10 +32246,12 @@ class CreateKeyPairRequestServiceResourceCreateKeyPairTypeDef(TypedDict):
     DryRun: NotRequired[bool],
     KeyType: NotRequired[KeyTypeType],  # (1)
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+    KeyFormat: NotRequired[KeyFormatType],  # (3)
 ```
 
 1. See [:material-code-brackets: KeyTypeType](./literals.md#keytypetype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+3. See [:material-code-brackets: KeyFormatType](./literals.md#keyformattype) 
 ## CreateLocalGatewayRouteTableVpcAssociationRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -31858,10 +32535,12 @@ class CreatePlacementGroupRequestRequestTypeDef(TypedDict):
     Strategy: NotRequired[PlacementStrategyType],  # (1)
     PartitionCount: NotRequired[int],
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+    SpreadLevel: NotRequired[SpreadLevelType],  # (3)
 ```
 
 1. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+3. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
 ## CreatePlacementGroupRequestServiceResourceCreatePlacementGroupTypeDef
 
 ```python title="Usage Example"
@@ -31880,10 +32559,12 @@ class CreatePlacementGroupRequestServiceResourceCreatePlacementGroupTypeDef(Type
     Strategy: NotRequired[PlacementStrategyType],  # (1)
     PartitionCount: NotRequired[int],
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+    SpreadLevel: NotRequired[SpreadLevelType],  # (3)
 ```
 
 1. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+3. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
 ## CreatePublicIpv4PoolRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -32170,9 +32851,9 @@ class CreateSubnetCidrReservationRequestRequestTypeDef(TypedDict):
     SubnetId: str,
     Cidr: str,
     ReservationType: SubnetCidrReservationTypeType,  # (1)
-    TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
     Description: NotRequired[str],
     DryRun: NotRequired[bool],
+    TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
 ```
 
 1. See [:material-code-brackets: SubnetCidrReservationTypeType](./literals.md#subnetcidrreservationtypetype) 
@@ -32319,6 +33000,7 @@ class CreateTrafficMirrorTargetRequestRequestTypeDef(TypedDict):
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (1)
     DryRun: NotRequired[bool],
     ClientToken: NotRequired[str],
+    GatewayLoadBalancerEndpointId: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
@@ -32411,6 +33093,27 @@ class CreateTransitGatewayPeeringAttachmentRequestRequestTypeDef(TypedDict):
     PeerTransitGatewayId: str,
     PeerAccountId: str,
     PeerRegion: str,
+    Options: NotRequired[CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef],  # (1)
+    TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+    DryRun: NotRequired[bool],
+```
+
+1. See [:material-code-braces: CreateTransitGatewayPeeringAttachmentRequestOptionsTypeDef](./type_defs.md#createtransitgatewaypeeringattachmentrequestoptionstypedef) 
+2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+## CreateTransitGatewayPolicyTableRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CreateTransitGatewayPolicyTableRequestRequestTypeDef
+
+def get_value() -> CreateTransitGatewayPolicyTableRequestRequestTypeDef:
+    return {
+        "TransitGatewayId": ...,
+    }
+```
+
+```python title="Definition"
+class CreateTransitGatewayPolicyTableRequestRequestTypeDef(TypedDict):
+    TransitGatewayId: str,
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (1)
     DryRun: NotRequired[bool],
 ```
@@ -32437,6 +33140,27 @@ class CreateTransitGatewayRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-braces: TransitGatewayRequestOptionsTypeDef](./type_defs.md#transitgatewayrequestoptionstypedef) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+## CreateTransitGatewayRouteTableAnnouncementRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CreateTransitGatewayRouteTableAnnouncementRequestRequestTypeDef
+
+def get_value() -> CreateTransitGatewayRouteTableAnnouncementRequestRequestTypeDef:
+    return {
+        "TransitGatewayRouteTableId": ...,
+        "PeeringAttachmentId": ...,
+    }
+```
+
+```python title="Definition"
+class CreateTransitGatewayRouteTableAnnouncementRequestRequestTypeDef(TypedDict):
+    TransitGatewayRouteTableId: str,
+    PeeringAttachmentId: str,
+    TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (1)
+    DryRun: NotRequired[bool],
+```
+
+1. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
 ## CreateTransitGatewayRouteTableRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -32563,13 +33287,17 @@ class CreateVpcEndpointRequestRequestTypeDef(TypedDict):
     RouteTableIds: NotRequired[Sequence[str]],
     SubnetIds: NotRequired[Sequence[str]],
     SecurityGroupIds: NotRequired[Sequence[str]],
+    IpAddressType: NotRequired[IpAddressTypeType],  # (2)
+    DnsOptions: NotRequired[DnsOptionsSpecificationTypeDef],  # (3)
     ClientToken: NotRequired[str],
     PrivateDnsEnabled: NotRequired[bool],
-    TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+    TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (4)
 ```
 
 1. See [:material-code-brackets: VpcEndpointTypeType](./literals.md#vpcendpointtypetype) 
-2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+2. See [:material-code-brackets: IpAddressTypeType](./literals.md#ipaddresstypetype) 
+3. See [:material-code-braces: DnsOptionsSpecificationTypeDef](./type_defs.md#dnsoptionsspecificationtypedef) 
+4. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
 ## CreateVpcEndpointServiceConfigurationRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -32588,6 +33316,7 @@ class CreateVpcEndpointServiceConfigurationRequestRequestTypeDef(TypedDict):
     PrivateDnsName: NotRequired[str],
     NetworkLoadBalancerArns: NotRequired[Sequence[str]],
     GatewayLoadBalancerArns: NotRequired[Sequence[str]],
+    SupportedIpAddressTypes: NotRequired[Sequence[str]],
     ClientToken: NotRequired[str],
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (1)
 ```
@@ -33007,6 +33736,130 @@ class DescribeTrafficMirrorTargetsResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: TrafficMirrorTargetTypeDef](./type_defs.md#trafficmirrortargettypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateTransitGatewayPolicyTableResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CreateTransitGatewayPolicyTableResultTypeDef
+
+def get_value() -> CreateTransitGatewayPolicyTableResultTypeDef:
+    return {
+        "TransitGatewayPolicyTable": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateTransitGatewayPolicyTableResultTypeDef(TypedDict):
+    TransitGatewayPolicyTable: TransitGatewayPolicyTableTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyTableTypeDef](./type_defs.md#transitgatewaypolicytabletypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DeleteTransitGatewayPolicyTableResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DeleteTransitGatewayPolicyTableResultTypeDef
+
+def get_value() -> DeleteTransitGatewayPolicyTableResultTypeDef:
+    return {
+        "TransitGatewayPolicyTable": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteTransitGatewayPolicyTableResultTypeDef(TypedDict):
+    TransitGatewayPolicyTable: TransitGatewayPolicyTableTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyTableTypeDef](./type_defs.md#transitgatewaypolicytabletypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeTransitGatewayPolicyTablesResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DescribeTransitGatewayPolicyTablesResultTypeDef
+
+def get_value() -> DescribeTransitGatewayPolicyTablesResultTypeDef:
+    return {
+        "TransitGatewayPolicyTables": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeTransitGatewayPolicyTablesResultTypeDef(TypedDict):
+    TransitGatewayPolicyTables: List[TransitGatewayPolicyTableTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyTableTypeDef](./type_defs.md#transitgatewaypolicytabletypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateTransitGatewayRouteTableAnnouncementResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CreateTransitGatewayRouteTableAnnouncementResultTypeDef
+
+def get_value() -> CreateTransitGatewayRouteTableAnnouncementResultTypeDef:
+    return {
+        "TransitGatewayRouteTableAnnouncement": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateTransitGatewayRouteTableAnnouncementResultTypeDef(TypedDict):
+    TransitGatewayRouteTableAnnouncement: TransitGatewayRouteTableAnnouncementTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayRouteTableAnnouncementTypeDef](./type_defs.md#transitgatewayroutetableannouncementtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DeleteTransitGatewayRouteTableAnnouncementResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DeleteTransitGatewayRouteTableAnnouncementResultTypeDef
+
+def get_value() -> DeleteTransitGatewayRouteTableAnnouncementResultTypeDef:
+    return {
+        "TransitGatewayRouteTableAnnouncement": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteTransitGatewayRouteTableAnnouncementResultTypeDef(TypedDict):
+    TransitGatewayRouteTableAnnouncement: TransitGatewayRouteTableAnnouncementTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayRouteTableAnnouncementTypeDef](./type_defs.md#transitgatewayroutetableannouncementtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef
+
+def get_value() -> DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef:
+    return {
+        "TransitGatewayRouteTableAnnouncements": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef(TypedDict):
+    TransitGatewayRouteTableAnnouncements: List[TransitGatewayRouteTableAnnouncementTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayRouteTableAnnouncementTypeDef](./type_defs.md#transitgatewayroutetableannouncementtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateTransitGatewayRouteTableResultTypeDef
 
 ```python title="Usage Example"
@@ -33133,44 +33986,6 @@ class DescribeVpcClassicLinkResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: VpcClassicLinkTypeDef](./type_defs.md#vpcclassiclinktypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## PathComponentTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import PathComponentTypeDef
-
-def get_value() -> PathComponentTypeDef:
-    return {
-        "SequenceNumber": ...,
-    }
-```
-
-```python title="Definition"
-class PathComponentTypeDef(TypedDict):
-    SequenceNumber: NotRequired[int],
-    AclRule: NotRequired[AnalysisAclRuleTypeDef],  # (1)
-    AttachedTo: NotRequired[AnalysisComponentTypeDef],  # (2)
-    Component: NotRequired[AnalysisComponentTypeDef],  # (2)
-    DestinationVpc: NotRequired[AnalysisComponentTypeDef],  # (2)
-    OutboundHeader: NotRequired[AnalysisPacketHeaderTypeDef],  # (5)
-    InboundHeader: NotRequired[AnalysisPacketHeaderTypeDef],  # (5)
-    RouteTableRoute: NotRequired[AnalysisRouteTableRouteTypeDef],  # (7)
-    SecurityGroupRule: NotRequired[AnalysisSecurityGroupRuleTypeDef],  # (8)
-    SourceVpc: NotRequired[AnalysisComponentTypeDef],  # (2)
-    Subnet: NotRequired[AnalysisComponentTypeDef],  # (2)
-    Vpc: NotRequired[AnalysisComponentTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: AnalysisAclRuleTypeDef](./type_defs.md#analysisaclruletypedef) 
-2. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
-3. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
-4. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
-5. See [:material-code-braces: AnalysisPacketHeaderTypeDef](./type_defs.md#analysispacketheadertypedef) 
-6. See [:material-code-braces: AnalysisPacketHeaderTypeDef](./type_defs.md#analysispacketheadertypedef) 
-7. See [:material-code-braces: AnalysisRouteTableRouteTypeDef](./type_defs.md#analysisroutetableroutetypedef) 
-8. See [:material-code-braces: AnalysisSecurityGroupRuleTypeDef](./type_defs.md#analysissecuritygroupruletypedef) 
-9. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
-10. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
-11. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
 ## ExplanationTypeDef
 
 ```python title="Usage Example"
@@ -33229,6 +34044,10 @@ class ExplanationTypeDef(TypedDict):
     VpcEndpoint: NotRequired[AnalysisComponentTypeDef],  # (1)
     VpnConnection: NotRequired[AnalysisComponentTypeDef],  # (1)
     VpnGateway: NotRequired[AnalysisComponentTypeDef],  # (1)
+    TransitGateway: NotRequired[AnalysisComponentTypeDef],  # (1)
+    TransitGatewayRouteTable: NotRequired[AnalysisComponentTypeDef],  # (1)
+    TransitGatewayRouteTableRoute: NotRequired[TransitGatewayRouteTableRouteTypeDef],  # (34)
+    TransitGatewayAttachment: NotRequired[AnalysisComponentTypeDef],  # (1)
 ```
 
 1. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
@@ -33262,6 +34081,54 @@ class ExplanationTypeDef(TypedDict):
 29. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
 30. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
 31. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+32. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+33. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+34. See [:material-code-braces: TransitGatewayRouteTableRouteTypeDef](./type_defs.md#transitgatewayroutetableroutetypedef) 
+35. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+## PathComponentTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import PathComponentTypeDef
+
+def get_value() -> PathComponentTypeDef:
+    return {
+        "SequenceNumber": ...,
+    }
+```
+
+```python title="Definition"
+class PathComponentTypeDef(TypedDict):
+    SequenceNumber: NotRequired[int],
+    AclRule: NotRequired[AnalysisAclRuleTypeDef],  # (1)
+    AttachedTo: NotRequired[AnalysisComponentTypeDef],  # (2)
+    Component: NotRequired[AnalysisComponentTypeDef],  # (2)
+    DestinationVpc: NotRequired[AnalysisComponentTypeDef],  # (2)
+    OutboundHeader: NotRequired[AnalysisPacketHeaderTypeDef],  # (5)
+    InboundHeader: NotRequired[AnalysisPacketHeaderTypeDef],  # (5)
+    RouteTableRoute: NotRequired[AnalysisRouteTableRouteTypeDef],  # (7)
+    SecurityGroupRule: NotRequired[AnalysisSecurityGroupRuleTypeDef],  # (8)
+    SourceVpc: NotRequired[AnalysisComponentTypeDef],  # (2)
+    Subnet: NotRequired[AnalysisComponentTypeDef],  # (2)
+    Vpc: NotRequired[AnalysisComponentTypeDef],  # (2)
+    AdditionalDetails: NotRequired[List[AdditionalDetailTypeDef]],  # (12)
+    TransitGateway: NotRequired[AnalysisComponentTypeDef],  # (2)
+    TransitGatewayRouteTableRoute: NotRequired[TransitGatewayRouteTableRouteTypeDef],  # (14)
+```
+
+1. See [:material-code-braces: AnalysisAclRuleTypeDef](./type_defs.md#analysisaclruletypedef) 
+2. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+3. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+4. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+5. See [:material-code-braces: AnalysisPacketHeaderTypeDef](./type_defs.md#analysispacketheadertypedef) 
+6. See [:material-code-braces: AnalysisPacketHeaderTypeDef](./type_defs.md#analysispacketheadertypedef) 
+7. See [:material-code-braces: AnalysisRouteTableRouteTypeDef](./type_defs.md#analysisroutetableroutetypedef) 
+8. See [:material-code-braces: AnalysisSecurityGroupRuleTypeDef](./type_defs.md#analysissecuritygroupruletypedef) 
+9. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+10. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+11. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+12. See [:material-code-braces: AdditionalDetailTypeDef](./type_defs.md#additionaldetailtypedef) 
+13. See [:material-code-braces: AnalysisComponentTypeDef](./type_defs.md#analysiscomponenttypedef) 
+14. See [:material-code-braces: TransitGatewayRouteTableRouteTypeDef](./type_defs.md#transitgatewayroutetableroutetypedef) 
 ## DescribeClientVpnTargetNetworksResultTypeDef
 
 ```python title="Usage Example"
@@ -33465,6 +34332,7 @@ class HostTypeDef(TypedDict):
     OwnerId: NotRequired[str],
     AvailabilityZoneId: NotRequired[str],
     MemberOfServiceLinkedResourceGroup: NotRequired[bool],
+    OutpostArn: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: AutoPlacementType](./literals.md#autoplacementtype) 
@@ -33539,6 +34407,8 @@ def get_value() -> ImageAttributeTypeDef:
         "RamdiskId": ...,
         "SriovNetSupport": ...,
         "BootMode": ...,
+        "TpmSupport": ...,
+        "UefiData": ...,
         "LastLaunchedTime": ...,
         "ResponseMetadata": ...,
     }
@@ -33555,8 +34425,10 @@ class ImageAttributeTypeDef(TypedDict):
     RamdiskId: AttributeValueTypeDef,  # (4)
     SriovNetSupport: AttributeValueTypeDef,  # (4)
     BootMode: AttributeValueTypeDef,  # (4)
+    TpmSupport: AttributeValueTypeDef,  # (4)
+    UefiData: AttributeValueTypeDef,  # (4)
     LastLaunchedTime: AttributeValueTypeDef,  # (4)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (10)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (12)
 ```
 
 1. See [:material-code-braces: BlockDeviceMappingTypeDef](./type_defs.md#blockdevicemappingtypedef) 
@@ -33568,7 +34440,9 @@ class ImageAttributeTypeDef(TypedDict):
 7. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 8. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 9. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
-10. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+10. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
+11. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
+12. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ImageTypeDef
 
 ```python title="Usage Example"
@@ -33609,6 +34483,7 @@ class ImageTypeDef(TypedDict):
     Tags: NotRequired[List[TagTypeDef]],  # (10)
     VirtualizationType: NotRequired[VirtualizationTypeType],  # (11)
     BootMode: NotRequired[BootModeValuesType],  # (12)
+    TpmSupport: NotRequired[TpmSupportValuesType],  # (13)
     DeprecationTime: NotRequired[str],
 ```
 
@@ -33624,6 +34499,7 @@ class ImageTypeDef(TypedDict):
 10. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 11. See [:material-code-brackets: VirtualizationTypeType](./literals.md#virtualizationtypetype) 
 12. See [:material-code-brackets: BootModeValuesType](./literals.md#bootmodevaluestype) 
+13. See [:material-code-brackets: TpmSupportValuesType](./literals.md#tpmsupportvaluestype) 
 ## RegisterImageRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -33651,11 +34527,14 @@ class RegisterImageRequestRequestTypeDef(TypedDict):
     SriovNetSupport: NotRequired[str],
     VirtualizationType: NotRequired[str],
     BootMode: NotRequired[BootModeValuesType],  # (3)
+    TpmSupport: NotRequired[TpmSupportValuesType],  # (4)
+    UefiData: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: ArchitectureValuesType](./literals.md#architecturevaluestype) 
 2. See [:material-code-braces: BlockDeviceMappingTypeDef](./type_defs.md#blockdevicemappingtypedef) 
 3. See [:material-code-brackets: BootModeValuesType](./literals.md#bootmodevaluestype) 
+4. See [:material-code-brackets: TpmSupportValuesType](./literals.md#tpmsupportvaluestype) 
 ## RegisterImageRequestServiceResourceRegisterImageTypeDef
 
 ```python title="Usage Example"
@@ -33683,11 +34562,14 @@ class RegisterImageRequestServiceResourceRegisterImageTypeDef(TypedDict):
     SriovNetSupport: NotRequired[str],
     VirtualizationType: NotRequired[str],
     BootMode: NotRequired[BootModeValuesType],  # (3)
+    TpmSupport: NotRequired[TpmSupportValuesType],  # (4)
+    UefiData: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: ArchitectureValuesType](./literals.md#architecturevaluestype) 
 2. See [:material-code-braces: BlockDeviceMappingTypeDef](./type_defs.md#blockdevicemappingtypedef) 
 3. See [:material-code-brackets: BootModeValuesType](./literals.md#bootmodevaluestype) 
+4. See [:material-code-brackets: TpmSupportValuesType](./literals.md#tpmsupportvaluestype) 
 ## CancelCapacityReservationFleetsResultTypeDef
 
 ```python title="Usage Example"
@@ -33956,6 +34838,133 @@ class DescribeClientVpnRoutesResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: ClientVpnRouteTypeDef](./type_defs.md#clientvpnroutetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ModifyVpnTunnelOptionsSpecificationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import ModifyVpnTunnelOptionsSpecificationTypeDef
+
+def get_value() -> ModifyVpnTunnelOptionsSpecificationTypeDef:
+    return {
+        "TunnelInsideCidr": ...,
+    }
+```
+
+```python title="Definition"
+class ModifyVpnTunnelOptionsSpecificationTypeDef(TypedDict):
+    TunnelInsideCidr: NotRequired[str],
+    TunnelInsideIpv6Cidr: NotRequired[str],
+    PreSharedKey: NotRequired[str],
+    Phase1LifetimeSeconds: NotRequired[int],
+    Phase2LifetimeSeconds: NotRequired[int],
+    RekeyMarginTimeSeconds: NotRequired[int],
+    RekeyFuzzPercentage: NotRequired[int],
+    ReplayWindowSize: NotRequired[int],
+    DPDTimeoutSeconds: NotRequired[int],
+    DPDTimeoutAction: NotRequired[str],
+    Phase1EncryptionAlgorithms: NotRequired[Sequence[Phase1EncryptionAlgorithmsRequestListValueTypeDef]],  # (1)
+    Phase2EncryptionAlgorithms: NotRequired[Sequence[Phase2EncryptionAlgorithmsRequestListValueTypeDef]],  # (2)
+    Phase1IntegrityAlgorithms: NotRequired[Sequence[Phase1IntegrityAlgorithmsRequestListValueTypeDef]],  # (3)
+    Phase2IntegrityAlgorithms: NotRequired[Sequence[Phase2IntegrityAlgorithmsRequestListValueTypeDef]],  # (4)
+    Phase1DHGroupNumbers: NotRequired[Sequence[Phase1DHGroupNumbersRequestListValueTypeDef]],  # (5)
+    Phase2DHGroupNumbers: NotRequired[Sequence[Phase2DHGroupNumbersRequestListValueTypeDef]],  # (6)
+    IKEVersions: NotRequired[Sequence[IKEVersionsRequestListValueTypeDef]],  # (7)
+    StartupAction: NotRequired[str],
+    LogOptions: NotRequired[VpnTunnelLogOptionsSpecificationTypeDef],  # (8)
+```
+
+1. See [:material-code-braces: Phase1EncryptionAlgorithmsRequestListValueTypeDef](./type_defs.md#phase1encryptionalgorithmsrequestlistvaluetypedef) 
+2. See [:material-code-braces: Phase2EncryptionAlgorithmsRequestListValueTypeDef](./type_defs.md#phase2encryptionalgorithmsrequestlistvaluetypedef) 
+3. See [:material-code-braces: Phase1IntegrityAlgorithmsRequestListValueTypeDef](./type_defs.md#phase1integrityalgorithmsrequestlistvaluetypedef) 
+4. See [:material-code-braces: Phase2IntegrityAlgorithmsRequestListValueTypeDef](./type_defs.md#phase2integrityalgorithmsrequestlistvaluetypedef) 
+5. See [:material-code-braces: Phase1DHGroupNumbersRequestListValueTypeDef](./type_defs.md#phase1dhgroupnumbersrequestlistvaluetypedef) 
+6. See [:material-code-braces: Phase2DHGroupNumbersRequestListValueTypeDef](./type_defs.md#phase2dhgroupnumbersrequestlistvaluetypedef) 
+7. See [:material-code-braces: IKEVersionsRequestListValueTypeDef](./type_defs.md#ikeversionsrequestlistvaluetypedef) 
+8. See [:material-code-braces: VpnTunnelLogOptionsSpecificationTypeDef](./type_defs.md#vpntunnellogoptionsspecificationtypedef) 
+## VpnTunnelOptionsSpecificationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import VpnTunnelOptionsSpecificationTypeDef
+
+def get_value() -> VpnTunnelOptionsSpecificationTypeDef:
+    return {
+        "TunnelInsideCidr": ...,
+    }
+```
+
+```python title="Definition"
+class VpnTunnelOptionsSpecificationTypeDef(TypedDict):
+    TunnelInsideCidr: NotRequired[str],
+    TunnelInsideIpv6Cidr: NotRequired[str],
+    PreSharedKey: NotRequired[str],
+    Phase1LifetimeSeconds: NotRequired[int],
+    Phase2LifetimeSeconds: NotRequired[int],
+    RekeyMarginTimeSeconds: NotRequired[int],
+    RekeyFuzzPercentage: NotRequired[int],
+    ReplayWindowSize: NotRequired[int],
+    DPDTimeoutSeconds: NotRequired[int],
+    DPDTimeoutAction: NotRequired[str],
+    Phase1EncryptionAlgorithms: NotRequired[Sequence[Phase1EncryptionAlgorithmsRequestListValueTypeDef]],  # (1)
+    Phase2EncryptionAlgorithms: NotRequired[Sequence[Phase2EncryptionAlgorithmsRequestListValueTypeDef]],  # (2)
+    Phase1IntegrityAlgorithms: NotRequired[Sequence[Phase1IntegrityAlgorithmsRequestListValueTypeDef]],  # (3)
+    Phase2IntegrityAlgorithms: NotRequired[Sequence[Phase2IntegrityAlgorithmsRequestListValueTypeDef]],  # (4)
+    Phase1DHGroupNumbers: NotRequired[Sequence[Phase1DHGroupNumbersRequestListValueTypeDef]],  # (5)
+    Phase2DHGroupNumbers: NotRequired[Sequence[Phase2DHGroupNumbersRequestListValueTypeDef]],  # (6)
+    IKEVersions: NotRequired[Sequence[IKEVersionsRequestListValueTypeDef]],  # (7)
+    StartupAction: NotRequired[str],
+    LogOptions: NotRequired[VpnTunnelLogOptionsSpecificationTypeDef],  # (8)
+```
+
+1. See [:material-code-braces: Phase1EncryptionAlgorithmsRequestListValueTypeDef](./type_defs.md#phase1encryptionalgorithmsrequestlistvaluetypedef) 
+2. See [:material-code-braces: Phase2EncryptionAlgorithmsRequestListValueTypeDef](./type_defs.md#phase2encryptionalgorithmsrequestlistvaluetypedef) 
+3. See [:material-code-braces: Phase1IntegrityAlgorithmsRequestListValueTypeDef](./type_defs.md#phase1integrityalgorithmsrequestlistvaluetypedef) 
+4. See [:material-code-braces: Phase2IntegrityAlgorithmsRequestListValueTypeDef](./type_defs.md#phase2integrityalgorithmsrequestlistvaluetypedef) 
+5. See [:material-code-braces: Phase1DHGroupNumbersRequestListValueTypeDef](./type_defs.md#phase1dhgroupnumbersrequestlistvaluetypedef) 
+6. See [:material-code-braces: Phase2DHGroupNumbersRequestListValueTypeDef](./type_defs.md#phase2dhgroupnumbersrequestlistvaluetypedef) 
+7. See [:material-code-braces: IKEVersionsRequestListValueTypeDef](./type_defs.md#ikeversionsrequestlistvaluetypedef) 
+8. See [:material-code-braces: VpnTunnelLogOptionsSpecificationTypeDef](./type_defs.md#vpntunnellogoptionsspecificationtypedef) 
+## TunnelOptionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TunnelOptionTypeDef
+
+def get_value() -> TunnelOptionTypeDef:
+    return {
+        "OutsideIpAddress": ...,
+    }
+```
+
+```python title="Definition"
+class TunnelOptionTypeDef(TypedDict):
+    OutsideIpAddress: NotRequired[str],
+    TunnelInsideCidr: NotRequired[str],
+    TunnelInsideIpv6Cidr: NotRequired[str],
+    PreSharedKey: NotRequired[str],
+    Phase1LifetimeSeconds: NotRequired[int],
+    Phase2LifetimeSeconds: NotRequired[int],
+    RekeyMarginTimeSeconds: NotRequired[int],
+    RekeyFuzzPercentage: NotRequired[int],
+    ReplayWindowSize: NotRequired[int],
+    DpdTimeoutSeconds: NotRequired[int],
+    DpdTimeoutAction: NotRequired[str],
+    Phase1EncryptionAlgorithms: NotRequired[List[Phase1EncryptionAlgorithmsListValueTypeDef]],  # (1)
+    Phase2EncryptionAlgorithms: NotRequired[List[Phase2EncryptionAlgorithmsListValueTypeDef]],  # (2)
+    Phase1IntegrityAlgorithms: NotRequired[List[Phase1IntegrityAlgorithmsListValueTypeDef]],  # (3)
+    Phase2IntegrityAlgorithms: NotRequired[List[Phase2IntegrityAlgorithmsListValueTypeDef]],  # (4)
+    Phase1DHGroupNumbers: NotRequired[List[Phase1DHGroupNumbersListValueTypeDef]],  # (5)
+    Phase2DHGroupNumbers: NotRequired[List[Phase2DHGroupNumbersListValueTypeDef]],  # (6)
+    IkeVersions: NotRequired[List[IKEVersionsListValueTypeDef]],  # (7)
+    StartupAction: NotRequired[str],
+    LogOptions: NotRequired[VpnTunnelLogOptionsTypeDef],  # (8)
+```
+
+1. See [:material-code-braces: Phase1EncryptionAlgorithmsListValueTypeDef](./type_defs.md#phase1encryptionalgorithmslistvaluetypedef) 
+2. See [:material-code-braces: Phase2EncryptionAlgorithmsListValueTypeDef](./type_defs.md#phase2encryptionalgorithmslistvaluetypedef) 
+3. See [:material-code-braces: Phase1IntegrityAlgorithmsListValueTypeDef](./type_defs.md#phase1integrityalgorithmslistvaluetypedef) 
+4. See [:material-code-braces: Phase2IntegrityAlgorithmsListValueTypeDef](./type_defs.md#phase2integrityalgorithmslistvaluetypedef) 
+5. See [:material-code-braces: Phase1DHGroupNumbersListValueTypeDef](./type_defs.md#phase1dhgroupnumberslistvaluetypedef) 
+6. See [:material-code-braces: Phase2DHGroupNumbersListValueTypeDef](./type_defs.md#phase2dhgroupnumberslistvaluetypedef) 
+7. See [:material-code-braces: IKEVersionsListValueTypeDef](./type_defs.md#ikeversionslistvaluetypedef) 
+8. See [:material-code-braces: VpnTunnelLogOptionsTypeDef](./type_defs.md#vpntunnellogoptionstypedef) 
 ## NetworkAclTypeDef
 
 ```python title="Usage Example"
@@ -34328,6 +35337,7 @@ class ModifyInstanceAttributeRequestInstanceModifyAttributeTypeDef(TypedDict):
     SriovNetSupport: NotRequired[AttributeValueTypeDef],  # (7)
     UserData: NotRequired[BlobAttributeValueTypeDef],  # (12)
     Value: NotRequired[str],
+    DisableApiStop: NotRequired[AttributeBooleanValueTypeDef],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeBooleanValueTypeDef](./type_defs.md#attributebooleanvaluetypedef) 
@@ -34342,6 +35352,7 @@ class ModifyInstanceAttributeRequestInstanceModifyAttributeTypeDef(TypedDict):
 10. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 11. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 12. See [:material-code-braces: BlobAttributeValueTypeDef](./type_defs.md#blobattributevaluetypedef) 
+13. See [:material-code-braces: AttributeBooleanValueTypeDef](./type_defs.md#attributebooleanvaluetypedef) 
 ## ModifyInstanceAttributeRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -34371,6 +35382,7 @@ class ModifyInstanceAttributeRequestRequestTypeDef(TypedDict):
     SriovNetSupport: NotRequired[AttributeValueTypeDef],  # (7)
     UserData: NotRequired[BlobAttributeValueTypeDef],  # (12)
     Value: NotRequired[str],
+    DisableApiStop: NotRequired[AttributeBooleanValueTypeDef],  # (1)
 ```
 
 1. See [:material-code-braces: AttributeBooleanValueTypeDef](./type_defs.md#attributebooleanvaluetypedef) 
@@ -34385,6 +35397,7 @@ class ModifyInstanceAttributeRequestRequestTypeDef(TypedDict):
 10. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 11. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 12. See [:material-code-braces: BlobAttributeValueTypeDef](./type_defs.md#blobattributevaluetypedef) 
+13. See [:material-code-braces: AttributeBooleanValueTypeDef](./type_defs.md#attributebooleanvaluetypedef) 
 ## InstanceAttributeTypeDef
 
 ```python title="Usage Example"
@@ -34408,6 +35421,7 @@ def get_value() -> InstanceAttributeTypeDef:
         "SourceDestCheck": ...,
         "SriovNetSupport": ...,
         "UserData": ...,
+        "DisableApiStop": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -34430,7 +35444,8 @@ class InstanceAttributeTypeDef(TypedDict):
     SourceDestCheck: AttributeBooleanValueTypeDef,  # (3)
     SriovNetSupport: AttributeValueTypeDef,  # (7)
     UserData: AttributeValueTypeDef,  # (7)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (16)
+    DisableApiStop: AttributeBooleanValueTypeDef,  # (3)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (17)
 ```
 
 1. See [:material-code-braces: GroupIdentifierTypeDef](./type_defs.md#groupidentifiertypedef) 
@@ -34448,7 +35463,8 @@ class InstanceAttributeTypeDef(TypedDict):
 13. See [:material-code-braces: AttributeBooleanValueTypeDef](./type_defs.md#attributebooleanvaluetypedef) 
 14. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
 15. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
-16. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+16. See [:material-code-braces: AttributeBooleanValueTypeDef](./type_defs.md#attributebooleanvaluetypedef) 
+17. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateEgressOnlyInternetGatewayResultTypeDef
 
 ```python title="Usage Example"
@@ -35124,6 +36140,8 @@ class RunInstancesRequestRequestTypeDef(TypedDict):
     MetadataOptions: NotRequired[InstanceMetadataOptionsRequestTypeDef],  # (19)
     EnclaveOptions: NotRequired[EnclaveOptionsRequestTypeDef],  # (20)
     PrivateDnsNameOptions: NotRequired[PrivateDnsNameOptionsRequestTypeDef],  # (21)
+    MaintenanceOptions: NotRequired[InstanceMaintenanceOptionsRequestTypeDef],  # (22)
+    DisableApiStop: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: BlockDeviceMappingTypeDef](./type_defs.md#blockdevicemappingtypedef) 
@@ -35147,6 +36165,7 @@ class RunInstancesRequestRequestTypeDef(TypedDict):
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
+22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
 ## RunInstancesRequestServiceResourceCreateInstancesTypeDef
 
 ```python title="Usage Example"
@@ -35199,6 +36218,8 @@ class RunInstancesRequestServiceResourceCreateInstancesTypeDef(TypedDict):
     MetadataOptions: NotRequired[InstanceMetadataOptionsRequestTypeDef],  # (19)
     EnclaveOptions: NotRequired[EnclaveOptionsRequestTypeDef],  # (20)
     PrivateDnsNameOptions: NotRequired[PrivateDnsNameOptionsRequestTypeDef],  # (21)
+    MaintenanceOptions: NotRequired[InstanceMaintenanceOptionsRequestTypeDef],  # (22)
+    DisableApiStop: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: BlockDeviceMappingTypeDef](./type_defs.md#blockdevicemappingtypedef) 
@@ -35222,6 +36243,7 @@ class RunInstancesRequestServiceResourceCreateInstancesTypeDef(TypedDict):
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
+22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
 ## RunInstancesRequestSubnetCreateInstancesTypeDef
 
 ```python title="Usage Example"
@@ -35273,6 +36295,8 @@ class RunInstancesRequestSubnetCreateInstancesTypeDef(TypedDict):
     MetadataOptions: NotRequired[InstanceMetadataOptionsRequestTypeDef],  # (19)
     EnclaveOptions: NotRequired[EnclaveOptionsRequestTypeDef],  # (20)
     PrivateDnsNameOptions: NotRequired[PrivateDnsNameOptionsRequestTypeDef],  # (21)
+    MaintenanceOptions: NotRequired[InstanceMaintenanceOptionsRequestTypeDef],  # (22)
+    DisableApiStop: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: BlockDeviceMappingTypeDef](./type_defs.md#blockdevicemappingtypedef) 
@@ -35296,6 +36320,7 @@ class RunInstancesRequestSubnetCreateInstancesTypeDef(TypedDict):
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
+22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
 ## MonitorInstancesResultTypeDef
 
 ```python title="Usage Example"
@@ -36336,6 +37361,8 @@ class RequestLaunchTemplateDataTypeDef(TypedDict):
     EnclaveOptions: NotRequired[LaunchTemplateEnclaveOptionsRequestTypeDef],  # (18)
     InstanceRequirements: NotRequired[InstanceRequirementsRequestTypeDef],  # (19)
     PrivateDnsNameOptions: NotRequired[LaunchTemplatePrivateDnsNameOptionsRequestTypeDef],  # (20)
+    MaintenanceOptions: NotRequired[LaunchTemplateInstanceMaintenanceOptionsRequestTypeDef],  # (21)
+    DisableApiStop: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: LaunchTemplateIamInstanceProfileSpecificationRequestTypeDef](./type_defs.md#launchtemplateiaminstanceprofilespecificationrequesttypedef) 
@@ -36358,6 +37385,7 @@ class RequestLaunchTemplateDataTypeDef(TypedDict):
 18. See [:material-code-braces: LaunchTemplateEnclaveOptionsRequestTypeDef](./type_defs.md#launchtemplateenclaveoptionsrequesttypedef) 
 19. See [:material-code-braces: InstanceRequirementsRequestTypeDef](./type_defs.md#instancerequirementsrequesttypedef) 
 20. See [:material-code-braces: LaunchTemplatePrivateDnsNameOptionsRequestTypeDef](./type_defs.md#launchtemplateprivatednsnameoptionsrequesttypedef) 
+21. See [:material-code-braces: LaunchTemplateInstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#launchtemplateinstancemaintenanceoptionsrequesttypedef) 
 ## ResponseLaunchTemplateDataTypeDef
 
 ```python title="Usage Example"
@@ -36400,6 +37428,8 @@ class ResponseLaunchTemplateDataTypeDef(TypedDict):
     EnclaveOptions: NotRequired[LaunchTemplateEnclaveOptionsTypeDef],  # (18)
     InstanceRequirements: NotRequired[InstanceRequirementsTypeDef],  # (19)
     PrivateDnsNameOptions: NotRequired[LaunchTemplatePrivateDnsNameOptionsTypeDef],  # (20)
+    MaintenanceOptions: NotRequired[LaunchTemplateInstanceMaintenanceOptionsTypeDef],  # (21)
+    DisableApiStop: NotRequired[bool],
 ```
 
 1. See [:material-code-braces: LaunchTemplateIamInstanceProfileSpecificationTypeDef](./type_defs.md#launchtemplateiaminstanceprofilespecificationtypedef) 
@@ -36422,6 +37452,7 @@ class ResponseLaunchTemplateDataTypeDef(TypedDict):
 18. See [:material-code-braces: LaunchTemplateEnclaveOptionsTypeDef](./type_defs.md#launchtemplateenclaveoptionstypedef) 
 19. See [:material-code-braces: InstanceRequirementsTypeDef](./type_defs.md#instancerequirementstypedef) 
 20. See [:material-code-braces: LaunchTemplatePrivateDnsNameOptionsTypeDef](./type_defs.md#launchtemplateprivatednsnameoptionstypedef) 
+21. See [:material-code-braces: LaunchTemplateInstanceMaintenanceOptionsTypeDef](./type_defs.md#launchtemplateinstancemaintenanceoptionstypedef) 
 ## ModifyFpgaImageAttributeRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -36476,53 +37507,6 @@ class ReservedInstancesModificationTypeDef(TypedDict):
 
 1. See [:material-code-braces: ReservedInstancesModificationResultTypeDef](./type_defs.md#reservedinstancesmodificationresulttypedef) 
 2. See [:material-code-braces: ReservedInstancesIdTypeDef](./type_defs.md#reservedinstancesidtypedef) 
-## ModifyVpnTunnelOptionsRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import ModifyVpnTunnelOptionsRequestRequestTypeDef
-
-def get_value() -> ModifyVpnTunnelOptionsRequestRequestTypeDef:
-    return {
-        "VpnConnectionId": ...,
-        "VpnTunnelOutsideIpAddress": ...,
-        "TunnelOptions": ...,
-    }
-```
-
-```python title="Definition"
-class ModifyVpnTunnelOptionsRequestRequestTypeDef(TypedDict):
-    VpnConnectionId: str,
-    VpnTunnelOutsideIpAddress: str,
-    TunnelOptions: ModifyVpnTunnelOptionsSpecificationTypeDef,  # (1)
-    DryRun: NotRequired[bool],
-```
-
-1. See [:material-code-braces: ModifyVpnTunnelOptionsSpecificationTypeDef](./type_defs.md#modifyvpntunneloptionsspecificationtypedef) 
-## VpnConnectionOptionsSpecificationTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import VpnConnectionOptionsSpecificationTypeDef
-
-def get_value() -> VpnConnectionOptionsSpecificationTypeDef:
-    return {
-        "EnableAcceleration": ...,
-    }
-```
-
-```python title="Definition"
-class VpnConnectionOptionsSpecificationTypeDef(TypedDict):
-    EnableAcceleration: NotRequired[bool],
-    StaticRoutesOnly: NotRequired[bool],
-    TunnelInsideIpVersion: NotRequired[TunnelInsideIpVersionType],  # (1)
-    TunnelOptions: NotRequired[Sequence[VpnTunnelOptionsSpecificationTypeDef]],  # (2)
-    LocalIpv4NetworkCidr: NotRequired[str],
-    RemoteIpv4NetworkCidr: NotRequired[str],
-    LocalIpv6NetworkCidr: NotRequired[str],
-    RemoteIpv6NetworkCidr: NotRequired[str],
-```
-
-1. See [:material-code-brackets: TunnelInsideIpVersionType](./literals.md#tunnelinsideipversiontype) 
-2. See [:material-code-braces: VpnTunnelOptionsSpecificationTypeDef](./type_defs.md#vpntunneloptionsspecificationtypedef) 
 ## CreateNatGatewayResultTypeDef
 
 ```python title="Usage Example"
@@ -36702,133 +37686,6 @@ class AccessScopePathTypeDef(TypedDict):
 1. See [:material-code-braces: PathStatementTypeDef](./type_defs.md#pathstatementtypedef) 
 2. See [:material-code-braces: PathStatementTypeDef](./type_defs.md#pathstatementtypedef) 
 3. See [:material-code-braces: ThroughResourcesStatementTypeDef](./type_defs.md#throughresourcesstatementtypedef) 
-## AcceptTransitGatewayPeeringAttachmentResultTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import AcceptTransitGatewayPeeringAttachmentResultTypeDef
-
-def get_value() -> AcceptTransitGatewayPeeringAttachmentResultTypeDef:
-    return {
-        "TransitGatewayPeeringAttachment": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class AcceptTransitGatewayPeeringAttachmentResultTypeDef(TypedDict):
-    TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachmentTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateTransitGatewayPeeringAttachmentResultTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import CreateTransitGatewayPeeringAttachmentResultTypeDef
-
-def get_value() -> CreateTransitGatewayPeeringAttachmentResultTypeDef:
-    return {
-        "TransitGatewayPeeringAttachment": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateTransitGatewayPeeringAttachmentResultTypeDef(TypedDict):
-    TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachmentTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DeleteTransitGatewayPeeringAttachmentResultTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import DeleteTransitGatewayPeeringAttachmentResultTypeDef
-
-def get_value() -> DeleteTransitGatewayPeeringAttachmentResultTypeDef:
-    return {
-        "TransitGatewayPeeringAttachment": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteTransitGatewayPeeringAttachmentResultTypeDef(TypedDict):
-    TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachmentTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DescribeTransitGatewayPeeringAttachmentsResultTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import DescribeTransitGatewayPeeringAttachmentsResultTypeDef
-
-def get_value() -> DescribeTransitGatewayPeeringAttachmentsResultTypeDef:
-    return {
-        "TransitGatewayPeeringAttachments": ...,
-        "NextToken": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeTransitGatewayPeeringAttachmentsResultTypeDef(TypedDict):
-    TransitGatewayPeeringAttachments: List[TransitGatewayPeeringAttachmentTypeDef],  # (1)
-    NextToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## RejectTransitGatewayPeeringAttachmentResultTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import RejectTransitGatewayPeeringAttachmentResultTypeDef
-
-def get_value() -> RejectTransitGatewayPeeringAttachmentResultTypeDef:
-    return {
-        "TransitGatewayPeeringAttachment": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class RejectTransitGatewayPeeringAttachmentResultTypeDef(TypedDict):
-    TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachmentTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## VpnConnectionOptionsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import VpnConnectionOptionsTypeDef
-
-def get_value() -> VpnConnectionOptionsTypeDef:
-    return {
-        "EnableAcceleration": ...,
-    }
-```
-
-```python title="Definition"
-class VpnConnectionOptionsTypeDef(TypedDict):
-    EnableAcceleration: NotRequired[bool],
-    StaticRoutesOnly: NotRequired[bool],
-    LocalIpv4NetworkCidr: NotRequired[str],
-    RemoteIpv4NetworkCidr: NotRequired[str],
-    LocalIpv6NetworkCidr: NotRequired[str],
-    RemoteIpv6NetworkCidr: NotRequired[str],
-    TunnelInsideIpVersion: NotRequired[TunnelInsideIpVersionType],  # (1)
-    TunnelOptions: NotRequired[List[TunnelOptionTypeDef]],  # (2)
-```
-
-1. See [:material-code-brackets: TunnelInsideIpVersionType](./literals.md#tunnelinsideipversiontype) 
-2. See [:material-code-braces: TunnelOptionTypeDef](./type_defs.md#tunneloptiontypedef) 
 ## CancelReservedInstancesListingResultTypeDef
 
 ```python title="Usage Example"
@@ -38034,6 +38891,127 @@ class ModifyTransitGatewayResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: TransitGatewayTypeDef](./type_defs.md#transitgatewaytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## AcceptTransitGatewayPeeringAttachmentResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import AcceptTransitGatewayPeeringAttachmentResultTypeDef
+
+def get_value() -> AcceptTransitGatewayPeeringAttachmentResultTypeDef:
+    return {
+        "TransitGatewayPeeringAttachment": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class AcceptTransitGatewayPeeringAttachmentResultTypeDef(TypedDict):
+    TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachmentTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateTransitGatewayPeeringAttachmentResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CreateTransitGatewayPeeringAttachmentResultTypeDef
+
+def get_value() -> CreateTransitGatewayPeeringAttachmentResultTypeDef:
+    return {
+        "TransitGatewayPeeringAttachment": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateTransitGatewayPeeringAttachmentResultTypeDef(TypedDict):
+    TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachmentTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DeleteTransitGatewayPeeringAttachmentResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DeleteTransitGatewayPeeringAttachmentResultTypeDef
+
+def get_value() -> DeleteTransitGatewayPeeringAttachmentResultTypeDef:
+    return {
+        "TransitGatewayPeeringAttachment": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteTransitGatewayPeeringAttachmentResultTypeDef(TypedDict):
+    TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachmentTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeTransitGatewayPeeringAttachmentsResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import DescribeTransitGatewayPeeringAttachmentsResultTypeDef
+
+def get_value() -> DescribeTransitGatewayPeeringAttachmentsResultTypeDef:
+    return {
+        "TransitGatewayPeeringAttachments": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeTransitGatewayPeeringAttachmentsResultTypeDef(TypedDict):
+    TransitGatewayPeeringAttachments: List[TransitGatewayPeeringAttachmentTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## RejectTransitGatewayPeeringAttachmentResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import RejectTransitGatewayPeeringAttachmentResultTypeDef
+
+def get_value() -> RejectTransitGatewayPeeringAttachmentResultTypeDef:
+    return {
+        "TransitGatewayPeeringAttachment": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class RejectTransitGatewayPeeringAttachmentResultTypeDef(TypedDict):
+    TransitGatewayPeeringAttachment: TransitGatewayPeeringAttachmentTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPeeringAttachmentTypeDef](./type_defs.md#transitgatewaypeeringattachmenttypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## TransitGatewayPolicyTableEntryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import TransitGatewayPolicyTableEntryTypeDef
+
+def get_value() -> TransitGatewayPolicyTableEntryTypeDef:
+    return {
+        "PolicyRuleNumber": ...,
+    }
+```
+
+```python title="Definition"
+class TransitGatewayPolicyTableEntryTypeDef(TypedDict):
+    PolicyRuleNumber: NotRequired[str],
+    PolicyRule: NotRequired[TransitGatewayPolicyRuleTypeDef],  # (1)
+    TargetRouteTableId: NotRequired[str],
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyRuleTypeDef](./type_defs.md#transitgatewaypolicyruletypedef) 
 ## CreateTransitGatewayPrefixListReferenceResultTypeDef
 
 ```python title="Usage Example"
@@ -39012,6 +39990,82 @@ class DescribeClientVpnEndpointsResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: ClientVpnEndpointTypeDef](./type_defs.md#clientvpnendpointtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ModifyVpnTunnelOptionsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import ModifyVpnTunnelOptionsRequestRequestTypeDef
+
+def get_value() -> ModifyVpnTunnelOptionsRequestRequestTypeDef:
+    return {
+        "VpnConnectionId": ...,
+        "VpnTunnelOutsideIpAddress": ...,
+        "TunnelOptions": ...,
+    }
+```
+
+```python title="Definition"
+class ModifyVpnTunnelOptionsRequestRequestTypeDef(TypedDict):
+    VpnConnectionId: str,
+    VpnTunnelOutsideIpAddress: str,
+    TunnelOptions: ModifyVpnTunnelOptionsSpecificationTypeDef,  # (1)
+    DryRun: NotRequired[bool],
+```
+
+1. See [:material-code-braces: ModifyVpnTunnelOptionsSpecificationTypeDef](./type_defs.md#modifyvpntunneloptionsspecificationtypedef) 
+## VpnConnectionOptionsSpecificationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import VpnConnectionOptionsSpecificationTypeDef
+
+def get_value() -> VpnConnectionOptionsSpecificationTypeDef:
+    return {
+        "EnableAcceleration": ...,
+    }
+```
+
+```python title="Definition"
+class VpnConnectionOptionsSpecificationTypeDef(TypedDict):
+    EnableAcceleration: NotRequired[bool],
+    StaticRoutesOnly: NotRequired[bool],
+    TunnelInsideIpVersion: NotRequired[TunnelInsideIpVersionType],  # (1)
+    TunnelOptions: NotRequired[Sequence[VpnTunnelOptionsSpecificationTypeDef]],  # (2)
+    LocalIpv4NetworkCidr: NotRequired[str],
+    RemoteIpv4NetworkCidr: NotRequired[str],
+    LocalIpv6NetworkCidr: NotRequired[str],
+    RemoteIpv6NetworkCidr: NotRequired[str],
+    OutsideIpAddressType: NotRequired[str],
+    TransportTransitGatewayAttachmentId: NotRequired[str],
+```
+
+1. See [:material-code-brackets: TunnelInsideIpVersionType](./literals.md#tunnelinsideipversiontype) 
+2. See [:material-code-braces: VpnTunnelOptionsSpecificationTypeDef](./type_defs.md#vpntunneloptionsspecificationtypedef) 
+## VpnConnectionOptionsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import VpnConnectionOptionsTypeDef
+
+def get_value() -> VpnConnectionOptionsTypeDef:
+    return {
+        "EnableAcceleration": ...,
+    }
+```
+
+```python title="Definition"
+class VpnConnectionOptionsTypeDef(TypedDict):
+    EnableAcceleration: NotRequired[bool],
+    StaticRoutesOnly: NotRequired[bool],
+    LocalIpv4NetworkCidr: NotRequired[str],
+    RemoteIpv4NetworkCidr: NotRequired[str],
+    LocalIpv6NetworkCidr: NotRequired[str],
+    RemoteIpv6NetworkCidr: NotRequired[str],
+    OutsideIpAddressType: NotRequired[str],
+    TransportTransitGatewayAttachmentId: NotRequired[str],
+    TunnelInsideIpVersion: NotRequired[TunnelInsideIpVersionType],  # (1)
+    TunnelOptions: NotRequired[List[TunnelOptionTypeDef]],  # (2)
+```
+
+1. See [:material-code-brackets: TunnelInsideIpVersionType](./literals.md#tunnelinsideipversiontype) 
+2. See [:material-code-braces: TunnelOptionTypeDef](./type_defs.md#tunneloptiontypedef) 
 ## CreateNetworkAclResultTypeDef
 
 ```python title="Usage Example"
@@ -39322,6 +40376,8 @@ class InstanceTypeDef(TypedDict):
     UsageOperationUpdateTime: NotRequired[datetime],
     PrivateDnsNameOptions: NotRequired[PrivateDnsNameOptionsResponseTypeDef],  # (27)
     Ipv6Address: NotRequired[str],
+    TpmSupport: NotRequired[str],
+    MaintenanceOptions: NotRequired[InstanceMaintenanceOptionsTypeDef],  # (28)
 ```
 
 1. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
@@ -39351,6 +40407,7 @@ class InstanceTypeDef(TypedDict):
 25. See [:material-code-braces: EnclaveOptionsTypeDef](./type_defs.md#enclaveoptionstypedef) 
 26. See [:material-code-brackets: BootModeValuesType](./literals.md#bootmodevaluestype) 
 27. See [:material-code-braces: PrivateDnsNameOptionsResponseTypeDef](./type_defs.md#privatednsnameoptionsresponsetypedef) 
+28. See [:material-code-braces: InstanceMaintenanceOptionsTypeDef](./type_defs.md#instancemaintenanceoptionstypedef) 
 ## FleetLaunchTemplateConfigRequestTypeDef
 
 ```python title="Usage Example"
@@ -39658,31 +40715,6 @@ class DescribeReservedInstancesModificationsResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: ReservedInstancesModificationTypeDef](./type_defs.md#reservedinstancesmodificationtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateVpnConnectionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import CreateVpnConnectionRequestRequestTypeDef
-
-def get_value() -> CreateVpnConnectionRequestRequestTypeDef:
-    return {
-        "CustomerGatewayId": ...,
-        "Type": ...,
-    }
-```
-
-```python title="Definition"
-class CreateVpnConnectionRequestRequestTypeDef(TypedDict):
-    CustomerGatewayId: str,
-    Type: str,
-    VpnGatewayId: NotRequired[str],
-    TransitGatewayId: NotRequired[str],
-    DryRun: NotRequired[bool],
-    Options: NotRequired[VpnConnectionOptionsSpecificationTypeDef],  # (1)
-    TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: VpnConnectionOptionsSpecificationTypeDef](./type_defs.md#vpnconnectionoptionsspecificationtypedef) 
-2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
 ## CreateNetworkInterfaceResultTypeDef
 
 ```python title="Usage Example"
@@ -39770,43 +40802,6 @@ class NetworkInsightsAccessScopeContentTypeDef(TypedDict):
 
 1. See [:material-code-braces: AccessScopePathTypeDef](./type_defs.md#accessscopepathtypedef) 
 2. See [:material-code-braces: AccessScopePathTypeDef](./type_defs.md#accessscopepathtypedef) 
-## VpnConnectionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_ec2.type_defs import VpnConnectionTypeDef
-
-def get_value() -> VpnConnectionTypeDef:
-    return {
-        "CustomerGatewayConfiguration": ...,
-    }
-```
-
-```python title="Definition"
-class VpnConnectionTypeDef(TypedDict):
-    CustomerGatewayConfiguration: NotRequired[str],
-    CustomerGatewayId: NotRequired[str],
-    Category: NotRequired[str],
-    State: NotRequired[VpnStateType],  # (1)
-    Type: NotRequired[GatewayTypeType],  # (2)
-    VpnConnectionId: NotRequired[str],
-    VpnGatewayId: NotRequired[str],
-    TransitGatewayId: NotRequired[str],
-    CoreNetworkArn: NotRequired[str],
-    CoreNetworkAttachmentArn: NotRequired[str],
-    GatewayAssociationState: NotRequired[GatewayAssociationStateType],  # (3)
-    Options: NotRequired[VpnConnectionOptionsTypeDef],  # (4)
-    Routes: NotRequired[List[VpnStaticRouteTypeDef]],  # (5)
-    Tags: NotRequired[List[TagTypeDef]],  # (6)
-    VgwTelemetry: NotRequired[List[VgwTelemetryTypeDef]],  # (7)
-```
-
-1. See [:material-code-brackets: VpnStateType](./literals.md#vpnstatetype) 
-2. See [:material-code-brackets: GatewayTypeType](./literals.md#gatewaytypetype) 
-3. See [:material-code-brackets: GatewayAssociationStateType](./literals.md#gatewayassociationstatetype) 
-4. See [:material-code-braces: VpnConnectionOptionsTypeDef](./type_defs.md#vpnconnectionoptionstypedef) 
-5. See [:material-code-braces: VpnStaticRouteTypeDef](./type_defs.md#vpnstaticroutetypedef) 
-6. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-7. See [:material-code-braces: VgwTelemetryTypeDef](./type_defs.md#vgwtelemetrytypedef) 
 ## BundleInstanceResultTypeDef
 
 ```python title="Usage Example"
@@ -40121,6 +41116,26 @@ class DescribeTransitGatewayConnectPeersResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: TransitGatewayConnectPeerTypeDef](./type_defs.md#transitgatewayconnectpeertypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetTransitGatewayPolicyTableEntriesResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import GetTransitGatewayPolicyTableEntriesResultTypeDef
+
+def get_value() -> GetTransitGatewayPolicyTableEntriesResultTypeDef:
+    return {
+        "TransitGatewayPolicyTableEntries": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetTransitGatewayPolicyTableEntriesResultTypeDef(TypedDict):
+    TransitGatewayPolicyTableEntries: List[TransitGatewayPolicyTableEntryTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TransitGatewayPolicyTableEntryTypeDef](./type_defs.md#transitgatewaypolicytableentrytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeVolumeStatusResultTypeDef
 
 ```python title="Usage Example"
@@ -40336,6 +41351,68 @@ class StartNetworkInsightsAnalysisResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: NetworkInsightsAnalysisTypeDef](./type_defs.md#networkinsightsanalysistypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateVpnConnectionRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import CreateVpnConnectionRequestRequestTypeDef
+
+def get_value() -> CreateVpnConnectionRequestRequestTypeDef:
+    return {
+        "CustomerGatewayId": ...,
+        "Type": ...,
+    }
+```
+
+```python title="Definition"
+class CreateVpnConnectionRequestRequestTypeDef(TypedDict):
+    CustomerGatewayId: str,
+    Type: str,
+    VpnGatewayId: NotRequired[str],
+    TransitGatewayId: NotRequired[str],
+    DryRun: NotRequired[bool],
+    Options: NotRequired[VpnConnectionOptionsSpecificationTypeDef],  # (1)
+    TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: VpnConnectionOptionsSpecificationTypeDef](./type_defs.md#vpnconnectionoptionsspecificationtypedef) 
+2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+## VpnConnectionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.type_defs import VpnConnectionTypeDef
+
+def get_value() -> VpnConnectionTypeDef:
+    return {
+        "CustomerGatewayConfiguration": ...,
+    }
+```
+
+```python title="Definition"
+class VpnConnectionTypeDef(TypedDict):
+    CustomerGatewayConfiguration: NotRequired[str],
+    CustomerGatewayId: NotRequired[str],
+    Category: NotRequired[str],
+    State: NotRequired[VpnStateType],  # (1)
+    Type: NotRequired[GatewayTypeType],  # (2)
+    VpnConnectionId: NotRequired[str],
+    VpnGatewayId: NotRequired[str],
+    TransitGatewayId: NotRequired[str],
+    CoreNetworkArn: NotRequired[str],
+    CoreNetworkAttachmentArn: NotRequired[str],
+    GatewayAssociationState: NotRequired[GatewayAssociationStateType],  # (3)
+    Options: NotRequired[VpnConnectionOptionsTypeDef],  # (4)
+    Routes: NotRequired[List[VpnStaticRouteTypeDef]],  # (5)
+    Tags: NotRequired[List[TagTypeDef]],  # (6)
+    VgwTelemetry: NotRequired[List[VgwTelemetryTypeDef]],  # (7)
+```
+
+1. See [:material-code-brackets: VpnStateType](./literals.md#vpnstatetype) 
+2. See [:material-code-brackets: GatewayTypeType](./literals.md#gatewaytypetype) 
+3. See [:material-code-brackets: GatewayAssociationStateType](./literals.md#gatewayassociationstatetype) 
+4. See [:material-code-braces: VpnConnectionOptionsTypeDef](./type_defs.md#vpnconnectionoptionstypedef) 
+5. See [:material-code-braces: VpnStaticRouteTypeDef](./type_defs.md#vpnstaticroutetypedef) 
+6. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+7. See [:material-code-braces: VgwTelemetryTypeDef](./type_defs.md#vgwtelemetrytypedef) 
 ## DescribeSpotInstanceRequestsResultTypeDef
 
 ```python title="Usage Example"

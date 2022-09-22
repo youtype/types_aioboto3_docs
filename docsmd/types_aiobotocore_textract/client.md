@@ -76,14 +76,16 @@ await def analyze_document(
     Document: DocumentTypeDef,  # (1)
     FeatureTypes: Sequence[FeatureTypeType],  # (2)
     HumanLoopConfig: HumanLoopConfigTypeDef = ...,  # (3)
-) -> AnalyzeDocumentResponseTypeDef:  # (4)
+    QueriesConfig: QueriesConfigTypeDef = ...,  # (4)
+) -> AnalyzeDocumentResponseTypeDef:  # (5)
     ...
 ```
 
 1. See [:material-code-braces: DocumentTypeDef](./type_defs.md#documenttypedef) 
 2. See [:material-code-brackets: FeatureTypeType](./literals.md#featuretypetype) 
 3. See [:material-code-braces: HumanLoopConfigTypeDef](./type_defs.md#humanloopconfigtypedef) 
-4. See [:material-code-braces: AnalyzeDocumentResponseTypeDef](./type_defs.md#analyzedocumentresponsetypedef) 
+4. See [:material-code-braces: QueriesConfigTypeDef](./type_defs.md#queriesconfigtypedef) 
+5. See [:material-code-braces: AnalyzeDocumentResponseTypeDef](./type_defs.md#analyzedocumentresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -170,6 +172,21 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("textract").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
     ...
 ```
 
@@ -338,7 +355,8 @@ await def start_document_analysis(
     NotificationChannel: NotificationChannelTypeDef = ...,  # (3)
     OutputConfig: OutputConfigTypeDef = ...,  # (4)
     KMSKeyId: str = ...,
-) -> StartDocumentAnalysisResponseTypeDef:  # (5)
+    QueriesConfig: QueriesConfigTypeDef = ...,  # (5)
+) -> StartDocumentAnalysisResponseTypeDef:  # (6)
     ...
 ```
 
@@ -346,7 +364,8 @@ await def start_document_analysis(
 2. See [:material-code-brackets: FeatureTypeType](./literals.md#featuretypetype) 
 3. See [:material-code-braces: NotificationChannelTypeDef](./type_defs.md#notificationchanneltypedef) 
 4. See [:material-code-braces: OutputConfigTypeDef](./type_defs.md#outputconfigtypedef) 
-5. See [:material-code-braces: StartDocumentAnalysisResponseTypeDef](./type_defs.md#startdocumentanalysisresponsetypedef) 
+5. See [:material-code-braces: QueriesConfigTypeDef](./type_defs.md#queriesconfigtypedef) 
+6. See [:material-code-braces: StartDocumentAnalysisResponseTypeDef](./type_defs.md#startdocumentanalysisresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

@@ -255,6 +255,7 @@ def paginate(
     *,
     ClusterIdentifier: str = ...,
     SnapshotIdentifier: str = ...,
+    SnapshotArn: str = ...,
     SnapshotType: str = ...,
     StartTime: Union[datetime, str] = ...,
     EndTime: Union[datetime, str] = ...,
@@ -1071,6 +1072,7 @@ def paginate(
     ActionType: ActionTypeType,  # (1)
     ClusterIdentifier: str = ...,
     SnapshotIdentifier: str = ...,
+    SnapshotArn: str = ...,
     OwnerAccount: str = ...,
     Filters: Sequence[NodeConfigurationOptionsFilterTypeDef] = ...,  # (2)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)

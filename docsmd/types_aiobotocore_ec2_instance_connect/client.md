@@ -37,6 +37,7 @@ async with session.client("ec2-instance-connect") as client:
         client.EC2InstanceNotFoundException,
         client.EC2InstanceStateInvalidException,
         client.EC2InstanceTypeInvalidException,
+        client.EC2InstanceUnavailableException,
         client.InvalidArgsException,
         client.SerialConsoleAccessDisabledException,
         client.SerialConsoleSessionLimitExceededException,
@@ -70,6 +71,21 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("ec2-instance-connect").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2-instance-connect.html#EC2InstanceConnect.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
     ...
 ```
 

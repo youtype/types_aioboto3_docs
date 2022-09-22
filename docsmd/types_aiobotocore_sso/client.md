@@ -68,6 +68,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("sso").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### generate\_presigned\_url
 
 Generate a presigned url given a client, its method, and arguments.
@@ -123,7 +138,8 @@ parent.get_role_credentials(**kwargs)
 
 ### list\_account\_roles
 
-Lists all roles that are assigned to the user for a given AWS account.
+Lists all roles that are assigned to the user for a given Amazon Web Services
+account.
 
 Type annotations and code completion for `#!python session.client("sso").list_account_roles` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.list_account_roles)
@@ -156,7 +172,7 @@ parent.list_account_roles(**kwargs)
 
 ### list\_accounts
 
-Lists all AWS accounts assigned to the user.
+Lists all Amazon Web Services accounts assigned to the user.
 
 Type annotations and code completion for `#!python session.client("sso").list_accounts` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.list_accounts)
@@ -187,7 +203,9 @@ parent.list_accounts(**kwargs)
 
 ### logout
 
-Removes the client- and server-side session that is associated with the user.
+Removes the locally stored SSO tokens from the client-side cache and sends an
+API call to the Amazon Web Services SSO service to invalidate the corresponding
+server-side Amazon Web Services SSO sign in session.
 
 Type annotations and code completion for `#!python session.client("sso").logout` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.logout)

@@ -162,16 +162,18 @@ def paginate(
     namespace: str = ...,
     status: PackageVersionStatusType = ...,  # (2)
     sortBy: PackageVersionSortTypeType = ...,  # (3)
-    PaginationConfig: PaginatorConfigTypeDef = ...,  # (4)
-) -> AsyncIterator[ListPackageVersionsResultTypeDef]:  # (5)
+    originType: PackageVersionOriginTypeType = ...,  # (4)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (5)
+) -> AsyncIterator[ListPackageVersionsResultTypeDef]:  # (6)
     ...
 ```
 
 1. See [:material-code-brackets: PackageFormatType](./literals.md#packageformattype) 
 2. See [:material-code-brackets: PackageVersionStatusType](./literals.md#packageversionstatustype) 
 3. See [:material-code-brackets: PackageVersionSortTypeType](./literals.md#packageversionsorttypetype) 
-4. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-5. See [:material-code-braces: ListPackageVersionsResultTypeDef](./type_defs.md#listpackageversionsresulttypedef) 
+4. See [:material-code-brackets: PackageVersionOriginTypeType](./literals.md#packageversionorigintypetype) 
+5. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+6. See [:material-code-braces: ListPackageVersionsResultTypeDef](./type_defs.md#listpackageversionsresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -225,14 +227,18 @@ def paginate(
     format: PackageFormatType = ...,  # (1)
     namespace: str = ...,
     packagePrefix: str = ...,
-    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
-) -> AsyncIterator[ListPackagesResultTypeDef]:  # (3)
+    publish: AllowPublishType = ...,  # (2)
+    upstream: AllowUpstreamType = ...,  # (3)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (4)
+) -> AsyncIterator[ListPackagesResultTypeDef]:  # (5)
     ...
 ```
 
 1. See [:material-code-brackets: PackageFormatType](./literals.md#packageformattype) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-3. See [:material-code-braces: ListPackagesResultTypeDef](./type_defs.md#listpackagesresulttypedef) 
+2. See [:material-code-brackets: AllowPublishType](./literals.md#allowpublishtype) 
+3. See [:material-code-brackets: AllowUpstreamType](./literals.md#allowupstreamtype) 
+4. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+5. See [:material-code-braces: ListPackagesResultTypeDef](./type_defs.md#listpackagesresulttypedef) 
 
 
 ```python title="Usage example with kwargs"

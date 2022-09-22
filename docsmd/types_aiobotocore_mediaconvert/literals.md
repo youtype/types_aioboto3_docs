@@ -415,6 +415,23 @@ AudioDefaultSelectionType = Literal[
     "NOT_DEFAULT",
 ]
 ```
+## AudioDurationCorrectionType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import AudioDurationCorrectionType
+
+def get_value() -> AudioDurationCorrectionType:
+    return "AUTO"
+```
+
+```python title="Definition"
+AudioDurationCorrectionType = Literal[
+    "AUTO",
+    "DISABLED",
+    "FRAME",
+    "TRACK",
+]
+```
 ## AudioLanguageCodeControlType
 
 ```python title="Usage Example"
@@ -1301,6 +1318,21 @@ CmfcIFrameOnlyManifestType = Literal[
     "INCLUDE",
 ]
 ```
+## CmfcKlvMetadataType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import CmfcKlvMetadataType
+
+def get_value() -> CmfcKlvMetadataType:
+    return "NONE"
+```
+
+```python title="Definition"
+CmfcKlvMetadataType = Literal[
+    "NONE",
+    "PASSTHROUGH",
+]
+```
 ## CmfcScte35EsamType
 
 ```python title="Usage Example"
@@ -1726,6 +1758,21 @@ DolbyVisionLevel6ModeType = Literal[
     "SPECIFY",
 ]
 ```
+## DolbyVisionMappingType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import DolbyVisionMappingType
+
+def get_value() -> DolbyVisionMappingType:
+    return "HDR10_1000"
+```
+
+```python title="Definition"
+DolbyVisionMappingType = Literal[
+    "HDR10_1000",
+    "HDR10_NOMAP",
+]
+```
 ## DolbyVisionProfileType
 
 ```python title="Usage Example"
@@ -1738,6 +1785,7 @@ def get_value() -> DolbyVisionProfileType:
 ```python title="Definition"
 DolbyVisionProfileType = Literal[
     "PROFILE_5",
+    "PROFILE_8_1",
 ]
 ```
 ## DropFrameTimecodeType
@@ -4238,6 +4286,21 @@ M2tsForceTsVideoEbpOrderType = Literal[
     "FORCE",
 ]
 ```
+## M2tsKlvMetadataType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import M2tsKlvMetadataType
+
+def get_value() -> M2tsKlvMetadataType:
+    return "NONE"
+```
+
+```python title="Definition"
+M2tsKlvMetadataType = Literal[
+    "NONE",
+    "PASSTHROUGH",
+]
+```
 ## M2tsNielsenId3Type
 
 ```python title="Usage Example"
@@ -4615,6 +4678,21 @@ def get_value() -> MpdCaptionContainerTypeType:
 MpdCaptionContainerTypeType = Literal[
     "FRAGMENTED_MP4",
     "RAW",
+]
+```
+## MpdKlvMetadataType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import MpdKlvMetadataType
+
+def get_value() -> MpdKlvMetadataType:
+    return "NONE"
+```
+
+```python title="Definition"
+MpdKlvMetadataType = Literal[
+    "NONE",
+    "PASSTHROUGH",
 ]
 ```
 ## MpdScte35EsamType
@@ -5201,6 +5279,21 @@ OutputSdtType = Literal[
     "SDT_NONE",
 ]
 ```
+## PadVideoType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import PadVideoType
+
+def get_value() -> PadVideoType:
+    return "BLACK"
+```
+
+```python title="Definition"
+PadVideoType = Literal[
+    "BLACK",
+    "DISABLED",
+]
+```
 ## PresetListByType
 
 ```python title="Usage Example"
@@ -5420,6 +5513,21 @@ RenewalTypeType = Literal[
     "EXPIRE",
 ]
 ```
+## RequiredFlagType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import RequiredFlagType
+
+def get_value() -> RequiredFlagType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+RequiredFlagType = Literal[
+    "DISABLED",
+    "ENABLED",
+]
+```
 ## ReservationPlanStatusType
 
 ```python title="Usage Example"
@@ -5449,6 +5557,23 @@ RespondToAfdType = Literal[
     "NONE",
     "PASSTHROUGH",
     "RESPOND",
+]
+```
+## RuleTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import RuleTypeType
+
+def get_value() -> RuleTypeType:
+    return "ALLOWED_RENDITIONS"
+```
+
+```python title="Definition"
+RuleTypeType = Literal[
+    "ALLOWED_RENDITIONS",
+    "FORCE_INCLUDE_RENDITIONS",
+    "MIN_BOTTOM_RENDITION_SIZE",
+    "MIN_TOP_RENDITION_SIZE",
 ]
 ```
 ## S3ObjectCannedAclType
@@ -6062,6 +6187,7 @@ def get_value() -> WebvttStylePassthroughType:
 WebvttStylePassthroughType = Literal[
     "DISABLED",
     "ENABLED",
+    "STRICT",
 ]
 ```
 ## Xavc4kIntraCbgProfileClassType
@@ -6438,6 +6564,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -6445,6 +6572,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -6477,6 +6605,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -6513,6 +6642,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -6526,6 +6656,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -6559,6 +6690,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -6578,12 +6710,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -6627,8 +6761,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -6639,11 +6775,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -6689,6 +6827,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

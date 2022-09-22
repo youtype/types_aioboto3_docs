@@ -205,6 +205,8 @@ def get_value() -> HttpVersionType:
 HttpVersionType = Literal[
     "http1.1",
     "http2",
+    "http2and3",
+    "http3",
 ]
 ```
 ## ICPRecordalStatusType
@@ -347,6 +349,50 @@ MinimumProtocolVersionType = Literal[
     "TLSv1.2_2019",
     "TLSv1.2_2021",
     "TLSv1_2016",
+]
+```
+## OriginAccessControlOriginTypesType
+
+```python title="Usage Example"
+from types_aiobotocore_cloudfront.literals import OriginAccessControlOriginTypesType
+
+def get_value() -> OriginAccessControlOriginTypesType:
+    return "s3"
+```
+
+```python title="Definition"
+OriginAccessControlOriginTypesType = Literal[
+    "s3",
+]
+```
+## OriginAccessControlSigningBehaviorsType
+
+```python title="Usage Example"
+from types_aiobotocore_cloudfront.literals import OriginAccessControlSigningBehaviorsType
+
+def get_value() -> OriginAccessControlSigningBehaviorsType:
+    return "always"
+```
+
+```python title="Definition"
+OriginAccessControlSigningBehaviorsType = Literal[
+    "always",
+    "never",
+    "no-override",
+]
+```
+## OriginAccessControlSigningProtocolsType
+
+```python title="Usage Example"
+from types_aiobotocore_cloudfront.literals import OriginAccessControlSigningProtocolsType
+
+def get_value() -> OriginAccessControlSigningProtocolsType:
+    return "sigv4"
+```
+
+```python title="Definition"
+OriginAccessControlSigningProtocolsType = Literal[
+    "sigv4",
 ]
 ```
 ## OriginProtocolPolicyType
@@ -634,6 +680,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -641,6 +688,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -673,6 +721,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -709,6 +758,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -722,6 +772,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -755,6 +806,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -774,12 +826,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -823,8 +877,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -835,11 +891,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -885,6 +943,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

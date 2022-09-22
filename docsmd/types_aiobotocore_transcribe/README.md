@@ -145,6 +145,7 @@ def get_value() -> AbsoluteTimeRangeTypeDef:
 - [GetVocabularyRequestRequestTypeDef](./type_defs.md#getvocabularyrequestrequesttypedef)
 - [RelativeTimeRangeTypeDef](./type_defs.md#relativetimerangetypedef)
 - [JobExecutionSettingsTypeDef](./type_defs.md#jobexecutionsettingstypedef)
+- [LanguageCodeItemTypeDef](./type_defs.md#languagecodeitemtypedef)
 - [ListCallAnalyticsCategoriesRequestRequestTypeDef](./type_defs.md#listcallanalyticscategoriesrequestrequesttypedef)
 - [ListCallAnalyticsJobsRequestRequestTypeDef](./type_defs.md#listcallanalyticsjobsrequestrequesttypedef)
 - [ListLanguageModelsRequestRequestTypeDef](./type_defs.md#listlanguagemodelsrequestrequesttypedef)

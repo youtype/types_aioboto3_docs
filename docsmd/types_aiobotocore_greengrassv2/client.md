@@ -193,6 +193,21 @@ parent.cancel_deployment(**kwargs)
 
 1. See [:material-code-braces: CancelDeploymentRequestRequestTypeDef](./type_defs.md#canceldeploymentrequestrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("greengrassv2").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_component\_version
 
 Creates a component.
@@ -323,6 +338,35 @@ parent.delete_core_device(**kwargs)
 
 1. See [:material-code-braces: DeleteCoreDeviceRequestRequestTypeDef](./type_defs.md#deletecoredevicerequestrequesttypedef) 
 
+### delete\_deployment
+
+Deletes a deployment.
+
+Type annotations and code completion for `#!python session.client("greengrassv2").delete_deployment` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.delete_deployment)
+
+```python title="Method definition"
+await def delete_deployment(
+    self,
+    *,
+    deploymentId: str,
+) -> EmptyResponseMetadataTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteDeploymentRequestRequestTypeDef = {  # (1)
+    "deploymentId": ...,
+}
+
+parent.delete_deployment(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteDeploymentRequestRequestTypeDef](./type_defs.md#deletedeploymentrequestrequesttypedef) 
+
 ### describe\_component
 
 Retrieves metadata for a version of a component.
@@ -421,7 +465,7 @@ parent.get_component(**kwargs)
 
 ### get\_component\_version\_artifact
 
-Gets the pre-signed URL to download a public component artifact.
+Gets the pre-signed URL to download a public or a Lambda component artifact.
 
 Type annotations and code completion for `#!python session.client("greengrassv2").get_component_version_artifact` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.get_component_version_artifact)
@@ -819,8 +863,8 @@ Type annotations and code completion for `#!python session.client("greengrassv2"
 await def resolve_component_candidates(
     self,
     *,
-    platform: ComponentPlatformTypeDef,  # (1)
-    componentCandidates: Sequence[ComponentCandidateTypeDef],  # (2)
+    platform: ComponentPlatformTypeDef = ...,  # (1)
+    componentCandidates: Sequence[ComponentCandidateTypeDef] = ...,  # (2)
 ) -> ResolveComponentCandidatesResponseTypeDef:  # (3)
     ...
 ```
@@ -833,7 +877,6 @@ await def resolve_component_candidates(
 ```python title="Usage example with kwargs"
 kwargs: ResolveComponentCandidatesRequestRequestTypeDef = {  # (1)
     "platform": ...,
-    "componentCandidates": ...,
 }
 
 parent.resolve_component_candidates(**kwargs)

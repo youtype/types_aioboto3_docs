@@ -215,6 +215,38 @@ Ec2PlatformType = Literal[
     "WINDOWS",
 ]
 ```
+## EcrRescanDurationStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_inspector2.literals import EcrRescanDurationStatusType
+
+def get_value() -> EcrRescanDurationStatusType:
+    return "FAILED"
+```
+
+```python title="Definition"
+EcrRescanDurationStatusType = Literal[
+    "FAILED",
+    "PENDING",
+    "SUCCESS",
+]
+```
+## EcrRescanDurationType
+
+```python title="Usage Example"
+from types_aiobotocore_inspector2.literals import EcrRescanDurationType
+
+def get_value() -> EcrRescanDurationType:
+    return "DAYS_180"
+```
+
+```python title="Definition"
+EcrRescanDurationType = Literal[
+    "DAYS_180",
+    "DAYS_30",
+    "LIFETIME",
+]
+```
 ## EcrScanFrequencyType
 
 ```python title="Usage Example"
@@ -243,6 +275,7 @@ def get_value() -> ErrorCodeType:
 ```python title="Definition"
 ErrorCodeType = Literal[
     "ACCESS_DENIED",
+    "ACCOUNT_IS_ISOLATED",
     "ALREADY_ENABLED",
     "DISABLE_IN_PROGRESS",
     "DISASSOCIATE_ALL_MEMBERS",
@@ -604,11 +637,15 @@ PackageManagerType = Literal[
     "GOBINARY",
     "GOMOD",
     "JAR",
+    "NODEPKG",
     "NPM",
     "NUGET",
     "OS",
+    "PIP",
     "PIPENV",
     "POETRY",
+    "POM",
+    "PYTHONPKG",
     "YARN",
 ]
 ```
@@ -674,13 +711,17 @@ ReportFormatType = Literal[
 from types_aiobotocore_inspector2.literals import ReportingErrorCodeType
 
 def get_value() -> ReportingErrorCodeType:
-    return "INTERNAL_ERROR"
+    return "BUCKET_NOT_FOUND"
 ```
 
 ```python title="Definition"
 ReportingErrorCodeType = Literal[
+    "BUCKET_NOT_FOUND",
+    "INCOMPATIBLE_BUCKET_REGION",
     "INTERNAL_ERROR",
     "INVALID_PERMISSIONS",
+    "MALFORMED_KMS_KEY",
+    "NO_FINDINGS_FOUND",
 ]
 ```
 ## RepositorySortByType
@@ -762,6 +803,7 @@ ScanStatusReasonType = Literal[
     "IMAGE_SIZE_EXCEEDED",
     "INTERNAL_ERROR",
     "NO_RESOURCES_FOUND",
+    "PENDING_DISABLE",
     "PENDING_INITIAL_SCAN",
     "RESOURCE_TERMINATED",
     "SCAN_ELIGIBILITY_EXPIRED",
@@ -986,6 +1028,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -993,6 +1036,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1025,6 +1069,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -1061,6 +1106,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1074,6 +1120,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1107,6 +1154,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1126,12 +1174,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1175,8 +1225,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1187,11 +1239,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1237,6 +1291,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

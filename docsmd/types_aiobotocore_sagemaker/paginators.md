@@ -889,6 +889,67 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListDomainsRequestListDomainsPaginateTypeDef](./type_defs.md#listdomainsrequestlistdomainspaginatetypedef) 
+## ListEdgeDeploymentPlansPaginator
+
+Type annotations and code completion for `#!python session.client("sagemaker").get_paginator("list_edge_deployment_plans")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Paginator.ListEdgeDeploymentPlans)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_sagemaker.paginator import ListEdgeDeploymentPlansPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("sagemaker") as client:  # (1)
+    paginator: ListEdgeDeploymentPlansPaginator = client.get_paginator("list_edge_deployment_plans")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListEdgeDeploymentPlansResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListEdgeDeploymentPlansPaginator](./paginators.md#listedgedeploymentplanspaginator)
+3. item: [:material-code-braces: ListEdgeDeploymentPlansResponseTypeDef](./type_defs.md#listedgedeploymentplansresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListEdgeDeploymentPlansPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    CreationTimeAfter: Union[datetime, str] = ...,
+    CreationTimeBefore: Union[datetime, str] = ...,
+    LastModifiedTimeAfter: Union[datetime, str] = ...,
+    LastModifiedTimeBefore: Union[datetime, str] = ...,
+    NameContains: str = ...,
+    DeviceFleetNameContains: str = ...,
+    SortBy: ListEdgeDeploymentPlansSortByType = ...,  # (1)
+    SortOrder: SortOrderType = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[ListEdgeDeploymentPlansResponseTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-brackets: ListEdgeDeploymentPlansSortByType](./literals.md#listedgedeploymentplanssortbytype) 
+2. See [:material-code-brackets: SortOrderType](./literals.md#sortordertype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: ListEdgeDeploymentPlansResponseTypeDef](./type_defs.md#listedgedeploymentplansresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListEdgeDeploymentPlansRequestListEdgeDeploymentPlansPaginateTypeDef = {  # (1)
+    "CreationTimeAfter": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListEdgeDeploymentPlansRequestListEdgeDeploymentPlansPaginateTypeDef](./type_defs.md#listedgedeploymentplansrequestlistedgedeploymentplanspaginatetypedef) 
 ## ListEdgePackagingJobsPaginator
 
 Type annotations and code completion for `#!python session.client("sagemaker").get_paginator("list_edge_packaging_jobs")`.
@@ -2675,6 +2736,61 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListProcessingJobsRequestListProcessingJobsPaginateTypeDef](./type_defs.md#listprocessingjobsrequestlistprocessingjobspaginatetypedef) 
+## ListStageDevicesPaginator
+
+Type annotations and code completion for `#!python session.client("sagemaker").get_paginator("list_stage_devices")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Paginator.ListStageDevices)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_sagemaker.paginator import ListStageDevicesPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("sagemaker") as client:  # (1)
+    paginator: ListStageDevicesPaginator = client.get_paginator("list_stage_devices")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListStageDevicesResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [SageMakerClient](./client.md)
+2. paginator: [ListStageDevicesPaginator](./paginators.md#liststagedevicespaginator)
+3. item: [:material-code-braces: ListStageDevicesResponseTypeDef](./type_defs.md#liststagedevicesresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListStageDevicesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    EdgeDeploymentPlanName: str,
+    StageName: str,
+    ExcludeDevicesDeployedInOtherStage: bool = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListStageDevicesResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListStageDevicesResponseTypeDef](./type_defs.md#liststagedevicesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListStageDevicesRequestListStageDevicesPaginateTypeDef = {  # (1)
+    "EdgeDeploymentPlanName": ...,
+    "StageName": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListStageDevicesRequestListStageDevicesPaginateTypeDef](./type_defs.md#liststagedevicesrequestliststagedevicespaginatetypedef) 
 ## ListStudioLifecycleConfigsPaginator
 
 Type annotations and code completion for `#!python session.client("sagemaker").get_paginator("list_studio_lifecycle_configs")`.

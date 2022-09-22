@@ -41,8 +41,10 @@ def get_value() -> SNSConfigurationTypeDef:
 class SNSConfigurationTypeDef(TypedDict):
     RoleArn: str,
     SnsTopicArn: str,
+    SnsFormat: NotRequired[SnsFormatType],  # (1)
 ```
 
+1. See [:material-code-brackets: SnsFormatType](./literals.md#snsformattype) 
 ## ActivateAnomalyDetectorRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -57,6 +59,23 @@ def get_value() -> ActivateAnomalyDetectorRequestRequestTypeDef:
 ```python title="Definition"
 class ActivateAnomalyDetectorRequestRequestTypeDef(TypedDict):
     AnomalyDetectorArn: str,
+```
+
+## DimensionFilterTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DimensionFilterTypeDef
+
+def get_value() -> DimensionFilterTypeDef:
+    return {
+        "DimensionName": ...,
+    }
+```
+
+```python title="Definition"
+class DimensionFilterTypeDef(TypedDict):
+    DimensionName: NotRequired[str],
+    DimensionValueList: NotRequired[Sequence[str]],
 ```
 
 ## AlertSummaryTypeDef
@@ -233,6 +252,60 @@ class AppFlowConfigTypeDef(TypedDict):
     FlowName: NotRequired[str],
 ```
 
+## BackTestConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import BackTestConfigurationTypeDef
+
+def get_value() -> BackTestConfigurationTypeDef:
+    return {
+        "RunBackTestMode": ...,
+    }
+```
+
+```python title="Definition"
+class BackTestConfigurationTypeDef(TypedDict):
+    RunBackTestMode: bool,
+```
+
+## AttributeValueTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import AttributeValueTypeDef
+
+def get_value() -> AttributeValueTypeDef:
+    return {
+        "S": ...,
+    }
+```
+
+```python title="Definition"
+class AttributeValueTypeDef(TypedDict):
+    S: NotRequired[str],
+    N: NotRequired[str],
+    B: NotRequired[str],
+    SS: NotRequired[List[str]],
+    NS: NotRequired[List[str]],
+    BS: NotRequired[List[str]],
+```
+
+## AutoDetectionS3SourceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import AutoDetectionS3SourceConfigTypeDef
+
+def get_value() -> AutoDetectionS3SourceConfigTypeDef:
+    return {
+        "TemplatedPathList": ...,
+    }
+```
+
+```python title="Definition"
+class AutoDetectionS3SourceConfigTypeDef(TypedDict):
+    TemplatedPathList: NotRequired[Sequence[str]],
+    HistoricalDataPathList: NotRequired[Sequence[str]],
+```
+
 ## BackTestAnomalyDetectorRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -247,22 +320,6 @@ def get_value() -> BackTestAnomalyDetectorRequestRequestTypeDef:
 ```python title="Definition"
 class BackTestAnomalyDetectorRequestRequestTypeDef(TypedDict):
     AnomalyDetectorArn: str,
-```
-
-## CloudWatchConfigTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_lookoutmetrics.type_defs import CloudWatchConfigTypeDef
-
-def get_value() -> CloudWatchConfigTypeDef:
-    return {
-        "RoleArn": ...,
-    }
-```
-
-```python title="Definition"
-class CloudWatchConfigTypeDef(TypedDict):
-    RoleArn: NotRequired[str],
 ```
 
 ## ResponseMetadataTypeDef
@@ -348,6 +405,26 @@ class CsvFormatDescriptorTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: CSVFileCompressionType](./literals.md#csvfilecompressiontype) 
+## DataQualityMetricTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DataQualityMetricTypeDef
+
+def get_value() -> DataQualityMetricTypeDef:
+    return {
+        "MetricType": ...,
+    }
+```
+
+```python title="Definition"
+class DataQualityMetricTypeDef(TypedDict):
+    MetricType: NotRequired[DataQualityMetricTypeType],  # (1)
+    MetricDescription: NotRequired[str],
+    RelatedColumnName: NotRequired[str],
+    MetricValue: NotRequired[float],
+```
+
+1. See [:material-code-brackets: DataQualityMetricTypeType](./literals.md#dataqualitymetrictypetype) 
 ## DeactivateAnomalyDetectorRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -551,6 +628,23 @@ def get_value() -> GetAnomalyGroupRequestRequestTypeDef:
 class GetAnomalyGroupRequestRequestTypeDef(TypedDict):
     AnomalyGroupId: str,
     AnomalyDetectorArn: str,
+```
+
+## GetDataQualityMetricsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import GetDataQualityMetricsRequestRequestTypeDef
+
+def get_value() -> GetDataQualityMetricsRequestRequestTypeDef:
+    return {
+        "AnomalyDetectorArn": ...,
+    }
+```
+
+```python title="Definition"
+class GetDataQualityMetricsRequestRequestTypeDef(TypedDict):
+    AnomalyDetectorArn: str,
+    MetricSetArn: NotRequired[str],
 ```
 
 ## TimeSeriesFeedbackTypeDef
@@ -818,6 +912,24 @@ class ActionTypeDef(TypedDict):
 
 1. See [:material-code-braces: SNSConfigurationTypeDef](./type_defs.md#snsconfigurationtypedef) 
 2. See [:material-code-braces: LambdaConfigurationTypeDef](./type_defs.md#lambdaconfigurationtypedef) 
+## AlertFiltersTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import AlertFiltersTypeDef
+
+def get_value() -> AlertFiltersTypeDef:
+    return {
+        "MetricList": ...,
+    }
+```
+
+```python title="Definition"
+class AlertFiltersTypeDef(TypedDict):
+    MetricList: NotRequired[Sequence[str]],
+    DimensionFilterList: NotRequired[Sequence[DimensionFilterTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: DimensionFilterTypeDef](./type_defs.md#dimensionfiltertypedef) 
 ## CreateAnomalyDetectorRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -919,6 +1031,84 @@ class GetFeedbackRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: AnomalyGroupTimeSeriesTypeDef](./type_defs.md#anomalygrouptimeseriestypedef) 
+## AthenaSourceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import AthenaSourceConfigTypeDef
+
+def get_value() -> AthenaSourceConfigTypeDef:
+    return {
+        "RoleArn": ...,
+    }
+```
+
+```python title="Definition"
+class AthenaSourceConfigTypeDef(TypedDict):
+    RoleArn: NotRequired[str],
+    DatabaseName: NotRequired[str],
+    DataCatalog: NotRequired[str],
+    TableName: NotRequired[str],
+    WorkGroupName: NotRequired[str],
+    S3ResultsPath: NotRequired[str],
+    BackTestConfiguration: NotRequired[BackTestConfigurationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: BackTestConfigurationTypeDef](./type_defs.md#backtestconfigurationtypedef) 
+## CloudWatchConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import CloudWatchConfigTypeDef
+
+def get_value() -> CloudWatchConfigTypeDef:
+    return {
+        "RoleArn": ...,
+    }
+```
+
+```python title="Definition"
+class CloudWatchConfigTypeDef(TypedDict):
+    RoleArn: NotRequired[str],
+    BackTestConfiguration: NotRequired[BackTestConfigurationTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: BackTestConfigurationTypeDef](./type_defs.md#backtestconfigurationtypedef) 
+## DetectedFieldTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectedFieldTypeDef
+
+def get_value() -> DetectedFieldTypeDef:
+    return {
+        "Value": ...,
+    }
+```
+
+```python title="Definition"
+class DetectedFieldTypeDef(TypedDict):
+    Value: NotRequired[AttributeValueTypeDef],  # (1)
+    Confidence: NotRequired[ConfidenceType],  # (2)
+    Message: NotRequired[str],
+```
+
+1. See [:material-code-braces: AttributeValueTypeDef](./type_defs.md#attributevaluetypedef) 
+2. See [:material-code-brackets: ConfidenceType](./literals.md#confidencetype) 
+## AutoDetectionMetricSourceTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import AutoDetectionMetricSourceTypeDef
+
+def get_value() -> AutoDetectionMetricSourceTypeDef:
+    return {
+        "S3SourceConfig": ...,
+    }
+```
+
+```python title="Definition"
+class AutoDetectionMetricSourceTypeDef(TypedDict):
+    S3SourceConfig: NotRequired[AutoDetectionS3SourceConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: AutoDetectionS3SourceConfigTypeDef](./type_defs.md#autodetections3sourceconfigtypedef) 
 ## CreateAlertResponseTypeDef
 
 ```python title="Usage Example"
@@ -1100,6 +1290,25 @@ class ListTagsForResourceResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## UpdateAlertResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import UpdateAlertResponseTypeDef
+
+def get_value() -> UpdateAlertResponseTypeDef:
+    return {
+        "AlertArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateAlertResponseTypeDef(TypedDict):
+    AlertArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## UpdateAnomalyDetectorResponseTypeDef
 
 ```python title="Usage Example"
@@ -1138,6 +1347,24 @@ class UpdateMetricSetResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## MetricSetDataQualityMetricTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import MetricSetDataQualityMetricTypeDef
+
+def get_value() -> MetricSetDataQualityMetricTypeDef:
+    return {
+        "MetricSetArn": ...,
+    }
+```
+
+```python title="Definition"
+class MetricSetDataQualityMetricTypeDef(TypedDict):
+    MetricSetArn: NotRequired[str],
+    DataQualityMetricList: NotRequired[List[DataQualityMetricTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: DataQualityMetricTypeDef](./type_defs.md#dataqualitymetrictypedef) 
 ## DescribeAnomalyDetectionExecutionsResponseTypeDef
 
 ```python title="Usage Example"
@@ -1355,11 +1582,13 @@ class AlertTypeDef(TypedDict):
     AlertStatus: NotRequired[AlertStatusType],  # (3)
     LastModificationTime: NotRequired[datetime],
     CreationTime: NotRequired[datetime],
+    AlertFilters: NotRequired[AlertFiltersTypeDef],  # (4)
 ```
 
 1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
 2. See [:material-code-brackets: AlertTypeType](./literals.md#alerttypetype) 
 3. See [:material-code-brackets: AlertStatusType](./literals.md#alertstatustype) 
+4. See [:material-code-braces: AlertFiltersTypeDef](./type_defs.md#alertfilterstypedef) 
 ## CreateAlertRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1368,7 +1597,6 @@ from types_aiobotocore_lookoutmetrics.type_defs import CreateAlertRequestRequest
 def get_value() -> CreateAlertRequestRequestTypeDef:
     return {
         "AlertName": ...,
-        "AlertSensitivityThreshold": ...,
         "AnomalyDetectorArn": ...,
         "Action": ...,
     }
@@ -1377,14 +1605,38 @@ def get_value() -> CreateAlertRequestRequestTypeDef:
 ```python title="Definition"
 class CreateAlertRequestRequestTypeDef(TypedDict):
     AlertName: str,
-    AlertSensitivityThreshold: int,
     AnomalyDetectorArn: str,
     Action: ActionTypeDef,  # (1)
+    AlertSensitivityThreshold: NotRequired[int],
     AlertDescription: NotRequired[str],
     Tags: NotRequired[Mapping[str, str]],
+    AlertFilters: NotRequired[AlertFiltersTypeDef],  # (2)
 ```
 
 1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
+2. See [:material-code-braces: AlertFiltersTypeDef](./type_defs.md#alertfilterstypedef) 
+## UpdateAlertRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import UpdateAlertRequestRequestTypeDef
+
+def get_value() -> UpdateAlertRequestRequestTypeDef:
+    return {
+        "AlertArn": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateAlertRequestRequestTypeDef(TypedDict):
+    AlertArn: str,
+    AlertDescription: NotRequired[str],
+    AlertSensitivityThreshold: NotRequired[int],
+    Action: NotRequired[ActionTypeDef],  # (1)
+    AlertFilters: NotRequired[AlertFiltersTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
+2. See [:material-code-braces: AlertFiltersTypeDef](./type_defs.md#alertfilterstypedef) 
 ## ListAnomalyGroupSummariesResponseTypeDef
 
 ```python title="Usage Example"
@@ -1410,6 +1662,89 @@ class ListAnomalyGroupSummariesResponseTypeDef(TypedDict):
 1. See [:material-code-braces: AnomalyGroupSummaryTypeDef](./type_defs.md#anomalygroupsummarytypedef) 
 2. See [:material-code-braces: AnomalyGroupStatisticsTypeDef](./type_defs.md#anomalygroupstatisticstypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DetectedCsvFormatDescriptorTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectedCsvFormatDescriptorTypeDef
+
+def get_value() -> DetectedCsvFormatDescriptorTypeDef:
+    return {
+        "FileCompression": ...,
+    }
+```
+
+```python title="Definition"
+class DetectedCsvFormatDescriptorTypeDef(TypedDict):
+    FileCompression: NotRequired[DetectedFieldTypeDef],  # (1)
+    Charset: NotRequired[DetectedFieldTypeDef],  # (1)
+    ContainsHeader: NotRequired[DetectedFieldTypeDef],  # (1)
+    Delimiter: NotRequired[DetectedFieldTypeDef],  # (1)
+    HeaderList: NotRequired[DetectedFieldTypeDef],  # (1)
+    QuoteSymbol: NotRequired[DetectedFieldTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+2. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+3. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+4. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+5. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+6. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+## DetectedJsonFormatDescriptorTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectedJsonFormatDescriptorTypeDef
+
+def get_value() -> DetectedJsonFormatDescriptorTypeDef:
+    return {
+        "FileCompression": ...,
+    }
+```
+
+```python title="Definition"
+class DetectedJsonFormatDescriptorTypeDef(TypedDict):
+    FileCompression: NotRequired[DetectedFieldTypeDef],  # (1)
+    Charset: NotRequired[DetectedFieldTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+2. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+## DetectMetricSetConfigRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectMetricSetConfigRequestRequestTypeDef
+
+def get_value() -> DetectMetricSetConfigRequestRequestTypeDef:
+    return {
+        "AnomalyDetectorArn": ...,
+        "AutoDetectionMetricSource": ...,
+    }
+```
+
+```python title="Definition"
+class DetectMetricSetConfigRequestRequestTypeDef(TypedDict):
+    AnomalyDetectorArn: str,
+    AutoDetectionMetricSource: AutoDetectionMetricSourceTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: AutoDetectionMetricSourceTypeDef](./type_defs.md#autodetectionmetricsourcetypedef) 
+## AnomalyDetectorDataQualityMetricTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import AnomalyDetectorDataQualityMetricTypeDef
+
+def get_value() -> AnomalyDetectorDataQualityMetricTypeDef:
+    return {
+        "StartTimestamp": ...,
+    }
+```
+
+```python title="Definition"
+class AnomalyDetectorDataQualityMetricTypeDef(TypedDict):
+    StartTimestamp: NotRequired[datetime],
+    MetricSetDataQualityMetricList: NotRequired[List[MetricSetDataQualityMetricTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: MetricSetDataQualityMetricTypeDef](./type_defs.md#metricsetdataqualitymetrictypedef) 
 ## ContributionMatrixTypeDef
 
 ```python title="Usage Example"
@@ -1516,6 +1851,45 @@ class DescribeAlertResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: AlertTypeDef](./type_defs.md#alerttypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DetectedFileFormatDescriptorTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectedFileFormatDescriptorTypeDef
+
+def get_value() -> DetectedFileFormatDescriptorTypeDef:
+    return {
+        "CsvFormatDescriptor": ...,
+    }
+```
+
+```python title="Definition"
+class DetectedFileFormatDescriptorTypeDef(TypedDict):
+    CsvFormatDescriptor: NotRequired[DetectedCsvFormatDescriptorTypeDef],  # (1)
+    JsonFormatDescriptor: NotRequired[DetectedJsonFormatDescriptorTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: DetectedCsvFormatDescriptorTypeDef](./type_defs.md#detectedcsvformatdescriptortypedef) 
+2. See [:material-code-braces: DetectedJsonFormatDescriptorTypeDef](./type_defs.md#detectedjsonformatdescriptortypedef) 
+## GetDataQualityMetricsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import GetDataQualityMetricsResponseTypeDef
+
+def get_value() -> GetDataQualityMetricsResponseTypeDef:
+    return {
+        "AnomalyDetectorDataQualityMetricList": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetDataQualityMetricsResponseTypeDef(TypedDict):
+    AnomalyDetectorDataQualityMetricList: List[AnomalyDetectorDataQualityMetricTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: AnomalyDetectorDataQualityMetricTypeDef](./type_defs.md#anomalydetectordataqualitymetrictypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## MetricLevelImpactTypeDef
 
 ```python title="Usage Example"
@@ -1553,6 +1927,7 @@ class MetricSourceTypeDef(TypedDict):
     CloudWatchConfig: NotRequired[CloudWatchConfigTypeDef],  # (3)
     RDSSourceConfig: NotRequired[RDSSourceConfigTypeDef],  # (4)
     RedshiftSourceConfig: NotRequired[RedshiftSourceConfigTypeDef],  # (5)
+    AthenaSourceConfig: NotRequired[AthenaSourceConfigTypeDef],  # (6)
 ```
 
 1. See [:material-code-braces: S3SourceConfigTypeDef](./type_defs.md#s3sourceconfigtypedef) 
@@ -1560,6 +1935,7 @@ class MetricSourceTypeDef(TypedDict):
 3. See [:material-code-braces: CloudWatchConfigTypeDef](./type_defs.md#cloudwatchconfigtypedef) 
 4. See [:material-code-braces: RDSSourceConfigTypeDef](./type_defs.md#rdssourceconfigtypedef) 
 5. See [:material-code-braces: RedshiftSourceConfigTypeDef](./type_defs.md#redshiftsourceconfigtypedef) 
+6. See [:material-code-braces: AthenaSourceConfigTypeDef](./type_defs.md#athenasourceconfigtypedef) 
 ## GetSampleDataRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1577,6 +1953,23 @@ class GetSampleDataRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: SampleDataS3SourceConfigTypeDef](./type_defs.md#sampledatas3sourceconfigtypedef) 
+## DetectedS3SourceConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectedS3SourceConfigTypeDef
+
+def get_value() -> DetectedS3SourceConfigTypeDef:
+    return {
+        "FileFormatDescriptor": ...,
+    }
+```
+
+```python title="Definition"
+class DetectedS3SourceConfigTypeDef(TypedDict):
+    FileFormatDescriptor: NotRequired[DetectedFileFormatDescriptorTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: DetectedFileFormatDescriptorTypeDef](./type_defs.md#detectedfileformatdescriptortypedef) 
 ## AnomalyGroupTypeDef
 
 ```python title="Usage Example"
@@ -1706,6 +2099,23 @@ class UpdateMetricSetRequestRequestTypeDef(TypedDict):
 2. See [:material-code-braces: TimestampColumnTypeDef](./type_defs.md#timestampcolumntypedef) 
 3. See [:material-code-brackets: FrequencyType](./literals.md#frequencytype) 
 4. See [:material-code-braces: MetricSourceTypeDef](./type_defs.md#metricsourcetypedef) 
+## DetectedMetricSourceTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectedMetricSourceTypeDef
+
+def get_value() -> DetectedMetricSourceTypeDef:
+    return {
+        "S3SourceConfig": ...,
+    }
+```
+
+```python title="Definition"
+class DetectedMetricSourceTypeDef(TypedDict):
+    S3SourceConfig: NotRequired[DetectedS3SourceConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: DetectedS3SourceConfigTypeDef](./type_defs.md#detecteds3sourceconfigtypedef) 
 ## GetAnomalyGroupResponseTypeDef
 
 ```python title="Usage Example"
@@ -1725,4 +2135,45 @@ class GetAnomalyGroupResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: AnomalyGroupTypeDef](./type_defs.md#anomalygrouptypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DetectedMetricSetConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectedMetricSetConfigTypeDef
+
+def get_value() -> DetectedMetricSetConfigTypeDef:
+    return {
+        "Offset": ...,
+    }
+```
+
+```python title="Definition"
+class DetectedMetricSetConfigTypeDef(TypedDict):
+    Offset: NotRequired[DetectedFieldTypeDef],  # (1)
+    MetricSetFrequency: NotRequired[DetectedFieldTypeDef],  # (1)
+    MetricSource: NotRequired[DetectedMetricSourceTypeDef],  # (3)
+```
+
+1. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+2. See [:material-code-braces: DetectedFieldTypeDef](./type_defs.md#detectedfieldtypedef) 
+3. See [:material-code-braces: DetectedMetricSourceTypeDef](./type_defs.md#detectedmetricsourcetypedef) 
+## DetectMetricSetConfigResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.type_defs import DetectMetricSetConfigResponseTypeDef
+
+def get_value() -> DetectMetricSetConfigResponseTypeDef:
+    return {
+        "DetectedMetricSetConfig": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DetectMetricSetConfigResponseTypeDef(TypedDict):
+    DetectedMetricSetConfig: DetectedMetricSetConfigTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: DetectedMetricSetConfigTypeDef](./type_defs.md#detectedmetricsetconfigtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 

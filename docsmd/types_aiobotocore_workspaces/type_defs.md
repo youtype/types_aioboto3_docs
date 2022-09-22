@@ -267,6 +267,63 @@ class UserStorageTypeDef(TypedDict):
     Capacity: NotRequired[str],
 ```
 
+## OperatingSystemTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import OperatingSystemTypeDef
+
+def get_value() -> OperatingSystemTypeDef:
+    return {
+        "Type": ...,
+    }
+```
+
+```python title="Definition"
+class OperatingSystemTypeDef(TypedDict):
+    Type: NotRequired[OperatingSystemTypeType],  # (1)
+```
+
+1. See [:material-code-brackets: OperatingSystemTypeType](./literals.md#operatingsystemtypetype) 
+## DefaultClientBrandingAttributesTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import DefaultClientBrandingAttributesTypeDef
+
+def get_value() -> DefaultClientBrandingAttributesTypeDef:
+    return {
+        "LogoUrl": ...,
+    }
+```
+
+```python title="Definition"
+class DefaultClientBrandingAttributesTypeDef(TypedDict):
+    LogoUrl: NotRequired[str],
+    SupportEmail: NotRequired[str],
+    SupportLink: NotRequired[str],
+    ForgotPasswordLink: NotRequired[str],
+    LoginMessage: NotRequired[Dict[str, str]],
+```
+
+## DefaultImportClientBrandingAttributesTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import DefaultImportClientBrandingAttributesTypeDef
+
+def get_value() -> DefaultImportClientBrandingAttributesTypeDef:
+    return {
+        "Logo": ...,
+    }
+```
+
+```python title="Definition"
+class DefaultImportClientBrandingAttributesTypeDef(TypedDict):
+    Logo: NotRequired[Union[str, bytes, IO[Any], StreamingBody]],
+    SupportEmail: NotRequired[str],
+    SupportLink: NotRequired[str],
+    ForgotPasswordLink: NotRequired[str],
+    LoginMessage: NotRequired[Mapping[str, str]],
+```
+
 ## DefaultWorkspaceCreationPropertiesTypeDef
 
 ```python title="Usage Example"
@@ -288,6 +345,25 @@ class DefaultWorkspaceCreationPropertiesTypeDef(TypedDict):
     EnableMaintenanceMode: NotRequired[bool],
 ```
 
+## DeleteClientBrandingRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import DeleteClientBrandingRequestRequestTypeDef
+
+def get_value() -> DeleteClientBrandingRequestRequestTypeDef:
+    return {
+        "ResourceId": ...,
+        "Platforms": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteClientBrandingRequestRequestTypeDef(TypedDict):
+    ResourceId: str,
+    Platforms: Sequence[ClientDeviceTypeType],  # (1)
+```
+
+1. See [:material-code-brackets: ClientDeviceTypeType](./literals.md#clientdevicetypetype) 
 ## DeleteConnectClientAddInRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -436,6 +512,44 @@ def get_value() -> DescribeAccountModificationsRequestRequestTypeDef:
 ```python title="Definition"
 class DescribeAccountModificationsRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
+```
+
+## DescribeClientBrandingRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import DescribeClientBrandingRequestRequestTypeDef
+
+def get_value() -> DescribeClientBrandingRequestRequestTypeDef:
+    return {
+        "ResourceId": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeClientBrandingRequestRequestTypeDef(TypedDict):
+    ResourceId: str,
+```
+
+## IosClientBrandingAttributesTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import IosClientBrandingAttributesTypeDef
+
+def get_value() -> IosClientBrandingAttributesTypeDef:
+    return {
+        "LogoUrl": ...,
+    }
+```
+
+```python title="Definition"
+class IosClientBrandingAttributesTypeDef(TypedDict):
+    LogoUrl: NotRequired[str],
+    Logo2xUrl: NotRequired[str],
+    Logo3xUrl: NotRequired[str],
+    SupportEmail: NotRequired[str],
+    SupportLink: NotRequired[str],
+    ForgotPasswordLink: NotRequired[str],
+    LoginMessage: NotRequired[Dict[str, str]],
 ```
 
 ## DescribeClientPropertiesRequestRequestTypeDef
@@ -775,6 +889,28 @@ class FailedWorkspaceChangeRequestTypeDef(TypedDict):
     ErrorMessage: NotRequired[str],
 ```
 
+## IosImportClientBrandingAttributesTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import IosImportClientBrandingAttributesTypeDef
+
+def get_value() -> IosImportClientBrandingAttributesTypeDef:
+    return {
+        "Logo": ...,
+    }
+```
+
+```python title="Definition"
+class IosImportClientBrandingAttributesTypeDef(TypedDict):
+    Logo: NotRequired[Union[str, bytes, IO[Any], StreamingBody]],
+    Logo2x: NotRequired[Union[str, bytes, IO[Any], StreamingBody]],
+    Logo3x: NotRequired[Union[str, bytes, IO[Any], StreamingBody]],
+    SupportEmail: NotRequired[str],
+    SupportLink: NotRequired[str],
+    ForgotPasswordLink: NotRequired[str],
+    LoginMessage: NotRequired[Mapping[str, str]],
+```
+
 ## ListAvailableManagementCidrRangesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -848,6 +984,25 @@ class ModifyAccountRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: DedicatedTenancySupportEnumType](./literals.md#dedicatedtenancysupportenumtype) 
+## SamlPropertiesTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import SamlPropertiesTypeDef
+
+def get_value() -> SamlPropertiesTypeDef:
+    return {
+        "Status": ...,
+    }
+```
+
+```python title="Definition"
+class SamlPropertiesTypeDef(TypedDict):
+    Status: NotRequired[SamlStatusEnumType],  # (1)
+    UserAccessUrl: NotRequired[str],
+    RelayStateParameterName: NotRequired[str],
+```
+
+1. See [:material-code-brackets: SamlStatusEnumType](./literals.md#samlstatusenumtype) 
 ## SelfservicePermissionsTypeDef
 
 ```python title="Usage Example"
@@ -966,23 +1121,6 @@ class ModifyWorkspaceStateRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: TargetWorkspaceStateType](./literals.md#targetworkspacestatetype) 
-## OperatingSystemTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_workspaces.type_defs import OperatingSystemTypeDef
-
-def get_value() -> OperatingSystemTypeDef:
-    return {
-        "Type": ...,
-    }
-```
-
-```python title="Definition"
-class OperatingSystemTypeDef(TypedDict):
-    Type: NotRequired[OperatingSystemTypeType],  # (1)
-```
-
-1. See [:material-code-brackets: OperatingSystemTypeType](./literals.md#operatingsystemtypetype) 
 ## RebootRequestTypeDef
 
 ```python title="Usage Example"
@@ -1675,6 +1813,28 @@ class CreateUpdatedWorkspaceImageRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## CreateWorkspaceImageRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import CreateWorkspaceImageRequestRequestTypeDef
+
+def get_value() -> CreateWorkspaceImageRequestRequestTypeDef:
+    return {
+        "Name": ...,
+        "Description": ...,
+        "WorkspaceId": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWorkspaceImageRequestRequestTypeDef(TypedDict):
+    Name: str,
+    Description: str,
+    WorkspaceId: str,
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## DescribeTagsResultTypeDef
 
 ```python title="Usage Example"
@@ -1804,6 +1964,42 @@ class WorkspaceBundleTypeDef(TypedDict):
 1. See [:material-code-braces: RootStorageTypeDef](./type_defs.md#rootstoragetypedef) 
 2. See [:material-code-braces: UserStorageTypeDef](./type_defs.md#userstoragetypedef) 
 3. See [:material-code-braces: ComputeTypeTypeDef](./type_defs.md#computetypetypedef) 
+## CreateWorkspaceImageResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import CreateWorkspaceImageResultTypeDef
+
+def get_value() -> CreateWorkspaceImageResultTypeDef:
+    return {
+        "ImageId": ...,
+        "Name": ...,
+        "Description": ...,
+        "OperatingSystem": ...,
+        "State": ...,
+        "RequiredTenancy": ...,
+        "Created": ...,
+        "OwnerAccountId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWorkspaceImageResultTypeDef(TypedDict):
+    ImageId: str,
+    Name: str,
+    Description: str,
+    OperatingSystem: OperatingSystemTypeDef,  # (1)
+    State: WorkspaceImageStateType,  # (2)
+    RequiredTenancy: WorkspaceImageRequiredTenancyType,  # (3)
+    Created: datetime,
+    OwnerAccountId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
+```
+
+1. See [:material-code-braces: OperatingSystemTypeDef](./type_defs.md#operatingsystemtypedef) 
+2. See [:material-code-brackets: WorkspaceImageStateType](./literals.md#workspaceimagestatetype) 
+3. See [:material-code-brackets: WorkspaceImageRequiredTenancyType](./literals.md#workspaceimagerequiredtenancytype) 
+4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeAccountModificationsRequestDescribeAccountModificationsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -1954,6 +2150,76 @@ class ListAvailableManagementCidrRangesRequestListAvailableManagementCidrRangesP
 ```
 
 1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## DescribeClientBrandingResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import DescribeClientBrandingResultTypeDef
+
+def get_value() -> DescribeClientBrandingResultTypeDef:
+    return {
+        "DeviceTypeWindows": ...,
+        "DeviceTypeOsx": ...,
+        "DeviceTypeAndroid": ...,
+        "DeviceTypeIos": ...,
+        "DeviceTypeLinux": ...,
+        "DeviceTypeWeb": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeClientBrandingResultTypeDef(TypedDict):
+    DeviceTypeWindows: DefaultClientBrandingAttributesTypeDef,  # (1)
+    DeviceTypeOsx: DefaultClientBrandingAttributesTypeDef,  # (1)
+    DeviceTypeAndroid: DefaultClientBrandingAttributesTypeDef,  # (1)
+    DeviceTypeIos: IosClientBrandingAttributesTypeDef,  # (4)
+    DeviceTypeLinux: DefaultClientBrandingAttributesTypeDef,  # (1)
+    DeviceTypeWeb: DefaultClientBrandingAttributesTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (7)
+```
+
+1. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+2. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+3. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+4. See [:material-code-braces: IosClientBrandingAttributesTypeDef](./type_defs.md#iosclientbrandingattributestypedef) 
+5. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+6. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+7. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ImportClientBrandingResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import ImportClientBrandingResultTypeDef
+
+def get_value() -> ImportClientBrandingResultTypeDef:
+    return {
+        "DeviceTypeWindows": ...,
+        "DeviceTypeOsx": ...,
+        "DeviceTypeAndroid": ...,
+        "DeviceTypeIos": ...,
+        "DeviceTypeLinux": ...,
+        "DeviceTypeWeb": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ImportClientBrandingResultTypeDef(TypedDict):
+    DeviceTypeWindows: DefaultClientBrandingAttributesTypeDef,  # (1)
+    DeviceTypeOsx: DefaultClientBrandingAttributesTypeDef,  # (1)
+    DeviceTypeAndroid: DefaultClientBrandingAttributesTypeDef,  # (1)
+    DeviceTypeIos: IosClientBrandingAttributesTypeDef,  # (4)
+    DeviceTypeLinux: DefaultClientBrandingAttributesTypeDef,  # (1)
+    DeviceTypeWeb: DefaultClientBrandingAttributesTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (7)
+```
+
+1. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+2. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+3. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+4. See [:material-code-braces: IosClientBrandingAttributesTypeDef](./type_defs.md#iosclientbrandingattributestypedef) 
+5. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+6. See [:material-code-braces: DefaultClientBrandingAttributesTypeDef](./type_defs.md#defaultclientbrandingattributestypedef) 
+7. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeWorkspaceImagePermissionsResultTypeDef
 
 ```python title="Usage Example"
@@ -2123,6 +2389,54 @@ class TerminateWorkspacesResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: FailedWorkspaceChangeRequestTypeDef](./type_defs.md#failedworkspacechangerequesttypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ImportClientBrandingRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import ImportClientBrandingRequestRequestTypeDef
+
+def get_value() -> ImportClientBrandingRequestRequestTypeDef:
+    return {
+        "ResourceId": ...,
+    }
+```
+
+```python title="Definition"
+class ImportClientBrandingRequestRequestTypeDef(TypedDict):
+    ResourceId: str,
+    DeviceTypeWindows: NotRequired[DefaultImportClientBrandingAttributesTypeDef],  # (1)
+    DeviceTypeOsx: NotRequired[DefaultImportClientBrandingAttributesTypeDef],  # (1)
+    DeviceTypeAndroid: NotRequired[DefaultImportClientBrandingAttributesTypeDef],  # (1)
+    DeviceTypeIos: NotRequired[IosImportClientBrandingAttributesTypeDef],  # (4)
+    DeviceTypeLinux: NotRequired[DefaultImportClientBrandingAttributesTypeDef],  # (1)
+    DeviceTypeWeb: NotRequired[DefaultImportClientBrandingAttributesTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+2. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+3. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+4. See [:material-code-braces: IosImportClientBrandingAttributesTypeDef](./type_defs.md#iosimportclientbrandingattributestypedef) 
+5. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+6. See [:material-code-braces: DefaultImportClientBrandingAttributesTypeDef](./type_defs.md#defaultimportclientbrandingattributestypedef) 
+## ModifySamlPropertiesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.type_defs import ModifySamlPropertiesRequestRequestTypeDef
+
+def get_value() -> ModifySamlPropertiesRequestRequestTypeDef:
+    return {
+        "ResourceId": ...,
+    }
+```
+
+```python title="Definition"
+class ModifySamlPropertiesRequestRequestTypeDef(TypedDict):
+    ResourceId: str,
+    SamlProperties: NotRequired[SamlPropertiesTypeDef],  # (1)
+    PropertiesToDelete: NotRequired[Sequence[DeletableSamlPropertyType]],  # (2)
+```
+
+1. See [:material-code-braces: SamlPropertiesTypeDef](./type_defs.md#samlpropertiestypedef) 
+2. See [:material-code-brackets: DeletableSamlPropertyType](./literals.md#deletablesamlpropertytype) 
 ## ModifySelfservicePermissionsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2190,6 +2504,7 @@ class WorkspaceDirectoryTypeDef(TypedDict):
     WorkspaceAccessProperties: NotRequired[WorkspaceAccessPropertiesTypeDef],  # (4)
     Tenancy: NotRequired[TenancyType],  # (5)
     SelfservicePermissions: NotRequired[SelfservicePermissionsTypeDef],  # (6)
+    SamlProperties: NotRequired[SamlPropertiesTypeDef],  # (7)
 ```
 
 1. See [:material-code-brackets: WorkspaceDirectoryTypeType](./literals.md#workspacedirectorytypetype) 
@@ -2198,6 +2513,7 @@ class WorkspaceDirectoryTypeDef(TypedDict):
 4. See [:material-code-braces: WorkspaceAccessPropertiesTypeDef](./type_defs.md#workspaceaccesspropertiestypedef) 
 5. See [:material-code-brackets: TenancyType](./literals.md#tenancytype) 
 6. See [:material-code-braces: SelfservicePermissionsTypeDef](./type_defs.md#selfservicepermissionstypedef) 
+7. See [:material-code-braces: SamlPropertiesTypeDef](./type_defs.md#samlpropertiestypedef) 
 ## ModifyWorkspaceCreationPropertiesRequestRequestTypeDef
 
 ```python title="Usage Example"

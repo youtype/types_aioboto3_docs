@@ -306,6 +306,8 @@ BotRecommendationStatusType = Literal[
     "Downloading",
     "Failed",
     "Processing",
+    "Stopped",
+    "Stopping",
     "Updating",
 ]
 ```
@@ -415,6 +417,28 @@ CustomVocabularyStatusType = Literal[
     "Exporting",
     "Importing",
     "Ready",
+]
+```
+## DialogActionTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_lexv2_models.literals import DialogActionTypeType
+
+def get_value() -> DialogActionTypeType:
+    return "CloseIntent"
+```
+
+```python title="Definition"
+DialogActionTypeType = Literal[
+    "CloseIntent",
+    "ConfirmIntent",
+    "ElicitIntent",
+    "ElicitSlot",
+    "EndConversation",
+    "EvaluateConditional",
+    "FulfillIntent",
+    "InvokeDialogCodeHook",
+    "StartIntent",
 ]
 ```
 ## EffectType
@@ -643,6 +667,21 @@ MergeStrategyType = Literal[
     "Overwrite",
 ]
 ```
+## MessageSelectionStrategyType
+
+```python title="Usage Example"
+from types_aiobotocore_lexv2_models.literals import MessageSelectionStrategyType
+
+def get_value() -> MessageSelectionStrategyType:
+    return "Ordered"
+```
+
+```python title="Definition"
+MessageSelectionStrategyType = Literal[
+    "Ordered",
+    "Random",
+]
+```
 ## ObfuscationSettingTypeType
 
 ```python title="Usage Example"
@@ -715,6 +754,21 @@ def get_value() -> SlotFilterOperatorType:
 SlotFilterOperatorType = Literal[
     "CO",
     "EQ",
+]
+```
+## SlotShapeType
+
+```python title="Usage Example"
+from types_aiobotocore_lexv2_models.literals import SlotShapeType
+
+def get_value() -> SlotShapeType:
+    return "List"
+```
+
+```python title="Definition"
+SlotShapeType = Literal[
+    "List",
+    "Scalar",
 ]
 ```
 ## SlotSortAttributeType
@@ -922,6 +976,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -929,6 +984,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -961,6 +1017,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -997,6 +1054,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1010,6 +1068,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1043,6 +1102,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1062,12 +1122,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1111,8 +1173,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1123,11 +1187,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1173,6 +1239,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

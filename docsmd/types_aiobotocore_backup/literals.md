@@ -89,6 +89,160 @@ CopyJobStateType = Literal[
     "RUNNING",
 ]
 ```
+## ListBackupJobsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListBackupJobsPaginatorName
+
+def get_value() -> ListBackupJobsPaginatorName:
+    return "list_backup_jobs"
+```
+
+```python title="Definition"
+ListBackupJobsPaginatorName = Literal[
+    "list_backup_jobs",
+]
+```
+## ListBackupPlanTemplatesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListBackupPlanTemplatesPaginatorName
+
+def get_value() -> ListBackupPlanTemplatesPaginatorName:
+    return "list_backup_plan_templates"
+```
+
+```python title="Definition"
+ListBackupPlanTemplatesPaginatorName = Literal[
+    "list_backup_plan_templates",
+]
+```
+## ListBackupPlanVersionsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListBackupPlanVersionsPaginatorName
+
+def get_value() -> ListBackupPlanVersionsPaginatorName:
+    return "list_backup_plan_versions"
+```
+
+```python title="Definition"
+ListBackupPlanVersionsPaginatorName = Literal[
+    "list_backup_plan_versions",
+]
+```
+## ListBackupPlansPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListBackupPlansPaginatorName
+
+def get_value() -> ListBackupPlansPaginatorName:
+    return "list_backup_plans"
+```
+
+```python title="Definition"
+ListBackupPlansPaginatorName = Literal[
+    "list_backup_plans",
+]
+```
+## ListBackupSelectionsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListBackupSelectionsPaginatorName
+
+def get_value() -> ListBackupSelectionsPaginatorName:
+    return "list_backup_selections"
+```
+
+```python title="Definition"
+ListBackupSelectionsPaginatorName = Literal[
+    "list_backup_selections",
+]
+```
+## ListBackupVaultsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListBackupVaultsPaginatorName
+
+def get_value() -> ListBackupVaultsPaginatorName:
+    return "list_backup_vaults"
+```
+
+```python title="Definition"
+ListBackupVaultsPaginatorName = Literal[
+    "list_backup_vaults",
+]
+```
+## ListCopyJobsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListCopyJobsPaginatorName
+
+def get_value() -> ListCopyJobsPaginatorName:
+    return "list_copy_jobs"
+```
+
+```python title="Definition"
+ListCopyJobsPaginatorName = Literal[
+    "list_copy_jobs",
+]
+```
+## ListProtectedResourcesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListProtectedResourcesPaginatorName
+
+def get_value() -> ListProtectedResourcesPaginatorName:
+    return "list_protected_resources"
+```
+
+```python title="Definition"
+ListProtectedResourcesPaginatorName = Literal[
+    "list_protected_resources",
+]
+```
+## ListRecoveryPointsByBackupVaultPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListRecoveryPointsByBackupVaultPaginatorName
+
+def get_value() -> ListRecoveryPointsByBackupVaultPaginatorName:
+    return "list_recovery_points_by_backup_vault"
+```
+
+```python title="Definition"
+ListRecoveryPointsByBackupVaultPaginatorName = Literal[
+    "list_recovery_points_by_backup_vault",
+]
+```
+## ListRecoveryPointsByResourcePaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListRecoveryPointsByResourcePaginatorName
+
+def get_value() -> ListRecoveryPointsByResourcePaginatorName:
+    return "list_recovery_points_by_resource"
+```
+
+```python title="Definition"
+ListRecoveryPointsByResourcePaginatorName = Literal[
+    "list_recovery_points_by_resource",
+]
+```
+## ListRestoreJobsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import ListRestoreJobsPaginatorName
+
+def get_value() -> ListRestoreJobsPaginatorName:
+    return "list_restore_jobs"
+```
+
+```python title="Definition"
+ListRestoreJobsPaginatorName = Literal[
+    "list_restore_jobs",
+]
+```
 ## RecoveryPointStatusType
 
 ```python title="Usage Example"
@@ -194,6 +348,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -201,6 +356,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -233,6 +389,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -269,6 +426,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -282,6 +440,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -315,6 +474,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -334,12 +494,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -383,8 +545,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -395,11 +559,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -445,6 +611,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -489,6 +656,30 @@ ResourceServiceName = Literal[
     "s3",
     "sns",
     "sqs",
+]
+```
+## PaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_backup.literals import PaginatorName
+
+def get_value() -> PaginatorName:
+    return "list_backup_jobs"
+```
+
+```python title="Definition"
+PaginatorName = Literal[
+    "list_backup_jobs",
+    "list_backup_plan_templates",
+    "list_backup_plan_versions",
+    "list_backup_plans",
+    "list_backup_selections",
+    "list_backup_vaults",
+    "list_copy_jobs",
+    "list_protected_resources",
+    "list_recovery_points_by_backup_vault",
+    "list_recovery_points_by_resource",
+    "list_restore_jobs",
 ]
 ```
 ## RegionName

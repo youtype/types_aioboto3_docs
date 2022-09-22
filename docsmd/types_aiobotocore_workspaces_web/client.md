@@ -196,6 +196,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("workspaces-web").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_browser\_settings
 
 Creates a browser settings resource that can be associated with a web portal.
@@ -386,6 +401,8 @@ await def create_user_settings(
     printAllowed: EnabledTypeType,  # (1)
     uploadAllowed: EnabledTypeType,  # (1)
     clientToken: str = ...,
+    disconnectTimeoutInMinutes: int = ...,
+    idleDisconnectTimeoutInMinutes: int = ...,
     tags: Sequence[TagTypeDef] = ...,  # (6)
 ) -> CreateUserSettingsResponseTypeDef:  # (7)
     ...
@@ -1424,7 +1441,9 @@ await def update_user_settings(
     userSettingsArn: str,
     clientToken: str = ...,
     copyAllowed: EnabledTypeType = ...,  # (1)
+    disconnectTimeoutInMinutes: int = ...,
     downloadAllowed: EnabledTypeType = ...,  # (1)
+    idleDisconnectTimeoutInMinutes: int = ...,
     pasteAllowed: EnabledTypeType = ...,  # (1)
     printAllowed: EnabledTypeType = ...,  # (1)
     uploadAllowed: EnabledTypeType = ...,  # (1)

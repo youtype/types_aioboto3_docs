@@ -187,6 +187,7 @@ await def wait(
     *,
     ClusterIdentifier: str = ...,
     SnapshotIdentifier: str = ...,
+    SnapshotArn: str = ...,
     SnapshotType: str = ...,
     StartTime: Union[datetime, str] = ...,
     EndTime: Union[datetime, str] = ...,

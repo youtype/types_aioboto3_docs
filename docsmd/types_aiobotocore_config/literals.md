@@ -648,6 +648,21 @@ MessageTypeType = Literal[
     "ScheduledNotification",
 ]
 ```
+## OrganizationConfigRuleTriggerTypeNoSNType
+
+```python title="Usage Example"
+from types_aiobotocore_config.literals import OrganizationConfigRuleTriggerTypeNoSNType
+
+def get_value() -> OrganizationConfigRuleTriggerTypeNoSNType:
+    return "ConfigurationItemChangeNotification"
+```
+
+```python title="Definition"
+OrganizationConfigRuleTriggerTypeNoSNType = Literal[
+    "ConfigurationItemChangeNotification",
+    "OversizedConfigurationItemChangeNotification",
+]
+```
 ## OrganizationConfigRuleTriggerTypeType
 
 ```python title="Usage Example"
@@ -743,6 +758,7 @@ def get_value() -> OwnerType:
 OwnerType = Literal[
     "AWS",
     "CUSTOM_LAMBDA",
+    "CUSTOM_POLICY",
 ]
 ```
 ## RecorderStatusType
@@ -835,11 +851,14 @@ def get_value() -> ResourceTypeType:
 
 ```python title="Definition"
 ResourceTypeType = Literal[
+    "AWS::AccessAnalyzer::Analyzer",
     "AWS::ACM::Certificate",
     "AWS::ApiGateway::RestApi",
     "AWS::ApiGateway::Stage",
     "AWS::ApiGatewayV2::Api",
     "AWS::ApiGatewayV2::Stage",
+    "AWS::Athena::DataCatalog",
+    "AWS::Athena::WorkGroup",
     "AWS::AutoScaling::AutoScalingGroup",
     "AWS::AutoScaling::LaunchConfiguration",
     "AWS::AutoScaling::ScalingPolicy",
@@ -848,6 +867,8 @@ ResourceTypeType = Literal[
     "AWS::Backup::BackupSelection",
     "AWS::Backup::BackupVault",
     "AWS::Backup::RecoveryPoint",
+    "AWS::Batch::ComputeEnvironment",
+    "AWS::Batch::JobQueue",
     "AWS::CloudFormation::Stack",
     "AWS::CloudFront::Distribution",
     "AWS::CloudFront::StreamingDistribution",
@@ -860,6 +881,10 @@ ResourceTypeType = Literal[
     "AWS::CodePipeline::Pipeline",
     "AWS::Config::ConformancePackCompliance",
     "AWS::Config::ResourceCompliance",
+    "AWS::Detective::Graph",
+    "AWS::DMS::Certificate",
+    "AWS::DMS::EventSubscription",
+    "AWS::DMS::ReplicationSubnetGroup",
     "AWS::DynamoDB::Table",
     "AWS::EC2::CustomerGateway",
     "AWS::EC2::EgressOnlyInternetGateway",
@@ -877,6 +902,8 @@ ResourceTypeType = Literal[
     "AWS::EC2::SecurityGroup",
     "AWS::EC2::Subnet",
     "AWS::EC2::TransitGateway",
+    "AWS::EC2::TransitGatewayAttachment",
+    "AWS::EC2::TransitGatewayRouteTable",
     "AWS::EC2::Volume",
     "AWS::EC2::VPC",
     "AWS::EC2::VPCEndpoint",
@@ -896,8 +923,14 @@ ResourceTypeType = Literal[
     "AWS::ElasticBeanstalk::ApplicationVersion",
     "AWS::ElasticBeanstalk::Environment",
     "AWS::ElasticLoadBalancing::LoadBalancer",
+    "AWS::ElasticLoadBalancingV2::Listener",
     "AWS::ElasticLoadBalancingV2::LoadBalancer",
     "AWS::Elasticsearch::Domain",
+    "AWS::EMR::SecurityConfiguration",
+    "AWS::GlobalAccelerator::Accelerator",
+    "AWS::GlobalAccelerator::EndpointGroup",
+    "AWS::GlobalAccelerator::Listener",
+    "AWS::GuardDuty::Detector",
     "AWS::IAM::Group",
     "AWS::IAM::Policy",
     "AWS::IAM::Role",
@@ -906,6 +939,7 @@ ResourceTypeType = Literal[
     "AWS::Kinesis::StreamConsumer",
     "AWS::KMS::Key",
     "AWS::Lambda::Function",
+    "AWS::MSK::Cluster",
     "AWS::NetworkFirewall::Firewall",
     "AWS::NetworkFirewall::FirewallPolicy",
     "AWS::NetworkFirewall::RuleGroup",
@@ -924,8 +958,13 @@ ResourceTypeType = Literal[
     "AWS::Redshift::ClusterSnapshot",
     "AWS::Redshift::ClusterSubnetGroup",
     "AWS::Redshift::EventSubscription",
+    "AWS::Route53Resolver::ResolverEndpoint",
+    "AWS::Route53Resolver::ResolverRule",
+    "AWS::Route53Resolver::ResolverRuleAssociation",
     "AWS::S3::AccountPublicAccessBlock",
     "AWS::S3::Bucket",
+    "AWS::SageMaker::CodeRepository",
+    "AWS::SageMaker::Model",
     "AWS::SecretsManager::Secret",
     "AWS::ServiceCatalog::CloudFormationProduct",
     "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
@@ -938,6 +977,8 @@ ResourceTypeType = Literal[
     "AWS::SSM::FileData",
     "AWS::SSM::ManagedInstanceInventory",
     "AWS::SSM::PatchCompliance",
+    "AWS::StepFunctions::Activity",
+    "AWS::StepFunctions::StateMachine",
     "AWS::WAF::RateBasedRule",
     "AWS::WAF::Rule",
     "AWS::WAF::RuleGroup",
@@ -951,6 +992,8 @@ ResourceTypeType = Literal[
     "AWS::WAFv2::RegexPatternSet",
     "AWS::WAFv2::RuleGroup",
     "AWS::WAFv2::WebACL",
+    "AWS::WorkSpaces::ConnectionAlias",
+    "AWS::WorkSpaces::Workspace",
     "AWS::XRay::EncryptionConfig",
 ]
 ```
@@ -994,6 +1037,35 @@ def get_value() -> SelectResourceConfigPaginatorName:
 ```python title="Definition"
 SelectResourceConfigPaginatorName = Literal[
     "select_resource_config",
+]
+```
+## SortByType
+
+```python title="Usage Example"
+from types_aiobotocore_config.literals import SortByType
+
+def get_value() -> SortByType:
+    return "SCORE"
+```
+
+```python title="Definition"
+SortByType = Literal[
+    "SCORE",
+]
+```
+## SortOrderType
+
+```python title="Usage Example"
+from types_aiobotocore_config.literals import SortOrderType
+
+def get_value() -> SortOrderType:
+    return "ASCENDING"
+```
+
+```python title="Definition"
+SortOrderType = Literal[
+    "ASCENDING",
+    "DESCENDING",
 ]
 ```
 ## ConfigServiceServiceName
@@ -1050,6 +1122,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -1057,6 +1130,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1089,6 +1163,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -1125,6 +1200,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1138,6 +1214,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1171,6 +1248,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1190,12 +1268,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1239,8 +1319,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1251,11 +1333,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1301,6 +1385,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

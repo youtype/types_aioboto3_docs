@@ -66,6 +66,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("personalize-runtime").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-runtime.html#PersonalizeRuntime.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### generate\_presigned\_url
 
 Generate a presigned url given a client, its method, and arguments.
@@ -140,11 +155,13 @@ await def get_recommendations(
     filterArn: str = ...,
     filterValues: Mapping[str, str] = ...,
     recommenderArn: str = ...,
-) -> GetRecommendationsResponseTypeDef:  # (1)
+    promotions: Sequence[PromotionTypeDef] = ...,  # (1)
+) -> GetRecommendationsResponseTypeDef:  # (2)
     ...
 ```
 
-1. See [:material-code-braces: GetRecommendationsResponseTypeDef](./type_defs.md#getrecommendationsresponsetypedef) 
+1. See [:material-code-braces: PromotionTypeDef](./type_defs.md#promotiontypedef) 
+2. See [:material-code-braces: GetRecommendationsResponseTypeDef](./type_defs.md#getrecommendationsresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"

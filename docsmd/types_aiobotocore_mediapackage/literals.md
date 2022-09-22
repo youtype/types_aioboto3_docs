@@ -191,6 +191,10 @@ def get_value() -> PresetSpeke20AudioType:
 ```python title="Definition"
 PresetSpeke20AudioType = Literal[
     "PRESET-AUDIO-1",
+    "PRESET-AUDIO-2",
+    "PRESET-AUDIO-3",
+    "SHARED",
+    "UNENCRYPTED",
 ]
 ```
 ## PresetSpeke20VideoType
@@ -205,6 +209,15 @@ def get_value() -> PresetSpeke20VideoType:
 ```python title="Definition"
 PresetSpeke20VideoType = Literal[
     "PRESET-VIDEO-1",
+    "PRESET-VIDEO-2",
+    "PRESET-VIDEO-3",
+    "PRESET-VIDEO-4",
+    "PRESET-VIDEO-5",
+    "PRESET-VIDEO-6",
+    "PRESET-VIDEO-7",
+    "PRESET-VIDEO-8",
+    "SHARED",
+    "UNENCRYPTED",
 ]
 ```
 ## ProfileType
@@ -213,11 +226,12 @@ PresetSpeke20VideoType = Literal[
 from types_aiobotocore_mediapackage.literals import ProfileType
 
 def get_value() -> ProfileType:
-    return "HBBTV_1_5"
+    return "DVB_DASH_2014"
 ```
 
 ```python title="Definition"
 ProfileType = Literal[
+    "DVB_DASH_2014",
     "HBBTV_1_5",
     "HYBRIDCAST",
     "NONE",
@@ -284,6 +298,7 @@ def get_value() -> UtcTimingType:
 UtcTimingType = Literal[
     "HTTP-HEAD",
     "HTTP-ISO",
+    "HTTP-XSDATE",
     "NONE",
 ]
 ```
@@ -341,6 +356,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -348,6 +364,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -380,6 +397,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -416,6 +434,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -429,6 +448,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -462,6 +482,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -481,12 +502,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -530,8 +553,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -542,11 +567,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -592,6 +619,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",

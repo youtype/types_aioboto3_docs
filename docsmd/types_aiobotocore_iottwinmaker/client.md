@@ -106,6 +106,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("iottwinmaker").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_component\_type
 
 Creates a component type.
@@ -501,18 +516,20 @@ Type annotations and code completion for `#!python session.client("iottwinmaker"
 await def get_property_value_history(
     self,
     *,
-    endDateTime: Union[datetime, str],
     selectedProperties: Sequence[str],
-    startDateTime: Union[datetime, str],
     workspaceId: str,
     componentName: str = ...,
     componentTypeId: str = ...,
+    endDateTime: Union[datetime, str] = ...,
+    endTime: str = ...,
     entityId: str = ...,
     interpolation: InterpolationParametersTypeDef = ...,  # (1)
     maxResults: int = ...,
     nextToken: str = ...,
     orderByTime: OrderByTimeType = ...,  # (2)
     propertyFilters: Sequence[PropertyFilterTypeDef] = ...,  # (3)
+    startDateTime: Union[datetime, str] = ...,
+    startTime: str = ...,
 ) -> GetPropertyValueHistoryResponseTypeDef:  # (4)
     ...
 ```
@@ -525,9 +542,7 @@ await def get_property_value_history(
 
 ```python title="Usage example with kwargs"
 kwargs: GetPropertyValueHistoryRequestRequestTypeDef = {  # (1)
-    "endDateTime": ...,
     "selectedProperties": ...,
-    "startDateTime": ...,
     "workspaceId": ...,
 }
 

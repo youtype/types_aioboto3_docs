@@ -4655,6 +4655,116 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeTransitGatewayPeeringAttachmentsRequestDescribeTransitGatewayPeeringAttachmentsPaginateTypeDef](./type_defs.md#describetransitgatewaypeeringattachmentsrequestdescribetransitgatewaypeeringattachmentspaginatetypedef) 
+## DescribeTransitGatewayPolicyTablesPaginator
+
+Type annotations and code completion for `#!python session.client("ec2").get_paginator("describe_transit_gateway_policy_tables")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Paginator.DescribeTransitGatewayPolicyTables)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_ec2.paginator import DescribeTransitGatewayPolicyTablesPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayPolicyTablesPaginator = client.get_paginator("describe_transit_gateway_policy_tables")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayPolicyTablesResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayPolicyTablesPaginator](./paginators.md#describetransitgatewaypolicytablespaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayPolicyTablesResultTypeDef](./type_defs.md#describetransitgatewaypolicytablesresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python DescribeTransitGatewayPolicyTablesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    TransitGatewayPolicyTableIds: Sequence[str] = ...,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    DryRun: bool = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[DescribeTransitGatewayPolicyTablesResultTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: DescribeTransitGatewayPolicyTablesResultTypeDef](./type_defs.md#describetransitgatewaypolicytablesresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef = {  # (1)
+    "TransitGatewayPolicyTableIds": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeTransitGatewayPolicyTablesRequestDescribeTransitGatewayPolicyTablesPaginateTypeDef](./type_defs.md#describetransitgatewaypolicytablesrequestdescribetransitgatewaypolicytablespaginatetypedef) 
+## DescribeTransitGatewayRouteTableAnnouncementsPaginator
+
+Type annotations and code completion for `#!python session.client("ec2").get_paginator("describe_transit_gateway_route_table_announcements")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Paginator.DescribeTransitGatewayRouteTableAnnouncements)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_ec2.paginator import DescribeTransitGatewayRouteTableAnnouncementsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("ec2") as client:  # (1)
+    paginator: DescribeTransitGatewayRouteTableAnnouncementsPaginator = client.get_paginator("describe_transit_gateway_route_table_announcements")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [DescribeTransitGatewayRouteTableAnnouncementsPaginator](./paginators.md#describetransitgatewayroutetableannouncementspaginator)
+3. item: [:material-code-braces: DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python DescribeTransitGatewayRouteTableAnnouncementsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    TransitGatewayRouteTableAnnouncementIds: Sequence[str] = ...,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    DryRun: bool = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: DescribeTransitGatewayRouteTableAnnouncementsResultTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef = {  # (1)
+    "TransitGatewayRouteTableAnnouncementIds": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeTransitGatewayRouteTableAnnouncementsRequestDescribeTransitGatewayRouteTableAnnouncementsPaginateTypeDef](./type_defs.md#describetransitgatewayroutetableannouncementsrequestdescribetransitgatewayroutetableannouncementspaginatetypedef) 
 ## DescribeTransitGatewayRouteTablesPaginator
 
 Type annotations and code completion for `#!python session.client("ec2").get_paginator("describe_transit_gateway_route_tables")`.
@@ -6205,6 +6315,61 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: GetTransitGatewayMulticastDomainAssociationsRequestGetTransitGatewayMulticastDomainAssociationsPaginateTypeDef](./type_defs.md#gettransitgatewaymulticastdomainassociationsrequestgettransitgatewaymulticastdomainassociationspaginatetypedef) 
+## GetTransitGatewayPolicyTableAssociationsPaginator
+
+Type annotations and code completion for `#!python session.client("ec2").get_paginator("get_transit_gateway_policy_table_associations")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Paginator.GetTransitGatewayPolicyTableAssociations)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_ec2.paginator import GetTransitGatewayPolicyTableAssociationsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("ec2") as client:  # (1)
+    paginator: GetTransitGatewayPolicyTableAssociationsPaginator = client.get_paginator("get_transit_gateway_policy_table_associations")  # (2)
+    async for item in paginator.paginate(...):
+        item: GetTransitGatewayPolicyTableAssociationsResultTypeDef
+        print(item)  # (3)
+```
+
+1. client: [EC2Client](./client.md)
+2. paginator: [GetTransitGatewayPolicyTableAssociationsPaginator](./paginators.md#gettransitgatewaypolicytableassociationspaginator)
+3. item: [:material-code-braces: GetTransitGatewayPolicyTableAssociationsResultTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsresulttypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python GetTransitGatewayPolicyTableAssociationsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    TransitGatewayPolicyTableId: str,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    DryRun: bool = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[GetTransitGatewayPolicyTableAssociationsResultTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: GetTransitGatewayPolicyTableAssociationsResultTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef = {  # (1)
+    "TransitGatewayPolicyTableId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: GetTransitGatewayPolicyTableAssociationsRequestGetTransitGatewayPolicyTableAssociationsPaginateTypeDef](./type_defs.md#gettransitgatewaypolicytableassociationsrequestgettransitgatewaypolicytableassociationspaginatetypedef) 
 ## GetTransitGatewayPrefixListReferencesPaginator
 
 Type annotations and code completion for `#!python session.client("ec2").get_paginator("get_transit_gateway_prefix_list_references")`.

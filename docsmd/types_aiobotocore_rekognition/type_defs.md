@@ -226,6 +226,40 @@ class SmileTypeDef(TypedDict):
     Confidence: NotRequired[float],
 ```
 
+## ConnectedHomeSettingsForUpdateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import ConnectedHomeSettingsForUpdateTypeDef
+
+def get_value() -> ConnectedHomeSettingsForUpdateTypeDef:
+    return {
+        "Labels": ...,
+    }
+```
+
+```python title="Definition"
+class ConnectedHomeSettingsForUpdateTypeDef(TypedDict):
+    Labels: NotRequired[Sequence[str]],
+    MinConfidence: NotRequired[float],
+```
+
+## ConnectedHomeSettingsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import ConnectedHomeSettingsTypeDef
+
+def get_value() -> ConnectedHomeSettingsTypeDef:
+    return {
+        "Labels": ...,
+    }
+```
+
+```python title="Definition"
+class ConnectedHomeSettingsTypeDef(TypedDict):
+    Labels: Sequence[str],
+    MinConfidence: NotRequired[float],
+```
+
 ## ModerationLabelTypeDef
 
 ```python title="Usage Example"
@@ -242,6 +276,23 @@ class ModerationLabelTypeDef(TypedDict):
     Confidence: NotRequired[float],
     Name: NotRequired[str],
     ParentName: NotRequired[str],
+```
+
+## OutputConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import OutputConfigTypeDef
+
+def get_value() -> OutputConfigTypeDef:
+    return {
+        "S3Bucket": ...,
+    }
+```
+
+```python title="Definition"
+class OutputConfigTypeDef(TypedDict):
+    S3Bucket: NotRequired[str],
+    S3KeyPrefix: NotRequired[str],
 ```
 
 ## CoversBodyPartTypeDef
@@ -294,21 +345,36 @@ class CreateProjectRequestRequestTypeDef(TypedDict):
     ProjectName: str,
 ```
 
-## OutputConfigTypeDef
+## StreamProcessorDataSharingPreferenceTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_rekognition.type_defs import OutputConfigTypeDef
+from types_aiobotocore_rekognition.type_defs import StreamProcessorDataSharingPreferenceTypeDef
 
-def get_value() -> OutputConfigTypeDef:
+def get_value() -> StreamProcessorDataSharingPreferenceTypeDef:
     return {
-        "S3Bucket": ...,
+        "OptIn": ...,
     }
 ```
 
 ```python title="Definition"
-class OutputConfigTypeDef(TypedDict):
-    S3Bucket: NotRequired[str],
-    S3KeyPrefix: NotRequired[str],
+class StreamProcessorDataSharingPreferenceTypeDef(TypedDict):
+    OptIn: bool,
+```
+
+## StreamProcessorNotificationChannelTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import StreamProcessorNotificationChannelTypeDef
+
+def get_value() -> StreamProcessorNotificationChannelTypeDef:
+    return {
+        "SNSTopicArn": ...,
+    }
+```
+
+```python title="Definition"
+class StreamProcessorNotificationChannelTypeDef(TypedDict):
+    SNSTopicArn: str,
 ```
 
 ## DatasetChangesTypeDef
@@ -435,6 +501,25 @@ def get_value() -> DeleteFacesRequestRequestTypeDef:
 class DeleteFacesRequestRequestTypeDef(TypedDict):
     CollectionId: str,
     FaceIds: Sequence[str],
+```
+
+## DeleteProjectPolicyRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import DeleteProjectPolicyRequestRequestTypeDef
+
+def get_value() -> DeleteProjectPolicyRequestRequestTypeDef:
+    return {
+        "ProjectArn": ...,
+        "PolicyName": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteProjectPolicyRequestRequestTypeDef(TypedDict):
+    ProjectArn: str,
+    PolicyName: str,
+    PolicyRevisionId: NotRequired[str],
 ```
 
 ## DeleteProjectRequestRequestTypeDef
@@ -1093,6 +1178,23 @@ class KinesisDataStreamTypeDef(TypedDict):
     Arn: NotRequired[str],
 ```
 
+## KinesisVideoStreamStartSelectorTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import KinesisVideoStreamStartSelectorTypeDef
+
+def get_value() -> KinesisVideoStreamStartSelectorTypeDef:
+    return {
+        "ProducerTimestamp": ...,
+    }
+```
+
+```python title="Definition"
+class KinesisVideoStreamStartSelectorTypeDef(TypedDict):
+    ProducerTimestamp: NotRequired[int],
+    FragmentNumber: NotRequired[str],
+```
+
 ## KinesisVideoStreamTypeDef
 
 ```python title="Usage Example"
@@ -1200,6 +1302,45 @@ class ListFacesRequestRequestTypeDef(TypedDict):
     MaxResults: NotRequired[int],
 ```
 
+## ListProjectPoliciesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import ListProjectPoliciesRequestRequestTypeDef
+
+def get_value() -> ListProjectPoliciesRequestRequestTypeDef:
+    return {
+        "ProjectArn": ...,
+    }
+```
+
+```python title="Definition"
+class ListProjectPoliciesRequestRequestTypeDef(TypedDict):
+    ProjectArn: str,
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+```
+
+## ProjectPolicyTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import ProjectPolicyTypeDef
+
+def get_value() -> ProjectPolicyTypeDef:
+    return {
+        "ProjectArn": ...,
+    }
+```
+
+```python title="Definition"
+class ProjectPolicyTypeDef(TypedDict):
+    ProjectArn: NotRequired[str],
+    PolicyName: NotRequired[str],
+    PolicyRevisionId: NotRequired[str],
+    PolicyDocument: NotRequired[str],
+    CreationTimestamp: NotRequired[datetime],
+    LastUpdatedTimestamp: NotRequired[datetime],
+```
+
 ## ListStreamProcessorsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1267,6 +1408,44 @@ def get_value() -> NotificationChannelTypeDef:
 class NotificationChannelTypeDef(TypedDict):
     SNSTopicArn: str,
     RoleArn: str,
+```
+
+## PutProjectPolicyRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import PutProjectPolicyRequestRequestTypeDef
+
+def get_value() -> PutProjectPolicyRequestRequestTypeDef:
+    return {
+        "ProjectArn": ...,
+        "PolicyName": ...,
+        "PolicyDocument": ...,
+    }
+```
+
+```python title="Definition"
+class PutProjectPolicyRequestRequestTypeDef(TypedDict):
+    ProjectArn: str,
+    PolicyName: str,
+    PolicyDocument: str,
+    PolicyRevisionId: NotRequired[str],
+```
+
+## S3DestinationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import S3DestinationTypeDef
+
+def get_value() -> S3DestinationTypeDef:
+    return {
+        "Bucket": ...,
+    }
+```
+
+```python title="Definition"
+class S3DestinationTypeDef(TypedDict):
+    Bucket: NotRequired[str],
+    KeyPrefix: NotRequired[str],
 ```
 
 ## SearchFacesRequestRequestTypeDef
@@ -1340,6 +1519,7 @@ def get_value() -> StartProjectVersionRequestRequestTypeDef:
 class StartProjectVersionRequestRequestTypeDef(TypedDict):
     ProjectVersionArn: str,
     MinInferenceUnits: int,
+    MaxInferenceUnits: NotRequired[int],
 ```
 
 ## StartShotDetectionFilterTypeDef
@@ -1358,20 +1538,20 @@ class StartShotDetectionFilterTypeDef(TypedDict):
     MinSegmentConfidence: NotRequired[float],
 ```
 
-## StartStreamProcessorRequestRequestTypeDef
+## StreamProcessingStopSelectorTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_rekognition.type_defs import StartStreamProcessorRequestRequestTypeDef
+from types_aiobotocore_rekognition.type_defs import StreamProcessingStopSelectorTypeDef
 
-def get_value() -> StartStreamProcessorRequestRequestTypeDef:
+def get_value() -> StreamProcessingStopSelectorTypeDef:
     return {
-        "Name": ...,
+        "MaxDurationInSeconds": ...,
     }
 ```
 
 ```python title="Definition"
-class StartStreamProcessorRequestRequestTypeDef(TypedDict):
-    Name: str,
+class StreamProcessingStopSelectorTypeDef(TypedDict):
+    MaxDurationInSeconds: NotRequired[int],
 ```
 
 ## StopProjectVersionRequestRequestTypeDef
@@ -1518,23 +1698,25 @@ class InstanceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: BoundingBoxTypeDef](./type_defs.md#boundingboxtypedef) 
-## RegionOfInterestTypeDef
+## CopyProjectVersionResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_rekognition.type_defs import RegionOfInterestTypeDef
+from types_aiobotocore_rekognition.type_defs import CopyProjectVersionResponseTypeDef
 
-def get_value() -> RegionOfInterestTypeDef:
+def get_value() -> CopyProjectVersionResponseTypeDef:
     return {
-        "BoundingBox": ...,
+        "ProjectVersionArn": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class RegionOfInterestTypeDef(TypedDict):
-    BoundingBox: NotRequired[BoundingBoxTypeDef],  # (1)
+class CopyProjectVersionResponseTypeDef(TypedDict):
+    ProjectVersionArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
-1. See [:material-code-braces: BoundingBoxTypeDef](./type_defs.md#boundingboxtypedef) 
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateCollectionResponseTypeDef
 
 ```python title="Usage Example"
@@ -1824,6 +2006,25 @@ class ListTagsForResourceResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## PutProjectPolicyResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import PutProjectPolicyResponseTypeDef
+
+def get_value() -> PutProjectPolicyResponseTypeDef:
+    return {
+        "PolicyRevisionId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class PutProjectPolicyResponseTypeDef(TypedDict):
+    PolicyRevisionId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## StartCelebrityRecognitionResponseTypeDef
 
 ```python title="Usage Example"
@@ -1977,6 +2178,25 @@ class StartSegmentDetectionResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## StartStreamProcessorResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import StartStreamProcessorResponseTypeDef
+
+def get_value() -> StartStreamProcessorResponseTypeDef:
+    return {
+        "SessionId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class StartStreamProcessorResponseTypeDef(TypedDict):
+    SessionId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## StartTextDetectionResponseTypeDef
 
 ```python title="Usage Example"
@@ -2044,6 +2264,23 @@ class ComparedFaceTypeDef(TypedDict):
 4. See [:material-code-braces: ImageQualityTypeDef](./type_defs.md#imagequalitytypedef) 
 5. See [:material-code-braces: EmotionTypeDef](./type_defs.md#emotiontypedef) 
 6. See [:material-code-braces: SmileTypeDef](./type_defs.md#smiletypedef) 
+## StreamProcessorSettingsForUpdateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import StreamProcessorSettingsForUpdateTypeDef
+
+def get_value() -> StreamProcessorSettingsForUpdateTypeDef:
+    return {
+        "ConnectedHomeForUpdate": ...,
+    }
+```
+
+```python title="Definition"
+class StreamProcessorSettingsForUpdateTypeDef(TypedDict):
+    ConnectedHomeForUpdate: NotRequired[ConnectedHomeSettingsForUpdateTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: ConnectedHomeSettingsForUpdateTypeDef](./type_defs.md#connectedhomesettingsforupdatetypedef) 
 ## ContentModerationDetectionTypeDef
 
 ```python title="Usage Example"
@@ -2062,6 +2299,33 @@ class ContentModerationDetectionTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ModerationLabelTypeDef](./type_defs.md#moderationlabeltypedef) 
+## CopyProjectVersionRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import CopyProjectVersionRequestRequestTypeDef
+
+def get_value() -> CopyProjectVersionRequestRequestTypeDef:
+    return {
+        "SourceProjectArn": ...,
+        "SourceProjectVersionArn": ...,
+        "DestinationProjectArn": ...,
+        "VersionName": ...,
+        "OutputConfig": ...,
+    }
+```
+
+```python title="Definition"
+class CopyProjectVersionRequestRequestTypeDef(TypedDict):
+    SourceProjectArn: str,
+    SourceProjectVersionArn: str,
+    DestinationProjectArn: str,
+    VersionName: str,
+    OutputConfig: OutputConfigTypeDef,  # (1)
+    Tags: NotRequired[Mapping[str, str]],
+    KmsKeyId: NotRequired[str],
+```
+
+1. See [:material-code-braces: OutputConfigTypeDef](./type_defs.md#outputconfigtypedef) 
 ## EquipmentDetectionTypeDef
 
 ```python title="Usage Example"
@@ -2278,6 +2542,24 @@ class ListFacesRequestListFacesPaginateTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListProjectPoliciesRequestListProjectPoliciesPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import ListProjectPoliciesRequestListProjectPoliciesPaginateTypeDef
+
+def get_value() -> ListProjectPoliciesRequestListProjectPoliciesPaginateTypeDef:
+    return {
+        "ProjectArn": ...,
+    }
+```
+
+```python title="Definition"
+class ListProjectPoliciesRequestListProjectPoliciesPaginateTypeDef(TypedDict):
+    ProjectArn: str,
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListStreamProcessorsRequestListStreamProcessorsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -2437,9 +2719,11 @@ def get_value() -> StreamProcessorSettingsTypeDef:
 ```python title="Definition"
 class StreamProcessorSettingsTypeDef(TypedDict):
     FaceSearch: NotRequired[FaceSearchSettingsTypeDef],  # (1)
+    ConnectedHome: NotRequired[ConnectedHomeSettingsTypeDef],  # (2)
 ```
 
 1. See [:material-code-braces: FaceSearchSettingsTypeDef](./type_defs.md#facesearchsettingstypedef) 
+2. See [:material-code-braces: ConnectedHomeSettingsTypeDef](./type_defs.md#connectedhomesettingstypedef) 
 ## GeometryTypeDef
 
 ```python title="Usage Example"
@@ -2455,6 +2739,25 @@ def get_value() -> GeometryTypeDef:
 class GeometryTypeDef(TypedDict):
     BoundingBox: NotRequired[BoundingBoxTypeDef],  # (1)
     Polygon: NotRequired[List[PointTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: BoundingBoxTypeDef](./type_defs.md#boundingboxtypedef) 
+2. See [:material-code-braces: PointTypeDef](./type_defs.md#pointtypedef) 
+## RegionOfInterestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import RegionOfInterestTypeDef
+
+def get_value() -> RegionOfInterestTypeDef:
+    return {
+        "BoundingBox": ...,
+    }
+```
+
+```python title="Definition"
+class RegionOfInterestTypeDef(TypedDict):
+    BoundingBox: NotRequired[BoundingBoxTypeDef],  # (1)
+    Polygon: NotRequired[Sequence[PointTypeDef]],  # (2)
 ```
 
 1. See [:material-code-braces: BoundingBoxTypeDef](./type_defs.md#boundingboxtypedef) 
@@ -2548,23 +2851,23 @@ class HumanLoopConfigTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: HumanLoopDataAttributesTypeDef](./type_defs.md#humanloopdataattributestypedef) 
-## StreamProcessorOutputTypeDef
+## StreamProcessingStartSelectorTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_rekognition.type_defs import StreamProcessorOutputTypeDef
+from types_aiobotocore_rekognition.type_defs import StreamProcessingStartSelectorTypeDef
 
-def get_value() -> StreamProcessorOutputTypeDef:
+def get_value() -> StreamProcessingStartSelectorTypeDef:
     return {
-        "KinesisDataStream": ...,
+        "KVSStreamStartSelector": ...,
     }
 ```
 
 ```python title="Definition"
-class StreamProcessorOutputTypeDef(TypedDict):
-    KinesisDataStream: NotRequired[KinesisDataStreamTypeDef],  # (1)
+class StreamProcessingStartSelectorTypeDef(TypedDict):
+    KVSStreamStartSelector: NotRequired[KinesisVideoStreamStartSelectorTypeDef],  # (1)
 ```
 
-1. See [:material-code-braces: KinesisDataStreamTypeDef](./type_defs.md#kinesisdatastreamtypedef) 
+1. See [:material-code-braces: KinesisVideoStreamStartSelectorTypeDef](./type_defs.md#kinesisvideostreamstartselectortypedef) 
 ## StreamProcessorInputTypeDef
 
 ```python title="Usage Example"
@@ -2582,6 +2885,28 @@ class StreamProcessorInputTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: KinesisVideoStreamTypeDef](./type_defs.md#kinesisvideostreamtypedef) 
+## ListProjectPoliciesResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import ListProjectPoliciesResponseTypeDef
+
+def get_value() -> ListProjectPoliciesResponseTypeDef:
+    return {
+        "ProjectPolicies": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListProjectPoliciesResponseTypeDef(TypedDict):
+    ProjectPolicies: List[ProjectPolicyTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ProjectPolicyTypeDef](./type_defs.md#projectpolicytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListStreamProcessorsResponseTypeDef
 
 ```python title="Usage Example"
@@ -2604,6 +2929,25 @@ class ListStreamProcessorsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: StreamProcessorTypeDef](./type_defs.md#streamprocessortypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## StreamProcessorOutputTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import StreamProcessorOutputTypeDef
+
+def get_value() -> StreamProcessorOutputTypeDef:
+    return {
+        "KinesisDataStream": ...,
+    }
+```
+
+```python title="Definition"
+class StreamProcessorOutputTypeDef(TypedDict):
+    KinesisDataStream: NotRequired[KinesisDataStreamTypeDef],  # (1)
+    S3Destination: NotRequired[S3DestinationTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: KinesisDataStreamTypeDef](./type_defs.md#kinesisdatastreamtypedef) 
+2. See [:material-code-braces: S3DestinationTypeDef](./type_defs.md#s3destinationtypedef) 
 ## SegmentDetectionTypeDef
 
 ```python title="Usage Example"
@@ -2716,44 +3060,6 @@ class LabelTypeDef(TypedDict):
 
 1. See [:material-code-braces: InstanceTypeDef](./type_defs.md#instancetypedef) 
 2. See [:material-code-braces: ParentTypeDef](./type_defs.md#parenttypedef) 
-## DetectTextFiltersTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rekognition.type_defs import DetectTextFiltersTypeDef
-
-def get_value() -> DetectTextFiltersTypeDef:
-    return {
-        "WordFilter": ...,
-    }
-```
-
-```python title="Definition"
-class DetectTextFiltersTypeDef(TypedDict):
-    WordFilter: NotRequired[DetectionFilterTypeDef],  # (1)
-    RegionsOfInterest: NotRequired[Sequence[RegionOfInterestTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: DetectionFilterTypeDef](./type_defs.md#detectionfiltertypedef) 
-2. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
-## StartTextDetectionFiltersTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rekognition.type_defs import StartTextDetectionFiltersTypeDef
-
-def get_value() -> StartTextDetectionFiltersTypeDef:
-    return {
-        "WordFilter": ...,
-    }
-```
-
-```python title="Definition"
-class StartTextDetectionFiltersTypeDef(TypedDict):
-    WordFilter: NotRequired[DetectionFilterTypeDef],  # (1)
-    RegionsOfInterest: NotRequired[Sequence[RegionOfInterestTypeDef]],  # (2)
-```
-
-1. See [:material-code-braces: DetectionFilterTypeDef](./type_defs.md#detectionfiltertypedef) 
-2. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
 ## CelebrityTypeDef
 
 ```python title="Usage Example"
@@ -3077,6 +3383,68 @@ class TextDetectionTypeDef(TypedDict):
 
 1. See [:material-code-brackets: TextTypesType](./literals.md#texttypestype) 
 2. See [:material-code-braces: GeometryTypeDef](./type_defs.md#geometrytypedef) 
+## DetectTextFiltersTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import DetectTextFiltersTypeDef
+
+def get_value() -> DetectTextFiltersTypeDef:
+    return {
+        "WordFilter": ...,
+    }
+```
+
+```python title="Definition"
+class DetectTextFiltersTypeDef(TypedDict):
+    WordFilter: NotRequired[DetectionFilterTypeDef],  # (1)
+    RegionsOfInterest: NotRequired[Sequence[RegionOfInterestTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: DetectionFilterTypeDef](./type_defs.md#detectionfiltertypedef) 
+2. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
+## StartTextDetectionFiltersTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import StartTextDetectionFiltersTypeDef
+
+def get_value() -> StartTextDetectionFiltersTypeDef:
+    return {
+        "WordFilter": ...,
+    }
+```
+
+```python title="Definition"
+class StartTextDetectionFiltersTypeDef(TypedDict):
+    WordFilter: NotRequired[DetectionFilterTypeDef],  # (1)
+    RegionsOfInterest: NotRequired[Sequence[RegionOfInterestTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: DetectionFilterTypeDef](./type_defs.md#detectionfiltertypedef) 
+2. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
+## UpdateStreamProcessorRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import UpdateStreamProcessorRequestRequestTypeDef
+
+def get_value() -> UpdateStreamProcessorRequestRequestTypeDef:
+    return {
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateStreamProcessorRequestRequestTypeDef(TypedDict):
+    Name: str,
+    SettingsForUpdate: NotRequired[StreamProcessorSettingsForUpdateTypeDef],  # (1)
+    RegionsOfInterestForUpdate: NotRequired[Sequence[RegionOfInterestTypeDef]],  # (2)
+    DataSharingPreferenceForUpdate: NotRequired[StreamProcessorDataSharingPreferenceTypeDef],  # (3)
+    ParametersToDelete: NotRequired[Sequence[StreamProcessorParameterToDeleteType]],  # (4)
+```
+
+1. See [:material-code-braces: StreamProcessorSettingsForUpdateTypeDef](./type_defs.md#streamprocessorsettingsforupdatetypedef) 
+2. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
+3. See [:material-code-braces: StreamProcessorDataSharingPreferenceTypeDef](./type_defs.md#streamprocessordatasharingpreferencetypedef) 
+4. See [:material-code-brackets: StreamProcessorParameterToDeleteType](./literals.md#streamprocessorparametertodeletetype) 
 ## AssetTypeDef
 
 ```python title="Usage Example"
@@ -3449,6 +3817,26 @@ class DetectModerationLabelsRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-braces: ImageTypeDef](./type_defs.md#imagetypedef) 
 2. See [:material-code-braces: HumanLoopConfigTypeDef](./type_defs.md#humanloopconfigtypedef) 
+## StartStreamProcessorRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import StartStreamProcessorRequestRequestTypeDef
+
+def get_value() -> StartStreamProcessorRequestRequestTypeDef:
+    return {
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class StartStreamProcessorRequestRequestTypeDef(TypedDict):
+    Name: str,
+    StartSelector: NotRequired[StreamProcessingStartSelectorTypeDef],  # (1)
+    StopSelector: NotRequired[StreamProcessingStopSelectorTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: StreamProcessingStartSelectorTypeDef](./type_defs.md#streamprocessingstartselectortypedef) 
+2. See [:material-code-braces: StreamProcessingStopSelectorTypeDef](./type_defs.md#streamprocessingstopselectortypedef) 
 ## CreateStreamProcessorRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -3472,11 +3860,18 @@ class CreateStreamProcessorRequestRequestTypeDef(TypedDict):
     Settings: StreamProcessorSettingsTypeDef,  # (3)
     RoleArn: str,
     Tags: NotRequired[Mapping[str, str]],
+    NotificationChannel: NotRequired[StreamProcessorNotificationChannelTypeDef],  # (4)
+    KmsKeyId: NotRequired[str],
+    RegionsOfInterest: NotRequired[Sequence[RegionOfInterestTypeDef]],  # (5)
+    DataSharingPreference: NotRequired[StreamProcessorDataSharingPreferenceTypeDef],  # (6)
 ```
 
 1. See [:material-code-braces: StreamProcessorInputTypeDef](./type_defs.md#streamprocessorinputtypedef) 
 2. See [:material-code-braces: StreamProcessorOutputTypeDef](./type_defs.md#streamprocessoroutputtypedef) 
 3. See [:material-code-braces: StreamProcessorSettingsTypeDef](./type_defs.md#streamprocessorsettingstypedef) 
+4. See [:material-code-braces: StreamProcessorNotificationChannelTypeDef](./type_defs.md#streamprocessornotificationchanneltypedef) 
+5. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
+6. See [:material-code-braces: StreamProcessorDataSharingPreferenceTypeDef](./type_defs.md#streamprocessordatasharingpreferencetypedef) 
 ## DescribeStreamProcessorResponseTypeDef
 
 ```python title="Usage Example"
@@ -3494,6 +3889,10 @@ def get_value() -> DescribeStreamProcessorResponseTypeDef:
         "Output": ...,
         "RoleArn": ...,
         "Settings": ...,
+        "NotificationChannel": ...,
+        "KmsKeyId": ...,
+        "RegionsOfInterest": ...,
+        "DataSharingPreference": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -3510,14 +3909,21 @@ class DescribeStreamProcessorResponseTypeDef(TypedDict):
     Output: StreamProcessorOutputTypeDef,  # (3)
     RoleArn: str,
     Settings: StreamProcessorSettingsTypeDef,  # (4)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+    NotificationChannel: StreamProcessorNotificationChannelTypeDef,  # (5)
+    KmsKeyId: str,
+    RegionsOfInterest: List[RegionOfInterestTypeDef],  # (6)
+    DataSharingPreference: StreamProcessorDataSharingPreferenceTypeDef,  # (7)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (8)
 ```
 
 1. See [:material-code-brackets: StreamProcessorStatusType](./literals.md#streamprocessorstatustype) 
 2. See [:material-code-braces: StreamProcessorInputTypeDef](./type_defs.md#streamprocessorinputtypedef) 
 3. See [:material-code-braces: StreamProcessorOutputTypeDef](./type_defs.md#streamprocessoroutputtypedef) 
 4. See [:material-code-braces: StreamProcessorSettingsTypeDef](./type_defs.md#streamprocessorsettingstypedef) 
-5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+5. See [:material-code-braces: StreamProcessorNotificationChannelTypeDef](./type_defs.md#streamprocessornotificationchanneltypedef) 
+6. See [:material-code-braces: RegionOfInterestTypeDef](./type_defs.md#regionofinteresttypedef) 
+7. See [:material-code-braces: StreamProcessorDataSharingPreferenceTypeDef](./type_defs.md#streamprocessordatasharingpreferencetypedef) 
+8. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetSegmentDetectionResponseTypeDef
 
 ```python title="Usage Example"
@@ -3674,48 +4080,6 @@ class LabelDetectionTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: LabelTypeDef](./type_defs.md#labeltypedef) 
-## DetectTextRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rekognition.type_defs import DetectTextRequestRequestTypeDef
-
-def get_value() -> DetectTextRequestRequestTypeDef:
-    return {
-        "Image": ...,
-    }
-```
-
-```python title="Definition"
-class DetectTextRequestRequestTypeDef(TypedDict):
-    Image: ImageTypeDef,  # (1)
-    Filters: NotRequired[DetectTextFiltersTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: ImageTypeDef](./type_defs.md#imagetypedef) 
-2. See [:material-code-braces: DetectTextFiltersTypeDef](./type_defs.md#detecttextfilterstypedef) 
-## StartTextDetectionRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rekognition.type_defs import StartTextDetectionRequestRequestTypeDef
-
-def get_value() -> StartTextDetectionRequestRequestTypeDef:
-    return {
-        "Video": ...,
-    }
-```
-
-```python title="Definition"
-class StartTextDetectionRequestRequestTypeDef(TypedDict):
-    Video: VideoTypeDef,  # (1)
-    ClientRequestToken: NotRequired[str],
-    NotificationChannel: NotRequired[NotificationChannelTypeDef],  # (2)
-    JobTag: NotRequired[str],
-    Filters: NotRequired[StartTextDetectionFiltersTypeDef],  # (3)
-```
-
-1. See [:material-code-braces: VideoTypeDef](./type_defs.md#videotypedef) 
-2. See [:material-code-braces: NotificationChannelTypeDef](./type_defs.md#notificationchanneltypedef) 
-3. See [:material-code-braces: StartTextDetectionFiltersTypeDef](./type_defs.md#starttextdetectionfilterstypedef) 
 ## RecognizeCelebritiesResponseTypeDef
 
 ```python title="Usage Example"
@@ -3969,6 +4333,48 @@ class TextDetectionResultTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TextDetectionTypeDef](./type_defs.md#textdetectiontypedef) 
+## DetectTextRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import DetectTextRequestRequestTypeDef
+
+def get_value() -> DetectTextRequestRequestTypeDef:
+    return {
+        "Image": ...,
+    }
+```
+
+```python title="Definition"
+class DetectTextRequestRequestTypeDef(TypedDict):
+    Image: ImageTypeDef,  # (1)
+    Filters: NotRequired[DetectTextFiltersTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: ImageTypeDef](./type_defs.md#imagetypedef) 
+2. See [:material-code-braces: DetectTextFiltersTypeDef](./type_defs.md#detecttextfilterstypedef) 
+## StartTextDetectionRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rekognition.type_defs import StartTextDetectionRequestRequestTypeDef
+
+def get_value() -> StartTextDetectionRequestRequestTypeDef:
+    return {
+        "Video": ...,
+    }
+```
+
+```python title="Definition"
+class StartTextDetectionRequestRequestTypeDef(TypedDict):
+    Video: VideoTypeDef,  # (1)
+    ClientRequestToken: NotRequired[str],
+    NotificationChannel: NotRequired[NotificationChannelTypeDef],  # (2)
+    JobTag: NotRequired[str],
+    Filters: NotRequired[StartTextDetectionFiltersTypeDef],  # (3)
+```
+
+1. See [:material-code-braces: VideoTypeDef](./type_defs.md#videotypedef) 
+2. See [:material-code-braces: NotificationChannelTypeDef](./type_defs.md#notificationchanneltypedef) 
+3. See [:material-code-braces: StartTextDetectionFiltersTypeDef](./type_defs.md#starttextdetectionfilterstypedef) 
 ## TestingDataTypeDef
 
 ```python title="Usage Example"
@@ -4316,6 +4722,8 @@ class ProjectVersionDescriptionTypeDef(TypedDict):
     EvaluationResult: NotRequired[EvaluationResultTypeDef],  # (5)
     ManifestSummary: NotRequired[GroundTruthManifestTypeDef],  # (6)
     KmsKeyId: NotRequired[str],
+    MaxInferenceUnits: NotRequired[int],
+    SourceProjectVersionArn: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: ProjectVersionStatusType](./literals.md#projectversionstatustype) 

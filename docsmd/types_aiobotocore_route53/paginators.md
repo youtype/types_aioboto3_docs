@@ -7,6 +7,162 @@
     Auto-generated documentation for [Route53](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53)
     type annotations stubs module [types-aiobotocore-route53](https://pypi.org/project/types-aiobotocore-route53/).
 
+## ListCidrBlocksPaginator
+
+Type annotations and code completion for `#!python session.client("route53").get_paginator("list_cidr_blocks")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Paginator.ListCidrBlocks)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_route53.paginator import ListCidrBlocksPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("route53") as client:  # (1)
+    paginator: ListCidrBlocksPaginator = client.get_paginator("list_cidr_blocks")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCidrBlocksResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListCidrBlocksPaginator](./paginators.md#listcidrblockspaginator)
+3. item: [:material-code-braces: ListCidrBlocksResponseTypeDef](./type_defs.md#listcidrblocksresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListCidrBlocksPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    CollectionId: str,
+    LocationName: str = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListCidrBlocksResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListCidrBlocksResponseTypeDef](./type_defs.md#listcidrblocksresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListCidrBlocksRequestListCidrBlocksPaginateTypeDef = {  # (1)
+    "CollectionId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListCidrBlocksRequestListCidrBlocksPaginateTypeDef](./type_defs.md#listcidrblocksrequestlistcidrblockspaginatetypedef) 
+## ListCidrCollectionsPaginator
+
+Type annotations and code completion for `#!python session.client("route53").get_paginator("list_cidr_collections")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Paginator.ListCidrCollections)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_route53.paginator import ListCidrCollectionsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("route53") as client:  # (1)
+    paginator: ListCidrCollectionsPaginator = client.get_paginator("list_cidr_collections")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCidrCollectionsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListCidrCollectionsPaginator](./paginators.md#listcidrcollectionspaginator)
+3. item: [:material-code-braces: ListCidrCollectionsResponseTypeDef](./type_defs.md#listcidrcollectionsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListCidrCollectionsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListCidrCollectionsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListCidrCollectionsResponseTypeDef](./type_defs.md#listcidrcollectionsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListCidrCollectionsRequestListCidrCollectionsPaginateTypeDef = {  # (1)
+    "PaginationConfig": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListCidrCollectionsRequestListCidrCollectionsPaginateTypeDef](./type_defs.md#listcidrcollectionsrequestlistcidrcollectionspaginatetypedef) 
+## ListCidrLocationsPaginator
+
+Type annotations and code completion for `#!python session.client("route53").get_paginator("list_cidr_locations")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Paginator.ListCidrLocations)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_route53.paginator import ListCidrLocationsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("route53") as client:  # (1)
+    paginator: ListCidrLocationsPaginator = client.get_paginator("list_cidr_locations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListCidrLocationsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [Route53Client](./client.md)
+2. paginator: [ListCidrLocationsPaginator](./paginators.md#listcidrlocationspaginator)
+3. item: [:material-code-braces: ListCidrLocationsResponseTypeDef](./type_defs.md#listcidrlocationsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListCidrLocationsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    CollectionId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListCidrLocationsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListCidrLocationsResponseTypeDef](./type_defs.md#listcidrlocationsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListCidrLocationsRequestListCidrLocationsPaginateTypeDef = {  # (1)
+    "CollectionId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListCidrLocationsRequestListCidrLocationsPaginateTypeDef](./type_defs.md#listcidrlocationsrequestlistcidrlocationspaginatetypedef) 
 ## ListHealthChecksPaginator
 
 Type annotations and code completion for `#!python session.client("route53").get_paginator("list_health_checks")`.

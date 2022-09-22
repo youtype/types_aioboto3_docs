@@ -7,6 +7,42 @@
     Auto-generated documentation for [LookoutEquipment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment)
     type annotations stubs module [types-aiobotocore-lookoutequipment](https://pypi.org/project/types-aiobotocore-lookoutequipment/).
 
+## CategoricalValuesTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import CategoricalValuesTypeDef
+
+def get_value() -> CategoricalValuesTypeDef:
+    return {
+        "Status": ...,
+    }
+```
+
+```python title="Definition"
+class CategoricalValuesTypeDef(TypedDict):
+    Status: StatisticalIssueStatusType,  # (1)
+    NumberOfCategory: NotRequired[int],
+```
+
+1. See [:material-code-brackets: StatisticalIssueStatusType](./literals.md#statisticalissuestatustype) 
+## CountPercentTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import CountPercentTypeDef
+
+def get_value() -> CountPercentTypeDef:
+    return {
+        "Count": ...,
+        "Percentage": ...,
+    }
+```
+
+```python title="Definition"
+class CountPercentTypeDef(TypedDict):
+    Count: int,
+    Percentage: float,
+```
+
 ## DatasetSchemaTypeDef
 
 ```python title="Usage Example"
@@ -82,6 +118,74 @@ class DataPreProcessingConfigurationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: TargetSamplingRateType](./literals.md#targetsamplingratetype) 
+## DuplicateTimestampsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import DuplicateTimestampsTypeDef
+
+def get_value() -> DuplicateTimestampsTypeDef:
+    return {
+        "TotalNumberOfDuplicateTimestamps": ...,
+    }
+```
+
+```python title="Definition"
+class DuplicateTimestampsTypeDef(TypedDict):
+    TotalNumberOfDuplicateTimestamps: int,
+```
+
+## InvalidSensorDataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import InvalidSensorDataTypeDef
+
+def get_value() -> InvalidSensorDataTypeDef:
+    return {
+        "AffectedSensorCount": ...,
+        "TotalNumberOfInvalidValues": ...,
+    }
+```
+
+```python title="Definition"
+class InvalidSensorDataTypeDef(TypedDict):
+    AffectedSensorCount: int,
+    TotalNumberOfInvalidValues: int,
+```
+
+## MissingSensorDataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import MissingSensorDataTypeDef
+
+def get_value() -> MissingSensorDataTypeDef:
+    return {
+        "AffectedSensorCount": ...,
+        "TotalNumberOfMissingValues": ...,
+    }
+```
+
+```python title="Definition"
+class MissingSensorDataTypeDef(TypedDict):
+    AffectedSensorCount: int,
+    TotalNumberOfMissingValues: int,
+```
+
+## UnsupportedTimestampsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import UnsupportedTimestampsTypeDef
+
+def get_value() -> UnsupportedTimestampsTypeDef:
+    return {
+        "TotalNumberOfUnsupportedTimestamps": ...,
+    }
+```
+
+```python title="Definition"
+class UnsupportedTimestampsTypeDef(TypedDict):
+    TotalNumberOfUnsupportedTimestamps: int,
+```
+
 ## DatasetSummaryTypeDef
 
 ```python title="Usage Example"
@@ -214,6 +318,27 @@ class DescribeModelRequestRequestTypeDef(TypedDict):
     ModelName: str,
 ```
 
+## InferenceEventSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import InferenceEventSummaryTypeDef
+
+def get_value() -> InferenceEventSummaryTypeDef:
+    return {
+        "InferenceSchedulerArn": ...,
+    }
+```
+
+```python title="Definition"
+class InferenceEventSummaryTypeDef(TypedDict):
+    InferenceSchedulerArn: NotRequired[str],
+    InferenceSchedulerName: NotRequired[str],
+    EventStartTime: NotRequired[datetime],
+    EventEndTime: NotRequired[datetime],
+    Diagnostics: NotRequired[str],
+    EventDurationInSeconds: NotRequired[int],
+```
+
 ## S3ObjectTypeDef
 
 ```python title="Usage Example"
@@ -322,6 +447,39 @@ def get_value() -> IngestionS3InputConfigurationTypeDef:
 class IngestionS3InputConfigurationTypeDef(TypedDict):
     Bucket: str,
     Prefix: NotRequired[str],
+    KeyPattern: NotRequired[str],
+```
+
+## MissingCompleteSensorDataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import MissingCompleteSensorDataTypeDef
+
+def get_value() -> MissingCompleteSensorDataTypeDef:
+    return {
+        "AffectedSensorCount": ...,
+    }
+```
+
+```python title="Definition"
+class MissingCompleteSensorDataTypeDef(TypedDict):
+    AffectedSensorCount: int,
+```
+
+## SensorsWithShortDateRangeTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import SensorsWithShortDateRangeTypeDef
+
+def get_value() -> SensorsWithShortDateRangeTypeDef:
+    return {
+        "AffectedSensorCount": ...,
+    }
+```
+
+```python title="Definition"
+class SensorsWithShortDateRangeTypeDef(TypedDict):
+    AffectedSensorCount: int,
 ```
 
 ## LabelsS3InputConfigurationTypeDef
@@ -341,6 +499,25 @@ class LabelsS3InputConfigurationTypeDef(TypedDict):
     Prefix: NotRequired[str],
 ```
 
+## LargeTimestampGapsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import LargeTimestampGapsTypeDef
+
+def get_value() -> LargeTimestampGapsTypeDef:
+    return {
+        "Status": ...,
+    }
+```
+
+```python title="Definition"
+class LargeTimestampGapsTypeDef(TypedDict):
+    Status: StatisticalIssueStatusType,  # (1)
+    NumberOfLargeTimestampGaps: NotRequired[int],
+    MaxTimestampGapInDays: NotRequired[int],
+```
+
+1. See [:material-code-brackets: StatisticalIssueStatusType](./literals.md#statisticalissuestatustype) 
 ## ListDataIngestionJobsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -377,6 +554,28 @@ class ListDatasetsRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
     MaxResults: NotRequired[int],
     DatasetNameBeginsWith: NotRequired[str],
+```
+
+## ListInferenceEventsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import ListInferenceEventsRequestRequestTypeDef
+
+def get_value() -> ListInferenceEventsRequestRequestTypeDef:
+    return {
+        "InferenceSchedulerName": ...,
+        "IntervalStartTime": ...,
+        "IntervalEndTime": ...,
+    }
+```
+
+```python title="Definition"
+class ListInferenceEventsRequestRequestTypeDef(TypedDict):
+    InferenceSchedulerName: str,
+    IntervalStartTime: Union[datetime, str],
+    IntervalEndTime: Union[datetime, str],
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
 ```
 
 ## ListInferenceExecutionsRequestRequestTypeDef
@@ -463,6 +662,25 @@ class ModelSummaryTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ModelStatusType](./literals.md#modelstatustype) 
+## ListSensorStatisticsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import ListSensorStatisticsRequestRequestTypeDef
+
+def get_value() -> ListSensorStatisticsRequestRequestTypeDef:
+    return {
+        "DatasetName": ...,
+    }
+```
+
+```python title="Definition"
+class ListSensorStatisticsRequestRequestTypeDef(TypedDict):
+    DatasetName: str,
+    IngestionJobId: NotRequired[str],
+    MaxResults: NotRequired[int],
+    NextToken: NotRequired[str],
+```
+
 ## ListTagsForResourceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -479,6 +697,42 @@ class ListTagsForResourceRequestRequestTypeDef(TypedDict):
     ResourceArn: str,
 ```
 
+## MonotonicValuesTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import MonotonicValuesTypeDef
+
+def get_value() -> MonotonicValuesTypeDef:
+    return {
+        "Status": ...,
+    }
+```
+
+```python title="Definition"
+class MonotonicValuesTypeDef(TypedDict):
+    Status: StatisticalIssueStatusType,  # (1)
+    Monotonicity: NotRequired[MonotonicityType],  # (2)
+```
+
+1. See [:material-code-brackets: StatisticalIssueStatusType](./literals.md#statisticalissuestatustype) 
+2. See [:material-code-brackets: MonotonicityType](./literals.md#monotonicitytype) 
+## MultipleOperatingModesTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import MultipleOperatingModesTypeDef
+
+def get_value() -> MultipleOperatingModesTypeDef:
+    return {
+        "Status": ...,
+    }
+```
+
+```python title="Definition"
+class MultipleOperatingModesTypeDef(TypedDict):
+    Status: StatisticalIssueStatusType,  # (1)
+```
+
+1. See [:material-code-brackets: StatisticalIssueStatusType](./literals.md#statisticalissuestatustype) 
 ## StartInferenceSchedulerRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -537,7 +791,6 @@ from types_aiobotocore_lookoutequipment.type_defs import CreateDatasetRequestReq
 def get_value() -> CreateDatasetRequestRequestTypeDef:
     return {
         "DatasetName": ...,
-        "DatasetSchema": ...,
         "ClientToken": ...,
     }
 ```
@@ -545,8 +798,8 @@ def get_value() -> CreateDatasetRequestRequestTypeDef:
 ```python title="Definition"
 class CreateDatasetRequestRequestTypeDef(TypedDict):
     DatasetName: str,
-    DatasetSchema: DatasetSchemaTypeDef,  # (1)
     ClientToken: str,
+    DatasetSchema: NotRequired[DatasetSchemaTypeDef],  # (1)
     ServerSideKmsKeyId: NotRequired[str],
     Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
 ```
@@ -779,6 +1032,48 @@ class ListDatasetsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: DatasetSummaryTypeDef](./type_defs.md#datasetsummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListInferenceEventsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import ListInferenceEventsResponseTypeDef
+
+def get_value() -> ListInferenceEventsResponseTypeDef:
+    return {
+        "NextToken": ...,
+        "InferenceEventSummaries": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListInferenceEventsResponseTypeDef(TypedDict):
+    NextToken: str,
+    InferenceEventSummaries: List[InferenceEventSummaryTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: InferenceEventSummaryTypeDef](./type_defs.md#inferenceeventsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## IngestedFilesSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import IngestedFilesSummaryTypeDef
+
+def get_value() -> IngestedFilesSummaryTypeDef:
+    return {
+        "TotalNumberOfFiles": ...,
+        "IngestedNumberOfFiles": ...,
+    }
+```
+
+```python title="Definition"
+class IngestedFilesSummaryTypeDef(TypedDict):
+    TotalNumberOfFiles: int,
+    IngestedNumberOfFiles: int,
+    DiscardedFiles: NotRequired[List[S3ObjectTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: S3ObjectTypeDef](./type_defs.md#s3objecttypedef) 
 ## InferenceInputConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -856,6 +1151,26 @@ class IngestionInputConfigurationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: IngestionS3InputConfigurationTypeDef](./type_defs.md#ingestions3inputconfigurationtypedef) 
+## InsufficientSensorDataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import InsufficientSensorDataTypeDef
+
+def get_value() -> InsufficientSensorDataTypeDef:
+    return {
+        "MissingCompleteSensorData": ...,
+        "SensorsWithShortDateRange": ...,
+    }
+```
+
+```python title="Definition"
+class InsufficientSensorDataTypeDef(TypedDict):
+    MissingCompleteSensorData: MissingCompleteSensorDataTypeDef,  # (1)
+    SensorsWithShortDateRange: SensorsWithShortDateRangeTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: MissingCompleteSensorDataTypeDef](./type_defs.md#missingcompletesensordatatypedef) 
+2. See [:material-code-braces: SensorsWithShortDateRangeTypeDef](./type_defs.md#sensorswithshortdaterangetypedef) 
 ## LabelsInputConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -895,6 +1210,42 @@ class ListModelsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: ModelSummaryTypeDef](./type_defs.md#modelsummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## SensorStatisticsSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import SensorStatisticsSummaryTypeDef
+
+def get_value() -> SensorStatisticsSummaryTypeDef:
+    return {
+        "ComponentName": ...,
+    }
+```
+
+```python title="Definition"
+class SensorStatisticsSummaryTypeDef(TypedDict):
+    ComponentName: NotRequired[str],
+    SensorName: NotRequired[str],
+    DataExists: NotRequired[bool],
+    MissingValues: NotRequired[CountPercentTypeDef],  # (1)
+    InvalidValues: NotRequired[CountPercentTypeDef],  # (1)
+    InvalidDateEntries: NotRequired[CountPercentTypeDef],  # (1)
+    DuplicateTimestamps: NotRequired[CountPercentTypeDef],  # (1)
+    CategoricalValues: NotRequired[CategoricalValuesTypeDef],  # (5)
+    MultipleOperatingModes: NotRequired[MultipleOperatingModesTypeDef],  # (6)
+    LargeTimestampGaps: NotRequired[LargeTimestampGapsTypeDef],  # (7)
+    MonotonicValues: NotRequired[MonotonicValuesTypeDef],  # (8)
+    DataStartTime: NotRequired[datetime],
+    DataEndTime: NotRequired[datetime],
+```
+
+1. See [:material-code-braces: CountPercentTypeDef](./type_defs.md#countpercenttypedef) 
+2. See [:material-code-braces: CountPercentTypeDef](./type_defs.md#countpercenttypedef) 
+3. See [:material-code-braces: CountPercentTypeDef](./type_defs.md#countpercenttypedef) 
+4. See [:material-code-braces: CountPercentTypeDef](./type_defs.md#countpercenttypedef) 
+5. See [:material-code-braces: CategoricalValuesTypeDef](./type_defs.md#categoricalvaluestypedef) 
+6. See [:material-code-braces: MultipleOperatingModesTypeDef](./type_defs.md#multipleoperatingmodestypedef) 
+7. See [:material-code-braces: LargeTimestampGapsTypeDef](./type_defs.md#largetimestampgapstypedef) 
+8. See [:material-code-braces: MonotonicValuesTypeDef](./type_defs.md#monotonicvaluestypedef) 
 ## CreateInferenceSchedulerRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1054,74 +1405,6 @@ class DataIngestionJobSummaryTypeDef(TypedDict):
 
 1. See [:material-code-braces: IngestionInputConfigurationTypeDef](./type_defs.md#ingestioninputconfigurationtypedef) 
 2. See [:material-code-brackets: IngestionJobStatusType](./literals.md#ingestionjobstatustype) 
-## DescribeDataIngestionJobResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_lookoutequipment.type_defs import DescribeDataIngestionJobResponseTypeDef
-
-def get_value() -> DescribeDataIngestionJobResponseTypeDef:
-    return {
-        "JobId": ...,
-        "DatasetArn": ...,
-        "IngestionInputConfiguration": ...,
-        "RoleArn": ...,
-        "CreatedAt": ...,
-        "Status": ...,
-        "FailedReason": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeDataIngestionJobResponseTypeDef(TypedDict):
-    JobId: str,
-    DatasetArn: str,
-    IngestionInputConfiguration: IngestionInputConfigurationTypeDef,  # (1)
-    RoleArn: str,
-    CreatedAt: datetime,
-    Status: IngestionJobStatusType,  # (2)
-    FailedReason: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
-```
-
-1. See [:material-code-braces: IngestionInputConfigurationTypeDef](./type_defs.md#ingestioninputconfigurationtypedef) 
-2. See [:material-code-brackets: IngestionJobStatusType](./literals.md#ingestionjobstatustype) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DescribeDatasetResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_lookoutequipment.type_defs import DescribeDatasetResponseTypeDef
-
-def get_value() -> DescribeDatasetResponseTypeDef:
-    return {
-        "DatasetName": ...,
-        "DatasetArn": ...,
-        "CreatedAt": ...,
-        "LastUpdatedAt": ...,
-        "Status": ...,
-        "Schema": ...,
-        "ServerSideKmsKeyId": ...,
-        "IngestionInputConfiguration": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeDatasetResponseTypeDef(TypedDict):
-    DatasetName: str,
-    DatasetArn: str,
-    CreatedAt: datetime,
-    LastUpdatedAt: datetime,
-    Status: DatasetStatusType,  # (1)
-    Schema: str,
-    ServerSideKmsKeyId: str,
-    IngestionInputConfiguration: IngestionInputConfigurationTypeDef,  # (2)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
-```
-
-1. See [:material-code-brackets: DatasetStatusType](./literals.md#datasetstatustype) 
-2. See [:material-code-braces: IngestionInputConfigurationTypeDef](./type_defs.md#ingestioninputconfigurationtypedef) 
-3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## StartDataIngestionJobRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1145,6 +1428,35 @@ class StartDataIngestionJobRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: IngestionInputConfigurationTypeDef](./type_defs.md#ingestioninputconfigurationtypedef) 
+## DataQualitySummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import DataQualitySummaryTypeDef
+
+def get_value() -> DataQualitySummaryTypeDef:
+    return {
+        "InsufficientSensorData": ...,
+        "MissingSensorData": ...,
+        "InvalidSensorData": ...,
+        "UnsupportedTimestamps": ...,
+        "DuplicateTimestamps": ...,
+    }
+```
+
+```python title="Definition"
+class DataQualitySummaryTypeDef(TypedDict):
+    InsufficientSensorData: InsufficientSensorDataTypeDef,  # (1)
+    MissingSensorData: MissingSensorDataTypeDef,  # (2)
+    InvalidSensorData: InvalidSensorDataTypeDef,  # (3)
+    UnsupportedTimestamps: UnsupportedTimestampsTypeDef,  # (4)
+    DuplicateTimestamps: DuplicateTimestampsTypeDef,  # (5)
+```
+
+1. See [:material-code-braces: InsufficientSensorDataTypeDef](./type_defs.md#insufficientsensordatatypedef) 
+2. See [:material-code-braces: MissingSensorDataTypeDef](./type_defs.md#missingsensordatatypedef) 
+3. See [:material-code-braces: InvalidSensorDataTypeDef](./type_defs.md#invalidsensordatatypedef) 
+4. See [:material-code-braces: UnsupportedTimestampsTypeDef](./type_defs.md#unsupportedtimestampstypedef) 
+5. See [:material-code-braces: DuplicateTimestampsTypeDef](./type_defs.md#duplicatetimestampstypedef) 
 ## CreateModelRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1242,6 +1554,28 @@ class DescribeModelResponseTypeDef(TypedDict):
 2. See [:material-code-braces: DataPreProcessingConfigurationTypeDef](./type_defs.md#datapreprocessingconfigurationtypedef) 
 3. See [:material-code-brackets: ModelStatusType](./literals.md#modelstatustype) 
 4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListSensorStatisticsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import ListSensorStatisticsResponseTypeDef
+
+def get_value() -> ListSensorStatisticsResponseTypeDef:
+    return {
+        "SensorStatisticsSummaries": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListSensorStatisticsResponseTypeDef(TypedDict):
+    SensorStatisticsSummaries: List[SensorStatisticsSummaryTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: SensorStatisticsSummaryTypeDef](./type_defs.md#sensorstatisticssummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListInferenceExecutionsResponseTypeDef
 
 ```python title="Usage Example"
@@ -1286,3 +1620,97 @@ class ListDataIngestionJobsResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: DataIngestionJobSummaryTypeDef](./type_defs.md#dataingestionjobsummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeDataIngestionJobResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import DescribeDataIngestionJobResponseTypeDef
+
+def get_value() -> DescribeDataIngestionJobResponseTypeDef:
+    return {
+        "JobId": ...,
+        "DatasetArn": ...,
+        "IngestionInputConfiguration": ...,
+        "RoleArn": ...,
+        "CreatedAt": ...,
+        "Status": ...,
+        "FailedReason": ...,
+        "DataQualitySummary": ...,
+        "IngestedFilesSummary": ...,
+        "StatusDetail": ...,
+        "IngestedDataSize": ...,
+        "DataStartTime": ...,
+        "DataEndTime": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeDataIngestionJobResponseTypeDef(TypedDict):
+    JobId: str,
+    DatasetArn: str,
+    IngestionInputConfiguration: IngestionInputConfigurationTypeDef,  # (1)
+    RoleArn: str,
+    CreatedAt: datetime,
+    Status: IngestionJobStatusType,  # (2)
+    FailedReason: str,
+    DataQualitySummary: DataQualitySummaryTypeDef,  # (3)
+    IngestedFilesSummary: IngestedFilesSummaryTypeDef,  # (4)
+    StatusDetail: str,
+    IngestedDataSize: int,
+    DataStartTime: datetime,
+    DataEndTime: datetime,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+```
+
+1. See [:material-code-braces: IngestionInputConfigurationTypeDef](./type_defs.md#ingestioninputconfigurationtypedef) 
+2. See [:material-code-brackets: IngestionJobStatusType](./literals.md#ingestionjobstatustype) 
+3. See [:material-code-braces: DataQualitySummaryTypeDef](./type_defs.md#dataqualitysummarytypedef) 
+4. See [:material-code-braces: IngestedFilesSummaryTypeDef](./type_defs.md#ingestedfilessummarytypedef) 
+5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeDatasetResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.type_defs import DescribeDatasetResponseTypeDef
+
+def get_value() -> DescribeDatasetResponseTypeDef:
+    return {
+        "DatasetName": ...,
+        "DatasetArn": ...,
+        "CreatedAt": ...,
+        "LastUpdatedAt": ...,
+        "Status": ...,
+        "Schema": ...,
+        "ServerSideKmsKeyId": ...,
+        "IngestionInputConfiguration": ...,
+        "DataQualitySummary": ...,
+        "IngestedFilesSummary": ...,
+        "RoleArn": ...,
+        "DataStartTime": ...,
+        "DataEndTime": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeDatasetResponseTypeDef(TypedDict):
+    DatasetName: str,
+    DatasetArn: str,
+    CreatedAt: datetime,
+    LastUpdatedAt: datetime,
+    Status: DatasetStatusType,  # (1)
+    Schema: str,
+    ServerSideKmsKeyId: str,
+    IngestionInputConfiguration: IngestionInputConfigurationTypeDef,  # (2)
+    DataQualitySummary: DataQualitySummaryTypeDef,  # (3)
+    IngestedFilesSummary: IngestedFilesSummaryTypeDef,  # (4)
+    RoleArn: str,
+    DataStartTime: datetime,
+    DataEndTime: datetime,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (5)
+```
+
+1. See [:material-code-brackets: DatasetStatusType](./literals.md#datasetstatustype) 
+2. See [:material-code-braces: IngestionInputConfigurationTypeDef](./type_defs.md#ingestioninputconfigurationtypedef) 
+3. See [:material-code-braces: DataQualitySummaryTypeDef](./type_defs.md#dataqualitysummarytypedef) 
+4. See [:material-code-braces: IngestedFilesSummaryTypeDef](./type_defs.md#ingestedfilessummarytypedef) 
+5. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 

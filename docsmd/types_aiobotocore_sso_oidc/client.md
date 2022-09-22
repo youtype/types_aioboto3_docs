@@ -76,6 +76,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("sso-oidc").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_token
 
 Creates and returns an access token for the authorized client.
@@ -136,7 +151,7 @@ await def generate_presigned_url(
 
 ### register\_client
 
-Registers a client with AWS SSO.
+Registers a client with Amazon Web Services SSO.
 
 Type annotations and code completion for `#!python session.client("sso-oidc").register_client` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.register_client)

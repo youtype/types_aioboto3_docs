@@ -275,6 +275,58 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListAnomaliesForInsightRequestListAnomaliesForInsightPaginateTypeDef](./type_defs.md#listanomaliesforinsightrequestlistanomaliesforinsightpaginatetypedef) 
+## ListAnomalousLogGroupsPaginator
+
+Type annotations and code completion for `#!python session.client("devops-guru").get_paginator("list_anomalous_log_groups")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Paginator.ListAnomalousLogGroups)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_devops_guru.paginator import ListAnomalousLogGroupsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("devops-guru") as client:  # (1)
+    paginator: ListAnomalousLogGroupsPaginator = client.get_paginator("list_anomalous_log_groups")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAnomalousLogGroupsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListAnomalousLogGroupsPaginator](./paginators.md#listanomalousloggroupspaginator)
+3. item: [:material-code-braces: ListAnomalousLogGroupsResponseTypeDef](./type_defs.md#listanomalousloggroupsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListAnomalousLogGroupsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    InsightId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListAnomalousLogGroupsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListAnomalousLogGroupsResponseTypeDef](./type_defs.md#listanomalousloggroupsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAnomalousLogGroupsRequestListAnomalousLogGroupsPaginateTypeDef = {  # (1)
+    "InsightId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListAnomalousLogGroupsRequestListAnomalousLogGroupsPaginateTypeDef](./type_defs.md#listanomalousloggroupsrequestlistanomalousloggroupspaginatetypedef) 
 ## ListEventsPaginator
 
 Type annotations and code completion for `#!python session.client("devops-guru").get_paginator("list_events")`.
@@ -382,6 +434,59 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListInsightsRequestListInsightsPaginateTypeDef](./type_defs.md#listinsightsrequestlistinsightspaginatetypedef) 
+## ListMonitoredResourcesPaginator
+
+Type annotations and code completion for `#!python session.client("devops-guru").get_paginator("list_monitored_resources")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Paginator.ListMonitoredResources)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_devops_guru.paginator import ListMonitoredResourcesPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("devops-guru") as client:  # (1)
+    paginator: ListMonitoredResourcesPaginator = client.get_paginator("list_monitored_resources")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListMonitoredResourcesResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [DevOpsGuruClient](./client.md)
+2. paginator: [ListMonitoredResourcesPaginator](./paginators.md#listmonitoredresourcespaginator)
+3. item: [:material-code-braces: ListMonitoredResourcesResponseTypeDef](./type_defs.md#listmonitoredresourcesresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListMonitoredResourcesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Filters: ListMonitoredResourcesFiltersTypeDef,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListMonitoredResourcesResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: ListMonitoredResourcesFiltersTypeDef](./type_defs.md#listmonitoredresourcesfilterstypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListMonitoredResourcesResponseTypeDef](./type_defs.md#listmonitoredresourcesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListMonitoredResourcesRequestListMonitoredResourcesPaginateTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListMonitoredResourcesRequestListMonitoredResourcesPaginateTypeDef](./type_defs.md#listmonitoredresourcesrequestlistmonitoredresourcespaginatetypedef) 
 ## ListNotificationChannelsPaginator
 
 Type annotations and code completion for `#!python session.client("devops-guru").get_paginator("list_notification_channels")`.

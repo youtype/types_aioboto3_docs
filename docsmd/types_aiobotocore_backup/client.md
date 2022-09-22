@@ -74,6 +74,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("backup").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_backup\_plan
 
 Creates a backup plan using a backup plan name and backup rules.
@@ -1137,6 +1152,8 @@ await def list_backup_jobs(
     ByCreatedAfter: Union[datetime, str] = ...,
     ByResourceType: str = ...,
     ByAccountId: str = ...,
+    ByCompleteAfter: Union[datetime, str] = ...,
+    ByCompleteBefore: Union[datetime, str] = ...,
 ) -> ListBackupJobsOutputTypeDef:  # (2)
     ...
 ```
@@ -1333,6 +1350,8 @@ await def list_copy_jobs(
     ByResourceType: str = ...,
     ByDestinationVaultArn: str = ...,
     ByAccountId: str = ...,
+    ByCompleteBefore: Union[datetime, str] = ...,
+    ByCompleteAfter: Union[datetime, str] = ...,
 ) -> ListCopyJobsOutputTypeDef:  # (2)
     ...
 ```
@@ -1564,6 +1583,8 @@ await def list_restore_jobs(
     ByCreatedBefore: Union[datetime, str] = ...,
     ByCreatedAfter: Union[datetime, str] = ...,
     ByStatus: RestoreJobStatusType = ...,  # (1)
+    ByCompleteBefore: Union[datetime, str] = ...,
+    ByCompleteAfter: Union[datetime, str] = ...,
 ) -> ListRestoreJobsOutputTypeDef:  # (2)
     ...
 ```
@@ -1833,7 +1854,7 @@ await def start_restore_job(
     *,
     RecoveryPointArn: str,
     Metadata: Mapping[str, str],
-    IamRoleArn: str,
+    IamRoleArn: str = ...,
     IdempotencyToken: str = ...,
     ResourceType: str = ...,
 ) -> StartRestoreJobOutputTypeDef:  # (1)
@@ -1847,7 +1868,6 @@ await def start_restore_job(
 kwargs: StartRestoreJobInputRequestTypeDef = {  # (1)
     "RecoveryPointArn": ...,
     "Metadata": ...,
-    "IamRoleArn": ...,
 }
 
 parent.start_restore_job(**kwargs)
@@ -2178,6 +2198,23 @@ await def __aexit__(
 ```
 
 
+
+
+### get_paginator
+
+Type annotations and code completion for `#!python session.client("backup").get_paginator` method with overloads.
+
+- `client.get_paginator("list_backup_jobs")` -> [ListBackupJobsPaginator](./paginators.md#listbackupjobspaginator)
+- `client.get_paginator("list_backup_plan_templates")` -> [ListBackupPlanTemplatesPaginator](./paginators.md#listbackupplantemplatespaginator)
+- `client.get_paginator("list_backup_plan_versions")` -> [ListBackupPlanVersionsPaginator](./paginators.md#listbackupplanversionspaginator)
+- `client.get_paginator("list_backup_plans")` -> [ListBackupPlansPaginator](./paginators.md#listbackupplanspaginator)
+- `client.get_paginator("list_backup_selections")` -> [ListBackupSelectionsPaginator](./paginators.md#listbackupselectionspaginator)
+- `client.get_paginator("list_backup_vaults")` -> [ListBackupVaultsPaginator](./paginators.md#listbackupvaultspaginator)
+- `client.get_paginator("list_copy_jobs")` -> [ListCopyJobsPaginator](./paginators.md#listcopyjobspaginator)
+- `client.get_paginator("list_protected_resources")` -> [ListProtectedResourcesPaginator](./paginators.md#listprotectedresourcespaginator)
+- `client.get_paginator("list_recovery_points_by_backup_vault")` -> [ListRecoveryPointsByBackupVaultPaginator](./paginators.md#listrecoverypointsbybackupvaultpaginator)
+- `client.get_paginator("list_recovery_points_by_resource")` -> [ListRecoveryPointsByResourcePaginator](./paginators.md#listrecoverypointsbyresourcepaginator)
+- `client.get_paginator("list_restore_jobs")` -> [ListRestoreJobsPaginator](./paginators.md#listrestorejobspaginator)
 
 
 

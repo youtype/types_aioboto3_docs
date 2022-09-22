@@ -77,6 +77,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("cloudwatch").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### delete\_alarms
 
 Deletes the specified alarms.
@@ -615,8 +630,7 @@ parent.get_insight_rule_report(**kwargs)
 
 ### get\_metric\_data
 
-You can use the `GetMetricData` API to retrieve as many as 500 different metrics
-in a single request, with a total of as many as 100,800 data points.
+You can use the `GetMetricData` API to retrieve CloudWatch metric values.
 
 Type annotations and code completion for `#!python session.client("cloudwatch").get_metric_data` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.get_metric_data)
@@ -788,6 +802,38 @@ parent.list_dashboards(**kwargs)
 
 1. See [:material-code-braces: ListDashboardsInputRequestTypeDef](./type_defs.md#listdashboardsinputrequesttypedef) 
 
+### list\_managed\_insight\_rules
+
+Returns a list that contains the number of managed Contributor Insights rules in
+your account.
+
+Type annotations and code completion for `#!python session.client("cloudwatch").list_managed_insight_rules` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.list_managed_insight_rules)
+
+```python title="Method definition"
+await def list_managed_insight_rules(
+    self,
+    *,
+    ResourceARN: str,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> ListManagedInsightRulesOutputTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListManagedInsightRulesOutputTypeDef](./type_defs.md#listmanagedinsightrulesoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListManagedInsightRulesInputRequestTypeDef = {  # (1)
+    "ResourceARN": ...,
+}
+
+parent.list_managed_insight_rules(**kwargs)
+```
+
+1. See [:material-code-braces: ListManagedInsightRulesInputRequestTypeDef](./type_defs.md#listmanagedinsightrulesinputrequesttypedef) 
+
 ### list\_metric\_streams
 
 Returns a list of metric streams in this account.
@@ -939,6 +985,9 @@ await def put_composite_alarm(
     InsufficientDataActions: Sequence[str] = ...,
     OKActions: Sequence[str] = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (1)
+    ActionsSuppressor: str = ...,
+    ActionsSuppressorWaitPeriod: int = ...,
+    ActionsSuppressorExtensionPeriod: int = ...,
 ) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
@@ -1022,6 +1071,37 @@ parent.put_insight_rule(**kwargs)
 ```
 
 1. See [:material-code-braces: PutInsightRuleInputRequestTypeDef](./type_defs.md#putinsightruleinputrequesttypedef) 
+
+### put\_managed\_insight\_rules
+
+Creates a managed Contributor Insights rule for a specified Amazon Web Services
+resource.
+
+Type annotations and code completion for `#!python session.client("cloudwatch").put_managed_insight_rules` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.put_managed_insight_rules)
+
+```python title="Method definition"
+await def put_managed_insight_rules(
+    self,
+    *,
+    ManagedRules: Sequence[ManagedRuleTypeDef],  # (1)
+) -> PutManagedInsightRulesOutputTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: ManagedRuleTypeDef](./type_defs.md#managedruletypedef) 
+2. See [:material-code-braces: PutManagedInsightRulesOutputTypeDef](./type_defs.md#putmanagedinsightrulesoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: PutManagedInsightRulesInputRequestTypeDef = {  # (1)
+    "ManagedRules": ...,
+}
+
+parent.put_managed_insight_rules(**kwargs)
+```
+
+1. See [:material-code-braces: PutManagedInsightRulesInputRequestTypeDef](./type_defs.md#putmanagedinsightrulesinputrequesttypedef) 
 
 ### put\_metric\_alarm
 
@@ -1132,7 +1212,8 @@ await def put_metric_stream(
     IncludeFilters: Sequence[MetricStreamFilterTypeDef] = ...,  # (2)
     ExcludeFilters: Sequence[MetricStreamFilterTypeDef] = ...,  # (2)
     Tags: Sequence[TagTypeDef] = ...,  # (4)
-) -> PutMetricStreamOutputTypeDef:  # (5)
+    StatisticsConfigurations: Sequence[MetricStreamStatisticsConfigurationTypeDef] = ...,  # (5)
+) -> PutMetricStreamOutputTypeDef:  # (6)
     ...
 ```
 
@@ -1140,7 +1221,8 @@ await def put_metric_stream(
 2. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
 3. See [:material-code-braces: MetricStreamFilterTypeDef](./type_defs.md#metricstreamfiltertypedef) 
 4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-5. See [:material-code-braces: PutMetricStreamOutputTypeDef](./type_defs.md#putmetricstreamoutputtypedef) 
+5. See [:material-code-braces: MetricStreamStatisticsConfigurationTypeDef](./type_defs.md#metricstreamstatisticsconfigurationtypedef) 
+6. See [:material-code-braces: PutMetricStreamOutputTypeDef](./type_defs.md#putmetricstreamoutputtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1349,6 +1431,7 @@ Type annotations and code completion for `#!python session.client("cloudwatch").
 
 - `client.get_paginator("describe_alarm_history")` -> [DescribeAlarmHistoryPaginator](./paginators.md#describealarmhistorypaginator)
 - `client.get_paginator("describe_alarms")` -> [DescribeAlarmsPaginator](./paginators.md#describealarmspaginator)
+- `client.get_paginator("describe_anomaly_detectors")` -> [DescribeAnomalyDetectorsPaginator](./paginators.md#describeanomalydetectorspaginator)
 - `client.get_paginator("get_metric_data")` -> [GetMetricDataPaginator](./paginators.md#getmetricdatapaginator)
 - `client.get_paginator("list_dashboards")` -> [ListDashboardsPaginator](./paginators.md#listdashboardspaginator)
 - `client.get_paginator("list_metrics")` -> [ListMetricsPaginator](./paginators.md#listmetricspaginator)

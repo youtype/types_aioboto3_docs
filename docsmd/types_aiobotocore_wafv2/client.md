@@ -34,6 +34,7 @@ async with session.client("wafv2") as client:
     except (
             client.ClientError,
         client.WAFAssociatedItemException,
+        client.WAFConfigurationWarningException,
         client.WAFDuplicateItemException,
         client.WAFExpiredManagedRuleGroupVersionException,
         client.WAFInternalErrorException,
@@ -145,6 +146,21 @@ parent.check_capacity(**kwargs)
 ```
 
 1. See [:material-code-braces: CheckCapacityRequestRequestTypeDef](./type_defs.md#checkcapacityrequestrequesttypedef) 
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("wafv2").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
 
 ### create\_ip\_set
 
@@ -584,7 +600,8 @@ parent.describe_managed_rule_group(**kwargs)
 
 ### disassociate\_web\_acl
 
-Disassociates a web ACL from a regional application resource.
+Disassociates the specified regional application resource from any existing web
+ACL association.
 
 Type annotations and code completion for `#!python session.client("wafv2").disassociate_web_acl` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.disassociate_web_acl)
@@ -1713,7 +1730,7 @@ parent.update_rule_group(**kwargs)
 
 ### update\_web\_acl
 
-Updates the specified  WebACL .
+Updates the specified  WebACL.
 
 Type annotations and code completion for `#!python session.client("wafv2").update_web_acl` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.update_web_acl)

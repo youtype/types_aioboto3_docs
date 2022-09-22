@@ -102,6 +102,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("wellarchitected").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_lens\_share
 
 Create a lens share.
@@ -216,7 +231,6 @@ await def create_workload(
     WorkloadName: str,
     Description: str,
     Environment: WorkloadEnvironmentType,  # (1)
-    ReviewOwner: str,
     Lenses: Sequence[str],
     ClientRequestToken: str,
     AccountIds: Sequence[str] = ...,
@@ -224,6 +238,7 @@ await def create_workload(
     NonAwsRegions: Sequence[str] = ...,
     PillarPriorities: Sequence[str] = ...,
     ArchitecturalDesign: str = ...,
+    ReviewOwner: str = ...,
     IndustryType: str = ...,
     Industry: str = ...,
     Notes: str = ...,
@@ -241,7 +256,6 @@ kwargs: CreateWorkloadInputRequestTypeDef = {  # (1)
     "WorkloadName": ...,
     "Description": ...,
     "Environment": ...,
-    "ReviewOwner": ...,
     "Lenses": ...,
     "ClientRequestToken": ...,
 }
@@ -867,11 +881,13 @@ await def list_lens_shares(
     SharedWithPrefix: str = ...,
     NextToken: str = ...,
     MaxResults: int = ...,
-) -> ListLensSharesOutputTypeDef:  # (1)
+    Status: ShareStatusType = ...,  # (1)
+) -> ListLensSharesOutputTypeDef:  # (2)
     ...
 ```
 
-1. See [:material-code-braces: ListLensSharesOutputTypeDef](./type_defs.md#listlenssharesoutputtypedef) 
+1. See [:material-code-brackets: ShareStatusType](./literals.md#sharestatustype) 
+2. See [:material-code-braces: ListLensSharesOutputTypeDef](./type_defs.md#listlenssharesoutputtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1059,11 +1075,13 @@ await def list_workload_shares(
     SharedWithPrefix: str = ...,
     NextToken: str = ...,
     MaxResults: int = ...,
-) -> ListWorkloadSharesOutputTypeDef:  # (1)
+    Status: ShareStatusType = ...,  # (1)
+) -> ListWorkloadSharesOutputTypeDef:  # (2)
     ...
 ```
 
-1. See [:material-code-braces: ListWorkloadSharesOutputTypeDef](./type_defs.md#listworkloadsharesoutputtypedef) 
+1. See [:material-code-brackets: ShareStatusType](./literals.md#sharestatustype) 
+2. See [:material-code-braces: ListWorkloadSharesOutputTypeDef](./type_defs.md#listworkloadsharesoutputtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1206,6 +1224,37 @@ parent.update_answer(**kwargs)
 ```
 
 1. See [:material-code-braces: UpdateAnswerInputRequestTypeDef](./type_defs.md#updateanswerinputrequesttypedef) 
+
+### update\_global\_settings
+
+Updates whether the Amazon Web Services account is opted into organization
+sharing features.
+
+Type annotations and code completion for `#!python session.client("wellarchitected").update_global_settings` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.update_global_settings)
+
+```python title="Method definition"
+await def update_global_settings(
+    self,
+    *,
+    OrganizationSharingStatus: OrganizationSharingStatusType = ...,  # (1)
+) -> EmptyResponseMetadataTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: OrganizationSharingStatusType](./literals.md#organizationsharingstatustype) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdateGlobalSettingsInputRequestTypeDef = {  # (1)
+    "OrganizationSharingStatus": ...,
+}
+
+parent.update_global_settings(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateGlobalSettingsInputRequestTypeDef](./type_defs.md#updateglobalsettingsinputrequesttypedef) 
 
 ### update\_lens\_review
 

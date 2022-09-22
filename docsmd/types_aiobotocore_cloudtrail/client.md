@@ -108,7 +108,7 @@ def handle_error(exc: Exceptions.ClientError) -> None:
 
 ### add\_tags
 
-Adds one or more tags to a trail, up to a limit of 50.
+Adds one or more tags to a trail or event data store, up to a limit of 50.
 
 Type annotations and code completion for `#!python session.client("cloudtrail").add_tags` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.add_tags)
@@ -184,6 +184,21 @@ parent.cancel_query(**kwargs)
 ```
 
 1. See [:material-code-braces: CancelQueryRequestRequestTypeDef](./type_defs.md#cancelqueryrequestrequesttypedef) 
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("cloudtrail").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
 
 ### create\_event\_data\_store
 
@@ -685,7 +700,7 @@ parent.list_queries(**kwargs)
 
 ### list\_tags
 
-Lists the tags for the trail in the current region.
+Lists the tags for the trail or event data store in the current region.
 
 Type annotations and code completion for `#!python session.client("cloudtrail").list_tags` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.list_tags)
@@ -850,7 +865,7 @@ parent.put_insight_selectors(**kwargs)
 
 ### remove\_tags
 
-Removes the specified tags from a trail.
+Removes the specified tags from a trail or event data store.
 
 Type annotations and code completion for `#!python session.client("cloudtrail").remove_tags` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.remove_tags)

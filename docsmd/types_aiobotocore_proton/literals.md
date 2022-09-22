@@ -7,6 +7,49 @@
     Auto-generated documentation for [Proton](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton)
     type annotations stubs module [types-aiobotocore-proton](https://pypi.org/project/types-aiobotocore-proton/).
 
+## ComponentDeletedWaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_proton.literals import ComponentDeletedWaiterName
+
+def get_value() -> ComponentDeletedWaiterName:
+    return "component_deleted"
+```
+
+```python title="Definition"
+ComponentDeletedWaiterName = Literal[
+    "component_deleted",
+]
+```
+## ComponentDeployedWaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_proton.literals import ComponentDeployedWaiterName
+
+def get_value() -> ComponentDeployedWaiterName:
+    return "component_deployed"
+```
+
+```python title="Definition"
+ComponentDeployedWaiterName = Literal[
+    "component_deployed",
+]
+```
+## ComponentDeploymentUpdateTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_proton.literals import ComponentDeploymentUpdateTypeType
+
+def get_value() -> ComponentDeploymentUpdateTypeType:
+    return "CURRENT_VERSION"
+```
+
+```python title="Definition"
+ComponentDeploymentUpdateTypeType = Literal[
+    "CURRENT_VERSION",
+    "NONE",
+]
+```
 ## DeploymentStatusType
 
 ```python title="Usage Example"
@@ -102,6 +145,48 @@ def get_value() -> EnvironmentTemplateVersionRegisteredWaiterName:
 ```python title="Definition"
 EnvironmentTemplateVersionRegisteredWaiterName = Literal[
     "environment_template_version_registered",
+]
+```
+## ListComponentOutputsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_proton.literals import ListComponentOutputsPaginatorName
+
+def get_value() -> ListComponentOutputsPaginatorName:
+    return "list_component_outputs"
+```
+
+```python title="Definition"
+ListComponentOutputsPaginatorName = Literal[
+    "list_component_outputs",
+]
+```
+## ListComponentProvisionedResourcesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_proton.literals import ListComponentProvisionedResourcesPaginatorName
+
+def get_value() -> ListComponentProvisionedResourcesPaginatorName:
+    return "list_component_provisioned_resources"
+```
+
+```python title="Definition"
+ListComponentProvisionedResourcesPaginatorName = Literal[
+    "list_component_provisioned_resources",
+]
+```
+## ListComponentsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_proton.literals import ListComponentsPaginatorName
+
+def get_value() -> ListComponentsPaginatorName:
+    return "list_components"
+```
+
+```python title="Definition"
+ListComponentsPaginatorName = Literal[
+    "list_components",
 ]
 ```
 ## ListEnvironmentAccountConnectionsPaginatorName
@@ -521,6 +606,20 @@ ServiceStatusType = Literal[
     "UPDATE_IN_PROGRESS",
 ]
 ```
+## ServiceTemplateSupportedComponentSourceTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_proton.literals import ServiceTemplateSupportedComponentSourceTypeType
+
+def get_value() -> ServiceTemplateSupportedComponentSourceTypeType:
+    return "DIRECTLY_DEFINED"
+```
+
+```python title="Definition"
+ServiceTemplateSupportedComponentSourceTypeType = Literal[
+    "DIRECTLY_DEFINED",
+]
+```
 ## ServiceTemplateVersionRegisteredWaiterName
 
 ```python title="Usage Example"
@@ -649,6 +748,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -656,6 +756,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -688,6 +789,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -724,6 +826,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -737,6 +840,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -770,6 +874,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -789,12 +894,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -838,8 +945,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -850,11 +959,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -900,6 +1011,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -952,11 +1064,14 @@ ResourceServiceName = Literal[
 from types_aiobotocore_proton.literals import PaginatorName
 
 def get_value() -> PaginatorName:
-    return "list_environment_account_connections"
+    return "list_component_outputs"
 ```
 
 ```python title="Definition"
 PaginatorName = Literal[
+    "list_component_outputs",
+    "list_component_provisioned_resources",
+    "list_components",
     "list_environment_account_connections",
     "list_environment_outputs",
     "list_environment_provisioned_resources",
@@ -982,11 +1097,13 @@ PaginatorName = Literal[
 from types_aiobotocore_proton.literals import WaiterName
 
 def get_value() -> WaiterName:
-    return "environment_deployed"
+    return "component_deleted"
 ```
 
 ```python title="Definition"
 WaiterName = Literal[
+    "component_deleted",
+    "component_deployed",
     "environment_deployed",
     "environment_template_version_registered",
     "service_created",
@@ -995,5 +1112,23 @@ WaiterName = Literal[
     "service_pipeline_deployed",
     "service_template_version_registered",
     "service_updated",
+]
+```
+## RegionName
+
+```python title="Usage Example"
+from types_aiobotocore_proton.literals import RegionName
+
+def get_value() -> RegionName:
+    return "ap-northeast-1"
+```
+
+```python title="Definition"
+RegionName = Literal[
+    "ap-northeast-1",
+    "eu-west-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-2",
 ]
 ```

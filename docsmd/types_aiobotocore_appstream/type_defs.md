@@ -360,6 +360,23 @@ class StorageConnectorTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: StorageConnectorTypeType](./literals.md#storageconnectortypetype) 
+## StreamingExperienceSettingsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_appstream.type_defs import StreamingExperienceSettingsTypeDef
+
+def get_value() -> StreamingExperienceSettingsTypeDef:
+    return {
+        "PreferredProtocol": ...,
+    }
+```
+
+```python title="Definition"
+class StreamingExperienceSettingsTypeDef(TypedDict):
+    PreferredProtocol: NotRequired[PreferredProtocolType],  # (1)
+```
+
+1. See [:material-code-brackets: PreferredProtocolType](./literals.md#preferredprotocoltype) 
 ## UserSettingTypeDef
 
 ```python title="Usage Example"
@@ -1921,6 +1938,7 @@ class CreateFleetRequestRequestTypeDef(TypedDict):
     Platform: NotRequired[PlatformTypeType],  # (6)
     MaxConcurrentSessions: NotRequired[int],
     UsbDeviceFilterStrings: NotRequired[Sequence[str]],
+    SessionScriptS3Location: NotRequired[S3LocationTypeDef],  # (7)
 ```
 
 1. See [:material-code-brackets: FleetTypeType](./literals.md#fleettypetype) 
@@ -1929,6 +1947,7 @@ class CreateFleetRequestRequestTypeDef(TypedDict):
 4. See [:material-code-braces: DomainJoinInfoTypeDef](./type_defs.md#domainjoininfotypedef) 
 5. See [:material-code-brackets: StreamViewType](./literals.md#streamviewtype) 
 6. See [:material-code-brackets: PlatformTypeType](./literals.md#platformtypetype) 
+7. See [:material-code-braces: S3LocationTypeDef](./type_defs.md#s3locationtypedef) 
 ## CreateImageBuilderRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1994,6 +2013,7 @@ class UpdateFleetRequestRequestTypeDef(TypedDict):
     Platform: NotRequired[PlatformTypeType],  # (6)
     MaxConcurrentSessions: NotRequired[int],
     UsbDeviceFilterStrings: NotRequired[Sequence[str]],
+    SessionScriptS3Location: NotRequired[S3LocationTypeDef],  # (7)
 ```
 
 1. See [:material-code-braces: ComputeCapacityTypeDef](./type_defs.md#computecapacitytypedef) 
@@ -2002,6 +2022,7 @@ class UpdateFleetRequestRequestTypeDef(TypedDict):
 4. See [:material-code-brackets: FleetAttributeType](./literals.md#fleetattributetype) 
 5. See [:material-code-brackets: StreamViewType](./literals.md#streamviewtype) 
 6. See [:material-code-brackets: PlatformTypeType](./literals.md#platformtypetype) 
+7. See [:material-code-braces: S3LocationTypeDef](./type_defs.md#s3locationtypedef) 
 ## CreateStackRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2026,12 +2047,14 @@ class CreateStackRequestRequestTypeDef(TypedDict):
     Tags: NotRequired[Mapping[str, str]],
     AccessEndpoints: NotRequired[Sequence[AccessEndpointTypeDef]],  # (4)
     EmbedHostDomains: NotRequired[Sequence[str]],
+    StreamingExperienceSettings: NotRequired[StreamingExperienceSettingsTypeDef],  # (5)
 ```
 
 1. See [:material-code-braces: StorageConnectorTypeDef](./type_defs.md#storageconnectortypedef) 
 2. See [:material-code-braces: UserSettingTypeDef](./type_defs.md#usersettingtypedef) 
 3. See [:material-code-braces: ApplicationSettingsTypeDef](./type_defs.md#applicationsettingstypedef) 
 4. See [:material-code-braces: AccessEndpointTypeDef](./type_defs.md#accessendpointtypedef) 
+5. See [:material-code-braces: StreamingExperienceSettingsTypeDef](./type_defs.md#streamingexperiencesettingstypedef) 
 ## UpdateStackRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2057,6 +2080,7 @@ class UpdateStackRequestRequestTypeDef(TypedDict):
     ApplicationSettings: NotRequired[ApplicationSettingsTypeDef],  # (4)
     AccessEndpoints: NotRequired[Sequence[AccessEndpointTypeDef]],  # (5)
     EmbedHostDomains: NotRequired[Sequence[str]],
+    StreamingExperienceSettings: NotRequired[StreamingExperienceSettingsTypeDef],  # (6)
 ```
 
 1. See [:material-code-braces: StorageConnectorTypeDef](./type_defs.md#storageconnectortypedef) 
@@ -2064,6 +2088,7 @@ class UpdateStackRequestRequestTypeDef(TypedDict):
 3. See [:material-code-braces: UserSettingTypeDef](./type_defs.md#usersettingtypedef) 
 4. See [:material-code-braces: ApplicationSettingsTypeDef](./type_defs.md#applicationsettingstypedef) 
 5. See [:material-code-braces: AccessEndpointTypeDef](./type_defs.md#accessendpointtypedef) 
+6. See [:material-code-braces: StreamingExperienceSettingsTypeDef](./type_defs.md#streamingexperiencesettingstypedef) 
 ## DescribeDirectoryConfigsRequestDescribeDirectoryConfigsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -2378,6 +2403,7 @@ class FleetTypeDef(TypedDict):
     Platform: NotRequired[PlatformTypeType],  # (8)
     MaxConcurrentSessions: NotRequired[int],
     UsbDeviceFilterStrings: NotRequired[List[str]],
+    SessionScriptS3Location: NotRequired[S3LocationTypeDef],  # (9)
 ```
 
 1. See [:material-code-brackets: FleetTypeType](./literals.md#fleettypetype) 
@@ -2388,6 +2414,7 @@ class FleetTypeDef(TypedDict):
 6. See [:material-code-braces: DomainJoinInfoTypeDef](./type_defs.md#domainjoininfotypedef) 
 7. See [:material-code-brackets: StreamViewType](./literals.md#streamviewtype) 
 8. See [:material-code-brackets: PlatformTypeType](./literals.md#platformtypetype) 
+9. See [:material-code-braces: S3LocationTypeDef](./type_defs.md#s3locationtypedef) 
 ## SessionTypeDef
 
 ```python title="Usage Example"
@@ -2549,6 +2576,7 @@ class StackTypeDef(TypedDict):
     ApplicationSettings: NotRequired[ApplicationSettingsResponseTypeDef],  # (4)
     AccessEndpoints: NotRequired[List[AccessEndpointTypeDef]],  # (5)
     EmbedHostDomains: NotRequired[List[str]],
+    StreamingExperienceSettings: NotRequired[StreamingExperienceSettingsTypeDef],  # (6)
 ```
 
 1. See [:material-code-braces: StorageConnectorTypeDef](./type_defs.md#storageconnectortypedef) 
@@ -2556,6 +2584,7 @@ class StackTypeDef(TypedDict):
 3. See [:material-code-braces: UserSettingTypeDef](./type_defs.md#usersettingtypedef) 
 4. See [:material-code-braces: ApplicationSettingsResponseTypeDef](./type_defs.md#applicationsettingsresponsetypedef) 
 5. See [:material-code-braces: AccessEndpointTypeDef](./type_defs.md#accessendpointtypedef) 
+6. See [:material-code-braces: StreamingExperienceSettingsTypeDef](./type_defs.md#streamingexperiencesettingstypedef) 
 ## CreateApplicationResultTypeDef
 
 ```python title="Usage Example"

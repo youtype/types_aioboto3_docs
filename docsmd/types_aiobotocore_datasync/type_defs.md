@@ -249,6 +249,7 @@ class OptionsTypeDef(TypedDict):
     LogLevel: NotRequired[LogLevelType],  # (11)
     TransferMode: NotRequired[TransferModeType],  # (12)
     SecurityDescriptorCopyFlags: NotRequired[SmbSecurityDescriptorCopyFlagsType],  # (13)
+    ObjectTags: NotRequired[ObjectTagsType],  # (14)
 ```
 
 1. See [:material-code-brackets: VerifyModeType](./literals.md#verifymodetype) 
@@ -264,6 +265,7 @@ class OptionsTypeDef(TypedDict):
 11. See [:material-code-brackets: LogLevelType](./literals.md#logleveltype) 
 12. See [:material-code-brackets: TransferModeType](./literals.md#transfermodetype) 
 13. See [:material-code-brackets: SmbSecurityDescriptorCopyFlagsType](./literals.md#smbsecuritydescriptorcopyflagstype) 
+14. See [:material-code-brackets: ObjectTagsType](./literals.md#objecttagstype) 
 ## TaskScheduleTypeDef
 
 ```python title="Usage Example"
@@ -392,6 +394,38 @@ def get_value() -> DescribeLocationFsxLustreRequestRequestTypeDef:
 
 ```python title="Definition"
 class DescribeLocationFsxLustreRequestRequestTypeDef(TypedDict):
+    LocationArn: str,
+```
+
+## DescribeLocationFsxOntapRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import DescribeLocationFsxOntapRequestRequestTypeDef
+
+def get_value() -> DescribeLocationFsxOntapRequestRequestTypeDef:
+    return {
+        "LocationArn": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeLocationFsxOntapRequestRequestTypeDef(TypedDict):
+    LocationArn: str,
+```
+
+## DescribeLocationFsxOpenZfsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import DescribeLocationFsxOpenZfsRequestRequestTypeDef
+
+def get_value() -> DescribeLocationFsxOpenZfsRequestRequestTypeDef:
+    return {
+        "LocationArn": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeLocationFsxOpenZfsRequestRequestTypeDef(TypedDict):
     LocationArn: str,
 ```
 
@@ -950,6 +984,44 @@ class CreateLocationFsxLustreResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateLocationFsxOntapResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import CreateLocationFsxOntapResponseTypeDef
+
+def get_value() -> CreateLocationFsxOntapResponseTypeDef:
+    return {
+        "LocationArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateLocationFsxOntapResponseTypeDef(TypedDict):
+    LocationArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateLocationFsxOpenZfsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import CreateLocationFsxOpenZfsResponseTypeDef
+
+def get_value() -> CreateLocationFsxOpenZfsResponseTypeDef:
+    return {
+        "LocationArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateLocationFsxOpenZfsResponseTypeDef(TypedDict):
+    LocationArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateLocationFsxWindowsResponseTypeDef
 
 ```python title="Usage Example"
@@ -1250,10 +1322,14 @@ class CreateLocationEfsRequestRequestTypeDef(TypedDict):
     Ec2Config: Ec2ConfigTypeDef,  # (1)
     Subdirectory: NotRequired[str],
     Tags: NotRequired[Sequence[TagListEntryTypeDef]],  # (2)
+    AccessPointArn: NotRequired[str],
+    FileSystemAccessRoleArn: NotRequired[str],
+    InTransitEncryption: NotRequired[EfsInTransitEncryptionType],  # (3)
 ```
 
 1. See [:material-code-braces: Ec2ConfigTypeDef](./type_defs.md#ec2configtypedef) 
 2. See [:material-code-braces: TagListEntryTypeDef](./type_defs.md#taglistentrytypedef) 
+3. See [:material-code-brackets: EfsInTransitEncryptionType](./literals.md#efsintransitencryptiontype) 
 ## DescribeLocationEfsResponseTypeDef
 
 ```python title="Usage Example"
@@ -1265,6 +1341,9 @@ def get_value() -> DescribeLocationEfsResponseTypeDef:
         "LocationUri": ...,
         "Ec2Config": ...,
         "CreationTime": ...,
+        "AccessPointArn": ...,
+        "FileSystemAccessRoleArn": ...,
+        "InTransitEncryption": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -1275,11 +1354,15 @@ class DescribeLocationEfsResponseTypeDef(TypedDict):
     LocationUri: str,
     Ec2Config: Ec2ConfigTypeDef,  # (1)
     CreationTime: datetime,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+    AccessPointArn: str,
+    FileSystemAccessRoleArn: str,
+    InTransitEncryption: EfsInTransitEncryptionType,  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
 ```
 
 1. See [:material-code-braces: Ec2ConfigTypeDef](./type_defs.md#ec2configtypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+2. See [:material-code-brackets: EfsInTransitEncryptionType](./literals.md#efsintransitencryptiontype) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateLocationHdfsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1389,6 +1472,23 @@ class UpdateLocationHdfsRequestRequestTypeDef(TypedDict):
 1. See [:material-code-braces: HdfsNameNodeTypeDef](./type_defs.md#hdfsnamenodetypedef) 
 2. See [:material-code-braces: QopConfigurationTypeDef](./type_defs.md#qopconfigurationtypedef) 
 3. See [:material-code-brackets: HdfsAuthenticationTypeType](./literals.md#hdfsauthenticationtypetype) 
+## FsxProtocolNfsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import FsxProtocolNfsTypeDef
+
+def get_value() -> FsxProtocolNfsTypeDef:
+    return {
+        "MountOptions": ...,
+    }
+```
+
+```python title="Definition"
+class FsxProtocolNfsTypeDef(TypedDict):
+    MountOptions: NotRequired[NfsMountOptionsTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: NfsMountOptionsTypeDef](./type_defs.md#nfsmountoptionstypedef) 
 ## CreateLocationNfsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1581,6 +1681,27 @@ class DescribeLocationSmbResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: SmbMountOptionsTypeDef](./type_defs.md#smbmountoptionstypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## FsxProtocolSmbTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import FsxProtocolSmbTypeDef
+
+def get_value() -> FsxProtocolSmbTypeDef:
+    return {
+        "Password": ...,
+        "User": ...,
+    }
+```
+
+```python title="Definition"
+class FsxProtocolSmbTypeDef(TypedDict):
+    Password: str,
+    User: str,
+    Domain: NotRequired[str],
+    MountOptions: NotRequired[SmbMountOptionsTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: SmbMountOptionsTypeDef](./type_defs.md#smbmountoptionstypedef) 
 ## UpdateLocationSmbRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2029,4 +2150,131 @@ class ListTasksResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: TaskListEntryTypeDef](./type_defs.md#tasklistentrytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## FsxProtocolTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import FsxProtocolTypeDef
+
+def get_value() -> FsxProtocolTypeDef:
+    return {
+        "NFS": ...,
+    }
+```
+
+```python title="Definition"
+class FsxProtocolTypeDef(TypedDict):
+    NFS: NotRequired[FsxProtocolNfsTypeDef],  # (1)
+    SMB: NotRequired[FsxProtocolSmbTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FsxProtocolNfsTypeDef](./type_defs.md#fsxprotocolnfstypedef) 
+2. See [:material-code-braces: FsxProtocolSmbTypeDef](./type_defs.md#fsxprotocolsmbtypedef) 
+## CreateLocationFsxOntapRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import CreateLocationFsxOntapRequestRequestTypeDef
+
+def get_value() -> CreateLocationFsxOntapRequestRequestTypeDef:
+    return {
+        "Protocol": ...,
+        "SecurityGroupArns": ...,
+        "StorageVirtualMachineArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateLocationFsxOntapRequestRequestTypeDef(TypedDict):
+    Protocol: FsxProtocolTypeDef,  # (1)
+    SecurityGroupArns: Sequence[str],
+    StorageVirtualMachineArn: str,
+    Subdirectory: NotRequired[str],
+    Tags: NotRequired[Sequence[TagListEntryTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: FsxProtocolTypeDef](./type_defs.md#fsxprotocoltypedef) 
+2. See [:material-code-braces: TagListEntryTypeDef](./type_defs.md#taglistentrytypedef) 
+## CreateLocationFsxOpenZfsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import CreateLocationFsxOpenZfsRequestRequestTypeDef
+
+def get_value() -> CreateLocationFsxOpenZfsRequestRequestTypeDef:
+    return {
+        "FsxFilesystemArn": ...,
+        "Protocol": ...,
+        "SecurityGroupArns": ...,
+    }
+```
+
+```python title="Definition"
+class CreateLocationFsxOpenZfsRequestRequestTypeDef(TypedDict):
+    FsxFilesystemArn: str,
+    Protocol: FsxProtocolTypeDef,  # (1)
+    SecurityGroupArns: Sequence[str],
+    Subdirectory: NotRequired[str],
+    Tags: NotRequired[Sequence[TagListEntryTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: FsxProtocolTypeDef](./type_defs.md#fsxprotocoltypedef) 
+2. See [:material-code-braces: TagListEntryTypeDef](./type_defs.md#taglistentrytypedef) 
+## DescribeLocationFsxOntapResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import DescribeLocationFsxOntapResponseTypeDef
+
+def get_value() -> DescribeLocationFsxOntapResponseTypeDef:
+    return {
+        "CreationTime": ...,
+        "LocationArn": ...,
+        "LocationUri": ...,
+        "Protocol": ...,
+        "SecurityGroupArns": ...,
+        "StorageVirtualMachineArn": ...,
+        "FsxFilesystemArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeLocationFsxOntapResponseTypeDef(TypedDict):
+    CreationTime: datetime,
+    LocationArn: str,
+    LocationUri: str,
+    Protocol: FsxProtocolTypeDef,  # (1)
+    SecurityGroupArns: List[str],
+    StorageVirtualMachineArn: str,
+    FsxFilesystemArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: FsxProtocolTypeDef](./type_defs.md#fsxprotocoltypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeLocationFsxOpenZfsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.type_defs import DescribeLocationFsxOpenZfsResponseTypeDef
+
+def get_value() -> DescribeLocationFsxOpenZfsResponseTypeDef:
+    return {
+        "LocationArn": ...,
+        "LocationUri": ...,
+        "SecurityGroupArns": ...,
+        "Protocol": ...,
+        "CreationTime": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeLocationFsxOpenZfsResponseTypeDef(TypedDict):
+    LocationArn: str,
+    LocationUri: str,
+    SecurityGroupArns: List[str],
+    Protocol: FsxProtocolTypeDef,  # (1)
+    CreationTime: datetime,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: FsxProtocolTypeDef](./type_defs.md#fsxprotocoltypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 

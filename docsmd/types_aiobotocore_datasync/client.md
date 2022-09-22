@@ -94,6 +94,21 @@ parent.cancel_task_execution(**kwargs)
 
 1. See [:material-code-braces: CancelTaskExecutionRequestRequestTypeDef](./type_defs.md#canceltaskexecutionrequestrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("datasync").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_agent
 
 Activates an DataSync agent that you have deployed on your host.
@@ -131,7 +146,8 @@ parent.create_agent(**kwargs)
 
 ### create\_location\_efs
 
-Creates an endpoint for an Amazon EFS file system.
+Creates an endpoint for an Amazon EFS file system that DataSync can access for a
+transfer.
 
 Type annotations and code completion for `#!python session.client("datasync").create_location_efs` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_efs)
@@ -144,13 +160,17 @@ await def create_location_efs(
     Ec2Config: Ec2ConfigTypeDef,  # (1)
     Subdirectory: str = ...,
     Tags: Sequence[TagListEntryTypeDef] = ...,  # (2)
-) -> CreateLocationEfsResponseTypeDef:  # (3)
+    AccessPointArn: str = ...,
+    FileSystemAccessRoleArn: str = ...,
+    InTransitEncryption: EfsInTransitEncryptionType = ...,  # (3)
+) -> CreateLocationEfsResponseTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: Ec2ConfigTypeDef](./type_defs.md#ec2configtypedef) 
 2. See [:material-code-braces: TagListEntryTypeDef](./type_defs.md#taglistentrytypedef) 
-3. See [:material-code-braces: CreateLocationEfsResponseTypeDef](./type_defs.md#createlocationefsresponsetypedef) 
+3. See [:material-code-brackets: EfsInTransitEncryptionType](./literals.md#efsintransitencryptiontype) 
+4. See [:material-code-braces: CreateLocationEfsResponseTypeDef](./type_defs.md#createlocationefsresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -197,6 +217,81 @@ parent.create_location_fsx_lustre(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateLocationFsxLustreRequestRequestTypeDef](./type_defs.md#createlocationfsxlustrerequestrequesttypedef) 
+
+### create\_location\_fsx\_ontap
+
+Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync
+can access for a transfer.
+
+Type annotations and code completion for `#!python session.client("datasync").create_location_fsx_ontap` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_fsx_ontap)
+
+```python title="Method definition"
+await def create_location_fsx_ontap(
+    self,
+    *,
+    Protocol: FsxProtocolTypeDef,  # (1)
+    SecurityGroupArns: Sequence[str],
+    StorageVirtualMachineArn: str,
+    Subdirectory: str = ...,
+    Tags: Sequence[TagListEntryTypeDef] = ...,  # (2)
+) -> CreateLocationFsxOntapResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FsxProtocolTypeDef](./type_defs.md#fsxprotocoltypedef) 
+2. See [:material-code-braces: TagListEntryTypeDef](./type_defs.md#taglistentrytypedef) 
+3. See [:material-code-braces: CreateLocationFsxOntapResponseTypeDef](./type_defs.md#createlocationfsxontapresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateLocationFsxOntapRequestRequestTypeDef = {  # (1)
+    "Protocol": ...,
+    "SecurityGroupArns": ...,
+    "StorageVirtualMachineArn": ...,
+}
+
+parent.create_location_fsx_ontap(**kwargs)
+```
+
+1. See [:material-code-braces: CreateLocationFsxOntapRequestRequestTypeDef](./type_defs.md#createlocationfsxontaprequestrequesttypedef) 
+
+### create\_location\_fsx\_open\_zfs
+
+Creates an endpoint for an Amazon FSx for OpenZFS file system.
+
+Type annotations and code completion for `#!python session.client("datasync").create_location_fsx_open_zfs` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_fsx_open_zfs)
+
+```python title="Method definition"
+await def create_location_fsx_open_zfs(
+    self,
+    *,
+    FsxFilesystemArn: str,
+    Protocol: FsxProtocolTypeDef,  # (1)
+    SecurityGroupArns: Sequence[str],
+    Subdirectory: str = ...,
+    Tags: Sequence[TagListEntryTypeDef] = ...,  # (2)
+) -> CreateLocationFsxOpenZfsResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FsxProtocolTypeDef](./type_defs.md#fsxprotocoltypedef) 
+2. See [:material-code-braces: TagListEntryTypeDef](./type_defs.md#taglistentrytypedef) 
+3. See [:material-code-braces: CreateLocationFsxOpenZfsResponseTypeDef](./type_defs.md#createlocationfsxopenzfsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateLocationFsxOpenZfsRequestRequestTypeDef = {  # (1)
+    "FsxFilesystemArn": ...,
+    "Protocol": ...,
+    "SecurityGroupArns": ...,
+}
+
+parent.create_location_fsx_open_zfs(**kwargs)
+```
+
+1. See [:material-code-braces: CreateLocationFsxOpenZfsRequestRequestTypeDef](./type_defs.md#createlocationfsxopenzfsrequestrequesttypedef) 
 
 ### create\_location\_fsx\_windows
 
@@ -325,7 +420,8 @@ parent.create_location_nfs(**kwargs)
 
 ### create\_location\_object\_storage
 
-Creates an endpoint for a self-managed object storage bucket.
+Creates an endpoint for an object storage system that DataSync can access for a
+transfer.
 
 Type annotations and code completion for `#!python session.client("datasync").create_location_object_storage` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_object_storage)
@@ -447,7 +543,7 @@ parent.create_location_smb(**kwargs)
 
 ### create\_task
 
-Creates a task.
+Configures a task, which defines where and how DataSync transfers your data.
 
 Type annotations and code completion for `#!python session.client("datasync").create_task` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_task)
@@ -604,7 +700,7 @@ parent.describe_agent(**kwargs)
 
 ### describe\_location\_efs
 
-Returns metadata, such as the path information about an Amazon EFS location.
+Returns metadata about your DataSync location for an Amazon EFS file system.
 
 Type annotations and code completion for `#!python session.client("datasync").describe_location_efs` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_efs)
@@ -633,8 +729,8 @@ parent.describe_location_efs(**kwargs)
 
 ### describe\_location\_fsx\_lustre
 
-Returns metadata, such as the path information about an Amazon FSx for Lustre
-location.
+Returns metadata about an Amazon FSx for Lustre location, such as information
+about its path.
 
 Type annotations and code completion for `#!python session.client("datasync").describe_location_fsx_lustre` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_fsx_lustre)
@@ -661,10 +757,70 @@ parent.describe_location_fsx_lustre(**kwargs)
 
 1. See [:material-code-braces: DescribeLocationFsxLustreRequestRequestTypeDef](./type_defs.md#describelocationfsxlustrerequestrequesttypedef) 
 
+### describe\_location\_fsx\_ontap
+
+Provides details about how an DataSync location for an Amazon FSx for NetApp
+ONTAP file system is configured.
+
+Type annotations and code completion for `#!python session.client("datasync").describe_location_fsx_ontap` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_fsx_ontap)
+
+```python title="Method definition"
+await def describe_location_fsx_ontap(
+    self,
+    *,
+    LocationArn: str,
+) -> DescribeLocationFsxOntapResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeLocationFsxOntapResponseTypeDef](./type_defs.md#describelocationfsxontapresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeLocationFsxOntapRequestRequestTypeDef = {  # (1)
+    "LocationArn": ...,
+}
+
+parent.describe_location_fsx_ontap(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeLocationFsxOntapRequestRequestTypeDef](./type_defs.md#describelocationfsxontaprequestrequesttypedef) 
+
+### describe\_location\_fsx\_open\_zfs
+
+Returns metadata about an Amazon FSx for OpenZFS location, such as information
+about its path.
+
+Type annotations and code completion for `#!python session.client("datasync").describe_location_fsx_open_zfs` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_fsx_open_zfs)
+
+```python title="Method definition"
+await def describe_location_fsx_open_zfs(
+    self,
+    *,
+    LocationArn: str,
+) -> DescribeLocationFsxOpenZfsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DescribeLocationFsxOpenZfsResponseTypeDef](./type_defs.md#describelocationfsxopenzfsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeLocationFsxOpenZfsRequestRequestTypeDef = {  # (1)
+    "LocationArn": ...,
+}
+
+parent.describe_location_fsx_open_zfs(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeLocationFsxOpenZfsRequestRequestTypeDef](./type_defs.md#describelocationfsxopenzfsrequestrequesttypedef) 
+
 ### describe\_location\_fsx\_windows
 
-Returns metadata, such as the path information about an Amazon FSx for Windows
-File Server location.
+Returns metadata about an Amazon FSx for Windows File Server location, such as
+information about its path.
 
 Type annotations and code completion for `#!python session.client("datasync").describe_location_fsx_windows` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_fsx_windows)
@@ -752,7 +908,7 @@ parent.describe_location_nfs(**kwargs)
 
 ### describe\_location\_object\_storage
 
-Returns metadata about a self-managed object storage server location.
+Returns metadata about your DataSync location for an object storage system.
 
 Type annotations and code completion for `#!python session.client("datasync").describe_location_object_storage` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_object_storage)
@@ -1041,7 +1197,7 @@ parent.list_task_executions(**kwargs)
 
 ### list\_tasks
 
-Returns a list of all the tasks.
+Returns a list of the DataSync tasks you created.
 
 Type annotations and code completion for `#!python session.client("datasync").list_tasks` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.list_tasks)

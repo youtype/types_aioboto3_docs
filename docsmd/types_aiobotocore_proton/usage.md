@@ -44,14 +44,14 @@ type checking and code completion should work out of the box.
     session = Session()
 
     async with session.client("proton") as client:  # (1)
-        paginator = client.get_paginator("list_environment_account_connections")  # (2)
+        paginator = client.get_paginator("list_component_outputs")  # (2)
         async for item in paginator.paginate(...):
             print(item)  # (3)
     ```
 
     1. client: [ProtonClient](./client.md)
-    2. paginator: [ListEnvironmentAccountConnectionsPaginator](./paginators.md#listenvironmentaccountconnectionspaginator)
-    3. item: [:material-code-braces: ListEnvironmentAccountConnectionsOutputTypeDef](./type_defs.md#listenvironmentaccountconnectionsoutputtypedef) 
+    2. paginator: [ListComponentOutputsPaginator](./paginators.md#listcomponentoutputspaginator)
+    3. item: [:material-code-braces: ListComponentOutputsOutputTypeDef](./type_defs.md#listcomponentoutputsoutputtypedef) 
 
 
 
@@ -64,12 +64,12 @@ type checking and code completion should work out of the box.
     session = Session()
 
     async with session.client("proton") as client:  # (1)
-        waiter = client.get_waiter("environment_deployed")  # (2)
+        waiter = client.get_waiter("component_deleted")  # (2)
         await waiter.wait()
     ```
 
     1. client: [ProtonClient](./client.md)
-    2. waiter: [EnvironmentDeployedWaiter](./waiters.md#environmentdeployedwaiter)
+    2. waiter: [ComponentDeletedWaiter](./waiters.md#componentdeletedwaiter)
 
 
 ### Explicit type annotations
@@ -112,23 +112,23 @@ However, these type annotations can be helpful in your functions and methods.
     from aioboto3.session import Session
 
     from types_aiobotocore_proton.client import ProtonClient
-    from types_aiobotocore_proton.paginator import ListEnvironmentAccountConnectionsPaginator
-    from types_aiobotocore_proton.type_defs import ListEnvironmentAccountConnectionsOutputTypeDef
+    from types_aiobotocore_proton.paginator import ListComponentOutputsPaginator
+    from types_aiobotocore_proton.type_defs import ListComponentOutputsOutputTypeDef
 
 
     session = Session()
 
     client: ProtonClient
     async with session.client("proton") as client:  # (1)
-        paginator: ListEnvironmentAccountConnectionsPaginator = client.get_paginator("list_environment_account_connections")  # (2)
+        paginator: ListComponentOutputsPaginator = client.get_paginator("list_component_outputs")  # (2)
         async for item in paginator.paginate(...):
-            item: ListEnvironmentAccountConnectionsOutputTypeDef
+            item: ListComponentOutputsOutputTypeDef
             print(item)  # (3)
     ```
 
     1. client: [ProtonClient](./client.md)
-    2. paginator: [ListEnvironmentAccountConnectionsPaginator](./paginators.md#listenvironmentaccountconnectionspaginator)
-    3. item: [:material-code-braces: ListEnvironmentAccountConnectionsOutputTypeDef](./type_defs.md#listenvironmentaccountconnectionsoutputtypedef) 
+    2. paginator: [ListComponentOutputsPaginator](./paginators.md#listcomponentoutputspaginator)
+    3. item: [:material-code-braces: ListComponentOutputsOutputTypeDef](./type_defs.md#listcomponentoutputsoutputtypedef) 
 
 
 
@@ -138,17 +138,17 @@ However, these type annotations can be helpful in your functions and methods.
     from aioboto3.session import Session
 
     from types_aiobotocore_proton.client import ProtonClient
-    from types_aiobotocore_proton.waiter import EnvironmentDeployedWaiter
+    from types_aiobotocore_proton.waiter import ComponentDeletedWaiter
 
 
     session = Session()
 
     async with session.client("proton") as client:  # (1)
-        waiter = client.get_waiter("environment_deployed")  # (2)
+        waiter = client.get_waiter("component_deleted")  # (2)
         await waiter.wait()
     ```
 
     1. client: [ProtonClient](./client.md)
-    2. waiter: [EnvironmentDeployedWaiter](./waiters.md#environmentdeployedwaiter)
+    2. waiter: [ComponentDeletedWaiter](./waiters.md#componentdeletedwaiter)
 
 

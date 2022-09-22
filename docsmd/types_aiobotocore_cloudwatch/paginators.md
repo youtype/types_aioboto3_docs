@@ -127,6 +127,63 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeAlarmsInputDescribeAlarmsPaginateTypeDef](./type_defs.md#describealarmsinputdescribealarmspaginatetypedef) 
+## DescribeAnomalyDetectorsPaginator
+
+Type annotations and code completion for `#!python session.client("cloudwatch").get_paginator("describe_anomaly_detectors")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Paginator.DescribeAnomalyDetectors)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_cloudwatch.paginator import DescribeAnomalyDetectorsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("cloudwatch") as client:  # (1)
+    paginator: DescribeAnomalyDetectorsPaginator = client.get_paginator("describe_anomaly_detectors")  # (2)
+    async for item in paginator.paginate(...):
+        item: DescribeAnomalyDetectorsOutputTypeDef
+        print(item)  # (3)
+```
+
+1. client: [CloudWatchClient](./client.md)
+2. paginator: [DescribeAnomalyDetectorsPaginator](./paginators.md#describeanomalydetectorspaginator)
+3. item: [:material-code-braces: DescribeAnomalyDetectorsOutputTypeDef](./type_defs.md#describeanomalydetectorsoutputtypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python DescribeAnomalyDetectorsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Namespace: str = ...,
+    MetricName: str = ...,
+    Dimensions: Sequence[DimensionTypeDef] = ...,  # (1)
+    AnomalyDetectorTypes: Sequence[AnomalyDetectorTypeType] = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[DescribeAnomalyDetectorsOutputTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: DimensionTypeDef](./type_defs.md#dimensiontypedef) 
+2. See [:material-code-brackets: AnomalyDetectorTypeType](./literals.md#anomalydetectortypetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: DescribeAnomalyDetectorsOutputTypeDef](./type_defs.md#describeanomalydetectorsoutputtypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef = {  # (1)
+    "Namespace": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeAnomalyDetectorsInputDescribeAnomalyDetectorsPaginateTypeDef](./type_defs.md#describeanomalydetectorsinputdescribeanomalydetectorspaginatetypedef) 
 ## GetMetricDataPaginator
 
 Type annotations and code completion for `#!python session.client("cloudwatch").get_paginator("get_metric_data")`.

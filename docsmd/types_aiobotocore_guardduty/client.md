@@ -50,6 +50,39 @@ def handle_error(exc: Exceptions.BadRequestException) -> None:
 ## Methods
 
 
+### accept\_administrator\_invitation
+
+Accepts the invitation to be a member account and get monitored by a GuardDuty
+administrator account that sent the invitation.
+
+Type annotations and code completion for `#!python session.client("guardduty").accept_administrator_invitation` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.accept_administrator_invitation)
+
+```python title="Method definition"
+await def accept_administrator_invitation(
+    self,
+    *,
+    DetectorId: str,
+    AdministratorId: str,
+    InvitationId: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: AcceptAdministratorInvitationRequestRequestTypeDef = {  # (1)
+    "DetectorId": ...,
+    "AdministratorId": ...,
+    "InvitationId": ...,
+}
+
+parent.accept_administrator_invitation(**kwargs)
+```
+
+1. See [:material-code-braces: AcceptAdministratorInvitationRequestRequestTypeDef](./type_defs.md#acceptadministratorinvitationrequestrequesttypedef) 
+
 ### accept\_invitation
 
 Accepts the invitation to be monitored by a GuardDuty administrator account.
@@ -124,6 +157,21 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("guardduty").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
     ...
 ```
 
@@ -621,6 +669,41 @@ parent.delete_threat_intel_set(**kwargs)
 
 1. See [:material-code-braces: DeleteThreatIntelSetRequestRequestTypeDef](./type_defs.md#deletethreatintelsetrequestrequesttypedef) 
 
+### describe\_malware\_scans
+
+Returns a list of malware scans.
+
+Type annotations and code completion for `#!python session.client("guardduty").describe_malware_scans` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.describe_malware_scans)
+
+```python title="Method definition"
+await def describe_malware_scans(
+    self,
+    *,
+    DetectorId: str,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+    FilterCriteria: FilterCriteriaTypeDef = ...,  # (1)
+    SortCriteria: SortCriteriaTypeDef = ...,  # (2)
+) -> DescribeMalwareScansResponseTypeDef:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterCriteriaTypeDef](./type_defs.md#filtercriteriatypedef) 
+2. See [:material-code-braces: SortCriteriaTypeDef](./type_defs.md#sortcriteriatypedef) 
+3. See [:material-code-braces: DescribeMalwareScansResponseTypeDef](./type_defs.md#describemalwarescansresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeMalwareScansRequestRequestTypeDef = {  # (1)
+    "DetectorId": ...,
+}
+
+parent.describe_malware_scans(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeMalwareScansRequestRequestTypeDef](./type_defs.md#describemalwarescansrequestrequesttypedef) 
+
 ### describe\_organization\_configuration
 
 Returns information about the account selected as the delegated administrator
@@ -711,6 +794,35 @@ parent.disable_organization_admin_account(**kwargs)
 ```
 
 1. See [:material-code-braces: DisableOrganizationAdminAccountRequestRequestTypeDef](./type_defs.md#disableorganizationadminaccountrequestrequesttypedef) 
+
+### disassociate\_from\_administrator\_account
+
+Disassociates the current GuardDuty member account from its administrator
+account.
+
+Type annotations and code completion for `#!python session.client("guardduty").disassociate_from_administrator_account` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.disassociate_from_administrator_account)
+
+```python title="Method definition"
+await def disassociate_from_administrator_account(
+    self,
+    *,
+    DetectorId: str,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: DisassociateFromAdministratorAccountRequestRequestTypeDef = {  # (1)
+    "DetectorId": ...,
+}
+
+parent.disassociate_from_administrator_account(**kwargs)
+```
+
+1. See [:material-code-braces: DisassociateFromAdministratorAccountRequestRequestTypeDef](./type_defs.md#disassociatefromadministratoraccountrequestrequesttypedef) 
 
 ### disassociate\_from\_master\_account
 
@@ -820,6 +932,36 @@ await def generate_presigned_url(
     ...
 ```
 
+
+### get\_administrator\_account
+
+Provides the details for the GuardDuty administrator account associated with the
+current GuardDuty member account.
+
+Type annotations and code completion for `#!python session.client("guardduty").get_administrator_account` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_administrator_account)
+
+```python title="Method definition"
+await def get_administrator_account(
+    self,
+    *,
+    DetectorId: str,
+) -> GetAdministratorAccountResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetAdministratorAccountResponseTypeDef](./type_defs.md#getadministratoraccountresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetAdministratorAccountRequestRequestTypeDef = {  # (1)
+    "DetectorId": ...,
+}
+
+parent.get_administrator_account(**kwargs)
+```
+
+1. See [:material-code-braces: GetAdministratorAccountRequestRequestTypeDef](./type_defs.md#getadministratoraccountrequestrequesttypedef) 
 
 ### get\_detector
 
@@ -996,6 +1138,35 @@ parent.get_ip_set(**kwargs)
 
 1. See [:material-code-braces: GetIPSetRequestRequestTypeDef](./type_defs.md#getipsetrequestrequesttypedef) 
 
+### get\_malware\_scan\_settings
+
+Returns the details of the malware scan settings.
+
+Type annotations and code completion for `#!python session.client("guardduty").get_malware_scan_settings` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_malware_scan_settings)
+
+```python title="Method definition"
+await def get_malware_scan_settings(
+    self,
+    *,
+    DetectorId: str,
+) -> GetMalwareScanSettingsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetMalwareScanSettingsResponseTypeDef](./type_defs.md#getmalwarescansettingsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetMalwareScanSettingsRequestRequestTypeDef = {  # (1)
+    "DetectorId": ...,
+}
+
+parent.get_malware_scan_settings(**kwargs)
+```
+
+1. See [:material-code-braces: GetMalwareScanSettingsRequestRequestTypeDef](./type_defs.md#getmalwarescansettingsrequestrequesttypedef) 
+
 ### get\_master\_account
 
 Provides the details for the GuardDuty administrator account associated with the
@@ -1088,6 +1259,37 @@ parent.get_members(**kwargs)
 ```
 
 1. See [:material-code-braces: GetMembersRequestRequestTypeDef](./type_defs.md#getmembersrequestrequesttypedef) 
+
+### get\_remaining\_free\_trial\_days
+
+Provides the number of days left for each data source used in the free trial
+period.
+
+Type annotations and code completion for `#!python session.client("guardduty").get_remaining_free_trial_days` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_remaining_free_trial_days)
+
+```python title="Method definition"
+await def get_remaining_free_trial_days(
+    self,
+    *,
+    DetectorId: str,
+    AccountIds: Sequence[str] = ...,
+) -> GetRemainingFreeTrialDaysResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetRemainingFreeTrialDaysResponseTypeDef](./type_defs.md#getremainingfreetrialdaysresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetRemainingFreeTrialDaysRequestRequestTypeDef = {  # (1)
+    "DetectorId": ...,
+}
+
+parent.get_remaining_free_trial_days(**kwargs)
+```
+
+1. See [:material-code-braces: GetRemainingFreeTrialDaysRequestRequestTypeDef](./type_defs.md#getremainingfreetrialdaysrequestrequesttypedef) 
 
 ### get\_threat\_intel\_set
 
@@ -1797,6 +1999,38 @@ parent.update_ip_set(**kwargs)
 
 1. See [:material-code-braces: UpdateIPSetRequestRequestTypeDef](./type_defs.md#updateipsetrequestrequesttypedef) 
 
+### update\_malware\_scan\_settings
+
+Updates the malware scan settings.
+
+Type annotations and code completion for `#!python session.client("guardduty").update_malware_scan_settings` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.update_malware_scan_settings)
+
+```python title="Method definition"
+await def update_malware_scan_settings(
+    self,
+    *,
+    DetectorId: str,
+    ScanResourceCriteria: ScanResourceCriteriaTypeDef = ...,  # (1)
+    EbsSnapshotPreservation: EbsSnapshotPreservationType = ...,  # (2)
+) -> Dict[str, Any]:
+    ...
+```
+
+1. See [:material-code-braces: ScanResourceCriteriaTypeDef](./type_defs.md#scanresourcecriteriatypedef) 
+2. See [:material-code-brackets: EbsSnapshotPreservationType](./literals.md#ebssnapshotpreservationtype) 
+
+
+```python title="Usage example with kwargs"
+kwargs: UpdateMalwareScanSettingsRequestRequestTypeDef = {  # (1)
+    "DetectorId": ...,
+}
+
+parent.update_malware_scan_settings(**kwargs)
+```
+
+1. See [:material-code-braces: UpdateMalwareScanSettingsRequestRequestTypeDef](./type_defs.md#updatemalwarescansettingsrequestrequesttypedef) 
+
 ### update\_member\_detectors
 
 Contains information on member accounts to be updated.
@@ -1967,6 +2201,7 @@ await def __aexit__(
 
 Type annotations and code completion for `#!python session.client("guardduty").get_paginator` method with overloads.
 
+- `client.get_paginator("describe_malware_scans")` -> [DescribeMalwareScansPaginator](./paginators.md#describemalwarescanspaginator)
 - `client.get_paginator("list_detectors")` -> [ListDetectorsPaginator](./paginators.md#listdetectorspaginator)
 - `client.get_paginator("list_filters")` -> [ListFiltersPaginator](./paginators.md#listfilterspaginator)
 - `client.get_paginator("list_findings")` -> [ListFindingsPaginator](./paginators.md#listfindingspaginator)

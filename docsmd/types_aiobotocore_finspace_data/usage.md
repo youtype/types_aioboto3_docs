@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = Session()
 
     async with session.client("finspace-data") as client:  # (1)
-        result = await client.create_changeset()  # (2)
+        result = await client.associate_user_to_permission_group()  # (2)
     ```
 
     1. client: [FinSpaceDataClient](./client.md)
-    2. result: [:material-code-braces: CreateChangesetResponseTypeDef](./type_defs.md#createchangesetresponsetypedef) 
+    2. result: [:material-code-braces: AssociateUserToPermissionGroupResponseTypeDef](./type_defs.md#associateusertopermissiongroupresponsetypedef) 
 
 
 
@@ -72,21 +72,21 @@ However, these type annotations can be helpful in your functions and methods.
     from aioboto3.session import Session
 
     from types_aiobotocore_finspace_data.client import FinSpaceDataClient
-    from types_aiobotocore_finspace_data.type_defs import CreateChangesetResponseTypeDef
-    from types_aiobotocore_finspace_data.type_defs import CreateChangesetRequestRequestTypeDef
+    from types_aiobotocore_finspace_data.type_defs import AssociateUserToPermissionGroupResponseTypeDef
+    from types_aiobotocore_finspace_data.type_defs import AssociateUserToPermissionGroupRequestRequestTypeDef
 
 
     session = Session()
 
     client: FinSpaceDataClient
     async with session.client("finspace-data") as client:  # (1)
-        kwargs: CreateChangesetRequestRequestTypeDef = {...}  # (2)
-        result: CreateChangesetResponseTypeDef = await client.create_changeset(**kwargs)  # (3)
+        kwargs: AssociateUserToPermissionGroupRequestRequestTypeDef = {...}  # (2)
+        result: AssociateUserToPermissionGroupResponseTypeDef = await client.associate_user_to_permission_group(**kwargs)  # (3)
     ```
 
     1. client: [FinSpaceDataClient](./client.md)
-    2. kwargs: [:material-code-braces: CreateChangesetRequestRequestTypeDef](./type_defs.md#createchangesetrequestrequesttypedef) 
-    3. result: [:material-code-braces: CreateChangesetResponseTypeDef](./type_defs.md#createchangesetresponsetypedef) 
+    2. kwargs: [:material-code-braces: AssociateUserToPermissionGroupRequestRequestTypeDef](./type_defs.md#associateusertopermissiongrouprequestrequesttypedef) 
+    3. result: [:material-code-braces: AssociateUserToPermissionGroupResponseTypeDef](./type_defs.md#associateusertopermissiongroupresponsetypedef) 
 
 
 

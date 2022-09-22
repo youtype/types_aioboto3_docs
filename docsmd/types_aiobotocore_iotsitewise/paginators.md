@@ -473,6 +473,59 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListAssociatedAssetsRequestListAssociatedAssetsPaginateTypeDef](./type_defs.md#listassociatedassetsrequestlistassociatedassetspaginatetypedef) 
+## ListBulkImportJobsPaginator
+
+Type annotations and code completion for `#!python session.client("iotsitewise").get_paginator("list_bulk_import_jobs")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Paginator.ListBulkImportJobs)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_iotsitewise.paginator import ListBulkImportJobsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("iotsitewise") as client:  # (1)
+    paginator: ListBulkImportJobsPaginator = client.get_paginator("list_bulk_import_jobs")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListBulkImportJobsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [IoTSiteWiseClient](./client.md)
+2. paginator: [ListBulkImportJobsPaginator](./paginators.md#listbulkimportjobspaginator)
+3. item: [:material-code-braces: ListBulkImportJobsResponseTypeDef](./type_defs.md#listbulkimportjobsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListBulkImportJobsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    filter: ListBulkImportJobsFilterType = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListBulkImportJobsResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: ListBulkImportJobsFilterType](./literals.md#listbulkimportjobsfiltertype) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListBulkImportJobsResponseTypeDef](./type_defs.md#listbulkimportjobsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListBulkImportJobsRequestListBulkImportJobsPaginateTypeDef = {  # (1)
+    "filter": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListBulkImportJobsRequestListBulkImportJobsPaginateTypeDef](./type_defs.md#listbulkimportjobsrequestlistbulkimportjobspaginatetypedef) 
 ## ListDashboardsPaginator
 
 Type annotations and code completion for `#!python session.client("iotsitewise").get_paginator("list_dashboards")`.

@@ -7,22 +7,43 @@
     Auto-generated documentation for [ChimeSDKMeetings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings)
     type annotations stubs module [types-aiobotocore-chime-sdk-meetings](https://pypi.org/project/types-aiobotocore-chime-sdk-meetings/).
 
-## AttendeeTypeDef
+## AttendeeCapabilitiesTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_chime_sdk_meetings.type_defs import AttendeeTypeDef
+from types_aiobotocore_chime_sdk_meetings.type_defs import AttendeeCapabilitiesTypeDef
 
-def get_value() -> AttendeeTypeDef:
+def get_value() -> AttendeeCapabilitiesTypeDef:
     return {
-        "ExternalUserId": ...,
+        "Audio": ...,
+        "Video": ...,
+        "Content": ...,
     }
 ```
 
 ```python title="Definition"
-class AttendeeTypeDef(TypedDict):
-    ExternalUserId: NotRequired[str],
-    AttendeeId: NotRequired[str],
-    JoinToken: NotRequired[str],
+class AttendeeCapabilitiesTypeDef(TypedDict):
+    Audio: MediaCapabilitiesType,  # (1)
+    Video: MediaCapabilitiesType,  # (1)
+    Content: MediaCapabilitiesType,  # (1)
+```
+
+1. See [:material-code-brackets: MediaCapabilitiesType](./literals.md#mediacapabilitiestype) 
+2. See [:material-code-brackets: MediaCapabilitiesType](./literals.md#mediacapabilitiestype) 
+3. See [:material-code-brackets: MediaCapabilitiesType](./literals.md#mediacapabilitiestype) 
+## AttendeeIdItemTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import AttendeeIdItemTypeDef
+
+def get_value() -> AttendeeIdItemTypeDef:
+    return {
+        "AttendeeId": ...,
+    }
+```
+
+```python title="Definition"
+class AttendeeIdItemTypeDef(TypedDict):
+    AttendeeId: str,
 ```
 
 ## AudioFeaturesTypeDef
@@ -42,22 +63,6 @@ class AudioFeaturesTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: MeetingFeatureStatusType](./literals.md#meetingfeaturestatustype) 
-## CreateAttendeeRequestItemTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_chime_sdk_meetings.type_defs import CreateAttendeeRequestItemTypeDef
-
-def get_value() -> CreateAttendeeRequestItemTypeDef:
-    return {
-        "ExternalUserId": ...,
-    }
-```
-
-```python title="Definition"
-class CreateAttendeeRequestItemTypeDef(TypedDict):
-    ExternalUserId: str,
-```
-
 ## CreateAttendeeErrorTypeDef
 
 ```python title="Usage Example"
@@ -100,24 +105,6 @@ class ResponseMetadataTypeDef(TypedDict):
     RetryAttempts: int,
 ```
 
-## CreateAttendeeRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_chime_sdk_meetings.type_defs import CreateAttendeeRequestRequestTypeDef
-
-def get_value() -> CreateAttendeeRequestRequestTypeDef:
-    return {
-        "MeetingId": ...,
-        "ExternalUserId": ...,
-    }
-```
-
-```python title="Definition"
-class CreateAttendeeRequestRequestTypeDef(TypedDict):
-    MeetingId: str,
-    ExternalUserId: str,
-```
-
 ## NotificationsConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -134,6 +121,24 @@ class NotificationsConfigurationTypeDef(TypedDict):
     LambdaFunctionArn: NotRequired[str],
     SnsTopicArn: NotRequired[str],
     SqsQueueArn: NotRequired[str],
+```
+
+## TagTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import TagTypeDef
+
+def get_value() -> TagTypeDef:
+    return {
+        "Key": ...,
+        "Value": ...,
+    }
+```
+
+```python title="Definition"
+class TagTypeDef(TypedDict):
+    Key: str,
+    Value: str,
 ```
 
 ## DeleteAttendeeRequestRequestTypeDef
@@ -286,6 +291,22 @@ class ListAttendeesRequestRequestTypeDef(TypedDict):
     MaxResults: NotRequired[int],
 ```
 
+## ListTagsForResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import ListTagsForResourceRequestRequestTypeDef
+
+def get_value() -> ListTagsForResourceRequestRequestTypeDef:
+    return {
+        "ResourceARN": ...,
+    }
+```
+
+```python title="Definition"
+class ListTagsForResourceRequestRequestTypeDef(TypedDict):
+    ResourceARN: str,
+```
+
 ## MediaPlacementTypeDef
 
 ```python title="Usage Example"
@@ -325,6 +346,125 @@ class StopMeetingTranscriptionRequestRequestTypeDef(TypedDict):
     MeetingId: str,
 ```
 
+## UntagResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import UntagResourceRequestRequestTypeDef
+
+def get_value() -> UntagResourceRequestRequestTypeDef:
+    return {
+        "ResourceARN": ...,
+        "TagKeys": ...,
+    }
+```
+
+```python title="Definition"
+class UntagResourceRequestRequestTypeDef(TypedDict):
+    ResourceARN: str,
+    TagKeys: Sequence[str],
+```
+
+## AttendeeTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import AttendeeTypeDef
+
+def get_value() -> AttendeeTypeDef:
+    return {
+        "ExternalUserId": ...,
+    }
+```
+
+```python title="Definition"
+class AttendeeTypeDef(TypedDict):
+    ExternalUserId: NotRequired[str],
+    AttendeeId: NotRequired[str],
+    JoinToken: NotRequired[str],
+    Capabilities: NotRequired[AttendeeCapabilitiesTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef) 
+## CreateAttendeeRequestItemTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import CreateAttendeeRequestItemTypeDef
+
+def get_value() -> CreateAttendeeRequestItemTypeDef:
+    return {
+        "ExternalUserId": ...,
+    }
+```
+
+```python title="Definition"
+class CreateAttendeeRequestItemTypeDef(TypedDict):
+    ExternalUserId: str,
+    Capabilities: NotRequired[AttendeeCapabilitiesTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef) 
+## CreateAttendeeRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import CreateAttendeeRequestRequestTypeDef
+
+def get_value() -> CreateAttendeeRequestRequestTypeDef:
+    return {
+        "MeetingId": ...,
+        "ExternalUserId": ...,
+    }
+```
+
+```python title="Definition"
+class CreateAttendeeRequestRequestTypeDef(TypedDict):
+    MeetingId: str,
+    ExternalUserId: str,
+    Capabilities: NotRequired[AttendeeCapabilitiesTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef) 
+## UpdateAttendeeCapabilitiesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import UpdateAttendeeCapabilitiesRequestRequestTypeDef
+
+def get_value() -> UpdateAttendeeCapabilitiesRequestRequestTypeDef:
+    return {
+        "MeetingId": ...,
+        "AttendeeId": ...,
+        "Capabilities": ...,
+    }
+```
+
+```python title="Definition"
+class UpdateAttendeeCapabilitiesRequestRequestTypeDef(TypedDict):
+    MeetingId: str,
+    AttendeeId: str,
+    Capabilities: AttendeeCapabilitiesTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef) 
+## BatchUpdateAttendeeCapabilitiesExceptRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import BatchUpdateAttendeeCapabilitiesExceptRequestRequestTypeDef
+
+def get_value() -> BatchUpdateAttendeeCapabilitiesExceptRequestRequestTypeDef:
+    return {
+        "MeetingId": ...,
+        "ExcludedAttendeeIds": ...,
+        "Capabilities": ...,
+    }
+```
+
+```python title="Definition"
+class BatchUpdateAttendeeCapabilitiesExceptRequestRequestTypeDef(TypedDict):
+    MeetingId: str,
+    ExcludedAttendeeIds: Sequence[AttendeeIdItemTypeDef],  # (1)
+    Capabilities: AttendeeCapabilitiesTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: AttendeeIdItemTypeDef](./type_defs.md#attendeeiditemtypedef) 
+2. See [:material-code-braces: AttendeeCapabilitiesTypeDef](./type_defs.md#attendeecapabilitiestypedef) 
 ## MeetingFeaturesConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -342,25 +482,81 @@ class MeetingFeaturesConfigurationTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: AudioFeaturesTypeDef](./type_defs.md#audiofeaturestypedef) 
-## BatchCreateAttendeeRequestRequestTypeDef
+## EmptyResponseMetadataTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_chime_sdk_meetings.type_defs import BatchCreateAttendeeRequestRequestTypeDef
+from types_aiobotocore_chime_sdk_meetings.type_defs import EmptyResponseMetadataTypeDef
 
-def get_value() -> BatchCreateAttendeeRequestRequestTypeDef:
+def get_value() -> EmptyResponseMetadataTypeDef:
     return {
-        "MeetingId": ...,
-        "Attendees": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class BatchCreateAttendeeRequestRequestTypeDef(TypedDict):
-    MeetingId: str,
-    Attendees: Sequence[CreateAttendeeRequestItemTypeDef],  # (1)
+class EmptyResponseMetadataTypeDef(TypedDict):
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
-1. See [:material-code-braces: CreateAttendeeRequestItemTypeDef](./type_defs.md#createattendeerequestitemtypedef) 
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListTagsForResourceResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import ListTagsForResourceResponseTypeDef
+
+def get_value() -> ListTagsForResourceResponseTypeDef:
+    return {
+        "Tags": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListTagsForResourceResponseTypeDef(TypedDict):
+    Tags: List[TagTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## TagResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import TagResourceRequestRequestTypeDef
+
+def get_value() -> TagResourceRequestRequestTypeDef:
+    return {
+        "ResourceARN": ...,
+        "Tags": ...,
+    }
+```
+
+```python title="Definition"
+class TagResourceRequestRequestTypeDef(TypedDict):
+    ResourceARN: str,
+    Tags: Sequence[TagTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## TranscriptionConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import TranscriptionConfigurationTypeDef
+
+def get_value() -> TranscriptionConfigurationTypeDef:
+    return {
+        "EngineTranscribeSettings": ...,
+    }
+```
+
+```python title="Definition"
+class TranscriptionConfigurationTypeDef(TypedDict):
+    EngineTranscribeSettings: NotRequired[EngineTranscribeSettingsTypeDef],  # (1)
+    EngineTranscribeMedicalSettings: NotRequired[EngineTranscribeMedicalSettingsTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: EngineTranscribeSettingsTypeDef](./type_defs.md#enginetranscribesettingstypedef) 
+2. See [:material-code-braces: EngineTranscribeMedicalSettingsTypeDef](./type_defs.md#enginetranscribemedicalsettingstypedef) 
 ## BatchCreateAttendeeResponseTypeDef
 
 ```python title="Usage Example"
@@ -404,23 +600,6 @@ class CreateAttendeeResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: AttendeeTypeDef](./type_defs.md#attendeetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## EmptyResponseMetadataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_chime_sdk_meetings.type_defs import EmptyResponseMetadataTypeDef
-
-def get_value() -> EmptyResponseMetadataTypeDef:
-    return {
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class EmptyResponseMetadataTypeDef(TypedDict):
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetAttendeeResponseTypeDef
 
 ```python title="Usage Example"
@@ -463,25 +642,45 @@ class ListAttendeesResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: AttendeeTypeDef](./type_defs.md#attendeetypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## TranscriptionConfigurationTypeDef
+## UpdateAttendeeCapabilitiesResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_chime_sdk_meetings.type_defs import TranscriptionConfigurationTypeDef
+from types_aiobotocore_chime_sdk_meetings.type_defs import UpdateAttendeeCapabilitiesResponseTypeDef
 
-def get_value() -> TranscriptionConfigurationTypeDef:
+def get_value() -> UpdateAttendeeCapabilitiesResponseTypeDef:
     return {
-        "EngineTranscribeSettings": ...,
+        "Attendee": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class TranscriptionConfigurationTypeDef(TypedDict):
-    EngineTranscribeSettings: NotRequired[EngineTranscribeSettingsTypeDef],  # (1)
-    EngineTranscribeMedicalSettings: NotRequired[EngineTranscribeMedicalSettingsTypeDef],  # (2)
+class UpdateAttendeeCapabilitiesResponseTypeDef(TypedDict):
+    Attendee: AttendeeTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: EngineTranscribeSettingsTypeDef](./type_defs.md#enginetranscribesettingstypedef) 
-2. See [:material-code-braces: EngineTranscribeMedicalSettingsTypeDef](./type_defs.md#enginetranscribemedicalsettingstypedef) 
+1. See [:material-code-braces: AttendeeTypeDef](./type_defs.md#attendeetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## BatchCreateAttendeeRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.type_defs import BatchCreateAttendeeRequestRequestTypeDef
+
+def get_value() -> BatchCreateAttendeeRequestRequestTypeDef:
+    return {
+        "MeetingId": ...,
+        "Attendees": ...,
+    }
+```
+
+```python title="Definition"
+class BatchCreateAttendeeRequestRequestTypeDef(TypedDict):
+    MeetingId: str,
+    Attendees: Sequence[CreateAttendeeRequestItemTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: CreateAttendeeRequestItemTypeDef](./type_defs.md#createattendeerequestitemtypedef) 
 ## CreateMeetingRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -503,10 +702,14 @@ class CreateMeetingRequestRequestTypeDef(TypedDict):
     MeetingHostId: NotRequired[str],
     NotificationsConfiguration: NotRequired[NotificationsConfigurationTypeDef],  # (1)
     MeetingFeatures: NotRequired[MeetingFeaturesConfigurationTypeDef],  # (2)
+    PrimaryMeetingId: NotRequired[str],
+    TenantIds: NotRequired[Sequence[str]],
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (3)
 ```
 
 1. See [:material-code-braces: NotificationsConfigurationTypeDef](./type_defs.md#notificationsconfigurationtypedef) 
 2. See [:material-code-braces: MeetingFeaturesConfigurationTypeDef](./type_defs.md#meetingfeaturesconfigurationtypedef) 
+3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## CreateMeetingWithAttendeesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -530,11 +733,15 @@ class CreateMeetingWithAttendeesRequestRequestTypeDef(TypedDict):
     MeetingHostId: NotRequired[str],
     MeetingFeatures: NotRequired[MeetingFeaturesConfigurationTypeDef],  # (2)
     NotificationsConfiguration: NotRequired[NotificationsConfigurationTypeDef],  # (3)
+    PrimaryMeetingId: NotRequired[str],
+    TenantIds: NotRequired[Sequence[str]],
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (4)
 ```
 
 1. See [:material-code-braces: CreateAttendeeRequestItemTypeDef](./type_defs.md#createattendeerequestitemtypedef) 
 2. See [:material-code-braces: MeetingFeaturesConfigurationTypeDef](./type_defs.md#meetingfeaturesconfigurationtypedef) 
 3. See [:material-code-braces: NotificationsConfigurationTypeDef](./type_defs.md#notificationsconfigurationtypedef) 
+4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## MeetingTypeDef
 
 ```python title="Usage Example"
@@ -554,6 +761,9 @@ class MeetingTypeDef(TypedDict):
     MediaRegion: NotRequired[str],
     MediaPlacement: NotRequired[MediaPlacementTypeDef],  # (1)
     MeetingFeatures: NotRequired[MeetingFeaturesConfigurationTypeDef],  # (2)
+    PrimaryMeetingId: NotRequired[str],
+    TenantIds: NotRequired[List[str]],
+    MeetingArn: NotRequired[str],
 ```
 
 1. See [:material-code-braces: MediaPlacementTypeDef](./type_defs.md#mediaplacementtypedef) 

@@ -38,6 +38,21 @@ AllowsUnencryptedObjectUploadsType = Literal[
     "UNKNOWN",
 ]
 ```
+## AvailabilityCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_macie2.literals import AvailabilityCodeType
+
+def get_value() -> AvailabilityCodeType:
+    return "AVAILABLE"
+```
+
+```python title="Definition"
+AvailabilityCodeType = Literal[
+    "AVAILABLE",
+    "UNAVAILABLE",
+]
+```
 ## BucketMetadataErrorCodeType
 
 ```python title="Usage Example"
@@ -207,6 +222,20 @@ FindingPublishingFrequencyType = Literal[
     "FIFTEEN_MINUTES",
     "ONE_HOUR",
     "SIX_HOURS",
+]
+```
+## FindingRevealedWaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_macie2.literals import FindingRevealedWaiterName
+
+def get_value() -> FindingRevealedWaiterName:
+    return "finding_revealed"
+```
+
+```python title="Definition"
+FindingRevealedWaiterName = Literal[
+    "finding_revealed",
 ]
 ```
 ## FindingStatisticsSortAttributeNameType
@@ -574,6 +603,20 @@ OrderByType = Literal[
     "DESC",
 ]
 ```
+## OriginTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_macie2.literals import OriginTypeType
+
+def get_value() -> OriginTypeType:
+    return "SENSITIVE_DATA_DISCOVERY_JOB"
+```
+
+```python title="Definition"
+OriginTypeType = Literal[
+    "SENSITIVE_DATA_DISCOVERY_JOB",
+]
+```
 ## RelationshipStatusType
 
 ```python title="Usage Example"
@@ -595,6 +638,37 @@ RelationshipStatusType = Literal[
     "RegionDisabled",
     "Removed",
     "Resigned",
+]
+```
+## RevealRequestStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_macie2.literals import RevealRequestStatusType
+
+def get_value() -> RevealRequestStatusType:
+    return "ERROR"
+```
+
+```python title="Definition"
+RevealRequestStatusType = Literal[
+    "ERROR",
+    "PROCESSING",
+    "SUCCESS",
+]
+```
+## RevealStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_macie2.literals import RevealStatusType
+
+def get_value() -> RevealStatusType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+RevealStatusType = Literal[
+    "DISABLED",
+    "ENABLED",
 ]
 ```
 ## ScopeFilterKeyType
@@ -809,6 +883,24 @@ TypeType = Literal[
     "NONE",
 ]
 ```
+## UnavailabilityReasonCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_macie2.literals import UnavailabilityReasonCodeType
+
+def get_value() -> UnavailabilityReasonCodeType:
+    return "INVALID_CLASSIFICATION_RESULT"
+```
+
+```python title="Definition"
+UnavailabilityReasonCodeType = Literal[
+    "INVALID_CLASSIFICATION_RESULT",
+    "OBJECT_EXCEEDS_SIZE_QUOTA",
+    "OBJECT_UNAVAILABLE",
+    "UNSUPPORTED_FINDING_TYPE",
+    "UNSUPPORTED_OBJECT_TYPE",
+]
+```
 ## UnitType
 
 ```python title="Usage Example"
@@ -965,6 +1057,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -972,6 +1065,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1004,6 +1098,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -1040,6 +1135,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1053,6 +1149,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -1086,6 +1183,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1105,12 +1203,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1154,8 +1254,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -1166,11 +1268,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1216,6 +1320,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -1283,6 +1388,20 @@ PaginatorName = Literal[
     "list_members",
     "list_organization_admin_accounts",
     "search_resources",
+]
+```
+## WaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_macie2.literals import WaiterName
+
+def get_value() -> WaiterName:
+    return "finding_revealed"
+```
+
+```python title="Definition"
+WaiterName = Literal[
+    "finding_revealed",
 ]
 ```
 ## RegionName

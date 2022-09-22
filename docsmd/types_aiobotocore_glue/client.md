@@ -46,6 +46,7 @@ async with session.client("glue") as client:
         client.GlueEncryptionException,
         client.IdempotentParameterMismatchException,
         client.IllegalBlueprintStateException,
+        client.IllegalSessionStateException,
         client.IllegalWorkflowStateException,
         client.InternalServiceException,
         client.InvalidInputException,
@@ -302,6 +303,35 @@ parent.batch_get_crawlers(**kwargs)
 ```
 
 1. See [:material-code-braces: BatchGetCrawlersRequestRequestTypeDef](./type_defs.md#batchgetcrawlersrequestrequesttypedef) 
+
+### batch\_get\_custom\_entity\_types
+
+Retrieves the details for the custom patterns specified by a list of names.
+
+Type annotations and code completion for `#!python session.client("glue").batch_get_custom_entity_types` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_get_custom_entity_types)
+
+```python title="Method definition"
+await def batch_get_custom_entity_types(
+    self,
+    *,
+    Names: Sequence[str],
+) -> BatchGetCustomEntityTypesResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: BatchGetCustomEntityTypesResponseTypeDef](./type_defs.md#batchgetcustomentitytypesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: BatchGetCustomEntityTypesRequestRequestTypeDef = {  # (1)
+    "Names": ...,
+}
+
+parent.batch_get_custom_entity_types(**kwargs)
+```
+
+1. See [:material-code-braces: BatchGetCustomEntityTypesRequestRequestTypeDef](./type_defs.md#batchgetcustomentitytypesrequestrequesttypedef) 
 
 ### batch\_get\_dev\_endpoints
 
@@ -569,6 +599,37 @@ parent.cancel_ml_task_run(**kwargs)
 
 1. See [:material-code-braces: CancelMLTaskRunRequestRequestTypeDef](./type_defs.md#cancelmltaskrunrequestrequesttypedef) 
 
+### cancel\_statement
+
+Cancels the statement.
+
+Type annotations and code completion for `#!python session.client("glue").cancel_statement` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.cancel_statement)
+
+```python title="Method definition"
+await def cancel_statement(
+    self,
+    *,
+    SessionId: str,
+    Id: int,
+    RequestOrigin: str = ...,
+) -> Dict[str, Any]:
+    ...
+```
+
+
+
+```python title="Usage example with kwargs"
+kwargs: CancelStatementRequestRequestTypeDef = {  # (1)
+    "SessionId": ...,
+    "Id": ...,
+}
+
+parent.cancel_statement(**kwargs)
+```
+
+1. See [:material-code-braces: CancelStatementRequestRequestTypeDef](./type_defs.md#cancelstatementrequestrequesttypedef) 
+
 ### check\_schema\_version\_validity
 
 Validates the supplied schema.
@@ -600,6 +661,21 @@ parent.check_schema_version_validity(**kwargs)
 ```
 
 1. See [:material-code-braces: CheckSchemaVersionValidityInputRequestTypeDef](./type_defs.md#checkschemaversionvalidityinputrequesttypedef) 
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("glue").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
 
 ### create\_blueprint
 
@@ -750,6 +826,39 @@ parent.create_crawler(**kwargs)
 
 1. See [:material-code-braces: CreateCrawlerRequestRequestTypeDef](./type_defs.md#createcrawlerrequestrequesttypedef) 
 
+### create\_custom\_entity\_type
+
+Creates a custom pattern that is used to detect sensitive data across the
+columns and rows of your structured data.
+
+Type annotations and code completion for `#!python session.client("glue").create_custom_entity_type` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_custom_entity_type)
+
+```python title="Method definition"
+await def create_custom_entity_type(
+    self,
+    *,
+    Name: str,
+    RegexString: str,
+    ContextWords: Sequence[str] = ...,
+) -> CreateCustomEntityTypeResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: CreateCustomEntityTypeResponseTypeDef](./type_defs.md#createcustomentitytyperesponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateCustomEntityTypeRequestRequestTypeDef = {  # (1)
+    "Name": ...,
+    "RegexString": ...,
+}
+
+parent.create_custom_entity_type(**kwargs)
+```
+
+1. See [:material-code-braces: CreateCustomEntityTypeRequestRequestTypeDef](./type_defs.md#createcustomentitytyperequestrequesttypedef) 
+
 ### create\_database
 
 Creates a new database in a Data Catalog.
@@ -763,6 +872,7 @@ await def create_database(
     *,
     DatabaseInput: DatabaseInputTypeDef,  # (1)
     CatalogId: str = ...,
+    Tags: Mapping[str, str] = ...,
 ) -> Dict[str, Any]:
     ...
 ```
@@ -855,7 +965,9 @@ await def create_job(
     GlueVersion: str = ...,
     NumberOfWorkers: int = ...,
     WorkerType: WorkerTypeType = ...,  # (5)
-) -> CreateJobResponseTypeDef:  # (6)
+    CodeGenConfigurationNodes: Mapping[str, CodeGenConfigurationNodeTypeDef] = ...,  # (6)
+    ExecutionClass: ExecutionClassType = ...,  # (7)
+) -> CreateJobResponseTypeDef:  # (8)
     ...
 ```
 
@@ -864,7 +976,9 @@ await def create_job(
 3. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
 4. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
 5. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
-6. See [:material-code-braces: CreateJobResponseTypeDef](./type_defs.md#createjobresponsetypedef) 
+6. See [:material-code-braces: CodeGenConfigurationNodeTypeDef](./type_defs.md#codegenconfigurationnodetypedef) 
+7. See [:material-code-brackets: ExecutionClassType](./literals.md#executionclasstype) 
+8. See [:material-code-braces: CreateJobResponseTypeDef](./type_defs.md#createjobresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1130,6 +1244,54 @@ parent.create_security_configuration(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateSecurityConfigurationRequestRequestTypeDef](./type_defs.md#createsecurityconfigurationrequestrequesttypedef) 
+
+### create\_session
+
+Creates a new session.
+
+Type annotations and code completion for `#!python session.client("glue").create_session` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_session)
+
+```python title="Method definition"
+await def create_session(
+    self,
+    *,
+    Id: str,
+    Role: str,
+    Command: SessionCommandTypeDef,  # (1)
+    Description: str = ...,
+    Timeout: int = ...,
+    IdleTimeout: int = ...,
+    DefaultArguments: Mapping[str, str] = ...,
+    Connections: ConnectionsListTypeDef = ...,  # (2)
+    MaxCapacity: float = ...,
+    NumberOfWorkers: int = ...,
+    WorkerType: WorkerTypeType = ...,  # (3)
+    SecurityConfiguration: str = ...,
+    GlueVersion: str = ...,
+    Tags: Mapping[str, str] = ...,
+    RequestOrigin: str = ...,
+) -> CreateSessionResponseTypeDef:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: SessionCommandTypeDef](./type_defs.md#sessioncommandtypedef) 
+2. See [:material-code-braces: ConnectionsListTypeDef](./type_defs.md#connectionslisttypedef) 
+3. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
+4. See [:material-code-braces: CreateSessionResponseTypeDef](./type_defs.md#createsessionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateSessionRequestRequestTypeDef = {  # (1)
+    "Id": ...,
+    "Role": ...,
+    "Command": ...,
+}
+
+parent.create_session(**kwargs)
+```
+
+1. See [:material-code-braces: CreateSessionRequestRequestTypeDef](./type_defs.md#createsessionrequestrequesttypedef) 
 
 ### create\_table
 
@@ -1457,6 +1619,35 @@ parent.delete_crawler(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteCrawlerRequestRequestTypeDef](./type_defs.md#deletecrawlerrequestrequesttypedef) 
+
+### delete\_custom\_entity\_type
+
+Deletes a custom pattern by specifying its name.
+
+Type annotations and code completion for `#!python session.client("glue").delete_custom_entity_type` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_custom_entity_type)
+
+```python title="Method definition"
+await def delete_custom_entity_type(
+    self,
+    *,
+    Name: str,
+) -> DeleteCustomEntityTypeResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteCustomEntityTypeResponseTypeDef](./type_defs.md#deletecustomentitytyperesponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteCustomEntityTypeRequestRequestTypeDef = {  # (1)
+    "Name": ...,
+}
+
+parent.delete_custom_entity_type(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteCustomEntityTypeRequestRequestTypeDef](./type_defs.md#deletecustomentitytyperequestrequesttypedef) 
 
 ### delete\_database
 
@@ -1787,6 +1978,36 @@ parent.delete_security_configuration(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteSecurityConfigurationRequestRequestTypeDef](./type_defs.md#deletesecurityconfigurationrequestrequesttypedef) 
+
+### delete\_session
+
+Deletes the session.
+
+Type annotations and code completion for `#!python session.client("glue").delete_session` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_session)
+
+```python title="Method definition"
+await def delete_session(
+    self,
+    *,
+    Id: str,
+    RequestOrigin: str = ...,
+) -> DeleteSessionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteSessionResponseTypeDef](./type_defs.md#deletesessionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteSessionRequestRequestTypeDef = {  # (1)
+    "Id": ...,
+}
+
+parent.delete_session(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteSessionRequestRequestTypeDef](./type_defs.md#deletesessionrequestrequesttypedef) 
 
 ### delete\_table
 
@@ -2366,6 +2587,35 @@ parent.get_crawlers(**kwargs)
 ```
 
 1. See [:material-code-braces: GetCrawlersRequestRequestTypeDef](./type_defs.md#getcrawlersrequestrequesttypedef) 
+
+### get\_custom\_entity\_type
+
+Retrieves the details of a custom pattern by specifying its name.
+
+Type annotations and code completion for `#!python session.client("glue").get_custom_entity_type` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_custom_entity_type)
+
+```python title="Method definition"
+await def get_custom_entity_type(
+    self,
+    *,
+    Name: str,
+) -> GetCustomEntityTypeResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetCustomEntityTypeResponseTypeDef](./type_defs.md#getcustomentitytyperesponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetCustomEntityTypeRequestRequestTypeDef = {  # (1)
+    "Name": ...,
+}
+
+parent.get_custom_entity_type(**kwargs)
+```
+
+1. See [:material-code-braces: GetCustomEntityTypeRequestRequestTypeDef](./type_defs.md#getcustomentitytyperequestrequesttypedef) 
 
 ### get\_data\_catalog\_encryption\_settings
 
@@ -3295,6 +3545,68 @@ parent.get_security_configurations(**kwargs)
 
 1. See [:material-code-braces: GetSecurityConfigurationsRequestRequestTypeDef](./type_defs.md#getsecurityconfigurationsrequestrequesttypedef) 
 
+### get\_session
+
+Retrieves the session.
+
+Type annotations and code completion for `#!python session.client("glue").get_session` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_session)
+
+```python title="Method definition"
+await def get_session(
+    self,
+    *,
+    Id: str,
+    RequestOrigin: str = ...,
+) -> GetSessionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetSessionResponseTypeDef](./type_defs.md#getsessionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetSessionRequestRequestTypeDef = {  # (1)
+    "Id": ...,
+}
+
+parent.get_session(**kwargs)
+```
+
+1. See [:material-code-braces: GetSessionRequestRequestTypeDef](./type_defs.md#getsessionrequestrequesttypedef) 
+
+### get\_statement
+
+Retrieves the statement.
+
+Type annotations and code completion for `#!python session.client("glue").get_statement` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_statement)
+
+```python title="Method definition"
+await def get_statement(
+    self,
+    *,
+    SessionId: str,
+    Id: int,
+    RequestOrigin: str = ...,
+) -> GetStatementResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetStatementResponseTypeDef](./type_defs.md#getstatementresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetStatementRequestRequestTypeDef = {  # (1)
+    "SessionId": ...,
+    "Id": ...,
+}
+
+parent.get_statement(**kwargs)
+```
+
+1. See [:material-code-braces: GetStatementRequestRequestTypeDef](./type_defs.md#getstatementrequestrequesttypedef) 
+
 ### get\_table
 
 Retrieves the `Table` definition in a Data Catalog for a specified table.
@@ -3926,6 +4238,69 @@ parent.list_crawlers(**kwargs)
 
 1. See [:material-code-braces: ListCrawlersRequestRequestTypeDef](./type_defs.md#listcrawlersrequestrequesttypedef) 
 
+### list\_crawls
+
+Returns all the crawls of a specified crawler.
+
+Type annotations and code completion for `#!python session.client("glue").list_crawls` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_crawls)
+
+```python title="Method definition"
+await def list_crawls(
+    self,
+    *,
+    CrawlerName: str,
+    MaxResults: int = ...,
+    Filters: Sequence[CrawlsFilterTypeDef] = ...,  # (1)
+    NextToken: str = ...,
+) -> ListCrawlsResponseTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: CrawlsFilterTypeDef](./type_defs.md#crawlsfiltertypedef) 
+2. See [:material-code-braces: ListCrawlsResponseTypeDef](./type_defs.md#listcrawlsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListCrawlsRequestRequestTypeDef = {  # (1)
+    "CrawlerName": ...,
+}
+
+parent.list_crawls(**kwargs)
+```
+
+1. See [:material-code-braces: ListCrawlsRequestRequestTypeDef](./type_defs.md#listcrawlsrequestrequesttypedef) 
+
+### list\_custom\_entity\_types
+
+Lists all the custom patterns that have been created.
+
+Type annotations and code completion for `#!python session.client("glue").list_custom_entity_types` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_custom_entity_types)
+
+```python title="Method definition"
+await def list_custom_entity_types(
+    self,
+    *,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> ListCustomEntityTypesResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListCustomEntityTypesResponseTypeDef](./type_defs.md#listcustomentitytypesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListCustomEntityTypesRequestRequestTypeDef = {  # (1)
+    "NextToken": ...,
+}
+
+parent.list_custom_entity_types(**kwargs)
+```
+
+1. See [:material-code-braces: ListCustomEntityTypesRequestRequestTypeDef](./type_defs.md#listcustomentitytypesrequestrequesttypedef) 
+
 ### list\_dev\_endpoints
 
 Retrieves the names of all `DevEndpoint` resources in this Amazon Web Services
@@ -4122,6 +4497,69 @@ parent.list_schemas(**kwargs)
 ```
 
 1. See [:material-code-braces: ListSchemasInputRequestTypeDef](./type_defs.md#listschemasinputrequesttypedef) 
+
+### list\_sessions
+
+Retrieve a list of sessions.
+
+Type annotations and code completion for `#!python session.client("glue").list_sessions` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_sessions)
+
+```python title="Method definition"
+await def list_sessions(
+    self,
+    *,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+    Tags: Mapping[str, str] = ...,
+    RequestOrigin: str = ...,
+) -> ListSessionsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListSessionsResponseTypeDef](./type_defs.md#listsessionsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListSessionsRequestRequestTypeDef = {  # (1)
+    "NextToken": ...,
+}
+
+parent.list_sessions(**kwargs)
+```
+
+1. See [:material-code-braces: ListSessionsRequestRequestTypeDef](./type_defs.md#listsessionsrequestrequesttypedef) 
+
+### list\_statements
+
+Lists statements for the session.
+
+Type annotations and code completion for `#!python session.client("glue").list_statements` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_statements)
+
+```python title="Method definition"
+await def list_statements(
+    self,
+    *,
+    SessionId: str,
+    RequestOrigin: str = ...,
+    NextToken: str = ...,
+) -> ListStatementsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListStatementsResponseTypeDef](./type_defs.md#liststatementsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListStatementsRequestRequestTypeDef = {  # (1)
+    "SessionId": ...,
+}
+
+parent.list_statements(**kwargs)
+```
+
+1. See [:material-code-braces: ListStatementsRequestRequestTypeDef](./type_defs.md#liststatementsrequestrequesttypedef) 
 
 ### list\_triggers
 
@@ -4487,6 +4925,38 @@ parent.resume_workflow_run(**kwargs)
 
 1. See [:material-code-braces: ResumeWorkflowRunRequestRequestTypeDef](./type_defs.md#resumeworkflowrunrequestrequesttypedef) 
 
+### run\_statement
+
+Executes the statement.
+
+Type annotations and code completion for `#!python session.client("glue").run_statement` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.run_statement)
+
+```python title="Method definition"
+await def run_statement(
+    self,
+    *,
+    SessionId: str,
+    Code: str,
+    RequestOrigin: str = ...,
+) -> RunStatementResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: RunStatementResponseTypeDef](./type_defs.md#runstatementresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: RunStatementRequestRequestTypeDef = {  # (1)
+    "SessionId": ...,
+    "Code": ...,
+}
+
+parent.run_statement(**kwargs)
+```
+
+1. See [:material-code-braces: RunStatementRequestRequestTypeDef](./type_defs.md#runstatementrequestrequesttypedef) 
+
 ### search\_tables
 
 Searches a set of tables based on properties in the table metadata as well as on
@@ -4701,13 +5171,15 @@ await def start_job_run(
     NotificationProperty: NotificationPropertyTypeDef = ...,  # (1)
     WorkerType: WorkerTypeType = ...,  # (2)
     NumberOfWorkers: int = ...,
-) -> StartJobRunResponseTypeDef:  # (3)
+    ExecutionClass: ExecutionClassType = ...,  # (3)
+) -> StartJobRunResponseTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: NotificationPropertyTypeDef](./type_defs.md#notificationpropertytypedef) 
 2. See [:material-code-brackets: WorkerTypeType](./literals.md#workertypetype) 
-3. See [:material-code-braces: StartJobRunResponseTypeDef](./type_defs.md#startjobrunresponsetypedef) 
+3. See [:material-code-brackets: ExecutionClassType](./literals.md#executionclasstype) 
+4. See [:material-code-braces: StartJobRunResponseTypeDef](./type_defs.md#startjobrunresponsetypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -4896,6 +5368,36 @@ parent.stop_crawler_schedule(**kwargs)
 ```
 
 1. See [:material-code-braces: StopCrawlerScheduleRequestRequestTypeDef](./type_defs.md#stopcrawlerschedulerequestrequesttypedef) 
+
+### stop\_session
+
+Stops the session.
+
+Type annotations and code completion for `#!python session.client("glue").stop_session` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.stop_session)
+
+```python title="Method definition"
+await def stop_session(
+    self,
+    *,
+    Id: str,
+    RequestOrigin: str = ...,
+) -> StopSessionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: StopSessionResponseTypeDef](./type_defs.md#stopsessionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: StopSessionRequestRequestTypeDef = {  # (1)
+    "Id": ...,
+}
+
+parent.stop_session(**kwargs)
+```
+
+1. See [:material-code-braces: StopSessionRequestRequestTypeDef](./type_defs.md#stopsessionrequestrequesttypedef) 
 
 ### stop\_trigger
 

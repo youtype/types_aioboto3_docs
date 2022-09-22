@@ -61,6 +61,58 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListAliasesRequestListAliasesPaginateTypeDef](./type_defs.md#listaliasesrequestlistaliasespaginatetypedef) 
+## ListAvailabilityConfigurationsPaginator
+
+Type annotations and code completion for `#!python session.client("workmail").get_paginator("list_availability_configurations")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Paginator.ListAvailabilityConfigurations)
+
+```python title="Usage example"
+from aioboto3.session import Session
+
+from types_aiobotocore_workmail.paginator import ListAvailabilityConfigurationsPaginator
+
+session = Session()
+
+session = get_session()
+async with session.client("workmail") as client:  # (1)
+    paginator: ListAvailabilityConfigurationsPaginator = client.get_paginator("list_availability_configurations")  # (2)
+    async for item in paginator.paginate(...):
+        item: ListAvailabilityConfigurationsResponseTypeDef
+        print(item)  # (3)
+```
+
+1. client: [WorkMailClient](./client.md)
+2. paginator: [ListAvailabilityConfigurationsPaginator](./paginators.md#listavailabilityconfigurationspaginator)
+3. item: [:material-code-braces: ListAvailabilityConfigurationsResponseTypeDef](./type_defs.md#listavailabilityconfigurationsresponsetypedef) 
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListAvailabilityConfigurationsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    OrganizationId: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListAvailabilityConfigurationsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListAvailabilityConfigurationsResponseTypeDef](./type_defs.md#listavailabilityconfigurationsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAvailabilityConfigurationsRequestListAvailabilityConfigurationsPaginateTypeDef = {  # (1)
+    "OrganizationId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListAvailabilityConfigurationsRequestListAvailabilityConfigurationsPaginateTypeDef](./type_defs.md#listavailabilityconfigurationsrequestlistavailabilityconfigurationspaginatetypedef) 
 ## ListGroupMembersPaginator
 
 Type annotations and code completion for `#!python session.client("workmail").get_paginator("list_group_members")`.

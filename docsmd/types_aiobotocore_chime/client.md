@@ -458,6 +458,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.client("chime").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_account
 
 Creates an Amazon Chime account under the administrator's AWS account.
@@ -6121,6 +6136,48 @@ parent.update_voice_connector_group(**kwargs)
 ```
 
 1. See [:material-code-braces: UpdateVoiceConnectorGroupRequestRequestTypeDef](./type_defs.md#updatevoiceconnectorgrouprequestrequesttypedef) 
+
+### validate\_e911\_address
+
+Validates an address to be used for 911 calls made with Amazon Chime Voice
+Connectors.
+
+Type annotations and code completion for `#!python session.client("chime").validate_e911_address` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.validate_e911_address)
+
+```python title="Method definition"
+await def validate_e911_address(
+    self,
+    *,
+    AwsAccountId: str,
+    StreetNumber: str,
+    StreetInfo: str,
+    City: str,
+    State: str,
+    Country: str,
+    PostalCode: str,
+) -> ValidateE911AddressResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ValidateE911AddressResponseTypeDef](./type_defs.md#validatee911addressresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ValidateE911AddressRequestRequestTypeDef = {  # (1)
+    "AwsAccountId": ...,
+    "StreetNumber": ...,
+    "StreetInfo": ...,
+    "City": ...,
+    "State": ...,
+    "Country": ...,
+    "PostalCode": ...,
+}
+
+parent.validate_e911_address(**kwargs)
+```
+
+1. See [:material-code-braces: ValidateE911AddressRequestRequestTypeDef](./type_defs.md#validatee911addressrequestrequesttypedef) 
 
 ### \_\_aenter\_\_
 

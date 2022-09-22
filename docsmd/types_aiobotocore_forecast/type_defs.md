@@ -7,6 +7,27 @@
     Auto-generated documentation for [ForecastService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService)
     type annotations stubs module [types-aiobotocore-forecast](https://pypi.org/project/types-aiobotocore-forecast/).
 
+## ActionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ActionTypeDef
+
+def get_value() -> ActionTypeDef:
+    return {
+        "AttributeName": ...,
+        "Operation": ...,
+        "Value": ...,
+    }
+```
+
+```python title="Definition"
+class ActionTypeDef(TypedDict):
+    AttributeName: str,
+    Operation: OperationType,  # (1)
+    Value: float,
+```
+
+1. See [:material-code-brackets: OperationType](./literals.md#operationtype) 
 ## AdditionalDatasetTypeDef
 
 ```python title="Usage Example"
@@ -40,6 +61,23 @@ def get_value() -> AttributeConfigTypeDef:
 class AttributeConfigTypeDef(TypedDict):
     AttributeName: str,
     Transformations: Mapping[str, str],
+```
+
+## BaselineMetricTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import BaselineMetricTypeDef
+
+def get_value() -> BaselineMetricTypeDef:
+    return {
+        "Name": ...,
+    }
+```
+
+```python title="Definition"
+class BaselineMetricTypeDef(TypedDict):
+    Name: NotRequired[str],
+    Value: NotRequired[float],
 ```
 
 ## CategoricalParameterRangeTypeDef
@@ -100,6 +138,22 @@ class EncryptionConfigTypeDef(TypedDict):
     KMSKeyArn: str,
 ```
 
+## MonitorConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import MonitorConfigTypeDef
+
+def get_value() -> MonitorConfigTypeDef:
+    return {
+        "MonitorName": ...,
+    }
+```
+
+```python title="Definition"
+class MonitorConfigTypeDef(TypedDict):
+    MonitorName: str,
+```
+
 ## TagTypeDef
 
 ```python title="Usage Example"
@@ -118,6 +172,27 @@ class TagTypeDef(TypedDict):
     Value: str,
 ```
 
+## TimeAlignmentBoundaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import TimeAlignmentBoundaryTypeDef
+
+def get_value() -> TimeAlignmentBoundaryTypeDef:
+    return {
+        "Month": ...,
+    }
+```
+
+```python title="Definition"
+class TimeAlignmentBoundaryTypeDef(TypedDict):
+    Month: NotRequired[MonthType],  # (1)
+    DayOfMonth: NotRequired[int],
+    DayOfWeek: NotRequired[DayOfWeekType],  # (2)
+    Hour: NotRequired[int],
+```
+
+1. See [:material-code-brackets: MonthType](./literals.md#monthtype) 
+2. See [:material-code-brackets: DayOfWeekType](./literals.md#dayofweektype) 
 ## ResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -352,6 +427,22 @@ class DeleteForecastRequestRequestTypeDef(TypedDict):
     ForecastArn: str,
 ```
 
+## DeleteMonitorRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DeleteMonitorRequestRequestTypeDef
+
+def get_value() -> DeleteMonitorRequestRequestTypeDef:
+    return {
+        "MonitorArn": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteMonitorRequestRequestTypeDef(TypedDict):
+    MonitorArn: str,
+```
+
 ## DeletePredictorBacktestExportJobRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -400,6 +491,54 @@ class DeleteResourceTreeRequestRequestTypeDef(TypedDict):
     ResourceArn: str,
 ```
 
+## DeleteWhatIfAnalysisRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DeleteWhatIfAnalysisRequestRequestTypeDef
+
+def get_value() -> DeleteWhatIfAnalysisRequestRequestTypeDef:
+    return {
+        "WhatIfAnalysisArn": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteWhatIfAnalysisRequestRequestTypeDef(TypedDict):
+    WhatIfAnalysisArn: str,
+```
+
+## DeleteWhatIfForecastExportRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DeleteWhatIfForecastExportRequestRequestTypeDef
+
+def get_value() -> DeleteWhatIfForecastExportRequestRequestTypeDef:
+    return {
+        "WhatIfForecastExportArn": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteWhatIfForecastExportRequestRequestTypeDef(TypedDict):
+    WhatIfForecastExportArn: str,
+```
+
+## DeleteWhatIfForecastRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DeleteWhatIfForecastRequestRequestTypeDef
+
+def get_value() -> DeleteWhatIfForecastRequestRequestTypeDef:
+    return {
+        "WhatIfForecastArn": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteWhatIfForecastRequestRequestTypeDef(TypedDict):
+    WhatIfForecastArn: str,
+```
+
 ## DescribeAutoPredictorRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -430,6 +569,23 @@ def get_value() -> ExplainabilityInfoTypeDef:
 ```python title="Definition"
 class ExplainabilityInfoTypeDef(TypedDict):
     ExplainabilityArn: NotRequired[str],
+    Status: NotRequired[str],
+```
+
+## MonitorInfoTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import MonitorInfoTypeDef
+
+def get_value() -> MonitorInfoTypeDef:
+    return {
+        "MonitorArn": ...,
+    }
+```
+
+```python title="Definition"
+class MonitorInfoTypeDef(TypedDict):
+    MonitorArn: NotRequired[str],
     Status: NotRequired[str],
 ```
 
@@ -590,6 +746,22 @@ class DescribeForecastRequestRequestTypeDef(TypedDict):
     ForecastArn: str,
 ```
 
+## DescribeMonitorRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeMonitorRequestRequestTypeDef
+
+def get_value() -> DescribeMonitorRequestRequestTypeDef:
+    return {
+        "MonitorArn": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeMonitorRequestRequestTypeDef(TypedDict):
+    MonitorArn: str,
+```
+
 ## DescribePredictorBacktestExportJobRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -620,6 +792,54 @@ def get_value() -> DescribePredictorRequestRequestTypeDef:
 ```python title="Definition"
 class DescribePredictorRequestRequestTypeDef(TypedDict):
     PredictorArn: str,
+```
+
+## DescribeWhatIfAnalysisRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeWhatIfAnalysisRequestRequestTypeDef
+
+def get_value() -> DescribeWhatIfAnalysisRequestRequestTypeDef:
+    return {
+        "WhatIfAnalysisArn": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeWhatIfAnalysisRequestRequestTypeDef(TypedDict):
+    WhatIfAnalysisArn: str,
+```
+
+## DescribeWhatIfForecastExportRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeWhatIfForecastExportRequestRequestTypeDef
+
+def get_value() -> DescribeWhatIfForecastExportRequestRequestTypeDef:
+    return {
+        "WhatIfForecastExportArn": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeWhatIfForecastExportRequestRequestTypeDef(TypedDict):
+    WhatIfForecastExportArn: str,
+```
+
+## DescribeWhatIfForecastRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeWhatIfForecastRequestRequestTypeDef
+
+def get_value() -> DescribeWhatIfForecastRequestRequestTypeDef:
+    return {
+        "WhatIfForecastArn": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeWhatIfForecastRequestRequestTypeDef(TypedDict):
+    WhatIfForecastArn: str,
 ```
 
 ## ErrorMetricTypeDef
@@ -813,6 +1033,27 @@ class ListDatasetsRequestRequestTypeDef(TypedDict):
     MaxResults: NotRequired[int],
 ```
 
+## MonitorSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import MonitorSummaryTypeDef
+
+def get_value() -> MonitorSummaryTypeDef:
+    return {
+        "MonitorArn": ...,
+    }
+```
+
+```python title="Definition"
+class MonitorSummaryTypeDef(TypedDict):
+    MonitorArn: NotRequired[str],
+    MonitorName: NotRequired[str],
+    ResourceArn: NotRequired[str],
+    Status: NotRequired[str],
+    CreationTime: NotRequired[datetime],
+    LastModificationTime: NotRequired[datetime],
+```
+
 ## ListTagsForResourceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -827,6 +1068,67 @@ def get_value() -> ListTagsForResourceRequestRequestTypeDef:
 ```python title="Definition"
 class ListTagsForResourceRequestRequestTypeDef(TypedDict):
     ResourceArn: str,
+```
+
+## WhatIfAnalysisSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import WhatIfAnalysisSummaryTypeDef
+
+def get_value() -> WhatIfAnalysisSummaryTypeDef:
+    return {
+        "WhatIfAnalysisArn": ...,
+    }
+```
+
+```python title="Definition"
+class WhatIfAnalysisSummaryTypeDef(TypedDict):
+    WhatIfAnalysisArn: NotRequired[str],
+    WhatIfAnalysisName: NotRequired[str],
+    ForecastArn: NotRequired[str],
+    Status: NotRequired[str],
+    Message: NotRequired[str],
+    CreationTime: NotRequired[datetime],
+    LastModificationTime: NotRequired[datetime],
+```
+
+## WhatIfForecastSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import WhatIfForecastSummaryTypeDef
+
+def get_value() -> WhatIfForecastSummaryTypeDef:
+    return {
+        "WhatIfForecastArn": ...,
+    }
+```
+
+```python title="Definition"
+class WhatIfForecastSummaryTypeDef(TypedDict):
+    WhatIfForecastArn: NotRequired[str],
+    WhatIfForecastName: NotRequired[str],
+    WhatIfAnalysisArn: NotRequired[str],
+    Status: NotRequired[str],
+    Message: NotRequired[str],
+    CreationTime: NotRequired[datetime],
+    LastModificationTime: NotRequired[datetime],
+```
+
+## MetricResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import MetricResultTypeDef
+
+def get_value() -> MetricResultTypeDef:
+    return {
+        "MetricName": ...,
+    }
+```
+
+```python title="Definition"
+class MetricResultTypeDef(TypedDict):
+    MetricName: NotRequired[str],
+    MetricValue: NotRequired[float],
 ```
 
 ## WeightedQuantileLossTypeDef
@@ -846,6 +1148,41 @@ class WeightedQuantileLossTypeDef(TypedDict):
     LossValue: NotRequired[float],
 ```
 
+## MonitorDataSourceTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import MonitorDataSourceTypeDef
+
+def get_value() -> MonitorDataSourceTypeDef:
+    return {
+        "DatasetImportJobArn": ...,
+    }
+```
+
+```python title="Definition"
+class MonitorDataSourceTypeDef(TypedDict):
+    DatasetImportJobArn: NotRequired[str],
+    ForecastArn: NotRequired[str],
+    PredictorArn: NotRequired[str],
+```
+
+## PredictorEventTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import PredictorEventTypeDef
+
+def get_value() -> PredictorEventTypeDef:
+    return {
+        "Detail": ...,
+    }
+```
+
+```python title="Definition"
+class PredictorEventTypeDef(TypedDict):
+    Detail: NotRequired[str],
+    Datetime: NotRequired[datetime],
+```
+
 ## TestWindowSummaryTypeDef
 
 ```python title="Usage Example"
@@ -863,6 +1200,22 @@ class TestWindowSummaryTypeDef(TypedDict):
     TestWindowEnd: NotRequired[datetime],
     Status: NotRequired[str],
     Message: NotRequired[str],
+```
+
+## ResumeResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ResumeResourceRequestRequestTypeDef
+
+def get_value() -> ResumeResourceRequestRequestTypeDef:
+    return {
+        "ResourceArn": ...,
+    }
+```
+
+```python title="Definition"
+class ResumeResourceRequestRequestTypeDef(TypedDict):
+    ResourceArn: str,
 ```
 
 ## SchemaAttributeTypeDef
@@ -899,6 +1252,27 @@ class StopResourceRequestRequestTypeDef(TypedDict):
     ResourceArn: str,
 ```
 
+## TimeSeriesConditionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import TimeSeriesConditionTypeDef
+
+def get_value() -> TimeSeriesConditionTypeDef:
+    return {
+        "AttributeName": ...,
+        "AttributeValue": ...,
+        "Condition": ...,
+    }
+```
+
+```python title="Definition"
+class TimeSeriesConditionTypeDef(TypedDict):
+    AttributeName: str,
+    AttributeValue: str,
+    Condition: ConditionType,  # (1)
+```
+
+1. See [:material-code-brackets: ConditionType](./literals.md#conditiontype) 
 ## UntagResourceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -955,6 +1329,23 @@ class DataConfigTypeDef(TypedDict):
 
 1. See [:material-code-braces: AttributeConfigTypeDef](./type_defs.md#attributeconfigtypedef) 
 2. See [:material-code-braces: AdditionalDatasetTypeDef](./type_defs.md#additionaldatasettypedef) 
+## PredictorBaselineTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import PredictorBaselineTypeDef
+
+def get_value() -> PredictorBaselineTypeDef:
+    return {
+        "BaselineMetrics": ...,
+    }
+```
+
+```python title="Definition"
+class PredictorBaselineTypeDef(TypedDict):
+    BaselineMetrics: NotRequired[List[BaselineMetricTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: BaselineMetricTypeDef](./type_defs.md#baselinemetrictypedef) 
 ## CreateDatasetGroupRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -977,23 +1368,22 @@ class CreateDatasetGroupRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-brackets: DomainType](./literals.md#domaintype) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-## CreateForecastRequestRequestTypeDef
+## CreateMonitorRequestRequestTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_forecast.type_defs import CreateForecastRequestRequestTypeDef
+from types_aiobotocore_forecast.type_defs import CreateMonitorRequestRequestTypeDef
 
-def get_value() -> CreateForecastRequestRequestTypeDef:
+def get_value() -> CreateMonitorRequestRequestTypeDef:
     return {
-        "ForecastName": ...,
-        "PredictorArn": ...,
+        "MonitorName": ...,
+        "ResourceArn": ...,
     }
 ```
 
 ```python title="Definition"
-class CreateForecastRequestRequestTypeDef(TypedDict):
-    ForecastName: str,
-    PredictorArn: str,
-    ForecastTypes: NotRequired[Sequence[str]],
+class CreateMonitorRequestRequestTypeDef(TypedDict):
+    MonitorName: str,
+    ResourceArn: str,
     Tags: NotRequired[Sequence[TagTypeDef]],  # (1)
 ```
 
@@ -1169,6 +1559,25 @@ class CreateForecastResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateMonitorResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import CreateMonitorResponseTypeDef
+
+def get_value() -> CreateMonitorResponseTypeDef:
+    return {
+        "MonitorArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateMonitorResponseTypeDef(TypedDict):
+    MonitorArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreatePredictorBacktestExportJobResponseTypeDef
 
 ```python title="Usage Example"
@@ -1207,6 +1616,63 @@ class CreatePredictorResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateWhatIfAnalysisResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import CreateWhatIfAnalysisResponseTypeDef
+
+def get_value() -> CreateWhatIfAnalysisResponseTypeDef:
+    return {
+        "WhatIfAnalysisArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWhatIfAnalysisResponseTypeDef(TypedDict):
+    WhatIfAnalysisArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateWhatIfForecastExportResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import CreateWhatIfForecastExportResponseTypeDef
+
+def get_value() -> CreateWhatIfForecastExportResponseTypeDef:
+    return {
+        "WhatIfForecastExportArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWhatIfForecastExportResponseTypeDef(TypedDict):
+    WhatIfForecastExportArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateWhatIfForecastResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import CreateWhatIfForecastResponseTypeDef
+
+def get_value() -> CreateWhatIfForecastResponseTypeDef:
+    return {
+        "WhatIfForecastArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWhatIfForecastResponseTypeDef(TypedDict):
+    WhatIfForecastArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeDatasetGroupResponseTypeDef
 
 ```python title="Usage Example"
@@ -1239,43 +1705,6 @@ class DescribeDatasetGroupResponseTypeDef(TypedDict):
 
 1. See [:material-code-brackets: DomainType](./literals.md#domaintype) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DescribeForecastResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_forecast.type_defs import DescribeForecastResponseTypeDef
-
-def get_value() -> DescribeForecastResponseTypeDef:
-    return {
-        "ForecastArn": ...,
-        "ForecastName": ...,
-        "ForecastTypes": ...,
-        "PredictorArn": ...,
-        "DatasetGroupArn": ...,
-        "EstimatedTimeRemainingInMinutes": ...,
-        "Status": ...,
-        "Message": ...,
-        "CreationTime": ...,
-        "LastModificationTime": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeForecastResponseTypeDef(TypedDict):
-    ForecastArn: str,
-    ForecastName: str,
-    ForecastTypes: List[str],
-    PredictorArn: str,
-    DatasetGroupArn: str,
-    EstimatedTimeRemainingInMinutes: int,
-    Status: str,
-    Message: str,
-    CreationTime: datetime,
-    LastModificationTime: datetime,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## EmptyResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -1553,6 +1982,45 @@ class ListForecastsRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## ListMonitorEvaluationsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListMonitorEvaluationsRequestRequestTypeDef
+
+def get_value() -> ListMonitorEvaluationsRequestRequestTypeDef:
+    return {
+        "MonitorArn": ...,
+    }
+```
+
+```python title="Definition"
+class ListMonitorEvaluationsRequestRequestTypeDef(TypedDict):
+    MonitorArn: str,
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## ListMonitorsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListMonitorsRequestRequestTypeDef
+
+def get_value() -> ListMonitorsRequestRequestTypeDef:
+    return {
+        "NextToken": ...,
+    }
+```
+
+```python title="Definition"
+class ListMonitorsRequestRequestTypeDef(TypedDict):
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
 ## ListPredictorBacktestExportJobsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1585,6 +2053,63 @@ def get_value() -> ListPredictorsRequestRequestTypeDef:
 
 ```python title="Definition"
 class ListPredictorsRequestRequestTypeDef(TypedDict):
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## ListWhatIfAnalysesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfAnalysesRequestRequestTypeDef
+
+def get_value() -> ListWhatIfAnalysesRequestRequestTypeDef:
+    return {
+        "NextToken": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfAnalysesRequestRequestTypeDef(TypedDict):
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## ListWhatIfForecastExportsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfForecastExportsRequestRequestTypeDef
+
+def get_value() -> ListWhatIfForecastExportsRequestRequestTypeDef:
+    return {
+        "NextToken": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfForecastExportsRequestRequestTypeDef(TypedDict):
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+## ListWhatIfForecastsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfForecastsRequestRequestTypeDef
+
+def get_value() -> ListWhatIfForecastsRequestRequestTypeDef:
+    return {
+        "NextToken": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfForecastsRequestRequestTypeDef(TypedDict):
     NextToken: NotRequired[str],
     MaxResults: NotRequired[int],
     Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
@@ -1705,6 +2230,44 @@ class ListDatasetsRequestListDatasetsPaginateTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListExplainabilitiesRequestListExplainabilitiesPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListExplainabilitiesRequestListExplainabilitiesPaginateTypeDef
+
+def get_value() -> ListExplainabilitiesRequestListExplainabilitiesPaginateTypeDef:
+    return {
+        "Filters": ...,
+    }
+```
+
+```python title="Definition"
+class ListExplainabilitiesRequestListExplainabilitiesPaginateTypeDef(TypedDict):
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListExplainabilityExportsRequestListExplainabilityExportsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListExplainabilityExportsRequestListExplainabilityExportsPaginateTypeDef
+
+def get_value() -> ListExplainabilityExportsRequestListExplainabilityExportsPaginateTypeDef:
+    return {
+        "Filters": ...,
+    }
+```
+
+```python title="Definition"
+class ListExplainabilityExportsRequestListExplainabilityExportsPaginateTypeDef(TypedDict):
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
 ## ListForecastExportJobsRequestListForecastExportJobsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -1737,6 +2300,45 @@ def get_value() -> ListForecastsRequestListForecastsPaginateTypeDef:
 
 ```python title="Definition"
 class ListForecastsRequestListForecastsPaginateTypeDef(TypedDict):
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListMonitorEvaluationsRequestListMonitorEvaluationsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListMonitorEvaluationsRequestListMonitorEvaluationsPaginateTypeDef
+
+def get_value() -> ListMonitorEvaluationsRequestListMonitorEvaluationsPaginateTypeDef:
+    return {
+        "MonitorArn": ...,
+    }
+```
+
+```python title="Definition"
+class ListMonitorEvaluationsRequestListMonitorEvaluationsPaginateTypeDef(TypedDict):
+    MonitorArn: str,
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListMonitorsRequestListMonitorsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListMonitorsRequestListMonitorsPaginateTypeDef
+
+def get_value() -> ListMonitorsRequestListMonitorsPaginateTypeDef:
+    return {
+        "Filters": ...,
+    }
+```
+
+```python title="Definition"
+class ListMonitorsRequestListMonitorsPaginateTypeDef(TypedDict):
     Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
     PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
 ```
@@ -1781,6 +2383,129 @@ class ListPredictorsRequestListPredictorsPaginateTypeDef(TypedDict):
 
 1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
 2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListWhatIfAnalysesRequestListWhatIfAnalysesPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfAnalysesRequestListWhatIfAnalysesPaginateTypeDef
+
+def get_value() -> ListWhatIfAnalysesRequestListWhatIfAnalysesPaginateTypeDef:
+    return {
+        "Filters": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfAnalysesRequestListWhatIfAnalysesPaginateTypeDef(TypedDict):
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListWhatIfForecastExportsRequestListWhatIfForecastExportsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfForecastExportsRequestListWhatIfForecastExportsPaginateTypeDef
+
+def get_value() -> ListWhatIfForecastExportsRequestListWhatIfForecastExportsPaginateTypeDef:
+    return {
+        "Filters": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfForecastExportsRequestListWhatIfForecastExportsPaginateTypeDef(TypedDict):
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListWhatIfForecastsRequestListWhatIfForecastsPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfForecastsRequestListWhatIfForecastsPaginateTypeDef
+
+def get_value() -> ListWhatIfForecastsRequestListWhatIfForecastsPaginateTypeDef:
+    return {
+        "Filters": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfForecastsRequestListWhatIfForecastsPaginateTypeDef(TypedDict):
+    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListMonitorsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListMonitorsResponseTypeDef
+
+def get_value() -> ListMonitorsResponseTypeDef:
+    return {
+        "Monitors": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListMonitorsResponseTypeDef(TypedDict):
+    Monitors: List[MonitorSummaryTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: MonitorSummaryTypeDef](./type_defs.md#monitorsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListWhatIfAnalysesResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfAnalysesResponseTypeDef
+
+def get_value() -> ListWhatIfAnalysesResponseTypeDef:
+    return {
+        "WhatIfAnalyses": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfAnalysesResponseTypeDef(TypedDict):
+    WhatIfAnalyses: List[WhatIfAnalysisSummaryTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: WhatIfAnalysisSummaryTypeDef](./type_defs.md#whatifanalysissummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListWhatIfForecastsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfForecastsResponseTypeDef
+
+def get_value() -> ListWhatIfForecastsResponseTypeDef:
+    return {
+        "WhatIfForecasts": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfForecastsResponseTypeDef(TypedDict):
+    WhatIfForecasts: List[WhatIfForecastSummaryTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: WhatIfForecastSummaryTypeDef](./type_defs.md#whatifforecastsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## MetricsTypeDef
 
 ```python title="Usage Example"
@@ -1802,6 +2527,35 @@ class MetricsTypeDef(TypedDict):
 
 1. See [:material-code-braces: WeightedQuantileLossTypeDef](./type_defs.md#weightedquantilelosstypedef) 
 2. See [:material-code-braces: ErrorMetricTypeDef](./type_defs.md#errormetrictypedef) 
+## PredictorMonitorEvaluationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import PredictorMonitorEvaluationTypeDef
+
+def get_value() -> PredictorMonitorEvaluationTypeDef:
+    return {
+        "ResourceArn": ...,
+    }
+```
+
+```python title="Definition"
+class PredictorMonitorEvaluationTypeDef(TypedDict):
+    ResourceArn: NotRequired[str],
+    MonitorArn: NotRequired[str],
+    EvaluationTime: NotRequired[datetime],
+    EvaluationState: NotRequired[str],
+    WindowStartDatetime: NotRequired[datetime],
+    WindowEndDatetime: NotRequired[datetime],
+    PredictorEvent: NotRequired[PredictorEventTypeDef],  # (1)
+    MonitorDataSource: NotRequired[MonitorDataSourceTypeDef],  # (2)
+    MetricResults: NotRequired[List[MetricResultTypeDef]],  # (3)
+    NumItemsEvaluated: NotRequired[int],
+    Message: NotRequired[str],
+```
+
+1. See [:material-code-braces: PredictorEventTypeDef](./type_defs.md#predictoreventtypedef) 
+2. See [:material-code-braces: MonitorDataSourceTypeDef](./type_defs.md#monitordatasourcetypedef) 
+3. See [:material-code-braces: MetricResultTypeDef](./type_defs.md#metricresulttypedef) 
 ## PredictorExecutionTypeDef
 
 ```python title="Usage Example"
@@ -1837,6 +2591,25 @@ class SchemaTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: SchemaAttributeTypeDef](./type_defs.md#schemaattributetypedef) 
+## TimeSeriesTransformationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import TimeSeriesTransformationTypeDef
+
+def get_value() -> TimeSeriesTransformationTypeDef:
+    return {
+        "Action": ...,
+    }
+```
+
+```python title="Definition"
+class TimeSeriesTransformationTypeDef(TypedDict):
+    Action: NotRequired[ActionTypeDef],  # (1)
+    TimeSeriesConditions: NotRequired[Sequence[TimeSeriesConditionTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: ActionTypeDef](./type_defs.md#actiontypedef) 
+2. See [:material-code-braces: TimeSeriesConditionTypeDef](./type_defs.md#timeseriesconditiontypedef) 
 ## CreateAutoPredictorRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1861,12 +2634,16 @@ class CreateAutoPredictorRequestRequestTypeDef(TypedDict):
     OptimizationMetric: NotRequired[OptimizationMetricType],  # (3)
     ExplainPredictor: NotRequired[bool],
     Tags: NotRequired[Sequence[TagTypeDef]],  # (4)
+    MonitorConfig: NotRequired[MonitorConfigTypeDef],  # (5)
+    TimeAlignmentBoundary: NotRequired[TimeAlignmentBoundaryTypeDef],  # (6)
 ```
 
 1. See [:material-code-braces: DataConfigTypeDef](./type_defs.md#dataconfigtypedef) 
 2. See [:material-code-braces: EncryptionConfigTypeDef](./type_defs.md#encryptionconfigtypedef) 
 3. See [:material-code-brackets: OptimizationMetricType](./literals.md#optimizationmetrictype) 
 4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+5. See [:material-code-braces: MonitorConfigTypeDef](./type_defs.md#monitorconfigtypedef) 
+6. See [:material-code-braces: TimeAlignmentBoundaryTypeDef](./type_defs.md#timealignmentboundarytypedef) 
 ## DescribeAutoPredictorResponseTypeDef
 
 ```python title="Usage Example"
@@ -1891,6 +2668,8 @@ def get_value() -> DescribeAutoPredictorResponseTypeDef:
         "LastModificationTime": ...,
         "OptimizationMetric": ...,
         "ExplainabilityInfo": ...,
+        "MonitorInfo": ...,
+        "TimeAlignmentBoundary": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -1914,7 +2693,9 @@ class DescribeAutoPredictorResponseTypeDef(TypedDict):
     LastModificationTime: datetime,
     OptimizationMetric: OptimizationMetricType,  # (4)
     ExplainabilityInfo: ExplainabilityInfoTypeDef,  # (5)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (6)
+    MonitorInfo: MonitorInfoTypeDef,  # (6)
+    TimeAlignmentBoundary: TimeAlignmentBoundaryTypeDef,  # (7)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (8)
 ```
 
 1. See [:material-code-braces: DataConfigTypeDef](./type_defs.md#dataconfigtypedef) 
@@ -1922,7 +2703,26 @@ class DescribeAutoPredictorResponseTypeDef(TypedDict):
 3. See [:material-code-braces: ReferencePredictorSummaryTypeDef](./type_defs.md#referencepredictorsummarytypedef) 
 4. See [:material-code-brackets: OptimizationMetricType](./literals.md#optimizationmetrictype) 
 5. See [:material-code-braces: ExplainabilityInfoTypeDef](./type_defs.md#explainabilityinfotypedef) 
-6. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+6. See [:material-code-braces: MonitorInfoTypeDef](./type_defs.md#monitorinfotypedef) 
+7. See [:material-code-braces: TimeAlignmentBoundaryTypeDef](./type_defs.md#timealignmentboundarytypedef) 
+8. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## BaselineTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import BaselineTypeDef
+
+def get_value() -> BaselineTypeDef:
+    return {
+        "PredictorBaseline": ...,
+    }
+```
+
+```python title="Definition"
+class BaselineTypeDef(TypedDict):
+    PredictorBaseline: NotRequired[PredictorBaselineTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: PredictorBaselineTypeDef](./type_defs.md#predictorbaselinetypedef) 
 ## ListExplainabilitiesResponseTypeDef
 
 ```python title="Usage Example"
@@ -1964,6 +2764,7 @@ class CreateExplainabilityExportRequestRequestTypeDef(TypedDict):
     ExplainabilityArn: str,
     Destination: DataDestinationTypeDef,  # (1)
     Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    Format: NotRequired[str],
 ```
 
 1. See [:material-code-braces: DataDestinationTypeDef](./type_defs.md#datadestinationtypedef) 
@@ -1987,6 +2788,7 @@ class CreateForecastExportJobRequestRequestTypeDef(TypedDict):
     ForecastArn: str,
     Destination: DataDestinationTypeDef,  # (1)
     Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    Format: NotRequired[str],
 ```
 
 1. See [:material-code-braces: DataDestinationTypeDef](./type_defs.md#datadestinationtypedef) 
@@ -2010,6 +2812,31 @@ class CreatePredictorBacktestExportJobRequestRequestTypeDef(TypedDict):
     PredictorArn: str,
     Destination: DataDestinationTypeDef,  # (1)
     Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    Format: NotRequired[str],
+```
+
+1. See [:material-code-braces: DataDestinationTypeDef](./type_defs.md#datadestinationtypedef) 
+2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## CreateWhatIfForecastExportRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import CreateWhatIfForecastExportRequestRequestTypeDef
+
+def get_value() -> CreateWhatIfForecastExportRequestRequestTypeDef:
+    return {
+        "WhatIfForecastExportName": ...,
+        "WhatIfForecastArns": ...,
+        "Destination": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWhatIfForecastExportRequestRequestTypeDef(TypedDict):
+    WhatIfForecastExportName: str,
+    WhatIfForecastArns: Sequence[str],
+    Destination: DataDestinationTypeDef,  # (1)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    Format: NotRequired[str],
 ```
 
 1. See [:material-code-braces: DataDestinationTypeDef](./type_defs.md#datadestinationtypedef) 
@@ -2029,6 +2856,7 @@ def get_value() -> DescribeExplainabilityExportResponseTypeDef:
         "Status": ...,
         "CreationTime": ...,
         "LastModificationTime": ...,
+        "Format": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2043,6 +2871,7 @@ class DescribeExplainabilityExportResponseTypeDef(TypedDict):
     Status: str,
     CreationTime: datetime,
     LastModificationTime: datetime,
+    Format: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
@@ -2063,6 +2892,7 @@ def get_value() -> DescribeForecastExportJobResponseTypeDef:
         "Status": ...,
         "CreationTime": ...,
         "LastModificationTime": ...,
+        "Format": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2077,6 +2907,7 @@ class DescribeForecastExportJobResponseTypeDef(TypedDict):
     Status: str,
     CreationTime: datetime,
     LastModificationTime: datetime,
+    Format: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
@@ -2097,6 +2928,7 @@ def get_value() -> DescribePredictorBacktestExportJobResponseTypeDef:
         "Status": ...,
         "CreationTime": ...,
         "LastModificationTime": ...,
+        "Format": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2111,6 +2943,45 @@ class DescribePredictorBacktestExportJobResponseTypeDef(TypedDict):
     Status: str,
     CreationTime: datetime,
     LastModificationTime: datetime,
+    Format: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: DataDestinationTypeDef](./type_defs.md#datadestinationtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeWhatIfForecastExportResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeWhatIfForecastExportResponseTypeDef
+
+def get_value() -> DescribeWhatIfForecastExportResponseTypeDef:
+    return {
+        "WhatIfForecastExportArn": ...,
+        "WhatIfForecastExportName": ...,
+        "WhatIfForecastArns": ...,
+        "Destination": ...,
+        "Message": ...,
+        "Status": ...,
+        "CreationTime": ...,
+        "EstimatedTimeRemainingInMinutes": ...,
+        "LastModificationTime": ...,
+        "Format": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeWhatIfForecastExportResponseTypeDef(TypedDict):
+    WhatIfForecastExportArn: str,
+    WhatIfForecastExportName: str,
+    WhatIfForecastArns: List[str],
+    Destination: DataDestinationTypeDef,  # (1)
+    Message: str,
+    Status: str,
+    CreationTime: datetime,
+    EstimatedTimeRemainingInMinutes: int,
+    LastModificationTime: datetime,
+    Format: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
@@ -2185,6 +3056,30 @@ class PredictorBacktestExportJobSummaryTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: DataDestinationTypeDef](./type_defs.md#datadestinationtypedef) 
+## WhatIfForecastExportSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import WhatIfForecastExportSummaryTypeDef
+
+def get_value() -> WhatIfForecastExportSummaryTypeDef:
+    return {
+        "WhatIfForecastExportArn": ...,
+    }
+```
+
+```python title="Definition"
+class WhatIfForecastExportSummaryTypeDef(TypedDict):
+    WhatIfForecastExportArn: NotRequired[str],
+    WhatIfForecastArns: NotRequired[List[str]],
+    WhatIfForecastExportName: NotRequired[str],
+    Destination: NotRequired[DataDestinationTypeDef],  # (1)
+    Status: NotRequired[str],
+    Message: NotRequired[str],
+    CreationTime: NotRequired[datetime],
+    LastModificationTime: NotRequired[datetime],
+```
+
+1. See [:material-code-braces: DataDestinationTypeDef](./type_defs.md#datadestinationtypedef) 
 ## CreateDatasetImportJobRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2208,6 +3103,7 @@ class CreateDatasetImportJobRequestRequestTypeDef(TypedDict):
     UseGeolocationForTimeZone: NotRequired[bool],
     GeolocationFormat: NotRequired[str],
     Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+    Format: NotRequired[str],
 ```
 
 1. See [:material-code-braces: DataSourceTypeDef](./type_defs.md#datasourcetypedef) 
@@ -2257,6 +3153,7 @@ def get_value() -> DescribeDatasetImportJobResponseTypeDef:
         "Message": ...,
         "CreationTime": ...,
         "LastModificationTime": ...,
+        "Format": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -2278,6 +3175,7 @@ class DescribeDatasetImportJobResponseTypeDef(TypedDict):
     Message: str,
     CreationTime: datetime,
     LastModificationTime: datetime,
+    Format: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (3)
 ```
 
@@ -2364,6 +3262,28 @@ class WindowSummaryTypeDef(TypedDict):
 
 1. See [:material-code-brackets: EvaluationTypeType](./literals.md#evaluationtypetype) 
 2. See [:material-code-braces: MetricsTypeDef](./type_defs.md#metricstypedef) 
+## ListMonitorEvaluationsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListMonitorEvaluationsResponseTypeDef
+
+def get_value() -> ListMonitorEvaluationsResponseTypeDef:
+    return {
+        "NextToken": ...,
+        "PredictorMonitorEvaluations": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListMonitorEvaluationsResponseTypeDef(TypedDict):
+    NextToken: str,
+    PredictorMonitorEvaluations: List[PredictorMonitorEvaluationTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: PredictorMonitorEvaluationTypeDef](./type_defs.md#predictormonitorevaluationtypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## PredictorExecutionDetailsTypeDef
 
 ```python title="Usage Example"
@@ -2530,6 +3450,88 @@ class DescribeExplainabilityResponseTypeDef(TypedDict):
 2. See [:material-code-braces: DataSourceTypeDef](./type_defs.md#datasourcetypedef) 
 3. See [:material-code-braces: SchemaTypeDef](./type_defs.md#schematypedef) 
 4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## TimeSeriesIdentifiersTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import TimeSeriesIdentifiersTypeDef
+
+def get_value() -> TimeSeriesIdentifiersTypeDef:
+    return {
+        "DataSource": ...,
+    }
+```
+
+```python title="Definition"
+class TimeSeriesIdentifiersTypeDef(TypedDict):
+    DataSource: NotRequired[DataSourceTypeDef],  # (1)
+    Schema: NotRequired[SchemaTypeDef],  # (2)
+    Format: NotRequired[str],
+```
+
+1. See [:material-code-braces: DataSourceTypeDef](./type_defs.md#datasourcetypedef) 
+2. See [:material-code-braces: SchemaTypeDef](./type_defs.md#schematypedef) 
+## TimeSeriesReplacementsDataSourceTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import TimeSeriesReplacementsDataSourceTypeDef
+
+def get_value() -> TimeSeriesReplacementsDataSourceTypeDef:
+    return {
+        "S3Config": ...,
+        "Schema": ...,
+    }
+```
+
+```python title="Definition"
+class TimeSeriesReplacementsDataSourceTypeDef(TypedDict):
+    S3Config: S3ConfigTypeDef,  # (1)
+    Schema: SchemaTypeDef,  # (2)
+    Format: NotRequired[str],
+    TimestampFormat: NotRequired[str],
+```
+
+1. See [:material-code-braces: S3ConfigTypeDef](./type_defs.md#s3configtypedef) 
+2. See [:material-code-braces: SchemaTypeDef](./type_defs.md#schematypedef) 
+## DescribeMonitorResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeMonitorResponseTypeDef
+
+def get_value() -> DescribeMonitorResponseTypeDef:
+    return {
+        "MonitorName": ...,
+        "MonitorArn": ...,
+        "ResourceArn": ...,
+        "Status": ...,
+        "LastEvaluationTime": ...,
+        "LastEvaluationState": ...,
+        "Baseline": ...,
+        "Message": ...,
+        "CreationTime": ...,
+        "LastModificationTime": ...,
+        "EstimatedEvaluationTimeRemainingInMinutes": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeMonitorResponseTypeDef(TypedDict):
+    MonitorName: str,
+    MonitorArn: str,
+    ResourceArn: str,
+    Status: str,
+    LastEvaluationTime: datetime,
+    LastEvaluationState: str,
+    Baseline: BaselineTypeDef,  # (1)
+    Message: str,
+    CreationTime: datetime,
+    LastModificationTime: datetime,
+    EstimatedEvaluationTimeRemainingInMinutes: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: BaselineTypeDef](./type_defs.md#baselinetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListExplainabilityExportsResponseTypeDef
 
 ```python title="Usage Example"
@@ -2595,6 +3597,28 @@ class ListPredictorBacktestExportJobsResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PredictorBacktestExportJobSummaryTypeDef](./type_defs.md#predictorbacktestexportjobsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListWhatIfForecastExportsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import ListWhatIfForecastExportsResponseTypeDef
+
+def get_value() -> ListWhatIfForecastExportsResponseTypeDef:
+    return {
+        "WhatIfForecastExports": ...,
+        "NextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListWhatIfForecastExportsResponseTypeDef(TypedDict):
+    WhatIfForecastExports: List[WhatIfForecastExportSummaryTypeDef],  # (1)
+    NextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: WhatIfForecastExportSummaryTypeDef](./type_defs.md#whatifforecastexportsummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListDatasetImportJobsResponseTypeDef
 
@@ -2750,6 +3774,88 @@ class DescribePredictorResponseTypeDef(TypedDict):
 7. See [:material-code-braces: PredictorExecutionDetailsTypeDef](./type_defs.md#predictorexecutiondetailstypedef) 
 8. See [:material-code-brackets: OptimizationMetricType](./literals.md#optimizationmetrictype) 
 9. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## TimeSeriesSelectorTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import TimeSeriesSelectorTypeDef
+
+def get_value() -> TimeSeriesSelectorTypeDef:
+    return {
+        "TimeSeriesIdentifiers": ...,
+    }
+```
+
+```python title="Definition"
+class TimeSeriesSelectorTypeDef(TypedDict):
+    TimeSeriesIdentifiers: NotRequired[TimeSeriesIdentifiersTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: TimeSeriesIdentifiersTypeDef](./type_defs.md#timeseriesidentifierstypedef) 
+## CreateWhatIfForecastRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import CreateWhatIfForecastRequestRequestTypeDef
+
+def get_value() -> CreateWhatIfForecastRequestRequestTypeDef:
+    return {
+        "WhatIfForecastName": ...,
+        "WhatIfAnalysisArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWhatIfForecastRequestRequestTypeDef(TypedDict):
+    WhatIfForecastName: str,
+    WhatIfAnalysisArn: str,
+    TimeSeriesTransformations: NotRequired[Sequence[TimeSeriesTransformationTypeDef]],  # (1)
+    TimeSeriesReplacementsDataSource: NotRequired[TimeSeriesReplacementsDataSourceTypeDef],  # (2)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (3)
+```
+
+1. See [:material-code-braces: TimeSeriesTransformationTypeDef](./type_defs.md#timeseriestransformationtypedef) 
+2. See [:material-code-braces: TimeSeriesReplacementsDataSourceTypeDef](./type_defs.md#timeseriesreplacementsdatasourcetypedef) 
+3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## DescribeWhatIfForecastResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeWhatIfForecastResponseTypeDef
+
+def get_value() -> DescribeWhatIfForecastResponseTypeDef:
+    return {
+        "WhatIfForecastName": ...,
+        "WhatIfForecastArn": ...,
+        "WhatIfAnalysisArn": ...,
+        "EstimatedTimeRemainingInMinutes": ...,
+        "Status": ...,
+        "Message": ...,
+        "CreationTime": ...,
+        "LastModificationTime": ...,
+        "TimeSeriesTransformations": ...,
+        "TimeSeriesReplacementsDataSource": ...,
+        "ForecastTypes": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeWhatIfForecastResponseTypeDef(TypedDict):
+    WhatIfForecastName: str,
+    WhatIfForecastArn: str,
+    WhatIfAnalysisArn: str,
+    EstimatedTimeRemainingInMinutes: int,
+    Status: str,
+    Message: str,
+    CreationTime: datetime,
+    LastModificationTime: datetime,
+    TimeSeriesTransformations: List[TimeSeriesTransformationTypeDef],  # (1)
+    TimeSeriesReplacementsDataSource: TimeSeriesReplacementsDataSourceTypeDef,  # (2)
+    ForecastTypes: List[str],
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-braces: TimeSeriesTransformationTypeDef](./type_defs.md#timeseriestransformationtypedef) 
+2. See [:material-code-braces: TimeSeriesReplacementsDataSourceTypeDef](./type_defs.md#timeseriesreplacementsdatasourcetypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetAccuracyMetricsResponseTypeDef
 
 ```python title="Usage Example"
@@ -2778,3 +3884,124 @@ class GetAccuracyMetricsResponseTypeDef(TypedDict):
 2. See [:material-code-brackets: AutoMLOverrideStrategyType](./literals.md#automloverridestrategytype) 
 3. See [:material-code-brackets: OptimizationMetricType](./literals.md#optimizationmetrictype) 
 4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## CreateForecastRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import CreateForecastRequestRequestTypeDef
+
+def get_value() -> CreateForecastRequestRequestTypeDef:
+    return {
+        "ForecastName": ...,
+        "PredictorArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateForecastRequestRequestTypeDef(TypedDict):
+    ForecastName: str,
+    PredictorArn: str,
+    ForecastTypes: NotRequired[Sequence[str]],
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (1)
+    TimeSeriesSelector: NotRequired[TimeSeriesSelectorTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: TimeSeriesSelectorTypeDef](./type_defs.md#timeseriesselectortypedef) 
+## CreateWhatIfAnalysisRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import CreateWhatIfAnalysisRequestRequestTypeDef
+
+def get_value() -> CreateWhatIfAnalysisRequestRequestTypeDef:
+    return {
+        "WhatIfAnalysisName": ...,
+        "ForecastArn": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWhatIfAnalysisRequestRequestTypeDef(TypedDict):
+    WhatIfAnalysisName: str,
+    ForecastArn: str,
+    TimeSeriesSelector: NotRequired[TimeSeriesSelectorTypeDef],  # (1)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: TimeSeriesSelectorTypeDef](./type_defs.md#timeseriesselectortypedef) 
+2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+## DescribeForecastResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeForecastResponseTypeDef
+
+def get_value() -> DescribeForecastResponseTypeDef:
+    return {
+        "ForecastArn": ...,
+        "ForecastName": ...,
+        "ForecastTypes": ...,
+        "PredictorArn": ...,
+        "DatasetGroupArn": ...,
+        "EstimatedTimeRemainingInMinutes": ...,
+        "Status": ...,
+        "Message": ...,
+        "CreationTime": ...,
+        "LastModificationTime": ...,
+        "TimeSeriesSelector": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeForecastResponseTypeDef(TypedDict):
+    ForecastArn: str,
+    ForecastName: str,
+    ForecastTypes: List[str],
+    PredictorArn: str,
+    DatasetGroupArn: str,
+    EstimatedTimeRemainingInMinutes: int,
+    Status: str,
+    Message: str,
+    CreationTime: datetime,
+    LastModificationTime: datetime,
+    TimeSeriesSelector: TimeSeriesSelectorTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TimeSeriesSelectorTypeDef](./type_defs.md#timeseriesselectortypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribeWhatIfAnalysisResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.type_defs import DescribeWhatIfAnalysisResponseTypeDef
+
+def get_value() -> DescribeWhatIfAnalysisResponseTypeDef:
+    return {
+        "WhatIfAnalysisName": ...,
+        "WhatIfAnalysisArn": ...,
+        "ForecastArn": ...,
+        "EstimatedTimeRemainingInMinutes": ...,
+        "Status": ...,
+        "Message": ...,
+        "CreationTime": ...,
+        "LastModificationTime": ...,
+        "TimeSeriesSelector": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribeWhatIfAnalysisResponseTypeDef(TypedDict):
+    WhatIfAnalysisName: str,
+    WhatIfAnalysisArn: str,
+    ForecastArn: str,
+    EstimatedTimeRemainingInMinutes: int,
+    Status: str,
+    Message: str,
+    CreationTime: datetime,
+    LastModificationTime: datetime,
+    TimeSeriesSelector: TimeSeriesSelectorTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: TimeSeriesSelectorTypeDef](./type_defs.md#timeseriesselectortypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 

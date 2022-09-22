@@ -42,6 +42,7 @@ def get_value() -> AttachmentTypeType:
 AttachmentTypeType = Literal[
     "CONNECT",
     "SITE_TO_SITE_VPN",
+    "TRANSIT_GATEWAY_ROUTE_TABLE",
     "VPC",
 ]
 ```
@@ -80,6 +81,23 @@ ChangeSetStateType = Literal[
     "READY_TO_EXECUTE",
 ]
 ```
+## ChangeStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_networkmanager.literals import ChangeStatusType
+
+def get_value() -> ChangeStatusType:
+    return "COMPLETE"
+```
+
+```python title="Definition"
+ChangeStatusType = Literal[
+    "COMPLETE",
+    "FAILED",
+    "IN_PROGRESS",
+    "NOT_STARTED",
+]
+```
 ## ChangeTypeType
 
 ```python title="Usage Example"
@@ -92,10 +110,14 @@ def get_value() -> ChangeTypeType:
 ```python title="Definition"
 ChangeTypeType = Literal[
     "ATTACHMENT_MAPPING",
+    "ATTACHMENT_POLICIES_CONFIGURATION",
     "ATTACHMENT_ROUTE_PROPAGATION",
     "ATTACHMENT_ROUTE_STATIC",
+    "CORE_NETWORK_CONFIGURATION",
     "CORE_NETWORK_EDGE",
     "CORE_NETWORK_SEGMENT",
+    "SEGMENT_ACTIONS_CONFIGURATION",
+    "SEGMENTS_CONFIGURATION",
 ]
 ```
 ## ConnectPeerAssociationStateType
@@ -285,6 +307,20 @@ def get_value() -> GetConnectionsPaginatorName:
 ```python title="Definition"
 GetConnectionsPaginatorName = Literal[
     "get_connections",
+]
+```
+## GetCoreNetworkChangeEventsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_networkmanager.literals import GetCoreNetworkChangeEventsPaginatorName
+
+def get_value() -> GetCoreNetworkChangeEventsPaginatorName:
+    return "get_core_network_change_events"
+```
+
+```python title="Definition"
+GetCoreNetworkChangeEventsPaginatorName = Literal[
+    "get_core_network_change_events",
 ]
 ```
 ## GetCoreNetworkChangeSetPaginatorName
@@ -562,6 +598,51 @@ ListCoreNetworksPaginatorName = Literal[
     "list_core_networks",
 ]
 ```
+## ListPeeringsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_networkmanager.literals import ListPeeringsPaginatorName
+
+def get_value() -> ListPeeringsPaginatorName:
+    return "list_peerings"
+```
+
+```python title="Definition"
+ListPeeringsPaginatorName = Literal[
+    "list_peerings",
+]
+```
+## PeeringStateType
+
+```python title="Usage Example"
+from types_aiobotocore_networkmanager.literals import PeeringStateType
+
+def get_value() -> PeeringStateType:
+    return "AVAILABLE"
+```
+
+```python title="Definition"
+PeeringStateType = Literal[
+    "AVAILABLE",
+    "CREATING",
+    "DELETING",
+    "FAILED",
+]
+```
+## PeeringTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_networkmanager.literals import PeeringTypeType
+
+def get_value() -> PeeringTypeType:
+    return "TRANSIT_GATEWAY"
+```
+
+```python title="Definition"
+PeeringTypeType = Literal[
+    "TRANSIT_GATEWAY",
+]
+```
 ## RouteAnalysisCompletionReasonCodeType
 
 ```python title="Usage Example"
@@ -782,6 +863,7 @@ ServiceName = Literal[
     "autoscaling-plans",
     "backup",
     "backup-gateway",
+    "backupstorage",
     "batch",
     "billingconductor",
     "braket",
@@ -789,6 +871,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -821,6 +904,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -857,6 +941,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -870,6 +955,7 @@ ServiceName = Literal[
     "frauddetector",
     "fsx",
     "gamelift",
+    "gamesparks",
     "glacier",
     "globalaccelerator",
     "glue",
@@ -903,6 +989,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -922,12 +1009,14 @@ ServiceName = Literal[
     "lexv2-models",
     "lexv2-runtime",
     "license-manager",
+    "license-manager-user-subscriptions",
     "lightsail",
     "location",
     "logs",
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -971,8 +1060,10 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
+    "privatenetworks",
     "proton",
     "qldb",
     "qldb-session",
@@ -983,11 +1074,13 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
     "resourcegroupstaggingapi",
     "robomaker",
+    "rolesanywhere",
     "route53",
     "route53-recovery-cluster",
     "route53-recovery-control-config",
@@ -1033,6 +1126,7 @@ ServiceName = Literal[
     "storagegateway",
     "sts",
     "support",
+    "support-app",
     "swf",
     "synthetics",
     "textract",
@@ -1093,6 +1187,7 @@ PaginatorName = Literal[
     "describe_global_networks",
     "get_connect_peer_associations",
     "get_connections",
+    "get_core_network_change_events",
     "get_core_network_change_set",
     "get_customer_gateway_associations",
     "get_devices",
@@ -1109,5 +1204,6 @@ PaginatorName = Literal[
     "list_connect_peers",
     "list_core_network_policy_versions",
     "list_core_networks",
+    "list_peerings",
 ]
 ```

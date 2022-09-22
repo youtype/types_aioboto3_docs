@@ -166,6 +166,7 @@ def get_value() -> AcceptHandshakeRequestRequestTypeDef:
 - [AttachPolicyRequestRequestTypeDef](./type_defs.md#attachpolicyrequestrequesttypedef)
 - [CancelHandshakeRequestRequestTypeDef](./type_defs.md#cancelhandshakerequestrequesttypedef)
 - [ChildTypeDef](./type_defs.md#childtypedef)
+- [CloseAccountRequestRequestTypeDef](./type_defs.md#closeaccountrequestrequesttypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
 - [CreateAccountStatusTypeDef](./type_defs.md#createaccountstatustypedef)
 - [CreateOrganizationRequestRequestTypeDef](./type_defs.md#createorganizationrequestrequesttypedef)

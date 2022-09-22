@@ -106,6 +106,28 @@ class AuthenticationSummaryTypeDef(TypedDict):
 
 1. See [:material-code-brackets: AuthenticationProviderTypesType](./literals.md#authenticationprovidertypestype) 
 2. See [:material-code-brackets: SamlConfigurationStatusType](./literals.md#samlconfigurationstatustype) 
+## CreateWorkspaceApiKeyRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_grafana.type_defs import CreateWorkspaceApiKeyRequestRequestTypeDef
+
+def get_value() -> CreateWorkspaceApiKeyRequestRequestTypeDef:
+    return {
+        "keyName": ...,
+        "keyRole": ...,
+        "secondsToLive": ...,
+        "workspaceId": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWorkspaceApiKeyRequestRequestTypeDef(TypedDict):
+    keyName: str,
+    keyRole: str,
+    secondsToLive: int,
+    workspaceId: str,
+```
+
 ## CreateWorkspaceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -127,6 +149,7 @@ class CreateWorkspaceRequestRequestTypeDef(TypedDict):
     clientToken: NotRequired[str],
     organizationRoleName: NotRequired[str],
     stackSetName: NotRequired[str],
+    tags: NotRequired[Mapping[str, str]],
     workspaceDataSources: NotRequired[Sequence[DataSourceTypeType]],  # (4)
     workspaceDescription: NotRequired[str],
     workspaceName: NotRequired[str],
@@ -140,6 +163,24 @@ class CreateWorkspaceRequestRequestTypeDef(TypedDict):
 3. See [:material-code-brackets: PermissionTypeType](./literals.md#permissiontypetype) 
 4. See [:material-code-brackets: DataSourceTypeType](./literals.md#datasourcetypetype) 
 5. See [:material-code-brackets: NotificationDestinationTypeType](./literals.md#notificationdestinationtypetype) 
+## DeleteWorkspaceApiKeyRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_grafana.type_defs import DeleteWorkspaceApiKeyRequestRequestTypeDef
+
+def get_value() -> DeleteWorkspaceApiKeyRequestRequestTypeDef:
+    return {
+        "keyName": ...,
+        "workspaceId": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteWorkspaceApiKeyRequestRequestTypeDef(TypedDict):
+    keyName: str,
+    workspaceId: str,
+```
+
 ## DeleteWorkspaceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -264,6 +305,22 @@ class ListPermissionsRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: UserTypeType](./literals.md#usertypetype) 
+## ListTagsForResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_grafana.type_defs import ListTagsForResourceRequestRequestTypeDef
+
+def get_value() -> ListTagsForResourceRequestRequestTypeDef:
+    return {
+        "resourceArn": ...,
+    }
+```
+
+```python title="Definition"
+class ListTagsForResourceRequestRequestTypeDef(TypedDict):
+    resourceArn: str,
+```
+
 ## ListWorkspacesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -317,6 +374,42 @@ class RoleValuesTypeDef(TypedDict):
     editor: NotRequired[List[str]],
 ```
 
+## TagResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_grafana.type_defs import TagResourceRequestRequestTypeDef
+
+def get_value() -> TagResourceRequestRequestTypeDef:
+    return {
+        "resourceArn": ...,
+        "tags": ...,
+    }
+```
+
+```python title="Definition"
+class TagResourceRequestRequestTypeDef(TypedDict):
+    resourceArn: str,
+    tags: Mapping[str, str],
+```
+
+## UntagResourceRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_grafana.type_defs import UntagResourceRequestRequestTypeDef
+
+def get_value() -> UntagResourceRequestRequestTypeDef:
+    return {
+        "resourceArn": ...,
+        "tagKeys": ...,
+    }
+```
+
+```python title="Definition"
+class UntagResourceRequestRequestTypeDef(TypedDict):
+    resourceArn: str,
+    tagKeys: Sequence[str],
+```
+
 ## UpdateWorkspaceRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -347,6 +440,69 @@ class UpdateWorkspaceRequestRequestTypeDef(TypedDict):
 2. See [:material-code-brackets: PermissionTypeType](./literals.md#permissiontypetype) 
 3. See [:material-code-brackets: DataSourceTypeType](./literals.md#datasourcetypetype) 
 4. See [:material-code-brackets: NotificationDestinationTypeType](./literals.md#notificationdestinationtypetype) 
+## CreateWorkspaceApiKeyResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_grafana.type_defs import CreateWorkspaceApiKeyResponseTypeDef
+
+def get_value() -> CreateWorkspaceApiKeyResponseTypeDef:
+    return {
+        "key": ...,
+        "keyName": ...,
+        "workspaceId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class CreateWorkspaceApiKeyResponseTypeDef(TypedDict):
+    key: str,
+    keyName: str,
+    workspaceId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DeleteWorkspaceApiKeyResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_grafana.type_defs import DeleteWorkspaceApiKeyResponseTypeDef
+
+def get_value() -> DeleteWorkspaceApiKeyResponseTypeDef:
+    return {
+        "keyName": ...,
+        "workspaceId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DeleteWorkspaceApiKeyResponseTypeDef(TypedDict):
+    keyName: str,
+    workspaceId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListTagsForResourceResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_grafana.type_defs import ListTagsForResourceResponseTypeDef
+
+def get_value() -> ListTagsForResourceResponseTypeDef:
+    return {
+        "tags": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListTagsForResourceResponseTypeDef(TypedDict):
+    tags: Dict[str, str],
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## WorkspaceDescriptionTypeDef
 
 ```python title="Usage Example"
@@ -387,6 +543,7 @@ class WorkspaceDescriptionTypeDef(TypedDict):
     organizationalUnits: NotRequired[List[str]],
     permissionType: NotRequired[PermissionTypeType],  # (6)
     stackSetName: NotRequired[str],
+    tags: NotRequired[Dict[str, str]],
     workspaceRoleArn: NotRequired[str],
 ```
 
@@ -426,6 +583,7 @@ class WorkspaceSummaryTypeDef(TypedDict):
     description: NotRequired[str],
     name: NotRequired[str],
     notificationDestinations: NotRequired[List[NotificationDestinationTypeType]],  # (2)
+    tags: NotRequired[Dict[str, str]],
 ```
 
 1. See [:material-code-braces: AuthenticationSummaryTypeDef](./type_defs.md#authenticationsummarytypedef) 
