@@ -1,0 +1,105 @@
+name: Update docs
+concurrency: update
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        required: false
+        description: Use to force update
+
+jobs:
+  update-docs:
+    env:
+      PIP_NO_CACHE_DIR: false
+      PIP_USER: 1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Extract versions
+        id: vars
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs')
+            const { getAioBoto3Version } = require('./.github/workflows/helpers.js')
+            core.setOutput('version', '')
+
+            const currentAioBoto3Version = fs.readFileSync('./aioboto3_version.txt', 'utf8').trim()
+            const force = context.payload.inputs ? context.payload.inputs.force : false
+
+            const aioBoto3Version = await getAioBoto3Version()
+            if (!force && currentAioBoto3Version === aioBoto3Version) {
+              core.info(`No updates, ${aioBoto3Version} is still the latest`)
+              return
+            }
+
+            core.info(`Updating to ${aioBoto3Version} over ${currentAioBoto3Version}`)
+            core.setOutput('version', aioBoto3Version)
+            core.setOutput('aioboto3-version', aioBoto3Version)
+      - name: Set up Python
+        if: steps.vars.outputs.version
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Get aioboto3 download links
+        id: links
+        if: steps.vars.outputs.version
+        uses: actions/github-script@v6
+        env:
+          AIOBOTO3_VERSION: ${{ steps.vars.outputs.aioboto3-version }}
+        with:
+          script: |
+            const { extractAioBoto3DownloadLinks } = require('./.github/workflows/helpers.js')
+            await extractAioBoto3DownloadLinks({ core })
+      - name: Install aioboto3
+        if: steps.vars.outputs.version
+        run: |
+          mkdir installtemp
+          cd installtemp
+          wget ${{ steps.links.outputs.aioboto3-url }}
+          pip install aioboto3*
+          cd ..
+          rm -rf installtemp
+      - name: Install dependencies
+        if: steps.vars.outputs.version
+        run: |
+          python -m pip install -r requirements.txt
+      - name: Build docs
+        if: steps.vars.outputs.version
+        run: |
+          rm -rf docs
+          rm -rf docsmd
+          mkdir -p docsmd
+          python -m mypy_boto3_builder ./docsmd --product aioboto3-docs
+      - name: Build html docs
+        if: steps.vars.outputs.version
+        run: |
+          mkdocs build
+      - name: Update marker file
+        if: steps.vars.outputs.version
+        env:
+          AIOBOTO3_VERSION: ${{ steps.vars.outputs.aioboto3-version }}
+        run: |
+          echo $AIOBOTO3_VERSION > ./aioboto3_version.txt
+      - name: Commit changes
+        if: steps.vars.outputs.version
+        env:
+          AIOBOTO3_VERSION: ${{ steps.vars.outputs.aioboto3-version }}
+        run: |
+          git config --global user.email "github-actions"
+          git config --global user.name "github-actions@github.com"
+          git add -A .
+          git commit -m "Update docs to ${AIOBOTO3_VERSION}"
+          git tag -d ${AIOBOTO3_VERSION} || true
+          git tag ${AIOBOTO3_VERSION}
+          git push -f --tags
+          git push
+      - name: Update Read the docs
+        if: steps.vars.outputs.version
+        env:
+          TOKEN: ${{ secrets.RTD_TOKEN }}
+        run: |
+          curl -X POST -H "Authorization: Token ${TOKEN}" https://readthedocs.org/api/v3/projects/types-aioboto3/versions/latest/builds/
