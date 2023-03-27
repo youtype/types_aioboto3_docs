@@ -74,7 +74,7 @@ jobs:
     if: needs.check-version.outputs.version
     env:
       VERSION: ${{ needs.check-version.outputs.version }}
-      AIOBOTO3_VERSION: ${{ needs.check-version.outputs.boto3-version }}
+      AIOBOTO3_VERSION: ${{ needs.check-version.outputs.aioboto3-version }}
     steps:
       - uses: actions/checkout@v3
         with:
