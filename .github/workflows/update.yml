@@ -50,7 +50,9 @@ jobs:
   update-marker:
     name: Update marker file
     runs-on: ubuntu-latest
-    needs: check-version
+    needs:
+      - check-version
+      - update-docs
     if: needs.check-version.outputs.current-version != needs.check-version.outputs.version
     env:
       VERSION: ${{ needs.check-version.outputs.version }}
