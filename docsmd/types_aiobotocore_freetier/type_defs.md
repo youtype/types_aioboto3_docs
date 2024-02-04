@@ -1,0 +1,116 @@
+# Type definitions
+
+> [Index](../README.md) > [FreeTier](./README.md) > Type definitions
+
+!!! note ""
+
+    Auto-generated documentation for [FreeTier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/freetier.html#FreeTier)
+    type annotations stubs module [types-aiobotocore-freetier](https://pypi.org/project/types-aiobotocore-freetier/).
+
+
+
+## DimensionValuesTypeDef
+
+```python
+# DimensionValuesTypeDef definition
+
+class DimensionValuesTypeDef(TypedDict):
+    Key: DimensionType,  # (1)
+    MatchOptions: Sequence[MatchOptionType],  # (2)
+    Values: Sequence[str],
+```
+
+1. See [:material-code-brackets: DimensionType](./literals.md#dimensiontype) 
+2. See [:material-code-brackets: MatchOptionType](./literals.md#matchoptiontype) 
+## FreeTierUsageTypeDef
+
+```python
+# FreeTierUsageTypeDef definition
+
+class FreeTierUsageTypeDef(TypedDict):
+    actualUsageAmount: NotRequired[float],
+    description: NotRequired[str],
+    forecastedUsageAmount: NotRequired[float],
+    freeTierType: NotRequired[str],
+    limit: NotRequired[float],
+    operation: NotRequired[str],
+    region: NotRequired[str],
+    service: NotRequired[str],
+    unit: NotRequired[str],
+    usageType: NotRequired[str],
+```
+
+## PaginatorConfigTypeDef
+
+```python
+# PaginatorConfigTypeDef definition
+
+class PaginatorConfigTypeDef(TypedDict):
+    MaxItems: NotRequired[int],
+    PageSize: NotRequired[int],
+    StartingToken: NotRequired[str],
+```
+
+## GetFreeTierUsageRequestRequestTypeDef
+
+```python
+# GetFreeTierUsageRequestRequestTypeDef definition
+
+class GetFreeTierUsageRequestRequestTypeDef(TypedDict):
+    filter: NotRequired[ExpressionTypeDef],  # (1)
+    maxResults: NotRequired[int],
+    nextToken: NotRequired[str],
+```
+
+1. See [:material-code-braces: ExpressionTypeDef](./type_defs.md#expressiontypedef) 
+## ResponseMetadataTypeDef
+
+```python
+# ResponseMetadataTypeDef definition
+
+class ResponseMetadataTypeDef(TypedDict):
+    RequestId: str,
+    HostId: str,
+    HTTPStatusCode: int,
+    HTTPHeaders: Dict[str, str],
+    RetryAttempts: int,
+```
+
+## ExpressionTypeDef
+
+```python
+# ExpressionTypeDef definition
+
+class ExpressionTypeDef(TypedDict):
+    And: NotRequired[Sequence[Dict[str, Any]]],
+    Dimensions: NotRequired[DimensionValuesTypeDef],  # (1)
+    Not: NotRequired[Dict[str, Any]],
+    Or: NotRequired[Sequence[Dict[str, Any]]],
+```
+
+1. See [:material-code-braces: DimensionValuesTypeDef](./type_defs.md#dimensionvaluestypedef) 
+## GetFreeTierUsageResponseTypeDef
+
+```python
+# GetFreeTierUsageResponseTypeDef definition
+
+class GetFreeTierUsageResponseTypeDef(TypedDict):
+    freeTierUsages: List[FreeTierUsageTypeDef],  # (1)
+    nextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: FreeTierUsageTypeDef](./type_defs.md#freetierusagetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetFreeTierUsageRequestGetFreeTierUsagePaginateTypeDef
+
+```python
+# GetFreeTierUsageRequestGetFreeTierUsagePaginateTypeDef definition
+
+class GetFreeTierUsageRequestGetFreeTierUsagePaginateTypeDef(TypedDict):
+    filter: NotRequired[ExpressionTypeDef],  # (1)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: ExpressionTypeDef](./type_defs.md#expressiontypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 

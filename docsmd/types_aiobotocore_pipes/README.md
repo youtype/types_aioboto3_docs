@@ -1,0 +1,224 @@
+# EventBridgePipes module
+
+> [Index](../README.md) > EventBridgePipes
+
+
+!!! note ""
+
+    Auto-generated documentation for [EventBridgePipes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pipes.html#EventBridgePipes)
+    type annotations stubs module [types-aiobotocore-pipes](https://pypi.org/project/types-aiobotocore-pipes/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aioboto3` for `EventBridgePipes` service.
+
+```bash
+# install with aioboto3 type annotations
+python -m pip install 'types-aioboto3[pipes]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aioboto3-lite[pipes]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-pipes
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-pipes
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## EventBridgePipesClient
+
+Type annotations and code completion for  `#!python session.client("pipes")` as [EventBridgePipesClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pipes.html#EventBridgePipes.Client)
+
+```python
+# EventBridgePipesClient usage example
+
+from aioboto3.session import Session
+
+from types_aiobotocore_pipes.client import EventBridgePipesClient
+
+
+session = Session()
+async with session.client("pipes") as client:
+    client: EventBridgePipesClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.client("pipes").get_paginator("...")`.
+
+```python
+# ListPipesPaginator usage example
+
+from types_aiobotocore_pipes.paginator import ListPipesPaginator
+
+def get_list_pipes_paginator() -> ListPipesPaginator:
+    return client.get_paginator("list_pipes"))
+```
+
+- [ListPipesPaginator](./paginators.md#listpipespaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# AssignPublicIpType usage example
+
+from types_aiobotocore_pipes.literals import AssignPublicIpType
+
+def get_value() -> AssignPublicIpType:
+    return "DISABLED"
+```
+
+- [AssignPublicIpType](./literals.md#assignpubliciptype)
+- [BatchJobDependencyTypeType](./literals.md#batchjobdependencytypetype)
+- [BatchResourceRequirementTypeType](./literals.md#batchresourcerequirementtypetype)
+- [DynamoDBStreamStartPositionType](./literals.md#dynamodbstreamstartpositiontype)
+- [EcsEnvironmentFileTypeType](./literals.md#ecsenvironmentfiletypetype)
+- [EcsResourceRequirementTypeType](./literals.md#ecsresourcerequirementtypetype)
+- [IncludeExecutionDataOptionType](./literals.md#includeexecutiondataoptiontype)
+- [KinesisStreamStartPositionType](./literals.md#kinesisstreamstartpositiontype)
+- [LaunchTypeType](./literals.md#launchtypetype)
+- [ListPipesPaginatorName](./literals.md#listpipespaginatorname)
+- [LogLevelType](./literals.md#logleveltype)
+- [MSKStartPositionType](./literals.md#mskstartpositiontype)
+- [OnPartialBatchItemFailureStreamsType](./literals.md#onpartialbatchitemfailurestreamstype)
+- [PipeStateType](./literals.md#pipestatetype)
+- [PipeTargetInvocationTypeType](./literals.md#pipetargetinvocationtypetype)
+- [PlacementConstraintTypeType](./literals.md#placementconstrainttypetype)
+- [PlacementStrategyTypeType](./literals.md#placementstrategytypetype)
+- [PropagateTagsType](./literals.md#propagatetagstype)
+- [RequestedPipeStateDescribeResponseType](./literals.md#requestedpipestatedescriberesponsetype)
+- [RequestedPipeStateType](./literals.md#requestedpipestatetype)
+- [S3OutputFormatType](./literals.md#s3outputformattype)
+- [SelfManagedKafkaStartPositionType](./literals.md#selfmanagedkafkastartpositiontype)
+- [EventBridgePipesServiceName](./literals.md#eventbridgepipesservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AwsVpcConfigurationTypeDef](./type_defs.md#awsvpcconfigurationtypedef)
+- [BatchArrayPropertiesTypeDef](./type_defs.md#batcharraypropertiestypedef)
+- [BatchEnvironmentVariableTypeDef](./type_defs.md#batchenvironmentvariabletypedef)
+- [BatchResourceRequirementTypeDef](./type_defs.md#batchresourcerequirementtypedef)
+- [BatchJobDependencyTypeDef](./type_defs.md#batchjobdependencytypedef)
+- [BatchRetryStrategyTypeDef](./type_defs.md#batchretrystrategytypedef)
+- [CapacityProviderStrategyItemTypeDef](./type_defs.md#capacityproviderstrategyitemtypedef)
+- [CloudwatchLogsLogDestinationParametersTypeDef](./type_defs.md#cloudwatchlogslogdestinationparameterstypedef)
+- [CloudwatchLogsLogDestinationTypeDef](./type_defs.md#cloudwatchlogslogdestinationtypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [DeadLetterConfigTypeDef](./type_defs.md#deadletterconfigtypedef)
+- [DeletePipeRequestRequestTypeDef](./type_defs.md#deletepiperequestrequesttypedef)
+- [DescribePipeRequestRequestTypeDef](./type_defs.md#describepiperequestrequesttypedef)
+- [EcsEnvironmentFileTypeDef](./type_defs.md#ecsenvironmentfiletypedef)
+- [EcsEnvironmentVariableTypeDef](./type_defs.md#ecsenvironmentvariabletypedef)
+- [EcsResourceRequirementTypeDef](./type_defs.md#ecsresourcerequirementtypedef)
+- [EcsEphemeralStorageTypeDef](./type_defs.md#ecsephemeralstoragetypedef)
+- [EcsInferenceAcceleratorOverrideTypeDef](./type_defs.md#ecsinferenceacceleratoroverridetypedef)
+- [FilterTypeDef](./type_defs.md#filtertypedef)
+- [FirehoseLogDestinationParametersTypeDef](./type_defs.md#firehoselogdestinationparameterstypedef)
+- [FirehoseLogDestinationTypeDef](./type_defs.md#firehoselogdestinationtypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [ListPipesRequestRequestTypeDef](./type_defs.md#listpipesrequestrequesttypedef)
+- [PipeTypeDef](./type_defs.md#pipetypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [MQBrokerAccessCredentialsTypeDef](./type_defs.md#mqbrokeraccesscredentialstypedef)
+- [MSKAccessCredentialsTypeDef](./type_defs.md#mskaccesscredentialstypedef)
+- [PipeEnrichmentHttpParametersTypeDef](./type_defs.md#pipeenrichmenthttpparameterstypedef)
+- [S3LogDestinationParametersTypeDef](./type_defs.md#s3logdestinationparameterstypedef)
+- [S3LogDestinationTypeDef](./type_defs.md#s3logdestinationtypedef)
+- [TimestampTypeDef](./type_defs.md#timestamptypedef)
+- [PipeSourceSqsQueueParametersTypeDef](./type_defs.md#pipesourcesqsqueueparameterstypedef)
+- [SelfManagedKafkaAccessConfigurationCredentialsTypeDef](./type_defs.md#selfmanagedkafkaaccessconfigurationcredentialstypedef)
+- [SelfManagedKafkaAccessConfigurationVpcTypeDef](./type_defs.md#selfmanagedkafkaaccessconfigurationvpctypedef)
+- [PipeTargetCloudWatchLogsParametersTypeDef](./type_defs.md#pipetargetcloudwatchlogsparameterstypedef)
+- [PlacementConstraintTypeDef](./type_defs.md#placementconstrainttypedef)
+- [PlacementStrategyTypeDef](./type_defs.md#placementstrategytypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)
+- [PipeTargetEventBridgeEventBusParametersTypeDef](./type_defs.md#pipetargeteventbridgeeventbusparameterstypedef)
+- [PipeTargetHttpParametersTypeDef](./type_defs.md#pipetargethttpparameterstypedef)
+- [PipeTargetKinesisStreamParametersTypeDef](./type_defs.md#pipetargetkinesisstreamparameterstypedef)
+- [PipeTargetLambdaFunctionParametersTypeDef](./type_defs.md#pipetargetlambdafunctionparameterstypedef)
+- [PipeTargetRedshiftDataParametersTypeDef](./type_defs.md#pipetargetredshiftdataparameterstypedef)
+- [PipeTargetSqsQueueParametersTypeDef](./type_defs.md#pipetargetsqsqueueparameterstypedef)
+- [PipeTargetStateMachineParametersTypeDef](./type_defs.md#pipetargetstatemachineparameterstypedef)
+- [SageMakerPipelineParameterTypeDef](./type_defs.md#sagemakerpipelineparametertypedef)
+- [StartPipeRequestRequestTypeDef](./type_defs.md#startpiperequestrequesttypedef)
+- [StopPipeRequestRequestTypeDef](./type_defs.md#stoppiperequestrequesttypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [UpdatePipeSourceSqsQueueParametersTypeDef](./type_defs.md#updatepipesourcesqsqueueparameterstypedef)
+- [NetworkConfigurationTypeDef](./type_defs.md#networkconfigurationtypedef)
+- [BatchContainerOverridesTypeDef](./type_defs.md#batchcontaineroverridestypedef)
+- [CreatePipeResponseTypeDef](./type_defs.md#createpiperesponsetypedef)
+- [DeletePipeResponseTypeDef](./type_defs.md#deletepiperesponsetypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [StartPipeResponseTypeDef](./type_defs.md#startpiperesponsetypedef)
+- [StopPipeResponseTypeDef](./type_defs.md#stoppiperesponsetypedef)
+- [UpdatePipeResponseTypeDef](./type_defs.md#updatepiperesponsetypedef)
+- [PipeSourceDynamoDBStreamParametersTypeDef](./type_defs.md#pipesourcedynamodbstreamparameterstypedef)
+- [UpdatePipeSourceDynamoDBStreamParametersTypeDef](./type_defs.md#updatepipesourcedynamodbstreamparameterstypedef)
+- [UpdatePipeSourceKinesisStreamParametersTypeDef](./type_defs.md#updatepipesourcekinesisstreamparameterstypedef)
+- [EcsContainerOverrideTypeDef](./type_defs.md#ecscontaineroverridetypedef)
+- [FilterCriteriaTypeDef](./type_defs.md#filtercriteriatypedef)
+- [ListPipesRequestListPipesPaginateTypeDef](./type_defs.md#listpipesrequestlistpipespaginatetypedef)
+- [ListPipesResponseTypeDef](./type_defs.md#listpipesresponsetypedef)
+- [PipeSourceActiveMQBrokerParametersTypeDef](./type_defs.md#pipesourceactivemqbrokerparameterstypedef)
+- [PipeSourceRabbitMQBrokerParametersTypeDef](./type_defs.md#pipesourcerabbitmqbrokerparameterstypedef)
+- [UpdatePipeSourceActiveMQBrokerParametersTypeDef](./type_defs.md#updatepipesourceactivemqbrokerparameterstypedef)
+- [UpdatePipeSourceRabbitMQBrokerParametersTypeDef](./type_defs.md#updatepipesourcerabbitmqbrokerparameterstypedef)
+- [PipeSourceManagedStreamingKafkaParametersTypeDef](./type_defs.md#pipesourcemanagedstreamingkafkaparameterstypedef)
+- [UpdatePipeSourceManagedStreamingKafkaParametersTypeDef](./type_defs.md#updatepipesourcemanagedstreamingkafkaparameterstypedef)
+- [PipeEnrichmentParametersTypeDef](./type_defs.md#pipeenrichmentparameterstypedef)
+- [PipeLogConfigurationParametersTypeDef](./type_defs.md#pipelogconfigurationparameterstypedef)
+- [PipeLogConfigurationTypeDef](./type_defs.md#pipelogconfigurationtypedef)
+- [PipeSourceKinesisStreamParametersTypeDef](./type_defs.md#pipesourcekinesisstreamparameterstypedef)
+- [PipeSourceSelfManagedKafkaParametersTypeDef](./type_defs.md#pipesourceselfmanagedkafkaparameterstypedef)
+- [UpdatePipeSourceSelfManagedKafkaParametersTypeDef](./type_defs.md#updatepipesourceselfmanagedkafkaparameterstypedef)
+- [PipeTargetSageMakerPipelineParametersTypeDef](./type_defs.md#pipetargetsagemakerpipelineparameterstypedef)
+- [PipeTargetBatchJobParametersTypeDef](./type_defs.md#pipetargetbatchjobparameterstypedef)
+- [EcsTaskOverrideTypeDef](./type_defs.md#ecstaskoverridetypedef)
+- [PipeSourceParametersTypeDef](./type_defs.md#pipesourceparameterstypedef)
+- [UpdatePipeSourceParametersTypeDef](./type_defs.md#updatepipesourceparameterstypedef)
+- [PipeTargetEcsTaskParametersTypeDef](./type_defs.md#pipetargetecstaskparameterstypedef)
+- [PipeTargetParametersTypeDef](./type_defs.md#pipetargetparameterstypedef)
+- [CreatePipeRequestRequestTypeDef](./type_defs.md#createpiperequestrequesttypedef)
+- [DescribePipeResponseTypeDef](./type_defs.md#describepiperesponsetypedef)
+- [UpdatePipeRequestRequestTypeDef](./type_defs.md#updatepiperequestrequesttypedef)
+

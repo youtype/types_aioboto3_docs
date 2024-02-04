@@ -1,0 +1,516 @@
+# DataZone module
+
+> [Index](../README.md) > DataZone
+
+
+!!! note ""
+
+    Auto-generated documentation for [DataZone](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datazone.html#DataZone)
+    type annotations stubs module [types-aiobotocore-datazone](https://pypi.org/project/types-aiobotocore-datazone/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aioboto3` for `DataZone` service.
+
+```bash
+# install with aioboto3 type annotations
+python -m pip install 'types-aioboto3[datazone]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aioboto3-lite[datazone]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-datazone
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-datazone
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## DataZoneClient
+
+Type annotations and code completion for  `#!python session.client("datazone")` as [DataZoneClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datazone.html#DataZone.Client)
+
+```python
+# DataZoneClient usage example
+
+from aioboto3.session import Session
+
+from types_aiobotocore_datazone.client import DataZoneClient
+
+
+session = Session()
+async with session.client("datazone") as client:
+    client: DataZoneClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.client("datazone").get_paginator("...")`.
+
+```python
+# ListAssetRevisionsPaginator usage example
+
+from types_aiobotocore_datazone.paginator import ListAssetRevisionsPaginator
+
+def get_list_asset_revisions_paginator() -> ListAssetRevisionsPaginator:
+    return client.get_paginator("list_asset_revisions"))
+```
+
+- [ListAssetRevisionsPaginator](./paginators.md#listassetrevisionspaginator)
+- [ListDataSourceRunActivitiesPaginator](./paginators.md#listdatasourcerunactivitiespaginator)
+- [ListDataSourceRunsPaginator](./paginators.md#listdatasourcerunspaginator)
+- [ListDataSourcesPaginator](./paginators.md#listdatasourcespaginator)
+- [ListDomainsPaginator](./paginators.md#listdomainspaginator)
+- [ListEnvironmentBlueprintConfigurationsPaginator](./paginators.md#listenvironmentblueprintconfigurationspaginator)
+- [ListEnvironmentBlueprintsPaginator](./paginators.md#listenvironmentblueprintspaginator)
+- [ListEnvironmentProfilesPaginator](./paginators.md#listenvironmentprofilespaginator)
+- [ListEnvironmentsPaginator](./paginators.md#listenvironmentspaginator)
+- [ListNotificationsPaginator](./paginators.md#listnotificationspaginator)
+- [ListProjectMembershipsPaginator](./paginators.md#listprojectmembershipspaginator)
+- [ListProjectsPaginator](./paginators.md#listprojectspaginator)
+- [ListSubscriptionGrantsPaginator](./paginators.md#listsubscriptiongrantspaginator)
+- [ListSubscriptionRequestsPaginator](./paginators.md#listsubscriptionrequestspaginator)
+- [ListSubscriptionTargetsPaginator](./paginators.md#listsubscriptiontargetspaginator)
+- [ListSubscriptionsPaginator](./paginators.md#listsubscriptionspaginator)
+- [SearchPaginator](./paginators.md#searchpaginator)
+- [SearchGroupProfilesPaginator](./paginators.md#searchgroupprofilespaginator)
+- [SearchListingsPaginator](./paginators.md#searchlistingspaginator)
+- [SearchTypesPaginator](./paginators.md#searchtypespaginator)
+- [SearchUserProfilesPaginator](./paginators.md#searchuserprofilespaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# AcceptRuleBehaviorType usage example
+
+from types_aiobotocore_datazone.literals import AcceptRuleBehaviorType
+
+def get_value() -> AcceptRuleBehaviorType:
+    return "ALL"
+```
+
+- [AcceptRuleBehaviorType](./literals.md#acceptrulebehaviortype)
+- [AuthTypeType](./literals.md#authtypetype)
+- [ChangeActionType](./literals.md#changeactiontype)
+- [ConfigurableActionTypeAuthorizationType](./literals.md#configurableactiontypeauthorizationtype)
+- [DataAssetActivityStatusType](./literals.md#dataassetactivitystatustype)
+- [DataSourceErrorTypeType](./literals.md#datasourceerrortypetype)
+- [DataSourceRunStatusType](./literals.md#datasourcerunstatustype)
+- [DataSourceRunTypeType](./literals.md#datasourceruntypetype)
+- [DataSourceStatusType](./literals.md#datasourcestatustype)
+- [DeploymentStatusType](./literals.md#deploymentstatustype)
+- [DeploymentTypeType](./literals.md#deploymenttypetype)
+- [DomainStatusType](./literals.md#domainstatustype)
+- [EnableSettingType](./literals.md#enablesettingtype)
+- [EntityTypeType](./literals.md#entitytypetype)
+- [EnvironmentStatusType](./literals.md#environmentstatustype)
+- [FilterExpressionTypeType](./literals.md#filterexpressiontypetype)
+- [FormTypeStatusType](./literals.md#formtypestatustype)
+- [GlossaryStatusType](./literals.md#glossarystatustype)
+- [GlossaryTermStatusType](./literals.md#glossarytermstatustype)
+- [GroupProfileStatusType](./literals.md#groupprofilestatustype)
+- [GroupSearchTypeType](./literals.md#groupsearchtypetype)
+- [InventorySearchScopeType](./literals.md#inventorysearchscopetype)
+- [ListAssetRevisionsPaginatorName](./literals.md#listassetrevisionspaginatorname)
+- [ListDataSourceRunActivitiesPaginatorName](./literals.md#listdatasourcerunactivitiespaginatorname)
+- [ListDataSourceRunsPaginatorName](./literals.md#listdatasourcerunspaginatorname)
+- [ListDataSourcesPaginatorName](./literals.md#listdatasourcespaginatorname)
+- [ListDomainsPaginatorName](./literals.md#listdomainspaginatorname)
+- [ListEnvironmentBlueprintConfigurationsPaginatorName](./literals.md#listenvironmentblueprintconfigurationspaginatorname)
+- [ListEnvironmentBlueprintsPaginatorName](./literals.md#listenvironmentblueprintspaginatorname)
+- [ListEnvironmentProfilesPaginatorName](./literals.md#listenvironmentprofilespaginatorname)
+- [ListEnvironmentsPaginatorName](./literals.md#listenvironmentspaginatorname)
+- [ListNotificationsPaginatorName](./literals.md#listnotificationspaginatorname)
+- [ListProjectMembershipsPaginatorName](./literals.md#listprojectmembershipspaginatorname)
+- [ListProjectsPaginatorName](./literals.md#listprojectspaginatorname)
+- [ListSubscriptionGrantsPaginatorName](./literals.md#listsubscriptiongrantspaginatorname)
+- [ListSubscriptionRequestsPaginatorName](./literals.md#listsubscriptionrequestspaginatorname)
+- [ListSubscriptionTargetsPaginatorName](./literals.md#listsubscriptiontargetspaginatorname)
+- [ListSubscriptionsPaginatorName](./literals.md#listsubscriptionspaginatorname)
+- [ListingStatusType](./literals.md#listingstatustype)
+- [NotificationResourceTypeType](./literals.md#notificationresourcetypetype)
+- [NotificationRoleType](./literals.md#notificationroletype)
+- [NotificationTypeType](./literals.md#notificationtypetype)
+- [ProjectStatusType](./literals.md#projectstatustype)
+- [RejectRuleBehaviorType](./literals.md#rejectrulebehaviortype)
+- [SearchGroupProfilesPaginatorName](./literals.md#searchgroupprofilespaginatorname)
+- [SearchListingsPaginatorName](./literals.md#searchlistingspaginatorname)
+- [SearchOutputAdditionalAttributeType](./literals.md#searchoutputadditionalattributetype)
+- [SearchPaginatorName](./literals.md#searchpaginatorname)
+- [SearchTypesPaginatorName](./literals.md#searchtypespaginatorname)
+- [SearchUserProfilesPaginatorName](./literals.md#searchuserprofilespaginatorname)
+- [SortFieldProjectType](./literals.md#sortfieldprojecttype)
+- [SortKeyType](./literals.md#sortkeytype)
+- [SortOrderType](./literals.md#sortordertype)
+- [SubscriptionGrantOverallStatusType](./literals.md#subscriptiongrantoverallstatustype)
+- [SubscriptionGrantStatusType](./literals.md#subscriptiongrantstatustype)
+- [SubscriptionRequestStatusType](./literals.md#subscriptionrequeststatustype)
+- [SubscriptionStatusType](./literals.md#subscriptionstatustype)
+- [TaskStatusType](./literals.md#taskstatustype)
+- [TimezoneType](./literals.md#timezonetype)
+- [TypesSearchScopeType](./literals.md#typessearchscopetype)
+- [UserAssignmentType](./literals.md#userassignmenttype)
+- [UserDesignationType](./literals.md#userdesignationtype)
+- [UserProfileStatusType](./literals.md#userprofilestatustype)
+- [UserProfileTypeType](./literals.md#userprofiletypetype)
+- [UserSearchTypeType](./literals.md#usersearchtypetype)
+- [UserTypeType](./literals.md#usertypetype)
+- [DataZoneServiceName](./literals.md#datazoneservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AcceptChoiceTypeDef](./type_defs.md#acceptchoicetypedef)
+- [AcceptRuleTypeDef](./type_defs.md#acceptruletypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [AcceptSubscriptionRequestInputRequestTypeDef](./type_defs.md#acceptsubscriptionrequestinputrequesttypedef)
+- [FormOutputTypeDef](./type_defs.md#formoutputtypedef)
+- [AssetListingDetailsTypeDef](./type_defs.md#assetlistingdetailstypedef)
+- [AssetListingItemAdditionalAttributesTypeDef](./type_defs.md#assetlistingitemadditionalattributestypedef)
+- [DetailedGlossaryTermTypeDef](./type_defs.md#detailedglossarytermtypedef)
+- [AssetRevisionTypeDef](./type_defs.md#assetrevisiontypedef)
+- [AssetTargetNameMapTypeDef](./type_defs.md#assettargetnamemaptypedef)
+- [FormEntryOutputTypeDef](./type_defs.md#formentryoutputtypedef)
+- [BusinessNameGenerationConfigurationTypeDef](./type_defs.md#businessnamegenerationconfigurationtypedef)
+- [CancelSubscriptionInputRequestTypeDef](./type_defs.md#cancelsubscriptioninputrequesttypedef)
+- [CloudFormationPropertiesTypeDef](./type_defs.md#cloudformationpropertiestypedef)
+- [ConfigurableActionParameterTypeDef](./type_defs.md#configurableactionparametertypedef)
+- [FormInputTypeDef](./type_defs.md#forminputtypedef)
+- [FormEntryInputTypeDef](./type_defs.md#formentryinputtypedef)
+- [RecommendationConfigurationTypeDef](./type_defs.md#recommendationconfigurationtypedef)
+- [ScheduleConfigurationTypeDef](./type_defs.md#scheduleconfigurationtypedef)
+- [DataSourceErrorMessageTypeDef](./type_defs.md#datasourceerrormessagetypedef)
+- [SingleSignOnTypeDef](./type_defs.md#singlesignontypedef)
+- [EnvironmentParameterTypeDef](./type_defs.md#environmentparametertypedef)
+- [CustomParameterTypeDef](./type_defs.md#customparametertypedef)
+- [DeploymentPropertiesTypeDef](./type_defs.md#deploymentpropertiestypedef)
+- [ResourceTypeDef](./type_defs.md#resourcetypedef)
+- [ModelTypeDef](./type_defs.md#modeltypedef)
+- [CreateGlossaryInputRequestTypeDef](./type_defs.md#createglossaryinputrequesttypedef)
+- [TermRelationsTypeDef](./type_defs.md#termrelationstypedef)
+- [CreateGroupProfileInputRequestTypeDef](./type_defs.md#creategroupprofileinputrequesttypedef)
+- [CreateListingChangeSetInputRequestTypeDef](./type_defs.md#createlistingchangesetinputrequesttypedef)
+- [CreateProjectInputRequestTypeDef](./type_defs.md#createprojectinputrequesttypedef)
+- [MemberTypeDef](./type_defs.md#membertypedef)
+- [ProjectDeletionErrorTypeDef](./type_defs.md#projectdeletionerrortypedef)
+- [SubscribedListingInputTypeDef](./type_defs.md#subscribedlistinginputtypedef)
+- [SubscriptionTargetFormTypeDef](./type_defs.md#subscriptiontargetformtypedef)
+- [CreateUserProfileInputRequestTypeDef](./type_defs.md#createuserprofileinputrequesttypedef)
+- [DataProductItemTypeDef](./type_defs.md#dataproductitemtypedef)
+- [RunStatisticsForAssetsTypeDef](./type_defs.md#runstatisticsforassetstypedef)
+- [DeleteAssetInputRequestTypeDef](./type_defs.md#deleteassetinputrequesttypedef)
+- [DeleteAssetTypeInputRequestTypeDef](./type_defs.md#deleteassettypeinputrequesttypedef)
+- [DeleteDataSourceInputRequestTypeDef](./type_defs.md#deletedatasourceinputrequesttypedef)
+- [DeleteDomainInputRequestTypeDef](./type_defs.md#deletedomaininputrequesttypedef)
+- [DeleteEnvironmentBlueprintConfigurationInputRequestTypeDef](./type_defs.md#deleteenvironmentblueprintconfigurationinputrequesttypedef)
+- [DeleteEnvironmentInputRequestTypeDef](./type_defs.md#deleteenvironmentinputrequesttypedef)
+- [DeleteEnvironmentProfileInputRequestTypeDef](./type_defs.md#deleteenvironmentprofileinputrequesttypedef)
+- [DeleteFormTypeInputRequestTypeDef](./type_defs.md#deleteformtypeinputrequesttypedef)
+- [DeleteGlossaryInputRequestTypeDef](./type_defs.md#deleteglossaryinputrequesttypedef)
+- [DeleteGlossaryTermInputRequestTypeDef](./type_defs.md#deleteglossaryterminputrequesttypedef)
+- [DeleteListingInputRequestTypeDef](./type_defs.md#deletelistinginputrequesttypedef)
+- [DeleteProjectInputRequestTypeDef](./type_defs.md#deleteprojectinputrequesttypedef)
+- [DeleteSubscriptionGrantInputRequestTypeDef](./type_defs.md#deletesubscriptiongrantinputrequesttypedef)
+- [DeleteSubscriptionRequestInputRequestTypeDef](./type_defs.md#deletesubscriptionrequestinputrequesttypedef)
+- [DeleteSubscriptionTargetInputRequestTypeDef](./type_defs.md#deletesubscriptiontargetinputrequesttypedef)
+- [EnvironmentErrorTypeDef](./type_defs.md#environmenterrortypedef)
+- [DomainSummaryTypeDef](./type_defs.md#domainsummarytypedef)
+- [EnvironmentBlueprintConfigurationItemTypeDef](./type_defs.md#environmentblueprintconfigurationitemtypedef)
+- [EnvironmentProfileSummaryTypeDef](./type_defs.md#environmentprofilesummarytypedef)
+- [EnvironmentSummaryTypeDef](./type_defs.md#environmentsummarytypedef)
+- [FailureCauseTypeDef](./type_defs.md#failurecausetypedef)
+- [FilterTypeDef](./type_defs.md#filtertypedef)
+- [FilterExpressionTypeDef](./type_defs.md#filterexpressiontypedef)
+- [ImportTypeDef](./type_defs.md#importtypedef)
+- [GetAssetInputRequestTypeDef](./type_defs.md#getassetinputrequesttypedef)
+- [GetAssetTypeInputRequestTypeDef](./type_defs.md#getassettypeinputrequesttypedef)
+- [GetDataSourceInputRequestTypeDef](./type_defs.md#getdatasourceinputrequesttypedef)
+- [GetDataSourceRunInputRequestTypeDef](./type_defs.md#getdatasourceruninputrequesttypedef)
+- [GetDomainInputRequestTypeDef](./type_defs.md#getdomaininputrequesttypedef)
+- [GetEnvironmentBlueprintConfigurationInputRequestTypeDef](./type_defs.md#getenvironmentblueprintconfigurationinputrequesttypedef)
+- [GetEnvironmentBlueprintInputRequestTypeDef](./type_defs.md#getenvironmentblueprintinputrequesttypedef)
+- [GetEnvironmentInputRequestTypeDef](./type_defs.md#getenvironmentinputrequesttypedef)
+- [GetEnvironmentProfileInputRequestTypeDef](./type_defs.md#getenvironmentprofileinputrequesttypedef)
+- [GetFormTypeInputRequestTypeDef](./type_defs.md#getformtypeinputrequesttypedef)
+- [GetGlossaryInputRequestTypeDef](./type_defs.md#getglossaryinputrequesttypedef)
+- [GetGlossaryTermInputRequestTypeDef](./type_defs.md#getglossaryterminputrequesttypedef)
+- [GetGroupProfileInputRequestTypeDef](./type_defs.md#getgroupprofileinputrequesttypedef)
+- [GetIamPortalLoginUrlInputRequestTypeDef](./type_defs.md#getiamportalloginurlinputrequesttypedef)
+- [GetListingInputRequestTypeDef](./type_defs.md#getlistinginputrequesttypedef)
+- [GetProjectInputRequestTypeDef](./type_defs.md#getprojectinputrequesttypedef)
+- [GetSubscriptionGrantInputRequestTypeDef](./type_defs.md#getsubscriptiongrantinputrequesttypedef)
+- [GetSubscriptionInputRequestTypeDef](./type_defs.md#getsubscriptioninputrequesttypedef)
+- [GetSubscriptionRequestDetailsInputRequestTypeDef](./type_defs.md#getsubscriptionrequestdetailsinputrequesttypedef)
+- [GetSubscriptionTargetInputRequestTypeDef](./type_defs.md#getsubscriptiontargetinputrequesttypedef)
+- [GetUserProfileInputRequestTypeDef](./type_defs.md#getuserprofileinputrequesttypedef)
+- [GlossaryItemTypeDef](./type_defs.md#glossaryitemtypedef)
+- [TermRelationsPaginatorTypeDef](./type_defs.md#termrelationspaginatortypedef)
+- [ListingRevisionInputTypeDef](./type_defs.md#listingrevisioninputtypedef)
+- [ListingRevisionTypeDef](./type_defs.md#listingrevisiontypedef)
+- [GroupDetailsTypeDef](./type_defs.md#groupdetailstypedef)
+- [GroupProfileSummaryTypeDef](./type_defs.md#groupprofilesummarytypedef)
+- [IamUserProfileDetailsTypeDef](./type_defs.md#iamuserprofiledetailstypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [ListAssetRevisionsInputRequestTypeDef](./type_defs.md#listassetrevisionsinputrequesttypedef)
+- [ListDataSourceRunActivitiesInputRequestTypeDef](./type_defs.md#listdatasourcerunactivitiesinputrequesttypedef)
+- [ListDataSourceRunsInputRequestTypeDef](./type_defs.md#listdatasourcerunsinputrequesttypedef)
+- [ListDataSourcesInputRequestTypeDef](./type_defs.md#listdatasourcesinputrequesttypedef)
+- [ListDomainsInputRequestTypeDef](./type_defs.md#listdomainsinputrequesttypedef)
+- [ListEnvironmentBlueprintConfigurationsInputRequestTypeDef](./type_defs.md#listenvironmentblueprintconfigurationsinputrequesttypedef)
+- [ListEnvironmentBlueprintsInputRequestTypeDef](./type_defs.md#listenvironmentblueprintsinputrequesttypedef)
+- [ListEnvironmentProfilesInputRequestTypeDef](./type_defs.md#listenvironmentprofilesinputrequesttypedef)
+- [ListEnvironmentsInputRequestTypeDef](./type_defs.md#listenvironmentsinputrequesttypedef)
+- [TimestampTypeDef](./type_defs.md#timestamptypedef)
+- [ListProjectMembershipsInputRequestTypeDef](./type_defs.md#listprojectmembershipsinputrequesttypedef)
+- [ListProjectsInputRequestTypeDef](./type_defs.md#listprojectsinputrequesttypedef)
+- [ListSubscriptionGrantsInputRequestTypeDef](./type_defs.md#listsubscriptiongrantsinputrequesttypedef)
+- [ListSubscriptionRequestsInputRequestTypeDef](./type_defs.md#listsubscriptionrequestsinputrequesttypedef)
+- [ListSubscriptionTargetsInputRequestTypeDef](./type_defs.md#listsubscriptiontargetsinputrequesttypedef)
+- [ListSubscriptionsInputRequestTypeDef](./type_defs.md#listsubscriptionsinputrequesttypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [UserDetailsTypeDef](./type_defs.md#userdetailstypedef)
+- [NotificationResourceTypeDef](./type_defs.md#notificationresourcetypedef)
+- [PutEnvironmentBlueprintConfigurationInputRequestTypeDef](./type_defs.md#putenvironmentblueprintconfigurationinputrequesttypedef)
+- [RedshiftClusterStorageTypeDef](./type_defs.md#redshiftclusterstoragetypedef)
+- [RedshiftCredentialConfigurationTypeDef](./type_defs.md#redshiftcredentialconfigurationtypedef)
+- [RedshiftServerlessStorageTypeDef](./type_defs.md#redshiftserverlessstoragetypedef)
+- [RejectChoiceTypeDef](./type_defs.md#rejectchoicetypedef)
+- [RejectRuleTypeDef](./type_defs.md#rejectruletypedef)
+- [RejectSubscriptionRequestInputRequestTypeDef](./type_defs.md#rejectsubscriptionrequestinputrequesttypedef)
+- [RevokeSubscriptionInputRequestTypeDef](./type_defs.md#revokesubscriptioninputrequesttypedef)
+- [SearchGroupProfilesInputRequestTypeDef](./type_defs.md#searchgroupprofilesinputrequesttypedef)
+- [SearchInItemTypeDef](./type_defs.md#searchinitemtypedef)
+- [SearchSortTypeDef](./type_defs.md#searchsorttypedef)
+- [SearchUserProfilesInputRequestTypeDef](./type_defs.md#searchuserprofilesinputrequesttypedef)
+- [SsoUserProfileDetailsTypeDef](./type_defs.md#ssouserprofiledetailstypedef)
+- [StartDataSourceRunInputRequestTypeDef](./type_defs.md#startdatasourceruninputrequesttypedef)
+- [SubscribedProjectInputTypeDef](./type_defs.md#subscribedprojectinputtypedef)
+- [SubscribedProjectTypeDef](./type_defs.md#subscribedprojecttypedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [UpdateEnvironmentInputRequestTypeDef](./type_defs.md#updateenvironmentinputrequesttypedef)
+- [UpdateGlossaryInputRequestTypeDef](./type_defs.md#updateglossaryinputrequesttypedef)
+- [UpdateGroupProfileInputRequestTypeDef](./type_defs.md#updategroupprofileinputrequesttypedef)
+- [UpdateProjectInputRequestTypeDef](./type_defs.md#updateprojectinputrequesttypedef)
+- [UpdateSubscriptionRequestInputRequestTypeDef](./type_defs.md#updatesubscriptionrequestinputrequesttypedef)
+- [UpdateUserProfileInputRequestTypeDef](./type_defs.md#updateuserprofileinputrequesttypedef)
+- [AcceptPredictionsInputRequestTypeDef](./type_defs.md#acceptpredictionsinputrequesttypedef)
+- [AcceptPredictionsOutputTypeDef](./type_defs.md#acceptpredictionsoutputtypedef)
+- [CreateFormTypeOutputTypeDef](./type_defs.md#createformtypeoutputtypedef)
+- [CreateGlossaryOutputTypeDef](./type_defs.md#createglossaryoutputtypedef)
+- [CreateGroupProfileOutputTypeDef](./type_defs.md#creategroupprofileoutputtypedef)
+- [CreateListingChangeSetOutputTypeDef](./type_defs.md#createlistingchangesetoutputtypedef)
+- [DeleteDomainOutputTypeDef](./type_defs.md#deletedomainoutputtypedef)
+- [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
+- [GetEnvironmentBlueprintConfigurationOutputTypeDef](./type_defs.md#getenvironmentblueprintconfigurationoutputtypedef)
+- [GetGlossaryOutputTypeDef](./type_defs.md#getglossaryoutputtypedef)
+- [GetGroupProfileOutputTypeDef](./type_defs.md#getgroupprofileoutputtypedef)
+- [GetIamPortalLoginUrlOutputTypeDef](./type_defs.md#getiamportalloginurloutputtypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [PutEnvironmentBlueprintConfigurationOutputTypeDef](./type_defs.md#putenvironmentblueprintconfigurationoutputtypedef)
+- [RejectPredictionsOutputTypeDef](./type_defs.md#rejectpredictionsoutputtypedef)
+- [UpdateGlossaryOutputTypeDef](./type_defs.md#updateglossaryoutputtypedef)
+- [UpdateGroupProfileOutputTypeDef](./type_defs.md#updategroupprofileoutputtypedef)
+- [AssetItemAdditionalAttributesTypeDef](./type_defs.md#assetitemadditionalattributestypedef)
+- [GetAssetOutputTypeDef](./type_defs.md#getassetoutputtypedef)
+- [AssetListingItemTypeDef](./type_defs.md#assetlistingitemtypedef)
+- [AssetListingTypeDef](./type_defs.md#assetlistingtypedef)
+- [SubscribedAssetListingTypeDef](./type_defs.md#subscribedassetlistingtypedef)
+- [ListAssetRevisionsOutputTypeDef](./type_defs.md#listassetrevisionsoutputtypedef)
+- [AssetTypeItemTypeDef](./type_defs.md#assettypeitemtypedef)
+- [CreateAssetTypeOutputTypeDef](./type_defs.md#createassettypeoutputtypedef)
+- [GetAssetTypeOutputTypeDef](./type_defs.md#getassettypeoutputtypedef)
+- [PredictionConfigurationTypeDef](./type_defs.md#predictionconfigurationtypedef)
+- [ProvisioningPropertiesTypeDef](./type_defs.md#provisioningpropertiestypedef)
+- [ConfigurableEnvironmentActionTypeDef](./type_defs.md#configurableenvironmentactiontypedef)
+- [CreateAssetTypeInputRequestTypeDef](./type_defs.md#createassettypeinputrequesttypedef)
+- [DataSourceRunActivityTypeDef](./type_defs.md#datasourcerunactivitytypedef)
+- [DataSourceSummaryTypeDef](./type_defs.md#datasourcesummarytypedef)
+- [CreateDomainInputRequestTypeDef](./type_defs.md#createdomaininputrequesttypedef)
+- [CreateDomainOutputTypeDef](./type_defs.md#createdomainoutputtypedef)
+- [GetDomainOutputTypeDef](./type_defs.md#getdomainoutputtypedef)
+- [UpdateDomainInputRequestTypeDef](./type_defs.md#updatedomaininputrequesttypedef)
+- [UpdateDomainOutputTypeDef](./type_defs.md#updatedomainoutputtypedef)
+- [CreateEnvironmentInputRequestTypeDef](./type_defs.md#createenvironmentinputrequesttypedef)
+- [CreateEnvironmentProfileInputRequestTypeDef](./type_defs.md#createenvironmentprofileinputrequesttypedef)
+- [UpdateEnvironmentProfileInputRequestTypeDef](./type_defs.md#updateenvironmentprofileinputrequesttypedef)
+- [CreateEnvironmentProfileOutputTypeDef](./type_defs.md#createenvironmentprofileoutputtypedef)
+- [GetEnvironmentProfileOutputTypeDef](./type_defs.md#getenvironmentprofileoutputtypedef)
+- [UpdateEnvironmentProfileOutputTypeDef](./type_defs.md#updateenvironmentprofileoutputtypedef)
+- [CreateFormTypeInputRequestTypeDef](./type_defs.md#createformtypeinputrequesttypedef)
+- [CreateGlossaryTermInputRequestTypeDef](./type_defs.md#createglossaryterminputrequesttypedef)
+- [CreateGlossaryTermOutputTypeDef](./type_defs.md#createglossarytermoutputtypedef)
+- [GetGlossaryTermOutputTypeDef](./type_defs.md#getglossarytermoutputtypedef)
+- [GlossaryTermItemTypeDef](./type_defs.md#glossarytermitemtypedef)
+- [UpdateGlossaryTermInputRequestTypeDef](./type_defs.md#updateglossaryterminputrequesttypedef)
+- [UpdateGlossaryTermOutputTypeDef](./type_defs.md#updateglossarytermoutputtypedef)
+- [CreateProjectMembershipInputRequestTypeDef](./type_defs.md#createprojectmembershipinputrequesttypedef)
+- [DeleteProjectMembershipInputRequestTypeDef](./type_defs.md#deleteprojectmembershipinputrequesttypedef)
+- [CreateProjectOutputTypeDef](./type_defs.md#createprojectoutputtypedef)
+- [GetProjectOutputTypeDef](./type_defs.md#getprojectoutputtypedef)
+- [ProjectSummaryTypeDef](./type_defs.md#projectsummarytypedef)
+- [UpdateProjectOutputTypeDef](./type_defs.md#updateprojectoutputtypedef)
+- [CreateSubscriptionTargetInputRequestTypeDef](./type_defs.md#createsubscriptiontargetinputrequesttypedef)
+- [CreateSubscriptionTargetOutputTypeDef](./type_defs.md#createsubscriptiontargetoutputtypedef)
+- [GetSubscriptionTargetOutputTypeDef](./type_defs.md#getsubscriptiontargetoutputtypedef)
+- [SubscriptionTargetSummaryTypeDef](./type_defs.md#subscriptiontargetsummarytypedef)
+- [UpdateSubscriptionTargetInputRequestTypeDef](./type_defs.md#updatesubscriptiontargetinputrequesttypedef)
+- [UpdateSubscriptionTargetOutputTypeDef](./type_defs.md#updatesubscriptiontargetoutputtypedef)
+- [DataProductSummaryTypeDef](./type_defs.md#dataproductsummarytypedef)
+- [DataSourceRunSummaryTypeDef](./type_defs.md#datasourcerunsummarytypedef)
+- [GetDataSourceRunOutputTypeDef](./type_defs.md#getdatasourcerunoutputtypedef)
+- [StartDataSourceRunOutputTypeDef](./type_defs.md#startdatasourcerunoutputtypedef)
+- [DeploymentTypeDef](./type_defs.md#deploymenttypedef)
+- [ListDomainsOutputTypeDef](./type_defs.md#listdomainsoutputtypedef)
+- [ListEnvironmentBlueprintConfigurationsOutputTypeDef](./type_defs.md#listenvironmentblueprintconfigurationsoutputtypedef)
+- [ListEnvironmentProfilesOutputTypeDef](./type_defs.md#listenvironmentprofilesoutputtypedef)
+- [ListEnvironmentsOutputTypeDef](./type_defs.md#listenvironmentsoutputtypedef)
+- [SubscribedAssetTypeDef](./type_defs.md#subscribedassettypedef)
+- [UpdateSubscriptionGrantStatusInputRequestTypeDef](./type_defs.md#updatesubscriptiongrantstatusinputrequesttypedef)
+- [FilterClauseTypeDef](./type_defs.md#filterclausetypedef)
+- [RelationalFilterConfigurationTypeDef](./type_defs.md#relationalfilterconfigurationtypedef)
+- [FormTypeDataTypeDef](./type_defs.md#formtypedatatypedef)
+- [GetFormTypeOutputTypeDef](./type_defs.md#getformtypeoutputtypedef)
+- [GlossaryTermItemPaginatorTypeDef](./type_defs.md#glossarytermitempaginatortypedef)
+- [GrantedEntityInputTypeDef](./type_defs.md#grantedentityinputtypedef)
+- [GrantedEntityTypeDef](./type_defs.md#grantedentitytypedef)
+- [SearchGroupProfilesOutputTypeDef](./type_defs.md#searchgroupprofilesoutputtypedef)
+- [ListAssetRevisionsInputListAssetRevisionsPaginateTypeDef](./type_defs.md#listassetrevisionsinputlistassetrevisionspaginatetypedef)
+- [ListDataSourceRunActivitiesInputListDataSourceRunActivitiesPaginateTypeDef](./type_defs.md#listdatasourcerunactivitiesinputlistdatasourcerunactivitiespaginatetypedef)
+- [ListDataSourceRunsInputListDataSourceRunsPaginateTypeDef](./type_defs.md#listdatasourcerunsinputlistdatasourcerunspaginatetypedef)
+- [ListDataSourcesInputListDataSourcesPaginateTypeDef](./type_defs.md#listdatasourcesinputlistdatasourcespaginatetypedef)
+- [ListDomainsInputListDomainsPaginateTypeDef](./type_defs.md#listdomainsinputlistdomainspaginatetypedef)
+- [ListEnvironmentBlueprintConfigurationsInputListEnvironmentBlueprintConfigurationsPaginateTypeDef](./type_defs.md#listenvironmentblueprintconfigurationsinputlistenvironmentblueprintconfigurationspaginatetypedef)
+- [ListEnvironmentBlueprintsInputListEnvironmentBlueprintsPaginateTypeDef](./type_defs.md#listenvironmentblueprintsinputlistenvironmentblueprintspaginatetypedef)
+- [ListEnvironmentProfilesInputListEnvironmentProfilesPaginateTypeDef](./type_defs.md#listenvironmentprofilesinputlistenvironmentprofilespaginatetypedef)
+- [ListEnvironmentsInputListEnvironmentsPaginateTypeDef](./type_defs.md#listenvironmentsinputlistenvironmentspaginatetypedef)
+- [ListProjectMembershipsInputListProjectMembershipsPaginateTypeDef](./type_defs.md#listprojectmembershipsinputlistprojectmembershipspaginatetypedef)
+- [ListProjectsInputListProjectsPaginateTypeDef](./type_defs.md#listprojectsinputlistprojectspaginatetypedef)
+- [ListSubscriptionGrantsInputListSubscriptionGrantsPaginateTypeDef](./type_defs.md#listsubscriptiongrantsinputlistsubscriptiongrantspaginatetypedef)
+- [ListSubscriptionRequestsInputListSubscriptionRequestsPaginateTypeDef](./type_defs.md#listsubscriptionrequestsinputlistsubscriptionrequestspaginatetypedef)
+- [ListSubscriptionTargetsInputListSubscriptionTargetsPaginateTypeDef](./type_defs.md#listsubscriptiontargetsinputlistsubscriptiontargetspaginatetypedef)
+- [ListSubscriptionsInputListSubscriptionsPaginateTypeDef](./type_defs.md#listsubscriptionsinputlistsubscriptionspaginatetypedef)
+- [SearchGroupProfilesInputSearchGroupProfilesPaginateTypeDef](./type_defs.md#searchgroupprofilesinputsearchgroupprofilespaginatetypedef)
+- [SearchUserProfilesInputSearchUserProfilesPaginateTypeDef](./type_defs.md#searchuserprofilesinputsearchuserprofilespaginatetypedef)
+- [ListNotificationsInputListNotificationsPaginateTypeDef](./type_defs.md#listnotificationsinputlistnotificationspaginatetypedef)
+- [ListNotificationsInputRequestTypeDef](./type_defs.md#listnotificationsinputrequesttypedef)
+- [MemberDetailsTypeDef](./type_defs.md#memberdetailstypedef)
+- [TopicTypeDef](./type_defs.md#topictypedef)
+- [RedshiftStorageTypeDef](./type_defs.md#redshiftstoragetypedef)
+- [RejectPredictionsInputRequestTypeDef](./type_defs.md#rejectpredictionsinputrequesttypedef)
+- [SearchInputRequestTypeDef](./type_defs.md#searchinputrequesttypedef)
+- [SearchListingsInputRequestTypeDef](./type_defs.md#searchlistingsinputrequesttypedef)
+- [SearchTypesInputRequestTypeDef](./type_defs.md#searchtypesinputrequesttypedef)
+- [UserProfileDetailsTypeDef](./type_defs.md#userprofiledetailstypedef)
+- [SubscribedPrincipalInputTypeDef](./type_defs.md#subscribedprincipalinputtypedef)
+- [SubscribedPrincipalTypeDef](./type_defs.md#subscribedprincipaltypedef)
+- [AssetItemTypeDef](./type_defs.md#assetitemtypedef)
+- [SearchResultItemTypeDef](./type_defs.md#searchresultitemtypedef)
+- [ListingItemTypeDef](./type_defs.md#listingitemtypedef)
+- [SubscribedListingItemTypeDef](./type_defs.md#subscribedlistingitemtypedef)
+- [CreateAssetInputRequestTypeDef](./type_defs.md#createassetinputrequesttypedef)
+- [CreateAssetOutputTypeDef](./type_defs.md#createassetoutputtypedef)
+- [CreateAssetRevisionInputRequestTypeDef](./type_defs.md#createassetrevisioninputrequesttypedef)
+- [CreateAssetRevisionOutputTypeDef](./type_defs.md#createassetrevisionoutputtypedef)
+- [EnvironmentBlueprintSummaryTypeDef](./type_defs.md#environmentblueprintsummarytypedef)
+- [GetEnvironmentBlueprintOutputTypeDef](./type_defs.md#getenvironmentblueprintoutputtypedef)
+- [ListDataSourceRunActivitiesOutputTypeDef](./type_defs.md#listdatasourcerunactivitiesoutputtypedef)
+- [ListDataSourcesOutputTypeDef](./type_defs.md#listdatasourcesoutputtypedef)
+- [ListProjectsOutputTypeDef](./type_defs.md#listprojectsoutputtypedef)
+- [ListSubscriptionTargetsOutputTypeDef](./type_defs.md#listsubscriptiontargetsoutputtypedef)
+- [ListDataSourceRunsOutputTypeDef](./type_defs.md#listdatasourcerunsoutputtypedef)
+- [CreateEnvironmentOutputTypeDef](./type_defs.md#createenvironmentoutputtypedef)
+- [GetEnvironmentOutputTypeDef](./type_defs.md#getenvironmentoutputtypedef)
+- [UpdateEnvironmentOutputTypeDef](./type_defs.md#updateenvironmentoutputtypedef)
+- [SearchInputSearchPaginateTypeDef](./type_defs.md#searchinputsearchpaginatetypedef)
+- [SearchListingsInputSearchListingsPaginateTypeDef](./type_defs.md#searchlistingsinputsearchlistingspaginatetypedef)
+- [SearchTypesInputSearchTypesPaginateTypeDef](./type_defs.md#searchtypesinputsearchtypespaginatetypedef)
+- [GlueRunConfigurationInputTypeDef](./type_defs.md#gluerunconfigurationinputtypedef)
+- [GlueRunConfigurationOutputTypeDef](./type_defs.md#gluerunconfigurationoutputtypedef)
+- [SearchTypesResultItemTypeDef](./type_defs.md#searchtypesresultitemtypedef)
+- [CreateSubscriptionGrantInputRequestTypeDef](./type_defs.md#createsubscriptiongrantinputrequesttypedef)
+- [CreateSubscriptionGrantOutputTypeDef](./type_defs.md#createsubscriptiongrantoutputtypedef)
+- [DeleteSubscriptionGrantOutputTypeDef](./type_defs.md#deletesubscriptiongrantoutputtypedef)
+- [GetSubscriptionGrantOutputTypeDef](./type_defs.md#getsubscriptiongrantoutputtypedef)
+- [SubscriptionGrantSummaryTypeDef](./type_defs.md#subscriptiongrantsummarytypedef)
+- [UpdateSubscriptionGrantStatusOutputTypeDef](./type_defs.md#updatesubscriptiongrantstatusoutputtypedef)
+- [ProjectMemberTypeDef](./type_defs.md#projectmembertypedef)
+- [NotificationOutputTypeDef](./type_defs.md#notificationoutputtypedef)
+- [RedshiftRunConfigurationInputTypeDef](./type_defs.md#redshiftrunconfigurationinputtypedef)
+- [RedshiftRunConfigurationOutputTypeDef](./type_defs.md#redshiftrunconfigurationoutputtypedef)
+- [CreateUserProfileOutputTypeDef](./type_defs.md#createuserprofileoutputtypedef)
+- [GetUserProfileOutputTypeDef](./type_defs.md#getuserprofileoutputtypedef)
+- [UpdateUserProfileOutputTypeDef](./type_defs.md#updateuserprofileoutputtypedef)
+- [UserProfileSummaryTypeDef](./type_defs.md#userprofilesummarytypedef)
+- [CreateSubscriptionRequestInputRequestTypeDef](./type_defs.md#createsubscriptionrequestinputrequesttypedef)
+- [SearchInventoryResultItemPaginatorTypeDef](./type_defs.md#searchinventoryresultitempaginatortypedef)
+- [SearchInventoryResultItemTypeDef](./type_defs.md#searchinventoryresultitemtypedef)
+- [SearchListingsOutputTypeDef](./type_defs.md#searchlistingsoutputtypedef)
+- [GetListingOutputTypeDef](./type_defs.md#getlistingoutputtypedef)
+- [SubscribedListingTypeDef](./type_defs.md#subscribedlistingtypedef)
+- [ListEnvironmentBlueprintsOutputTypeDef](./type_defs.md#listenvironmentblueprintsoutputtypedef)
+- [SearchTypesOutputTypeDef](./type_defs.md#searchtypesoutputtypedef)
+- [ListSubscriptionGrantsOutputTypeDef](./type_defs.md#listsubscriptiongrantsoutputtypedef)
+- [ListProjectMembershipsOutputTypeDef](./type_defs.md#listprojectmembershipsoutputtypedef)
+- [ListNotificationsOutputTypeDef](./type_defs.md#listnotificationsoutputtypedef)
+- [DataSourceConfigurationInputTypeDef](./type_defs.md#datasourceconfigurationinputtypedef)
+- [DataSourceConfigurationOutputTypeDef](./type_defs.md#datasourceconfigurationoutputtypedef)
+- [SearchUserProfilesOutputTypeDef](./type_defs.md#searchuserprofilesoutputtypedef)
+- [SearchOutputPaginatorTypeDef](./type_defs.md#searchoutputpaginatortypedef)
+- [SearchOutputTypeDef](./type_defs.md#searchoutputtypedef)
+- [AcceptSubscriptionRequestOutputTypeDef](./type_defs.md#acceptsubscriptionrequestoutputtypedef)
+- [CancelSubscriptionOutputTypeDef](./type_defs.md#cancelsubscriptionoutputtypedef)
+- [CreateSubscriptionRequestOutputTypeDef](./type_defs.md#createsubscriptionrequestoutputtypedef)
+- [GetSubscriptionOutputTypeDef](./type_defs.md#getsubscriptionoutputtypedef)
+- [GetSubscriptionRequestDetailsOutputTypeDef](./type_defs.md#getsubscriptionrequestdetailsoutputtypedef)
+- [RejectSubscriptionRequestOutputTypeDef](./type_defs.md#rejectsubscriptionrequestoutputtypedef)
+- [RevokeSubscriptionOutputTypeDef](./type_defs.md#revokesubscriptionoutputtypedef)
+- [SubscriptionRequestSummaryTypeDef](./type_defs.md#subscriptionrequestsummarytypedef)
+- [SubscriptionSummaryTypeDef](./type_defs.md#subscriptionsummarytypedef)
+- [UpdateSubscriptionRequestOutputTypeDef](./type_defs.md#updatesubscriptionrequestoutputtypedef)
+- [CreateDataSourceInputRequestTypeDef](./type_defs.md#createdatasourceinputrequesttypedef)
+- [UpdateDataSourceInputRequestTypeDef](./type_defs.md#updatedatasourceinputrequesttypedef)
+- [CreateDataSourceOutputTypeDef](./type_defs.md#createdatasourceoutputtypedef)
+- [DeleteDataSourceOutputTypeDef](./type_defs.md#deletedatasourceoutputtypedef)
+- [GetDataSourceOutputTypeDef](./type_defs.md#getdatasourceoutputtypedef)
+- [UpdateDataSourceOutputTypeDef](./type_defs.md#updatedatasourceoutputtypedef)
+- [ListSubscriptionRequestsOutputTypeDef](./type_defs.md#listsubscriptionrequestsoutputtypedef)
+- [ListSubscriptionsOutputTypeDef](./type_defs.md#listsubscriptionsoutputtypedef)
+

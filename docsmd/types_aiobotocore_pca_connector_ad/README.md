@@ -1,0 +1,245 @@
+# PcaConnectorAd module
+
+> [Index](../README.md) > PcaConnectorAd
+
+
+!!! note ""
+
+    Auto-generated documentation for [PcaConnectorAd](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pca-connector-ad.html#PcaConnectorAd)
+    type annotations stubs module [types-aiobotocore-pca-connector-ad](https://pypi.org/project/types-aiobotocore-pca-connector-ad/).
+
+## How to install
+
+
+
+### From PyPI with pip
+
+Install `types-aioboto3` for `PcaConnectorAd` service.
+
+```bash
+# install with aioboto3 type annotations
+python -m pip install 'types-aioboto3[pca-connector-ad]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aioboto3-lite[pca-connector-ad]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-pca-connector-ad
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-pca-connector-ad
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## PcaConnectorAdClient
+
+Type annotations and code completion for  `#!python session.client("pca-connector-ad")` as [PcaConnectorAdClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pca-connector-ad.html#PcaConnectorAd.Client)
+
+```python
+# PcaConnectorAdClient usage example
+
+from aioboto3.session import Session
+
+from types_aiobotocore_pca_connector_ad.client import PcaConnectorAdClient
+
+
+session = Session()
+async with session.client("pca-connector-ad") as client:
+    client: PcaConnectorAdClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.client("pca-connector-ad").get_paginator("...")`.
+
+```python
+# ListConnectorsPaginator usage example
+
+from types_aiobotocore_pca_connector_ad.paginator import ListConnectorsPaginator
+
+def get_list_connectors_paginator() -> ListConnectorsPaginator:
+    return client.get_paginator("list_connectors"))
+```
+
+- [ListConnectorsPaginator](./paginators.md#listconnectorspaginator)
+- [ListDirectoryRegistrationsPaginator](./paginators.md#listdirectoryregistrationspaginator)
+- [ListServicePrincipalNamesPaginator](./paginators.md#listserviceprincipalnamespaginator)
+- [ListTemplateGroupAccessControlEntriesPaginator](./paginators.md#listtemplategroupaccesscontrolentriespaginator)
+- [ListTemplatesPaginator](./paginators.md#listtemplatespaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python
+# AccessRightType usage example
+
+from types_aiobotocore_pca_connector_ad.literals import AccessRightType
+
+def get_value() -> AccessRightType:
+    return "ALLOW"
+```
+
+- [AccessRightType](./literals.md#accessrighttype)
+- [ApplicationPolicyTypeType](./literals.md#applicationpolicytypetype)
+- [ClientCompatibilityV2Type](./literals.md#clientcompatibilityv2type)
+- [ClientCompatibilityV3Type](./literals.md#clientcompatibilityv3type)
+- [ClientCompatibilityV4Type](./literals.md#clientcompatibilityv4type)
+- [ConnectorStatusReasonType](./literals.md#connectorstatusreasontype)
+- [ConnectorStatusType](./literals.md#connectorstatustype)
+- [DirectoryRegistrationStatusReasonType](./literals.md#directoryregistrationstatusreasontype)
+- [DirectoryRegistrationStatusType](./literals.md#directoryregistrationstatustype)
+- [HashAlgorithmType](./literals.md#hashalgorithmtype)
+- [KeySpecType](./literals.md#keyspectype)
+- [KeyUsagePropertyTypeType](./literals.md#keyusagepropertytypetype)
+- [ListConnectorsPaginatorName](./literals.md#listconnectorspaginatorname)
+- [ListDirectoryRegistrationsPaginatorName](./literals.md#listdirectoryregistrationspaginatorname)
+- [ListServicePrincipalNamesPaginatorName](./literals.md#listserviceprincipalnamespaginatorname)
+- [ListTemplateGroupAccessControlEntriesPaginatorName](./literals.md#listtemplategroupaccesscontrolentriespaginatorname)
+- [ListTemplatesPaginatorName](./literals.md#listtemplatespaginatorname)
+- [PrivateKeyAlgorithmType](./literals.md#privatekeyalgorithmtype)
+- [ServicePrincipalNameStatusReasonType](./literals.md#serviceprincipalnamestatusreasontype)
+- [ServicePrincipalNameStatusType](./literals.md#serviceprincipalnamestatustype)
+- [TemplateStatusType](./literals.md#templatestatustype)
+- [ValidityPeriodTypeType](./literals.md#validityperiodtypetype)
+- [PcaConnectorAdServiceName](./literals.md#pcaconnectoradservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+
+
+
+
+## Type definitions
+
+Type annotations for [type definitions](./type_defs.md) used in methods and schema.
+
+- [AccessRightsTypeDef](./type_defs.md#accessrightstypedef)
+- [ApplicationPolicyTypeDef](./type_defs.md#applicationpolicytypedef)
+- [ValidityPeriodTypeDef](./type_defs.md#validityperiodtypedef)
+- [VpcInformationPaginatorTypeDef](./type_defs.md#vpcinformationpaginatortypedef)
+- [VpcInformationTypeDef](./type_defs.md#vpcinformationtypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [CreateDirectoryRegistrationRequestRequestTypeDef](./type_defs.md#createdirectoryregistrationrequestrequesttypedef)
+- [CreateServicePrincipalNameRequestRequestTypeDef](./type_defs.md#createserviceprincipalnamerequestrequesttypedef)
+- [DeleteConnectorRequestRequestTypeDef](./type_defs.md#deleteconnectorrequestrequesttypedef)
+- [DeleteDirectoryRegistrationRequestRequestTypeDef](./type_defs.md#deletedirectoryregistrationrequestrequesttypedef)
+- [DeleteServicePrincipalNameRequestRequestTypeDef](./type_defs.md#deleteserviceprincipalnamerequestrequesttypedef)
+- [DeleteTemplateGroupAccessControlEntryRequestRequestTypeDef](./type_defs.md#deletetemplategroupaccesscontrolentryrequestrequesttypedef)
+- [DeleteTemplateRequestRequestTypeDef](./type_defs.md#deletetemplaterequestrequesttypedef)
+- [DirectoryRegistrationSummaryTypeDef](./type_defs.md#directoryregistrationsummarytypedef)
+- [DirectoryRegistrationTypeDef](./type_defs.md#directoryregistrationtypedef)
+- [EnrollmentFlagsV2TypeDef](./type_defs.md#enrollmentflagsv2typedef)
+- [EnrollmentFlagsV3TypeDef](./type_defs.md#enrollmentflagsv3typedef)
+- [EnrollmentFlagsV4TypeDef](./type_defs.md#enrollmentflagsv4typedef)
+- [GeneralFlagsV2TypeDef](./type_defs.md#generalflagsv2typedef)
+- [GeneralFlagsV3TypeDef](./type_defs.md#generalflagsv3typedef)
+- [GeneralFlagsV4TypeDef](./type_defs.md#generalflagsv4typedef)
+- [GetConnectorRequestRequestTypeDef](./type_defs.md#getconnectorrequestrequesttypedef)
+- [GetDirectoryRegistrationRequestRequestTypeDef](./type_defs.md#getdirectoryregistrationrequestrequesttypedef)
+- [GetServicePrincipalNameRequestRequestTypeDef](./type_defs.md#getserviceprincipalnamerequestrequesttypedef)
+- [ServicePrincipalNameTypeDef](./type_defs.md#serviceprincipalnametypedef)
+- [GetTemplateGroupAccessControlEntryRequestRequestTypeDef](./type_defs.md#gettemplategroupaccesscontrolentryrequestrequesttypedef)
+- [GetTemplateRequestRequestTypeDef](./type_defs.md#gettemplaterequestrequesttypedef)
+- [KeyUsageFlagsTypeDef](./type_defs.md#keyusageflagstypedef)
+- [KeyUsagePropertyFlagsTypeDef](./type_defs.md#keyusagepropertyflagstypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [ListConnectorsRequestRequestTypeDef](./type_defs.md#listconnectorsrequestrequesttypedef)
+- [ListDirectoryRegistrationsRequestRequestTypeDef](./type_defs.md#listdirectoryregistrationsrequestrequesttypedef)
+- [ListServicePrincipalNamesRequestRequestTypeDef](./type_defs.md#listserviceprincipalnamesrequestrequesttypedef)
+- [ServicePrincipalNameSummaryTypeDef](./type_defs.md#serviceprincipalnamesummarytypedef)
+- [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
+- [ListTemplateGroupAccessControlEntriesRequestRequestTypeDef](./type_defs.md#listtemplategroupaccesscontrolentriesrequestrequesttypedef)
+- [ListTemplatesRequestRequestTypeDef](./type_defs.md#listtemplatesrequestrequesttypedef)
+- [PrivateKeyAttributesV2PaginatorTypeDef](./type_defs.md#privatekeyattributesv2paginatortypedef)
+- [PrivateKeyAttributesV2TypeDef](./type_defs.md#privatekeyattributesv2typedef)
+- [PrivateKeyFlagsV2TypeDef](./type_defs.md#privatekeyflagsv2typedef)
+- [PrivateKeyFlagsV3TypeDef](./type_defs.md#privatekeyflagsv3typedef)
+- [PrivateKeyFlagsV4TypeDef](./type_defs.md#privatekeyflagsv4typedef)
+- [SubjectNameFlagsV2TypeDef](./type_defs.md#subjectnameflagsv2typedef)
+- [SubjectNameFlagsV3TypeDef](./type_defs.md#subjectnameflagsv3typedef)
+- [SubjectNameFlagsV4TypeDef](./type_defs.md#subjectnameflagsv4typedef)
+- [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
+- [TemplateRevisionTypeDef](./type_defs.md#templaterevisiontypedef)
+- [UntagResourceRequestRequestTypeDef](./type_defs.md#untagresourcerequestrequesttypedef)
+- [AccessControlEntrySummaryTypeDef](./type_defs.md#accesscontrolentrysummarytypedef)
+- [AccessControlEntryTypeDef](./type_defs.md#accesscontrolentrytypedef)
+- [CreateTemplateGroupAccessControlEntryRequestRequestTypeDef](./type_defs.md#createtemplategroupaccesscontrolentryrequestrequesttypedef)
+- [UpdateTemplateGroupAccessControlEntryRequestRequestTypeDef](./type_defs.md#updatetemplategroupaccesscontrolentryrequestrequesttypedef)
+- [ApplicationPoliciesPaginatorTypeDef](./type_defs.md#applicationpoliciespaginatortypedef)
+- [ApplicationPoliciesTypeDef](./type_defs.md#applicationpoliciestypedef)
+- [CertificateValidityTypeDef](./type_defs.md#certificatevaliditytypedef)
+- [ConnectorSummaryPaginatorTypeDef](./type_defs.md#connectorsummarypaginatortypedef)
+- [ConnectorSummaryTypeDef](./type_defs.md#connectorsummarytypedef)
+- [ConnectorTypeDef](./type_defs.md#connectortypedef)
+- [CreateConnectorRequestRequestTypeDef](./type_defs.md#createconnectorrequestrequesttypedef)
+- [CreateConnectorResponseTypeDef](./type_defs.md#createconnectorresponsetypedef)
+- [CreateDirectoryRegistrationResponseTypeDef](./type_defs.md#createdirectoryregistrationresponsetypedef)
+- [CreateTemplateResponseTypeDef](./type_defs.md#createtemplateresponsetypedef)
+- [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
+- [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
+- [ListDirectoryRegistrationsResponseTypeDef](./type_defs.md#listdirectoryregistrationsresponsetypedef)
+- [GetDirectoryRegistrationResponseTypeDef](./type_defs.md#getdirectoryregistrationresponsetypedef)
+- [GetServicePrincipalNameResponseTypeDef](./type_defs.md#getserviceprincipalnameresponsetypedef)
+- [KeyUsageTypeDef](./type_defs.md#keyusagetypedef)
+- [KeyUsagePropertyTypeDef](./type_defs.md#keyusagepropertytypedef)
+- [ListConnectorsRequestListConnectorsPaginateTypeDef](./type_defs.md#listconnectorsrequestlistconnectorspaginatetypedef)
+- [ListDirectoryRegistrationsRequestListDirectoryRegistrationsPaginateTypeDef](./type_defs.md#listdirectoryregistrationsrequestlistdirectoryregistrationspaginatetypedef)
+- [ListServicePrincipalNamesRequestListServicePrincipalNamesPaginateTypeDef](./type_defs.md#listserviceprincipalnamesrequestlistserviceprincipalnamespaginatetypedef)
+- [ListTemplateGroupAccessControlEntriesRequestListTemplateGroupAccessControlEntriesPaginateTypeDef](./type_defs.md#listtemplategroupaccesscontrolentriesrequestlisttemplategroupaccesscontrolentriespaginatetypedef)
+- [ListTemplatesRequestListTemplatesPaginateTypeDef](./type_defs.md#listtemplatesrequestlisttemplatespaginatetypedef)
+- [ListServicePrincipalNamesResponseTypeDef](./type_defs.md#listserviceprincipalnamesresponsetypedef)
+- [ListTemplateGroupAccessControlEntriesResponseTypeDef](./type_defs.md#listtemplategroupaccesscontrolentriesresponsetypedef)
+- [GetTemplateGroupAccessControlEntryResponseTypeDef](./type_defs.md#gettemplategroupaccesscontrolentryresponsetypedef)
+- [ListConnectorsResponsePaginatorTypeDef](./type_defs.md#listconnectorsresponsepaginatortypedef)
+- [ListConnectorsResponseTypeDef](./type_defs.md#listconnectorsresponsetypedef)
+- [GetConnectorResponseTypeDef](./type_defs.md#getconnectorresponsetypedef)
+- [ExtensionsV2PaginatorTypeDef](./type_defs.md#extensionsv2paginatortypedef)
+- [ExtensionsV2TypeDef](./type_defs.md#extensionsv2typedef)
+- [ExtensionsV3PaginatorTypeDef](./type_defs.md#extensionsv3paginatortypedef)
+- [ExtensionsV3TypeDef](./type_defs.md#extensionsv3typedef)
+- [ExtensionsV4PaginatorTypeDef](./type_defs.md#extensionsv4paginatortypedef)
+- [ExtensionsV4TypeDef](./type_defs.md#extensionsv4typedef)
+- [PrivateKeyAttributesV3PaginatorTypeDef](./type_defs.md#privatekeyattributesv3paginatortypedef)
+- [PrivateKeyAttributesV3TypeDef](./type_defs.md#privatekeyattributesv3typedef)
+- [PrivateKeyAttributesV4PaginatorTypeDef](./type_defs.md#privatekeyattributesv4paginatortypedef)
+- [PrivateKeyAttributesV4TypeDef](./type_defs.md#privatekeyattributesv4typedef)
+- [TemplateV2PaginatorTypeDef](./type_defs.md#templatev2paginatortypedef)
+- [TemplateV2TypeDef](./type_defs.md#templatev2typedef)
+- [TemplateV3PaginatorTypeDef](./type_defs.md#templatev3paginatortypedef)
+- [TemplateV3TypeDef](./type_defs.md#templatev3typedef)
+- [TemplateV4PaginatorTypeDef](./type_defs.md#templatev4paginatortypedef)
+- [TemplateV4TypeDef](./type_defs.md#templatev4typedef)
+- [TemplateDefinitionPaginatorTypeDef](./type_defs.md#templatedefinitionpaginatortypedef)
+- [TemplateDefinitionTypeDef](./type_defs.md#templatedefinitiontypedef)
+- [TemplateSummaryPaginatorTypeDef](./type_defs.md#templatesummarypaginatortypedef)
+- [CreateTemplateRequestRequestTypeDef](./type_defs.md#createtemplaterequestrequesttypedef)
+- [TemplateSummaryTypeDef](./type_defs.md#templatesummarytypedef)
+- [TemplateTypeDef](./type_defs.md#templatetypedef)
+- [UpdateTemplateRequestRequestTypeDef](./type_defs.md#updatetemplaterequestrequesttypedef)
+- [ListTemplatesResponsePaginatorTypeDef](./type_defs.md#listtemplatesresponsepaginatortypedef)
+- [ListTemplatesResponseTypeDef](./type_defs.md#listtemplatesresponsetypedef)
+- [GetTemplateResponseTypeDef](./type_defs.md#gettemplateresponsetypedef)
+
